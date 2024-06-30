@@ -10,6 +10,7 @@ import UIKit
 class AppCoordinator: Coordinator {
     private let window: UIWindow
     private let navigationController: UINavigationController
+    private var homeCoordinator: HomeCoordinator?
 
     init(window: UIWindow) {
         self.window = window
@@ -19,5 +20,8 @@ class AppCoordinator: Coordinator {
     func start() {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+
+        homeCoordinator = HomeCoordinator(navigationController: navigationController)
+        homeCoordinator?.start()
     }
 }

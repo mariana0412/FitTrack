@@ -20,8 +20,6 @@
 		CA002E162C319C6D0053284B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002E152C319C6D0053284B /* HomeViewController.swift */; };
 		CA002E182C319C7A0053284B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002E172C319C7A0053284B /* HomeViewModel.swift */; };
 		CA002E1A2C319C860053284B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA002E192C319C860053284B /* Home.storyboard */; };
-		CA002E1E2C319DB20053284B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = CA002E1D2C319DB20053284B /* .gitkeep */; };
-		CA002E202C319DC60053284B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = CA002E1F2C319DC60053284B /* .gitkeep */; };
 		CA002E222C319DD00053284B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = CA002E212C319DD00053284B /* .gitkeep */; };
 		CA002E242C319F560053284B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CA002E232C319F560053284B /* .gitignore */; };
 		CA002E262C31A0830053284B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002E252C31A0830053284B /* AppCoordinator.swift */; };
@@ -309,10 +307,8 @@
 				CA002DDF2C318B110053284B /* Assets.xcassets in Resources */,
 				CA002E242C319F560053284B /* .gitignore in Resources */,
 				CA002DE22C318B110053284B /* Base in Resources */,
-				CA002E202C319DC60053284B /* .gitkeep in Resources */,
 				CA002E222C319DD00053284B /* .gitkeep in Resources */,
 				CA002E1A2C319C860053284B /* Home.storyboard in Resources */,
-				CA002E1E2C319DB20053284B /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,7 +519,7 @@
 				INFOPLIST_FILE = PecodeTestTask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Home;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -551,7 +547,7 @@
 				INFOPLIST_FILE = PecodeTestTask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Home;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
