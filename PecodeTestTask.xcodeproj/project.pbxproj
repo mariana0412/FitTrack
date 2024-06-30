@@ -23,6 +23,7 @@
 		CA002E1E2C319DB20053284B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = CA002E1D2C319DB20053284B /* .gitkeep */; };
 		CA002E202C319DC60053284B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = CA002E1F2C319DC60053284B /* .gitkeep */; };
 		CA002E222C319DD00053284B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = CA002E212C319DD00053284B /* .gitkeep */; };
+		CA002E242C319F560053284B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CA002E232C319F560053284B /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		CA002E1D2C319DB20053284B /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		CA002E1F2C319DC60053284B /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		CA002E212C319DD00053284B /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		CA002E232C319F560053284B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		CA002DC92C318B0F0053284B = {
 			isa = PBXGroup;
 			children = (
+				CA002E232C319F560053284B /* .gitignore */,
 				CA002DD42C318B0F0053284B /* PecodeTestTask */,
 				CA002DEB2C318B110053284B /* PecodeTestTaskTests */,
 				CA002DF52C318B110053284B /* PecodeTestTaskUITests */,
@@ -301,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA002DDF2C318B110053284B /* Assets.xcassets in Resources */,
+				CA002E242C319F560053284B /* .gitignore in Resources */,
 				CA002DE22C318B110053284B /* Base in Resources */,
 				CA002E202C319DC60053284B /* .gitkeep in Resources */,
 				CA002E222C319DD00053284B /* .gitkeep in Resources */,
