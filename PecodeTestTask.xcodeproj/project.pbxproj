@@ -24,6 +24,7 @@
 		CA002E202C319DC60053284B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = CA002E1F2C319DC60053284B /* .gitkeep */; };
 		CA002E222C319DD00053284B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = CA002E212C319DD00053284B /* .gitkeep */; };
 		CA002E242C319F560053284B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CA002E232C319F560053284B /* .gitignore */; };
+		CA002E262C31A0830053284B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002E252C31A0830053284B /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		CA002E1F2C319DC60053284B /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		CA002E212C319DD00053284B /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		CA002E232C319F560053284B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		CA002E252C31A0830053284B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +97,6 @@
 		CA002DC92C318B0F0053284B = {
 			isa = PBXGroup;
 			children = (
-				CA002E232C319F560053284B /* .gitignore */,
 				CA002DD42C318B0F0053284B /* PecodeTestTask */,
 				CA002DEB2C318B110053284B /* PecodeTestTaskTests */,
 				CA002DF52C318B110053284B /* PecodeTestTaskUITests */,
@@ -116,12 +117,12 @@
 		CA002DD42C318B0F0053284B /* PecodeTestTask */ = {
 			isa = PBXGroup;
 			children = (
-				CA002E1C2C319D2E0053284B /* UI */,
-				CA002E1B2C319CF00053284B /* API */,
-				CA002E0A2C3192DE0053284B /* Base */,
 				CA002E092C3192C60053284B /* App */,
 				CA002E082C3192940053284B /* Home */,
+				CA002E0A2C3192DE0053284B /* Base */,
 				CA002E062C3192850053284B /* Model */,
+				CA002E1C2C319D2E0053284B /* UI */,
+				CA002E1B2C319CF00053284B /* API */,
 				CA002DDE2C318B110053284B /* Assets.xcassets */,
 				CA002DE02C318B110053284B /* LaunchScreen.storyboard */,
 				CA002DE32C318B110053284B /* Info.plist */,
@@ -142,6 +143,7 @@
 			children = (
 				CA002DF62C318B110053284B /* PecodeTestTaskUITests.swift */,
 				CA002DF82C318B110053284B /* PecodeTestTaskUITestsLaunchTests.swift */,
+				CA002E232C319F560053284B /* .gitignore */,
 			);
 			path = PecodeTestTaskUITests;
 			sourceTree = "<group>";
@@ -170,6 +172,7 @@
 			children = (
 				CA002DD52C318B0F0053284B /* AppDelegate.swift */,
 				CA002DD72C318B0F0053284B /* SceneDelegate.swift */,
+				CA002E252C31A0830053284B /* AppCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				CA002E122C319C110053284B /* Coordinator.swift in Sources */,
 				CA002E182C319C7A0053284B /* HomeViewModel.swift in Sources */,
 				CA002DD62C318B0F0053284B /* AppDelegate.swift in Sources */,
+				CA002E262C31A0830053284B /* AppCoordinator.swift in Sources */,
 				CA002DD82C318B0F0053284B /* SceneDelegate.swift in Sources */,
 				CA002E162C319C6D0053284B /* HomeViewController.swift in Sources */,
 				CA002E142C319C5C0053284B /* HomeCoordinator.swift in Sources */,
