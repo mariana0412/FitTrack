@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeCoordinator: Coordinator {
-    private let navigationController: UINavigationController
+    var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController

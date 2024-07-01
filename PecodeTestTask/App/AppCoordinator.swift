@@ -9,7 +9,7 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     private let window: UIWindow
-    private let navigationController: UINavigationController
+    var navigationController: UINavigationController
     private var homeCoordinator: HomeCoordinator?
 
     init(window: UIWindow) {
