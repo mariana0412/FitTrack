@@ -8,14 +8,14 @@
 import UIKit
 
 class HomeViewController: BaseViewController {
-    var viewModel: HomeViewModel!
+    var viewModel: HomeViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    static func instantiate() -> HomeViewController {
+    static func instantiate() -> HomeViewController? {
         let storyboard = UIStoryboard(name: "Home", bundle: .main)
-        return storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+        return storyboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
     }
 }
