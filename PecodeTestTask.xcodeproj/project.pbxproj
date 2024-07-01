@@ -23,6 +23,7 @@
 		CA002E222C319DD00053284B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = CA002E212C319DD00053284B /* .gitkeep */; };
 		CA002E242C319F560053284B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CA002E232C319F560053284B /* .gitignore */; };
 		CA002E262C31A0830053284B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002E252C31A0830053284B /* AppCoordinator.swift */; };
+		CA002E292C32C1C50053284B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002E282C32C1C50053284B /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		CA002E212C319DD00053284B /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		CA002E232C319F560053284B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		CA002E252C31A0830053284B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		CA002E282C32C1C50053284B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				CA002DD52C318B0F0053284B /* AppDelegate.swift */,
 				CA002DD72C318B0F0053284B /* SceneDelegate.swift */,
 				CA002E252C31A0830053284B /* AppCoordinator.swift */,
+				CA002E282C32C1C50053284B /* Constants.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				CA002DD82C318B0F0053284B /* SceneDelegate.swift in Sources */,
 				CA002E162C319C6D0053284B /* HomeViewController.swift in Sources */,
 				CA002E142C319C5C0053284B /* HomeCoordinator.swift in Sources */,
+				CA002E292C32C1C50053284B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
