@@ -16,6 +16,10 @@ class CustomCheckmarkButton: CustomToggleButton {
         super.init(selectedImage: selectedImage, unselectedImage: unselectedImage, size: CGSize(width: 16, height: 16))
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.selectedImage = UIImage(named: "customCheckmarkSelected")

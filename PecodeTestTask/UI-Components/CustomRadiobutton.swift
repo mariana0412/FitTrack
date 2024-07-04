@@ -16,6 +16,10 @@ class CustomRadioButton: CustomToggleButton {
         super.init(selectedImage: selectedImage, unselectedImage: unselectedImage, size: CGSize(width: 15, height: 15))
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.selectedImage = UIImage(named: "radiobuttonFilled")

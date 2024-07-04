@@ -25,6 +25,10 @@ class CustomToggleButton: CustomUIComponent {
         super.init(coder: coder)
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
     func setup(size: CGSize) {
         setupView(size: size)
         self.backgroundColor = .clear

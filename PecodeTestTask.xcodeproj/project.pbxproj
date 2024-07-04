@@ -28,6 +28,7 @@
 		CA002E352C36F8430053284B /* CustomToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002E342C36F8430053284B /* CustomToggleButton.swift */; };
 		CA002E372C36F8D00053284B /* CustomRadiobutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002E362C36F8D00053284B /* CustomRadiobutton.swift */; };
 		CA002E392C36F8FA0053284B /* CustomCheckmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002E382C36F8FA0053284B /* CustomCheckmark.swift */; };
+		CA002E3B2C3701FE0053284B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002E3A2C3701FE0053284B /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		CA002E342C36F8430053284B /* CustomToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggleButton.swift; sourceTree = "<group>"; };
 		CA002E362C36F8D00053284B /* CustomRadiobutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRadiobutton.swift; sourceTree = "<group>"; };
 		CA002E382C36F8FA0053284B /* CustomCheckmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCheckmark.swift; sourceTree = "<group>"; };
+		CA002E3A2C3701FE0053284B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 				CA002E342C36F8430053284B /* CustomToggleButton.swift */,
 				CA002E362C36F8D00053284B /* CustomRadiobutton.swift */,
 				CA002E382C36F8FA0053284B /* CustomCheckmark.swift */,
+				CA002E3A2C3701FE0053284B /* CustomButton.swift */,
 			);
 			path = "UI-Components";
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				CA002E352C36F8430053284B /* CustomToggleButton.swift in Sources */,
 				CA002E0E2C319BC10053284B /* BaseViewController.swift in Sources */,
 				CA002E122C319C110053284B /* Coordinator.swift in Sources */,
+				CA002E3B2C3701FE0053284B /* CustomButton.swift in Sources */,
 				CA002E2F2C36E81F0053284B /* CustomUIComponent.swift in Sources */,
 				CA002E182C319C7A0053284B /* HomeViewModel.swift in Sources */,
 				CA002DD62C318B0F0053284B /* AppDelegate.swift in Sources */,
