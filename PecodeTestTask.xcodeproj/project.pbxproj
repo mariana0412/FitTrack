@@ -117,13 +117,13 @@
 		CA002DD42C318B0F0053284B /* PecodeTestTask */ = {
 			isa = PBXGroup;
 			children = (
+				CA002E2A2C36D4810053284B /* Resources */,
 				CA002E092C3192C60053284B /* App */,
 				CA002E082C3192940053284B /* Home */,
 				CA002E0A2C3192DE0053284B /* Base */,
 				CA002E062C3192850053284B /* Model */,
 				CA002E1C2C319D2E0053284B /* UI */,
 				CA002E1B2C319CF00053284B /* API */,
-				CA002DDE2C318B110053284B /* Assets.xcassets */,
 				CA002DE02C318B110053284B /* LaunchScreen.storyboard */,
 				CA002DE32C318B110053284B /* Info.plist */,
 			);
@@ -201,6 +201,14 @@
 				CA002E1D2C319DB20053284B /* .gitkeep */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		CA002E2A2C36D4810053284B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CA002DDE2C318B110053284B /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
