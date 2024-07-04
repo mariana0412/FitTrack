@@ -24,6 +24,7 @@
 		CA002E242C319F560053284B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CA002E232C319F560053284B /* .gitignore */; };
 		CA002E262C31A0830053284B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002E252C31A0830053284B /* AppCoordinator.swift */; };
 		CA002E292C32C1C50053284B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002E282C32C1C50053284B /* Constants.swift */; };
+		CA002E2F2C36E81F0053284B /* CustomUIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002E2E2C36E81F0053284B /* CustomUIComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,12 +62,12 @@
 		CA002E152C319C6D0053284B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CA002E172C319C7A0053284B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CA002E192C319C860053284B /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		CA002E1D2C319DB20053284B /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		CA002E1F2C319DC60053284B /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		CA002E212C319DD00053284B /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		CA002E232C319F560053284B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		CA002E252C31A0830053284B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CA002E282C32C1C50053284B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CA002E2E2C36E81F0053284B /* CustomUIComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,13 +118,13 @@
 		CA002DD42C318B0F0053284B /* PecodeTestTask */ = {
 			isa = PBXGroup;
 			children = (
-				CA002E2A2C36D4810053284B /* Resources */,
 				CA002E092C3192C60053284B /* App */,
 				CA002E082C3192940053284B /* Home */,
 				CA002E0A2C3192DE0053284B /* Base */,
 				CA002E062C3192850053284B /* Model */,
-				CA002E1C2C319D2E0053284B /* UI */,
+				CA002E2D2C36E80E0053284B /* UI-Components */,
 				CA002E1B2C319CF00053284B /* API */,
+				CA002E2A2C36D4810053284B /* Resources */,
 				CA002DE02C318B110053284B /* LaunchScreen.storyboard */,
 				CA002DE32C318B110053284B /* Info.plist */,
 			);
@@ -195,20 +196,20 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		CA002E1C2C319D2E0053284B /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				CA002E1D2C319DB20053284B /* .gitkeep */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
 		CA002E2A2C36D4810053284B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				CA002DDE2C318B110053284B /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		CA002E2D2C36E80E0053284B /* UI-Components */ = {
+			isa = PBXGroup;
+			children = (
+				CA002E2E2C36E81F0053284B /* CustomUIComponent.swift */,
+			);
+			path = "UI-Components";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +347,7 @@
 			files = (
 				CA002E0E2C319BC10053284B /* BaseViewController.swift in Sources */,
 				CA002E122C319C110053284B /* Coordinator.swift in Sources */,
+				CA002E2F2C36E81F0053284B /* CustomUIComponent.swift in Sources */,
 				CA002E182C319C7A0053284B /* HomeViewModel.swift in Sources */,
 				CA002DD62C318B0F0053284B /* AppDelegate.swift in Sources */,
 				CA002E262C31A0830053284B /* AppCoordinator.swift in Sources */,
