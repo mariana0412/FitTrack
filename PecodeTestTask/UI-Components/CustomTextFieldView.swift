@@ -16,6 +16,18 @@ class CustomTextFieldView: UIView {
     
     @IBOutlet weak var nameTextField: UITextField!
     
+    enum TextFieldState {
+        case normal
+        case active
+        case error
+    }
+    
+    var currentState: TextFieldState = .normal {
+        didSet {
+            updateUI(for: currentState)
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -29,7 +41,28 @@ class CustomTextFieldView: UIView {
     func commonInit() {
         Bundle.main.loadNibNamed(kCONTENT_XIB_NAME, owner: self, options: nil)
         contentView.fixInView(self)
+        
+        nameTextField.delegate = self
+        currentState = .normal
     }
+    
+    func updateUI(for state: TextFieldState) {
+        switch state {
+        case .normal:
+            label.textColor = .white
+            nameTextField.layer.borderColor = UIColor(named: "SecondaryGray")?.cgColor
+            nameTextField.textColor = UIColor(named: "SecondaryGray")
+        case .active:
+            label.textColor = .white
+            nameTextField.layer.borderColor = UIColor.white.cgColor
+            nameTextField.textColor = .white
+        case .error:
+            label.textColor = .red
+            nameTextField.layer.borderColor = UIColor.red.cgColor
+            nameTextField.textColor = .red
+        }
+    }
+    
 }
 
 extension UIView {
@@ -41,5 +74,28 @@ extension UIView {
         NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: container, attribute: .trailing, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: container, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: container, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
+    }
+}
+
+extension CustomTextFieldView: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = ""
+        currentState = .active
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        currentState = .normal
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let text = textField.text, let textRange = Range(range, in: text) {
+            let updatedText = text.replacingCharacters(in: textRange, with: string)
+            if updatedText.count > 10 {
+                currentState = .error
+            } else {
+                currentState = .active
+            }
+        }
+        return true
     }
 }
