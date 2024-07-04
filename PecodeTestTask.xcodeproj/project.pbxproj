@@ -29,6 +29,7 @@
 		CA002E372C36F8D00053284B /* CustomRadiobutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002E362C36F8D00053284B /* CustomRadiobutton.swift */; };
 		CA002E392C36F8FA0053284B /* CustomCheckmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002E382C36F8FA0053284B /* CustomCheckmark.swift */; };
 		CA002E3B2C3701FE0053284B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002E3A2C3701FE0053284B /* CustomButton.swift */; };
+		CA1EE8402C375AFF00E58403 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */; };
 		CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */; };
 		CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		CA002E362C36F8D00053284B /* CustomRadiobutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRadiobutton.swift; sourceTree = "<group>"; };
 		CA002E382C36F8FA0053284B /* CustomCheckmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCheckmark.swift; sourceTree = "<group>"; };
 		CA002E3A2C3701FE0053284B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
 		CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextFieldView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -226,6 +228,7 @@
 				CA002E3A2C3701FE0053284B /* CustomButton.swift */,
 				CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */,
 				CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */,
+				CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */,
 			);
 			path = "UI-Components";
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				CA002DD62C318B0F0053284B /* AppDelegate.swift in Sources */,
 				CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */,
 				CA002E262C31A0830053284B /* AppCoordinator.swift in Sources */,
+				CA1EE8402C375AFF00E58403 /* CustomSwitch.swift in Sources */,
 				CA002E392C36F8FA0053284B /* CustomCheckmark.swift in Sources */,
 				CA002DD82C318B0F0053284B /* SceneDelegate.swift in Sources */,
 				CA002E162C319C6D0053284B /* HomeViewController.swift in Sources */,
