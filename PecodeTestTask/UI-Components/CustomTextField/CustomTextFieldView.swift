@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomTextFieldView: UIView {
+final class CustomTextFieldView: UIView {
     let kCONTENT_XIB_NAME = "CustomTextFieldView"
     
     @IBOutlet var contentView: UIView!
