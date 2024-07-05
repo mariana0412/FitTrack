@@ -7,5 +7,4 @@
 
 struct StoryboardConstants {
     static let home = "Home"
-    static let detail = "Detail"
 }
