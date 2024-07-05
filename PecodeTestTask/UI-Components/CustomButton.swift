@@ -65,20 +65,20 @@ class CustomButton: CustomUIComponent {
     private func applyStyle(_ style: Style) {
         switch style {
         case .yellowBorder:
-            button.backgroundColor = UIColor(named: "PrimaryYellow")
-            button.layer.borderColor = UIColor(named: "PrimaryYellow")?.cgColor
+            button.backgroundColor = UIColor(named: ColorConstants.primaryYellow)
+            button.layer.borderColor = UIColor(named: ColorConstants.primaryYellow)?.cgColor
             button.setTitleColor(.black, for: .normal)
             button.widthAnchor.constraint(equalToConstant: 289).isActive = true
             button.heightAnchor.constraint(equalToConstant: 49).isActive = true
             button.titleLabel?.font = UIFont(name: "Saira", size: 16)
             
         case .yellowText:
-            button.setTitleColor(UIColor(named: "PrimaryYellow"), for: .normal)
+            button.setTitleColor(UIColor(named: ColorConstants.primaryYellow), for: .normal)
             button.backgroundColor = .clear
             button.titleLabel?.font = UIFont(name: "Saira-SemiBold", size: 16)
             
         case .pinkText:
-            button.setTitleColor(UIColor(named: "PrimaryPink"), for: .normal)
+            button.setTitleColor(UIColor(named: ColorConstants.primaryPink), for: .normal)
             button.backgroundColor = .clear
             button.titleLabel?.font = UIFont(name: "Saira-SemiBold", size: 16)
         }

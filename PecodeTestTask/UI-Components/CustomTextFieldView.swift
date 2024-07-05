@@ -11,9 +11,7 @@ class CustomTextFieldView: UIView {
     let kCONTENT_XIB_NAME = "CustomTextFieldView"
     
     @IBOutlet var contentView: UIView!
-    
     @IBOutlet weak var label: UILabel!
-    
     @IBOutlet weak var nameTextField: UITextField!
     
     enum TextFieldState {
@@ -49,13 +47,13 @@ class CustomTextFieldView: UIView {
     func updateUI(for state: TextFieldState) {
         switch state {
         case .normal:
-            label.textColor = .white
-            nameTextField.layer.borderColor = UIColor(named: "SecondaryGray")?.cgColor
-            nameTextField.textColor = UIColor(named: "SecondaryGray")
+            label.textColor = UIColor(named: ColorConstants.primaryWhite)
+            nameTextField.layer.borderColor = UIColor(named: ColorConstants.secondaryGray)?.cgColor
+            nameTextField.textColor = UIColor(named: ColorConstants.secondaryGray)
         case .active:
-            label.textColor = .white
-            nameTextField.layer.borderColor = UIColor.white.cgColor
-            nameTextField.textColor = .white
+            label.textColor = UIColor(named: ColorConstants.primaryWhite)
+            nameTextField.layer.borderColor = UIColor(named: ColorConstants.primaryWhite)?.cgColor
+            nameTextField.textColor = UIColor(named: ColorConstants.primaryWhite)
         case .error:
             label.textColor = .red
             nameTextField.layer.borderColor = UIColor.red.cgColor
