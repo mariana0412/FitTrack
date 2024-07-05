@@ -32,6 +32,7 @@
 		CA1EE8402C375AFF00E58403 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */; };
 		CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */; };
 		CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */; };
+		CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
 		CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextFieldView.xib; sourceTree = "<group>"; };
+		CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		CA002DD42C318B0F0053284B /* PecodeTestTask */ = {
 			isa = PBXGroup;
 			children = (
+				CAA18EE02C37F97900F888CD /* Extensions */,
 				CA002E092C3192C60053284B /* App */,
 				CA002E082C3192940053284B /* Home */,
 				CA002E0A2C3192DE0053284B /* Base */,
@@ -247,6 +250,14 @@
 				CA002E382C36F8FA0053284B /* CustomCheckmark.swift */,
 			);
 			path = CustomToggleButton;
+			sourceTree = "<group>";
+		};
+		CAA18EE02C37F97900F888CD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,6 +400,7 @@
 				CA002E122C319C110053284B /* Coordinator.swift in Sources */,
 				CA002E3B2C3701FE0053284B /* CustomButton.swift in Sources */,
 				CA002E2F2C36E81F0053284B /* CustomUIComponent.swift in Sources */,
+				CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */,
 				CA002E182C319C7A0053284B /* HomeViewModel.swift in Sources */,
 				CA002DD62C318B0F0053284B /* AppDelegate.swift in Sources */,
 				CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */,
