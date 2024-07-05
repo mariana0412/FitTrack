@@ -11,23 +11,31 @@ import UIKit
 final class CustomRadiobutton: CustomToggleButton {
     
     init() {
-        let selectedImage = UIImage(named: "radiobuttonFilled")
-        let unselectedImage = UIImage(named: "radiobutton")
-        super.init(selectedImage: selectedImage, unselectedImage: unselectedImage, size: CGSize(width: 15, height: 15))
+        let selectedImage = Constants.Layout.selectedImage
+        let unselectedImage = Constants.Layout.unselectedImage
+        super.init(selectedImage: selectedImage, unselectedImage: unselectedImage, size: Constants.Layout.size)
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.selectedImage = UIImage(named: "radiobuttonFilled")
-        self.unselectedImage = UIImage(named: "radiobutton")
-        setup(size: CGSize(width: 15, height: 15))
+        self.selectedImage = Constants.Layout.selectedImage
+        self.unselectedImage = Constants.Layout.unselectedImage
+        setup(size: Constants.Layout.size)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.selectedImage = UIImage(named: "radiobuttonFilled")
-        self.unselectedImage = UIImage(named: "radiobutton")
+        self.selectedImage = Constants.Layout.selectedImage
+        self.unselectedImage = Constants.Layout.unselectedImage
         setup(size: frame.size)
+    }
+    
+    private enum Constants {
+        enum Layout {
+            static let selectedImage = UIImage(named: "radiobuttonFilled")
+            static let unselectedImage = UIImage(named: "radiobutton")
+            static let size = CGSize(width: 15, height: 15)
+        }
     }
 }
 

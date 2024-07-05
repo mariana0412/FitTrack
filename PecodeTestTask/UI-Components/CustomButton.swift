@@ -31,6 +31,19 @@ final class CustomButton: CustomUIComponent {
     
     private var button: UIButton!
     
+    private enum Constants {
+        enum Layout {
+            static let buttonCornerRadius: CGFloat = 15.0
+            static let buttonWidth: CGFloat = 289.0
+            static let buttonHeight: CGFloat = 49.0
+            static let fontSize: CGFloat = 16.0
+            static let fontName = "Saira"
+            static let boldFontName = "Saira-SemiBold"
+            static let borderWidth: CGFloat = 1.0
+            static let yellowBorderTitleColor = UIColor.black
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -50,7 +63,7 @@ final class CustomButton: CustomUIComponent {
         self.backgroundColor = .clear
         button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 15.0
+        button.layer.cornerRadius = Constants.Layout.buttonCornerRadius
         button.clipsToBounds = true
         addSubview(button)
         
@@ -67,20 +80,20 @@ final class CustomButton: CustomUIComponent {
         case .yellowBorder:
             button.backgroundColor = UIColor(named: ColorConstants.primaryYellow)
             button.layer.borderColor = UIColor(named: ColorConstants.primaryYellow)?.cgColor
-            button.setTitleColor(.black, for: .normal)
-            button.widthAnchor.constraint(equalToConstant: 289).isActive = true
-            button.heightAnchor.constraint(equalToConstant: 49).isActive = true
-            button.titleLabel?.font = UIFont(name: "Saira", size: 16)
+            button.setTitleColor(Constants.Layout.yellowBorderTitleColor, for: .normal)
+            button.widthAnchor.constraint(equalToConstant: Constants.Layout.buttonWidth).isActive = true
+            button.heightAnchor.constraint(equalToConstant: Constants.Layout.buttonHeight).isActive = true
+            button.titleLabel?.font = UIFont(name: Constants.Layout.fontName, size: Constants.Layout.fontSize)
             
         case .yellowText:
             button.setTitleColor(UIColor(named: ColorConstants.primaryYellow), for: .normal)
             button.backgroundColor = .clear
-            button.titleLabel?.font = UIFont(name: "Saira-SemiBold", size: 16)
+            button.titleLabel?.font = UIFont(name: Constants.Layout.boldFontName, size: Constants.Layout.fontSize)
             
         case .pinkText:
             button.setTitleColor(UIColor(named: ColorConstants.primaryPink), for: .normal)
             button.backgroundColor = .clear
-            button.titleLabel?.font = UIFont(name: "Saira-SemiBold", size: 16)
+            button.titleLabel?.font = UIFont(name: Constants.Layout.boldFontName, size: Constants.Layout.fontSize)
         }
     }
     

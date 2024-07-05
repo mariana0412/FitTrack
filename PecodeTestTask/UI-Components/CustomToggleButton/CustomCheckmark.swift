@@ -11,23 +11,31 @@ import UIKit
 final class CustomCheckmark: CustomToggleButton {
     
     init() {
-        let selectedImage = UIImage(named: "customCheckmarkSelected")
-        let unselectedImage = UIImage(named: "customCheckmark")
-        super.init(selectedImage: selectedImage, unselectedImage: unselectedImage, size: CGSize(width: 16, height: 16))
+        let selectedImage = Constants.Layout.selectedImage
+        let unselectedImage = Constants.Layout.unselectedImage
+        super.init(selectedImage: selectedImage, unselectedImage: unselectedImage, size: Constants.Layout.size)
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.selectedImage = UIImage(named: "customCheckmarkSelected")
-        self.unselectedImage = UIImage(named: "customCheckmark")
-        setup(size: CGSize(width: 16, height: 16))
+        self.selectedImage = Constants.Layout.selectedImage
+        self.unselectedImage = Constants.Layout.unselectedImage
+        setup(size: Constants.Layout.size)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.selectedImage = UIImage(named: "customCheckmarkSelected")
-        self.unselectedImage = UIImage(named: "customCheckmark")
+        self.selectedImage = Constants.Layout.selectedImage
+        self.unselectedImage = Constants.Layout.unselectedImage
         setup(size: frame.size)
+    }
+    
+    private enum Constants {
+        enum Layout {
+            static let selectedImage = UIImage(named: "customCheckmarkSelected")
+            static let unselectedImage = UIImage(named: "customCheckmark")
+            static let size = CGSize(width: 16, height: 16)
+        }
     }
 }
 

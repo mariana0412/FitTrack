@@ -10,13 +10,13 @@ import UIKit
 final class CustomSwitch: UISwitch {
     
     override init(frame: CGRect) {
-        super.init(frame: CGRect(x: frame.origin.x, y: frame.origin.y, width: 74, height: 33))
+        super.init(frame: CGRect(x: frame.origin.x, y: frame.origin.y, width: Constants.Layout.switchWidth, height: Constants.Layout.switchHeight))
         customizeSwitch()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.frame = CGRect(x: 0, y: 0, width: 74, height: 33)
+        self.frame = CGRect(x: 0, y: 0, width: Constants.Layout.switchWidth, height: Constants.Layout.switchHeight)
         customizeSwitch()
     }
     
@@ -26,10 +26,19 @@ final class CustomSwitch: UISwitch {
         
         self.tintColor = UIColor(named: ColorConstants.secondaryGray)
         self.backgroundColor = UIColor(named: ColorConstants.secondaryGray)
-        self.layer.cornerRadius = self.frame.height / 2
+        self.layer.cornerRadius = Constants.Layout.cornerRadius
         self.clipsToBounds = true
         
         self.layer.borderColor = UIColor(named: ColorConstants.primaryWhite)?.cgColor
-        self.layer.borderWidth = 1
+        self.layer.borderWidth = Constants.Layout.borderWidth
+    }
+    
+    private enum Constants {
+        enum Layout {
+            static let switchWidth: CGFloat = 74.0
+            static let switchHeight: CGFloat = 33.0
+            static let cornerRadius: CGFloat = switchHeight / 2
+            static let borderWidth: CGFloat = 1.0
+        }
     }
 }
