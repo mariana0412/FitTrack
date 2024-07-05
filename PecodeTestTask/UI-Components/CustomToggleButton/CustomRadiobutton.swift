@@ -8,7 +8,7 @@
 import UIKit
 
 @IBDesignable
-class CustomRadiobutton: CustomToggleButton {
+final class CustomRadiobutton: CustomToggleButton {
     
     init() {
         let selectedImage = UIImage(named: "radiobuttonFilled")

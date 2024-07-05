@@ -8,7 +8,7 @@
 import UIKit
 
 @IBDesignable
-class CustomButton: CustomUIComponent {
+final class CustomButton: CustomUIComponent {
     
     enum Style: Int {
         case yellowBorder

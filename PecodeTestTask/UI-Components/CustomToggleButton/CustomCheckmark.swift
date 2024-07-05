@@ -8,7 +8,7 @@
 import UIKit
 
 @IBDesignable
-class CustomCheckmark: CustomToggleButton {
+final class CustomCheckmark: CustomToggleButton {
     
     init() {
         let selectedImage = UIImage(named: "customCheckmarkSelected")

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomSwitch: UISwitch {
+final class CustomSwitch: UISwitch {
     
     override init(frame: CGRect) {
         super.init(frame: CGRect(x: frame.origin.x, y: frame.origin.y, width: 74, height: 33))
