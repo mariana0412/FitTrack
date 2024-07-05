@@ -21,15 +21,15 @@ final class CustomSwitch: UISwitch {
     }
     
     private func customizeSwitch() {
-        self.onTintColor = UIColor(named: ColorConstants.primaryYellow)
-        self.thumbTintColor = UIColor(named: ColorConstants.primaryWhite)
+        self.onTintColor = UIColor.primaryYellow
+        self.thumbTintColor = UIColor.primaryWhite
         
-        self.tintColor = UIColor(named: ColorConstants.secondaryGray)
-        self.backgroundColor = UIColor(named: ColorConstants.secondaryGray)
+        self.tintColor = UIColor.secondaryGray
+        self.backgroundColor = UIColor.secondaryGray
         self.layer.cornerRadius = Constants.Layout.cornerRadius
         self.clipsToBounds = true
         
-        self.layer.borderColor = UIColor(named: ColorConstants.primaryWhite)?.cgColor
+        self.layer.borderColor = UIColor.primaryWhite.cgColor
         self.layer.borderWidth = Constants.Layout.borderWidth
     }
     

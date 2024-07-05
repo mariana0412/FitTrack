@@ -40,7 +40,6 @@ final class CustomButton: CustomUIComponent {
             static let fontName = "Saira"
             static let boldFontName = "Saira-SemiBold"
             static let borderWidth: CGFloat = 1.0
-            static let yellowBorderTitleColor = UIColor.black
         }
     }
     
@@ -78,20 +77,20 @@ final class CustomButton: CustomUIComponent {
     private func applyStyle(_ style: Style) {
         switch style {
         case .yellowBorder:
-            button.backgroundColor = UIColor(named: ColorConstants.primaryYellow)
-            button.layer.borderColor = UIColor(named: ColorConstants.primaryYellow)?.cgColor
-            button.setTitleColor(Constants.Layout.yellowBorderTitleColor, for: .normal)
+            button.backgroundColor = UIColor.primaryYellow
+            button.layer.borderColor = UIColor.primaryYellow.cgColor
+            button.setTitleColor(UIColor.black, for: .normal)
             button.widthAnchor.constraint(equalToConstant: Constants.Layout.buttonWidth).isActive = true
             button.heightAnchor.constraint(equalToConstant: Constants.Layout.buttonHeight).isActive = true
             button.titleLabel?.font = UIFont(name: Constants.Layout.fontName, size: Constants.Layout.fontSize)
             
         case .yellowText:
-            button.setTitleColor(UIColor(named: ColorConstants.primaryYellow), for: .normal)
+            button.setTitleColor(UIColor.primaryYellow, for: .normal)
             button.backgroundColor = .clear
             button.titleLabel?.font = UIFont(name: Constants.Layout.boldFontName, size: Constants.Layout.fontSize)
             
         case .pinkText:
-            button.setTitleColor(UIColor(named: ColorConstants.primaryPink), for: .normal)
+            button.setTitleColor(UIColor.primaryPink, for: .normal)
             button.backgroundColor = .clear
             button.titleLabel?.font = UIFont(name: Constants.Layout.boldFontName, size: Constants.Layout.fontSize)
         }

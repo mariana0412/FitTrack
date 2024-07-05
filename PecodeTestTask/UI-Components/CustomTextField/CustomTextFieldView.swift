@@ -47,17 +47,17 @@ class CustomTextFieldView: UIView {
     func updateUI(for state: TextFieldState) {
         switch state {
         case .normal:
-            label.textColor = UIColor(named: ColorConstants.primaryWhite)
-            nameTextField.layer.borderColor = UIColor(named: ColorConstants.secondaryGray)?.cgColor
-            nameTextField.textColor = UIColor(named: ColorConstants.secondaryGray)
+            label.textColor = UIColor.primaryWhite
+            nameTextField.layer.borderColor = UIColor.secondaryGray.cgColor
+            nameTextField.textColor = UIColor.secondaryGray
         case .active:
-            label.textColor = UIColor(named: ColorConstants.primaryWhite)
-            nameTextField.layer.borderColor = UIColor(named: ColorConstants.primaryWhite)?.cgColor
-            nameTextField.textColor = UIColor(named: ColorConstants.primaryWhite)
+            label.textColor = UIColor.primaryWhite
+            nameTextField.layer.borderColor = UIColor.primaryWhite.cgColor
+            nameTextField.textColor = UIColor.primaryWhite
         case .error:
             label.textColor = .red
-            nameTextField.layer.borderColor = UIColor.red.cgColor
-            nameTextField.textColor = .red
+            nameTextField.layer.borderColor = UIColor.primaryRed.cgColor
+            nameTextField.textColor = UIColor.primaryRed
         }
     }
     
