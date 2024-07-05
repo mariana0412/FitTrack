@@ -222,15 +222,31 @@
 			isa = PBXGroup;
 			children = (
 				CA002E2E2C36E81F0053284B /* CustomUIComponent.swift */,
+				CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */,
+				CA002E3A2C3701FE0053284B /* CustomButton.swift */,
+				CA1EE8452C376FCD00E58403 /* CustomToggleButton */,
+				CA1EE8442C376FBF00E58403 /* CustomTextField */,
+			);
+			path = "UI-Components";
+			sourceTree = "<group>";
+		};
+		CA1EE8442C376FBF00E58403 /* CustomTextField */ = {
+			isa = PBXGroup;
+			children = (
+				CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */,
+				CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */,
+			);
+			path = CustomTextField;
+			sourceTree = "<group>";
+		};
+		CA1EE8452C376FCD00E58403 /* CustomToggleButton */ = {
+			isa = PBXGroup;
+			children = (
 				CA002E342C36F8430053284B /* CustomToggleButton.swift */,
 				CA002E362C36F8D00053284B /* CustomRadiobutton.swift */,
 				CA002E382C36F8FA0053284B /* CustomCheckmark.swift */,
-				CA002E3A2C3701FE0053284B /* CustomButton.swift */,
-				CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */,
-				CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */,
-				CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */,
 			);
-			path = "UI-Components";
+			path = CustomToggleButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
