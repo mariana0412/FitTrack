@@ -41,6 +41,13 @@ final class CustomButton: CustomUIComponent {
             static let boldFontName = "Saira-SemiBold"
             static let borderWidth: CGFloat = 1.0
         }
+        
+        enum Colors {
+            static let yellowBorderColor = UIColor.primaryYellow
+            static let yellowBorderTitleColor = UIColor.black
+            static let yellowTextColor = UIColor.primaryYellow
+            static let pinkTextColor = UIColor.primaryPink
+        }
     }
     
     override init(frame: CGRect) {
@@ -77,21 +84,18 @@ final class CustomButton: CustomUIComponent {
     private func applyStyle(_ style: Style) {
         switch style {
         case .yellowBorder:
-            button.backgroundColor = UIColor.primaryYellow
-            button.layer.borderColor = UIColor.primaryYellow.cgColor
-            button.setTitleColor(UIColor.black, for: .normal)
+            button.backgroundColor = Constants.Colors.yellowBorderColor
+            button.setTitleColor(Constants.Colors.yellowBorderTitleColor, for: .normal)
             button.widthAnchor.constraint(equalToConstant: Constants.Layout.buttonWidth).isActive = true
             button.heightAnchor.constraint(equalToConstant: Constants.Layout.buttonHeight).isActive = true
             button.titleLabel?.font = UIFont(name: Constants.Layout.fontName, size: Constants.Layout.fontSize)
             
         case .yellowText:
-            button.setTitleColor(UIColor.primaryYellow, for: .normal)
-            button.backgroundColor = .clear
+            button.setTitleColor(Constants.Colors.yellowTextColor, for: .normal)
             button.titleLabel?.font = UIFont(name: Constants.Layout.boldFontName, size: Constants.Layout.fontSize)
             
         case .pinkText:
-            button.setTitleColor(UIColor.primaryPink, for: .normal)
-            button.backgroundColor = .clear
+            button.setTitleColor(Constants.Colors.pinkTextColor, for: .normal)
             button.titleLabel?.font = UIFont(name: Constants.Layout.boldFontName, size: Constants.Layout.fontSize)
         }
     }
