@@ -33,6 +33,9 @@
 		CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */; };
 		CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */; };
 		CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */; };
+		CAA18EE52C39DF9400F888CD /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA18EE42C39DF9400F888CD /* Splash.storyboard */; };
+		CAA18EE72C39DFC300F888CD /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE62C39DFC300F888CD /* SplashViewController.swift */; };
+		CAA18EE92C39DFF600F888CD /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE82C39DFF600F888CD /* SplashCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,9 @@
 		CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextFieldView.xib; sourceTree = "<group>"; };
 		CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		CAA18EE42C39DF9400F888CD /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		CAA18EE62C39DFC300F888CD /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		CAA18EE82C39DFF600F888CD /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +142,6 @@
 			children = (
 				CAA18EE02C37F97900F888CD /* Extensions */,
 				CA002E092C3192C60053284B /* App */,
-				CA002E082C3192940053284B /* Home */,
 				CA002E0A2C3192DE0053284B /* Base */,
 				CA002E062C3192850053284B /* Model */,
 				CA002E2D2C36E80E0053284B /* UI-Components */,
@@ -188,6 +193,8 @@
 		CA002E092C3192C60053284B /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CA002E082C3192940053284B /* Home */,
+				CAA18EE32C39DF7D00F888CD /* Splash */,
 				CA002DD52C318B0F0053284B /* AppDelegate.swift */,
 				CA002DD72C318B0F0053284B /* SceneDelegate.swift */,
 				CA002E252C31A0830053284B /* AppCoordinator.swift */,
@@ -258,6 +265,16 @@
 				CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CAA18EE32C39DF7D00F888CD /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				CAA18EE82C39DFF600F888CD /* SplashCoordinator.swift */,
+				CAA18EE62C39DFC300F888CD /* SplashViewController.swift */,
+				CAA18EE42C39DF9400F888CD /* Splash.storyboard */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +387,7 @@
 				CA002E222C319DD00053284B /* .gitkeep in Resources */,
 				CA002E1A2C319C860053284B /* Home.storyboard in Resources */,
 				CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */,
+				CAA18EE52C39DF9400F888CD /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +415,9 @@
 				CA002E372C36F8D00053284B /* CustomRadiobutton.swift in Sources */,
 				CA002E352C36F8430053284B /* CustomToggleButton.swift in Sources */,
 				CA002E0E2C319BC10053284B /* BaseViewController.swift in Sources */,
+				CAA18EE72C39DFC300F888CD /* SplashViewController.swift in Sources */,
 				CA002E122C319C110053284B /* Coordinator.swift in Sources */,
+				CAA18EE92C39DFF600F888CD /* SplashCoordinator.swift in Sources */,
 				CA002E3B2C3701FE0053284B /* CustomButton.swift in Sources */,
 				CA002E2F2C36E81F0053284B /* CustomUIComponent.swift in Sources */,
 				CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */,

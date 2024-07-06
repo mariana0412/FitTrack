@@ -6,5 +6,6 @@
 //
 
 struct StoryboardConstants {
+    static let splash = "Splash"
     static let home = "Home"
 }
