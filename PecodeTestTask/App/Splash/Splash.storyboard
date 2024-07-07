@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,15 +21,88 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BgW-eM-c2j">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="superman" translatesAutoresizingMaskIntoConstraints="NO" id="RXY-zX-0b9">
+                                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lc1-DF-Hrd">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="supergirl" translatesAutoresizingMaskIntoConstraints="NO" id="FQJ-bt-fQn">
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="superman" translatesAutoresizingMaskIntoConstraints="NO" id="RXY-zX-0b9">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljM-HR-g0r" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
+                                                <rect key="frame" x="124.66666666666669" y="191" width="144" height="44"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="144" id="2sj-K9-088"/>
+                                                    <constraint firstAttribute="height" constant="44" id="WUh-QV-iSD"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonStyle">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="SUPERMAN"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUPERHERO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qo6-vl-y79">
+                                                <rect key="frame" x="93.333333333333329" y="362" width="206.33333333333337" height="41.666666666666686"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="32"/>
+                                                <color key="textColor" name="PrimaryYellow"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="choose a hero" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kv9-rx-Bqe">
+                                                <rect key="frame" x="145.66666666666666" y="405.66666666666669" width="101.66666666666666" height="18"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                                <color key="textColor" name="PrimaryWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="RXY-zX-0b9" firstAttribute="top" secondItem="Lc1-DF-Hrd" secondAttribute="top" id="62Q-RV-AIX"/>
+                                            <constraint firstItem="kv9-rx-Bqe" firstAttribute="top" secondItem="Qo6-vl-y79" secondAttribute="bottom" constant="2" id="Abm-3X-emJ"/>
+                                            <constraint firstItem="ljM-HR-g0r" firstAttribute="centerY" secondItem="Lc1-DF-Hrd" secondAttribute="centerY" id="W0v-nD-pSa"/>
+                                            <constraint firstAttribute="bottom" secondItem="RXY-zX-0b9" secondAttribute="bottom" id="ZDe-6L-Yhj"/>
+                                            <constraint firstItem="kv9-rx-Bqe" firstAttribute="centerX" secondItem="Lc1-DF-Hrd" secondAttribute="centerX" id="aYM-u6-VyV"/>
+                                            <constraint firstItem="Qo6-vl-y79" firstAttribute="centerX" secondItem="Lc1-DF-Hrd" secondAttribute="centerX" id="eVL-3W-PHB"/>
+                                            <constraint firstAttribute="trailing" secondItem="RXY-zX-0b9" secondAttribute="trailing" id="gFs-Uh-AkY"/>
+                                            <constraint firstItem="ljM-HR-g0r" firstAttribute="bottom" secondItem="kv9-rx-Bqe" secondAttribute="bottom" constant="-188.66666666666669" id="gRB-en-uvs"/>
+                                            <constraint firstItem="RXY-zX-0b9" firstAttribute="leading" secondItem="Lc1-DF-Hrd" secondAttribute="leading" id="kZ6-0c-wjq"/>
+                                            <constraint firstItem="ljM-HR-g0r" firstAttribute="centerX" secondItem="Lc1-DF-Hrd" secondAttribute="centerX" id="loZ-gK-xmH"/>
+                                            <constraint firstItem="Qo6-vl-y79" firstAttribute="top" secondItem="ljM-HR-g0r" secondAttribute="bottom" constant="127" id="ogP-50-CkX"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3j-qa-reh">
                                         <rect key="frame" x="0.0" y="426" width="393" height="426"/>
-                                    </imageView>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="supergirl" translatesAutoresizingMaskIntoConstraints="NO" id="FQJ-bt-fQn">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEM-sp-VFI" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
+                                                <rect key="frame" x="124.66666666666669" y="191" width="144" height="44"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="4df-Tu-esq"/>
+                                                    <constraint firstAttribute="width" constant="144" id="flH-mS-qVk"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonStyle">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="SUPERGIRL"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="FQJ-bt-fQn" secondAttribute="trailing" id="27N-6O-rsQ"/>
+                                            <constraint firstItem="XEM-sp-VFI" firstAttribute="centerX" secondItem="w3j-qa-reh" secondAttribute="centerX" id="2lC-RO-dYx"/>
+                                            <constraint firstItem="XEM-sp-VFI" firstAttribute="centerY" secondItem="w3j-qa-reh" secondAttribute="centerY" id="65g-lS-hrx"/>
+                                            <constraint firstItem="FQJ-bt-fQn" firstAttribute="leading" secondItem="w3j-qa-reh" secondAttribute="leading" id="Dyr-Kk-gmq"/>
+                                            <constraint firstItem="FQJ-bt-fQn" firstAttribute="top" secondItem="w3j-qa-reh" secondAttribute="top" id="f7A-cW-pIm"/>
+                                            <constraint firstAttribute="bottom" secondItem="FQJ-bt-fQn" secondAttribute="bottom" id="wEa-lr-BPN"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="FQJ-bt-fQn" firstAttribute="height" secondItem="RXY-zX-0b9" secondAttribute="height" id="8t1-7R-F0k"/>
+                                    <constraint firstItem="w3j-qa-reh" firstAttribute="height" secondItem="Lc1-DF-Hrd" secondAttribute="height" id="van-vc-ksJ"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -41,6 +115,11 @@
                             <constraint firstItem="BgW-eM-c2j" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="nat-Qx-vJ9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chooseHeroLabel" destination="kv9-rx-Bqe" id="iWU-fj-ekJ"/>
+                        <outlet property="supergirlButton" destination="XEM-sp-VFI" id="5Zh-ld-vCp"/>
+                        <outlet property="supermanButton" destination="ljM-HR-g0r" id="WA6-iW-tTh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,6 +129,12 @@
     <resources>
         <image name="supergirl" width="375" height="406"/>
         <image name="superman" width="375" height="406"/>
+        <namedColor name="PrimaryWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryYellow">
+            <color red="1" green="0.85900002717971802" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
