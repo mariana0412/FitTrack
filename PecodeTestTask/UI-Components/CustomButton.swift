@@ -34,8 +34,6 @@ final class CustomButton: CustomUIComponent {
     private enum Constants {
         enum Layout {
             static let buttonCornerRadius: CGFloat = 15.0
-            static let buttonWidth: CGFloat = 289.0
-            static let buttonHeight: CGFloat = 49.0
             static let fontSize: CGFloat = 16.0
             static let fontName = "Saira"
             static let boldFontName = "Saira-SemiBold"
@@ -86,8 +84,6 @@ final class CustomButton: CustomUIComponent {
         case .yellowBorder:
             button.backgroundColor = Constants.Colors.yellowBorderColor
             button.setTitleColor(Constants.Colors.yellowBorderTitleColor, for: .normal)
-            button.widthAnchor.constraint(equalToConstant: Constants.Layout.buttonWidth).isActive = true
-            button.heightAnchor.constraint(equalToConstant: Constants.Layout.buttonHeight).isActive = true
             button.titleLabel?.font = UIFont(name: Constants.Layout.fontName, size: Constants.Layout.fontSize)
             
         case .yellowText:
