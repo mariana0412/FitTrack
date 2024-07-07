@@ -18,9 +18,10 @@ class SplashViewController: UIViewController {
         
         chooseHeroLabel.font = UIFont(name: "Saira-Regular", size: 16)
     }
-
+    
     static func instantiate() -> SplashViewController? {
         let storyboard = UIStoryboard(name: StoryboardConstants.splash, bundle: .main)
         return storyboard.instantiateViewController(withIdentifier: "SplashViewController") as? SplashViewController
     }
+    
 }

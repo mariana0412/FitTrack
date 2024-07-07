@@ -37,6 +37,7 @@
 		CAA18EE72C39DFC300F888CD /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE62C39DFC300F888CD /* SplashViewController.swift */; };
 		CAA18EE92C39DFF600F888CD /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE82C39DFF600F888CD /* SplashCoordinator.swift */; };
 		CAA18EEB2C3ADC2C00F888CD /* Saira-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAA18EEA2C3ADC2C00F888CD /* Saira-Regular.ttf */; };
+		CAA18EF02C3AF02C00F888CD /* GradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EEF2C3AF02C00F888CD /* GradientImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		CAA18EE62C39DFC300F888CD /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		CAA18EE82C39DFF600F888CD /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		CAA18EEA2C3ADC2C00F888CD /* Saira-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Regular.ttf"; sourceTree = "<group>"; };
+		CAA18EEF2C3AF02C00F888CD /* GradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 				CA002E2E2C36E81F0053284B /* CustomUIComponent.swift */,
 				CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */,
 				CA002E3A2C3701FE0053284B /* CustomButton.swift */,
+				CAA18EEF2C3AF02C00F888CD /* GradientImageView.swift */,
 				CA1EE8452C376FCD00E58403 /* CustomToggleButton */,
 				CA1EE8442C376FBF00E58403 /* CustomTextField */,
 			);
@@ -430,6 +433,7 @@
 				CAA18EE72C39DFC300F888CD /* SplashViewController.swift in Sources */,
 				CA002E122C319C110053284B /* Coordinator.swift in Sources */,
 				CAA18EE92C39DFF600F888CD /* SplashCoordinator.swift in Sources */,
+				CAA18EF02C3AF02C00F888CD /* GradientImageView.swift in Sources */,
 				CA002E3B2C3701FE0053284B /* CustomButton.swift in Sources */,
 				CA002E2F2C36E81F0053284B /* CustomUIComponent.swift in Sources */,
 				CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */,
