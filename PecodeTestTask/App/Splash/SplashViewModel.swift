@@ -5,4 +5,14 @@
 //  Created by Mariana Piz on 07.07.2024.
 //
 
-import Foundation
+class SplashViewModel {
+    private var coordinator: SplashCoordinator?
+    
+    init(coordinator: SplashCoordinator?) {
+        self.coordinator = coordinator
+    }
+    
+    func buttonTapped(with heroName: String) {
+        coordinator?.navigateToHome(with: heroName)
+    }
+}

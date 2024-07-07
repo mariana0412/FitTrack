@@ -28,29 +28,30 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljM-HR-g0r" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIG-65-bZ0" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
                                                 <rect key="frame" x="124.66666666666669" y="191" width="144" height="44"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="144" id="2sj-K9-088"/>
-                                                    <constraint firstAttribute="height" constant="44" id="WUh-QV-iSD"/>
+                                                    <constraint firstAttribute="width" constant="144" id="eUJ-Oq-9Rf"/>
+                                                    <constraint firstAttribute="height" constant="44" id="lyU-K5-b6B"/>
                                                 </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="buttonStyle">
                                                         <integer key="value" value="0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="SUPERMAN"/>
                                                 </userDefinedRuntimeAttributes>
-                                            </view>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="RXY-zX-0b9" firstAttribute="top" secondItem="Lc1-DF-Hrd" secondAttribute="top" id="62Q-RV-AIX"/>
-                                            <constraint firstItem="ljM-HR-g0r" firstAttribute="centerY" secondItem="Lc1-DF-Hrd" secondAttribute="centerY" id="W0v-nD-pSa"/>
+                                            <constraint firstItem="MIG-65-bZ0" firstAttribute="centerX" secondItem="Lc1-DF-Hrd" secondAttribute="centerX" id="Ghg-0K-RaH"/>
+                                            <constraint firstItem="MIG-65-bZ0" firstAttribute="centerY" secondItem="Lc1-DF-Hrd" secondAttribute="centerY" id="PIl-bE-aeh"/>
                                             <constraint firstAttribute="bottom" secondItem="RXY-zX-0b9" secondAttribute="bottom" id="ZDe-6L-Yhj"/>
                                             <constraint firstAttribute="trailing" secondItem="RXY-zX-0b9" secondAttribute="trailing" id="gFs-Uh-AkY"/>
                                             <constraint firstItem="RXY-zX-0b9" firstAttribute="leading" secondItem="Lc1-DF-Hrd" secondAttribute="leading" id="kZ6-0c-wjq"/>
-                                            <constraint firstItem="ljM-HR-g0r" firstAttribute="centerX" secondItem="Lc1-DF-Hrd" secondAttribute="centerX" id="loZ-gK-xmH"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3j-qa-reh">
@@ -60,28 +61,29 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEM-sp-VFI" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WpS-fa-Xti" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
                                                 <rect key="frame" x="124.66666666666669" y="191" width="144" height="44"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="44" id="4df-Tu-esq"/>
-                                                    <constraint firstAttribute="width" constant="144" id="flH-mS-qVk"/>
+                                                    <constraint firstAttribute="height" constant="44" id="ACz-j0-9Pz"/>
+                                                    <constraint firstAttribute="width" constant="144" id="QUG-ZQ-s3f"/>
                                                 </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="buttonStyle">
                                                         <integer key="value" value="0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="SUPERGIRL"/>
                                                 </userDefinedRuntimeAttributes>
-                                            </view>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="FQJ-bt-fQn" secondAttribute="trailing" id="27N-6O-rsQ"/>
-                                            <constraint firstItem="XEM-sp-VFI" firstAttribute="centerX" secondItem="w3j-qa-reh" secondAttribute="centerX" id="2lC-RO-dYx"/>
-                                            <constraint firstItem="XEM-sp-VFI" firstAttribute="centerY" secondItem="w3j-qa-reh" secondAttribute="centerY" id="65g-lS-hrx"/>
                                             <constraint firstItem="FQJ-bt-fQn" firstAttribute="leading" secondItem="w3j-qa-reh" secondAttribute="leading" id="Dyr-Kk-gmq"/>
                                             <constraint firstItem="FQJ-bt-fQn" firstAttribute="top" secondItem="w3j-qa-reh" secondAttribute="top" id="f7A-cW-pIm"/>
+                                            <constraint firstItem="WpS-fa-Xti" firstAttribute="centerY" secondItem="w3j-qa-reh" secondAttribute="centerY" id="hXF-uG-imO"/>
+                                            <constraint firstItem="WpS-fa-Xti" firstAttribute="centerX" secondItem="w3j-qa-reh" secondAttribute="centerX" id="mNE-s3-3IY"/>
                                             <constraint firstAttribute="bottom" secondItem="FQJ-bt-fQn" secondAttribute="bottom" id="wEa-lr-BPN"/>
                                         </constraints>
                                     </view>
@@ -132,8 +134,8 @@
                     </view>
                     <connections>
                         <outlet property="chooseHeroLabel" destination="kv9-rx-Bqe" id="iWU-fj-ekJ"/>
-                        <outlet property="supergirlButton" destination="XEM-sp-VFI" id="gDn-qa-7Pd"/>
-                        <outlet property="supermanButton" destination="ljM-HR-g0r" id="WA6-iW-tTh"/>
+                        <outlet property="supergirlButton" destination="WpS-fa-Xti" id="Y72-jY-X26"/>
+                        <outlet property="supermanButton" destination="MIG-65-bZ0" id="bKs-oo-co8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -141,6 +143,14 @@
             <point key="canvasLocation" x="61" y="-34"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="MIG-65-bZ0">
+            <size key="intrinsicContentSize" width="115" height="34.333333333333336"/>
+        </designable>
+        <designable name="WpS-fa-Xti">
+            <size key="intrinsicContentSize" width="113.66666666666667" height="34.333333333333336"/>
+        </designable>
+    </designables>
     <resources>
         <image name="supergirl" width="375" height="406"/>
         <image name="superman" width="375" height="406"/>

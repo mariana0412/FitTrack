@@ -9,16 +9,18 @@ import UIKit
 
 class HomeCoordinator: Coordinator {
     var navigationController: UINavigationController
+    private var heroName: String
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, heroName: String) {
         self.navigationController = navigationController
+        self.heroName = heroName
     }
 
     func start() {
         guard let homeViewController = HomeViewController.instantiate() else {
             fatalError("Unable to instantiate HomeViewController from storyboard")
         }
-        homeViewController.viewModel = HomeViewModel(coordinator: self)
+        homeViewController.viewModel = HomeViewModel(coordinator: self, heroName: heroName)
         navigationController.pushViewController(homeViewController, animated: true)
     }
 }

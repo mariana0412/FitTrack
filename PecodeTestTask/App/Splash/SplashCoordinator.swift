@@ -18,6 +18,13 @@ class SplashCoordinator: Coordinator {
         guard let splashViewController = SplashViewController.instantiate() else {
             fatalError("Unable to instantiate SplashViewController from storyboard")
         }
+        splashViewController.viewModel = SplashViewModel(coordinator: self)
         navigationController.pushViewController(splashViewController, animated: true)
     }
+    
+    func navigateToHome(with heroName: String) {
+        let homeCoordinator = HomeCoordinator(navigationController: navigationController, heroName: heroName)
+        homeCoordinator.start()
+    }
+    
 }

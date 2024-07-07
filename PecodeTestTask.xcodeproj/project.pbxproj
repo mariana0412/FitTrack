@@ -38,6 +38,7 @@
 		CAA18EE92C39DFF600F888CD /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE82C39DFF600F888CD /* SplashCoordinator.swift */; };
 		CAA18EEB2C3ADC2C00F888CD /* Saira-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAA18EEA2C3ADC2C00F888CD /* Saira-Regular.ttf */; };
 		CAA18EF02C3AF02C00F888CD /* GradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EEF2C3AF02C00F888CD /* GradientImageView.swift */; };
+		CAA18EF22C3B182800F888CD /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EF12C3B182800F888CD /* SplashViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		CAA18EE82C39DFF600F888CD /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		CAA18EEA2C3ADC2C00F888CD /* Saira-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Regular.ttf"; sourceTree = "<group>"; };
 		CAA18EEF2C3AF02C00F888CD /* GradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientImageView.swift; sourceTree = "<group>"; };
+		CAA18EF12C3B182800F888CD /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,8 +188,8 @@
 		CA002E082C3192940053284B /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				CA002E132C319C5C0053284B /* HomeCoordinator.swift */,
 				CA002E152C319C6D0053284B /* HomeViewController.swift */,
+				CA002E132C319C5C0053284B /* HomeCoordinator.swift */,
 				CA002E172C319C7A0053284B /* HomeViewModel.swift */,
 				CA002E192C319C860053284B /* Home.storyboard */,
 			);
@@ -276,8 +278,9 @@
 		CAA18EE32C39DF7D00F888CD /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				CAA18EE82C39DFF600F888CD /* SplashCoordinator.swift */,
 				CAA18EE62C39DFC300F888CD /* SplashViewController.swift */,
+				CAA18EE82C39DFF600F888CD /* SplashCoordinator.swift */,
+				CAA18EF12C3B182800F888CD /* SplashViewModel.swift */,
 				CAA18EE42C39DF9400F888CD /* Splash.storyboard */,
 			);
 			path = Splash;
@@ -430,6 +433,7 @@
 				CA002E372C36F8D00053284B /* CustomRadiobutton.swift in Sources */,
 				CA002E352C36F8430053284B /* CustomToggleButton.swift in Sources */,
 				CA002E0E2C319BC10053284B /* BaseViewController.swift in Sources */,
+				CAA18EF22C3B182800F888CD /* SplashViewModel.swift in Sources */,
 				CAA18EE72C39DFC300F888CD /* SplashViewController.swift in Sources */,
 				CA002E122C319C110053284B /* Coordinator.swift in Sources */,
 				CAA18EE92C39DFF600F888CD /* SplashCoordinator.swift in Sources */,

@@ -8,7 +8,8 @@
 import UIKit
 
 class SplashViewController: UIViewController {
-
+    var viewModel: SplashViewModel?
+    
     @IBOutlet weak var chooseHeroLabel: UILabel!
     @IBOutlet weak var supermanButton: CustomButton!
     @IBOutlet weak var supergirlButton: CustomButton!
@@ -16,12 +17,30 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chooseHeroLabel.font = UIFont(name: "Saira-Regular", size: 16)
+        setupUI()
+        setupActions()
     }
     
     static func instantiate() -> SplashViewController? {
         let storyboard = UIStoryboard(name: StoryboardConstants.splash, bundle: .main)
         return storyboard.instantiateViewController(withIdentifier: "SplashViewController") as? SplashViewController
+    }
+    
+    @objc private func supermanButtonTapped() {
+        viewModel?.buttonTapped(with: "Superman")
+    }
+    
+    @objc private func supergirlButtonTapped() {
+        viewModel?.buttonTapped(with: "Supergirl")
+    }
+    
+    private func setupUI() {
+        chooseHeroLabel.font = UIFont(name: "Saira-Regular", size: 16)
+    }
+    
+    private func setupActions() {
+        supermanButton.addTarget(self, action: #selector(supermanButtonTapped), for: .touchUpInside)
+        supergirlButton.addTarget(self, action: #selector(supergirlButtonTapped), for: .touchUpInside)
     }
     
 }

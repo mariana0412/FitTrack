@@ -7,9 +7,11 @@
 
 class HomeViewModel {
     weak var coordinator: HomeCoordinator?
-
-    init(coordinator: HomeCoordinator) {
+    var heroName: String
+    
+    init(coordinator: HomeCoordinator, heroName: String) {
         self.coordinator = coordinator
+        self.heroName = heroName
     }
 
 }
