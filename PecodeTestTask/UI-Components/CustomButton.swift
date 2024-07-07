@@ -8,7 +8,7 @@
 import UIKit
 
 @IBDesignable
-final class CustomButton: CustomUIComponent {
+final class CustomButton: UIButton {
     
     enum Style: Int {
         case yellowBorder
@@ -25,17 +25,14 @@ final class CustomButton: CustomUIComponent {
     
     @IBInspectable var buttonTitle: String? {
         didSet {
-            button.setTitle(buttonTitle, for: .normal)
+            setTitle(buttonTitle, for: .normal)
         }
     }
     
-    private var button: UIButton!
-    
     private enum Constants {
         enum Layout {
-            static let buttonCornerRadius: CGFloat = 15.0
             static let fontSize: CGFloat = 16.0
-            static let fontName = "Saira"
+            static let fontName = "Saira-Regular"
             static let boldFontName = "Saira-SemiBold"
             static let borderWidth: CGFloat = 1.0
         }
@@ -58,42 +55,32 @@ final class CustomButton: CustomUIComponent {
         commonInit()
     }
     
-    override func commonInit() {
-        super.commonInit()
-        setupButton()
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.layer.cornerRadius = self.bounds.height / 2
     }
     
-    private func setupButton() {
+    private func commonInit() {
         self.backgroundColor = .clear
-        button = UIButton(type: .system)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = Constants.Layout.buttonCornerRadius
-        button.clipsToBounds = true
-        addSubview(button)
-        
-        NSLayoutConstraint.activate([
-            button.leadingAnchor.constraint(equalTo: leadingAnchor),
-            button.trailingAnchor.constraint(equalTo: trailingAnchor),
-            button.topAnchor.constraint(equalTo: topAnchor),
-            button.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        self.clipsToBounds = true
+        applyStyle(Style(rawValue: buttonStyle) ?? .yellowBorder)
     }
     
     private func applyStyle(_ style: Style) {
         switch style {
         case .yellowBorder:
-            button.backgroundColor = Constants.Colors.yellowBorderColor
-            button.setTitleColor(Constants.Colors.yellowBorderTitleColor, for: .normal)
-            button.titleLabel?.font = UIFont(name: Constants.Layout.fontName, size: Constants.Layout.fontSize)
+            self.backgroundColor = Constants.Colors.yellowBorderColor
+            self.setTitleColor(Constants.Colors.yellowBorderTitleColor, for: .normal)
+            self.titleLabel?.font = UIFont(name: Constants.Layout.fontName, size: Constants.Layout.fontSize)
             
         case .yellowText:
-            button.setTitleColor(Constants.Colors.yellowTextColor, for: .normal)
-            button.titleLabel?.font = UIFont(name: Constants.Layout.boldFontName, size: Constants.Layout.fontSize)
+            self.setTitleColor(Constants.Colors.yellowTextColor, for: .normal)
+            self.titleLabel?.font = UIFont(name: Constants.Layout.boldFontName, size: Constants.Layout.fontSize)
             
         case .pinkText:
-            button.setTitleColor(Constants.Colors.pinkTextColor, for: .normal)
-            button.titleLabel?.font = UIFont(name: Constants.Layout.boldFontName, size: Constants.Layout.fontSize)
+            self.setTitleColor(Constants.Colors.pinkTextColor, for: .normal)
+            self.titleLabel?.font = UIFont(name: Constants.Layout.boldFontName, size: Constants.Layout.fontSize)
         }
     }
-    
 }
