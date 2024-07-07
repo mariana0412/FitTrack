@@ -15,7 +15,7 @@ class SplashCoordinator: Coordinator {
     }
     
     func start() {
-        guard let splashViewController = HomeViewController.instantiate() else {
+        guard let splashViewController = SplashViewController.instantiate() else {
             fatalError("Unable to instantiate SplashViewController from storyboard")
         }
         navigationController.pushViewController(splashViewController, animated: true)

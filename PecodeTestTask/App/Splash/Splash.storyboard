@@ -12,12 +12,34 @@
         <!--Splash View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="SplashViewController" customModule="PecodeTestTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewController" id="Y6W-OH-hqX" customClass="SplashViewController" customModule="PecodeTestTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BgW-eM-c2j">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="superman" translatesAutoresizingMaskIntoConstraints="NO" id="RXY-zX-0b9">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="supergirl" translatesAutoresizingMaskIntoConstraints="NO" id="FQJ-bt-fQn">
+                                        <rect key="frame" x="0.0" y="426" width="393" height="426"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="FQJ-bt-fQn" firstAttribute="height" secondItem="RXY-zX-0b9" secondAttribute="height" id="8t1-7R-F0k"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="BgW-eM-c2j" secondAttribute="bottom" id="VYH-K1-aKR"/>
+                            <constraint firstItem="BgW-eM-c2j" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="WNO-6j-0tw"/>
+                            <constraint firstAttribute="trailing" secondItem="BgW-eM-c2j" secondAttribute="trailing" id="ZKd-AL-P2y"/>
+                            <constraint firstItem="BgW-eM-c2j" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="nat-Qx-vJ9"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -26,6 +48,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="supergirl" width="375" height="406"/>
+        <image name="superman" width="375" height="406"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

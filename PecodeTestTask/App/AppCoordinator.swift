@@ -10,7 +10,7 @@ import UIKit
 class AppCoordinator: Coordinator {
     private let window: UIWindow
     var navigationController: UINavigationController
-    private var homeCoordinator: HomeCoordinator?
+    private var splashCoordinator: SplashCoordinator?
 
     init(window: UIWindow) {
         self.window = window
@@ -21,7 +21,7 @@ class AppCoordinator: Coordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
 
-        homeCoordinator = HomeCoordinator(navigationController: navigationController)
-        homeCoordinator?.start()
+        splashCoordinator = SplashCoordinator(navigationController: navigationController)
+        splashCoordinator?.start()
     }
 }
