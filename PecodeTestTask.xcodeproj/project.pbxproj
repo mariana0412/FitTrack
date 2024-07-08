@@ -39,6 +39,18 @@
 		CAA18EEB2C3ADC2C00F888CD /* Saira-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAA18EEA2C3ADC2C00F888CD /* Saira-Regular.ttf */; };
 		CAA18EF02C3AF02C00F888CD /* GradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EEF2C3AF02C00F888CD /* GradientImageView.swift */; };
 		CAA18EF22C3B182800F888CD /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EF12C3B182800F888CD /* SplashViewModel.swift */; };
+		CAA18EFB2C3C132200F888CD /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EFA2C3C132200F888CD /* ProgressViewController.swift */; };
+		CAA18EFD2C3C133800F888CD /* ProgressCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EFC2C3C133800F888CD /* ProgressCoordinator.swift */; };
+		CAA18EFF2C3C134200F888CD /* ProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EFE2C3C134200F888CD /* ProgressViewModel.swift */; };
+		CAA18F012C3C134B00F888CD /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA18F002C3C134B00F888CD /* Progress.storyboard */; };
+		CAA18F032C3C147400F888CD /* Calculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA18F022C3C147400F888CD /* Calculator.storyboard */; };
+		CAA18F052C3C148200F888CD /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F042C3C148200F888CD /* CalculatorViewController.swift */; };
+		CAA18F072C3C148C00F888CD /* CalculatorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F062C3C148C00F888CD /* CalculatorCoordinator.swift */; };
+		CAA18F092C3C149C00F888CD /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F082C3C149C00F888CD /* CalculatorViewModel.swift */; };
+		CAA18F0B2C3C157C00F888CD /* MusclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F0A2C3C157C00F888CD /* MusclesViewController.swift */; };
+		CAA18F0D2C3C158700F888CD /* MusclesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F0C2C3C158700F888CD /* MusclesViewModel.swift */; };
+		CAA18F0F2C3C159300F888CD /* MusclesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F0E2C3C159300F888CD /* MusclesCoordinator.swift */; };
+		CAA18F112C3C159C00F888CD /* Muscles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA18F102C3C159C00F888CD /* Muscles.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +108,18 @@
 		CAA18EEA2C3ADC2C00F888CD /* Saira-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Regular.ttf"; sourceTree = "<group>"; };
 		CAA18EEF2C3AF02C00F888CD /* GradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientImageView.swift; sourceTree = "<group>"; };
 		CAA18EF12C3B182800F888CD /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		CAA18EFA2C3C132200F888CD /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		CAA18EFC2C3C133800F888CD /* ProgressCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCoordinator.swift; sourceTree = "<group>"; };
+		CAA18EFE2C3C134200F888CD /* ProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewModel.swift; sourceTree = "<group>"; };
+		CAA18F002C3C134B00F888CD /* Progress.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
+		CAA18F022C3C147400F888CD /* Calculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calculator.storyboard; sourceTree = "<group>"; };
+		CAA18F042C3C148200F888CD /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		CAA18F062C3C148C00F888CD /* CalculatorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCoordinator.swift; sourceTree = "<group>"; };
+		CAA18F082C3C149C00F888CD /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		CAA18F0A2C3C157C00F888CD /* MusclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesViewController.swift; sourceTree = "<group>"; };
+		CAA18F0C2C3C158700F888CD /* MusclesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesViewModel.swift; sourceTree = "<group>"; };
+		CAA18F0E2C3C159300F888CD /* MusclesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesCoordinator.swift; sourceTree = "<group>"; };
+		CAA18F102C3C159C00F888CD /* Muscles.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Muscles.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,8 +223,11 @@
 		CA002E092C3192C60053284B /* App */ = {
 			isa = PBXGroup;
 			children = (
-				CA002E082C3192940053284B /* Home */,
 				CAA18EE32C39DF7D00F888CD /* Splash */,
+				CA002E082C3192940053284B /* Home */,
+				CAA18EF92C3C12E200F888CD /* Progress */,
+				CAA18EF62C3C12D000F888CD /* Calculator */,
+				CAA18EF82C3C12DD00F888CD /* Muscles */,
 				CA002DD52C318B0F0053284B /* AppDelegate.swift */,
 				CA002DD72C318B0F0053284B /* SceneDelegate.swift */,
 				CA002E252C31A0830053284B /* AppCoordinator.swift */,
@@ -292,6 +319,39 @@
 				CAA18EEA2C3ADC2C00F888CD /* Saira-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CAA18EF62C3C12D000F888CD /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				CAA18F042C3C148200F888CD /* CalculatorViewController.swift */,
+				CAA18F062C3C148C00F888CD /* CalculatorCoordinator.swift */,
+				CAA18F082C3C149C00F888CD /* CalculatorViewModel.swift */,
+				CAA18F022C3C147400F888CD /* Calculator.storyboard */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		CAA18EF82C3C12DD00F888CD /* Muscles */ = {
+			isa = PBXGroup;
+			children = (
+				CAA18F0A2C3C157C00F888CD /* MusclesViewController.swift */,
+				CAA18F0E2C3C159300F888CD /* MusclesCoordinator.swift */,
+				CAA18F0C2C3C158700F888CD /* MusclesViewModel.swift */,
+				CAA18F102C3C159C00F888CD /* Muscles.storyboard */,
+			);
+			path = Muscles;
+			sourceTree = "<group>";
+		};
+		CAA18EF92C3C12E200F888CD /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				CAA18EFA2C3C132200F888CD /* ProgressViewController.swift */,
+				CAA18EFC2C3C133800F888CD /* ProgressCoordinator.swift */,
+				CAA18EFE2C3C134200F888CD /* ProgressViewModel.swift */,
+				CAA18F002C3C134B00F888CD /* Progress.storyboard */,
+			);
+			path = Progress;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,6 +464,9 @@
 				CA002E222C319DD00053284B /* .gitkeep in Resources */,
 				CAA18EEB2C3ADC2C00F888CD /* Saira-Regular.ttf in Resources */,
 				CA002E1A2C319C860053284B /* Home.storyboard in Resources */,
+				CAA18F032C3C147400F888CD /* Calculator.storyboard in Resources */,
+				CAA18F012C3C134B00F888CD /* Progress.storyboard in Resources */,
+				CAA18F112C3C159C00F888CD /* Muscles.storyboard in Resources */,
 				CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */,
 				CAA18EE52C39DF9400F888CD /* Splash.storyboard in Resources */,
 			);
@@ -430,13 +493,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAA18F072C3C148C00F888CD /* CalculatorCoordinator.swift in Sources */,
 				CA002E372C36F8D00053284B /* CustomRadiobutton.swift in Sources */,
 				CA002E352C36F8430053284B /* CustomToggleButton.swift in Sources */,
 				CA002E0E2C319BC10053284B /* BaseViewController.swift in Sources */,
+				CAA18EFF2C3C134200F888CD /* ProgressViewModel.swift in Sources */,
+				CAA18EFB2C3C132200F888CD /* ProgressViewController.swift in Sources */,
 				CAA18EF22C3B182800F888CD /* SplashViewModel.swift in Sources */,
 				CAA18EE72C39DFC300F888CD /* SplashViewController.swift in Sources */,
 				CA002E122C319C110053284B /* Coordinator.swift in Sources */,
+				CAA18F0B2C3C157C00F888CD /* MusclesViewController.swift in Sources */,
+				CAA18F0D2C3C158700F888CD /* MusclesViewModel.swift in Sources */,
 				CAA18EE92C39DFF600F888CD /* SplashCoordinator.swift in Sources */,
+				CAA18F092C3C149C00F888CD /* CalculatorViewModel.swift in Sources */,
+				CAA18F0F2C3C159300F888CD /* MusclesCoordinator.swift in Sources */,
+				CAA18EFD2C3C133800F888CD /* ProgressCoordinator.swift in Sources */,
+				CAA18F052C3C148200F888CD /* CalculatorViewController.swift in Sources */,
 				CAA18EF02C3AF02C00F888CD /* GradientImageView.swift in Sources */,
 				CA002E3B2C3701FE0053284B /* CustomButton.swift in Sources */,
 				CA002E2F2C36E81F0053284B /* CustomUIComponent.swift in Sources */,

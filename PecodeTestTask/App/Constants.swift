@@ -8,4 +8,7 @@
 struct StoryboardConstants {
     static let splash = "Splash"
     static let home = "Home"
+    static let progress = "Progress"
+    static let calculator = "Calculator"
+    static let muscles = "Muscles"
 }
