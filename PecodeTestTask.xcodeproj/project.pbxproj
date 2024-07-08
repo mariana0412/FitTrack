@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8CF7041F3B23438D9A0E4F59 /* Pods_PecodeTestTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E30CFDB321ABB5DFE46155 /* Pods_PecodeTestTaskTests.framework */; };
+		BB2874FC05536BEA6E59699A /* Pods_PecodeTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6934EB7C2CFFFD0632DD40EC /* Pods_PecodeTestTask.framework */; };
+		C2158E76AD8568C91036F9B2 /* Pods_PecodeTestTask_PecodeTestTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E6FBD262DE63F012D8ABA95 /* Pods_PecodeTestTask_PecodeTestTaskUITests.framework */; };
 		CA002DD62C318B0F0053284B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002DD52C318B0F0053284B /* AppDelegate.swift */; };
 		CA002DD82C318B0F0053284B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002DD72C318B0F0053284B /* SceneDelegate.swift */; };
 		CA002DDF2C318B110053284B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA002DDE2C318B110053284B /* Assets.xcassets */; };
@@ -75,6 +78,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0096CCB670CF1E96856D46FF /* Pods-PecodeTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTask.debug.xcconfig"; path = "Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask.debug.xcconfig"; sourceTree = "<group>"; };
+		4E6FBD262DE63F012D8ABA95 /* Pods_PecodeTestTask_PecodeTestTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PecodeTestTask_PecodeTestTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6934EB7C2CFFFD0632DD40EC /* Pods_PecodeTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PecodeTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BFDA7BF3483B40814FB11F6 /* Pods-PecodeTestTaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTaskTests.release.xcconfig"; path = "Target Support Files/Pods-PecodeTestTaskTests/Pods-PecodeTestTaskTests.release.xcconfig"; sourceTree = "<group>"; };
+		83C4184F2519B7D96BF75A92 /* Pods-PecodeTestTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTaskTests.debug.xcconfig"; path = "Target Support Files/Pods-PecodeTestTaskTests/Pods-PecodeTestTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C9E30CFDB321ABB5DFE46155 /* Pods_PecodeTestTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PecodeTestTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA002DD22C318B0F0053284B /* PecodeTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PecodeTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA002DD52C318B0F0053284B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA002DD72C318B0F0053284B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +137,9 @@
 		CAA18F172C3C3B7500F888CD /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		CAA18F1A2C3C554400F888CD /* GradientUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientUtils.swift; sourceTree = "<group>"; };
 		CAA18F1C2C3C56F700F888CD /* OverlayUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayUtils.swift; sourceTree = "<group>"; };
+		E9BFB10D6DD11C2F21E3626D /* Pods-PecodeTestTask-PecodeTestTaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTask-PecodeTestTaskUITests.release.xcconfig"; path = "Target Support Files/Pods-PecodeTestTask-PecodeTestTaskUITests/Pods-PecodeTestTask-PecodeTestTaskUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F3B9181153AC8FAC3058B090 /* Pods-PecodeTestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTask.release.xcconfig"; path = "Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask.release.xcconfig"; sourceTree = "<group>"; };
+		FBB731AC4AB89442604A6182 /* Pods-PecodeTestTask-PecodeTestTaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTask-PecodeTestTaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-PecodeTestTask-PecodeTestTaskUITests/Pods-PecodeTestTask-PecodeTestTaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2874FC05536BEA6E59699A /* Pods_PecodeTestTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF7041F3B23438D9A0E4F59 /* Pods_PecodeTestTaskTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2158E76AD8568C91036F9B2 /* Pods_PecodeTestTask_PecodeTestTaskUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +177,8 @@
 				CA002DEB2C318B110053284B /* PecodeTestTaskTests */,
 				CA002DF52C318B110053284B /* PecodeTestTaskUITests */,
 				CA002DD32C318B0F0053284B /* Products */,
+				D2B82E52827633BB53D6C353 /* Pods */,
+				E200BC837313A785CA69F752 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -382,6 +399,30 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		D2B82E52827633BB53D6C353 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0096CCB670CF1E96856D46FF /* Pods-PecodeTestTask.debug.xcconfig */,
+				F3B9181153AC8FAC3058B090 /* Pods-PecodeTestTask.release.xcconfig */,
+				FBB731AC4AB89442604A6182 /* Pods-PecodeTestTask-PecodeTestTaskUITests.debug.xcconfig */,
+				E9BFB10D6DD11C2F21E3626D /* Pods-PecodeTestTask-PecodeTestTaskUITests.release.xcconfig */,
+				83C4184F2519B7D96BF75A92 /* Pods-PecodeTestTaskTests.debug.xcconfig */,
+				6BFDA7BF3483B40814FB11F6 /* Pods-PecodeTestTaskTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E200BC837313A785CA69F752 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6934EB7C2CFFFD0632DD40EC /* Pods_PecodeTestTask.framework */,
+				4E6FBD262DE63F012D8ABA95 /* Pods_PecodeTestTask_PecodeTestTaskUITests.framework */,
+				C9E30CFDB321ABB5DFE46155 /* Pods_PecodeTestTaskTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -389,9 +430,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA002DFC2C318B110053284B /* Build configuration list for PBXNativeTarget "PecodeTestTask" */;
 			buildPhases = (
+				8BDCDC3DE130054C3A1A5132 /* [CP] Check Pods Manifest.lock */,
 				CA002DCE2C318B0F0053284B /* Sources */,
 				CA002DCF2C318B0F0053284B /* Frameworks */,
 				CA002DD02C318B0F0053284B /* Resources */,
+				EB2A0D2356B743F351B7A740 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -406,6 +449,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA002DFF2C318B110053284B /* Build configuration list for PBXNativeTarget "PecodeTestTaskTests" */;
 			buildPhases = (
+				CAB4F2B9E8BF3C88D5DFE77E /* [CP] Check Pods Manifest.lock */,
 				CA002DE42C318B110053284B /* Sources */,
 				CA002DE52C318B110053284B /* Frameworks */,
 				CA002DE62C318B110053284B /* Resources */,
@@ -424,9 +468,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA002E022C318B110053284B /* Build configuration list for PBXNativeTarget "PecodeTestTaskUITests" */;
 			buildPhases = (
+				8E456370F5E3870CB6C7E1E4 /* [CP] Check Pods Manifest.lock */,
 				CA002DEE2C318B110053284B /* Sources */,
 				CA002DEF2C318B110053284B /* Frameworks */,
 				CA002DF02C318B110053284B /* Resources */,
+				32DED2949010180600A83671 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -515,6 +561,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		32DED2949010180600A83671 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PecodeTestTask-PecodeTestTaskUITests/Pods-PecodeTestTask-PecodeTestTaskUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PecodeTestTask-PecodeTestTaskUITests/Pods-PecodeTestTask-PecodeTestTaskUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PecodeTestTask-PecodeTestTaskUITests/Pods-PecodeTestTask-PecodeTestTaskUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BDCDC3DE130054C3A1A5132 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PecodeTestTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E456370F5E3870CB6C7E1E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PecodeTestTask-PecodeTestTaskUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAB4F2B9E8BF3C88D5DFE77E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PecodeTestTaskTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB2A0D2356B743F351B7A740 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CA002DCE2C318B0F0053284B /* Sources */ = {
@@ -723,6 +872,7 @@
 		};
 		CA002DFD2C318B110053284B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0096CCB670CF1E96856D46FF /* Pods-PecodeTestTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -752,6 +902,7 @@
 		};
 		CA002DFE2C318B110053284B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3B9181153AC8FAC3058B090 /* Pods-PecodeTestTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -781,6 +932,7 @@
 		};
 		CA002E002C318B110053284B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83C4184F2519B7D96BF75A92 /* Pods-PecodeTestTaskTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -801,6 +953,7 @@
 		};
 		CA002E012C318B110053284B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BFDA7BF3483B40814FB11F6 /* Pods-PecodeTestTaskTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -821,6 +974,7 @@
 		};
 		CA002E032C318B110053284B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBB731AC4AB89442604A6182 /* Pods-PecodeTestTask-PecodeTestTaskUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -839,6 +993,7 @@
 		};
 		CA002E042C318B110053284B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9BFB10D6DD11C2F21E3626D /* Pods-PecodeTestTask-PecodeTestTaskUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
