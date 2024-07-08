@@ -10,9 +10,9 @@ import UIKit
 class SplashViewController: UIViewController {
     var viewModel: SplashViewModel?
     
-    @IBOutlet weak var chooseHeroLabel: UILabel!
-    @IBOutlet weak var supermanButton: CustomButton!
-    @IBOutlet weak var supergirlButton: CustomButton!
+    @IBOutlet private weak var chooseHeroLabel: UILabel!
+    @IBOutlet private weak var supermanButton: CustomButton!
+    @IBOutlet private weak var supergirlButton: CustomButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

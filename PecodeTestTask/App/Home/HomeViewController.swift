@@ -9,9 +9,9 @@ import UIKit
 
 class HomeViewController: BaseViewController {
     var viewModel: HomeViewModel?
-    var superheroName: String?
+    private var superheroName: String?
 
-    @IBOutlet weak var superheroLabel: UILabel!
+    @IBOutlet private weak var superheroLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
