@@ -13,42 +13,50 @@ enum TabBarItem: String, CaseIterable {
     case calculator
     case muscles
 
+    struct ItemInfo {
+        let title: String
+        let icon: UIImage?
+        let selectedIcon: UIImage?
+    }
+    
     var title: String {
-        switch self {
-        case .home:
-            return "Home"
-        case .progress:
-            return "Progress"
-        case .calculator:
-            return "Calculator"
-        case .muscles:
-            return "Muscles"
-        }
+        info.title
     }
 
     var icon: UIImage? {
-        switch self {
-        case .home:
-            return UIImage(named: "home")
-        case .progress:
-            return UIImage(named: "progress")
-        case .calculator:
-            return UIImage(named: "calc")
-        case .muscles:
-            return UIImage(named: "muscles")
-        }
+        info.icon
     }
 
     var selectedIcon: UIImage? {
+        info.selectedIcon
+    }
+
+    private var info: ItemInfo {
         switch self {
         case .home:
-            return UIImage(named: "homeSelected")
+            return ItemInfo(
+                title: "Home",
+                icon: UIImage(named: "home"),
+                selectedIcon: UIImage(named: "homeSelected")
+            )
         case .progress:
-            return UIImage(named: "progressSelected")
+            return ItemInfo(
+                title: "Progress",
+                icon: UIImage(named: "progress"),
+                selectedIcon: UIImage(named: "progressSelected")
+            )
         case .calculator:
-            return UIImage(named: "calcSelected")
+            return ItemInfo(
+                title: "Calculator",
+                icon: UIImage(named: "calc"),
+                selectedIcon: UIImage(named: "calcSelected")
+            )
         case .muscles:
-            return UIImage(named: "musclesSelected")
+            return ItemInfo(
+                title: "Muscles",
+                icon: UIImage(named: "muscles"),
+                selectedIcon: UIImage(named: "musclesSelected")
+            )
         }
     }
 }
