@@ -28,14 +28,16 @@ class BaseViewController: UIViewController {
         view.addSubview(backgroundImageView)
         view.sendSubviewToBack(backgroundImageView)
         
-        addGradientLayer(to: backgroundImageView)
-        
         NSLayoutConstraint.activate([
             backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor),
             backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
+        
+        view.layoutIfNeeded()
+        
+        addGradientLayer(to: backgroundImageView)
     }
     
     private func addGradientLayer(to view: UIView) {
@@ -48,7 +50,6 @@ class BaseViewController: UIViewController {
         gradientLayer.locations = [0.0, 0.4, 0.75]
         gradientLayer.frame = view.bounds
         
-        gradientLayer.frame = UIScreen.main.bounds
         view.layer.addSublayer(gradientLayer)
     }
 
