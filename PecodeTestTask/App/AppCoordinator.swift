@@ -11,6 +11,7 @@ class AppCoordinator: Coordinator {
     private let window: UIWindow
     var navigationController: UINavigationController
     private var splashCoordinator: SplashCoordinator?
+    private var tabBarCoordinator: TabBarCoordinator?
 
     init(window: UIWindow) {
         self.window = window
@@ -24,4 +25,5 @@ class AppCoordinator: Coordinator {
         splashCoordinator = SplashCoordinator(navigationController: navigationController)
         splashCoordinator?.start()
     }
+
 }
