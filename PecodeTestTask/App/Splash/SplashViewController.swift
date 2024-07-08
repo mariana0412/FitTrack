@@ -13,6 +13,8 @@ class SplashViewController: UIViewController {
     @IBOutlet private weak var chooseHeroLabel: UILabel!
     @IBOutlet private weak var supermanButton: CustomButton!
     @IBOutlet private weak var supergirlButton: CustomButton!
+    @IBOutlet private weak var supermanImage: UIImageView!
+    @IBOutlet private weak var supergirlImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,23 @@ class SplashViewController: UIViewController {
     
     private func setupUI() {
         chooseHeroLabel.font = UIFont(name: "Saira-Regular", size: 16)
+        
+        OverlayUtils.addDarkOverlay(to: supermanImage, color: UIColor.black, opacity: 0.3)
+        OverlayUtils.addDarkOverlay(to: supergirlImage, color: UIColor.black, opacity: 0.3)
+        
+        let supermanGradientColors = [
+            UIColor.black.withAlphaComponent(0.3).cgColor,
+            UIColor.black.cgColor
+        ]
+        let supermanGradientLocations = [0.5, 1.0]
+        GradientUtils.addGradientLayer(to: supermanImage, colors: supermanGradientColors, locations: supermanGradientLocations)
+        
+        let supergirlGradientColors = [
+            UIColor.black.cgColor,
+            UIColor.black.withAlphaComponent(0.3).cgColor
+        ]
+        let supergirlGradientLocations = [0.0, 0.5]
+        GradientUtils.addGradientLayer(to: supergirlImage, colors: supergirlGradientColors, locations: supergirlGradientLocations)
     }
     
     private func setupActions() {

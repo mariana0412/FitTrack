@@ -37,7 +37,6 @@
 		CAA18EE72C39DFC300F888CD /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE62C39DFC300F888CD /* SplashViewController.swift */; };
 		CAA18EE92C39DFF600F888CD /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE82C39DFF600F888CD /* SplashCoordinator.swift */; };
 		CAA18EEB2C3ADC2C00F888CD /* Saira-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAA18EEA2C3ADC2C00F888CD /* Saira-Regular.ttf */; };
-		CAA18EF02C3AF02C00F888CD /* GradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EEF2C3AF02C00F888CD /* GradientImageView.swift */; };
 		CAA18EF22C3B182800F888CD /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EF12C3B182800F888CD /* SplashViewModel.swift */; };
 		CAA18EFB2C3C132200F888CD /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EFA2C3C132200F888CD /* ProgressViewController.swift */; };
 		CAA18EFD2C3C133800F888CD /* ProgressCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EFC2C3C133800F888CD /* ProgressCoordinator.swift */; };
@@ -54,6 +53,8 @@
 		CAA18F132C3C18F200F888CD /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F122C3C18F200F888CD /* TabBarCoordinator.swift */; };
 		CAA18F152C3C3B5200F888CD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F142C3C3B5200F888CD /* TabBarController.swift */; };
 		CAA18F182C3C3B7500F888CD /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F172C3C3B7500F888CD /* TabBarItem.swift */; };
+		CAA18F1B2C3C554400F888CD /* GradientUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F1A2C3C554400F888CD /* GradientUtils.swift */; };
+		CAA18F1D2C3C56F700F888CD /* OverlayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F1C2C3C56F700F888CD /* OverlayUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,7 +110,6 @@
 		CAA18EE62C39DFC300F888CD /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		CAA18EE82C39DFF600F888CD /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		CAA18EEA2C3ADC2C00F888CD /* Saira-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Regular.ttf"; sourceTree = "<group>"; };
-		CAA18EEF2C3AF02C00F888CD /* GradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientImageView.swift; sourceTree = "<group>"; };
 		CAA18EF12C3B182800F888CD /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		CAA18EFA2C3C132200F888CD /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		CAA18EFC2C3C133800F888CD /* ProgressCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCoordinator.swift; sourceTree = "<group>"; };
@@ -126,6 +126,8 @@
 		CAA18F122C3C18F200F888CD /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		CAA18F142C3C3B5200F888CD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		CAA18F172C3C3B7500F888CD /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		CAA18F1A2C3C554400F888CD /* GradientUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientUtils.swift; sourceTree = "<group>"; };
+		CAA18F1C2C3C56F700F888CD /* OverlayUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 		CA002DD42C318B0F0053284B /* PecodeTestTask */ = {
 			isa = PBXGroup;
 			children = (
+				CAA18F192C3C552E00F888CD /* Utils */,
 				CAA18EE02C37F97900F888CD /* Extensions */,
 				CA002E092C3192C60053284B /* App */,
 				CA002E0A2C3192DE0053284B /* Base */,
@@ -275,7 +278,6 @@
 				CA002E2E2C36E81F0053284B /* CustomUIComponent.swift */,
 				CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */,
 				CA002E3A2C3701FE0053284B /* CustomButton.swift */,
-				CAA18EEF2C3AF02C00F888CD /* GradientImageView.swift */,
 				CA1EE8452C376FCD00E58403 /* CustomToggleButton */,
 				CA1EE8442C376FBF00E58403 /* CustomTextField */,
 			);
@@ -369,6 +371,15 @@
 				CAA18F172C3C3B7500F888CD /* TabBarItem.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		CAA18F192C3C552E00F888CD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CAA18F1A2C3C554400F888CD /* GradientUtils.swift */,
+				CAA18F1C2C3C56F700F888CD /* OverlayUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAA18F072C3C148C00F888CD /* CalculatorCoordinator.swift in Sources */,
+				CAA18F1B2C3C554400F888CD /* GradientUtils.swift in Sources */,
 				CAA18F152C3C3B5200F888CD /* TabBarController.swift in Sources */,
 				CA002E372C36F8D00053284B /* CustomRadiobutton.swift in Sources */,
 				CA002E352C36F8430053284B /* CustomToggleButton.swift in Sources */,
@@ -525,10 +537,10 @@
 				CAA18F132C3C18F200F888CD /* TabBarCoordinator.swift in Sources */,
 				CAA18EE92C39DFF600F888CD /* SplashCoordinator.swift in Sources */,
 				CAA18F092C3C149C00F888CD /* CalculatorViewModel.swift in Sources */,
+				CAA18F1D2C3C56F700F888CD /* OverlayUtils.swift in Sources */,
 				CAA18F0F2C3C159300F888CD /* MusclesCoordinator.swift in Sources */,
 				CAA18EFD2C3C133800F888CD /* ProgressCoordinator.swift in Sources */,
 				CAA18F052C3C148200F888CD /* CalculatorViewController.swift in Sources */,
-				CAA18EF02C3AF02C00F888CD /* GradientImageView.swift in Sources */,
 				CA002E3B2C3701FE0053284B /* CustomButton.swift in Sources */,
 				CA002E2F2C36E81F0053284B /* CustomUIComponent.swift in Sources */,
 				CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */,

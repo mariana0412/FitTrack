@@ -24,7 +24,7 @@
                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lc1-DF-Hrd">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="superman" translatesAutoresizingMaskIntoConstraints="NO" id="RXY-zX-0b9" customClass="GradientImageView" customModule="PecodeTestTask" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="superman" translatesAutoresizingMaskIntoConstraints="NO" id="RXY-zX-0b9">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
@@ -57,7 +57,7 @@
                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3j-qa-reh">
                                         <rect key="frame" x="0.0" y="426" width="393" height="426"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="supergirl" translatesAutoresizingMaskIntoConstraints="NO" id="FQJ-bt-fQn" customClass="GradientImageView" customModule="PecodeTestTask" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="supergirl" translatesAutoresizingMaskIntoConstraints="NO" id="FQJ-bt-fQn">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
@@ -135,7 +135,9 @@
                     <connections>
                         <outlet property="chooseHeroLabel" destination="kv9-rx-Bqe" id="iWU-fj-ekJ"/>
                         <outlet property="supergirlButton" destination="WpS-fa-Xti" id="Y72-jY-X26"/>
+                        <outlet property="supergirlImage" destination="FQJ-bt-fQn" id="Hy8-wa-nZt"/>
                         <outlet property="supermanButton" destination="MIG-65-bZ0" id="bKs-oo-co8"/>
+                        <outlet property="supermanImage" destination="RXY-zX-0b9" id="cJf-xu-OAl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -37,20 +37,11 @@ class BaseViewController: UIViewController {
         
         view.layoutIfNeeded()
         
-        addGradientLayer(to: backgroundImageView)
-    }
-    
-    private func addGradientLayer(to view: UIView) {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [
+        GradientUtils.addGradientLayer(to: backgroundImageView, colors: [
             UIColor.black.withAlphaComponent(0.3).cgColor,
             UIColor.black.withAlphaComponent(0.8).cgColor,
             UIColor.black.cgColor
-        ]
-        gradientLayer.locations = [0.0, 0.4, 0.75]
-        gradientLayer.frame = view.bounds
-        
-        view.layer.addSublayer(gradientLayer)
+        ], locations: [0.0, 0.4, 0.75])
     }
 
 }
