@@ -11,7 +11,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackgroundImage(named: "backgroundImage", alpha: 0.8)
+        setBackgroundImage(named: "backgroundImage", alpha: 1.0)
     }
     
     private func setBackgroundImage(named imageName: String, alpha: CGFloat) {
@@ -28,6 +28,8 @@ class BaseViewController: UIViewController {
         view.addSubview(backgroundImageView)
         view.sendSubviewToBack(backgroundImageView)
         
+        addGradientLayer(to: backgroundImageView)
+        
         NSLayoutConstraint.activate([
             backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor),
             backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -36,4 +38,18 @@ class BaseViewController: UIViewController {
         ])
     }
     
+    private func addGradientLayer(to view: UIView) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [
+            UIColor.black.withAlphaComponent(0.3).cgColor,
+            UIColor.black.withAlphaComponent(0.8).cgColor,
+            UIColor.black.cgColor
+        ]
+        gradientLayer.locations = [0.0, 0.4, 0.75]
+        gradientLayer.frame = view.bounds
+        
+        gradientLayer.frame = UIScreen.main.bounds
+        view.layer.addSublayer(gradientLayer)
+    }
+
 }
