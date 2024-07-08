@@ -8,10 +8,10 @@
 import UIKit
 
 class GradientUtils {
-    static func addGradientLayer(to imageView: UIImageView, colors: [CGColor], locations: [Double]) {
+    static func addGradientLayer(to imageView: UIImageView, colors: [CGColor], locations: [NSNumber]) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = colors
-        gradientLayer.locations = locations.map { NSNumber(value: $0) }
+        gradientLayer.locations = locations
         gradientLayer.frame = imageView.bounds
         
         imageView.layer.addSublayer(gradientLayer)

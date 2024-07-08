@@ -37,29 +37,53 @@ class SplashViewController: UIViewController {
     }
     
     private func setupUI() {
-        chooseHeroLabel.font = UIFont(name: "Saira-Regular", size: 16)
+        chooseHeroLabel.font = UIFont(name: Constants.Layout.chooseHeroLabelFontName, 
+                                      size: Constants.Layout.chooseHeroLabelFontSize)
         
-        OverlayUtils.addDarkOverlay(to: supermanImage, color: UIColor.black, opacity: 0.3)
-        OverlayUtils.addDarkOverlay(to: supergirlImage, color: UIColor.black, opacity: 0.3)
+        OverlayUtils.addDarkOverlay(to: supermanImage,
+                                    color: UIColor.black,
+                                    opacity: Constants.Overlay.supermanImageOpacity)
+        OverlayUtils.addDarkOverlay(to: supergirlImage, 
+                                    color: UIColor.black,
+                                    opacity: Constants.Overlay.supergirlImageOpacity)
         
-        let supermanGradientColors = [
-            UIColor.black.withAlphaComponent(0.3).cgColor,
-            UIColor.black.cgColor
-        ]
-        let supermanGradientLocations = [0.5, 1.0]
-        GradientUtils.addGradientLayer(to: supermanImage, colors: supermanGradientColors, locations: supermanGradientLocations)
-        
-        let supergirlGradientColors = [
-            UIColor.black.cgColor,
-            UIColor.black.withAlphaComponent(0.3).cgColor
-        ]
-        let supergirlGradientLocations = [0.0, 0.5]
-        GradientUtils.addGradientLayer(to: supergirlImage, colors: supergirlGradientColors, locations: supergirlGradientLocations)
+        GradientUtils.addGradientLayer(to: supermanImage,
+                                       colors: Constants.Gradient.supermanColors,
+                                       locations: Constants.Gradient.supermanLocations)
+        GradientUtils.addGradientLayer(to: supergirlImage, 
+                                       colors: Constants.Gradient.supergirlColors,
+                                       locations: Constants.Gradient.supergirlLocations)
     }
     
     private func setupActions() {
         supermanButton.addTarget(self, action: #selector(supermanButtonTapped), for: .touchUpInside)
         supergirlButton.addTarget(self, action: #selector(supergirlButtonTapped), for: .touchUpInside)
+    }
+    
+    private enum Constants {
+        enum Layout {
+            static let chooseHeroLabelFontName = "Saira-Regular"
+            static let chooseHeroLabelFontSize: CGFloat = 16.0
+        }
+        
+        enum Overlay {
+            static let supermanImageOpacity: CGFloat = 0.3
+            static let supergirlImageOpacity: CGFloat = 0.3
+        }
+        
+        enum Gradient {
+            static let supermanColors: [CGColor] = [
+                UIColor.black.withAlphaComponent(0.3).cgColor,
+                UIColor.black.cgColor
+            ]
+            static let supermanLocations: [NSNumber] = [0.5, 1.0]
+            
+            static let supergirlColors: [CGColor] = [
+                UIColor.black.cgColor,
+                UIColor.black.withAlphaComponent(0.3).cgColor
+            ]
+            static let supergirlLocations: [NSNumber] = [0.0, 0.5]
+        }
     }
     
 }

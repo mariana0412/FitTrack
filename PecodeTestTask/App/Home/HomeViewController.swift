@@ -28,6 +28,13 @@ class HomeViewController: BaseViewController {
         guard let viewModel = viewModel else { return }
         
         superheroLabel.text = viewModel.heroName
-        superheroLabel.font = UIFont(name: "Saira-Regular", size: 24)
+        superheroLabel.font = UIFont(name: Constants.Layout.superheroLabelFontName, size: Constants.Layout.superheroLabelFontSize)
+    }
+    
+    private enum Constants {
+        enum Layout {
+            static let superheroLabelFontName = "Saira-Regular"
+            static let superheroLabelFontSize: CGFloat = 24.0
+        }
     }
 }
