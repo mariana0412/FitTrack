@@ -20,7 +20,8 @@ class HomeCoordinator: Coordinator {
         guard let homeViewController = HomeViewController.instantiate() else {
             fatalError("Unable to instantiate HomeViewController from storyboard")
         }
-        homeViewController.viewModel = HomeViewModel(coordinator: self, heroName: heroName)
+        homeViewController.viewModel = HomeViewModel(coordinator: self, 
+                                                     heroName: heroName)
         navigationController.pushViewController(homeViewController, animated: false)
     }
 }

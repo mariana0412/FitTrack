@@ -24,7 +24,11 @@ class TabBarCoordinator: Coordinator {
         let calculatorNavController = createNavigationController(for: .calculator)
         let musclesNavController = createNavigationController(for: .muscles)
         
-        tabBarController.setViewControllers([homeNavController, progressNavController, calculatorNavController, musclesNavController], animated: false)
+        tabBarController.setViewControllers([homeNavController, 
+                                             progressNavController,
+                                             calculatorNavController,
+                                             musclesNavController],
+                                            animated: false)
 
         navigationController.setViewControllers([tabBarController], animated: false)
     }
@@ -34,7 +38,8 @@ class TabBarCoordinator: Coordinator {
 
         switch item {
         case .home:
-            let homeCoordinator = HomeCoordinator(navigationController: navigationController, heroName: heroName)
+            let homeCoordinator = HomeCoordinator(navigationController: navigationController, 
+                                                  heroName: heroName)
             homeCoordinator.start()
 
         case .progress:
@@ -56,7 +61,9 @@ class TabBarCoordinator: Coordinator {
     }
     
     private func configureTabBarItem(for viewController: UIViewController, with item: TabBarItem) {
-        let tabBarItem = UITabBarItem(title: item.title, image: item.icon?.withRenderingMode(.alwaysOriginal), selectedImage: item.selectedIcon?.withRenderingMode(.alwaysOriginal))
+        let tabBarItem = UITabBarItem(title: item.title, 
+                                      image: item.icon?.withRenderingMode(.alwaysOriginal),
+                                      selectedImage: item.selectedIcon?.withRenderingMode(.alwaysOriginal))
         viewController.tabBarItem = tabBarItem
     }
 }

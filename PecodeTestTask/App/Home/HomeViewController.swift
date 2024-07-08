@@ -28,7 +28,8 @@ class HomeViewController: BaseViewController {
         guard let viewModel = viewModel else { return }
         
         superheroLabel.text = viewModel.heroName
-        superheroLabel.font = UIFont(name: Constants.Layout.superheroLabelFontName, size: Constants.Layout.superheroLabelFontSize)
+        superheroLabel.font = UIFont(name: Constants.Layout.superheroLabelFontName, 
+                                     size: Constants.Layout.superheroLabelFontSize)
     }
     
     private enum Constants {
