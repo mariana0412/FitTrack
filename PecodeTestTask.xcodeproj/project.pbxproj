@@ -33,6 +33,7 @@
 		CA002E392C36F8FA0053284B /* CustomCheckmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002E382C36F8FA0053284B /* CustomCheckmark.swift */; };
 		CA002E3B2C3701FE0053284B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA002E3A2C3701FE0053284B /* CustomButton.swift */; };
 		CA1EE8402C375AFF00E58403 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */; };
+		CA33B9BC2C3C6148000BFA4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA33B9BB2C3C6148000BFA4C /* GoogleService-Info.plist */; };
 		CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */; };
 		CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */; };
 		CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */; };
@@ -112,6 +113,7 @@
 		CA002E382C36F8FA0053284B /* CustomCheckmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCheckmark.swift; sourceTree = "<group>"; };
 		CA002E3A2C3701FE0053284B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
+		CA33B9BB2C3C6148000BFA4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextFieldView.xib; sourceTree = "<group>"; };
 		CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -195,16 +197,17 @@
 		CA002DD42C318B0F0053284B /* PecodeTestTask */ = {
 			isa = PBXGroup;
 			children = (
-				CAA18F192C3C552E00F888CD /* Utils */,
-				CAA18EE02C37F97900F888CD /* Extensions */,
 				CA002E092C3192C60053284B /* App */,
 				CA002E0A2C3192DE0053284B /* Base */,
 				CA002E062C3192850053284B /* Model */,
 				CA002E2D2C36E80E0053284B /* UI-Components */,
 				CA002E1B2C319CF00053284B /* API */,
+				CAA18EE02C37F97900F888CD /* Extensions */,
+				CAA18F192C3C552E00F888CD /* Utils */,
 				CA002E2A2C36D4810053284B /* Resources */,
 				CA002DE02C318B110053284B /* LaunchScreen.storyboard */,
 				CA002DE32C318B110053284B /* Info.plist */,
+				CA33B9BB2C3C6148000BFA4C /* GoogleService-Info.plist */,
 			);
 			path = PecodeTestTask;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				CA002DE22C318B110053284B /* Base in Resources */,
 				CA002E222C319DD00053284B /* .gitkeep in Resources */,
 				CAA18EEB2C3ADC2C00F888CD /* Saira-Regular.ttf in Resources */,
+				CA33B9BC2C3C6148000BFA4C /* GoogleService-Info.plist in Resources */,
 				CA002E1A2C319C860053284B /* Home.storyboard in Resources */,
 				CAA18F032C3C147400F888CD /* Calculator.storyboard in Resources */,
 				CAA18F012C3C134B00F888CD /* Progress.storyboard in Resources */,
