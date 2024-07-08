@@ -19,40 +19,40 @@ class TabBarCoordinator: Coordinator {
     }
 
     func start() {
-        let homeNavController = createNavController(for: .home)
-        let progressNavController = createNavController(for: .progress)
-        let calculatorNavController = createNavController(for: .calculator)
-        let musclesNavController = createNavController(for: .muscles)
+        let homeNavController = createNavigationController(for: .home)
+        let progressNavController = createNavigationController(for: .progress)
+        let calculatorNavController = createNavigationController(for: .calculator)
+        let musclesNavController = createNavigationController(for: .muscles)
         
         tabBarController.setViewControllers([homeNavController, progressNavController, calculatorNavController, musclesNavController], animated: false)
 
         navigationController.setViewControllers([tabBarController], animated: false)
     }
 
-    private func createNavController(for item: TabBarItem) -> UINavigationController {
-        let navController = UINavigationController()
+    private func createNavigationController(for item: TabBarItem) -> UINavigationController {
+        let navigationController = UINavigationController()
 
         switch item {
         case .home:
-            let homeCoordinator = HomeCoordinator(navigationController: navController, heroName: heroName)
+            let homeCoordinator = HomeCoordinator(navigationController: navigationController, heroName: heroName)
             homeCoordinator.start()
 
         case .progress:
-            let progressCoordinator = ProgressCoordinator(navigationController: navController)
+            let progressCoordinator = ProgressCoordinator(navigationController: navigationController)
             progressCoordinator.start()
 
         case .calculator:
-            let calculatorCoordinator = CalculatorCoordinator(navigationController: navController)
+            let calculatorCoordinator = CalculatorCoordinator(navigationController: navigationController)
             calculatorCoordinator.start()
 
         case .muscles:
-            let musclesCoordinator = MusclesCoordinator(navigationController: navController)
+            let musclesCoordinator = MusclesCoordinator(navigationController: navigationController)
             musclesCoordinator.start()
         }
         
-        configureTabBarItem(for: navController, with: item)
+        configureTabBarItem(for: navigationController, with: item)
         
-        return navController
+        return navigationController
     }
     
     private func configureTabBarItem(for viewController: UIViewController, with item: TabBarItem) {
