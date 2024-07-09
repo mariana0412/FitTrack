@@ -14,9 +14,9 @@ class MusclesViewController: BaseViewController {
         super.viewDidLoad()
     }
     
-    static func instantiate() -> MusclesViewController? {
+    static func instantiate() -> MusclesViewController {
         let storyboard = UIStoryboard(name: StoryboardConstants.muscles, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: "MusclesViewController") as? MusclesViewController
+        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.musclesViewController) as! MusclesViewController
     }
     
 }

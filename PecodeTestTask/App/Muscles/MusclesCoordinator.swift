@@ -15,9 +15,7 @@ class MusclesCoordinator: Coordinator {
     }
     
     func start() {
-        guard let musclesViewController = MusclesViewController.instantiate() else {
-            fatalError("Unable to instantiate MusclesViewController from storyboard")
-        }
+        let musclesViewController = MusclesViewController.instantiate()
         musclesViewController.viewModel = MusclesViewModel(coordinator: self)
         navigationController.pushViewController(musclesViewController, animated: false)
     }

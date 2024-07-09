@@ -23,9 +23,9 @@ class SplashViewController: UIViewController {
         setupActions()
     }
     
-    static func instantiate() -> SplashViewController? {
+    static func instantiate() -> SplashViewController {
         let storyboard = UIStoryboard(name: StoryboardConstants.splash, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: "SplashViewController") as? SplashViewController
+        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.splashViewController) as! SplashViewController
     }
     
     @objc private func supermanButtonTapped() {

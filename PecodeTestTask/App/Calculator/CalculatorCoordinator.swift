@@ -15,9 +15,7 @@ class CalculatorCoordinator: Coordinator {
     }
     
     func start() {
-        guard let calculatorViewController = CalculatorViewController.instantiate() else {
-            fatalError("Unable to instantiate CalculatorViewController from storyboard")
-        }
+        let calculatorViewController = CalculatorViewController.instantiate()
         calculatorViewController.viewModel = CalculatorViewModel(coordinator: self)
         navigationController.pushViewController(calculatorViewController, animated: false)
     }

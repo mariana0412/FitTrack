@@ -15,15 +15,13 @@ class SplashCoordinator: Coordinator {
     }
     
     func start() {
-        guard let splashViewController = SplashViewController.instantiate() else {
-            fatalError("Unable to instantiate SplashViewController from storyboard")
-        }
+        let splashViewController = SplashViewController.instantiate()
         splashViewController.viewModel = SplashViewModel(coordinator: self)
         navigationController.pushViewController(splashViewController, animated: false)
     }
     
     func navigateToHome(with heroName: String) {
-        let tabBarCoordinator = TabBarCoordinator(navigationController: navigationController, 
+        let tabBarCoordinator = TabBarCoordinator(navigationController: navigationController,
                                                   heroName: heroName)
         tabBarCoordinator.start()
     }

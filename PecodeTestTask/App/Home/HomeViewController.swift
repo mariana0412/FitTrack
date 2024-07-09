@@ -19,9 +19,9 @@ class HomeViewController: BaseViewController {
         setupUI()
     }
 
-    static func instantiate() -> HomeViewController? {
+    static func instantiate() -> HomeViewController {
         let storyboard = UIStoryboard(name: StoryboardConstants.home, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
+        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.homeViewController) as! HomeViewController
     }
     
     private func setupUI() {

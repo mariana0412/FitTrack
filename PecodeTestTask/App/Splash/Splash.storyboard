@@ -147,10 +147,10 @@
     </scenes>
     <designables>
         <designable name="MIG-65-bZ0">
-            <size key="intrinsicContentSize" width="115" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
         </designable>
         <designable name="WpS-fa-Xti">
-            <size key="intrinsicContentSize" width="113.66666666666667" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
         </designable>
     </designables>
     <resources>

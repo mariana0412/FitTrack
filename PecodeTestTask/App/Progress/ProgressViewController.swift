@@ -14,9 +14,9 @@ class ProgressViewController: BaseViewController {
         super.viewDidLoad()
     }
     
-    static func instantiate() -> ProgressViewController? {
+    static func instantiate() -> ProgressViewController {
         let storyboard = UIStoryboard(name: StoryboardConstants.progress, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: "ProgressViewController") as? ProgressViewController
+        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.progressViewController) as! ProgressViewController
     }
     
 }

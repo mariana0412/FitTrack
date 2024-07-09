@@ -15,9 +15,7 @@ class ProgressCoordinator: Coordinator {
     }
     
     func start() {
-        guard let progressViewController = ProgressViewController.instantiate() else {
-            fatalError("Unable to instantiate ProgressViewController from storyboard")
-        }
+        let progressViewController = ProgressViewController.instantiate()
         progressViewController.viewModel = ProgressViewModel(coordinator: self)
         navigationController.pushViewController(progressViewController, animated: false)
     }
