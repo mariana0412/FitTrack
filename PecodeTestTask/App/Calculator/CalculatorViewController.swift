@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalculatorViewController: BaseViewController {
+final class CalculatorViewController: BaseViewController {
     var viewModel: CalculatorViewModel?
     
     override func viewDidLoad() {

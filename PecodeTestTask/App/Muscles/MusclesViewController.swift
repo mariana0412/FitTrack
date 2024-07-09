@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MusclesViewController: BaseViewController {
+final class MusclesViewController: BaseViewController {
     var viewModel: MusclesViewModel?
     
     override func viewDidLoad() {

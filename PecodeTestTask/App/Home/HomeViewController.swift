@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
+final class HomeViewController: BaseViewController {
     var viewModel: HomeViewModel?
     private var superheroName: String?
 
