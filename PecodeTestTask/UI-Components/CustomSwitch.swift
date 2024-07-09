@@ -9,6 +9,15 @@ import UIKit
 
 final class CustomSwitch: UISwitch {
     
+    private enum Constants {
+        enum Layout {
+            static let switchWidth: CGFloat = 74.0
+            static let switchHeight: CGFloat = 33.0
+            static let cornerRadius: CGFloat = switchHeight / 2
+            static let borderWidth: CGFloat = 1.0
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: CGRect(x: frame.origin.x, y: frame.origin.y, width: Constants.Layout.switchWidth, height: Constants.Layout.switchHeight))
         customizeSwitch()
@@ -33,12 +42,4 @@ final class CustomSwitch: UISwitch {
         self.layer.borderWidth = Constants.Layout.borderWidth
     }
     
-    private enum Constants {
-        enum Layout {
-            static let switchWidth: CGFloat = 74.0
-            static let switchHeight: CGFloat = 33.0
-            static let cornerRadius: CGFloat = switchHeight / 2
-            static let borderWidth: CGFloat = 1.0
-        }
-    }
 }

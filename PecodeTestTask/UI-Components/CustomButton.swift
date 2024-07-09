@@ -16,19 +16,6 @@ final class CustomButton: UIButton {
         case pinkText
     }
     
-    @IBInspectable var buttonStyle: Int = 0 {
-        didSet {
-            let style = Style(rawValue: buttonStyle) ?? .yellowBorder
-            applyStyle(style)
-        }
-    }
-    
-    @IBInspectable var buttonTitle: String? {
-        didSet {
-            setTitle(buttonTitle, for: .normal)
-        }
-    }
-    
     private enum Constants {
         enum Layout {
             static let fontSize: CGFloat = 16.0
@@ -42,6 +29,19 @@ final class CustomButton: UIButton {
             static let yellowBorderTitleColor = UIColor.black
             static let yellowTextColor = UIColor.primaryYellow
             static let pinkTextColor = UIColor.primaryPink
+        }
+    }
+    
+    @IBInspectable var buttonStyle: Int = 0 {
+        didSet {
+            let style = Style(rawValue: buttonStyle) ?? .yellowBorder
+            applyStyle(style)
+        }
+    }
+    
+    @IBInspectable var buttonTitle: String? {
+        didSet {
+            setTitle(buttonTitle, for: .normal)
         }
     }
     

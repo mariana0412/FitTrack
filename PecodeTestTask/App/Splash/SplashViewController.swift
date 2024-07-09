@@ -8,6 +8,33 @@
 import UIKit
 
 class SplashViewController: UIViewController {
+    
+    private enum Constants {
+        enum Layout {
+            static let chooseHeroLabelFontName = "Saira-Regular"
+            static let chooseHeroLabelFontSize: CGFloat = 16.0
+        }
+        
+        enum Overlay {
+            static let supermanImageOpacity: CGFloat = 0.3
+            static let supergirlImageOpacity: CGFloat = 0.3
+        }
+        
+        enum Gradient {
+            static let supermanColors: [CGColor] = [
+                UIColor.black.withAlphaComponent(0.3).cgColor,
+                UIColor.black.cgColor
+            ]
+            static let supermanLocations: [NSNumber] = [0.5, 1.0]
+            
+            static let supergirlColors: [CGColor] = [
+                UIColor.black.cgColor,
+                UIColor.black.withAlphaComponent(0.3).cgColor
+            ]
+            static let supergirlLocations: [NSNumber] = [0.0, 0.5]
+        }
+    }
+    
     var viewModel: SplashViewModel?
     
     @IBOutlet private weak var chooseHeroLabel: UILabel!
@@ -58,32 +85,6 @@ class SplashViewController: UIViewController {
     private func setupActions() {
         supermanButton.addTarget(self, action: #selector(supermanButtonTapped), for: .touchUpInside)
         supergirlButton.addTarget(self, action: #selector(supergirlButtonTapped), for: .touchUpInside)
-    }
-    
-    private enum Constants {
-        enum Layout {
-            static let chooseHeroLabelFontName = "Saira-Regular"
-            static let chooseHeroLabelFontSize: CGFloat = 16.0
-        }
-        
-        enum Overlay {
-            static let supermanImageOpacity: CGFloat = 0.3
-            static let supergirlImageOpacity: CGFloat = 0.3
-        }
-        
-        enum Gradient {
-            static let supermanColors: [CGColor] = [
-                UIColor.black.withAlphaComponent(0.3).cgColor,
-                UIColor.black.cgColor
-            ]
-            static let supermanLocations: [NSNumber] = [0.5, 1.0]
-            
-            static let supergirlColors: [CGColor] = [
-                UIColor.black.cgColor,
-                UIColor.black.withAlphaComponent(0.3).cgColor
-            ]
-            static let supergirlLocations: [NSNumber] = [0.0, 0.5]
-        }
     }
     
 }

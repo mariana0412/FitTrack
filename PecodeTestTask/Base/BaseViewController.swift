@@ -9,6 +9,25 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    private enum Constants {
+        enum Layout {
+            static let backgroundImageAlpha: CGFloat = 1.0
+        }
+        
+        enum Images {
+            static let backgroundImageName = "backgroundImage"
+        }
+        
+        enum Gradient {
+            static let colors: [CGColor] = [
+                UIColor.black.withAlphaComponent(0.3).cgColor,
+                UIColor.black.withAlphaComponent(0.8).cgColor,
+                UIColor.black.cgColor
+            ]
+            static let locations: [NSNumber] = [0.0, 0.4, 0.75]
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackgroundImage(named: Constants.Images.backgroundImageName, 
@@ -41,25 +60,6 @@ class BaseViewController: UIViewController {
         GradientUtils.addGradientLayer(to: backgroundImageView,
                                        colors: Constants.Gradient.colors,
                                        locations: Constants.Gradient.locations)
-    }
-    
-    private enum Constants {
-        enum Layout {
-            static let backgroundImageAlpha: CGFloat = 1.0
-        }
-        
-        enum Images {
-            static let backgroundImageName = "backgroundImage"
-        }
-        
-        enum Gradient {
-            static let colors: [CGColor] = [
-                UIColor.black.withAlphaComponent(0.3).cgColor,
-                UIColor.black.withAlphaComponent(0.8).cgColor,
-                UIColor.black.cgColor
-            ]
-            static let locations: [NSNumber] = [0.0, 0.4, 0.75]
-        }
     }
 
 }

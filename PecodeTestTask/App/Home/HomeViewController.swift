@@ -8,6 +8,14 @@
 import UIKit
 
 final class HomeViewController: BaseViewController {
+    
+    private enum Constants {
+        enum Layout {
+            static let superheroLabelFontName = "Saira-Regular"
+            static let superheroLabelFontSize: CGFloat = 24.0
+        }
+    }
+    
     var viewModel: HomeViewModel?
     private var superheroName: String?
 
@@ -32,10 +40,4 @@ final class HomeViewController: BaseViewController {
                                      size: Constants.Layout.superheroLabelFontSize)
     }
     
-    private enum Constants {
-        enum Layout {
-            static let superheroLabelFontName = "Saira-Regular"
-            static let superheroLabelFontSize: CGFloat = 24.0
-        }
-    }
 }

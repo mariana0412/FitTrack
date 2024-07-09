@@ -10,6 +10,14 @@ import UIKit
 @IBDesignable
 final class CustomCheckmark: CustomToggleButton {
     
+    private enum Constants {
+        enum Layout {
+            static let selectedImage = UIImage(named: "customCheckmarkSelected")
+            static let unselectedImage = UIImage(named: "customCheckmark")
+            static let size = CGSize(width: 16, height: 16)
+        }
+    }
+    
     init() {
         let selectedImage = Constants.Layout.selectedImage
         let unselectedImage = Constants.Layout.unselectedImage
@@ -30,12 +38,5 @@ final class CustomCheckmark: CustomToggleButton {
         setup(size: frame.size)
     }
     
-    private enum Constants {
-        enum Layout {
-            static let selectedImage = UIImage(named: "customCheckmarkSelected")
-            static let unselectedImage = UIImage(named: "customCheckmark")
-            static let size = CGSize(width: 16, height: 16)
-        }
-    }
 }
 
