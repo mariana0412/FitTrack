@@ -10,6 +10,14 @@ import UIKit
 @IBDesignable
 final class CustomRadiobutton: CustomToggleButton {
     
+    private enum Constants {
+        enum Layout {
+            static let selectedImage = UIImage(named: "radiobuttonFilled")
+            static let unselectedImage = UIImage(named: "radiobutton")
+            static let size = CGSize(width: 15, height: 15)
+        }
+    }
+    
     init() {
         let selectedImage = Constants.Layout.selectedImage
         let unselectedImage = Constants.Layout.unselectedImage
@@ -29,13 +37,6 @@ final class CustomRadiobutton: CustomToggleButton {
         self.unselectedImage = Constants.Layout.unselectedImage
         setup(size: frame.size)
     }
-    
-    private enum Constants {
-        enum Layout {
-            static let selectedImage = UIImage(named: "radiobuttonFilled")
-            static let unselectedImage = UIImage(named: "radiobutton")
-            static let size = CGSize(width: 15, height: 15)
-        }
-    }
+
 }
 

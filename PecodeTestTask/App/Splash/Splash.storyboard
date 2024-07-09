@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SplashViewController" id="Y6W-OH-hqX" customClass="SplashViewController" customModule="PecodeTestTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BgW-eM-c2j">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lc1-DF-Hrd">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="superman" translatesAutoresizingMaskIntoConstraints="NO" id="RXY-zX-0b9">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIG-65-bZ0" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
+                                                <rect key="frame" x="124.66666666666669" y="191" width="144" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="144" id="eUJ-Oq-9Rf"/>
+                                                    <constraint firstAttribute="height" constant="44" id="lyU-K5-b6B"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonStyle">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="SUPERMAN"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="RXY-zX-0b9" firstAttribute="top" secondItem="Lc1-DF-Hrd" secondAttribute="top" id="62Q-RV-AIX"/>
+                                            <constraint firstItem="MIG-65-bZ0" firstAttribute="centerX" secondItem="Lc1-DF-Hrd" secondAttribute="centerX" id="Ghg-0K-RaH"/>
+                                            <constraint firstItem="MIG-65-bZ0" firstAttribute="centerY" secondItem="Lc1-DF-Hrd" secondAttribute="centerY" id="PIl-bE-aeh"/>
+                                            <constraint firstAttribute="bottom" secondItem="RXY-zX-0b9" secondAttribute="bottom" id="ZDe-6L-Yhj"/>
+                                            <constraint firstAttribute="trailing" secondItem="RXY-zX-0b9" secondAttribute="trailing" id="gFs-Uh-AkY"/>
+                                            <constraint firstItem="RXY-zX-0b9" firstAttribute="leading" secondItem="Lc1-DF-Hrd" secondAttribute="leading" id="kZ6-0c-wjq"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3j-qa-reh">
+                                        <rect key="frame" x="0.0" y="426" width="393" height="426"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="supergirl" translatesAutoresizingMaskIntoConstraints="NO" id="FQJ-bt-fQn">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WpS-fa-Xti" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
+                                                <rect key="frame" x="124.66666666666669" y="191" width="144" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="ACz-j0-9Pz"/>
+                                                    <constraint firstAttribute="width" constant="144" id="QUG-ZQ-s3f"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonStyle">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="SUPERGIRL"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="FQJ-bt-fQn" secondAttribute="trailing" id="27N-6O-rsQ"/>
+                                            <constraint firstItem="FQJ-bt-fQn" firstAttribute="leading" secondItem="w3j-qa-reh" secondAttribute="leading" id="Dyr-Kk-gmq"/>
+                                            <constraint firstItem="FQJ-bt-fQn" firstAttribute="top" secondItem="w3j-qa-reh" secondAttribute="top" id="f7A-cW-pIm"/>
+                                            <constraint firstItem="WpS-fa-Xti" firstAttribute="centerY" secondItem="w3j-qa-reh" secondAttribute="centerY" id="hXF-uG-imO"/>
+                                            <constraint firstItem="WpS-fa-Xti" firstAttribute="centerX" secondItem="w3j-qa-reh" secondAttribute="centerX" id="mNE-s3-3IY"/>
+                                            <constraint firstAttribute="bottom" secondItem="FQJ-bt-fQn" secondAttribute="bottom" id="wEa-lr-BPN"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="w3j-qa-reh" firstAttribute="height" secondItem="Lc1-DF-Hrd" secondAttribute="height" id="van-vc-ksJ"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSd-xB-9lk">
+                                <rect key="frame" x="93.333333333333329" y="395.33333333333331" width="206.33333333333337" height="61.666666666666686"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="choose a hero" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kv9-rx-Bqe">
+                                        <rect key="frame" x="52.333333333333321" y="43.666666666666686" width="101.66666666666669" height="18"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                        <color key="textColor" name="PrimaryWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUPERHERO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qo6-vl-y79">
+                                        <rect key="frame" x="0.0" y="0.0" width="206.33333333333334" height="41.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="32"/>
+                                        <color key="textColor" name="PrimaryYellow"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Qo6-vl-y79" firstAttribute="centerX" secondItem="vSd-xB-9lk" secondAttribute="centerX" id="5oN-Rf-3Gg"/>
+                                    <constraint firstAttribute="bottom" secondItem="kv9-rx-Bqe" secondAttribute="bottom" id="L4T-bo-1eo"/>
+                                    <constraint firstItem="kv9-rx-Bqe" firstAttribute="top" secondItem="Qo6-vl-y79" secondAttribute="bottom" constant="2" id="TyX-RD-Onc"/>
+                                    <constraint firstItem="Qo6-vl-y79" firstAttribute="top" secondItem="vSd-xB-9lk" secondAttribute="top" id="ZVc-eb-u2q"/>
+                                    <constraint firstItem="Qo6-vl-y79" firstAttribute="leading" secondItem="vSd-xB-9lk" secondAttribute="leading" id="bBE-uc-F2U"/>
+                                    <constraint firstItem="kv9-rx-Bqe" firstAttribute="centerX" secondItem="vSd-xB-9lk" secondAttribute="centerX" id="msE-ne-nUt"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qo6-vl-y79" secondAttribute="trailing" id="s3k-dc-qAc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vSd-xB-9lk" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="1z0-Lb-Fq2"/>
+                            <constraint firstItem="vSd-xB-9lk" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="PPU-gS-IHP"/>
+                            <constraint firstAttribute="bottom" secondItem="BgW-eM-c2j" secondAttribute="bottom" id="VYH-K1-aKR"/>
+                            <constraint firstItem="BgW-eM-c2j" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="WNO-6j-0tw"/>
+                            <constraint firstAttribute="trailing" secondItem="BgW-eM-c2j" secondAttribute="trailing" id="ZKd-AL-P2y"/>
+                            <constraint firstItem="BgW-eM-c2j" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="nat-Qx-vJ9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chooseHeroLabel" destination="kv9-rx-Bqe" id="iWU-fj-ekJ"/>
+                        <outlet property="supergirlButton" destination="WpS-fa-Xti" id="Y72-jY-X26"/>
+                        <outlet property="supergirlImage" destination="FQJ-bt-fQn" id="Hy8-wa-nZt"/>
+                        <outlet property="supermanButton" destination="MIG-65-bZ0" id="bKs-oo-co8"/>
+                        <outlet property="supermanImage" destination="RXY-zX-0b9" id="cJf-xu-OAl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="61" y="-34"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="MIG-65-bZ0">
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+        </designable>
+        <designable name="WpS-fa-Xti">
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="supergirl" width="375" height="406"/>
+        <image name="superman" width="375" height="406"/>
+        <namedColor name="PrimaryWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryYellow">
+            <color red="1" green="0.85900002717971802" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
