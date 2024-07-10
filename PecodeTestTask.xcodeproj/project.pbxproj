@@ -35,6 +35,10 @@
 		CA1EE8402C375AFF00E58403 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */; };
 		CA33B9BC2C3C6148000BFA4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA33B9BB2C3C6148000BFA4C /* GoogleService-Info.plist */; };
 		CA33B9BE2C3C6457000BFA4C /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA33B9BD2C3C6457000BFA4C /* FirebaseService.swift */; };
+		CA37E5672C3EF36C003ADAA8 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37E5662C3EF36C003ADAA8 /* SignupViewController.swift */; };
+		CA37E5692C3EF376003ADAA8 /* SignupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37E5682C3EF376003ADAA8 /* SignupCoordinator.swift */; };
+		CA37E56B2C3EF37F003ADAA8 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37E56A2C3EF37F003ADAA8 /* SignupViewModel.swift */; };
+		CA37E56E2C3EF3D1003ADAA8 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA37E56D2C3EF3D1003ADAA8 /* Signup.storyboard */; };
 		CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */; };
 		CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */; };
 		CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */; };
@@ -116,6 +120,10 @@
 		CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
 		CA33B9BB2C3C6148000BFA4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CA33B9BD2C3C6457000BFA4C /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		CA37E5662C3EF36C003ADAA8 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		CA37E5682C3EF376003ADAA8 /* SignupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCoordinator.swift; sourceTree = "<group>"; };
+		CA37E56A2C3EF37F003ADAA8 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		CA37E56D2C3EF3D1003ADAA8 /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextFieldView.xib; sourceTree = "<group>"; };
 		CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -183,7 +191,6 @@
 				2B629B45E20FDF028F31E273 /* Pods-PecodeTestTaskTests.debug.xcconfig */,
 				283CD6F57670BC6BA064CB0B /* Pods-PecodeTestTaskTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -267,6 +274,7 @@
 		CA002E092C3192C60053284B /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CA37E5652C3EF35F003ADAA8 /* Signup */,
 				CAA18EE32C39DF7D00F888CD /* Splash */,
 				CA002E082C3192940053284B /* Home */,
 				CAA18EF92C3C12E200F888CD /* Progress */,
@@ -336,6 +344,17 @@
 				CA002E382C36F8FA0053284B /* CustomCheckmark.swift */,
 			);
 			path = CustomToggleButton;
+			sourceTree = "<group>";
+		};
+		CA37E5652C3EF35F003ADAA8 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				CA37E5662C3EF36C003ADAA8 /* SignupViewController.swift */,
+				CA37E5682C3EF376003ADAA8 /* SignupCoordinator.swift */,
+				CA37E56A2C3EF37F003ADAA8 /* SignupViewModel.swift */,
+				CA37E56D2C3EF3D1003ADAA8 /* Signup.storyboard */,
+			);
+			path = Signup;
 			sourceTree = "<group>";
 		};
 		CAA18EE02C37F97900F888CD /* Extensions */ = {
@@ -548,6 +567,7 @@
 				CAA18F112C3C159C00F888CD /* Muscles.storyboard in Resources */,
 				CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */,
 				CAA18EE52C39DF9400F888CD /* Splash.storyboard in Resources */,
+				CA37E56E2C3EF3D1003ADAA8 /* Signup.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,7 +701,9 @@
 				CA002E372C36F8D00053284B /* CustomRadiobutton.swift in Sources */,
 				CA002E352C36F8430053284B /* CustomToggleButton.swift in Sources */,
 				CA002E0E2C319BC10053284B /* BaseViewController.swift in Sources */,
+				CA37E5672C3EF36C003ADAA8 /* SignupViewController.swift in Sources */,
 				CAA18EFF2C3C134200F888CD /* ProgressViewModel.swift in Sources */,
+				CA37E5692C3EF376003ADAA8 /* SignupCoordinator.swift in Sources */,
 				CAA18EFB2C3C132200F888CD /* ProgressViewController.swift in Sources */,
 				CAA18EF22C3B182800F888CD /* SplashViewModel.swift in Sources */,
 				CAA18EE72C39DFC300F888CD /* SplashViewController.swift in Sources */,
@@ -697,6 +719,7 @@
 				CAA18EFD2C3C133800F888CD /* ProgressCoordinator.swift in Sources */,
 				CAA18F052C3C148200F888CD /* CalculatorViewController.swift in Sources */,
 				CA002E3B2C3701FE0053284B /* CustomButton.swift in Sources */,
+				CA37E56B2C3EF37F003ADAA8 /* SignupViewModel.swift in Sources */,
 				CA002E2F2C36E81F0053284B /* CustomUIComponent.swift in Sources */,
 				CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */,
 				CA002E182C319C7A0053284B /* HomeViewModel.swift in Sources */,

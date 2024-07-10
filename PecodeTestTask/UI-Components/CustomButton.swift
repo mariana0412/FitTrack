@@ -75,10 +75,12 @@ final class CustomButton: UIButton {
             self.titleLabel?.font = UIFont(name: Constants.Layout.fontName, size: Constants.Layout.fontSize)
             
         case .yellowText:
+            self.backgroundColor = .clear
             self.setTitleColor(Constants.Colors.yellowTextColor, for: .normal)
             self.titleLabel?.font = UIFont(name: Constants.Layout.boldFontName, size: Constants.Layout.fontSize)
             
         case .pinkText:
+            self.backgroundColor = .clear
             self.setTitleColor(Constants.Colors.pinkTextColor, for: .normal)
             self.titleLabel?.font = UIFont(name: Constants.Layout.boldFontName, size: Constants.Layout.fontSize)
         }

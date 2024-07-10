@@ -10,7 +10,7 @@ import UIKit
 class AppCoordinator: Coordinator {
     private let window: UIWindow
     var navigationController: UINavigationController
-    private var splashCoordinator: SplashCoordinator?
+    private var signupCoordinator: SignupCoordinator?
     private var tabBarCoordinator: TabBarCoordinator?
 
     init(window: UIWindow) {
@@ -22,8 +22,8 @@ class AppCoordinator: Coordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
 
-        splashCoordinator = SplashCoordinator(navigationController: navigationController)
-        splashCoordinator?.start()
+        signupCoordinator = SignupCoordinator(navigationController: navigationController)
+        signupCoordinator?.start()
     }
 
 }

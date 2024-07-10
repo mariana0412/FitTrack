@@ -26,6 +26,24 @@ final class CustomTextFieldView: UIView {
         }
     }
     
+    @IBInspectable var labelText: String? {
+        get {
+            return label.text
+        }
+        set {
+            label.text = newValue
+        }
+    }
+    
+    @IBInspectable var textFieldText: String? {
+        get {
+            return nameTextField.text
+        }
+        set {
+            nameTextField.text = newValue
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
