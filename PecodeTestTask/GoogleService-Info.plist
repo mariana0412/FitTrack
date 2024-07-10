@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyDxLWkOTHDyOu2WA7r8Jfy5tmiWWOA_OJ8</string>
+	<string>AIzaSyBYiJ-O9DfbC2UKMiQnZbmm4xlTSvgbgvU</string>
 	<key>GCM_SENDER_ID</key>
-	<string>36269460184</string>
+	<string>463273647990</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.pecode.intershipApp</string>
+	<string>com.mapthree.PecodeTestTask</string>
 	<key>PROJECT_ID</key>
-	<string>ios-internship-application</string>
+	<string>pecodetesttask</string>
 	<key>STORAGE_BUCKET</key>
-	<string>ios-internship-application.appspot.com</string>
+	<string>pecodetesttask.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:36269460184:ios:c45f0ad4c8bb494b3365ad</string>
+	<string>1:463273647990:ios:c388714d550246a3dee457</string>
 </dict>
 </plist>
