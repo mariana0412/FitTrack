@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 final class SignupViewController: BaseViewController {
     var viewModel: SignupViewModel?
@@ -28,6 +29,8 @@ final class SignupViewController: BaseViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(tapGesture)
+        
+        signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
     }
     
     static func instantiate() -> SignupViewController {
@@ -46,6 +49,35 @@ final class SignupViewController: BaseViewController {
     
     @objc func hideKeyboard() {
         view.endEditing(true)
+    }
+    
+    @objc func signupButtonTapped() {
+        guard let name = name.textField.text, !name.isEmpty,
+              let email = email.textField.text, !email.isEmpty,
+              let password = password.textField.text, !password.isEmpty,
+              let confirmPassword = confirmPassword.textField.text, !confirmPassword.isEmpty else {
+            showAlert(message: "Please fill in all fields.")
+            return
+        }
+        
+        guard password == confirmPassword else {
+            showAlert(message: "Passwords do not match.")
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                self.showAlert(message: error.localizedDescription)
+            } else {
+                self.showAlert(message: "Registration successful!")
+            }
+        }
+    }
+    
+    private func showAlert(title: String = "Alert", message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
 }
