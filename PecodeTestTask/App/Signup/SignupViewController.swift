@@ -13,10 +13,10 @@ final class SignupViewController: BaseViewController {
     @IBOutlet weak var createYourAccountLabel: UILabel!
     @IBOutlet weak var haveAccountLabel: UILabel!
     
-    @IBOutlet weak var nameCustomTextField: CustomTextFieldView!
-    @IBOutlet weak var emailCustomTextfield: CustomTextFieldView!
-    @IBOutlet weak var passwordCustomTextfield: CustomTextFieldView!
-    @IBOutlet weak var repeatPasswordCustomTextfield: CustomTextFieldView!
+    @IBOutlet weak var name: CustomTextFieldView!
+    @IBOutlet weak var email: CustomTextFieldView!
+    @IBOutlet weak var password: CustomTextFieldView!
+    @IBOutlet weak var confirmPassword: CustomTextFieldView!
     
     @IBOutlet weak var signupButton: CustomButton!
     @IBOutlet weak var loginButton: CustomButton!
@@ -25,6 +25,9 @@ final class SignupViewController: BaseViewController {
         super.viewDidLoad()
         
         setupUI()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
     }
     
     static func instantiate() -> SignupViewController {
@@ -38,6 +41,11 @@ final class SignupViewController: BaseViewController {
         
         signupButton.titleLabel?.font = UIFont(name: "Saira-Regular", size: 16)
         loginButton.titleLabel?.font = UIFont(name: "Saira-Regular", size: 16)
+        
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
     
 }

@@ -173,13 +173,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="confirmPassword" destination="NeY-E4-XYN" id="nP7-nB-KGS"/>
                         <outlet property="createYourAccountLabel" destination="oii-Gp-TpG" id="q7R-6x-rHy"/>
-                        <outlet property="emailCustomTextfield" destination="ecd-RE-T6a" id="a2S-53-FS3"/>
+                        <outlet property="email" destination="ecd-RE-T6a" id="a2S-53-FS3"/>
                         <outlet property="haveAccountLabel" destination="CDd-9q-Y4h" id="8kw-RQ-kzK"/>
                         <outlet property="loginButton" destination="8Q4-CT-T3R" id="pQY-Pt-PuA"/>
-                        <outlet property="nameCustomTextField" destination="uxz-Ul-Vmi" id="24l-C6-nYF"/>
-                        <outlet property="passwordCustomTextfield" destination="TTF-ql-3Zs" id="w4f-WE-URk"/>
-                        <outlet property="repeatPasswordCustomTextfield" destination="NeY-E4-XYN" id="nP7-nB-KGS"/>
+                        <outlet property="name" destination="uxz-Ul-Vmi" id="24l-C6-nYF"/>
+                        <outlet property="password" destination="TTF-ql-3Zs" id="w4f-WE-URk"/>
                         <outlet property="signupButton" destination="gdO-Qt-h9d" id="HpS-1V-NYG"/>
                     </connections>
                 </viewController>

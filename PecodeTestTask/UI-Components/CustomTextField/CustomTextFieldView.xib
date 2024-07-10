@@ -13,7 +13,7 @@
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="bbF-HH-hce"/>
                 <outlet property="label" destination="LT2-Qm-gPD" id="MoU-HP-Cqi"/>
-                <outlet property="nameTextField" destination="D87-4A-jpk" id="IQR-7S-UFQ"/>
+                <outlet property="textField" destination="D87-4A-jpk" id="IQR-7S-UFQ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
