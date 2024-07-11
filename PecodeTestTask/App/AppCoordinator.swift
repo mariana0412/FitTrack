@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class AppCoordinator: Coordinator {
     private let window: UIWindow
@@ -28,25 +27,15 @@ class AppCoordinator: Coordinator {
     }
     
     private func checkCurrentUser() {
-        if let currentUser = Auth.auth().currentUser {
-            FirebaseService.shared.fetchUserDetails { [weak self] response, registrationData in
-                switch response {
-                case .success:
-                    if let registrationData = registrationData, let sex = registrationData.sex, !sex.isEmpty {
-                        self?.showTabBar(with: registrationData)
-                    } else {
-                        self?.showSplashScreen()
-                    }
-                case .failure(let error):
-                    print("Error fetching user details: \(error.localizedDescription)")
-                    self?.showSignupScreen()
-                case .unknown:
-                    print("Unknown error fetching user details")
-                    self?.showSignupScreen()
-                }
+        FirebaseService.shared.checkCurrentUser { [weak self] userStatus in
+            switch userStatus {
+            case .unregistered:
+                self?.showSignupScreen()
+            case .registeredWithoutSex:
+                self?.showSplashScreen()
+            case .registeredWithSex(let registrationData):
+                self?.showTabBar(with: registrationData)
             }
-        } else {
-            showSignupScreen()
         }
     }
 

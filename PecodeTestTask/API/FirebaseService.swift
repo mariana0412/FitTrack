@@ -16,6 +16,12 @@ class FirebaseService {
         case unknown
     }
     
+    enum UserStatus {
+        case unregistered
+        case registeredWithoutSex
+        case registeredWithSex(RegistrationData)
+    }
+
     static let shared = FirebaseService()
         
     private init() {}
@@ -100,6 +106,25 @@ class FirebaseService {
             } else {
                 completion(.unknown, nil)
             }
+        }
+    }
+    
+    func checkCurrentUser(completion: @escaping (UserStatus) -> Void) {
+        if let currentUser = Auth.auth().currentUser {
+            fetchUserDetails { response, registrationData in
+                switch response {
+                case .success:
+                    if let registrationData = registrationData, let sex = registrationData.sex, !sex.isEmpty {
+                        completion(.registeredWithSex(registrationData))
+                    } else {
+                        completion(.registeredWithoutSex)
+                    }
+                case .failure, .unknown:
+                    completion(.unregistered)
+                }
+            }
+        } else {
+            completion(.unregistered)
         }
     }
     
