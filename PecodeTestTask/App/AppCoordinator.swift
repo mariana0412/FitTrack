@@ -29,8 +29,6 @@ class AppCoordinator: Coordinator {
     
     private func checkCurrentUser() {
         if let currentUser = Auth.auth().currentUser {
-            print("currentUser id: ", currentUser.uid)
-            
             FirebaseService.shared.fetchUserDetails { [weak self] response, registrationData in
                 switch response {
                 case .success:

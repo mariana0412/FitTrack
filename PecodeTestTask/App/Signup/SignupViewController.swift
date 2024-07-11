@@ -15,6 +15,7 @@ final class SignupViewController: BaseViewController {
             static let sairaSmall = UIFont(name: "Saira-Regular", size: 16)
         }
     }
+    
     var viewModel: SignupViewModel?
     
     @IBOutlet private weak var createYourAccountLabel: UILabel!
@@ -32,11 +33,7 @@ final class SignupViewController: BaseViewController {
         super.viewDidLoad()
         
         setupUI()
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        view.addGestureRecognizer(tapGesture)
-        
-        signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
+        setupActions()
     }
     
     static func instantiate() -> SignupViewController {
@@ -50,6 +47,13 @@ final class SignupViewController: BaseViewController {
         
         signupButton.titleLabel?.font = Constants.Layout.sairaSmall
         loginButton.titleLabel?.font = Constants.Layout.sairaSmall
+    }
+    
+    private func setupActions() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        
+        signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
     }
     
     @objc private func hideKeyboard() {
@@ -66,11 +70,15 @@ final class SignupViewController: BaseViewController {
             return
         }
         
-        let registrationData = RegistrationData(userName: nameText, email: emailText, sex: nil, password: passwordText)
+        let registrationData = RegistrationData(userName: nameText, 
+                                                email: emailText,
+                                                sex: nil,
+                                                password: passwordText)
                 
         signupButton.isEnabled = false
         
-        viewModel?.signupUser(with: registrationData, confirmPassword: confirmPasswordText) { [weak self] validationResults, errorMessage in
+        viewModel?.signupUser(with: registrationData, 
+                              confirmPassword: confirmPasswordText) { [weak self] validationResults, errorMessage in
             self?.signupButton.isEnabled = true
             self?.updateValidationUI(validationResults)
             if let errorMessage = errorMessage {

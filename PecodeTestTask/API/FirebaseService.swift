@@ -5,7 +5,6 @@
 //  Created by Mariana Piz on 08.07.2024.
 //
 
-import FirebaseCore
 import FirebaseAuth
 import FirebaseFirestore
 
@@ -21,19 +20,25 @@ class FirebaseService {
         
     private init() {}
     
-    func createUser(with registrationData: RegistrationData, completion: @escaping (FirebaseResponse) -> Void) {
-        Auth.auth().createUser(withEmail: registrationData.email, password: registrationData.password) { authResult, error in
+    func createUser(with registrationData: RegistrationData, 
+                    completion: @escaping (FirebaseResponse) -> Void) {
+        Auth.auth().createUser(withEmail: registrationData.email,
+                               password: registrationData.password) { 
+            authResult, error in
             if let error = error {
                 completion(.failure(error))
             } else if let authResult = authResult {
-                self.saveUserDetails(id: authResult.user.uid, registrationData: registrationData, completion: completion)
+                self.saveUserDetails(id: authResult.user.uid, 
+                                     registrationData: registrationData,
+                                     completion: completion)
             } else {
                 completion(.unknown)
             }
         }
     }
     
-    private func saveUserDetails(id: String, registrationData: RegistrationData, completion: @escaping (FirebaseResponse) -> Void) {
+    private func saveUserDetails(id: String, registrationData: RegistrationData, 
+                                 completion: @escaping (FirebaseResponse) -> Void) {
         let db = Firestore.firestore()
         db.collection("users").document(id).setData([
             "email": registrationData.email,
@@ -49,13 +54,18 @@ class FirebaseService {
         }
     }
     
-    func updateUserSex(sex: String, completion: @escaping (FirebaseResponse) -> Void) {
+    func updateUserSex(sex: String, 
+                       completion: @escaping (FirebaseResponse) -> Void) {
         let db = Firestore.firestore()
         guard let currentUserId = getCurrentUserId() else {
             completion(.unknown)
             return
         }
-        db.collection("users").document(currentUserId).updateData(["sex": sex]) { error in
+        db
+            .collection("users")
+            .document(currentUserId)
+            .updateData(["sex": sex]) { 
+                error in
             if let error = error {
                 completion(.failure(error))
             } else {
@@ -63,15 +73,7 @@ class FirebaseService {
             }
         }
     }
-    
-    private func getCurrentUserId() -> String? {
-        if let currentUser = Auth.auth().currentUser {
-            return currentUser.uid
-        } else {
-            return nil
-        }
-    }
-    
+
     func fetchUserDetails(completion: @escaping (FirebaseResponse, RegistrationData?) -> Void) {
         guard let currentUser = Auth.auth().currentUser else {
             completion(.failure(NSError(domain: "Firebase", code: -1, userInfo: [NSLocalizedDescriptionKey: "No current user"])), nil)
@@ -84,11 +86,16 @@ class FirebaseService {
         userRef.getDocument { document, error in
             if let error = error {
                 completion(.failure(error), nil)
-            } else if let document = document, document.exists, let data = document.data() {
+            } else if let document = document, 
+                        document.exists,
+                        let data = document.data() {
                 let userName = data["userName"] as? String ?? ""
                 let email = data["email"] as? String ?? ""
                 let sex = data["sex"] as? String
-                let registrationData = RegistrationData(userName: userName, email: email, sex: sex, password: "")
+                let registrationData = RegistrationData(userName: userName, 
+                                                        email: email,
+                                                        sex: sex,
+                                                        password: "")
                 completion(.success, registrationData)
             } else {
                 completion(.unknown, nil)
@@ -96,4 +103,11 @@ class FirebaseService {
         }
     }
     
+    private func getCurrentUserId() -> String? {
+        if let currentUser = Auth.auth().currentUser {
+            return currentUser.uid
+        } else {
+            return nil
+        }
+    }
 }

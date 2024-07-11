@@ -23,7 +23,9 @@ class SignupViewModel {
         self.coordinator = coordinator
     }
     
-    func signupUser(with registrationData: RegistrationData, confirmPassword: String, completion: @escaping ([String: Bool], String?) -> Void) {
+    func signupUser(with registrationData: RegistrationData, 
+                    confirmPassword: String,
+                    completion: @escaping ([String: Bool], String?) -> Void) {
         let validationResults = validateFields(name: registrationData.userName, email: registrationData.email, password: registrationData.password, confirmPassword: confirmPassword)
             
         
@@ -48,7 +50,10 @@ class SignupViewModel {
         }
     }
     
-    private func validateFields(name: String, email: String, password: String, confirmPassword: String) -> [String: Bool] {
+    private func validateFields(name: String, 
+                                email: String,
+                                password: String,
+                                confirmPassword: String) -> [String: Bool] {
         var results: [String: Bool] = [:]
 
         results["name"] = validateField(text: name, regex: Constants.Validation.fullNamePattern)
