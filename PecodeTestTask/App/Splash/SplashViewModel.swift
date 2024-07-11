@@ -23,7 +23,7 @@ class SplashViewModel {
             case .failure(let error):
                 completion(error.localizedDescription)
             case .unknown:
-                completion("Unknown error occurred while updating sex")
+                completion("Unknown error occurred.")
             }
         }
     }

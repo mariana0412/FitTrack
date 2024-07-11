@@ -34,7 +34,7 @@ class FirebaseService {
             if let error = error {
                 completion(.failure(error))
             } else if let authResult = authResult {
-                self.saveUserDetails(id: authResult.user.uid, 
+                self.saveUser(id: authResult.user.uid, 
                                      registrationData: registrationData,
                                      completion: completion)
             } else {
@@ -43,7 +43,7 @@ class FirebaseService {
         }
     }
     
-    private func saveUserDetails(id: String, registrationData: RegistrationData, 
+    private func saveUser(id: String, registrationData: RegistrationData, 
                                  completion: @escaping (FirebaseResponse) -> Void) {
         let db = Firestore.firestore()
         db.collection("users").document(id).setData([
@@ -62,12 +62,12 @@ class FirebaseService {
     
     func updateUserSex(sex: String, 
                        completion: @escaping (FirebaseResponse) -> Void) {
-        let db = Firestore.firestore()
+        let database = Firestore.firestore()
         guard let currentUserId = getCurrentUserId() else {
             completion(.unknown)
             return
         }
-        db
+        database
             .collection("users")
             .document(currentUserId)
             .updateData(["sex": sex]) { 
@@ -80,7 +80,7 @@ class FirebaseService {
         }
     }
 
-    func fetchUserDetails(completion: @escaping (FirebaseResponse, RegistrationData?) -> Void) {
+    func getUser(completion: @escaping (FirebaseResponse, RegistrationData?) -> Void) {
         guard let currentUser = Auth.auth().currentUser else {
             completion(.failure(NSError(domain: "Firebase", code: -1, userInfo: [NSLocalizedDescriptionKey: "No current user"])), nil)
             return
@@ -111,7 +111,7 @@ class FirebaseService {
     
     func checkCurrentUser(completion: @escaping (UserStatus) -> Void) {
         if let currentUser = Auth.auth().currentUser {
-            fetchUserDetails { response, registrationData in
+            getUser { response, registrationData in
                 switch response {
                 case .success:
                     if let registrationData = registrationData, let sex = registrationData.sex, !sex.isEmpty {

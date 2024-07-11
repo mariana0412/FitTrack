@@ -17,7 +17,7 @@ class HomeViewModel {
     }
     
     func fetchUserDetails(completion: @escaping (String?) -> Void) {
-        FirebaseService.shared.fetchUserDetails { [weak self] response, registrationData in
+        FirebaseService.shared.getUser { [weak self] response, registrationData in
             switch response {
             case .success:
                 if let user = registrationData {
