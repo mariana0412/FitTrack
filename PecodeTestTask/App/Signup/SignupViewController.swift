@@ -9,6 +9,15 @@ import UIKit
 import FirebaseAuth
 
 final class SignupViewController: BaseViewController {
+    
+    private enum Constants {
+        enum Validation {
+            static let fullNamePattern = #"^[a-zA-Z0-9-''']+(?: [a-zA-Z0-9-''']+)*$"#
+            static let emailPattern = #"^\S+@\S+\.\S+$"#
+            static let passwordPattern = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
+        }
+    }
+    
     var viewModel: SignupViewModel?
     
     @IBOutlet weak var createYourAccountLabel: UILabel!
@@ -31,6 +40,11 @@ final class SignupViewController: BaseViewController {
         view.addGestureRecognizer(tapGesture)
         
         signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
+        
+        name.validationRegex = Constants.Validation.fullNamePattern
+        email.validationRegex = Constants.Validation.emailPattern
+        password.validationRegex = Constants.Validation.passwordPattern
+        confirmPassword.validationRegex = Constants.Validation.passwordPattern
     }
     
     static func instantiate() -> SignupViewController {
@@ -60,6 +74,13 @@ final class SignupViewController: BaseViewController {
             return
         }
         
+        if !(validateField(self.name, alertMessage: "Name is not valid")
+            && validateField(self.email, alertMessage: "Email is not valid")
+            && validateField(self.password, alertMessage: "Password is not valid")
+            && validateField(self.confirmPassword, alertMessage: "Confirm password is not valid")) {
+            return
+        }
+        
         guard password == confirmPassword else {
             showAlert(message: "Passwords do not match.")
             return
@@ -71,6 +92,15 @@ final class SignupViewController: BaseViewController {
             } else {
                 self.showAlert(message: "Registration successful!")
             }
+        }
+    }
+    
+    private func validateField(_ textField: CustomTextFieldView, alertMessage: String) -> Bool {
+        if textField.validateText() {
+            return true
+        } else {
+            showAlert(message: alertMessage)
+            return false
         }
     }
     
