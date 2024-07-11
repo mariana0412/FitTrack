@@ -24,7 +24,7 @@ class SignupViewModel {
     }
     
     func signupUser(with registrationData: RegistrationData, confirmPassword: String, completion: @escaping ([String: Bool], String?) -> Void) {
-        let validationResults = validateFields(name: registrationData.userName, email: registrationData.email, password: registrationData.password, confirmPassword: registrationData.password)
+        let validationResults = validateFields(name: registrationData.userName, email: registrationData.email, password: registrationData.password, confirmPassword: confirmPassword)
             
         
         guard validationResults["name"] == true,
@@ -50,7 +50,7 @@ class SignupViewModel {
     
     private func validateFields(name: String, email: String, password: String, confirmPassword: String) -> [String: Bool] {
         var results: [String: Bool] = [:]
-        
+
         results["name"] = validateField(text: name, regex: Constants.Validation.fullNamePattern)
         results["email"] = validateField(text: email, regex: Constants.Validation.emailPattern)
         results["password"] = validateField(text: password, regex: Constants.Validation.passwordPattern)
