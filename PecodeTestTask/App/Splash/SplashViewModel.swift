@@ -18,7 +18,7 @@ class SplashViewModel {
         FirebaseService.shared.updateUserSex(sex: sex) { [weak self] response in
             switch response {
             case .success:
-                self?.coordinator?.navigateToHome(with: sex)
+                self?.coordinator?.navigateToHome()
                 completion(nil)
             case .failure(let error):
                 completion(error.localizedDescription)

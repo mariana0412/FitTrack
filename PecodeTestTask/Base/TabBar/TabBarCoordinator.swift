@@ -10,12 +10,10 @@ import UIKit
 class TabBarCoordinator: Coordinator {
     var navigationController: UINavigationController
     private let tabBarController: TabBarController
-    private var heroName: String
 
-    init(navigationController: UINavigationController, heroName: String) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.tabBarController = TabBarController()
-        self.heroName = heroName
     }
 
     func start() {
