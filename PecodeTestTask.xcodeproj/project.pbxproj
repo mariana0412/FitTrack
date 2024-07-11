@@ -38,9 +38,6 @@
 		CA37E56B2C3EF37F003ADAA8 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37E56A2C3EF37F003ADAA8 /* SignupViewModel.swift */; };
 		CA37E56E2C3EF3D1003ADAA8 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA37E56D2C3EF3D1003ADAA8 /* Signup.storyboard */; };
 		CA37E5702C3F25B4003ADAA8 /* RegistrationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37E56F2C3F25B4003ADAA8 /* RegistrationData.swift */; };
-		CA37E5762C3F3580003ADAA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA37E5752C3F3580003ADAA8 /* GoogleService-Info.plist */; };
-		CA37E5772C3F3580003ADAA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA37E5752C3F3580003ADAA8 /* GoogleService-Info.plist */; };
-		CA37E5782C3F3580003ADAA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA37E5752C3F3580003ADAA8 /* GoogleService-Info.plist */; };
 		CA37E57A2C401D4F003ADAA8 /* AlertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37E5792C401D4F003ADAA8 /* AlertUtils.swift */; };
 		CA37E57B2C401D4F003ADAA8 /* AlertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37E5792C401D4F003ADAA8 /* AlertUtils.swift */; };
 		CA37E57C2C401D4F003ADAA8 /* AlertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37E5792C401D4F003ADAA8 /* AlertUtils.swift */; };
@@ -53,6 +50,9 @@
 		CA37E5862C4058C4003ADAA8 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37E5852C4058C4003ADAA8 /* CustomTabBar.swift */; };
 		CA37E5872C4058C4003ADAA8 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37E5852C4058C4003ADAA8 /* CustomTabBar.swift */; };
 		CA37E5882C4058C4003ADAA8 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37E5852C4058C4003ADAA8 /* CustomTabBar.swift */; };
+		CA37E58A2C4062C9003ADAA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA37E5892C4062C9003ADAA8 /* GoogleService-Info.plist */; };
+		CA37E58B2C4062C9003ADAA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA37E5892C4062C9003ADAA8 /* GoogleService-Info.plist */; };
+		CA37E58C2C4062C9003ADAA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA37E5892C4062C9003ADAA8 /* GoogleService-Info.plist */; };
 		CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */; };
 		CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */; };
 		CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */; };
@@ -137,11 +137,11 @@
 		CA37E56A2C3EF37F003ADAA8 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		CA37E56D2C3EF3D1003ADAA8 /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		CA37E56F2C3F25B4003ADAA8 /* RegistrationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationData.swift; sourceTree = "<group>"; };
-		CA37E5752C3F3580003ADAA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CA37E5792C401D4F003ADAA8 /* AlertUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtils.swift; sourceTree = "<group>"; };
 		CA37E57D2C405731003ADAA8 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		CA37E5812C40573D003ADAA8 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		CA37E5852C4058C4003ADAA8 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		CA37E5892C4062C9003ADAA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextFieldView.xib; sourceTree = "<group>"; };
 		CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 				CA002E2A2C36D4810053284B /* Resources */,
 				CA002DE02C318B110053284B /* LaunchScreen.storyboard */,
 				CA002DE32C318B110053284B /* Info.plist */,
-				CA37E5752C3F3580003ADAA8 /* GoogleService-Info.plist */,
+				CA37E5892C4062C9003ADAA8 /* GoogleService-Info.plist */,
 			);
 			path = PecodeTestTask;
 			sourceTree = "<group>";
@@ -577,12 +577,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA37E58A2C4062C9003ADAA8 /* GoogleService-Info.plist in Resources */,
 				CA002DDF2C318B110053284B /* Assets.xcassets in Resources */,
 				CA002E242C319F560053284B /* .gitignore in Resources */,
 				CA002DE22C318B110053284B /* Base in Resources */,
 				CAA18EEB2C3ADC2C00F888CD /* Saira-Regular.ttf in Resources */,
 				CA002E1A2C319C860053284B /* Home.storyboard in Resources */,
-				CA37E5762C3F3580003ADAA8 /* GoogleService-Info.plist in Resources */,
 				CAA18F032C3C147400F888CD /* Calculator.storyboard in Resources */,
 				CAA18F012C3C134B00F888CD /* Progress.storyboard in Resources */,
 				CA37E5822C40573D003ADAA8 /* TabBar.storyboard in Resources */,
@@ -598,7 +598,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA37E5832C40573D003ADAA8 /* TabBar.storyboard in Resources */,
-				CA37E5772C3F3580003ADAA8 /* GoogleService-Info.plist in Resources */,
+				CA37E58B2C4062C9003ADAA8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,7 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA37E5842C40573D003ADAA8 /* TabBar.storyboard in Resources */,
-				CA37E5782C3F3580003ADAA8 /* GoogleService-Info.plist in Resources */,
+				CA37E58C2C4062C9003ADAA8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -957,7 +957,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mapthree.PecodeTestTask;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pecode.intershipApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -987,7 +987,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mapthree.PecodeTestTask;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pecode.intershipApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
