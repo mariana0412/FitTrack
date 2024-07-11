@@ -38,7 +38,7 @@ class SignupViewModel {
         FirebaseService.shared.createUser(with: registrationData) { response in
             switch response {
             case .success:
-                self.navigateToSplash()
+                self.navigateToSplash(with: registrationData.email)
                 completion(validationResults, nil)
             case .failure(let error):
                 completion(validationResults, error.localizedDescription)
@@ -63,7 +63,7 @@ class SignupViewModel {
         NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: text)
     }
     
-    func navigateToSplash() {
+    func navigateToSplash(with email: String) {
         coordinator?.navigateToSplash()
     }
 }

@@ -68,7 +68,8 @@ final class SignupViewController: BaseViewController {
             self?.signupButton.isEnabled = true
             self?.updateValidationUI(validationResults)
             if let errorMessage = errorMessage {
-                self?.showAlert(message: errorMessage)
+                let alert = AlertUtils.createAlert(message: errorMessage)
+                self?.present(alert, animated: true, completion: nil)
             }
         }
     }
@@ -79,10 +80,5 @@ final class SignupViewController: BaseViewController {
         password.currentState = validationResults["password"] == true ? .normal : .error
         confirmPassword.currentState = validationResults["confirmPassword"] == true ? .normal : .error
     }
-    
-    private func showAlert(title: String = "Alert", message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
+
 }

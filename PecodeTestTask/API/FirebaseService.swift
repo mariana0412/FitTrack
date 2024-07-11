@@ -49,4 +49,29 @@ class FirebaseService {
         }
     }
     
+    func updateUserGender(sex: String, completion: @escaping (FirebaseResponse) -> Void) {
+        let db = Firestore.firestore()
+        guard let currentUserId = getCurrentUserId() else {
+            completion(.unknown)
+            return
+        }
+        db.collection("users").document(currentUserId).updateData(["sex": sex]) { error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success)
+            }
+        }
+    }
+    
+    private func getCurrentUserId() -> String? {
+        if let currentUser = Auth.auth().currentUser {
+            return currentUser.uid
+        } else {
+            return nil
+        }
+    }
+
+
+    
 }

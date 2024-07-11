@@ -56,11 +56,26 @@ class SplashViewController: UIViewController {
     }
     
     @objc private func supermanButtonTapped() {
-        viewModel?.buttonTapped(with: "Superman")
+        updateUserSex(sex: "male")
     }
     
     @objc private func supergirlButtonTapped() {
-        viewModel?.buttonTapped(with: "Supergirl")
+        updateUserSex(sex: "female")
+    }
+    
+    private func updateUserSex(sex: String) {
+        supermanButton.isEnabled = false
+        supergirlButton.isEnabled = false
+        
+        viewModel?.updateUserSex(sex: sex) { [weak self] errorMessage in
+            self?.supermanButton.isEnabled = true
+            self?.supergirlButton.isEnabled = true
+            
+            if let errorMessage = errorMessage {
+                let alert = AlertUtils.createAlert(message: errorMessage)
+                self?.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     private func setupUI() {
