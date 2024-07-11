@@ -9,6 +9,12 @@ import UIKit
 
 final class SignupViewController: BaseViewController {
     
+    private enum Constants {
+        enum Layout {
+            static let sairaLarge = UIFont(name: "Saira-Regular", size: 24)
+            static let sairaSmall = UIFont(name: "Saira-Regular", size: 16)
+        }
+    }
     var viewModel: SignupViewModel?
     
     @IBOutlet private weak var createYourAccountLabel: UILabel!
@@ -39,11 +45,11 @@ final class SignupViewController: BaseViewController {
     }
     
     private func setupUI() {
-        createYourAccountLabel.font = UIFont(name: "Saira-Regular", size: 24)
-        haveAccountLabel.font = UIFont(name: "Saira-Regular", size: 16)
+        createYourAccountLabel.font = Constants.Layout.sairaLarge
+        haveAccountLabel.font = Constants.Layout.sairaSmall
         
-        signupButton.titleLabel?.font = UIFont(name: "Saira-Regular", size: 16)
-        loginButton.titleLabel?.font = UIFont(name: "Saira-Regular", size: 16)
+        signupButton.titleLabel?.font = Constants.Layout.sairaSmall
+        loginButton.titleLabel?.font = Constants.Layout.sairaSmall
     }
     
     @objc private func hideKeyboard() {
