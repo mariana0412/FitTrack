@@ -6,17 +6,8 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 final class SignupViewController: BaseViewController {
-    
-    private enum Constants {
-        enum Validation {
-            static let fullNamePattern = #"^[a-zA-Z0-9-''']+(?: [a-zA-Z0-9-''']+)*$"#
-            static let emailPattern = #"^\S+@\S+\.\S+$"#
-            static let passwordPattern = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
-        }
-    }
     
     var viewModel: SignupViewModel?
     
@@ -40,11 +31,6 @@ final class SignupViewController: BaseViewController {
         view.addGestureRecognizer(tapGesture)
         
         signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
-        
-        name.validationRegex = Constants.Validation.fullNamePattern
-        email.validationRegex = Constants.Validation.emailPattern
-        password.validationRegex = Constants.Validation.passwordPattern
-        confirmPassword.validationRegex = Constants.Validation.passwordPattern
     }
     
     static func instantiate() -> SignupViewController {
@@ -58,7 +44,6 @@ final class SignupViewController: BaseViewController {
         
         signupButton.titleLabel?.font = UIFont(name: "Saira-Regular", size: 16)
         loginButton.titleLabel?.font = UIFont(name: "Saira-Regular", size: 16)
-        
     }
     
     @objc private func hideKeyboard() {
@@ -66,42 +51,28 @@ final class SignupViewController: BaseViewController {
     }
     
     @objc private func signupButtonTapped() {
-        guard let name = name.textField.text, !name.isEmpty,
-              let email = email.textField.text, !email.isEmpty,
-              let password = password.textField.text, !password.isEmpty,
-              let confirmPassword = confirmPassword.textField.text, !confirmPassword.isEmpty else {
-            showAlert(message: "Please fill in all fields.")
+        view.endEditing(true)
+        
+        guard let nameText = name.textField.text,
+              let emailText = email.textField.text,
+              let passwordText = password.textField.text,
+              let confirmPasswordText = confirmPassword.textField.text else {
             return
         }
         
-        if !(validateField(self.name, alertMessage: "Name is not valid")
-            && validateField(self.email, alertMessage: "Email is not valid")
-            && validateField(self.password, alertMessage: "Password is not valid")
-            && validateField(self.confirmPassword, alertMessage: "Confirm password is not valid")) {
-            return
-        }
-        
-        guard password == confirmPassword else {
-            showAlert(message: "Passwords do not match.")
-            return
-        }
-        
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            if let error = error {
-                self.showAlert(message: error.localizedDescription)
-            } else {
-                self.viewModel?.navigateToSplash()
+        viewModel?.signupUser(withName: nameText, email: emailText, password: passwordText, confirmPassword: confirmPasswordText) { [weak self] validationResults, errorMessage in
+            self?.updateValidationUI(validationResults)
+            if let errorMessage = errorMessage {
+                self?.showAlert(message: errorMessage)
             }
         }
     }
     
-    private func validateField(_ textField: CustomTextFieldView, alertMessage: String) -> Bool {
-        if textField.validateText() {
-            return true
-        } else {
-            showAlert(message: alertMessage)
-            return false
-        }
+    private func updateValidationUI(_ validationResults: [String: Bool]) {
+        name.currentState = validationResults["name"] == true ? .normal : .error
+        email.currentState = validationResults["email"] == true ? .normal : .error
+        password.currentState = validationResults["password"] == true ? .normal : .error
+        confirmPassword.currentState = validationResults["confirmPassword"] == true ? .normal : .error
     }
     
     private func showAlert(title: String = "Alert", message: String) {
@@ -109,5 +80,4 @@ final class SignupViewController: BaseViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-    
 }

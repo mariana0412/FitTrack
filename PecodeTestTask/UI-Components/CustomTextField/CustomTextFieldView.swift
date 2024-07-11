@@ -14,7 +14,6 @@ final class CustomTextFieldView: UIView {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
     
-    var validationRegex: String?
     private var isPlaceholderVisible: Bool = true
     
     enum TextFieldState {
@@ -88,18 +87,6 @@ final class CustomTextFieldView: UIView {
         textField.returnKeyType = .done
     }
     
-    func validateText() -> Bool {
-        validateText(textField.text ?? "")
-    }
-    
-    private func validateText(_ text: String) -> Bool {
-        guard let regex = validationRegex else {
-            return true
-        }
-        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
-        return predicate.evaluate(with: text)
-    }
-    
 }
 
 extension CustomTextFieldView: UITextFieldDelegate {
@@ -116,15 +103,4 @@ extension CustomTextFieldView: UITextFieldDelegate {
         return true
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if let text = textField.text, let textRange = Range(range, in: text) {
-            let updatedText = text.replacingCharacters(in: textRange, with: string)
-            if validateText(updatedText) {
-                currentState = .active
-            } else {
-                currentState = .error
-            }
-        }
-        return true
-    }
 }
