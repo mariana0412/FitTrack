@@ -10,7 +10,7 @@ import UIKit
 final class CustomTextFieldView: UIView {
     let kCONTENT_XIB_NAME = "CustomTextFieldView"
     
-    @IBOutlet var contentView: UIView!
+    @IBOutlet private var contentView: UIView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
     
@@ -67,7 +67,7 @@ final class CustomTextFieldView: UIView {
         setupDoneButtonForTextField()
     }
     
-    func updateUI(for state: TextFieldState) {
+    private func updateUI(for state: TextFieldState) {
         switch state {
         case .normal:
             label.textColor = UIColor.primaryWhite
@@ -84,7 +84,7 @@ final class CustomTextFieldView: UIView {
         }
     }
     
-    func setupDoneButtonForTextField() {
+    private func setupDoneButtonForTextField() {
         textField.returnKeyType = .done
     }
     

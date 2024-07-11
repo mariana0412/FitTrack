@@ -20,16 +20,16 @@ final class SignupViewController: BaseViewController {
     
     var viewModel: SignupViewModel?
     
-    @IBOutlet weak var createYourAccountLabel: UILabel!
-    @IBOutlet weak var haveAccountLabel: UILabel!
+    @IBOutlet private weak var createYourAccountLabel: UILabel!
+    @IBOutlet private weak var haveAccountLabel: UILabel!
     
-    @IBOutlet weak var name: CustomTextFieldView!
-    @IBOutlet weak var email: CustomTextFieldView!
-    @IBOutlet weak var password: CustomTextFieldView!
-    @IBOutlet weak var confirmPassword: CustomTextFieldView!
+    @IBOutlet private weak var name: CustomTextFieldView!
+    @IBOutlet private weak var email: CustomTextFieldView!
+    @IBOutlet private weak var password: CustomTextFieldView!
+    @IBOutlet private weak var confirmPassword: CustomTextFieldView!
     
-    @IBOutlet weak var signupButton: CustomButton!
-    @IBOutlet weak var loginButton: CustomButton!
+    @IBOutlet private weak var signupButton: CustomButton!
+    @IBOutlet private weak var loginButton: CustomButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,11 +61,11 @@ final class SignupViewController: BaseViewController {
         
     }
     
-    @objc func hideKeyboard() {
+    @objc private func hideKeyboard() {
         view.endEditing(true)
     }
     
-    @objc func signupButtonTapped() {
+    @objc private func signupButtonTapped() {
         guard let name = name.textField.text, !name.isEmpty,
               let email = email.textField.text, !email.isEmpty,
               let password = password.textField.text, !password.isEmpty,
