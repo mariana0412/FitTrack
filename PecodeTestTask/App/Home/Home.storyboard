@@ -17,9 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Superhero" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5Y-GO-Naf">
-                                <rect key="frame" x="142.66666666666666" y="135" width="107.66666666666666" height="28.666666666666657"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5Y-GO-Naf">
+                                <rect key="frame" x="196.66666666666666" y="91" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" name="PrimaryWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzI-eg-19d">
+                                <rect key="frame" x="196.66666666666666" y="98" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" name="PrimaryWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -27,11 +33,14 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="z5Y-GO-Naf" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="135" id="Mui-bk-gtq"/>
+                            <constraint firstItem="wzI-eg-19d" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="0uG-bG-xj9"/>
+                            <constraint firstItem="wzI-eg-19d" firstAttribute="top" secondItem="z5Y-GO-Naf" secondAttribute="bottom" constant="7" id="36G-Gu-gXV"/>
                             <constraint firstItem="z5Y-GO-Naf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="NqX-iV-7Hb"/>
+                            <constraint firstItem="z5Y-GO-Naf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="32" id="oPI-Tb-79Q"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nameLabel" destination="wzI-eg-19d" id="TF4-bd-1F2"/>
                         <outlet property="superheroLabel" destination="z5Y-GO-Naf" id="cw1-gr-dnl"/>
                     </connections>
                 </viewController>

@@ -10,12 +10,8 @@ import UIKit
 class BaseViewController: UIViewController {
     
     private enum Constants {
-        enum Layout {
-            static let backgroundImageAlpha: CGFloat = 1.0
-        }
-        
         enum Images {
-            static let backgroundImageName = "backgroundImage"
+            static let backgroundImageName = "backgroundImageMan"
         }
         
         enum Gradient {
@@ -28,22 +24,34 @@ class BaseViewController: UIViewController {
         }
     }
     
+    private var backgroundImageView: UIImageView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackgroundImage(named: Constants.Images.backgroundImageName, 
-                           alpha: Constants.Layout.backgroundImageAlpha)
+        setBackgroundImage(named: Constants.Images.backgroundImageName)
     }
     
-    private func setBackgroundImage(named imageName: String, alpha: CGFloat) {
+    func updateBackgroundImage(named imageName: String) {
+        guard let backgroundImageView = backgroundImageView else { return }
         guard let backgroundImage = UIImage(named: imageName) else {
             print("Error: Image \(imageName) not found.")
             return
         }
         
-        let backgroundImageView = UIImageView(image: backgroundImage)
-        backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.alpha = alpha
-        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImageView.image = backgroundImage
+    }
+    
+    private func setBackgroundImage(named imageName: String) {
+        guard let backgroundImage = UIImage(named: imageName) else {
+            print("Error: Image \(imageName) not found.")
+            return
+        }
+        
+        backgroundImageView = UIImageView(image: backgroundImage)
+        backgroundImageView?.contentMode = .scaleAspectFill
+        backgroundImageView?.translatesAutoresizingMaskIntoConstraints = false
+        
+        guard let backgroundImageView = backgroundImageView else { return }
         
         view.addSubview(backgroundImageView)
         view.sendSubviewToBack(backgroundImageView)

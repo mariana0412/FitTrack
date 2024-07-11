@@ -49,7 +49,7 @@ class FirebaseService {
         }
     }
     
-    func updateUserGender(sex: String, completion: @escaping (FirebaseResponse) -> Void) {
+    func updateUserSex(sex: String, completion: @escaping (FirebaseResponse) -> Void) {
         let db = Firestore.firestore()
         guard let currentUserId = getCurrentUserId() else {
             completion(.unknown)
@@ -71,7 +71,29 @@ class FirebaseService {
             return nil
         }
     }
-
-
+    
+    func fetchUserDetails(completion: @escaping (FirebaseResponse, RegistrationData?) -> Void) {
+        guard let currentUser = Auth.auth().currentUser else {
+            completion(.failure(NSError(domain: "Firebase", code: -1, userInfo: [NSLocalizedDescriptionKey: "No current user"])), nil)
+            return
+        }
+        
+        let db = Firestore.firestore()
+        let userRef = db.collection("users").document(currentUser.uid)
+        
+        userRef.getDocument { document, error in
+            if let error = error {
+                completion(.failure(error), nil)
+            } else if let document = document, document.exists, let data = document.data() {
+                let userName = data["userName"] as? String ?? ""
+                let email = data["email"] as? String ?? ""
+                let sex = data["sex"] as? String
+                let registrationData = RegistrationData(userName: userName, email: email, sex: sex, password: "")
+                completion(.success, registrationData)
+            } else {
+                completion(.unknown, nil)
+            }
+        }
+    }
     
 }

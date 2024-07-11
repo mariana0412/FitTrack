@@ -38,8 +38,7 @@ class TabBarCoordinator: Coordinator {
 
         switch item {
         case .home:
-            let homeCoordinator = HomeCoordinator(navigationController: navigationController, 
-                                                  heroName: heroName)
+            let homeCoordinator = HomeCoordinator(navigationController: navigationController)
             homeCoordinator.start()
 
         case .progress:

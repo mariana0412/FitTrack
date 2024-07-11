@@ -15,7 +15,7 @@ class SplashViewModel {
     }
     
     func updateUserSex(sex: String, completion: @escaping (String?) -> Void) {
-        FirebaseService.shared.updateUserGender(sex: sex) { [weak self] response in
+        FirebaseService.shared.updateUserSex(sex: sex) { [weak self] response in
             switch response {
             case .success:
                 self?.coordinator?.navigateToHome(with: sex)
