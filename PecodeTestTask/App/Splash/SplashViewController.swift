@@ -64,18 +64,30 @@ class SplashViewController: UIViewController {
     }
     
     private func updateUserSex(sex: String) {
-        supermanButton.isEnabled = false
-        supergirlButton.isEnabled = false
+        disableButtons()
         
         viewModel?.updateUserSex(sex: sex) { [weak self] errorMessage in
-            self?.supermanButton.isEnabled = true
-            self?.supergirlButton.isEnabled = true
+            self?.enableButtons()
             
             if let errorMessage = errorMessage {
                 let alert = AlertUtils.createAlert(message: errorMessage)
                 self?.present(alert, animated: true, completion: nil)
             }
         }
+    }
+    
+    private func disableButtons() {
+        supermanButton.isEnabled = false
+        supergirlButton.isEnabled = false
+        supermanButton.backgroundColor = UIColor.primaryWhite
+        supergirlButton.backgroundColor = UIColor.primaryWhite
+    }
+    
+    private func enableButtons() {
+        supermanButton.isEnabled = true
+        supergirlButton.isEnabled = true
+        supermanButton.backgroundColor = UIColor.primaryYellow
+        supergirlButton.backgroundColor = UIColor.primaryYellow
     }
     
     private func setupUI() {
