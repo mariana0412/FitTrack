@@ -90,7 +90,7 @@ final class SignupViewController: BaseViewController {
             if let error = error {
                 self.showAlert(message: error.localizedDescription)
             } else {
-                self.showAlert(message: "Registration successful!")
+                self.viewModel?.navigateToSplash()
             }
         }
     }

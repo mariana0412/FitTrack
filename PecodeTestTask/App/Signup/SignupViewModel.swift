@@ -12,4 +12,7 @@ class SignupViewModel {
         self.coordinator = coordinator
     }
     
+    func navigateToSplash() {
+        coordinator?.navigateToSplash()
+    }
 }

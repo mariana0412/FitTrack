@@ -20,4 +20,9 @@ class SignupCoordinator: Coordinator {
         navigationController.pushViewController(signupViewController, animated: false)
     }
     
+    func navigateToSplash() {
+        let splashCoordinator = SplashCoordinator(navigationController: navigationController)
+        splashCoordinator.start()
+    }
+    
 }
