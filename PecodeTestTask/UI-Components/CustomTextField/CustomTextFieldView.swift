@@ -12,6 +12,7 @@ final class CustomTextFieldView: UIView {
     
     @IBOutlet private var contentView: UIView!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var textFieldView: UIView!
     @IBOutlet weak var textField: UITextField!
     
     private var isPlaceholderVisible: Bool = true
@@ -70,15 +71,15 @@ final class CustomTextFieldView: UIView {
         switch state {
         case .normal:
             label.textColor = UIColor.primaryWhite
-            textField.layer.borderColor = UIColor.secondaryGray.cgColor
+            textFieldView.layer.borderColor = UIColor.secondaryGray.cgColor
             textField.textColor = UIColor.secondaryGray
         case .active:
             label.textColor = UIColor.primaryWhite
-            textField.layer.borderColor = UIColor.primaryWhite.cgColor
+            textFieldView.layer.borderColor = UIColor.primaryWhite.cgColor
             textField.textColor = UIColor.primaryWhite
         case .error:
             label.textColor = .red
-            textField.layer.borderColor = UIColor.primaryRed.cgColor
+            textFieldView.layer.borderColor = UIColor.primaryRed.cgColor
             textField.textColor = UIColor.primaryRed
         }
     }
