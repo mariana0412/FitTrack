@@ -23,8 +23,9 @@ class SignupViewModel {
         self.coordinator = coordinator
     }
     
-    func signupUser(withName name: String, email: String, password: String, confirmPassword: String, completion: @escaping ([String: Bool], String?) -> Void) {
-        let validationResults = validateFields(name: name, email: email, password: password, confirmPassword: confirmPassword)
+    func signupUser(with registrationData: RegistrationData, confirmPassword: String, completion: @escaping ([String: Bool], String?) -> Void) {
+        let validationResults = validateFields(name: registrationData.userName, email: registrationData.email, password: registrationData.password, confirmPassword: registrationData.password)
+            
         
         guard validationResults["name"] == true,
               validationResults["email"] == true,
@@ -34,7 +35,7 @@ class SignupViewModel {
             return
         }
         
-        FirebaseService.shared.createUser(withEmail: email, password: password) { response in
+        FirebaseService.shared.createUser(with: registrationData) { response in
             switch response {
             case .success:
                 self.navigateToSplash()

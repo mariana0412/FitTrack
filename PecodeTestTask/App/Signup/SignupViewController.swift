@@ -60,7 +60,12 @@ final class SignupViewController: BaseViewController {
             return
         }
         
-        viewModel?.signupUser(withName: nameText, email: emailText, password: passwordText, confirmPassword: confirmPasswordText) { [weak self] validationResults, errorMessage in
+        let registrationData = RegistrationData(userName: nameText, email: emailText, sex: nil, password: passwordText)
+                
+        signupButton.isEnabled = false
+        
+        viewModel?.signupUser(with: registrationData, confirmPassword: confirmPasswordText) { [weak self] validationResults, errorMessage in
+            self?.signupButton.isEnabled = true
             self?.updateValidationUI(validationResults)
             if let errorMessage = errorMessage {
                 self?.showAlert(message: errorMessage)

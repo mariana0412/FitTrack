@@ -7,6 +7,7 @@
 
 import FirebaseCore
 import FirebaseAuth
+import FirebaseFirestore
 
 class FirebaseService {
     
@@ -20,14 +21,30 @@ class FirebaseService {
         
     private init() {}
     
-    func createUser(withEmail email: String, password: String, completion: @escaping (FirebaseResponse) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+    func createUser(with registrationData: RegistrationData, completion: @escaping (FirebaseResponse) -> Void) {
+        Auth.auth().createUser(withEmail: registrationData.email, password: registrationData.password) { authResult, error in
             if let error = error {
                 completion(.failure(error))
-            } else if authResult != nil {
-                completion(.success)
+            } else if let authResult = authResult {
+                self.saveUserDetails(id: authResult.user.uid, registrationData: registrationData, completion: completion)
             } else {
                 completion(.unknown)
+            }
+        }
+    }
+    
+    private func saveUserDetails(id: String, registrationData: RegistrationData, completion: @escaping (FirebaseResponse) -> Void) {
+        let db = Firestore.firestore()
+        db.collection("users").document(id).setData([
+            "email": registrationData.email,
+            "id": id,
+            "userName": registrationData.userName,
+            "sex": registrationData.sex ?? ""
+        ]) { error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success)
             }
         }
     }
