@@ -9,6 +9,8 @@ import UIKit
 
 class TabBarController: UITabBarController {
 
+    @IBOutlet weak var customTabBar: CustomTabBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
