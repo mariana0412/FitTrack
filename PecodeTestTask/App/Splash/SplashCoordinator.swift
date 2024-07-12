@@ -20,9 +20,8 @@ class SplashCoordinator: Coordinator {
         navigationController.pushViewController(splashViewController, animated: false)
     }
     
-    func navigateToHome(with heroName: String) {
-        let tabBarCoordinator = TabBarCoordinator(navigationController: navigationController,
-                                                  heroName: heroName)
+    func navigateToHome() {
+        let tabBarCoordinator = TabBarCoordinator(navigationController: navigationController)
         tabBarCoordinator.start()
     }
     

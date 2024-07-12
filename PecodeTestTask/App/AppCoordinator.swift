@@ -10,8 +10,9 @@ import UIKit
 class AppCoordinator: Coordinator {
     private let window: UIWindow
     var navigationController: UINavigationController
-    private var splashCoordinator: SplashCoordinator?
+    private var signupCoordinator: SignupCoordinator?
     private var tabBarCoordinator: TabBarCoordinator?
+    private var splashCoordinator: SplashCoordinator?
 
     init(window: UIWindow) {
         self.window = window
@@ -21,9 +22,36 @@ class AppCoordinator: Coordinator {
     func start() {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+        
+        checkCurrentUser()
+    }
+    
+    private func checkCurrentUser() {
+        FirebaseService.shared.checkCurrentUser { [weak self] userStatus in
+            switch userStatus {
+            case .unregistered:
+                self?.showSignupScreen()
+            case .registeredWithoutSex:
+                self?.showSplashScreen()
+            case .registeredWithSex(let registrationData):
+                self?.showTabBar(with: registrationData)
+            }
+        }
+    }
 
+    private func showSignupScreen() {
+        signupCoordinator = SignupCoordinator(navigationController: navigationController)
+        signupCoordinator?.start()
+    }
+
+    private func showSplashScreen() {
         splashCoordinator = SplashCoordinator(navigationController: navigationController)
         splashCoordinator?.start()
     }
 
+    private func showTabBar(with registrationData: RegistrationData) {
+        tabBarCoordinator = TabBarCoordinator(navigationController: navigationController)
+        tabBarCoordinator?.start()
+    }
+    
 }
