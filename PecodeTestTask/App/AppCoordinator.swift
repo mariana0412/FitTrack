@@ -11,8 +11,10 @@ class AppCoordinator: Coordinator {
     private let window: UIWindow
     var navigationController: UINavigationController
     private var signupCoordinator: SignupCoordinator?
+    private var loginCoordinator: LoginCoordinator?
     private var tabBarCoordinator: TabBarCoordinator?
     private var splashCoordinator: SplashCoordinator?
+    
 
     init(window: UIWindow) {
         self.window = window
@@ -23,7 +25,8 @@ class AppCoordinator: Coordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         
-        checkCurrentUser()
+        showLogin()
+        //checkCurrentUser()
     }
     
     private func checkCurrentUser() {
@@ -42,6 +45,11 @@ class AppCoordinator: Coordinator {
     private func showSignupScreen() {
         signupCoordinator = SignupCoordinator(navigationController: navigationController)
         signupCoordinator?.start()
+    }
+    
+    private func showLogin() {
+        loginCoordinator = LoginCoordinator(navigationController: navigationController)
+        loginCoordinator?.start()
     }
 
     private func showSplashScreen() {
