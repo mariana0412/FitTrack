@@ -11,8 +11,10 @@ final class SignupViewController: BaseViewController {
     
     private enum Constants {
         enum Layout {
-            static let sairaLarge = UIFont(name: "Saira-Regular", size: 24)
-            static let sairaSmall = UIFont(name: "Saira-Regular", size: 16)
+            static let sairaLargeRegular = UIFont(name: "Saira-Regular", size: 24)
+            static let sairaSmallRegular = UIFont(name: "Saira-Regular", size: 16)
+            static let sairaSmallMedium = UIFont(name: "Saira-Medium", size: 16)
+            static let sairaSmallLight = UIFont(name: "Saira-Light", size: 16)
         }
     }
     
@@ -42,11 +44,11 @@ final class SignupViewController: BaseViewController {
     }
     
     private func setupUI() {
-        createYourAccountLabel.font = Constants.Layout.sairaLarge
-        haveAccountLabel.font = Constants.Layout.sairaSmall
-        
-        signupButton.titleLabel?.font = Constants.Layout.sairaSmall
-        loginButton.titleLabel?.font = Constants.Layout.sairaSmall
+        createYourAccountLabel.font = Constants.Layout.sairaLargeRegular
+        haveAccountLabel.font = Constants.Layout.sairaSmallLight
+
+        signupButton.setupButtonFont(font: Constants.Layout.sairaSmallRegular, color: .black)
+        loginButton.setupButtonFont(font: Constants.Layout.sairaSmallMedium, color: .primaryYellow)
     }
     
     private func setupActions() {

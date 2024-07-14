@@ -41,7 +41,8 @@ final class LoginViewController: BaseViewController {
     
     private func setupUI() {
         loginToYourAccountLabel.font = Constants.Layout.sairaLargeRegular
-        forgotPasswordButton.titleLabel?.font = Constants.Layout.sairaSmallMedium
-        loginButton.titleLabel?.font = Constants.Layout.sairaSmallRegular
+        forgotPasswordButton.setupButtonFont(font: Constants.Layout.sairaSmallMedium, color: .primaryYellow)
+        loginButton.setupButtonFont(font: Constants.Layout.sairaSmallRegular, color: .black)
     }
+    
 }
