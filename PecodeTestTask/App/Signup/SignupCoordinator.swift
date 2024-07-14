@@ -25,4 +25,9 @@ class SignupCoordinator: Coordinator {
         splashCoordinator.start()
     }
     
+    func navigateToLogin() {
+        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
+        loginCoordinator.start()
+    }
+    
 }

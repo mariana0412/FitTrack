@@ -25,8 +25,7 @@ class AppCoordinator: Coordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         
-        showLoginScreen()
-        //checkCurrentUser()
+        checkCurrentUser()
     }
     
     private func checkCurrentUser() {
@@ -45,11 +44,6 @@ class AppCoordinator: Coordinator {
     private func showSignupScreen() {
         signupCoordinator = SignupCoordinator(navigationController: navigationController)
         signupCoordinator?.start()
-    }
-    
-    private func showLoginScreen() {
-        loginCoordinator = LoginCoordinator(navigationController: navigationController)
-        loginCoordinator?.start()
     }
 
     private func showSplashScreen() {

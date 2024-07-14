@@ -54,6 +54,7 @@ final class SignupViewController: BaseViewController {
         view.addGestureRecognizer(tapGesture)
         
         signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
     @objc private func hideKeyboard() {
@@ -88,6 +89,10 @@ final class SignupViewController: BaseViewController {
                 self?.present(alert, animated: true, completion: nil)
             }
         }
+    }
+    
+    @objc private func loginButtonTapped() {
+        viewModel?.navigateToLogin()
     }
     
     private func updateValidationUI(_ validationResults: [String: Bool]) {

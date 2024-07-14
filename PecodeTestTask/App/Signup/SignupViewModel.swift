@@ -71,4 +71,9 @@ class SignupViewModel {
     func navigateToSplash(with email: String) {
         coordinator?.navigateToSplash()
     }
+    
+    func navigateToLogin() {
+        coordinator?.navigateToLogin()
+    }
+    
 }
