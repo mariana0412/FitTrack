@@ -16,11 +16,11 @@ class HomeViewModel {
         self.coordinator = coordinator
     }
     
-    func fetchUserDetails(completion: @escaping (String?) -> Void) {
-        FirebaseService.shared.getUser { [weak self] response, registrationData in
+    func fetchUser(completion: @escaping (String?) -> Void) {
+        FirebaseService.shared.getUser { [weak self] response in
             switch response {
-            case .success:
-                if let user = registrationData {
+            case .success(let registrationData):
+                if let user = registrationData, let user = user {
                     self?.userName = user.userName
                     self?.sex = user.sex ?? ""
                     self?.heroName = user.sex == "male" ? "Superman" : "Supergirl"

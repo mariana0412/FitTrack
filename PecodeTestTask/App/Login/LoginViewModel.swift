@@ -24,10 +24,10 @@ class LoginViewModel {
     }
 
     func loginUser(with loginData: LoginData, completion: @escaping (String?) -> Void) {
-        FirebaseService.shared.loginUser(with: loginData) { [weak self] response, registrationData in
+        FirebaseService.shared.loginUser(with: loginData) { [weak self] response in
             switch response {
-            case .success:
-                if let user = registrationData {
+            case .success(let registrationData):
+                if let user = registrationData, let user = user {
                     self?.handleNavigation(user: user)
                     completion(nil)
                 } else {

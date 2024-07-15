@@ -28,7 +28,7 @@ final class HomeViewController: BaseViewController {
     }
     
     private func loadUserData() {
-        viewModel?.fetchUserDetails { [weak self] errorMessage in
+        viewModel?.fetchUser { [weak self] errorMessage in
             if let errorMessage = errorMessage {
                 let alert = AlertUtils.createAlert(message: errorMessage)
                 self?.present(alert, animated: true, completion: nil)

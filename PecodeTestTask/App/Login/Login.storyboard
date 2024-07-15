@@ -67,7 +67,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpb-PM-A5w" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
-                                        <rect key="frame" x="141" y="162.00000000000003" width="160" height="24"/>
+                                        <rect key="frame" x="226" y="162.00000000000003" width="75" height="24"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                         <userDefinedRuntimeAttributes>
@@ -134,10 +134,10 @@
     </scenes>
     <designables>
         <designable name="0Xd-zF-zWe">
-            <size key="intrinsicContentSize" width="65.666666666666671" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
         </designable>
         <designable name="xpb-PM-A5w">
-            <size key="intrinsicContentSize" width="160" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
         </designable>
     </designables>
     <resources>
