@@ -38,6 +38,9 @@
 		CA038C002C43F8E90033CD30 /* Saira-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA038BFF2C43F8E90033CD30 /* Saira-Light.ttf */; };
 		CA038C012C43F8E90033CD30 /* Saira-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA038BFF2C43F8E90033CD30 /* Saira-Light.ttf */; };
 		CA038C022C43F8E90033CD30 /* Saira-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA038BFF2C43F8E90033CD30 /* Saira-Light.ttf */; };
+		CA038C042C4427190033CD30 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA038C032C4427180033CD30 /* LoginData.swift */; };
+		CA038C052C4427190033CD30 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA038C032C4427180033CD30 /* LoginData.swift */; };
+		CA038C062C4427190033CD30 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA038C032C4427180033CD30 /* LoginData.swift */; };
 		CA1EE8402C375AFF00E58403 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */; };
 		CA33B9BE2C3C6457000BFA4C /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA33B9BD2C3C6457000BFA4C /* FirebaseService.swift */; };
 		CA37E5672C3EF36C003ADAA8 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37E5662C3EF36C003ADAA8 /* SignupViewController.swift */; };
@@ -141,6 +144,7 @@
 		CA038BF52C4316300033CD30 /* Saira-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Medium.ttf"; sourceTree = "<group>"; };
 		CA038BFB2C43DB510033CD30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CA038BFF2C43F8E90033CD30 /* Saira-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Light.ttf"; sourceTree = "<group>"; };
+		CA038C032C4427180033CD30 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
 		CA33B9BD2C3C6457000BFA4C /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		CA37E5662C3EF36C003ADAA8 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -288,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				CA37E56F2C3F25B4003ADAA8 /* RegistrationData.swift */,
+				CA038C032C4427180033CD30 /* LoginData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -791,6 +796,7 @@
 				CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */,
 				CA002E262C31A0830053284B /* AppCoordinator.swift in Sources */,
 				CA457E072C42BBF80031FDFA /* LoginViewController.swift in Sources */,
+				CA038C042C4427190033CD30 /* LoginData.swift in Sources */,
 				CA1EE8402C375AFF00E58403 /* CustomSwitch.swift in Sources */,
 				CA37E57E2C405731003ADAA8 /* TabBarViewModel.swift in Sources */,
 				CA002E392C36F8FA0053284B /* CustomCheckmark.swift in Sources */,
@@ -807,6 +813,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA37E5872C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
+				CA038C052C4427190033CD30 /* LoginData.swift in Sources */,
 				CA37E57B2C401D4F003ADAA8 /* AlertUtils.swift in Sources */,
 				CA37E57F2C405731003ADAA8 /* TabBarViewModel.swift in Sources */,
 				CA002DED2C318B110053284B /* PecodeTestTaskTests.swift in Sources */,
@@ -822,6 +829,7 @@
 				CA002DF72C318B110053284B /* PecodeTestTaskUITests.swift in Sources */,
 				CA002DF92C318B110053284B /* PecodeTestTaskUITestsLaunchTests.swift in Sources */,
 				CA37E57C2C401D4F003ADAA8 /* AlertUtils.swift in Sources */,
+				CA038C062C4427190033CD30 /* LoginData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

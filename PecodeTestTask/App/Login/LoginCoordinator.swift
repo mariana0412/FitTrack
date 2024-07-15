@@ -20,4 +20,14 @@ class LoginCoordinator: Coordinator {
         navigationController.pushViewController(loginViewController, animated: false)
     }
     
+    func navigateToSplash() {
+        let splashCoordinator = SplashCoordinator(navigationController: navigationController)
+        splashCoordinator.start()
+    }
+    
+    func navigateToHome() {
+        let tabBarCoordinator = TabBarCoordinator(navigationController: navigationController)
+        tabBarCoordinator.start()
+    }
+    
 }

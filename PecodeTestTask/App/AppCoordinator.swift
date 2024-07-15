@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class AppCoordinator: Coordinator {
     private let window: UIWindow
@@ -24,6 +25,10 @@ class AppCoordinator: Coordinator {
     func start() {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+        
+        do {
+            try Auth.auth().signOut()
+        } catch {}
         
         checkCurrentUser()
     }

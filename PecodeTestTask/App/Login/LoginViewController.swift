@@ -30,8 +30,9 @@ final class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupUI()
+        setupActions()
     }
     
     static func instantiate() -> LoginViewController {
@@ -45,4 +46,38 @@ final class LoginViewController: BaseViewController {
         loginButton.setupButtonFont(font: Constants.Layout.sairaSmallRegular, color: .black)
     }
     
+    private func setupActions() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc private func loginButtonTapped() {
+        view.endEditing(true)
+        
+        guard let emailText = email.textField.text,
+              let passwordText = password.textField.text else {
+            return
+        }
+        
+        let loginData = LoginData(email: emailText,
+                                  password: passwordText)
+                
+        loginButton.isEnabled = false
+        loginButton.backgroundColor = UIColor.primaryWhite
+        viewModel?.loginUser(with: loginData) { [weak self] errorMessage in
+            self?.loginButton.isEnabled = true
+            self?.loginButton.backgroundColor = UIColor.primaryYellow
+            if let errorMessage = errorMessage {
+                let alert = AlertUtils.createAlert(message: errorMessage)
+                self?.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
+        
 }

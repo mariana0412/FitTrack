@@ -60,7 +60,22 @@ class FirebaseService {
         }
     }
     
-    func updateUserSex(sex: String, 
+    func loginUser(with loginData: LoginData,
+                   completion: @escaping (FirebaseResponse, RegistrationData?) -> Void) {
+        Auth.auth().signIn(withEmail: loginData.email, password: loginData.password) { authResult, error in
+            if let error = error {
+                completion(.failure(error), nil)
+            } else if let _ = authResult {
+                self.getUser { response, registrationData in
+                    completion(response, registrationData)
+                }
+            } else {
+                completion(.unknown, nil)
+            }
+        }
+    }
+
+    func updateUserSex(sex: String,
                        completion: @escaping (FirebaseResponse) -> Void) {
         let database = Firestore.firestore()
         guard let currentUserId = getCurrentUserId() else {
