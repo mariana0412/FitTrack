@@ -10,7 +10,7 @@ class HomeViewModel {
     private(set) var heroName: String = ""
     private(set) var userName: String = ""
     private(set) var sex: String = ""
-    private(set) var backgroundImageName: String = ""
+    private(set) var backgroundImageName = "backgroundImageMan"
     
     init(coordinator: HomeCoordinator) {
         self.coordinator = coordinator

@@ -29,10 +29,11 @@ struct ViewControllerIdentifiers {
 
 struct Fonts {
     static let futuraBold = UIFont(name: "Futura-Bold", size: 32)
-    static let sairaLargeRegular = UIFont(name: "Saira-Regular", size: 24)
-    static let sairaSmallRegular = UIFont(name: "Saira-Regular", size: 16)
-    static let sairaSmallMedium = UIFont(name: "Saira-Medium", size: 16)
-    static let sairaSmallLight = UIFont(name: "Saira-Light", size: 16)
+    static let sairaRegular24 = UIFont(name: "Saira-Regular", size: 24)
+    static let sairaRegular16 = UIFont(name: "Saira-Regular", size: 16)
+    static let sairaRegular18 = UIFont(name: "Saira-Regular", size: 18)
+    static let sairaMedium16 = UIFont(name: "Saira-Medium", size: 16)
+    static let sairaLight16 = UIFont(name: "Saira-Light", size: 16)
     static let textFieldLabel = UIFont(name: "Helvetica Neue", size: 18)
     static let textFieldPlaceholder = UIFont(name: "Helvetica Neue", size: 16)
 }

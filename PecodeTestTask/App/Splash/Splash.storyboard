@@ -136,6 +136,7 @@
                         <outlet property="chooseHeroLabel" destination="kv9-rx-Bqe" id="iWU-fj-ekJ"/>
                         <outlet property="supergirlButton" destination="WpS-fa-Xti" id="Y72-jY-X26"/>
                         <outlet property="supergirlImage" destination="FQJ-bt-fQn" id="Hy8-wa-nZt"/>
+                        <outlet property="superheroLabel" destination="Qo6-vl-y79" id="qam-sl-eRw"/>
                         <outlet property="supermanButton" destination="MIG-65-bZ0" id="bKs-oo-co8"/>
                         <outlet property="supermanImage" destination="RXY-zX-0b9" id="cJf-xu-OAl"/>
                     </connections>

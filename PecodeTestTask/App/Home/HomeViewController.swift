@@ -9,14 +9,6 @@ import UIKit
 
 final class HomeViewController: BaseViewController {
     
-    private enum Constants {
-        enum Layout {
-            static let labelFontName = "Saira-Regular"
-            static let superheroLabelFontSize: CGFloat = 24.0
-            static let nameLabelFontSize: CGFloat = 16.0
-        }
-    }
-    
     var viewModel: HomeViewModel?
     private var superheroName: String?
 
@@ -26,6 +18,7 @@ final class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
         loadUserData()
     }
 
@@ -49,12 +42,10 @@ final class HomeViewController: BaseViewController {
         guard let viewModel = viewModel else { return }
         
         superheroLabel.text = viewModel.heroName
-        superheroLabel.font = UIFont(name: Constants.Layout.labelFontName, 
-                                     size: Constants.Layout.superheroLabelFontSize)
+        superheroLabel.font = Fonts.sairaRegular24
         
         nameLabel.text = viewModel.userName
-        nameLabel.font = UIFont(name: Constants.Layout.labelFontName,
-                                size: Constants.Layout.nameLabelFontSize)
+        nameLabel.font = Fonts.sairaRegular16
     
         updateBackgroundImage(named: viewModel.backgroundImageName)
     }

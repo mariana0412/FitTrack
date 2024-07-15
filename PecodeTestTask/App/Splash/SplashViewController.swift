@@ -37,6 +37,7 @@ class SplashViewController: UIViewController {
     
     var viewModel: SplashViewModel?
     
+    @IBOutlet private weak var superheroLabel: UILabel!
     @IBOutlet private weak var chooseHeroLabel: UILabel!
     @IBOutlet private weak var supermanButton: CustomButton!
     @IBOutlet private weak var supergirlButton: CustomButton!
@@ -91,8 +92,19 @@ class SplashViewController: UIViewController {
     }
     
     private func setupUI() {
-        chooseHeroLabel.font = UIFont(name: Constants.Layout.chooseHeroLabelFontName, 
-                                      size: Constants.Layout.chooseHeroLabelFontSize)
+        superheroLabel.text = viewModel?.superheroText
+        superheroLabel.font = Fonts.futuraBold
+        superheroLabel.textColor = .primaryYellow
+        
+        chooseHeroLabel.text = viewModel?.chooseHeroText
+        chooseHeroLabel.font = Fonts.sairaRegular16
+        chooseHeroLabel.textColor = .primaryWhite
+        
+        supermanButton.titleLabel?.text = viewModel?.supermanButtonText
+        supermanButton.titleLabel?.font = Fonts.sairaRegular18
+        
+        supergirlButton.titleLabel?.text = viewModel?.supergirlButtonText
+        supergirlButton.titleLabel?.font = Fonts.sairaRegular18
         
         OverlayUtils.addDarkOverlay(to: supermanImage,
                                     color: UIColor.black,

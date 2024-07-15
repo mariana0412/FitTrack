@@ -42,7 +42,7 @@ final class SignupViewController: BaseViewController {
         
         createYourAccountLabel.text = viewModel?.createYourAccountText
         createYourAccountLabel.textColor = .primaryWhite
-        createYourAccountLabel.font = Fonts.sairaLargeRegular
+        createYourAccountLabel.font = Fonts.sairaRegular24
         
         name.labelText = viewModel?.nameText
         name.labelFont = Fonts.textFieldLabel
@@ -65,13 +65,13 @@ final class SignupViewController: BaseViewController {
         confirmPassword.textFieldFont = Fonts.textFieldPlaceholder
         
         signupButton.titleLabel?.text = viewModel?.signButtonText
-        signupButton.setupButtonFont(font: Fonts.sairaSmallRegular, color: .black)
+        signupButton.setupButtonFont(font: Fonts.sairaRegular16, color: .black)
         
         haveAccountLabel.text = viewModel?.haveAccountText
-        haveAccountLabel.font = Fonts.sairaSmallLight
+        haveAccountLabel.font = Fonts.sairaLight16
         
         loginButton.titleLabel?.text = viewModel?.loginButtonText
-        loginButton.setupButtonFont(font: Fonts.sairaSmallMedium, color: .primaryYellow)
+        loginButton.setupButtonFont(font: Fonts.sairaMedium16, color: .primaryYellow)
     }
     
     private func setupActions() {

@@ -39,7 +39,7 @@ final class LoginViewController: BaseViewController {
         superheroLabel.font = Fonts.futuraBold
         
         loginToYourAccountLabel.text = viewModel?.loginToYourAccountText
-        loginToYourAccountLabel.font = Fonts.sairaLargeRegular
+        loginToYourAccountLabel.font = Fonts.sairaRegular24
         
         email.labelText = viewModel?.emailText
         email.labelFont = Fonts.textFieldLabel
@@ -52,10 +52,10 @@ final class LoginViewController: BaseViewController {
         password.textFieldFont = Fonts.textFieldPlaceholder
         
         forgotPasswordButton.titleLabel?.text = viewModel?.forgotPasswordText
-        forgotPasswordButton.setupButtonFont(font: Fonts.sairaSmallMedium, color: .primaryYellow)
+        forgotPasswordButton.setupButtonFont(font: Fonts.sairaMedium16, color: .primaryYellow)
         
         loginButton.titleLabel?.text = viewModel?.loginButtonText
-        loginButton.setupButtonFont(font: Fonts.sairaSmallRegular, color: .black)
+        loginButton.setupButtonFont(font: Fonts.sairaRegular16, color: .black)
     }
     
     private func setupActions() {

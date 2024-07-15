@@ -10,6 +10,11 @@ import FirebaseAuth
 class SplashViewModel {
     private var coordinator: SplashCoordinator?
     
+    let superheroText = "SUPERHERO"
+    let chooseHeroText = "choose a hero"
+    let supermanButtonText = "SUPERMAN"
+    let supergirlButtonText = "SUPERGIRL"
+    
     init(coordinator: SplashCoordinator?) {
         self.coordinator = coordinator
     }
