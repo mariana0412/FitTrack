@@ -9,15 +9,9 @@ import UIKit
 
 final class SignupViewController: BaseViewController {
     
-    private enum Constants {
-        enum Layout {
-            static let sairaLarge = UIFont(name: "Saira-Regular", size: 24)
-            static let sairaSmall = UIFont(name: "Saira-Regular", size: 16)
-        }
-    }
-    
     var viewModel: SignupViewModel?
     
+    @IBOutlet private weak var superheroLabel: UILabel!
     @IBOutlet private weak var createYourAccountLabel: UILabel!
     @IBOutlet private weak var haveAccountLabel: UILabel!
     
@@ -42,11 +36,42 @@ final class SignupViewController: BaseViewController {
     }
     
     private func setupUI() {
-        createYourAccountLabel.font = Constants.Layout.sairaLarge
-        haveAccountLabel.font = Constants.Layout.sairaSmall
+        superheroLabel.text = viewModel?.superheroText
+        superheroLabel.textColor = .primaryYellow
+        superheroLabel.font = Fonts.futuraBold
         
-        signupButton.titleLabel?.font = Constants.Layout.sairaSmall
-        loginButton.titleLabel?.font = Constants.Layout.sairaSmall
+        createYourAccountLabel.text = viewModel?.createYourAccountText
+        createYourAccountLabel.textColor = .primaryWhite
+        createYourAccountLabel.font = Fonts.sairaRegular24
+        
+        name.labelText = viewModel?.nameText
+        name.labelFont = Fonts.textFieldLabel
+        name.textFieldText = viewModel?.namePlaceholderText
+        name.textFieldFont = Fonts.textFieldPlaceholder
+        
+        email.labelText = viewModel?.emailText
+        email.labelFont = Fonts.textFieldLabel
+        email.textFieldText = viewModel?.emailPlaceholderText
+        email.textFieldFont = Fonts.textFieldPlaceholder
+        
+        password.labelText = viewModel?.passwordText
+        password.labelFont = Fonts.textFieldLabel
+        password.textFieldText = viewModel?.passwordPlaceholderText
+        password.textFieldFont = Fonts.textFieldPlaceholder
+        
+        confirmPassword.labelText = viewModel?.confirmPasswordText
+        confirmPassword.labelFont = Fonts.textFieldLabel
+        confirmPassword.textFieldText = viewModel?.confirmPasswordPlaceholderText
+        confirmPassword.textFieldFont = Fonts.textFieldPlaceholder
+        
+        signupButton.titleLabel?.text = viewModel?.signButtonText
+        signupButton.setupButtonFont(font: Fonts.sairaRegular16, color: .black)
+        
+        haveAccountLabel.text = viewModel?.haveAccountText
+        haveAccountLabel.font = Fonts.sairaLight16
+        
+        loginButton.titleLabel?.text = viewModel?.loginButtonText
+        loginButton.setupButtonFont(font: Fonts.sairaMedium16, color: .primaryYellow)
     }
     
     private func setupActions() {
@@ -54,6 +79,7 @@ final class SignupViewController: BaseViewController {
         view.addGestureRecognizer(tapGesture)
         
         signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
     @objc private func hideKeyboard() {
@@ -63,10 +89,10 @@ final class SignupViewController: BaseViewController {
     @objc private func signupButtonTapped() {
         view.endEditing(true)
         
-        guard let nameText = name.textField.text,
-              let emailText = email.textField.text,
-              let passwordText = password.textField.text,
-              let confirmPasswordText = confirmPassword.textField.text else {
+        guard let nameText = name.textFieldText,
+              let emailText = email.textFieldText,
+              let passwordText = password.textFieldText,
+              let confirmPasswordText = confirmPassword.textFieldText else {
             return
         }
         
@@ -88,6 +114,10 @@ final class SignupViewController: BaseViewController {
                 self?.present(alert, animated: true, completion: nil)
             }
         }
+    }
+    
+    @objc private func loginButtonTapped() {
+        viewModel?.navigateToLogin()
     }
     
     private func updateValidationUI(_ validationResults: [String: Bool]) {

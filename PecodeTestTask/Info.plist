@@ -5,6 +5,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Saira-Regular.ttf</string>
+		<string>Saira-Medium.ttf</string>
+		<string>Saira-Light.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

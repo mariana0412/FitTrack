@@ -1,13 +1,13 @@
 //
-//  SplashCoordinator.swift
+//  LoginCoordinator.swift
 //  PecodeTestTask
 //
-//  Created by Mariana Piz on 06.07.2024.
+//  Created by Mariana Piz on 13.07.2024.
 //
 
 import UIKit
 
-class SplashCoordinator: Coordinator {
+class LoginCoordinator: Coordinator {
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -15,9 +15,14 @@ class SplashCoordinator: Coordinator {
     }
     
     func start() {
-        let splashViewController = SplashViewController.instantiate()
-        splashViewController.viewModel = SplashViewModel(coordinator: self)
-        navigationController.pushViewController(splashViewController, animated: false)
+        let loginViewController = LoginViewController.instantiate()
+        loginViewController.viewModel = LoginViewModel(coordinator: self)
+        navigationController.pushViewController(loginViewController, animated: false)
+    }
+    
+    func navigateToSplash() {
+        let splashCoordinator = SplashCoordinator(navigationController: navigationController)
+        splashCoordinator.start()
     }
     
     func navigateToHome(userSex: UserSex) {

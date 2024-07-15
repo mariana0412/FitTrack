@@ -10,8 +10,8 @@ import FirebaseFirestore
 
 class FirebaseService {
     
-    enum FirebaseResponse {
-        case success
+    enum FirebaseResponse<T> {
+        case success(T?)
         case failure(Error)
         case unknown
     }
@@ -19,7 +19,7 @@ class FirebaseService {
     enum UserStatus {
         case unregistered
         case registeredWithoutSex
-        case registeredWithSex(RegistrationData)
+        case registeredWithSex(UserSex)
     }
 
     static let shared = FirebaseService()
@@ -27,7 +27,7 @@ class FirebaseService {
     private init() {}
     
     func createUser(with registrationData: RegistrationData, 
-                    completion: @escaping (FirebaseResponse) -> Void) {
+                    completion: @escaping (FirebaseResponse<RegistrationData?>) -> Void) {
         Auth.auth().createUser(withEmail: registrationData.email,
                                password: registrationData.password) { 
             authResult, error in
@@ -44,7 +44,7 @@ class FirebaseService {
     }
     
     private func saveUser(id: String, registrationData: RegistrationData, 
-                                 completion: @escaping (FirebaseResponse) -> Void) {
+                                 completion: @escaping (FirebaseResponse<RegistrationData?>) -> Void) {
         let db = Firestore.firestore()
         db.collection("users").document(id).setData([
             "email": registrationData.email,
@@ -55,13 +55,28 @@ class FirebaseService {
             if let error = error {
                 completion(.failure(error))
             } else {
-                completion(.success)
+                completion(.success(nil))
             }
         }
     }
     
-    func updateUserSex(sex: String, 
-                       completion: @escaping (FirebaseResponse) -> Void) {
+    func loginUser(with loginData: LoginData,
+                   completion: @escaping (FirebaseResponse<RegistrationData?>) -> Void) {
+        Auth.auth().signIn(withEmail: loginData.email, password: loginData.password) { authResult, error in
+            if let error = error {
+                completion(.failure(error))
+            } else if let _ = authResult {
+                self.getUser { response in
+                    completion(response)
+                }
+            } else {
+                completion(.unknown)
+            }
+        }
+    }
+
+    func updateUserSex(sex: String,
+                       completion: @escaping (FirebaseResponse<RegistrationData?>) -> Void) {
         let database = Firestore.firestore()
         guard let currentUserId = getCurrentUserId() else {
             completion(.unknown)
@@ -75,14 +90,19 @@ class FirebaseService {
             if let error = error {
                 completion(.failure(error))
             } else {
-                completion(.success)
+                completion(.success(nil))
             }
         }
     }
 
-    func getUser(completion: @escaping (FirebaseResponse, RegistrationData?) -> Void) {
+    func getUser(completion: @escaping (FirebaseResponse<RegistrationData?>) -> Void) {
         guard let currentUser = Auth.auth().currentUser else {
-            completion(.failure(NSError(domain: "Firebase", code: -1, userInfo: [NSLocalizedDescriptionKey: "No current user"])), nil)
+            completion(
+                .failure(
+                    NSError(
+                        domain: "Firebase",
+                        code: -1, 
+                        userInfo: [NSLocalizedDescriptionKey: "No current user"])))
             return
         }
         
@@ -91,7 +111,7 @@ class FirebaseService {
         
         userRef.getDocument { document, error in
             if let error = error {
-                completion(.failure(error), nil)
+                completion(.failure(error))
             } else if let document = document, 
                         document.exists,
                         let data = document.data() {
@@ -102,24 +122,29 @@ class FirebaseService {
                                                         email: email,
                                                         sex: sex,
                                                         password: "")
-                completion(.success, registrationData)
+                completion(.success(registrationData))
             } else {
-                completion(.unknown, nil)
+                completion(.unknown)
             }
         }
     }
     
     func checkCurrentUser(completion: @escaping (UserStatus) -> Void) {
         if let currentUser = Auth.auth().currentUser {
-            getUser { response, registrationData in
+            getUser { response in
                 switch response {
-                case .success:
-                    if let registrationData = registrationData, let sex = registrationData.sex, !sex.isEmpty {
-                        completion(.registeredWithSex(registrationData))
+                case .success(let registrationData):
+                    if let user = registrationData, 
+                        let user = user,
+                       let sex = user.sex,
+                        let userSex = UserSex(rawValue: sex) {
+                        completion(.registeredWithSex(userSex))
                     } else {
                         completion(.registeredWithoutSex)
                     }
-                case .failure, .unknown:
+                case .failure:
+                    completion(.unregistered)
+                case .unknown:
                     completion(.unregistered)
                 }
             }
@@ -127,6 +152,7 @@ class FirebaseService {
             completion(.unregistered)
         }
     }
+
     
     private func getCurrentUserId() -> String? {
         if let currentUser = Auth.auth().currentUser {

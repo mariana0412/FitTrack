@@ -85,4 +85,21 @@ final class CustomButton: UIButton {
             self.titleLabel?.font = UIFont(name: Constants.Layout.boldFontName, size: Constants.Layout.fontSize)
         }
     }
+    
+    func setupButtonFont(font: UIFont?, color: UIColor?) {
+        let states: [UIControl.State] = [.normal, .disabled, .highlighted, .selected, .focused]
+        
+        for state in states {
+            if let title = self.title(for: state) {
+                self.setAttributedTitle(attributedTitle(for: title, font: font, color: color), for: state)
+            }
+        }
+    }
+    
+    private func attributedTitle(for title: String, font: UIFont?, color: UIColor?) -> NSAttributedString {
+        return NSAttributedString(string: title, attributes: [
+            NSAttributedString.Key.font: font as Any,
+            NSAttributedString.Key.foregroundColor: color as Any
+        ])
+    }
 }

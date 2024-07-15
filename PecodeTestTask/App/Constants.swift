@@ -5,6 +5,8 @@
 //  Created by Mariana Piz on 01.07.2024.
 //
 
+import UIKit
+
 struct StoryboardConstants {
     static let splash = "Splash"
     static let home = "Home"
@@ -12,6 +14,7 @@ struct StoryboardConstants {
     static let calculator = "Calculator"
     static let muscles = "Muscles"
     static let signup = "Signup"
+    static let login = "Login"
 }
 
 struct ViewControllerIdentifiers {
@@ -21,4 +24,16 @@ struct ViewControllerIdentifiers {
     static let calculatorViewController = "CalculatorViewController"
     static let musclesViewController = "MusclesViewController"
     static let signupViewController = "SignupViewController"
+    static let loginViewController = "LoginViewController"
+}
+
+struct Fonts {
+    static let futuraBold = UIFont(name: "Futura-Bold", size: 32)
+    static let sairaRegular24 = UIFont(name: "Saira-Regular", size: 24)
+    static let sairaRegular16 = UIFont(name: "Saira-Regular", size: 16)
+    static let sairaRegular18 = UIFont(name: "Saira-Regular", size: 18)
+    static let sairaMedium16 = UIFont(name: "Saira-Medium", size: 16)
+    static let sairaLight16 = UIFont(name: "Saira-Light", size: 16)
+    static let textFieldLabel = UIFont(name: "Helvetica Neue", size: 18)
+    static let textFieldPlaceholder = UIFont(name: "Helvetica Neue", size: 16)
 }

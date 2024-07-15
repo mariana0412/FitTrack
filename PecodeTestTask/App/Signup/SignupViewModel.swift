@@ -19,6 +19,20 @@ class SignupViewModel {
     
     private var coordinator: SignupCoordinator?
     
+    let superheroText = "SUPERHERO"
+    let createYourAccountText = "Create your account"
+    let nameText = "Name"
+    let namePlaceholderText = "Enter name"
+    let emailText = "Email"
+    let emailPlaceholderText = "Enter email"
+    let passwordText = "Password"
+    let passwordPlaceholderText = "Create password"
+    let confirmPasswordText = "Confirm Password"
+    let confirmPasswordPlaceholderText = "Enter password"
+    let signButtonText = "Sign up"
+    let haveAccountText = "Already have an account?"
+    let loginButtonText = "Log in"
+    
     init(coordinator: SignupCoordinator?) {
         self.coordinator = coordinator
     }
@@ -71,4 +85,9 @@ class SignupViewModel {
     func navigateToSplash(with email: String) {
         coordinator?.navigateToSplash()
     }
+    
+    func navigateToLogin() {
+        coordinator?.navigateToLogin()
+    }
+    
 }

@@ -11,9 +11,9 @@ final class CustomTextFieldView: UIView {
     let kCONTENT_XIB_NAME = "CustomTextFieldView"
     
     @IBOutlet private var contentView: UIView!
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var textFieldView: UIView!
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var textFieldView: UIView!
+    @IBOutlet private weak var textField: UITextField!
     
     private var isPlaceholderVisible: Bool = true
     
@@ -31,7 +31,7 @@ final class CustomTextFieldView: UIView {
     
     @IBInspectable var labelText: String? {
         get {
-            return label.text
+            label.text
         }
         set {
             label.text = newValue
@@ -40,10 +40,28 @@ final class CustomTextFieldView: UIView {
     
     @IBInspectable var textFieldText: String? {
         get {
-            return textField.text
+            textField.text
         }
         set {
             textField.text = newValue
+        }
+    }
+    
+    @IBInspectable var labelFont: UIFont? {
+        get {
+            label.font
+        }
+        set {
+            label.font = newValue
+        }
+    }
+    
+    @IBInspectable var textFieldFont: UIFont? {
+        get {
+            textField.font
+        }
+        set {
+            textField.font = newValue
         }
     }
     
