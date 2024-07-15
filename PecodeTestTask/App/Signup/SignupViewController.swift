@@ -9,18 +9,6 @@ import UIKit
 
 final class SignupViewController: BaseViewController {
     
-    private enum Constants {
-        enum Layout {
-            static let sairaLargeRegular = UIFont(name: "Saira-Regular", size: 24)
-            static let sairaSmallRegular = UIFont(name: "Saira-Regular", size: 16)
-            static let sairaSmallMedium = UIFont(name: "Saira-Medium", size: 16)
-            static let sairaSmallLight = UIFont(name: "Saira-Light", size: 16)
-            static let futuraBold = UIFont(name: "Futura-Bold", size: 32)
-            static let textFieldLabel = UIFont(name: "Helvetica Neue", size: 18)
-            static let textFieldPlaceholder = UIFont(name: "Helvetica Neue", size: 16)
-        }
-    }
-    
     var viewModel: SignupViewModel?
     
     @IBOutlet private weak var superheroLabel: UILabel!
@@ -50,40 +38,40 @@ final class SignupViewController: BaseViewController {
     private func setupUI() {
         superheroLabel.text = viewModel?.superheroText
         superheroLabel.textColor = .primaryYellow
-        superheroLabel.font = Constants.Layout.futuraBold
+        superheroLabel.font = Fonts.futuraBold
         
         createYourAccountLabel.text = viewModel?.createYourAccountText
         createYourAccountLabel.textColor = .primaryWhite
-        createYourAccountLabel.font = Constants.Layout.sairaLargeRegular
+        createYourAccountLabel.font = Fonts.sairaLargeRegular
         
         name.labelText = viewModel?.nameText
-        name.labelFont = Constants.Layout.textFieldLabel
+        name.labelFont = Fonts.textFieldLabel
         name.textFieldText = viewModel?.namePlaceholderText
-        name.textFieldFont = Constants.Layout.textFieldPlaceholder
+        name.textFieldFont = Fonts.textFieldPlaceholder
         
         email.labelText = viewModel?.emailText
-        email.labelFont = Constants.Layout.textFieldLabel
+        email.labelFont = Fonts.textFieldLabel
         email.textFieldText = viewModel?.emailPlaceholderText
-        email.textFieldFont = Constants.Layout.textFieldPlaceholder
+        email.textFieldFont = Fonts.textFieldPlaceholder
         
         password.labelText = viewModel?.passwordText
-        password.labelFont = Constants.Layout.textFieldLabel
+        password.labelFont = Fonts.textFieldLabel
         password.textFieldText = viewModel?.passwordPlaceholderText
-        password.textFieldFont = Constants.Layout.textFieldPlaceholder
+        password.textFieldFont = Fonts.textFieldPlaceholder
         
         confirmPassword.labelText = viewModel?.confirmPasswordText
-        confirmPassword.labelFont = Constants.Layout.textFieldLabel
+        confirmPassword.labelFont = Fonts.textFieldLabel
         confirmPassword.textFieldText = viewModel?.confirmPasswordPlaceholderText
-        confirmPassword.textFieldFont = Constants.Layout.textFieldPlaceholder
+        confirmPassword.textFieldFont = Fonts.textFieldPlaceholder
         
         signupButton.titleLabel?.text = viewModel?.signButtonText
-        signupButton.setupButtonFont(font: Constants.Layout.sairaSmallRegular, color: .black)
+        signupButton.setupButtonFont(font: Fonts.sairaSmallRegular, color: .black)
         
         haveAccountLabel.text = viewModel?.haveAccountText
-        haveAccountLabel.font = Constants.Layout.sairaSmallLight
+        haveAccountLabel.font = Fonts.sairaSmallLight
         
         loginButton.titleLabel?.text = viewModel?.loginButtonText
-        loginButton.setupButtonFont(font: Constants.Layout.sairaSmallMedium, color: .primaryYellow)
+        loginButton.setupButtonFont(font: Fonts.sairaSmallMedium, color: .primaryYellow)
     }
     
     private func setupActions() {

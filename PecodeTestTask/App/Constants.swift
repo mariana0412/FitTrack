@@ -5,6 +5,8 @@
 //  Created by Mariana Piz on 01.07.2024.
 //
 
+import UIKit
+
 struct StoryboardConstants {
     static let splash = "Splash"
     static let home = "Home"
@@ -23,4 +25,14 @@ struct ViewControllerIdentifiers {
     static let musclesViewController = "MusclesViewController"
     static let signupViewController = "SignupViewController"
     static let loginViewController = "LoginViewController"
+}
+
+struct Fonts {
+    static let futuraBold = UIFont(name: "Futura-Bold", size: 32)
+    static let sairaLargeRegular = UIFont(name: "Saira-Regular", size: 24)
+    static let sairaSmallRegular = UIFont(name: "Saira-Regular", size: 16)
+    static let sairaSmallMedium = UIFont(name: "Saira-Medium", size: 16)
+    static let sairaSmallLight = UIFont(name: "Saira-Light", size: 16)
+    static let textFieldLabel = UIFont(name: "Helvetica Neue", size: 18)
+    static let textFieldPlaceholder = UIFont(name: "Helvetica Neue", size: 16)
 }
