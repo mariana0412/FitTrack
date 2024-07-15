@@ -27,9 +27,9 @@ class AppCoordinator: Coordinator {
         window.makeKeyAndVisible()
         
         // for testing purposes
-//        do {
-//            try Auth.auth().signOut()
-//        } catch {}
+        do {
+            try Auth.auth().signOut()
+        } catch {}
         
         checkCurrentUser()
     }
@@ -41,8 +41,8 @@ class AppCoordinator: Coordinator {
                 self?.showSignupScreen()
             case .registeredWithoutSex:
                 self?.showSplashScreen()
-            case .registeredWithSex(let registrationData):
-                self?.showTabBar(with: registrationData)
+            case .registeredWithSex(let sex):
+                self?.showTabBar(userSex: sex)
             }
         }
     }
@@ -57,8 +57,9 @@ class AppCoordinator: Coordinator {
         splashCoordinator?.start()
     }
 
-    private func showTabBar(with registrationData: RegistrationData) {
-        tabBarCoordinator = TabBarCoordinator(navigationController: navigationController)
+    private func showTabBar(userSex: UserSex) {
+        tabBarCoordinator = TabBarCoordinator(navigationController: navigationController,
+                                              userSex: userSex)
         tabBarCoordinator?.start()
     }
     

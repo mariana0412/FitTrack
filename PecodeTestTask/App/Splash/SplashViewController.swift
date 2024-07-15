@@ -64,7 +64,7 @@ class SplashViewController: UIViewController {
         updateUserSex(sex: .female)
     }
     
-    private func updateUserSex(sex: SplashViewModel.UserSex) {
+    private func updateUserSex(sex: UserSex) {
         disableButtons()
         
         viewModel?.updateUserSex(sex: sex) { [weak self] errorMessage in

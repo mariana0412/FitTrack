@@ -25,8 +25,9 @@ class LoginCoordinator: Coordinator {
         splashCoordinator.start()
     }
     
-    func navigateToHome() {
-        let tabBarCoordinator = TabBarCoordinator(navigationController: navigationController)
+    func navigateToHome(userSex: UserSex) {
+        let tabBarCoordinator = TabBarCoordinator(navigationController: navigationController,
+                                                  userSex: userSex)
         tabBarCoordinator.start()
     }
     

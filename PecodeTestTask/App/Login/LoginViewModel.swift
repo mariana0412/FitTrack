@@ -42,8 +42,10 @@ class LoginViewModel {
     }
     
     private func handleNavigation(user: RegistrationData) {
-        if let sex = user.sex, !sex.isEmpty {
-            navigateToHome()
+        if let sex = user.sex,
+           let userSex = UserSex(rawValue: sex)
+        {
+            navigateToHome(userSex: userSex)
         } else {
             navigateToSplash()
         }
@@ -53,7 +55,7 @@ class LoginViewModel {
         coordinator?.navigateToSplash()
     }
     
-    private func navigateToHome() {
-        coordinator?.navigateToHome()
+    private func navigateToHome(userSex: UserSex) {
+        coordinator?.navigateToHome(userSex: userSex)
     }
 }

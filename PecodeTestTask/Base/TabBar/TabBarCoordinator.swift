@@ -10,10 +10,12 @@ import UIKit
 class TabBarCoordinator: Coordinator {
     var navigationController: UINavigationController
     private let tabBarController: TabBarController
+    private let userSex: UserSex
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, userSex: UserSex) {
         self.navigationController = navigationController
         self.tabBarController = TabBarController()
+        self.userSex = userSex
     }
 
     func start() {
@@ -36,7 +38,8 @@ class TabBarCoordinator: Coordinator {
 
         switch item {
         case .home:
-            let homeCoordinator = HomeCoordinator(navigationController: navigationController)
+            let homeCoordinator = HomeCoordinator(navigationController: navigationController,
+                                                  userSex: userSex)
             homeCoordinator.start()
 
         case .progress:

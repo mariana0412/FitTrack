@@ -19,7 +19,7 @@ class FirebaseService {
     enum UserStatus {
         case unregistered
         case registeredWithoutSex
-        case registeredWithSex(RegistrationData)
+        case registeredWithSex(UserSex)
     }
 
     static let shared = FirebaseService()
@@ -134,9 +134,11 @@ class FirebaseService {
             getUser { response in
                 switch response {
                 case .success(let registrationData):
-                    if let user = registrationData, let user = user,
-                       let sex = user.sex, !sex.isEmpty {
-                            completion(.registeredWithSex(user))
+                    if let user = registrationData, 
+                        let user = user,
+                       let sex = user.sex,
+                        let userSex = UserSex(rawValue: sex) {
+                        completion(.registeredWithSex(userSex))
                     } else {
                         completion(.registeredWithoutSex)
                     }

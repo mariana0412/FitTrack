@@ -7,13 +7,21 @@
 
 class HomeViewModel {
     private weak var coordinator: HomeCoordinator?
+    private(set) var userSex: UserSex
     private(set) var heroName: String = ""
     private(set) var userName: String = ""
-    private(set) var sex: String = ""
-    private(set) var backgroundImageName = "backgroundImageMan"
+    private(set) var backgroundImageName = ""
     
-    init(coordinator: HomeCoordinator) {
+    init(coordinator: HomeCoordinator, userSex: UserSex) {
         self.coordinator = coordinator
+        self.userSex = userSex
+        if self.userSex.rawValue == "male" {
+            self.heroName = "Superman"
+            self.backgroundImageName = "backgroundImageMan"
+        } else {
+            self.heroName = "Supergirl"
+            self.backgroundImageName = "backgroundImageGirl"
+        }
     }
     
     func fetchUser(completion: @escaping (String?) -> Void) {
@@ -22,9 +30,6 @@ class HomeViewModel {
             case .success(let registrationData):
                 if let user = registrationData, let user = user {
                     self?.userName = user.userName
-                    self?.sex = user.sex ?? ""
-                    self?.heroName = user.sex == "male" ? "Superman" : "Supergirl"
-                    self?.backgroundImageName = user.sex == "male" ? "backgroundImageMan" : "backgroundImageGirl"
                 }
                 completion(nil)
             case .failure(let error):

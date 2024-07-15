@@ -9,11 +9,6 @@ import FirebaseAuth
 
 class SplashViewModel {
     
-    enum UserSex: String {
-        case male = "male"
-        case female = "female"
-    }
-    
     private var coordinator: SplashCoordinator?
     
     let superheroText = "SUPERHERO"
@@ -30,7 +25,7 @@ class SplashViewModel {
         FirebaseService.shared.updateUserSex(sex: sex.rawValue) { [weak self] response in
             switch response {
             case .success:
-                self?.coordinator?.navigateToHome()
+                self?.coordinator?.navigateToHome(userSex: sex)
                 completion(nil)
             case .failure(let error):
                 completion(error.localizedDescription)
