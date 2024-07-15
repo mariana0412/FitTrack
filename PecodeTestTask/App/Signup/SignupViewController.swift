@@ -15,11 +15,15 @@ final class SignupViewController: BaseViewController {
             static let sairaSmallRegular = UIFont(name: "Saira-Regular", size: 16)
             static let sairaSmallMedium = UIFont(name: "Saira-Medium", size: 16)
             static let sairaSmallLight = UIFont(name: "Saira-Light", size: 16)
+            static let futuraBold = UIFont(name: "Futura-Bold", size: 32)
+            static let textFieldLabel = UIFont(name: "Helvetica Neue", size: 18)
+            static let textFieldPlaceholder = UIFont(name: "Helvetica Neue", size: 16)
         }
     }
     
     var viewModel: SignupViewModel?
     
+    @IBOutlet private weak var superheroLabel: UILabel!
     @IBOutlet private weak var createYourAccountLabel: UILabel!
     @IBOutlet private weak var haveAccountLabel: UILabel!
     
@@ -44,10 +48,41 @@ final class SignupViewController: BaseViewController {
     }
     
     private func setupUI() {
+        superheroLabel.text = viewModel?.superheroText
+        superheroLabel.textColor = .primaryYellow
+        superheroLabel.font = Constants.Layout.futuraBold
+        
+        createYourAccountLabel.text = viewModel?.createYourAccountText
+        createYourAccountLabel.textColor = .primaryWhite
         createYourAccountLabel.font = Constants.Layout.sairaLargeRegular
-        haveAccountLabel.font = Constants.Layout.sairaSmallLight
-
+        
+        name.labelText = viewModel?.nameText
+        name.labelFont = Constants.Layout.textFieldLabel
+        name.textFieldText = viewModel?.namePlaceholderText
+        name.textFieldFont = Constants.Layout.textFieldPlaceholder
+        
+        email.labelText = viewModel?.emailText
+        email.labelFont = Constants.Layout.textFieldLabel
+        email.textFieldText = viewModel?.emailPlaceholderText
+        email.textFieldFont = Constants.Layout.textFieldPlaceholder
+        
+        password.labelText = viewModel?.passwordText
+        password.labelFont = Constants.Layout.textFieldLabel
+        password.textFieldText = viewModel?.passwordPlaceholderText
+        password.textFieldFont = Constants.Layout.textFieldPlaceholder
+        
+        confirmPassword.labelText = viewModel?.confirmPasswordText
+        confirmPassword.labelFont = Constants.Layout.textFieldLabel
+        confirmPassword.textFieldText = viewModel?.confirmPasswordPlaceholderText
+        confirmPassword.textFieldFont = Constants.Layout.textFieldPlaceholder
+        
+        signupButton.titleLabel?.text = viewModel?.signButtonText
         signupButton.setupButtonFont(font: Constants.Layout.sairaSmallRegular, color: .black)
+        
+        haveAccountLabel.text = viewModel?.haveAccountText
+        haveAccountLabel.font = Constants.Layout.sairaSmallLight
+        
+        loginButton.titleLabel?.text = viewModel?.loginButtonText
         loginButton.setupButtonFont(font: Constants.Layout.sairaSmallMedium, color: .primaryYellow)
     }
     
@@ -66,10 +101,10 @@ final class SignupViewController: BaseViewController {
     @objc private func signupButtonTapped() {
         view.endEditing(true)
         
-        guard let nameText = name.textField.text,
-              let emailText = email.textField.text,
-              let passwordText = password.textField.text,
-              let confirmPasswordText = confirmPassword.textField.text else {
+        guard let nameText = name.textFieldText,
+              let emailText = email.textFieldText,
+              let passwordText = password.textFieldText,
+              let confirmPasswordText = confirmPassword.textFieldText else {
             return
         }
         

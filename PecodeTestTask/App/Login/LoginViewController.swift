@@ -11,21 +11,25 @@ final class LoginViewController: BaseViewController {
     
     private enum Constants {
         enum Layout {
+            static let futuraBold = UIFont(name: "Futura-Bold", size: 32)
             static let sairaLargeRegular = UIFont(name: "Saira-Regular", size: 24)
             static let sairaSmallRegular = UIFont(name: "Saira-Regular", size: 16)
             static let sairaSmallMedium = UIFont(name: "Saira-Medium", size: 16)
+            static let textFieldLabel = UIFont(name: "Helvetica Neue", size: 18)
+            static let textFieldPlaceholder = UIFont(name: "Helvetica Neue", size: 16)
         }
     }
     
     var viewModel: LoginViewModel?
     
-    @IBOutlet weak var loginToYourAccountLabel: UILabel!
+    @IBOutlet private weak var superheroLabel: UILabel!
+    @IBOutlet private weak var loginToYourAccountLabel: UILabel!
     
-    @IBOutlet weak var email: CustomTextFieldView!
-    @IBOutlet weak var password: CustomTextFieldView!
+    @IBOutlet private weak var email: CustomTextFieldView!
+    @IBOutlet private weak var password: CustomTextFieldView!
     
-    @IBOutlet weak var forgotPasswordButton: CustomButton!
-    @IBOutlet weak var loginButton: CustomButton!
+    @IBOutlet private weak var forgotPasswordButton: CustomButton!
+    @IBOutlet private weak var loginButton: CustomButton!
     
     
     override func viewDidLoad() {
@@ -41,8 +45,27 @@ final class LoginViewController: BaseViewController {
     }
     
     private func setupUI() {
+        superheroLabel.text = viewModel?.superheroText
+        superheroLabel.textColor = .primaryYellow
+        superheroLabel.font = Constants.Layout.futuraBold
+        
+        loginToYourAccountLabel.text = viewModel?.loginToYourAccountText
         loginToYourAccountLabel.font = Constants.Layout.sairaLargeRegular
+        
+        email.labelText = viewModel?.emailText
+        email.labelFont = Constants.Layout.textFieldLabel
+        email.textFieldText = viewModel?.emailPlaceholderText
+        email.textFieldFont = Constants.Layout.textFieldPlaceholder
+        
+        password.labelText = viewModel?.passwordText
+        password.labelFont = Constants.Layout.textFieldLabel
+        password.textFieldText = viewModel?.passwordPlaceholderText
+        password.textFieldFont = Constants.Layout.textFieldPlaceholder
+        
+        forgotPasswordButton.titleLabel?.text = viewModel?.forgotPasswordText
         forgotPasswordButton.setupButtonFont(font: Constants.Layout.sairaSmallMedium, color: .primaryYellow)
+        
+        loginButton.titleLabel?.text = viewModel?.loginButtonText
         loginButton.setupButtonFont(font: Constants.Layout.sairaSmallRegular, color: .black)
     }
     
@@ -60,8 +83,8 @@ final class LoginViewController: BaseViewController {
     @objc private func loginButtonTapped() {
         view.endEditing(true)
         
-        guard let emailText = email.textField.text,
-              let passwordText = password.textField.text else {
+        guard let emailText = email.textFieldText,
+              let passwordText = password.textFieldText else {
             return
         }
         

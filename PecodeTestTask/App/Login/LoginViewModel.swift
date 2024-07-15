@@ -10,6 +10,15 @@ import FirebaseAuth
 class LoginViewModel {
     private var coordinator: LoginCoordinator?
     
+    let superheroText = "SUPERHERO"
+    let loginToYourAccountText = "Login to your account"
+    let emailText = "Email"
+    let emailPlaceholderText = "Enter email"
+    let passwordText = "Password"
+    let passwordPlaceholderText = "Enter password"
+    let forgotPasswordText = "Forgot Password?"
+    let loginButtonText = "Login"
+
     init(coordinator: LoginCoordinator?) {
         self.coordinator = coordinator
     }

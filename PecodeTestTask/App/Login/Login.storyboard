@@ -124,6 +124,7 @@
                         <outlet property="loginButton" destination="0Xd-zF-zWe" id="7Ud-u7-fqI"/>
                         <outlet property="loginToYourAccountLabel" destination="Agc-CS-uFe" id="KG1-Wd-aYK"/>
                         <outlet property="password" destination="I9R-xZ-1nO" id="xSi-UU-6zW"/>
+                        <outlet property="superheroLabel" destination="Jfy-C8-2cN" id="qSm-er-Bnt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

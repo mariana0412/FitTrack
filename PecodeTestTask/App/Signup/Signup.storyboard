@@ -113,7 +113,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mop-Hy-GoK">
-                                                <rect key="frame" x="62.333333333333343" y="683.66666666666663" width="268.66666666666663" height="34.333333333333371"/>
+                                                <rect key="frame" x="64.666666666666686" y="683.66666666666663" width="264.00000000000006" height="34.333333333333371"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDd-9q-Y4h">
                                                         <rect key="frame" x="0.0" y="0.0" width="185.66666666666666" height="34.333333333333336"/>
@@ -122,7 +122,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Q4-CT-T3R" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
-                                                        <rect key="frame" x="193.66666666666666" y="0.0" width="74.999999999999972" height="34.333333333333336"/>
+                                                        <rect key="frame" x="193.66666666666663" y="0.0" width="70.333333333333314" height="34.333333333333336"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                         <userDefinedRuntimeAttributes>
@@ -181,6 +181,7 @@
                         <outlet property="name" destination="uxz-Ul-Vmi" id="24l-C6-nYF"/>
                         <outlet property="password" destination="TTF-ql-3Zs" id="w4f-WE-URk"/>
                         <outlet property="signupButton" destination="gdO-Qt-h9d" id="HpS-1V-NYG"/>
+                        <outlet property="superheroLabel" destination="vPZ-oT-Cop" id="unT-dF-4b3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -190,10 +191,10 @@
     </scenes>
     <designables>
         <designable name="8Q4-CT-T3R">
-            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="70.333333333333329" height="34.333333333333336"/>
         </designable>
         <designable name="gdO-Qt-h9d">
-            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="84" height="34.333333333333336"/>
         </designable>
     </designables>
     <resources>
