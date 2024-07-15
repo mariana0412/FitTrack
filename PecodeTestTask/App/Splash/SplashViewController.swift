@@ -57,14 +57,14 @@ class SplashViewController: UIViewController {
     }
     
     @objc private func supermanButtonTapped() {
-        updateUserSex(sex: "male")
+        updateUserSex(sex: .male)
     }
     
     @objc private func supergirlButtonTapped() {
-        updateUserSex(sex: "female")
+        updateUserSex(sex: .female)
     }
     
-    private func updateUserSex(sex: String) {
+    private func updateUserSex(sex: SplashViewModel.UserSex) {
         disableButtons()
         
         viewModel?.updateUserSex(sex: sex) { [weak self] errorMessage in

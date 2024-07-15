@@ -8,6 +8,12 @@
 import FirebaseAuth
 
 class SplashViewModel {
+    
+    enum UserSex: String {
+        case male = "male"
+        case female = "female"
+    }
+    
     private var coordinator: SplashCoordinator?
     
     let superheroText = "SUPERHERO"
@@ -15,12 +21,13 @@ class SplashViewModel {
     let supermanButtonText = "SUPERMAN"
     let supergirlButtonText = "SUPERGIRL"
     
+    
     init(coordinator: SplashCoordinator?) {
         self.coordinator = coordinator
     }
     
-    func updateUserSex(sex: String, completion: @escaping (String?) -> Void) {
-        FirebaseService.shared.updateUserSex(sex: sex) { [weak self] response in
+    func updateUserSex(sex: UserSex, completion: @escaping (String?) -> Void) {
+        FirebaseService.shared.updateUserSex(sex: sex.rawValue) { [weak self] response in
             switch response {
             case .success:
                 self?.coordinator?.navigateToHome()
