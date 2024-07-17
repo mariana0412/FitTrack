@@ -67,6 +67,10 @@
 		CA457E092C42BC220031FDFA /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA457E082C42BC220031FDFA /* LoginCoordinator.swift */; };
 		CA457E0B2C42BC2B0031FDFA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA457E0A2C42BC2B0031FDFA /* LoginViewModel.swift */; };
 		CA457E0D2C42BC360031FDFA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA457E0C2C42BC360031FDFA /* Login.storyboard */; };
+		CA465A7B2C47E238003E7217 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA465A7A2C47E238003E7217 /* ForgotPasswordViewController.swift */; };
+		CA465A7D2C47E248003E7217 /* ForgotPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA465A7C2C47E248003E7217 /* ForgotPasswordCoordinator.swift */; };
+		CA465A7F2C47E25A003E7217 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA465A7E2C47E25A003E7217 /* ForgotPasswordViewModel.swift */; };
+		CA465A812C47E26F003E7217 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA465A802C47E26F003E7217 /* ForgotPassword.storyboard */; };
 		CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */; };
 		CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */; };
 		CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */; };
@@ -164,6 +168,10 @@
 		CA457E082C42BC220031FDFA /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		CA457E0A2C42BC2B0031FDFA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		CA457E0C2C42BC360031FDFA /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		CA465A7A2C47E238003E7217 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		CA465A7C2C47E248003E7217 /* ForgotPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordCoordinator.swift; sourceTree = "<group>"; };
+		CA465A7E2C47E25A003E7217 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		CA465A802C47E26F003E7217 /* ForgotPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
 		CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextFieldView.xib; sourceTree = "<group>"; };
 		CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -316,6 +324,7 @@
 		CA002E092C3192C60053284B /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CA465A792C47D8C5003E7217 /* ForgotPassword */,
 				CA457E052C42BBEA0031FDFA /* Login */,
 				CA37E5652C3EF35F003ADAA8 /* Signup */,
 				CAA18EE32C39DF7D00F888CD /* Splash */,
@@ -409,6 +418,17 @@
 				CA457E0C2C42BC360031FDFA /* Login.storyboard */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		CA465A792C47D8C5003E7217 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				CA465A7A2C47E238003E7217 /* ForgotPasswordViewController.swift */,
+				CA465A7C2C47E248003E7217 /* ForgotPasswordCoordinator.swift */,
+				CA465A7E2C47E25A003E7217 /* ForgotPasswordViewModel.swift */,
+				CA465A802C47E26F003E7217 /* ForgotPassword.storyboard */,
+			);
+			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
 		CAA18EE02C37F97900F888CD /* Extensions */ = {
@@ -627,6 +647,7 @@
 				CA0FF3EE2C45625800B3CE08 /* GoogleService-Info.plist in Resources */,
 				CA37E5822C40573D003ADAA8 /* TabBar.storyboard in Resources */,
 				CAA18F112C3C159C00F888CD /* Muscles.storyboard in Resources */,
+				CA465A812C47E26F003E7217 /* ForgotPassword.storyboard in Resources */,
 				CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */,
 				CA038BF62C4316300033CD30 /* Saira-Medium.ttf in Resources */,
 				CAA18EE52C39DF9400F888CD /* Splash.storyboard in Resources */,
@@ -770,6 +791,7 @@
 				CA002E372C36F8D00053284B /* CustomRadiobutton.swift in Sources */,
 				CA002E352C36F8430053284B /* CustomToggleButton.swift in Sources */,
 				CA002E0E2C319BC10053284B /* BaseViewController.swift in Sources */,
+				CA465A7F2C47E25A003E7217 /* ForgotPasswordViewModel.swift in Sources */,
 				CA37E5672C3EF36C003ADAA8 /* SignupViewController.swift in Sources */,
 				CAA18EFF2C3C134200F888CD /* ProgressViewModel.swift in Sources */,
 				CA457E0B2C42BC2B0031FDFA /* LoginViewModel.swift in Sources */,
@@ -796,6 +818,7 @@
 				CA37E56B2C3EF37F003ADAA8 /* SignupViewModel.swift in Sources */,
 				CA002E2F2C36E81F0053284B /* CustomUIComponent.swift in Sources */,
 				CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */,
+				CA465A7B2C47E238003E7217 /* ForgotPasswordViewController.swift in Sources */,
 				CA002E182C319C7A0053284B /* HomeViewModel.swift in Sources */,
 				CA002DD62C318B0F0053284B /* AppDelegate.swift in Sources */,
 				CA37E5702C3F25B4003ADAA8 /* RegistrationData.swift in Sources */,
@@ -809,6 +832,7 @@
 				CA002DD82C318B0F0053284B /* SceneDelegate.swift in Sources */,
 				CA002E162C319C6D0053284B /* HomeViewController.swift in Sources */,
 				CAA18F182C3C3B7500F888CD /* TabBarItem.swift in Sources */,
+				CA465A7D2C47E248003E7217 /* ForgotPasswordCoordinator.swift in Sources */,
 				CA002E142C319C5C0053284B /* HomeCoordinator.swift in Sources */,
 				CA002E292C32C1C50053284B /* Constants.swift in Sources */,
 			);

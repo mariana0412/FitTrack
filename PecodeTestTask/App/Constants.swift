@@ -15,6 +15,7 @@ struct StoryboardConstants {
     static let muscles = "Muscles"
     static let signup = "Signup"
     static let login = "Login"
+    static let forgotPassword = "ForgotPassword"
 }
 
 struct ViewControllerIdentifiers {
@@ -25,6 +26,7 @@ struct ViewControllerIdentifiers {
     static let musclesViewController = "MusclesViewController"
     static let signupViewController = "SignupViewController"
     static let loginViewController = "LoginViewController"
+    static let forgotPasswordViewController = "ForgotPasswordViewController"
 }
 
 struct Fonts {
