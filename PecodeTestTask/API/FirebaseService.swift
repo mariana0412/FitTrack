@@ -153,6 +153,15 @@ class FirebaseService {
         }
     }
 
+    func resetPassword(email: String, completion: @escaping (FirebaseResponse<Void>) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(nil))
+            }
+        }
+    }
     
     private func getCurrentUserId() -> String? {
         if let currentUser = Auth.auth().currentUser {

@@ -79,8 +79,24 @@ class ForgotPasswordViewController: BaseViewController {
     @objc private func continueButtonTapped() {
         view.endEditing(true)
         
-        // TODO: disable button, send request, process response, show custom alert
-        // viewModel?.implementForgotPasswordAction()
+        guard let emailText = email.textFieldText else {
+            return
+        }
+
+        continueButton.isEnabled = false
+        continueButton.backgroundColor = UIColor.primaryWhite
+
+        viewModel?.resetPassword(email: emailText) { [weak self] errorMessage in
+            self?.continueButton.isEnabled = true
+            self?.continueButton.backgroundColor = UIColor.primaryYellow
+            if let errorMessage = errorMessage {
+                let alert = AlertUtils.createAlert(message: errorMessage)
+                self?.present(alert, animated: true, completion: nil)
+            } else {
+                let alert = AlertUtils.createAlert(message: "Password reset email sent successfully.")
+                self?.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     @objc private func backToLoginButtonTapped() {

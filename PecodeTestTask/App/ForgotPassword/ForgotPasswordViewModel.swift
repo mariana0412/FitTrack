@@ -20,6 +20,19 @@ class ForgotPasswordViewModel {
         self.coordinator = coordinator
     }
     
+    func resetPassword(email: String, completion: @escaping (String?) -> Void) {
+        FirebaseService.shared.resetPassword(email: email) { response in
+            switch response {
+            case .success:
+                completion(nil)
+            case .failure(let error):
+                completion(error.localizedDescription)
+            case .unknown:
+                completion("Unknown error occurred.")
+            }
+        }
+    }
+    
     func navigateToLogin() {
         coordinator?.navigateToLogin()
     }
