@@ -58,4 +58,9 @@ class LoginViewModel {
     private func navigateToHome(userSex: UserSex) {
         coordinator?.navigateToHome(userSex: userSex)
     }
+    
+    func navigateToForgotPassword() {
+        coordinator?.navigateToForgotPassword()
+    }
+    
 }

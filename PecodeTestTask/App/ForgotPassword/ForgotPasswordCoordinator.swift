@@ -20,4 +20,9 @@ class ForgotPasswordCoordinator: Coordinator {
         navigationController.pushViewController(forgotPasswordViewController, animated: false)
     }
     
+    func navigateToLogin() {
+        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
+        loginCoordinator.start()
+    }
+    
 }

@@ -63,6 +63,7 @@ final class LoginViewController: BaseViewController {
         view.addGestureRecognizer(tapGesture)
         
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
     }
     
     @objc private func hideKeyboard() {
@@ -90,6 +91,10 @@ final class LoginViewController: BaseViewController {
                 self?.present(alert, animated: true, completion: nil)
             }
         }
+    }
+    
+    @objc private func forgotPasswordButtonTapped() {
+        viewModel?.navigateToForgotPassword()
     }
         
 }

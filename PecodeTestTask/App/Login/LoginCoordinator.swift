@@ -31,4 +31,9 @@ class LoginCoordinator: Coordinator {
         tabBarCoordinator.start()
     }
     
+    func navigateToForgotPassword() {
+        let forgotPasswordCoordinator = ForgotPasswordCoordinator(navigationController: navigationController)
+        forgotPasswordCoordinator.start()
+    }
+    
 }

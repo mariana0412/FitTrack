@@ -8,7 +8,19 @@
 class ForgotPasswordViewModel {
     private var coordinator: ForgotPasswordCoordinator?
     
+    let superheroText = "SUPERHERO"
+    let forgotPasswordText = "Forgot Password"
+    let emailText = "Email"
+    let emailPlaceholderText = "Enter email"
+    let explanationText = "Enter the email address associated with your account and we'll send you a form to reset your password."
+    let continueButtonText = "Continue"
+    let backToLogintButtonText = "Back to login"
+    
     init(coordinator: ForgotPasswordCoordinator?) {
         self.coordinator = coordinator
+    }
+    
+    func navigateToLogin() {
+        coordinator?.navigateToLogin()
     }
 }
