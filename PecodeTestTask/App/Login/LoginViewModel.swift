@@ -18,6 +18,7 @@ class LoginViewModel {
     let passwordPlaceholderText = "Enter password"
     let forgotPasswordText = "Forgot Password?"
     let loginButtonText = "Login"
+    let backToSignupButtonText = "Back to register"
 
     init(coordinator: LoginCoordinator?) {
         self.coordinator = coordinator
@@ -57,6 +58,10 @@ class LoginViewModel {
     
     private func navigateToHome(userSex: UserSex) {
         coordinator?.navigateToHome(userSex: userSex)
+    }
+    
+    func navigateToSignup() {
+        coordinator?.navigateToSignup()
     }
     
     func navigateToForgotPassword() {

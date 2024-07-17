@@ -19,7 +19,7 @@ final class LoginViewController: BaseViewController {
     
     @IBOutlet private weak var forgotPasswordButton: CustomButton!
     @IBOutlet private weak var loginButton: CustomButton!
-    
+    @IBOutlet weak var backToSignupButton: CustomButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +54,9 @@ final class LoginViewController: BaseViewController {
         forgotPasswordButton.titleLabel?.text = viewModel?.forgotPasswordText
         forgotPasswordButton.setupButtonFont(font: Fonts.sairaMedium16, color: .primaryYellow)
         
+        backToSignupButton.titleLabel?.text = viewModel?.backToSignupButtonText
+        backToSignupButton.setupButtonFont(font: Fonts.sairaMedium16, color: .primaryYellow)
+        
         loginButton.titleLabel?.text = viewModel?.loginButtonText
         loginButton.setupButtonFont(font: Fonts.sairaRegular16, color: .black)
     }
@@ -64,6 +67,7 @@ final class LoginViewController: BaseViewController {
         
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
+        backToSignupButton.addTarget(self, action: #selector(backToSignupButtonTapped), for: .touchUpInside)
     }
     
     @objc private func hideKeyboard() {
@@ -96,5 +100,9 @@ final class LoginViewController: BaseViewController {
     @objc private func forgotPasswordButtonTapped() {
         viewModel?.navigateToForgotPassword()
     }
-        
+    
+    @objc private func backToSignupButtonTapped() {
+        viewModel?.navigateToSignup()
+    }
+    
 }

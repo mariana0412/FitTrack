@@ -28,6 +28,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setBackgroundImage(named: Constants.Images.backgroundImageName)
     }
     
