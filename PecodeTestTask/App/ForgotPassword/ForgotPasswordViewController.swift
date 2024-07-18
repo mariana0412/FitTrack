@@ -83,36 +83,49 @@ class ForgotPasswordViewController: BaseViewController {
             return
         }
 
-        continueButton.isEnabled = false
-        continueButton.backgroundColor = UIColor.primaryWhite
+        updateContinueButton()
 
         viewModel?.resetPassword(email: emailText) { [weak self] errorMessage in
-            self?.continueButton.isEnabled = true
-            self?.continueButton.backgroundColor = UIColor.primaryYellow
-            if errorMessage != nil {
-                if let alertErrorMessage = self?.viewModel?.alertErrorMessage,
-                   let alertOkButtonText = self?.viewModel?.alertOkButtonText {
-                    self?.view.showCustomAlert(
-                        message: alertErrorMessage,
-                        okButtonTitle: alertOkButtonText,
-                        cancelButtonTitle: "Cancel",
-                        cancelClickedAction: {
-                            self?.viewModel?.navigateToLogin()
-                        }
-                    )
-                }
+            self?.updateContinueButton()
+            
+            if let errorMessage = errorMessage {
+                self?.showErrorAlert(message: errorMessage)
             } else {
-                if let alertOkMessage = self?.viewModel?.alertOkMessage,
-                   let alertOkButtonText = self?.viewModel?.alertOkButtonText {
-                    self?.view.showCustomAlert(
-                        message: alertOkMessage,
-                        okButtonTitle: alertOkButtonText,
-                        okClickedAction: {
-                            self?.viewModel?.navigateToLogin()
-                        }
-                    )
-                }
+                self?.showSuccessAlert()
             }
+        }
+    }
+    
+    private func updateContinueButton() {
+        continueButton.isEnabled.toggle()
+        continueButton.backgroundColor = continueButton.isEnabled ? .primaryYellow : .primaryWhite
+    }
+    
+    private func showErrorAlert(message: String) {
+        if let alertErrorMessage = viewModel?.alertErrorMessage,
+           let alertOkButtonText = viewModel?.alertOkButtonText,
+           let alertCancelButtonText = viewModel?.alertCancelButtonText {
+            view.showCustomAlert(
+                message: alertErrorMessage,
+                okButtonTitle: alertOkButtonText,
+                cancelButtonTitle: alertCancelButtonText,
+                cancelClickedAction: { [weak self] in
+                    self?.viewModel?.navigateToLogin()
+                }
+            )
+        }
+    }
+    
+    private func showSuccessAlert() {
+        if let alertOkMessage = viewModel?.alertOkMessage,
+           let alertOkButtonText = viewModel?.alertOkButtonText {
+            view.showCustomAlert(
+                message: alertOkMessage,
+                okButtonTitle: alertOkButtonText,
+                okClickedAction: { [weak self] in
+                    self?.viewModel?.navigateToLogin()
+                }
+            )
         }
     }
     
