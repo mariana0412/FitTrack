@@ -96,6 +96,8 @@
 		CAA18F182C3C3B7500F888CD /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F172C3C3B7500F888CD /* TabBarItem.swift */; };
 		CAA18F1B2C3C554400F888CD /* GradientUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F1A2C3C554400F888CD /* GradientUtils.swift */; };
 		CAA18F1D2C3C56F700F888CD /* OverlayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F1C2C3C56F700F888CD /* OverlayUtils.swift */; };
+		CAC78E3C2C491B0D00E48049 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC78E3B2C491B0D00E48049 /* CustomAlert.swift */; };
+		CAC78E3E2C491B2200E48049 /* CustomAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAC78E3D2C491B2200E48049 /* CustomAlert.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +199,8 @@
 		CAA18F172C3C3B7500F888CD /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		CAA18F1A2C3C554400F888CD /* GradientUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientUtils.swift; sourceTree = "<group>"; };
 		CAA18F1C2C3C56F700F888CD /* OverlayUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayUtils.swift; sourceTree = "<group>"; };
+		CAC78E3B2C491B0D00E48049 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		CAC78E3D2C491B2200E48049 /* CustomAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlert.xib; sourceTree = "<group>"; };
 		D1810F872ACEC9C10D861E31 /* Pods-PecodeTestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTask.release.xcconfig"; path = "Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask.release.xcconfig"; sourceTree = "<group>"; };
 		FE1100F283D53D0189BF8AB0 /* Pods-PecodeTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTask.debug.xcconfig"; path = "Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -370,6 +374,7 @@
 		CA002E2D2C36E80E0053284B /* UI-Components */ = {
 			isa = PBXGroup;
 			children = (
+				CAC78E3A2C491AF700E48049 /* CustomAlert */,
 				CA002E2E2C36E81F0053284B /* CustomUIComponent.swift */,
 				CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */,
 				CA002E3A2C3701FE0053284B /* CustomButton.swift */,
@@ -516,6 +521,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		CAC78E3A2C491AF700E48049 /* CustomAlert */ = {
+			isa = PBXGroup;
+			children = (
+				CAC78E3B2C491B0D00E48049 /* CustomAlert.swift */,
+				CAC78E3D2C491B2200E48049 /* CustomAlert.xib */,
+			);
+			path = CustomAlert;
+			sourceTree = "<group>";
+		};
 		E200BC837313A785CA69F752 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -638,6 +652,7 @@
 				CA038C002C43F8E90033CD30 /* Saira-Light.ttf in Resources */,
 				CA002DDF2C318B110053284B /* Assets.xcassets in Resources */,
 				CA457E0D2C42BC360031FDFA /* Login.storyboard in Resources */,
+				CAC78E3E2C491B2200E48049 /* CustomAlert.xib in Resources */,
 				CA002E242C319F560053284B /* .gitignore in Resources */,
 				CA002DE22C318B110053284B /* Base in Resources */,
 				CAA18EEB2C3ADC2C00F888CD /* Saira-Regular.ttf in Resources */,
@@ -821,6 +836,7 @@
 				CA465A7B2C47E238003E7217 /* ForgotPasswordViewController.swift in Sources */,
 				CA002E182C319C7A0053284B /* HomeViewModel.swift in Sources */,
 				CA002DD62C318B0F0053284B /* AppDelegate.swift in Sources */,
+				CAC78E3C2C491B0D00E48049 /* CustomAlert.swift in Sources */,
 				CA37E5702C3F25B4003ADAA8 /* RegistrationData.swift in Sources */,
 				CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */,
 				CA002E262C31A0830053284B /* AppCoordinator.swift in Sources */,

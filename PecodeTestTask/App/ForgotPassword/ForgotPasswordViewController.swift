@@ -89,12 +89,29 @@ class ForgotPasswordViewController: BaseViewController {
         viewModel?.resetPassword(email: emailText) { [weak self] errorMessage in
             self?.continueButton.isEnabled = true
             self?.continueButton.backgroundColor = UIColor.primaryYellow
-            if let errorMessage = errorMessage {
-                let alert = AlertUtils.createAlert(message: errorMessage)
-                self?.present(alert, animated: true, completion: nil)
+            if errorMessage != nil {
+                if let alertErrorMessage = self?.viewModel?.alertErrorMessage,
+                   let alertOkButtonText = self?.viewModel?.alertOkButtonText {
+                    self?.view.showCustomAlert(
+                        message: alertErrorMessage,
+                        okButtonTitle: alertOkButtonText,
+                        cancelButtonTitle: "Cancel",
+                        cancelClickedAction: {
+                            self?.viewModel?.navigateToLogin()
+                        }
+                    )
+                }
             } else {
-                let alert = AlertUtils.createAlert(message: "Password reset email sent successfully.")
-                self?.present(alert, animated: true, completion: nil)
+                if let alertOkMessage = self?.viewModel?.alertOkMessage,
+                   let alertOkButtonText = self?.viewModel?.alertOkButtonText {
+                    self?.view.showCustomAlert(
+                        message: alertOkMessage,
+                        okButtonTitle: alertOkButtonText,
+                        okClickedAction: {
+                            self?.viewModel?.navigateToLogin()
+                        }
+                    )
+                }
             }
         }
     }

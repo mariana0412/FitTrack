@@ -15,6 +15,11 @@ class ForgotPasswordViewModel {
     let explanationText = "Enter the email address associated with your account and we'll send you a form to reset your password."
     let continueButtonText = "Continue"
     let backToLogintButtonText = "Back to login"
+    let alertOkMessage = "The form has been sent to your e-mail"
+    let alertErrorMessage = "Please check the email you entered. Something seems to be wrong."
+    let alertOkButtonText = "Ok"
+    let alertCancelButtonText = "Cancel"
+    
     
     init(coordinator: ForgotPasswordCoordinator?) {
         self.coordinator = coordinator
