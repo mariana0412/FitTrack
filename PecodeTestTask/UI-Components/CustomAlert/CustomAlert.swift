@@ -126,20 +126,23 @@ final class CustomAlert: UIView {
     }
     
     @objc private func okButtonTapped() {
-        okClickedAction?()
-        dismissAlert()
+        dismissAlert { [weak self] in
+            self?.okClickedAction?()
+        }
     }
     
     @objc private func cancelButtonTapped() {
-        cancelClickedAction?()
-        dismissAlert()
+        dismissAlert { [weak self] in
+            self?.cancelClickedAction?()
+        }
     }
     
-    @objc private func dismissAlert() {
+    @objc private func dismissAlert(completion: (() -> Void)? = nil) {
         UIView.animate(withDuration: Constants.Animation.dismissDuration, animations: {
             self.alertView.transform = CGAffineTransform(translationX: 0, y: self.frame.height)
         }) { _ in
             self.removeFromSuperview()
+            completion?()
         }
     }
     
