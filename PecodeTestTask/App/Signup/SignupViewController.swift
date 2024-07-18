@@ -110,8 +110,7 @@ final class SignupViewController: BaseViewController {
             self?.signupButton.backgroundColor = UIColor.primaryYellow
             self?.updateValidationUI(validationResults)
             if let errorMessage = errorMessage {
-                let alert = AlertUtils.createAlert(message: errorMessage)
-                self?.present(alert, animated: true, completion: nil)
+                self?.view.showCustomAlert(message: errorMessage)
             }
         }
     }

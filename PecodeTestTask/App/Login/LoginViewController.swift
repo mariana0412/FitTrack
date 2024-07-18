@@ -91,8 +91,7 @@ final class LoginViewController: BaseViewController {
             self?.loginButton.isEnabled = true
             self?.loginButton.backgroundColor = UIColor.primaryYellow
             if let errorMessage = errorMessage {
-                let alert = AlertUtils.createAlert(message: errorMessage)
-                self?.present(alert, animated: true, completion: nil)
+                self?.view.showCustomAlert(message: errorMessage)
             }
         }
     }

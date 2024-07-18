@@ -20,7 +20,6 @@ class ForgotPasswordViewModel {
     let alertOkButtonText = "Ok"
     let alertCancelButtonText = "Cancel"
     
-    
     init(coordinator: ForgotPasswordCoordinator?) {
         self.coordinator = coordinator
     }
