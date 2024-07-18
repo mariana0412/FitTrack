@@ -46,9 +46,9 @@ class ForgotPasswordViewController: BaseViewController {
         forgotPasswordLabel.font = Fonts.sairaRegular24
         
         email.labelText = viewModel?.emailText
-        email.labelFont = Fonts.textFieldLabel
+        email.labelFont = Fonts.helveticaNeue18
         email.textFieldText = viewModel?.emailPlaceholderText
-        email.textFieldFont = Fonts.textFieldPlaceholder
+        email.textFieldFont = Fonts.helveticaNeue16
         
         explanationLabel.text = viewModel?.explanationText
         explanationLabel.numberOfLines = Constants.Layout.explanationNumberOfLines

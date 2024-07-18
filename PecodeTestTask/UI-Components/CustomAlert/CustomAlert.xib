@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomAlert" customModule="PecodeTestTask" customModuleProvider="target">
             <connections>
                 <outlet property="alertView" destination="flr-Dm-MwW" id="AnU-sr-nuu"/>
+                <outlet property="buttonsContainer" destination="M6t-Kn-sOw" id="1Lg-XM-a3w"/>
                 <outlet property="cancelButton" destination="9c3-5P-IT0" id="t3T-tp-9hm"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Vrb-Cq-oRT"/>
                 <outlet property="message" destination="p37-f3-0o3" id="48f-M2-09S"/>
@@ -32,11 +33,11 @@
                             <color key="textColor" name="PrimaryWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6t-Kn-sOw">
-                            <rect key="frame" x="16" y="78.333333333333314" width="251" height="58.666666666666657"/>
+                        <stackView opaque="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="M6t-Kn-sOw">
+                            <rect key="frame" x="16" y="88" width="251" height="49"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9c3-5P-IT0" userLabel="Cancel Button" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="125.66666666666667" height="58.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="125.66666666666667" height="49"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                     <userDefinedRuntimeAttributes>
@@ -47,7 +48,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1Q-Bh-9f7" userLabel="OK Button" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
-                                    <rect key="frame" x="125.66666666666666" y="0.0" width="125.33333333333334" height="58.666666666666664"/>
+                                    <rect key="frame" x="125.66666666666666" y="0.0" width="125.33333333333334" height="49"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                     <userDefinedRuntimeAttributes>
@@ -58,6 +59,9 @@
                                     </userDefinedRuntimeAttributes>
                                 </button>
                             </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="49" id="XfO-pu-425"/>
+                            </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -67,7 +71,6 @@
                         <constraint firstItem="p37-f3-0o3" firstAttribute="leading" secondItem="flr-Dm-MwW" secondAttribute="leading" constant="16" id="QfK-AY-blk"/>
                         <constraint firstAttribute="width" constant="283" id="Wvc-cH-WC9"/>
                         <constraint firstAttribute="bottom" secondItem="M6t-Kn-sOw" secondAttribute="bottom" constant="16" id="eJz-HP-uiY"/>
-                        <constraint firstItem="M6t-Kn-sOw" firstAttribute="top" secondItem="p37-f3-0o3" secondAttribute="bottom" constant="24" id="fAd-Ca-RkV"/>
                         <constraint firstItem="p37-f3-0o3" firstAttribute="top" secondItem="flr-Dm-MwW" secondAttribute="top" constant="16" id="fZW-c4-Duj"/>
                         <constraint firstAttribute="trailing" secondItem="M6t-Kn-sOw" secondAttribute="trailing" constant="16" id="op0-JQ-DJz"/>
                         <constraint firstAttribute="trailing" secondItem="p37-f3-0o3" secondAttribute="trailing" constant="16" id="yXQ-2g-Cfc"/>

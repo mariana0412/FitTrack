@@ -42,14 +42,14 @@ final class LoginViewController: BaseViewController {
         loginToYourAccountLabel.font = Fonts.sairaRegular24
         
         email.labelText = viewModel?.emailText
-        email.labelFont = Fonts.textFieldLabel
+        email.labelFont = Fonts.helveticaNeue18
         email.textFieldText = viewModel?.emailPlaceholderText
-        email.textFieldFont = Fonts.textFieldPlaceholder
+        email.textFieldFont = Fonts.helveticaNeue16
         
         password.labelText = viewModel?.passwordText
-        password.labelFont = Fonts.textFieldLabel
+        password.labelFont = Fonts.helveticaNeue18
         password.textFieldText = viewModel?.passwordPlaceholderText
-        password.textFieldFont = Fonts.textFieldPlaceholder
+        password.textFieldFont = Fonts.helveticaNeue16
         
         forgotPasswordButton.titleLabel?.text = viewModel?.forgotPasswordText
         forgotPasswordButton.setupButtonFont(font: Fonts.sairaMedium16, color: .primaryYellow)
