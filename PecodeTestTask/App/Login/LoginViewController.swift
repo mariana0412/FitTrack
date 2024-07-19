@@ -19,7 +19,7 @@ final class LoginViewController: BaseViewController {
     
     @IBOutlet private weak var forgotPasswordButton: CustomButton!
     @IBOutlet private weak var loginButton: CustomButton!
-    
+    @IBOutlet weak var backToSignupButton: CustomButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,17 +42,20 @@ final class LoginViewController: BaseViewController {
         loginToYourAccountLabel.font = Fonts.sairaRegular24
         
         email.labelText = viewModel?.emailText
-        email.labelFont = Fonts.textFieldLabel
+        email.labelFont = Fonts.helveticaNeue18
         email.textFieldText = viewModel?.emailPlaceholderText
-        email.textFieldFont = Fonts.textFieldPlaceholder
+        email.textFieldFont = Fonts.helveticaNeue16
         
         password.labelText = viewModel?.passwordText
-        password.labelFont = Fonts.textFieldLabel
+        password.labelFont = Fonts.helveticaNeue18
         password.textFieldText = viewModel?.passwordPlaceholderText
-        password.textFieldFont = Fonts.textFieldPlaceholder
+        password.textFieldFont = Fonts.helveticaNeue16
         
         forgotPasswordButton.titleLabel?.text = viewModel?.forgotPasswordText
         forgotPasswordButton.setupButtonFont(font: Fonts.sairaMedium16, color: .primaryYellow)
+        
+        backToSignupButton.titleLabel?.text = viewModel?.backToSignupButtonText
+        backToSignupButton.setupButtonFont(font: Fonts.sairaMedium16, color: .primaryYellow)
         
         loginButton.titleLabel?.text = viewModel?.loginButtonText
         loginButton.setupButtonFont(font: Fonts.sairaRegular16, color: .black)
@@ -63,6 +66,8 @@ final class LoginViewController: BaseViewController {
         view.addGestureRecognizer(tapGesture)
         
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
+        backToSignupButton.addTarget(self, action: #selector(backToSignupButtonTapped), for: .touchUpInside)
     }
     
     @objc private func hideKeyboard() {
@@ -86,10 +91,17 @@ final class LoginViewController: BaseViewController {
             self?.loginButton.isEnabled = true
             self?.loginButton.backgroundColor = UIColor.primaryYellow
             if let errorMessage = errorMessage {
-                let alert = AlertUtils.createAlert(message: errorMessage)
-                self?.present(alert, animated: true, completion: nil)
+                self?.view.showCustomAlert(message: errorMessage)
             }
         }
     }
-        
+    
+    @objc private func forgotPasswordButtonTapped() {
+        viewModel?.navigateToForgotPassword()
+    }
+    
+    @objc private func backToSignupButtonTapped() {
+        viewModel?.navigateToSignup()
+    }
+    
 }

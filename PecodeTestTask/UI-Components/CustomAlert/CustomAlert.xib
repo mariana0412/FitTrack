@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomAlert" customModule="PecodeTestTask" customModuleProvider="target">
+            <connections>
+                <outlet property="alertView" destination="flr-Dm-MwW" id="AnU-sr-nuu"/>
+                <outlet property="buttonsContainer" destination="M6t-Kn-sOw" id="1Lg-XM-a3w"/>
+                <outlet property="cancelButton" destination="9c3-5P-IT0" id="t3T-tp-9hm"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="Vrb-Cq-oRT"/>
+                <outlet property="message" destination="p37-f3-0o3" id="48f-M2-09S"/>
+                <outlet property="okButton" destination="g1Q-Bh-9f7" id="7Cf-Oi-3eu"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flr-Dm-MwW">
+                    <rect key="frame" x="55" y="349.66666666666669" width="283" height="153"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The form has been sent to your e-mail" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p37-f3-0o3" userLabel="Alert Label">
+                            <rect key="frame" x="16" y="16.000000000000004" width="251" height="38.333333333333343"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" name="PrimaryWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="M6t-Kn-sOw">
+                            <rect key="frame" x="16" y="88" width="251" height="49"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9c3-5P-IT0" userLabel="Cancel Button" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="125.66666666666667" height="49"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="buttonStyle">
+                                            <integer key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="Cancel"/>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1Q-Bh-9f7" userLabel="OK Button" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
+                                    <rect key="frame" x="125.66666666666666" y="0.0" width="125.33333333333334" height="49"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="buttonStyle">
+                                            <integer key="value" value="0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="Ok"/>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="49" id="XfO-pu-425"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="153" id="GiY-cZ-tcQ"/>
+                        <constraint firstItem="M6t-Kn-sOw" firstAttribute="leading" secondItem="flr-Dm-MwW" secondAttribute="leading" constant="16" id="HB3-Ti-ZOF"/>
+                        <constraint firstItem="p37-f3-0o3" firstAttribute="leading" secondItem="flr-Dm-MwW" secondAttribute="leading" constant="16" id="QfK-AY-blk"/>
+                        <constraint firstAttribute="width" constant="283" id="Wvc-cH-WC9"/>
+                        <constraint firstAttribute="bottom" secondItem="M6t-Kn-sOw" secondAttribute="bottom" constant="16" id="eJz-HP-uiY"/>
+                        <constraint firstItem="p37-f3-0o3" firstAttribute="top" secondItem="flr-Dm-MwW" secondAttribute="top" constant="16" id="fZW-c4-Duj"/>
+                        <constraint firstAttribute="trailing" secondItem="M6t-Kn-sOw" secondAttribute="trailing" constant="16" id="op0-JQ-DJz"/>
+                        <constraint firstAttribute="trailing" secondItem="p37-f3-0o3" secondAttribute="trailing" constant="16" id="yXQ-2g-Cfc"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="flr-Dm-MwW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="HCX-Be-oIl"/>
+                <constraint firstItem="flr-Dm-MwW" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ZXI-kO-5y3"/>
+            </constraints>
+            <point key="canvasLocation" x="-153" y="-12"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="9c3-5P-IT0">
+            <size key="intrinsicContentSize" width="76.666666666666671" height="34.333333333333336"/>
+        </designable>
+        <designable name="g1Q-Bh-9f7">
+            <size key="intrinsicContentSize" width="45.666666666666664" height="34.333333333333336"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="PrimaryWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

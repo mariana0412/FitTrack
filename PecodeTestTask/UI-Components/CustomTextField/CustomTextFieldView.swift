@@ -8,7 +8,10 @@
 import UIKit
 
 final class CustomTextFieldView: UIView {
-    let kCONTENT_XIB_NAME = "CustomTextFieldView"
+    
+    private enum Constants {
+        static let identifier = "CustomTextFieldView"
+    }
     
     @IBOutlet private var contentView: UIView!
     @IBOutlet private weak var label: UILabel!
@@ -76,7 +79,7 @@ final class CustomTextFieldView: UIView {
     }
     
     func commonInit() {
-        Bundle.main.loadNibNamed(kCONTENT_XIB_NAME, owner: self, options: nil)
+        Bundle.main.loadNibNamed(Constants.identifier, owner: self, options: nil)
         contentView.fixInView(self)
         
         textField.delegate = self

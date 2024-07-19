@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SplashViewController: UIViewController {
+class SplashViewController: BaseViewController {
     
     private enum Constants {
         enum Layout {
@@ -71,8 +71,7 @@ class SplashViewController: UIViewController {
             self?.enableButtons()
             
             if let errorMessage = errorMessage {
-                let alert = AlertUtils.createAlert(message: errorMessage)
-                self?.present(alert, animated: true, completion: nil)
+                self?.view.showCustomAlert(message: errorMessage)
             }
         }
     }

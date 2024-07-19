@@ -30,8 +30,7 @@ final class HomeViewController: BaseViewController {
     private func loadUserData() {
         viewModel?.fetchUser { [weak self] errorMessage in
             if let errorMessage = errorMessage {
-                let alert = AlertUtils.createAlert(message: errorMessage)
-                self?.present(alert, animated: true, completion: nil)
+                self?.view.showCustomAlert(message: errorMessage)
             } else {
                 self?.setupUI()
             }

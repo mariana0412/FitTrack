@@ -31,4 +31,13 @@ class LoginCoordinator: Coordinator {
         tabBarCoordinator.start()
     }
     
+    func navigateToSignup() {
+        navigationController.popViewController(animated: false)
+    }
+    
+    func navigateToForgotPassword() {
+        let forgotPasswordCoordinator = ForgotPasswordCoordinator(navigationController: navigationController)
+        forgotPasswordCoordinator.start()
+    }
+    
 }
