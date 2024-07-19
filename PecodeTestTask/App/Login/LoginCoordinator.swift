@@ -32,8 +32,7 @@ class LoginCoordinator: Coordinator {
     }
     
     func navigateToSignup() {
-        let signupCoordinator = SignupCoordinator(navigationController: navigationController)
-        signupCoordinator.start()
+        navigationController.popViewController(animated: false)
     }
     
     func navigateToForgotPassword() {

@@ -21,8 +21,7 @@ class ForgotPasswordCoordinator: Coordinator {
     }
     
     func navigateToLogin() {
-        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
-        loginCoordinator.start()
+        navigationController.popViewController(animated: false)
     }
     
 }

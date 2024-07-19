@@ -87,8 +87,11 @@
         </view>
     </objects>
     <designables>
+        <designable name="9c3-5P-IT0">
+            <size key="intrinsicContentSize" width="76.666666666666671" height="34.333333333333336"/>
+        </designable>
         <designable name="g1Q-Bh-9f7">
-            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="45.666666666666664" height="34.333333333333336"/>
         </designable>
     </designables>
     <resources>
