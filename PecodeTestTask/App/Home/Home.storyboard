@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5Y-GO-Naf">
-                                <rect key="frame" x="196.66666666666666" y="91" width="0.0" height="0.0"/>
+                                <rect key="frame" x="129" y="91" width="135" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" name="PrimaryWhite"/>
                                 <nil key="highlightedColor"/>
@@ -29,18 +29,29 @@
                                 <color key="textColor" name="PrimaryWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePicture" translatesAutoresizingMaskIntoConstraints="NO" id="OUz-Vf-Rsx">
+                                <rect key="frame" x="328" y="91" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YUq-IP-b51"/>
+                                    <constraint firstAttribute="width" constant="50" id="jnB-8w-JqV"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wzI-eg-19d" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="0uG-bG-xj9"/>
                             <constraint firstItem="wzI-eg-19d" firstAttribute="top" secondItem="z5Y-GO-Naf" secondAttribute="bottom" constant="7" id="36G-Gu-gXV"/>
+                            <constraint firstItem="OUz-Vf-Rsx" firstAttribute="leading" relation="lessThanOrEqual" secondItem="z5Y-GO-Naf" secondAttribute="trailing" constant="64" id="LHE-93-nkS"/>
                             <constraint firstItem="z5Y-GO-Naf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="NqX-iV-7Hb"/>
                             <constraint firstItem="z5Y-GO-Naf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="32" id="oPI-Tb-79Q"/>
+                            <constraint firstItem="OUz-Vf-Rsx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="32" id="sYO-Ix-fXl"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OUz-Vf-Rsx" secondAttribute="trailing" constant="15" id="wIs-XP-QHq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="nameLabel" destination="wzI-eg-19d" id="TF4-bd-1F2"/>
+                        <outlet property="profileImage" destination="OUz-Vf-Rsx" id="M1h-V4-9Cm"/>
                         <outlet property="superheroLabel" destination="z5Y-GO-Naf" id="cw1-gr-dnl"/>
                     </connections>
                 </viewController>
@@ -50,6 +61,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="profilePicture" width="124" height="124"/>
         <namedColor name="PrimaryWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
