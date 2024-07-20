@@ -16,7 +16,7 @@ struct StoryboardConstants {
     static let signup = "Signup"
     static let login = "Login"
     static let forgotPassword = "ForgotPassword"
-    static let editProfile = "EditProfile"
+    static let profile = "Profile"
 }
 
 struct ViewControllerIdentifiers {
@@ -28,7 +28,7 @@ struct ViewControllerIdentifiers {
     static let signupViewController = "SignupViewController"
     static let loginViewController = "LoginViewController"
     static let forgotPasswordViewController = "ForgotPasswordViewController"
-    static let editProfileViewController = "EditProfileViewController"
+    static let profileViewController = "ProfileViewController"
 }
 
 struct Fonts {

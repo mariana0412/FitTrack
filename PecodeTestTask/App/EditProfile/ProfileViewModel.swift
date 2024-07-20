@@ -5,10 +5,10 @@
 //  Created by Mariana Piz on 20.07.2024.
 //
 
-class EditProfileViewModel {
-    private var coordinator: EditProfileCoordinator?
+class ProfileViewModel {
+    private var coordinator: ProfileCoordinator?
     
-    init(coordinator: EditProfileCoordinator?) {
+    init(coordinator: ProfileCoordinator?) {
         self.coordinator = coordinator
     }
 }

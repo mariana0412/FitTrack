@@ -29,6 +29,7 @@ final class HomeViewController: BaseViewController {
         super.viewDidLoad()
         
         setupUI()
+        setupActions()
         loadUserData()
     }
 
@@ -48,6 +49,8 @@ final class HomeViewController: BaseViewController {
     }
     
     private func setupUI() {
+        self.navigationItem.hidesBackButton = true
+        
         guard let viewModel = viewModel else { return }
         
         superheroLabel.text = viewModel.heroName
@@ -63,6 +66,16 @@ final class HomeViewController: BaseViewController {
         profileImage.image = UIImage(named: Constants.Layout.defaultProfileImageName)
     
         updateBackgroundImage(named: viewModel.backgroundImageName)
+    }
+    
+    private func setupActions() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(profileImageTapped))
+        profileImage.isUserInteractionEnabled = true
+        profileImage.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc private func profileImageTapped() {
+        viewModel?.navigateToProfile()
     }
     
 }

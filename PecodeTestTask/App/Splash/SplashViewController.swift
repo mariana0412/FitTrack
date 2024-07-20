@@ -91,6 +91,8 @@ class SplashViewController: BaseViewController {
     }
     
     private func setupUI() {
+        self.navigationItem.hidesBackButton = true
+        
         superheroLabel.text = viewModel?.superheroText
         superheroLabel.font = Fonts.futuraBold
         superheroLabel.textColor = .primaryYellow
