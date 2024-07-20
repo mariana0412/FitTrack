@@ -68,6 +68,10 @@
 		CA465A7D2C47E248003E7217 /* ForgotPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA465A7C2C47E248003E7217 /* ForgotPasswordCoordinator.swift */; };
 		CA465A7F2C47E25A003E7217 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA465A7E2C47E25A003E7217 /* ForgotPasswordViewModel.swift */; };
 		CA465A812C47E26F003E7217 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA465A802C47E26F003E7217 /* ForgotPassword.storyboard */; };
+		CA4FEC662C4C59B400988C5B /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FEC652C4C59B400988C5B /* EditProfileController.swift */; };
+		CA4FEC682C4C59BC00988C5B /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FEC672C4C59BC00988C5B /* EditProfileViewModel.swift */; };
+		CA4FEC6A2C4C59C300988C5B /* EditProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FEC692C4C59C300988C5B /* EditProfileCoordinator.swift */; };
+		CA4FEC6C2C4C59CB00988C5B /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA4FEC6B2C4C59CB00988C5B /* EditProfile.storyboard */; };
 		CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */; };
 		CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */; };
 		CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */; };
@@ -171,6 +175,10 @@
 		CA465A7C2C47E248003E7217 /* ForgotPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordCoordinator.swift; sourceTree = "<group>"; };
 		CA465A7E2C47E25A003E7217 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		CA465A802C47E26F003E7217 /* ForgotPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
+		CA4FEC652C4C59B400988C5B /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
+		CA4FEC672C4C59BC00988C5B /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		CA4FEC692C4C59C300988C5B /* EditProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileCoordinator.swift; sourceTree = "<group>"; };
+		CA4FEC6B2C4C59CB00988C5B /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextFieldView.xib; sourceTree = "<group>"; };
 		CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -326,6 +334,7 @@
 		CA002E092C3192C60053284B /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CA4FEC642C4C593E00988C5B /* EditProfile */,
 				CA465A792C47D8C5003E7217 /* ForgotPassword */,
 				CA457E052C42BBEA0031FDFA /* Login */,
 				CA37E5652C3EF35F003ADAA8 /* Signup */,
@@ -432,6 +441,17 @@
 				CA465A802C47E26F003E7217 /* ForgotPassword.storyboard */,
 			);
 			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		CA4FEC642C4C593E00988C5B /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				CA4FEC652C4C59B400988C5B /* EditProfileController.swift */,
+				CA4FEC692C4C59C300988C5B /* EditProfileCoordinator.swift */,
+				CA4FEC672C4C59BC00988C5B /* EditProfileViewModel.swift */,
+				CA4FEC6B2C4C59CB00988C5B /* EditProfile.storyboard */,
+			);
+			path = EditProfile;
 			sourceTree = "<group>";
 		};
 		CAA18EE02C37F97900F888CD /* Extensions */ = {
@@ -655,6 +675,7 @@
 				CA002DE22C318B110053284B /* Base in Resources */,
 				CAA18EEB2C3ADC2C00F888CD /* Saira-Regular.ttf in Resources */,
 				CA002E1A2C319C860053284B /* Home.storyboard in Resources */,
+				CA4FEC6C2C4C59CB00988C5B /* EditProfile.storyboard in Resources */,
 				CAA18F032C3C147400F888CD /* Calculator.storyboard in Resources */,
 				CAA18F012C3C134B00F888CD /* Progress.storyboard in Resources */,
 				CA0FF3EE2C45625800B3CE08 /* GoogleService-Info.plist in Resources */,
@@ -812,6 +833,7 @@
 				CAA18EFB2C3C132200F888CD /* ProgressViewController.swift in Sources */,
 				CAA18EF22C3B182800F888CD /* SplashViewModel.swift in Sources */,
 				CAA18EE72C39DFC300F888CD /* SplashViewController.swift in Sources */,
+				CA4FEC6A2C4C59C300988C5B /* EditProfileCoordinator.swift in Sources */,
 				CA002E122C319C110053284B /* Coordinator.swift in Sources */,
 				CA33B9BE2C3C6457000BFA4C /* FirebaseService.swift in Sources */,
 				CAA18F0B2C3C157C00F888CD /* MusclesViewController.swift in Sources */,
@@ -819,6 +841,7 @@
 				CA37E5862C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
 				CAA18F132C3C18F200F888CD /* TabBarCoordinator.swift in Sources */,
 				CAA18EE92C39DFF600F888CD /* SplashCoordinator.swift in Sources */,
+				CA4FEC662C4C59B400988C5B /* EditProfileController.swift in Sources */,
 				CAA18F092C3C149C00F888CD /* CalculatorViewModel.swift in Sources */,
 				CAA18F1D2C3C56F700F888CD /* OverlayUtils.swift in Sources */,
 				CAA18F0F2C3C159300F888CD /* MusclesCoordinator.swift in Sources */,
@@ -838,6 +861,7 @@
 				CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */,
 				CA002E262C31A0830053284B /* AppCoordinator.swift in Sources */,
 				CA457E072C42BBF80031FDFA /* LoginViewController.swift in Sources */,
+				CA4FEC682C4C59BC00988C5B /* EditProfileViewModel.swift in Sources */,
 				CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */,
 				CA038C042C4427190033CD30 /* LoginData.swift in Sources */,
 				CA1EE8402C375AFF00E58403 /* CustomSwitch.swift in Sources */,
