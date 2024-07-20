@@ -22,4 +22,8 @@ class ProfileCoordinator: Coordinator {
         navigationController.pushViewController(profileViewController, animated: false)
     }
     
+    func navigateToHome() {
+        navigationController.popViewController(animated: false)
+    }
+    
 }

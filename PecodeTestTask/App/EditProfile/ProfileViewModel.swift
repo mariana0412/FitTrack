@@ -11,4 +11,8 @@ class ProfileViewModel {
     init(coordinator: ProfileCoordinator?) {
         self.coordinator = coordinator
     }
+    
+    func navigateToHome() {
+        coordinator?.navigateToHome()
+    }
 }
