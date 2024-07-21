@@ -34,6 +34,31 @@ class ProfileViewModel {
         self.backgroundImageName = (user.sex == .female) ? "backgroundImageGirl" : "backgroundImageMan"
     }
     
+    func editProfile(newName: String, newImage: UIImage, completion: @escaping (Bool, String?) -> Void) {
+        guard let user = user else {
+            return
+        }
+        
+        let newImageData = newImage.jpegData(compressionQuality: 1.0)
+        let currentImageData = user.profileImage
+        
+        let newName = (newName != user.userName && !newName.isEmpty) ? newName : nil
+        let newImage = (newImageData != currentImageData) ? newImageData : nil
+        
+        FirebaseService.shared.updateUserProfile(name: newName, profileImage: newImage) { [weak self] response in
+            switch response {
+            case .success:
+                completion(true, nil)
+                self?.user?.userName = newName ?? ""
+                self?.user?.profileImage = newImageData
+            case .failure(let error):
+                completion(false, error.localizedDescription)
+            case .unknown:
+                completion(false, "Unknown error occurred")
+            }
+        }
+    }
+    
     func navigateToHome() {
         coordinator?.navigateToHome()
     }

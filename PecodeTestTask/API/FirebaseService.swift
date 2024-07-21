@@ -163,11 +163,35 @@ class FirebaseService {
         }
     }
     
-    private func getCurrentUserId() -> String? {
-        if let currentUser = Auth.auth().currentUser {
-            return currentUser.uid
-        } else {
-            return nil
+    func updateUserProfile(name: String?, profileImage: Data?, completion: @escaping (FirebaseResponse<Void>) -> Void) {
+        let database = Firestore.firestore()
+        guard let currentUserId = getCurrentUserId() else {
+            completion(.unknown)
+            return
         }
+        
+        var updateData: [String: Any] = [:]
+        if let name {
+            updateData["userName"] = name
+        }
+    
+        if let profileImage {
+            updateData["profileImage"] = profileImage
+        }
+
+        database
+            .collection("users")
+            .document(currentUserId)
+            .updateData(updateData) { error in
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    completion(.success(nil))
+                }
+            }
+    }
+    
+    private func getCurrentUserId() -> String? {
+        Auth.auth().currentUser?.uid
     }
 }

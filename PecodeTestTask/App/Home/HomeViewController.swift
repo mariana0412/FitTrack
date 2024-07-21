@@ -33,6 +33,11 @@ final class HomeViewController: BaseViewController {
         loadUserData()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadUserData()
+    }
+    
     static func instantiate() -> HomeViewController {
         let storyboard = UIStoryboard(name: StoryboardConstants.home, bundle: .main)
         return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.homeViewController) as! HomeViewController
