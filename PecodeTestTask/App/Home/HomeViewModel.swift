@@ -41,7 +41,6 @@ class HomeViewModel {
     }
     
     func navigateToProfile() {
-        print(coordinator == nil)
         coordinator?.navigateToProfile()
     }
 
