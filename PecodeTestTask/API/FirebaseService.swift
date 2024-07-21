@@ -26,25 +26,23 @@ class FirebaseService {
         
     private init() {}
     
-    func createUser(with registrationData: RegistrationData, 
-                    completion: @escaping (FirebaseResponse<RegistrationData?>) -> Void) {
+    func createUser(with registrationData: RegistrationData, completion: @escaping (FirebaseResponse<Void>) -> Void) {
         Auth.auth().createUser(withEmail: registrationData.email,
                                password: registrationData.password) { 
             authResult, error in
             if let error = error {
                 completion(.failure(error))
             } else if let authResult = authResult {
-                self.saveUser(id: authResult.user.uid, 
-                                     registrationData: registrationData,
-                                     completion: completion)
+                self.saveUser(id: authResult.user.uid,
+                              registrationData: registrationData,
+                              completion: completion)
             } else {
                 completion(.unknown)
             }
         }
     }
     
-    private func saveUser(id: String, registrationData: RegistrationData, 
-                                 completion: @escaping (FirebaseResponse<RegistrationData?>) -> Void) {
+    private func saveUser(id: String, registrationData: RegistrationData, completion: @escaping (FirebaseResponse<Void>) -> Void) {
         let db = Firestore.firestore()
         db.collection("users").document(id).setData([
             "email": registrationData.email,
@@ -60,9 +58,9 @@ class FirebaseService {
         }
     }
     
-    func loginUser(with loginData: LoginData,
-                   completion: @escaping (FirebaseResponse<UserData?>) -> Void) {
-        Auth.auth().signIn(withEmail: loginData.email, password: loginData.password) { authResult, error in
+    func loginUser(with loginData: LoginData, completion: @escaping (FirebaseResponse<UserData?>) -> Void) {
+        Auth.auth().signIn(withEmail: loginData.email,
+                           password: loginData.password) { authResult, error in
             if let error = error {
                 completion(.failure(error))
             } else if let _ = authResult {
@@ -75,8 +73,7 @@ class FirebaseService {
         }
     }
 
-    func updateUserSex(sex: String,
-                       completion: @escaping (FirebaseResponse<RegistrationData?>) -> Void) {
+    func updateUserSex(sex: String, completion: @escaping (FirebaseResponse<Void>) -> Void) {
         let database = Firestore.firestore()
         guard let currentUserId = getCurrentUserId() else {
             completion(.unknown)

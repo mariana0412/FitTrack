@@ -61,10 +61,12 @@ final class HomeViewController: BaseViewController {
         nameLabel.text = viewModel.userName
         nameLabel.font = Fonts.sairaRegular16
         
-//        profileImage.clipsToBounds = true
-//        profileImage.layer.cornerRadius = Constants.Layout.profileImageCornerRadius
-//        profileImage.layer.borderWidth = Constants.Layout.profileImageBorderWidth
-//        profileImage.layer.borderColor = Constants.Layout.profileImageBorderColor
+        if let profileImageData = viewModel.user?.profileImage {
+            profileImage.setImageWithBorder(image: UIImage(data: profileImageData))
+        } else {
+            profileImage.image = UIImage(named: ProfileViewModel.Texts.defaultImageName)
+        }
+        
         profileImage.image = UIImage(named: Constants.Layout.defaultProfileImageName)
     }
     
