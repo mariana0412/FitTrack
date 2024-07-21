@@ -64,10 +64,8 @@ final class HomeViewController: BaseViewController {
         if let profileImageData = viewModel.user?.profileImage {
             profileImage.setImageWithBorder(image: UIImage(data: profileImageData))
         } else {
-            profileImage.image = UIImage(named: ProfileViewModel.Texts.defaultImageName)
+            profileImage.image = UIImage(named: Constants.Layout.defaultProfileImageName)
         }
-        
-        profileImage.image = UIImage(named: Constants.Layout.defaultProfileImageName)
     }
     
     private func setupActions() {
