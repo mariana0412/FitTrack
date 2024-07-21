@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ForgotPasswordViewController: BaseViewController {
+final class ForgotPasswordViewController: BaseViewController {
     
     private enum Constants {
         enum Layout {
@@ -56,7 +56,7 @@ class ForgotPasswordViewController: BaseViewController {
         explanationLabel.numberOfLines = Constants.Layout.explanationNumberOfLines
         explanationLabel.adjustsFontSizeToFitWidth = true
         explanationLabel.minimumScaleFactor = Constants.Layout.minExplanationFontSize / explanationLabel.font.pointSize
-        explanationLabel.textColor = .primaryGray
+        explanationLabel.textColor = .secondaryGray
         explanationLabel.font = Fonts.sairaLight16
         
         continueButton.titleLabel?.text = viewModel?.continueButtonText

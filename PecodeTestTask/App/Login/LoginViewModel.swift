@@ -42,11 +42,9 @@ class LoginViewModel {
         }
     }
     
-    private func handleNavigation(user: RegistrationData) {
-        if let sex = user.sex,
-           let userSex = UserSex(rawValue: sex)
-        {
-            navigateToHome(userSex: userSex)
+    private func handleNavigation(user: UserData) {
+        if user.sex != .unknown {
+            navigateToHome(userSex: user.sex)
         } else {
             navigateToSplash()
         }

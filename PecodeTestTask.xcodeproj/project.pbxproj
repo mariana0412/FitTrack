@@ -100,6 +100,7 @@
 		CAC78E3C2C491B0D00E48049 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC78E3B2C491B0D00E48049 /* CustomAlert.swift */; };
 		CAC78E3E2C491B2200E48049 /* CustomAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAC78E3D2C491B2200E48049 /* CustomAlert.xib */; };
 		CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */; };
+		CAEB18E42C4D4971000FE4E5 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB18E32C4D4971000FE4E5 /* UserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +208,7 @@
 		CAC78E3B2C491B0D00E48049 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		CAC78E3D2C491B2200E48049 /* CustomAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlert.xib; sourceTree = "<group>"; };
 		CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		CAEB18E32C4D4971000FE4E5 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		D1810F872ACEC9C10D861E31 /* Pods-PecodeTestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTask.release.xcconfig"; path = "Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask.release.xcconfig"; sourceTree = "<group>"; };
 		FE1100F283D53D0189BF8AB0 /* Pods-PecodeTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTask.debug.xcconfig"; path = "Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -316,6 +318,7 @@
 				CA37E56F2C3F25B4003ADAA8 /* RegistrationData.swift */,
 				CA038C032C4427180033CD30 /* LoginData.swift */,
 				CA0FF3F12C456B4700B3CE08 /* UserSex.swift */,
+				CAEB18E32C4D4971000FE4E5 /* UserData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -862,6 +865,7 @@
 				CA002E262C31A0830053284B /* AppCoordinator.swift in Sources */,
 				CA457E072C42BBF80031FDFA /* LoginViewController.swift in Sources */,
 				CA4FEC682C4C59BC00988C5B /* ProfileViewModel.swift in Sources */,
+				CAEB18E42C4D4971000FE4E5 /* UserData.swift in Sources */,
 				CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */,
 				CA038C042C4427190033CD30 /* LoginData.swift in Sources */,
 				CA1EE8402C375AFF00E58403 /* CustomSwitch.swift in Sources */,

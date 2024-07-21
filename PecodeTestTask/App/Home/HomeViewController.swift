@@ -53,19 +53,19 @@ final class HomeViewController: BaseViewController {
         
         guard let viewModel = viewModel else { return }
         
+        updateBackgroundImage(named: viewModel.backgroundImageName)
+        
         superheroLabel.text = viewModel.heroName
         superheroLabel.font = Fonts.sairaRegular24
         
         nameLabel.text = viewModel.userName
         nameLabel.font = Fonts.sairaRegular16
         
-        profileImage.clipsToBounds = true
-        profileImage.layer.cornerRadius = Constants.Layout.profileImageCornerRadius
-        profileImage.layer.borderWidth = Constants.Layout.profileImageBorderWidth
-        profileImage.layer.borderColor = Constants.Layout.profileImageBorderColor
+//        profileImage.clipsToBounds = true
+//        profileImage.layer.cornerRadius = Constants.Layout.profileImageCornerRadius
+//        profileImage.layer.borderWidth = Constants.Layout.profileImageBorderWidth
+//        profileImage.layer.borderColor = Constants.Layout.profileImageBorderColor
         profileImage.image = UIImage(named: Constants.Layout.defaultProfileImageName)
-    
-        updateBackgroundImage(named: viewModel.backgroundImageName)
     }
     
     private func setupActions() {

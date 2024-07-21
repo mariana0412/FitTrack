@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SplashViewController: BaseViewController {
+final class SplashViewController: BaseViewController {
     
     private enum Constants {
         enum Layout {

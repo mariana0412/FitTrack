@@ -61,7 +61,7 @@ class FirebaseService {
     }
     
     func loginUser(with loginData: LoginData,
-                   completion: @escaping (FirebaseResponse<RegistrationData?>) -> Void) {
+                   completion: @escaping (FirebaseResponse<UserData?>) -> Void) {
         Auth.auth().signIn(withEmail: loginData.email, password: loginData.password) { authResult, error in
             if let error = error {
                 completion(.failure(error))
@@ -95,7 +95,7 @@ class FirebaseService {
         }
     }
 
-    func getUser(completion: @escaping (FirebaseResponse<RegistrationData?>) -> Void) {
+    func getUser(completion: @escaping (FirebaseResponse<UserData?>) -> Void) {
         guard let currentUser = Auth.auth().currentUser else {
             completion(
                 .failure(
@@ -115,13 +115,18 @@ class FirebaseService {
             } else if let document = document, 
                         document.exists,
                         let data = document.data() {
-                let userName = data["userName"] as? String ?? ""
                 let email = data["email"] as? String ?? ""
-                let sex = data["sex"] as? String
-                let registrationData = RegistrationData(userName: userName, 
-                                                        email: email,
-                                                        sex: sex,
-                                                        password: "")
+                let id = data["id"] as? String ?? ""
+                let userName = data["userName"] as? String ?? ""
+                let sexString = data["sex"] as? String ?? ""
+                let sex = UserSex(rawValue: sexString) ?? .unknown
+                let profileImage = data["profileImage"] as? Data
+                
+                let registrationData = UserData(email: email,
+                                                id: id,
+                                                userName: userName,
+                                                sex: sex,
+                                                profileImage: profileImage)
                 completion(.success(registrationData))
             } else {
                 completion(.unknown)
@@ -130,15 +135,13 @@ class FirebaseService {
     }
     
     func checkCurrentUser(completion: @escaping (UserStatus) -> Void) {
-        if let currentUser = Auth.auth().currentUser {
+        if Auth.auth().currentUser != nil {
             getUser { response in
                 switch response {
-                case .success(let registrationData):
-                    if let user = registrationData, 
-                        let user = user,
-                       let sex = user.sex,
-                        let userSex = UserSex(rawValue: sex) {
-                        completion(.registeredWithSex(userSex))
+                case .success(let userData):
+                    if let user = userData,
+                       let user {
+                        completion(.registeredWithSex(user.sex))
                     } else {
                         completion(.registeredWithoutSex)
                     }

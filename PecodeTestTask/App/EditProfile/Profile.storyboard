@@ -17,32 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PbH-Dn-Syv" userLabel="AddOptions Button Container">
-                                <rect key="frame" x="0.0" y="700" width="393" height="118"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Tq-76-vgk" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
-                                        <rect key="frame" x="52" y="21" width="289" height="49"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="49" id="iXo-IO-NHc"/>
-                                            <constraint firstAttribute="width" constant="289" id="rnH-4n-ZHL"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="buttonStyle">
-                                                <integer key="value" value="0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="Add Options"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="0Tq-76-vgk" firstAttribute="top" secondItem="PbH-Dn-Syv" secondAttribute="top" constant="21" id="3iz-zN-jMx"/>
-                                    <constraint firstAttribute="height" constant="118" id="CF9-q7-XMn"/>
-                                    <constraint firstItem="0Tq-76-vgk" firstAttribute="centerX" secondItem="PbH-Dn-Syv" secondAttribute="centerX" id="sQK-gw-3ek"/>
-                                </constraints>
-                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5g-b6-e3B">
                                 <rect key="frame" x="0.0" y="59" width="393" height="641"/>
                                 <subviews>
@@ -69,7 +43,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lu0-FE-ecN" userLabel="Instruction">
-                                                <rect key="frame" x="73.666666666666671" y="327" width="245.66666666666663" height="38.333333333333314"/>
+                                                <rect key="frame" x="52" y="327" width="289" height="38.333333333333314"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="289" id="egI-BT-v35"/>
+                                                </constraints>
                                                 <string key="text">Select an option to display on the 
 main screen.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -100,6 +77,32 @@ main screen.</string>
                                 <viewLayoutGuide key="contentLayoutGuide" id="euX-ba-N0f"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="JNe-J7-RFN"/>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PbH-Dn-Syv" userLabel="AddOptions Button Container">
+                                <rect key="frame" x="0.0" y="700" width="393" height="118"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Tq-76-vgk" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
+                                        <rect key="frame" x="52" y="21" width="289" height="49"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="iXo-IO-NHc"/>
+                                            <constraint firstAttribute="width" constant="289" id="rnH-4n-ZHL"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="buttonStyle">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="Add Options"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="0Tq-76-vgk" firstAttribute="top" secondItem="PbH-Dn-Syv" secondAttribute="top" constant="21" id="3iz-zN-jMx"/>
+                                    <constraint firstAttribute="height" constant="118" id="CF9-q7-XMn"/>
+                                    <constraint firstItem="0Tq-76-vgk" firstAttribute="centerX" secondItem="PbH-Dn-Syv" secondAttribute="centerX" id="sQK-gw-3ek"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -113,6 +116,12 @@ main screen.</string>
                             <constraint firstItem="PbH-Dn-Syv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="yWf-Ss-Pt6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addOptionsButton" destination="0Tq-76-vgk" id="kSL-79-ay7"/>
+                        <outlet property="instruction" destination="lu0-FE-ecN" id="yNQ-iQ-klS"/>
+                        <outlet property="name" destination="uG6-eo-OZ5" id="aDu-dZ-2aS"/>
+                        <outlet property="profileImage" destination="Ju7-TD-6hi" id="pvF-XE-qUU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
