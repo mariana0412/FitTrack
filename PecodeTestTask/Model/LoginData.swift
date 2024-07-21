@@ -6,7 +6,7 @@
 //
 
 struct LoginData {
-  var email: String
-  var password: String
+    let email: String
+    let password: String
 }
 

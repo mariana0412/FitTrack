@@ -6,8 +6,8 @@
 //
 
 struct RegistrationData {
-  var userName: String
-  var email: String
-  var sex: String?
-  var password: String
+    let userName: String
+    let email: String
+    let sex: String?
+    let password: String
 }
