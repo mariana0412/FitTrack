@@ -101,6 +101,8 @@
 		CAC78E3E2C491B2200E48049 /* CustomAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAC78E3D2C491B2200E48049 /* CustomAlert.xib */; };
 		CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */; };
 		CAEB18E42C4D4971000FE4E5 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB18E32C4D4971000FE4E5 /* UserData.swift */; };
+		CAEB18E62C4D71F4000FE4E5 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB18E52C4D71F4000FE4E5 /* UIImageView+Extensions.swift */; };
+		CAEB18E82C4D7759000FE4E5 /* ProfileViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB18E72C4D7759000FE4E5 /* ProfileViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -209,6 +211,8 @@
 		CAC78E3D2C491B2200E48049 /* CustomAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlert.xib; sourceTree = "<group>"; };
 		CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		CAEB18E32C4D4971000FE4E5 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		CAEB18E52C4D71F4000FE4E5 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		CAEB18E72C4D7759000FE4E5 /* ProfileViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+Extensions.swift"; sourceTree = "<group>"; };
 		D1810F872ACEC9C10D861E31 /* Pods-PecodeTestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTask.release.xcconfig"; path = "Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask.release.xcconfig"; sourceTree = "<group>"; };
 		FE1100F283D53D0189BF8AB0 /* Pods-PecodeTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTask.debug.xcconfig"; path = "Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -462,6 +466,8 @@
 			children = (
 				CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */,
 				CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */,
+				CAEB18E52C4D71F4000FE4E5 /* UIImageView+Extensions.swift */,
+				CAEB18E72C4D7759000FE4E5 /* ProfileViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -824,6 +830,7 @@
 			files = (
 				CAA18F072C3C148C00F888CD /* CalculatorCoordinator.swift in Sources */,
 				CAA18F1B2C3C554400F888CD /* GradientUtils.swift in Sources */,
+				CAEB18E62C4D71F4000FE4E5 /* UIImageView+Extensions.swift in Sources */,
 				CAA18F152C3C3B5200F888CD /* TabBarController.swift in Sources */,
 				CA002E372C36F8D00053284B /* CustomRadiobutton.swift in Sources */,
 				CA002E352C36F8430053284B /* CustomToggleButton.swift in Sources */,
@@ -843,6 +850,7 @@
 				CAA18F0D2C3C158700F888CD /* MusclesViewModel.swift in Sources */,
 				CA37E5862C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
 				CAA18F132C3C18F200F888CD /* TabBarCoordinator.swift in Sources */,
+				CAEB18E82C4D7759000FE4E5 /* ProfileViewController+Extensions.swift in Sources */,
 				CAA18EE92C39DFF600F888CD /* SplashCoordinator.swift in Sources */,
 				CA4FEC662C4C59B400988C5B /* ProfileViewController.swift in Sources */,
 				CAA18F092C3C149C00F888CD /* CalculatorViewModel.swift in Sources */,

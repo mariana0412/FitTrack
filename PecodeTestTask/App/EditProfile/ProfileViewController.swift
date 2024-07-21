@@ -24,10 +24,14 @@ final class ProfileViewController: BaseViewController {
     @IBOutlet private weak var instruction: UILabel!
     @IBOutlet private weak var addOptionsButton: CustomButton!
     
+    private var saveButton: UIButton?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
+        setupImagePicker()
+        configureSaveButtonInitialState()
     }
     
     static func instantiate() -> ProfileViewController {
@@ -41,7 +45,12 @@ final class ProfileViewController: BaseViewController {
         guard let viewModel = viewModel else { return }
         
         updateBackgroundImage(named: viewModel.backgroundImageName)
-        profileImage.image = viewModel.profileImage
+        
+        if let profileImageData = viewModel.user?.profileImage {
+            profileImage.setImageWithBorder(image: UIImage(data: profileImageData))
+        } else {
+            profileImage.image = UIImage(named: ProfileViewModel.Texts.defaultImageName)
+        }
         
         name.labelText = ProfileViewModel.Texts.name
         name.labelFont = Fonts.helveticaNeue18
@@ -92,13 +101,20 @@ final class ProfileViewController: BaseViewController {
         
         saveButton.setTitle(ProfileViewModel.Texts.NavigationItem.rightBarButton, for: .normal)
         saveButton.titleLabel?.font = Fonts.sairaMedium18
-        saveButton.setTitleColor(.secondaryGray, for: .disabled)
         saveButton.isEnabled = false
-        saveButton.setTitleColor(.primaryYellow, for: .normal)
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
         let saveBarButtonItem = UIBarButtonItem(customView: saveButton)
         
         navigationItem.rightBarButtonItem = saveBarButtonItem
+        
+        self.saveButton = saveButton
+        configureSaveButtonInitialState()
+    }
+    
+    private func configureSaveButtonInitialState() {
+        saveButton?.setTitleColor(.secondaryGray, for: .disabled)
+        saveButton?.setTitleColor(.primaryYellow, for: .normal)
+        saveButton?.isEnabled = false
     }
     
     @objc private func backButtonTapped() {
@@ -107,6 +123,21 @@ final class ProfileViewController: BaseViewController {
     
     @objc private func saveButtonTapped() {
         
+    }
+    
+    private func setupImagePicker() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(profileImageTapped))
+        profileImage.isUserInteractionEnabled = true
+        profileImage.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc private func profileImageTapped() {
+        presentImagePicker()
+    }
+    
+    func setSelectedImage(_ selectedImage: UIImage) {
+        profileImage.setImageWithBorder(image: selectedImage)
+        saveButton?.isEnabled = true
     }
     
 }

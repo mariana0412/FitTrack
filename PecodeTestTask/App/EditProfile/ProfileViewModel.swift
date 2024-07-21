@@ -26,19 +26,12 @@ class ProfileViewModel {
     private(set) var user: UserData?
     
     private(set) var backgroundImageName = ""
-    private(set) var profileImage: UIImage
     
     init(coordinator: ProfileCoordinator, user: UserData) {
         self.coordinator = coordinator
         self.user = user
     
         self.backgroundImageName = (user.sex == .female) ? "backgroundImageGirl" : "backgroundImageMan"
-        
-        if let profileImageData = user.profileImage {
-            profileImage = UIImage(data: profileImageData) ?? UIImage()
-        } else {
-            profileImage = UIImage(named: Texts.defaultImageName) ?? UIImage()
-        }
     }
     
     func navigateToHome() {
