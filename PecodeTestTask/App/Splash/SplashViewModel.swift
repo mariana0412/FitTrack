@@ -16,7 +16,6 @@ class SplashViewModel {
     let supermanButtonText = "SUPERMAN"
     let supergirlButtonText = "SUPERGIRL"
     
-    
     init(coordinator: SplashCoordinator?) {
         self.coordinator = coordinator
     }
@@ -25,7 +24,7 @@ class SplashViewModel {
         FirebaseService.shared.updateUserSex(sex: sex.rawValue) { [weak self] response in
             switch response {
             case .success:
-                self?.coordinator?.navigateToHome(userSex: sex)
+                self?.navigateToHome(userSex: sex)
                 completion(nil)
             case .failure(let error):
                 completion(error.localizedDescription)
@@ -33,5 +32,9 @@ class SplashViewModel {
                 completion("Unknown error occurred.")
             }
         }
+    }
+    
+    func navigateToHome(userSex: UserSex) {
+        coordinator?.navigateToHome(userSex: userSex)
     }
 }
