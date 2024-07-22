@@ -17,8 +17,6 @@ final class ProfileViewController: BaseViewController {
         }
     }
     
-    var viewModel: ProfileViewModel?
-    
     @IBOutlet private weak var profileImage: UIImageView!
     @IBOutlet private weak var name: CustomTextFieldView!
     @IBOutlet private weak var instruction: UILabel!
@@ -26,6 +24,8 @@ final class ProfileViewController: BaseViewController {
     
     private var saveButton: UIButton?
     private var imageWasChanged: Bool = false
+    var viewModel: ProfileViewModel?
+    weak var delegate: ProfileViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -146,6 +146,7 @@ final class ProfileViewController: BaseViewController {
                 self?.imageWasChanged = false
                 self?.saveButton?.isEnabled = false
                 self?.hideKeyboard()
+                self?.delegate?.profileDidUpdate()
             }
         }
     }

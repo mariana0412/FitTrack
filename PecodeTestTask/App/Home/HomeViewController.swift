@@ -36,7 +36,6 @@ final class HomeViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        loadUserData()
     }
     
     static func instantiate() -> HomeViewController {
@@ -87,4 +86,12 @@ final class HomeViewController: BaseViewController {
         viewModel?.navigateToProfile()
     }
     
+}
+
+extension HomeViewController: ProfileViewControllerDelegate {
+    
+    func profileDidUpdate() {
+        loadUserData()
+    }
+
 }

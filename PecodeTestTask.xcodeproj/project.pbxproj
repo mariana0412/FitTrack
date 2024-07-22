@@ -124,6 +124,9 @@
 		CAEB19192C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB19182C4EF2B4000FE4E5 /* UIImage+Extensions.swift */; };
 		CAEB191A2C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB19182C4EF2B4000FE4E5 /* UIImage+Extensions.swift */; };
 		CAEB191B2C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB19182C4EF2B4000FE4E5 /* UIImage+Extensions.swift */; };
+		CAEB191D2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB191C2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift */; };
+		CAEB191E2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB191C2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift */; };
+		CAEB191F2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB191C2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -241,6 +244,7 @@
 		CAEB19102C4ED721000FE4E5 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		CAEB19142C4EE4C4000FE4E5 /* AlertContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContent.swift; sourceTree = "<group>"; };
 		CAEB19182C4EF2B4000FE4E5 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		CAEB191C2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerDelegate.swift; sourceTree = "<group>"; };
 		D1810F872ACEC9C10D861E31 /* Pods-PecodeTestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTask.release.xcconfig"; path = "Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask.release.xcconfig"; sourceTree = "<group>"; };
 		FE1100F283D53D0189BF8AB0 /* Pods-PecodeTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTask.debug.xcconfig"; path = "Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -488,6 +492,7 @@
 				CA4FEC672C4C59BC00988C5B /* ProfileViewModel.swift */,
 				CA4FEC6B2C4C59CB00988C5B /* Profile.storyboard */,
 				CAEB18FB2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift */,
+				CAEB191C2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -923,6 +928,7 @@
 				CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */,
 				CA002E262C31A0830053284B /* AppCoordinator.swift in Sources */,
 				CA457E072C42BBF80031FDFA /* LoginViewController.swift in Sources */,
+				CAEB191D2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift in Sources */,
 				CA4FEC682C4C59BC00988C5B /* ProfileViewModel.swift in Sources */,
 				CAEB18E42C4D4971000FE4E5 /* UserData.swift in Sources */,
 				CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */,
@@ -945,6 +951,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA37E5872C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
+				CAEB191E2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift in Sources */,
 				CAEB19062C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */,
 				CA0FF3F32C456B4700B3CE08 /* UserSex.swift in Sources */,
 				CAEB190E2C4ED71A000FE4E5 /* AlertViewModel.swift in Sources */,
@@ -962,6 +969,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAEB191F2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift in Sources */,
 				CA37E5802C405731003ADAA8 /* TabBarViewModel.swift in Sources */,
 				CA0FF3F42C456B4700B3CE08 /* UserSex.swift in Sources */,
 				CA37E5882C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,

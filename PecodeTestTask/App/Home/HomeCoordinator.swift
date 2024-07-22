@@ -26,6 +26,7 @@ class HomeCoordinator: Coordinator {
     func navigateToProfile(with user: UserData) {
         let profileCoordinator = ProfileCoordinator(navigationController: navigationController, 
                                                     user: user)
+        profileCoordinator.delegate = navigationController.viewControllers.first as? HomeViewController
         profileCoordinator.start()
     }
 }
