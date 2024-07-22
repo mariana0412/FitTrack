@@ -6,7 +6,7 @@
 //
 
 class HomeViewModel {
-    private weak var coordinator: HomeCoordinator?
+    private var coordinator: HomeCoordinator?
     private(set) var userSex: UserSex
     private(set) var heroName: String = ""
     private(set) var userName: String = ""

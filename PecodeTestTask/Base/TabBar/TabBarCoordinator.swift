@@ -10,7 +10,6 @@ import UIKit
 class TabBarCoordinator: Coordinator {
     var navigationController: UINavigationController
     private let tabBarController: TabBarController
-    private var coordinators: [Coordinator] = []
     private let userSex: UserSex
 
     init(navigationController: UINavigationController, userSex: UserSex) {
@@ -41,25 +40,21 @@ class TabBarCoordinator: Coordinator {
         case .home:
             let homeCoordinator = HomeCoordinator(navigationController: navigationController,
                                                   userSex: userSex)
-            coordinators.append(homeCoordinator)
             homeCoordinator.start()
 
         case .progress:
             let progressCoordinator = ProgressCoordinator(navigationController: navigationController)
             
-            coordinators.append(progressCoordinator)
             progressCoordinator.start()
 
         case .calculator:
             let calculatorCoordinator = CalculatorCoordinator(navigationController: navigationController)
             
-            coordinators.append(calculatorCoordinator)
             calculatorCoordinator.start()
 
         case .muscles:
             let musclesCoordinator = MusclesCoordinator(navigationController: navigationController)
             
-            coordinators.append(musclesCoordinator)
             musclesCoordinator.start()
         }
         
