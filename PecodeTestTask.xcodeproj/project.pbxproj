@@ -104,8 +104,6 @@
 		CAEB18F92C4E96B0000FE4E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAEB18F72C4E96B0000FE4E5 /* GoogleService-Info.plist */; };
 		CAEB18FA2C4E96B0000FE4E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAEB18F72C4E96B0000FE4E5 /* GoogleService-Info.plist */; };
 		CAEB18FC2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB18FB2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift */; };
-		CAEB18FD2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB18FB2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift */; };
-		CAEB18FE2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB18FB2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift */; };
 		CAEB19052C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB19042C4ED6DF000FE4E5 /* AlertViewController.swift */; };
 		CAEB19062C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB19042C4ED6DF000FE4E5 /* AlertViewController.swift */; };
 		CAEB19072C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB19042C4ED6DF000FE4E5 /* AlertViewController.swift */; };
@@ -398,6 +396,7 @@
 				CAA18F162C3C3B6600F888CD /* TabBar */,
 				CA002E0D2C319BC10053284B /* BaseViewController.swift */,
 				CA002E112C319C110053284B /* Coordinator.swift */,
+				CAEB18FB2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -491,7 +490,6 @@
 				CA4FEC692C4C59C300988C5B /* ProfileCoordinator.swift */,
 				CA4FEC672C4C59BC00988C5B /* ProfileViewModel.swift */,
 				CA4FEC6B2C4C59CB00988C5B /* Profile.storyboard */,
-				CAEB18FB2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift */,
 				CAEB191C2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift */,
 			);
 			path = Profile;
@@ -959,7 +957,6 @@
 				CA038C052C4427190033CD30 /* LoginData.swift in Sources */,
 				CA37E57F2C405731003ADAA8 /* TabBarViewModel.swift in Sources */,
 				CAEB190A2C4ED6E7000FE4E5 /* AlertCoordinator.swift in Sources */,
-				CAEB18FD2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift in Sources */,
 				CAEB19162C4EE4C4000FE4E5 /* AlertContent.swift in Sources */,
 				CA002DED2C318B110053284B /* PecodeTestTaskTests.swift in Sources */,
 			);
@@ -978,7 +975,6 @@
 				CAEB19072C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */,
 				CA002DF72C318B110053284B /* PecodeTestTaskUITests.swift in Sources */,
 				CA002DF92C318B110053284B /* PecodeTestTaskUITestsLaunchTests.swift in Sources */,
-				CAEB18FE2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift in Sources */,
 				CAEB19172C4EE4C4000FE4E5 /* AlertContent.swift in Sources */,
 				CAEB190B2C4ED6E7000FE4E5 /* AlertCoordinator.swift in Sources */,
 				CA038C062C4427190033CD30 /* LoginData.swift in Sources */,
