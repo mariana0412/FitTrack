@@ -8,6 +8,11 @@
 import FirebaseAuth
 
 class LoginViewModel {
+    
+    private enum Constants {
+        static let alertIconName = "exclamationmark.triangle"
+    }
+    
     private var coordinator: LoginCoordinator?
     
     let superheroText = "SUPERHERO"
@@ -35,6 +40,7 @@ class LoginViewModel {
                     completion("Failed to fetch user details")
                 }
             case .failure(let error):
+                self?.navigateToAlert(message: error.localizedDescription)
                 completion(error.localizedDescription)
             case .unknown:
                 completion("Unknown error occurred.")
@@ -64,6 +70,12 @@ class LoginViewModel {
     
     func navigateToForgotPassword() {
         coordinator?.navigateToForgotPassword()
+    }
+    
+    func navigateToAlert(message: String) {
+        let errorIcon = UIImage(systemName: Constants.alertIconName)
+        let alertContent = AlertContent(alertType: .noButtons, message: message, icon: errorIcon)
+        coordinator?.navigateToAlert(alertContent: alertContent)
     }
     
 }

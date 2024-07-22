@@ -75,7 +75,8 @@ class ProfileViewModel {
     }
     
     func navigateToAlert(message: String) {
-        let alertContent = AlertContent(alertType: .noButtons, message: message)
+        let icon = UIImage(named: "customCircleCheckmarkSelected")
+        let alertContent = AlertContent(alertType: .noButtons, message: message, icon: icon)
         coordinator?.navigateToAlert(alertContent: alertContent)
     }
     

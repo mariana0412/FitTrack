@@ -67,12 +67,8 @@ final class SplashViewController: BaseViewController {
     private func updateUserSex(sex: UserSex) {
         disableButtons()
         
-        viewModel?.updateUserSex(sex: sex) { [weak self] errorMessage in
+        viewModel?.updateUserSex(sex: sex) { [weak self] _ in
             self?.enableButtons()
-            
-            if let errorMessage = errorMessage {
-                self?.view.showCustomAlert(message: errorMessage)
-            }
         }
     }
     

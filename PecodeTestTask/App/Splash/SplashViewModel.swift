@@ -9,6 +9,10 @@ import FirebaseAuth
 
 class SplashViewModel {
     
+    private enum Constants {
+        static let alertIconName = "exclamationmark.triangle"
+    }
+    
     private var coordinator: SplashCoordinator?
     
     let superheroText = "SUPERHERO"
@@ -27,8 +31,10 @@ class SplashViewModel {
                 self?.navigateToHome(userSex: sex)
                 completion(nil)
             case .failure(let error):
+                self?.navigateToAlert(message: error.localizedDescription)
                 completion(error.localizedDescription)
             case .unknown:
+                self?.navigateToAlert(message: "Unknown error occurred.")
                 completion("Unknown error occurred.")
             }
         }
@@ -37,4 +43,11 @@ class SplashViewModel {
     func navigateToHome(userSex: UserSex) {
         coordinator?.navigateToHome(userSex: userSex)
     }
+    
+    func navigateToAlert(message: String) {
+        let errorIcon = UIImage(systemName: Constants.alertIconName)
+        let alertContent = AlertContent(alertType: .noButtons, message: message, icon: errorIcon)
+        coordinator?.navigateToAlert(alertContent: alertContent)
+    }
+    
 }

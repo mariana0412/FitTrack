@@ -21,6 +21,8 @@ final class AlertViewController: UIViewController {
             static let messageNumberOfLines = 0
             
             static let buttonWidth: CGFloat = 129
+            
+            static let noButtonsAlertHeight: CGFloat = 75
         }
         
         enum Animation {
@@ -109,10 +111,10 @@ final class AlertViewController: UIViewController {
             
         case .noButtons:
             let message = viewModel.alertContent.message
-            messageLabel.attributedText = createAttributedString(with: message)
+            messageLabel.attributedText = createAttributedString(with: message, icon: viewModel.alertContent.icon ?? UIImage())
             
             buttonsContainer.isHidden = true
-            alertView.heightAnchor.constraint(equalToConstant: 75).isActive = true
+            alertView.heightAnchor.constraint(equalToConstant: Constants.Layout.noButtonsAlertHeight).isActive = true
             messageLabel.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 messageLabel.centerYAnchor.constraint(equalTo: alertView.centerYAnchor),
@@ -164,20 +166,16 @@ final class AlertViewController: UIViewController {
         })
     }
     
-    private func createAttributedString(with message: String) -> NSAttributedString {
+    private func createAttributedString(with message: String, icon: UIImage) -> NSAttributedString {
         let attributedString = NSMutableAttributedString()
         
-        if let image = UIImage(named: "customCircleCheckmarkSelected") {
-            let attachment = NSTextAttachment()
-            attachment.image = image
-            let imageString = NSAttributedString(attachment: attachment)
-            
-            attributedString.append(imageString)
-            attributedString.append(NSAttributedString(string: "  "))
-            attributedString.append(NSAttributedString(string: message))
-        } else {
-            attributedString.append(NSAttributedString(string: message))
-        }
+        let attachment = NSTextAttachment()
+        attachment.image = icon
+        let imageString = NSAttributedString(attachment: attachment)
+        
+        attributedString.append(imageString)
+        attributedString.append(NSAttributedString(string: "  "))
+        attributedString.append(NSAttributedString(string: message))
         
         return attributedString
     }

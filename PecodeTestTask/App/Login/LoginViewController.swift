@@ -89,12 +89,9 @@ final class LoginViewController: BaseViewController {
                 
         loginButton.isEnabled = false
         loginButton.backgroundColor = UIColor.primaryWhite
-        viewModel?.loginUser(with: loginData) { [weak self] errorMessage in
+        viewModel?.loginUser(with: loginData) { [weak self] _ in
             self?.loginButton.isEnabled = true
             self?.loginButton.backgroundColor = UIColor.primaryYellow
-            if let errorMessage = errorMessage {
-                self?.view.showCustomAlert(message: errorMessage)
-            }
         }
     }
     

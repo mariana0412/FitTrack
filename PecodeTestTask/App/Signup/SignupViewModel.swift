@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class SignupViewModel {
     
@@ -15,6 +16,7 @@ class SignupViewModel {
             static let emailPattern = #"^\S+@\S+\.\S+$"#
             static let passwordPattern = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
         }
+        static let alertIconName = "exclamationmark.triangle"
     }
     
     private var coordinator: SignupCoordinator?
@@ -51,14 +53,16 @@ class SignupViewModel {
             return
         }
         
-        FirebaseService.shared.createUser(with: registrationData) { response in
+        FirebaseService.shared.createUser(with: registrationData) { [weak self] response in
             switch response {
             case .success:
-                self.navigateToSplash(with: registrationData.email)
+                self?.navigateToSplash(with: registrationData.email)
                 completion(validationResults, nil)
             case .failure(let error):
+                self?.navigateToAlert(message: error.localizedDescription)
                 completion(validationResults, error.localizedDescription)
             case .unknown:
+                self?.navigateToAlert(message: "Unknown error occurred.")
                 completion(validationResults, "Unknown error occurred.")
             }
         }
@@ -88,6 +92,12 @@ class SignupViewModel {
     
     func navigateToLogin() {
         coordinator?.navigateToLogin()
+    }
+    
+    func navigateToAlert(message: String) {
+        let errorIcon = UIImage(systemName: Constants.alertIconName)
+        let alertContent = AlertContent(alertType: .noButtons, message: message, icon: errorIcon)
+        coordinator?.navigateToAlert(alertContent: alertContent)
     }
     
 }

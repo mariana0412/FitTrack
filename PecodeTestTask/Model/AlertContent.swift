@@ -5,6 +5,8 @@
 //  Created by Mariana Piz on 22.07.2024.
 //
 
+import UIKit
+
 enum AlertType {
     case twoButtons
     case oneButton
@@ -18,4 +20,5 @@ struct AlertContent {
     var cancelButtonTitle: String?
     var okClickedAction: (() -> Void)?
     var cancelClickedAction: (() -> Void)?
+    var icon: UIImage?
 }

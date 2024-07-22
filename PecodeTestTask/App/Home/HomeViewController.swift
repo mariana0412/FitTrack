@@ -46,7 +46,7 @@ final class HomeViewController: BaseViewController {
     private func loadUserData() {
         viewModel?.fetchUser { [weak self] errorMessage in
             if let errorMessage = errorMessage {
-                self?.view.showCustomAlert(message: errorMessage)
+                print("Error: \(errorMessage)")
             }
             self?.setupUI()
             self?.setProfileImage()
