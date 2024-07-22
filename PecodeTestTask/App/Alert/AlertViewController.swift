@@ -34,19 +34,22 @@ final class AlertViewController: UIViewController {
         }
     }
     
-    var viewModel: AlertViewModel?
-    
     @IBOutlet private weak var alertView: UIView!
     @IBOutlet private weak var messageLabel: UILabel!
     @IBOutlet private weak var buttonsContainer: UIStackView!
     @IBOutlet private weak var okButton: CustomButton!
     @IBOutlet private weak var cancelButton: CustomButton!
+
+    private let overlayView = UIView()
+    
+    var viewModel: AlertViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         bindViewModel()
+        setupActions()
     }
     
     static func instantiate() -> AlertViewController {
@@ -56,6 +59,10 @@ final class AlertViewController: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = Constants.Layout.contentViewBackgroundColor
+        
+        overlayView.backgroundColor = .clear
+        overlayView.frame = view.bounds
+        view.insertSubview(overlayView, belowSubview: alertView)
         
         alertView.backgroundColor = Constants.Layout.alertViewBackgroundColor
         alertView.layer.borderWidth = Constants.Layout.alertViewBorderWidth
@@ -102,6 +109,9 @@ final class AlertViewController: UIViewController {
     private func setupActions() {
         okButton.addTarget(self, action: #selector(okButtonTapped), for: .touchUpInside)
         cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundTapped))
+        overlayView.addGestureRecognizer(tapGesture)
     }
     
     @objc private func okButtonTapped() {
@@ -116,6 +126,12 @@ final class AlertViewController: UIViewController {
         }
     }
     
+    @objc private func backgroundTapped() {
+        animateOut { [weak self] in
+            self?.dismiss(animated: false, completion: nil)
+        }
+    }
+
     func animateIn() {
         alertView.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
         UIView.animate(withDuration: Constants.Animation.presentDuration,
