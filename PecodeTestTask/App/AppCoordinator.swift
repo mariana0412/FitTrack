@@ -27,9 +27,9 @@ class AppCoordinator: Coordinator {
         window.makeKeyAndVisible()
         
         // for testing purposes
-//        do {
-//            try Auth.auth().signOut()
-//        } catch {}
+        do {
+            try Auth.auth().signOut()
+        } catch {}
         
         checkCurrentUser()
     }

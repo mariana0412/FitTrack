@@ -49,7 +49,7 @@ final class AlertViewController: UIViewController {
         
         setupUI()
         bindViewModel()
-        setupActions()
+        setupGestures()
     }
     
     static func instantiate() -> AlertViewController {
@@ -79,24 +79,38 @@ final class AlertViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        if let message = viewModel?.alertContent.message {
-            messageLabel.attributedText = createAttributedString(with: message)
-        }
+        guard let viewModel = viewModel else { return }
         
-        if let cancelButtonTitle = viewModel?.alertContent.cancelButtonTitle {
-            cancelButton.setTitle(cancelButtonTitle, for: .normal)
-            cancelButton.isHidden = false
-        } else {
+        switch viewModel.alertContent.alertType {
+        case .twoButtons:
+            messageLabel.text = viewModel.alertContent.message
+            
+            if let okButtonTitle = viewModel.alertContent.okButtonTitle {
+                okButton.setTitle(okButtonTitle, for: .normal)
+                okButton.addTarget(self, action: #selector(okButtonTapped), for: .touchUpInside)
+            }
+            if let cancelButtonTitle = viewModel.alertContent.cancelButtonTitle {
+                cancelButton.setTitle(cancelButtonTitle, for: .normal)
+                cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
+            }
+            
+        case .oneButton:
+            messageLabel.text = viewModel.alertContent.message
+            
             cancelButton.isHidden = true
             self.buttonsContainer.modify(forAxis: .vertical,
                                          alignment: .center,
                                          distribution: .fillProportionally)
-        }
-        
-        if let okButtonTitle = viewModel?.alertContent.okButtonTitle {
-            okButton.setTitle(okButtonTitle, for: .normal)
-        } else {
-            okButton.isHidden = true
+            
+            if let okButtonTitle = viewModel.alertContent.okButtonTitle {
+                okButton.setTitle(okButtonTitle, for: .normal)
+                okButton.addTarget(self, action: #selector(okButtonTapped), for: .touchUpInside)
+            }
+            
+        case .noButtons:
+            let message = viewModel.alertContent.message
+            messageLabel.attributedText = createAttributedString(with: message)
+            
             buttonsContainer.isHidden = true
             alertView.heightAnchor.constraint(equalToConstant: 75).isActive = true
             messageLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -106,10 +120,7 @@ final class AlertViewController: UIViewController {
         }
     }
     
-    private func setupActions() {
-        okButton.addTarget(self, action: #selector(okButtonTapped), for: .touchUpInside)
-        cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
-        
+    private func setupGestures() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundTapped))
         overlayView.addGestureRecognizer(tapGesture)
     }

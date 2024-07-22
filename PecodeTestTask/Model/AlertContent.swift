@@ -5,7 +5,14 @@
 //  Created by Mariana Piz on 22.07.2024.
 //
 
+enum AlertType {
+    case twoButtons
+    case oneButton
+    case noButtons
+}
+
 struct AlertContent {
+    let alertType: AlertType
     var message: String
     var okButtonTitle: String?
     var cancelButtonTitle: String?

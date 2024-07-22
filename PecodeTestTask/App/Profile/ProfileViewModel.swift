@@ -75,7 +75,7 @@ class ProfileViewModel {
     }
     
     func navigateToAlert(message: String) {
-        let alertContent = AlertContent(message: message)
+        let alertContent = AlertContent(alertType: .noButtons, message: message)
         coordinator?.navigateToAlert(alertContent: alertContent)
     }
     

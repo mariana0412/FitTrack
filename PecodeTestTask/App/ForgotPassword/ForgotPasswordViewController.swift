@@ -87,48 +87,14 @@ final class ForgotPasswordViewController: BaseViewController {
 
         updateContinueButton()
 
-        viewModel?.resetPassword(email: emailText) { [weak self] errorMessage in
+        viewModel?.resetPassword(email: emailText) { [weak self] _ in
             self?.updateContinueButton()
-            
-            if let errorMessage = errorMessage {
-                self?.showErrorAlert(message: errorMessage)
-            } else {
-                self?.showSuccessAlert()
-            }
         }
     }
     
     private func updateContinueButton() {
         continueButton.isEnabled.toggle()
         continueButton.backgroundColor = continueButton.isEnabled ? .primaryYellow : .primaryWhite
-    }
-    
-    private func showErrorAlert(message: String) {
-        if let alertErrorMessage = viewModel?.alertErrorMessage,
-           let alertOkButtonText = viewModel?.alertOkButtonText,
-           let alertCancelButtonText = viewModel?.alertCancelButtonText {
-            view.showCustomAlert(
-                message: alertErrorMessage,
-                okButtonTitle: alertOkButtonText,
-                cancelButtonTitle: alertCancelButtonText,
-                cancelClickedAction: { [weak self] in
-                    self?.viewModel?.navigateToLogin()
-                }
-            )
-        }
-    }
-    
-    private func showSuccessAlert() {
-        if let alertOkMessage = viewModel?.alertOkMessage,
-           let alertOkButtonText = viewModel?.alertOkButtonText {
-            view.showCustomAlert(
-                message: alertOkMessage,
-                okButtonTitle: alertOkButtonText,
-                okClickedAction: { [weak self] in
-                    self?.viewModel?.navigateToLogin()
-                }
-            )
-        }
     }
     
     @objc private func backToLoginButtonTapped() {
