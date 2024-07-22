@@ -40,7 +40,7 @@ class ProfileViewModel {
         
         var newImageData: Data?
         if let newImage {
-            newImageData = newImage.jpegData(compressionQuality: 1.0)
+            newImageData = newImage.compress(to: 1048487)
         }
 
         FirebaseService.shared.updateUserProfile(newName: newName, 

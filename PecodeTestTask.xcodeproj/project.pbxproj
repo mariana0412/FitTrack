@@ -121,6 +121,9 @@
 		CAEB19152C4EE4C4000FE4E5 /* AlertContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB19142C4EE4C4000FE4E5 /* AlertContent.swift */; };
 		CAEB19162C4EE4C4000FE4E5 /* AlertContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB19142C4EE4C4000FE4E5 /* AlertContent.swift */; };
 		CAEB19172C4EE4C4000FE4E5 /* AlertContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB19142C4EE4C4000FE4E5 /* AlertContent.swift */; };
+		CAEB19192C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB19182C4EF2B4000FE4E5 /* UIImage+Extensions.swift */; };
+		CAEB191A2C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB19182C4EF2B4000FE4E5 /* UIImage+Extensions.swift */; };
+		CAEB191B2C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB19182C4EF2B4000FE4E5 /* UIImage+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,6 +240,7 @@
 		CAEB190C2C4ED71A000FE4E5 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
 		CAEB19102C4ED721000FE4E5 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		CAEB19142C4EE4C4000FE4E5 /* AlertContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContent.swift; sourceTree = "<group>"; };
+		CAEB19182C4EF2B4000FE4E5 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		D1810F872ACEC9C10D861E31 /* Pods-PecodeTestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTask.release.xcconfig"; path = "Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask.release.xcconfig"; sourceTree = "<group>"; };
 		FE1100F283D53D0189BF8AB0 /* Pods-PecodeTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTask.debug.xcconfig"; path = "Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -495,6 +499,7 @@
 				CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */,
 				CAEB18E52C4D71F4000FE4E5 /* UIImageView+Extensions.swift */,
 				CAEB18E72C4D7759000FE4E5 /* ProfileViewController+Extensions.swift */,
+				CAEB19182C4EF2B4000FE4E5 /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -893,6 +898,7 @@
 				CAA18F0B2C3C157C00F888CD /* MusclesViewController.swift in Sources */,
 				CAA18F0D2C3C158700F888CD /* MusclesViewModel.swift in Sources */,
 				CA37E5862C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
+				CAEB19192C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */,
 				CAA18F132C3C18F200F888CD /* TabBarCoordinator.swift in Sources */,
 				CAEB18E82C4D7759000FE4E5 /* ProfileViewController+Extensions.swift in Sources */,
 				CAA18EE92C39DFF600F888CD /* SplashCoordinator.swift in Sources */,
@@ -942,6 +948,7 @@
 				CAEB19062C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */,
 				CA0FF3F32C456B4700B3CE08 /* UserSex.swift in Sources */,
 				CAEB190E2C4ED71A000FE4E5 /* AlertViewModel.swift in Sources */,
+				CAEB191A2C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */,
 				CA038C052C4427190033CD30 /* LoginData.swift in Sources */,
 				CA37E57F2C405731003ADAA8 /* TabBarViewModel.swift in Sources */,
 				CAEB190A2C4ED6E7000FE4E5 /* AlertCoordinator.swift in Sources */,
@@ -958,6 +965,7 @@
 				CA37E5802C405731003ADAA8 /* TabBarViewModel.swift in Sources */,
 				CA0FF3F42C456B4700B3CE08 /* UserSex.swift in Sources */,
 				CA37E5882C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
+				CAEB191B2C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */,
 				CAEB190F2C4ED71A000FE4E5 /* AlertViewModel.swift in Sources */,
 				CAEB19072C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */,
 				CA002DF72C318B110053284B /* PecodeTestTaskUITests.swift in Sources */,
