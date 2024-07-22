@@ -33,7 +33,10 @@ final class AlertViewController: UIViewController {
             static let presentOptions: UIView.AnimationOptions = .curveEaseInOut
             
             static let dismissDuration: TimeInterval = 0.3
+            
+            static let noButtonsDismissDelay: TimeInterval = 2.0
         }
+        
     }
     
     @IBOutlet private weak var alertView: UIView!
@@ -119,6 +122,12 @@ final class AlertViewController: UIViewController {
             NSLayoutConstraint.activate([
                 messageLabel.centerYAnchor.constraint(equalTo: alertView.centerYAnchor),
             ])
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Animation.noButtonsDismissDelay) { [weak self] in
+                self?.animateOut {
+                    self?.dismiss(animated: false, completion: nil)
+                }
+            }
         }
     }
     
