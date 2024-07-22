@@ -128,6 +128,11 @@ main screen.</string>
             <point key="canvasLocation" x="53" y="-34"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="0Tq-76-vgk">
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+        </designable>
+    </designables>
     <resources>
         <image name="noImage" width="124" height="124"/>
         <namedColor name="SecondaryGray">

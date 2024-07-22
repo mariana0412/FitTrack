@@ -141,14 +141,11 @@ final class ProfileViewController: BaseViewController {
         let editedName = name.textFieldText ?? ""
         let selectedImage = imageWasChanged ? profileImage.image : nil
         
-        viewModel?.editProfile(newName: editedName, newImage: selectedImage) { [weak self] success, message in
-            if success {
-                self?.view.showCustomAlert(message: "Profile updated successfully.")
+        viewModel?.editProfile(newName: editedName, newImage: selectedImage) { [weak self] successful in
+            if successful {
                 self?.imageWasChanged = false
                 self?.saveButton?.isEnabled = false
                 self?.hideKeyboard()
-            } else {
-                self?.view.showCustomAlert(message: message ?? "An error occurred while updating profile.")
             }
         }
     }

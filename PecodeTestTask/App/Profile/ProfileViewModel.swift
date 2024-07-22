@@ -35,7 +35,7 @@ class ProfileViewModel {
         self.backgroundImageName = (user.sex == .female) ? "backgroundImageGirl" : "backgroundImageMan"
     }
     
-    func editProfile(newName: String, newImage: UIImage?, completion: @escaping (Bool, String?) -> Void) {
+    func editProfile(newName: String, newImage: UIImage?, completion: @escaping (Bool) -> Void) {
         let newName = nameIsChanged(newName: newName) ? newName : nil
         
         var newImageData: Data?
@@ -47,13 +47,16 @@ class ProfileViewModel {
                                                  newImage: newImageData) { [weak self] response in
             switch response {
             case .success:
-                completion(true, nil)
+                self?.navigateToAlert(message: "Profile has been saved!")
+                completion(true)
                 self?.user?.userName = newName ?? ""
                 self?.user?.profileImage = newImageData
             case .failure(let error):
-                completion(false, error.localizedDescription)
+                self?.navigateToAlert(message: error.localizedDescription)
+                completion(false)
             case .unknown:
-                completion(false, "Unknown error occurred")
+                self?.navigateToAlert(message: "Unknown error occurred")
+                completion(false)
             }
         }
     }
@@ -70,4 +73,10 @@ class ProfileViewModel {
     func navigateToHome() {
         coordinator?.navigateToHome()
     }
+    
+    func navigateToAlert(message: String) {
+        let alertContent = AlertContent(message: message)
+        coordinator?.navigateToAlert(alertContent: alertContent)
+    }
+    
 }
