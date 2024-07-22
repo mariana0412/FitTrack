@@ -28,3 +28,17 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         picker.dismiss(animated: true, completion: nil)
     }
 }
+
+extension ProfileViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if !imageWasChanged {
+            let currentText = textField.text ?? ""
+            guard let stringRange = Range(range, in: currentText) else { return true }
+            let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+            
+            updateSaveButtonState(newName: updatedText)
+        }
+        return true
+    }
+}

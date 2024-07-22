@@ -23,7 +23,7 @@ final class ProfileViewController: BaseViewController {
     @IBOutlet private weak var addOptionsButton: CustomButton!
     
     private var saveButton: UIButton?
-    private var imageWasChanged: Bool = false
+    private(set) var imageWasChanged: Bool = false
     var viewModel: ProfileViewModel?
     weak var delegate: ProfileViewControllerDelegate?
     
@@ -167,17 +167,8 @@ final class ProfileViewController: BaseViewController {
         imageWasChanged = true
     }
     
-    private func updateSaveButtonState() {
-        let newName: String = name.textFieldText ?? ""
+    func updateSaveButtonState(newName: String) {
         saveButton?.isEnabled = viewModel?.nameIsChanged(newName: newName) == true
     }
     
-}
-
-extension ProfileViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if !imageWasChanged {
-            updateSaveButtonState()
-        }
-    }
 }
