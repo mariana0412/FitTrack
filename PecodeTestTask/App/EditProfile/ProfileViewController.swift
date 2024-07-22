@@ -25,6 +25,7 @@ final class ProfileViewController: BaseViewController {
     @IBOutlet private weak var addOptionsButton: CustomButton!
     
     private var saveButton: UIButton?
+    private var imageWasChanged: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,16 +134,17 @@ final class ProfileViewController: BaseViewController {
     }
     
     @objc private func saveButtonTapped() {
-        if let editedName = name.textFieldText,
-           let selectedImage = profileImage.image {
-            viewModel?.editProfile(newName: editedName, newImage: selectedImage) { [weak self] success, message in
-                if success {
-                    self?.view.showCustomAlert(message: "Profile updated successfully.")
-                    self?.name.textFieldText = editedName 
-                    self?.profileImage.setImageWithBorder(image: selectedImage)
-                } else {
-                    self?.view.showCustomAlert(message: message ?? "An error occurred while updating profile.")
-                }
+        let editedName = name.textFieldText ?? ""
+        let selectedImage = imageWasChanged ? profileImage.image : nil
+        
+        viewModel?.editProfile(newName: editedName, newImage: selectedImage) { [weak self] success, message in
+            if success {
+                self?.view.showCustomAlert(message: "Profile updated successfully.")
+                self?.imageWasChanged = false
+                self?.saveButton?.isEnabled = false
+                self?.hideKeyboard()
+            } else {
+                self?.view.showCustomAlert(message: message ?? "An error occurred while updating profile.")
             }
         }
     }
@@ -160,29 +162,20 @@ final class ProfileViewController: BaseViewController {
     func setSelectedImage(_ selectedImage: UIImage) {
         profileImage.setImageWithBorder(image: selectedImage)
         saveButton?.isEnabled = true
+        imageWasChanged = true
     }
     
     private func updateSaveButtonState() {
-        let newName = name.textFieldText
-        let oldName = viewModel?.user?.userName
-        let nameIsChanged = (newName != oldName) && newName?.isEmpty != true
-        
-        let newImage: UIImage = profileImage.image ?? UIImage()
-        let oldImage: UIImage
-        if let profileImageData = viewModel?.user?.profileImage {
-            oldImage = UIImage(data: profileImageData) ?? UIImage()
-        } else {
-            oldImage = UIImage(named: ProfileViewModel.Texts.defaultImageName) ?? UIImage()
-        }
-        let imageIsChanged = newImage != oldImage
-        
-        saveButton?.isEnabled = nameIsChanged || imageIsChanged
+        let newName: String = name.textFieldText ?? ""
+        saveButton?.isEnabled = viewModel?.nameIsChanged(newName: newName) == true
     }
     
 }
 
 extension ProfileViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        updateSaveButtonState()
+        if !imageWasChanged {
+            updateSaveButtonState()
+        }
     }
 }

@@ -47,9 +47,10 @@ final class HomeViewController: BaseViewController {
         viewModel?.fetchUser { [weak self] errorMessage in
             if let errorMessage = errorMessage {
                 self?.view.showCustomAlert(message: errorMessage)
-            } else {
-                self?.setupUI()
             }
+            self?.setupUI()
+            self?.setProfileImage()
+            self?.setupActions()
         }
     }
     
@@ -65,8 +66,10 @@ final class HomeViewController: BaseViewController {
         
         nameLabel.text = viewModel.userName
         nameLabel.font = Fonts.sairaRegular16
-        
-        if let profileImageData = viewModel.user?.profileImage {
+    }
+    
+    private func setProfileImage() {
+        if let profileImageData = viewModel?.user?.profileImage {
             profileImage.setImageWithBorder(image: UIImage(data: profileImageData))
         } else {
             profileImage.image = UIImage(named: Constants.Layout.defaultProfileImageName)

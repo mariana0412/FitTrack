@@ -163,7 +163,7 @@ class FirebaseService {
         }
     }
     
-    func updateUserProfile(name: String?, profileImage: Data?, completion: @escaping (FirebaseResponse<Void>) -> Void) {
+    func updateUserProfile(newName: String?, newImage: Data?, completion: @escaping (FirebaseResponse<Void>) -> Void) {
         let database = Firestore.firestore()
         guard let currentUserId = getCurrentUserId() else {
             completion(.unknown)
@@ -171,12 +171,12 @@ class FirebaseService {
         }
         
         var updateData: [String: Any] = [:]
-        if let name {
-            updateData["userName"] = name
+        if let newName {
+            updateData["userName"] = newName
         }
-    
-        if let profileImage {
-            updateData["profileImage"] = profileImage
+        
+        if let newImage {
+            updateData["profileImage"] = newImage
         }
 
         database

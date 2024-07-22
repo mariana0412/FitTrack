@@ -8,6 +8,7 @@
 import UIKit
 
 class ProfileViewModel {
+    
     enum Texts {
         enum NavigationItem {
             static let leftBarButton = "Back"
@@ -23,8 +24,8 @@ class ProfileViewModel {
     }
     
     private var coordinator: ProfileCoordinator?
-    private(set) var user: UserData?
     
+    private(set) var user: UserData?
     private(set) var backgroundImageName = ""
     
     init(coordinator: ProfileCoordinator, user: UserData) {
@@ -34,18 +35,16 @@ class ProfileViewModel {
         self.backgroundImageName = (user.sex == .female) ? "backgroundImageGirl" : "backgroundImageMan"
     }
     
-    func editProfile(newName: String, newImage: UIImage, completion: @escaping (Bool, String?) -> Void) {
-        guard let user = user else {
-            return
+    func editProfile(newName: String, newImage: UIImage?, completion: @escaping (Bool, String?) -> Void) {
+        let newName = nameIsChanged(newName: newName) ? newName : nil
+        
+        var newImageData: Data?
+        if let newImage {
+            newImageData = newImage.jpegData(compressionQuality: 1.0)
         }
-        
-        let newImageData = newImage.jpegData(compressionQuality: 1.0)
-        let currentImageData = user.profileImage
-        
-        let newName = (newName != user.userName && !newName.isEmpty) ? newName : nil
-        let newImage = (newImageData != currentImageData) ? newImageData : nil
-        
-        FirebaseService.shared.updateUserProfile(name: newName, profileImage: newImage) { [weak self] response in
+
+        FirebaseService.shared.updateUserProfile(newName: newName, 
+                                                 newImage: newImageData) { [weak self] response in
             switch response {
             case .success:
                 completion(true, nil)
@@ -57,6 +56,15 @@ class ProfileViewModel {
                 completion(false, "Unknown error occurred")
             }
         }
+    }
+    
+    func nameIsChanged(newName: String) -> Bool {
+        let oldname = user?.userName ?? ""
+        return nameIsChanged(newName: newName, oldName: oldname)
+    }
+    
+    private func nameIsChanged(newName: String, oldName: String) -> Bool {
+        (newName != oldName) && (newName.isEmpty != true)
     }
     
     func navigateToHome() {
