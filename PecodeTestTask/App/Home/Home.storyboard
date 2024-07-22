@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5Y-GO-Naf">
-                                <rect key="frame" x="129" y="91" width="135" height="0.0"/>
+                                <rect key="frame" x="196.66666666666666" y="91" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" name="PrimaryWhite"/>
                                 <nil key="highlightedColor"/>
@@ -42,7 +42,6 @@
                         <constraints>
                             <constraint firstItem="wzI-eg-19d" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="0uG-bG-xj9"/>
                             <constraint firstItem="wzI-eg-19d" firstAttribute="top" secondItem="z5Y-GO-Naf" secondAttribute="bottom" constant="7" id="36G-Gu-gXV"/>
-                            <constraint firstItem="OUz-Vf-Rsx" firstAttribute="leading" relation="lessThanOrEqual" secondItem="z5Y-GO-Naf" secondAttribute="trailing" constant="64" id="LHE-93-nkS"/>
                             <constraint firstItem="z5Y-GO-Naf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="NqX-iV-7Hb"/>
                             <constraint firstItem="z5Y-GO-Naf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="32" id="oPI-Tb-79Q"/>
                             <constraint firstItem="OUz-Vf-Rsx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="32" id="sYO-Ix-fXl"/>
