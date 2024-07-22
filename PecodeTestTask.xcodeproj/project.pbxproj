@@ -103,6 +103,9 @@
 		CAEB18F82C4E96B0000FE4E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAEB18F72C4E96B0000FE4E5 /* GoogleService-Info.plist */; };
 		CAEB18F92C4E96B0000FE4E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAEB18F72C4E96B0000FE4E5 /* GoogleService-Info.plist */; };
 		CAEB18FA2C4E96B0000FE4E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAEB18F72C4E96B0000FE4E5 /* GoogleService-Info.plist */; };
+		CAEB18FC2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB18FB2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift */; };
+		CAEB18FD2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB18FB2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift */; };
+		CAEB18FE2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB18FB2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +216,7 @@
 		CAEB18E52C4D71F4000FE4E5 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		CAEB18E72C4D7759000FE4E5 /* ProfileViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+Extensions.swift"; sourceTree = "<group>"; };
 		CAEB18F72C4E96B0000FE4E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CAEB18FB2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarConfigurator.swift; sourceTree = "<group>"; };
 		D1810F872ACEC9C10D861E31 /* Pods-PecodeTestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTask.release.xcconfig"; path = "Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask.release.xcconfig"; sourceTree = "<group>"; };
 		FE1100F283D53D0189BF8AB0 /* Pods-PecodeTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTask.debug.xcconfig"; path = "Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -457,6 +461,7 @@
 				CA4FEC692C4C59C300988C5B /* ProfileCoordinator.swift */,
 				CA4FEC672C4C59BC00988C5B /* ProfileViewModel.swift */,
 				CA4FEC6B2C4C59CB00988C5B /* Profile.storyboard */,
+				CAEB18FB2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -834,6 +839,7 @@
 				CAA18F152C3C3B5200F888CD /* TabBarController.swift in Sources */,
 				CA002E372C36F8D00053284B /* CustomRadiobutton.swift in Sources */,
 				CA002E352C36F8430053284B /* CustomToggleButton.swift in Sources */,
+				CAEB18FC2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift in Sources */,
 				CA002E0E2C319BC10053284B /* BaseViewController.swift in Sources */,
 				CA465A7F2C47E25A003E7217 /* ForgotPasswordViewModel.swift in Sources */,
 				CA37E5672C3EF36C003ADAA8 /* SignupViewController.swift in Sources */,
@@ -896,6 +902,7 @@
 				CA0FF3F32C456B4700B3CE08 /* UserSex.swift in Sources */,
 				CA038C052C4427190033CD30 /* LoginData.swift in Sources */,
 				CA37E57F2C405731003ADAA8 /* TabBarViewModel.swift in Sources */,
+				CAEB18FD2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift in Sources */,
 				CA002DED2C318B110053284B /* PecodeTestTaskTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -909,6 +916,7 @@
 				CA37E5882C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
 				CA002DF72C318B110053284B /* PecodeTestTaskUITests.swift in Sources */,
 				CA002DF92C318B110053284B /* PecodeTestTaskUITestsLaunchTests.swift in Sources */,
+				CAEB18FE2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift in Sources */,
 				CA038C062C4427190033CD30 /* LoginData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

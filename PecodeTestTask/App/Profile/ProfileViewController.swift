@@ -37,6 +37,10 @@ final class ProfileViewController: BaseViewController {
         name.textField.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     static func instantiate() -> ProfileViewController {
         let storyboard = UIStoryboard(name: StoryboardConstants.profile, bundle: .main)
         return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.profileViewController) as! ProfileViewController
