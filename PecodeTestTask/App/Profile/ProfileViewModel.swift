@@ -9,18 +9,16 @@ import UIKit
 
 class ProfileViewModel {
     
-    enum Texts {
-        enum NavigationItem {
-            static let leftBarButton = "Back"
-            static let title = "Profile"
-            static let rightBarButton = "Save"
+    enum Constants {
+        enum Texts {
+            static let navigationItemTitle = "Profile"
+            static let name = "Name"
+            static let namePlaceholder = "Enter Your Name"
+            static let instruction = "Select an option to display on the main screen."
+            static let addOptionsButton = "Add Options"
+            static let defaultImageName = "noImage"
         }
-        
-        static let name = "Name"
-        static let namePlaceholder = "Enter Your Name"
-        static let instruction = "Select an option to display on the main screen."
-        static let addOptionsButton = "Add Options"
-        static let defaultImageName = "noImage"
+        static let maxNumberOfBytesInData = 1048487
     }
     
     private var coordinator: ProfileCoordinator?
@@ -40,7 +38,7 @@ class ProfileViewModel {
         
         var newImageData: Data?
         if let newImage {
-            newImageData = newImage.compress(to: 1048487)
+            newImageData = newImage.compress(to: Constants.maxNumberOfBytesInData)
         }
 
         FirebaseService.shared.updateUserProfile(newName: newName, 

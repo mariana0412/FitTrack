@@ -41,7 +41,7 @@ final class ProfileViewController: BaseViewController {
         
         let navigationButtons = NavigationBarConfigurator.configureNavigationBar(
             for: self,
-            title: ProfileViewModel.Texts.NavigationItem.title,
+            title: ProfileViewModel.Constants.Texts.navigationItemTitle,
             backAction: #selector(backButtonTapped),
             saveAction: #selector(saveButtonTapped)
         )
@@ -65,20 +65,20 @@ final class ProfileViewController: BaseViewController {
         if let profileImageData = viewModel.user?.profileImage {
             profileImage.setImageWithBorder(image: UIImage(data: profileImageData))
         } else {
-            profileImage.image = UIImage(named: ProfileViewModel.Texts.defaultImageName)
+            profileImage.image = UIImage(named: ProfileViewModel.Constants.Texts.defaultImageName)
         }
         
-        name.labelText = ProfileViewModel.Texts.name
+        name.labelText = ProfileViewModel.Constants.Texts.name
         name.labelFont = Fonts.helveticaNeue18
         name.textFieldText = viewModel.user?.userName
         name.textFieldFont = Fonts.helveticaNeue16
         
-        instruction.text = ProfileViewModel.Texts.instruction
+        instruction.text = ProfileViewModel.Constants.Texts.instruction
         instruction.numberOfLines = Constants.Layout.instructionNumberOfLines
         instruction.textColor = .secondaryGray
         instruction.font = Fonts.sairaLight16
         
-        addOptionsButton.titleLabel?.text = ProfileViewModel.Texts.addOptionsButton
+        addOptionsButton.titleLabel?.text = ProfileViewModel.Constants.Texts.addOptionsButton
         addOptionsButton.setupButtonFont(font: Fonts.sairaRegular16, color: .black)
     }
     
