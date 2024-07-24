@@ -1,0 +1,22 @@
+//
+//  OptionsViewController.swift
+//  PecodeTestTask
+//
+//  Created by Mariana Piz on 24.07.2024.
+//
+
+import UIKit
+
+final class OptionsViewController: BaseViewController {
+    var viewModel: OptionsViewModel?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    static func instantiate() -> OptionsViewController {
+        let storyboard = UIStoryboard(name: StoryboardConstants.options, bundle: .main)
+        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.optionsViewController) as! OptionsViewController
+    }
+    
+}
