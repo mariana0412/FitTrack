@@ -32,11 +32,6 @@ final class HomeViewController: BaseViewController {
         setupActions()
         loadUserData()
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
     
     static func instantiate() -> HomeViewController {
         let storyboard = UIStoryboard(name: StoryboardConstants.home, bundle: .main)

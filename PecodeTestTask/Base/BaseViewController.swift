@@ -32,6 +32,12 @@ class BaseViewController: UIViewController {
         setBackgroundImage(named: Constants.Images.backgroundImageName)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     func updateBackgroundImage(named imageName: String) {
         guard let backgroundImageView = backgroundImageView else { return }
         guard let backgroundImage = UIImage(named: imageName) else {

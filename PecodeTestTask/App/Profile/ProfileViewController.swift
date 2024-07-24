@@ -37,6 +37,7 @@ final class ProfileViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         
         let navigationButtons = NavigationBarConfigurator.configureNavigationBar(
@@ -50,6 +51,7 @@ final class ProfileViewController: BaseViewController {
             saveButton = saveButtonCustomView
             configureSaveButtonInitialState()
         }
+
     }
     
     static func instantiate() -> ProfileViewController {

@@ -36,8 +36,6 @@ final class SignupViewController: BaseViewController {
     }
     
     private func setupUI() {
-        self.navigationItem.hidesBackButton = true
-        
         superheroLabel.text = viewModel?.superheroText
         superheroLabel.textColor = .primaryYellow
         superheroLabel.font = Fonts.futuraBold
