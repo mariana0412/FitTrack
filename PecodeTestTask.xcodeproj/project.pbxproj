@@ -69,6 +69,12 @@
 		CA4FEC682C4C59BC00988C5B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FEC672C4C59BC00988C5B /* ProfileViewModel.swift */; };
 		CA4FEC6A2C4C59C300988C5B /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FEC692C4C59C300988C5B /* ProfileCoordinator.swift */; };
 		CA4FEC6C2C4C59CB00988C5B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA4FEC6B2C4C59CB00988C5B /* Profile.storyboard */; };
+		CA5D80FE2C51784100486145 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D80FD2C51784100486145 /* OptionsViewController.swift */; };
+		CA5D81002C51784900486145 /* OptionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D80FF2C51784900486145 /* OptionsCoordinator.swift */; };
+		CA5D81022C51785200486145 /* OptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D81012C51785200486145 /* OptionsViewModel.swift */; };
+		CA5D81042C51785A00486145 /* Options.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA5D81032C51785A00486145 /* Options.storyboard */; };
+		CA5D81082C5178AD00486145 /* PopupTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D81062C5178AD00486145 /* PopupTransitioningDelegate.swift */; };
+		CA5D81092C5178AD00486145 /* PopupTransitioningPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D81072C5178AD00486145 /* PopupTransitioningPresentationController.swift */; };
 		CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */; };
 		CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */; };
 		CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */; };
@@ -201,6 +207,12 @@
 		CA4FEC672C4C59BC00988C5B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		CA4FEC692C4C59C300988C5B /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		CA4FEC6B2C4C59CB00988C5B /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		CA5D80FD2C51784100486145 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		CA5D80FF2C51784900486145 /* OptionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCoordinator.swift; sourceTree = "<group>"; };
+		CA5D81012C51785200486145 /* OptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewModel.swift; sourceTree = "<group>"; };
+		CA5D81032C51785A00486145 /* Options.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Options.storyboard; sourceTree = "<group>"; };
+		CA5D81062C5178AD00486145 /* PopupTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupTransitioningDelegate.swift; sourceTree = "<group>"; };
+		CA5D81072C5178AD00486145 /* PopupTransitioningPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupTransitioningPresentationController.swift; sourceTree = "<group>"; };
 		CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextFieldView.xib; sourceTree = "<group>"; };
 		CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -368,6 +380,7 @@
 		CA002E092C3192C60053284B /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CA5D80FC2C51783000486145 /* Options */,
 				CA4FEC642C4C593E00988C5B /* Profile */,
 				CA465A792C47D8C5003E7217 /* ForgotPassword */,
 				CA457E052C42BBEA0031FDFA /* Login */,
@@ -389,6 +402,7 @@
 		CA002E0A2C3192DE0053284B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				CA5D81052C51789700486145 /* PopupTransition */,
 				CAA18F162C3C3B6600F888CD /* TabBar */,
 				CA002E0D2C319BC10053284B /* BaseViewController.swift */,
 				CA002E112C319C110053284B /* Coordinator.swift */,
@@ -488,6 +502,26 @@
 				CAEB191C2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		CA5D80FC2C51783000486145 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D80FD2C51784100486145 /* OptionsViewController.swift */,
+				CA5D80FF2C51784900486145 /* OptionsCoordinator.swift */,
+				CA5D81012C51785200486145 /* OptionsViewModel.swift */,
+				CA5D81032C51785A00486145 /* Options.storyboard */,
+			);
+			path = Options;
+			sourceTree = "<group>";
+		};
+		CA5D81052C51789700486145 /* PopupTransition */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D81062C5178AD00486145 /* PopupTransitioningDelegate.swift */,
+				CA5D81072C5178AD00486145 /* PopupTransitioningPresentationController.swift */,
+			);
+			path = PopupTransition;
 			sourceTree = "<group>";
 		};
 		CAA18EE02C37F97900F888CD /* Extensions */ = {
@@ -709,6 +743,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA038C002C43F8E90033CD30 /* Saira-Light.ttf in Resources */,
+				CA5D81042C51785A00486145 /* Options.storyboard in Resources */,
 				CA002DDF2C318B110053284B /* Assets.xcassets in Resources */,
 				CA457E0D2C42BC360031FDFA /* Login.storyboard in Resources */,
 				CA002E242C319F560053284B /* .gitignore in Resources */,
@@ -869,6 +904,7 @@
 				CA002E372C36F8D00053284B /* CustomRadiobutton.swift in Sources */,
 				CA002E352C36F8430053284B /* CustomToggleButton.swift in Sources */,
 				CAEB18FC2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift in Sources */,
+				CA5D81082C5178AD00486145 /* PopupTransitioningDelegate.swift in Sources */,
 				CA002E0E2C319BC10053284B /* BaseViewController.swift in Sources */,
 				CAEB19152C4EE4C4000FE4E5 /* AlertContent.swift in Sources */,
 				CA465A7F2C47E25A003E7217 /* ForgotPasswordViewModel.swift in Sources */,
@@ -887,6 +923,8 @@
 				CAA18F0D2C3C158700F888CD /* MusclesViewModel.swift in Sources */,
 				CA37E5862C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
 				CAEB19192C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */,
+				CA5D81092C5178AD00486145 /* PopupTransitioningPresentationController.swift in Sources */,
+				CA5D81022C51785200486145 /* OptionsViewModel.swift in Sources */,
 				CAA18F132C3C18F200F888CD /* TabBarCoordinator.swift in Sources */,
 				CAEB18E82C4D7759000FE4E5 /* ProfileViewController+Extensions.swift in Sources */,
 				CAA18EE92C39DFF600F888CD /* SplashCoordinator.swift in Sources */,
@@ -895,8 +933,10 @@
 				CAA18F1D2C3C56F700F888CD /* OverlayUtils.swift in Sources */,
 				CAA18F0F2C3C159300F888CD /* MusclesCoordinator.swift in Sources */,
 				CAA18EFD2C3C133800F888CD /* ProgressCoordinator.swift in Sources */,
+				CA5D80FE2C51784100486145 /* OptionsViewController.swift in Sources */,
 				CAA18F052C3C148200F888CD /* CalculatorViewController.swift in Sources */,
 				CA002E3B2C3701FE0053284B /* CustomButton.swift in Sources */,
+				CA5D81002C51784900486145 /* OptionsCoordinator.swift in Sources */,
 				CA0FF3F22C456B4700B3CE08 /* UserSex.swift in Sources */,
 				CA457E092C42BC220031FDFA /* LoginCoordinator.swift in Sources */,
 				CA37E56B2C3EF37F003ADAA8 /* SignupViewModel.swift in Sources */,
