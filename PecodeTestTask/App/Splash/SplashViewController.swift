@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SplashViewController: BaseViewController {
+final class SplashViewController: BaseViewController {
     
     private enum Constants {
         enum Layout {
@@ -67,12 +67,8 @@ class SplashViewController: BaseViewController {
     private func updateUserSex(sex: UserSex) {
         disableButtons()
         
-        viewModel?.updateUserSex(sex: sex) { [weak self] errorMessage in
+        viewModel?.updateUserSex(sex: sex) { [weak self] _ in
             self?.enableButtons()
-            
-            if let errorMessage = errorMessage {
-                self?.view.showCustomAlert(message: errorMessage)
-            }
         }
     }
     
@@ -91,6 +87,8 @@ class SplashViewController: BaseViewController {
     }
     
     private func setupUI() {
+        self.navigationItem.hidesBackButton = true
+        
         superheroLabel.text = viewModel?.superheroText
         superheroLabel.font = Fonts.futuraBold
         superheroLabel.textColor = .primaryYellow

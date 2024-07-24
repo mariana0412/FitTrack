@@ -16,7 +16,7 @@ final class CustomTextFieldView: UIView {
     @IBOutlet private var contentView: UIView!
     @IBOutlet private weak var label: UILabel!
     @IBOutlet private weak var textFieldView: UIView!
-    @IBOutlet private weak var textField: UITextField!
+    @IBOutlet weak var textField: UITextField!
     
     private var isPlaceholderVisible: Bool = true
     

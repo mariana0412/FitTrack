@@ -22,4 +22,11 @@ class HomeCoordinator: Coordinator {
                                                      userSex: userSex)
         navigationController.pushViewController(homeViewController, animated: false)
     }
+    
+    func navigateToProfile(with user: UserData) {
+        let profileCoordinator = ProfileCoordinator(navigationController: navigationController,
+                                                    user: user)
+        profileCoordinator.delegate = navigationController.viewControllers.first as? HomeViewController
+        profileCoordinator.start()
+    }
 }

@@ -6,6 +6,7 @@
 //
 
 enum UserSex: String {
-    case male = "male"
-    case female = "female"
+    case male
+    case female
+    case unknown
 }

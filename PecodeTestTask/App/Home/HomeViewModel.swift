@@ -6,11 +6,12 @@
 //
 
 class HomeViewModel {
-    private weak var coordinator: HomeCoordinator?
+    private var coordinator: HomeCoordinator?
     private(set) var userSex: UserSex
     private(set) var heroName: String = ""
     private(set) var userName: String = ""
     private(set) var backgroundImageName = ""
+    private(set) var user: UserData?
     
     init(coordinator: HomeCoordinator, userSex: UserSex) {
         self.coordinator = coordinator
@@ -30,6 +31,7 @@ class HomeViewModel {
             case .success(let registrationData):
                 if let user = registrationData, let user = user {
                     self?.userName = user.userName
+                    self?.user = user
                 }
                 completion(nil)
             case .failure(let error):
@@ -39,5 +41,10 @@ class HomeViewModel {
             }
         }
     }
-
+    
+    func navigateToProfile() {
+        guard let user = user else { return }
+        coordinator?.navigateToProfile(with: user)
+    }
+    
 }

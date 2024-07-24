@@ -44,14 +44,17 @@ class TabBarCoordinator: Coordinator {
 
         case .progress:
             let progressCoordinator = ProgressCoordinator(navigationController: navigationController)
+            
             progressCoordinator.start()
 
         case .calculator:
             let calculatorCoordinator = CalculatorCoordinator(navigationController: navigationController)
+            
             calculatorCoordinator.start()
 
         case .muscles:
             let musclesCoordinator = MusclesCoordinator(navigationController: navigationController)
+            
             musclesCoordinator.start()
         }
         

@@ -105,13 +105,10 @@ final class SignupViewController: BaseViewController {
         signupButton.backgroundColor = UIColor.primaryWhite
         
         viewModel?.signupUser(with: registrationData, 
-                              confirmPassword: confirmPasswordText) { [weak self] validationResults, errorMessage in
+                              confirmPassword: confirmPasswordText) { [weak self] validationResults, _ in
             self?.signupButton.isEnabled = true
             self?.signupButton.backgroundColor = UIColor.primaryYellow
             self?.updateValidationUI(validationResults)
-            if let errorMessage = errorMessage {
-                self?.view.showCustomAlert(message: errorMessage)
-            }
         }
     }
     

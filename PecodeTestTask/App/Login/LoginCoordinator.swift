@@ -40,4 +40,9 @@ class LoginCoordinator: Coordinator {
         forgotPasswordCoordinator.start()
     }
     
+    func navigateToAlert(alertContent: AlertContent) {
+        let alertCoordinator = AlertCoordinator(navigationController: navigationController, alertContent: alertContent)
+        alertCoordinator.start()
+    }
+    
 }
