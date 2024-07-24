@@ -8,6 +8,12 @@
 import UIKit
 
 final class OptionsViewController: BaseViewController {
+    
+    @IBOutlet weak var addOptionsLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var cancelButton: CustomButton!
+    @IBOutlet weak var selectButton: CustomButton!
+    
     var viewModel: OptionsViewModel?
     
     override func viewDidLoad() {
