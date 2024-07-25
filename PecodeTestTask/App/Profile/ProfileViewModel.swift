@@ -25,6 +25,7 @@ class ProfileViewModel {
     
     private(set) var user: UserData?
     private(set) var backgroundImageName = ""
+    var selectedOptions = [OptionDataName]()
     
     init(coordinator: ProfileCoordinator, user: UserData) {
         self.coordinator = coordinator

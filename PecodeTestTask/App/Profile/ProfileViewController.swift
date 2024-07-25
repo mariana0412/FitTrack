@@ -18,6 +18,7 @@ final class ProfileViewController: BaseViewController {
     @IBOutlet private weak var profileImage: UIImageView!
     @IBOutlet private weak var name: CustomTextFieldView!
     @IBOutlet private weak var instruction: UILabel!
+    @IBOutlet weak var optionsContainer: UIStackView!
     @IBOutlet private weak var addOptionsButton: CustomButton!
     
     private var saveButton: UIButton?
@@ -142,6 +143,30 @@ final class ProfileViewController: BaseViewController {
     
     func updateSaveButtonState(newName: String) {
         saveButton?.isEnabled = viewModel?.nameIsChanged(newName: newName) == true
+    }
+    
+    func updateSelectedOptions() {
+        updateState()
+    }
+    
+    private func updateState() {
+        let hasSelectedOptions = viewModel?.selectedOptions.count ?? 0 > 0
+        instruction.isHidden = hasSelectedOptions
+        optionsContainer.isHidden = !hasSelectedOptions
+        
+        if hasSelectedOptions {
+            updateOptions()
+        }
+    }
+    
+    private func updateOptions() {
+        optionsContainer.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        
+        viewModel?.selectedOptions.forEach { option in
+            let optionSwitch = OptionSwitch()
+            optionSwitch.configure(optionName: option.rawValue, metric: option.metricValue, isSwitchOn: true)
+            optionsContainer.addArrangedSubview(optionSwitch)
+        }
     }
     
 }

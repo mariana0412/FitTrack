@@ -9,6 +9,7 @@ import UIKit
 
 class OptionsCoordinator: Coordinator {
     var navigationController: UINavigationController
+    weak var delegate: OptionsCoordinatorDelegate?
     private let popupTransitioningDelegate = PopupTransitioningDelegate()
     
     init(navigationController: UINavigationController) {
@@ -26,10 +27,9 @@ class OptionsCoordinator: Coordinator {
         
     }
     
-    func navigateToProfile() {
-        if let presentedViewController = navigationController.presentedViewController {
-            presentedViewController.dismiss(animated: true, completion: nil)
-        }
+    func navigateToProfile(with options: [OptionDataName]) {
+        delegate?.didSelectOptions(options)
+        navigationController.dismiss(animated: true)
     }
     
 }

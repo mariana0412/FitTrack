@@ -45,7 +45,7 @@ class OptionsViewModel {
     }
     
     func navigateToProfile() {
-        coordinator?.navigateToProfile()
+        coordinator?.navigateToProfile(with: selectedOptions)
     }
     
 }
