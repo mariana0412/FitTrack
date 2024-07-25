@@ -14,18 +14,22 @@ class OptionsViewModel {
     private var coordinator: OptionsCoordinator?
     
     let options = OptionDataName.allCases
-    private(set) var selectedOptions = Set<OptionDataName>()
+    private(set) var selectedOptions = [OptionDataName]()
     
     init(coordinator: OptionsCoordinator?) {
         self.coordinator = coordinator
     }
     
     func addOption(_ newOption: OptionDataName) {
-        selectedOptions.insert(newOption)
+        if !selectedOptions.contains(newOption) {
+            selectedOptions.append(newOption)
+        }
     }
     
     func removeOption(_ option: OptionDataName) {
-        selectedOptions.remove(option)
+        if let index = selectedOptions.firstIndex(of: option) {
+            selectedOptions.remove(at: index)
+        }
     }
     
     func isOptionSelected(_ option: OptionDataName) -> Bool {
