@@ -12,8 +12,12 @@ class OptionCell: UITableViewCell {
     @IBOutlet weak var checkmark: CustomCheckmark!
     @IBOutlet weak var name: UILabel!
     
+    weak var delegate: OptionCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        setupActions()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -24,6 +28,13 @@ class OptionCell: UITableViewCell {
     func configure(with option: OptionDataName, isSelected: Bool) {
         name.text = option.rawValue
         checkmark.setSelected(isSelected)
+    }
+    
+    private func setupActions() {
+        checkmark.didToggleSelection = { [weak self] in
+            guard let self = self else { return }
+            self.delegate?.didTapCheckmark(in: self)
+        }
     }
     
 }

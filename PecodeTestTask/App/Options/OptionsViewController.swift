@@ -82,6 +82,14 @@ final class OptionsViewController: UIViewController {
         selectButton.addTarget(self, action: #selector(selectButtonTapped), for: .touchUpInside)
     }
     
+    private func handleOptionSelection(at indexPath: IndexPath) {
+        guard let option = viewModel?.options[indexPath.row] else { return }
+        
+        viewModel?.handleOptionSelection(for: option)
+        
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+    
     @objc private func cancelButtonTapped() {
         viewModel?.navigateToProfile()
     }
@@ -101,8 +109,9 @@ extension OptionsViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableView.cellReuseIdentifier, for: indexPath) as! OptionCell
         
         if let option = viewModel?.options[indexPath.row] {
-            let isSelected = viewModel?.isSelected(option) ?? false
+            let isSelected = viewModel?.isOptionSelected(option) ?? false
             cell.configure(with: option, isSelected: isSelected)
+            cell.delegate = self
         }
         
         return cell
@@ -117,10 +126,16 @@ extension OptionsViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let option = viewModel?.options[indexPath.row] else { return }
-        viewModel?.handleSelection(for: option)
-        
-        tableView.reloadRows(at: [indexPath], with: .automatic)
+        handleOptionSelection(at: indexPath)
     }
     
+}
+
+extension OptionsViewController: OptionCellDelegate {
+    
+    func didTapCheckmark(in cell: OptionCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        handleOptionSelection(at: indexPath)
+    }
+
 }

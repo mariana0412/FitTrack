@@ -28,12 +28,12 @@ class OptionsViewModel {
         selectedOptions.remove(option)
     }
     
-    func isSelected(_ option: OptionDataName) -> Bool {
+    func isOptionSelected(_ option: OptionDataName) -> Bool {
         return selectedOptions.contains(option)
     }
     
-    func handleSelection(for option: OptionDataName) {
-        if isSelected(option) {
+    func handleOptionSelection(for option: OptionDataName) {
+        if isOptionSelected(option) {
             removeOption(option)
         } else {
             addOption(option)

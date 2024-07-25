@@ -14,6 +14,8 @@ class CustomToggleButton: CustomUIComponent {
     var unselectedImage: UIImage?
     private var button: UIButton!
     
+    var didToggleSelection: (() -> Void)?
+    
     init(selectedImage: UIImage?, unselectedImage: UIImage?, size: CGSize) {
         self.selectedImage = selectedImage
         self.unselectedImage = unselectedImage
@@ -63,13 +65,18 @@ class CustomToggleButton: CustomUIComponent {
             button.widthAnchor.constraint(equalToConstant: size.width),
             button.heightAnchor.constraint(equalToConstant: size.height)
         ])
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleSelection))
+        self.addGestureRecognizer(tapGesture)
+    }
+    
+    func setSelected(_ isSelected: Bool) {
+        button.isSelected = isSelected
     }
     
     @objc private func toggleSelection() {
         button.isSelected.toggle()
+        didToggleSelection?()
     }
-        
-    func setSelected(_ isSelected: Bool) {
-        button.isSelected = isSelected
-    }
+    
 }
