@@ -30,9 +30,6 @@ final class OptionsViewController: UIViewController {
     
     var viewModel: OptionsViewModel?
     
-    private var selectedOptions = Set<OptionDataName>()
-    private let options = OptionDataName.allCases
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -99,15 +96,16 @@ final class OptionsViewController: UIViewController {
 
 extension OptionsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return options.count
+        return viewModel?.options.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableView.cellReuseIdentifier, for: indexPath) as! OptionCell
         
-        let option = options[indexPath.row]
-        let isSelected = selectedOptions.contains(option)
-        cell.configure(with: option, isSelected: isSelected)
+        if let option = viewModel?.options[indexPath.row] {
+            let isSelected = viewModel?.isSelected(option) ?? false
+            cell.configure(with: option, isSelected: isSelected)
+        }
         
         return cell
     }
@@ -121,12 +119,9 @@ extension OptionsViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let option = options[indexPath.row]
-        if selectedOptions.contains(option) {
-            selectedOptions.remove(option)
-        } else {
-            selectedOptions.insert(option)
-        }
+        guard let option = viewModel?.options[indexPath.row] else { return }
+        viewModel?.handleSelection(for: option)
+        
         tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
