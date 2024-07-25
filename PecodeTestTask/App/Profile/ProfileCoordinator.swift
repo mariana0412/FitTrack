@@ -35,4 +35,9 @@ class ProfileCoordinator: Coordinator {
         alertCoordinator.start()
     }
     
+    func navigateToOptions() {
+        let optionsCoordinator = OptionsCoordinator(navigationController: navigationController)
+        optionsCoordinator.start()
+    }
+    
 }

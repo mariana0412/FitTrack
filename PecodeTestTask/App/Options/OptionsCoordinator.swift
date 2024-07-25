@@ -25,4 +25,8 @@ class OptionsCoordinator: Coordinator {
         navigationController.pushViewController(optionsViewController, animated: false)
     }
     
+    func navigateToProfile() {
+        navigationController.popViewController(animated: false)
+    }
+    
 }

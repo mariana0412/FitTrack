@@ -91,6 +91,9 @@ final class ProfileViewController: BaseViewController {
     }
     
     private func setupActions() {
+        addOptionsButton.addTarget(self, action: #selector(addOptionsButtonTapped), for: .touchUpInside)
+                
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(tapGesture)
     }
@@ -117,6 +120,10 @@ final class ProfileViewController: BaseViewController {
         }
     }
     
+    @objc private func addOptionsButtonTapped() {
+        viewModel?.navigateToOptions()
+    }
+
     private func setupImagePicker() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(profileImageTapped))
         profileImage.isUserInteractionEnabled = true

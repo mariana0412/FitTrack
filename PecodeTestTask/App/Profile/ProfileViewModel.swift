@@ -78,4 +78,9 @@ class ProfileViewModel {
         coordinator?.navigateToAlert(alertContent: alertContent)
     }
     
+    func navigateToOptions() {
+        print("in viewModel")
+        coordinator?.navigateToOptions()
+    }
+    
 }

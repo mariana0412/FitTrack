@@ -68,4 +68,8 @@ class CustomToggleButton: CustomUIComponent {
     @objc private func toggleSelection() {
         button.isSelected.toggle()
     }
+        
+    func setSelected(_ isSelected: Bool) {
+        button.isSelected = isSelected
+    }
 }

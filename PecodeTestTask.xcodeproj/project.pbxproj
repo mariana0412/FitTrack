@@ -75,6 +75,9 @@
 		CA5D81042C51785A00486145 /* Options.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA5D81032C51785A00486145 /* Options.storyboard */; };
 		CA5D81082C5178AD00486145 /* PopupTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D81062C5178AD00486145 /* PopupTransitioningDelegate.swift */; };
 		CA5D81092C5178AD00486145 /* PopupTransitioningPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D81072C5178AD00486145 /* PopupTransitioningPresentationController.swift */; };
+		CA5D810C2C5181E300486145 /* OptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5D810B2C5181E300486145 /* OptionCell.xib */; };
+		CA5D810D2C5181E300486145 /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D810A2C5181E300486145 /* OptionCell.swift */; };
+		CA5D810F2C5183C500486145 /* OptionDataName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D810E2C5183C500486145 /* OptionDataName.swift */; };
 		CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */; };
 		CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */; };
 		CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */; };
@@ -213,6 +216,9 @@
 		CA5D81032C51785A00486145 /* Options.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Options.storyboard; sourceTree = "<group>"; };
 		CA5D81062C5178AD00486145 /* PopupTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupTransitioningDelegate.swift; sourceTree = "<group>"; };
 		CA5D81072C5178AD00486145 /* PopupTransitioningPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupTransitioningPresentationController.swift; sourceTree = "<group>"; };
+		CA5D810A2C5181E300486145 /* OptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
+		CA5D810B2C5181E300486145 /* OptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionCell.xib; sourceTree = "<group>"; };
+		CA5D810E2C5183C500486145 /* OptionDataName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDataName.swift; sourceTree = "<group>"; };
 		CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextFieldView.xib; sourceTree = "<group>"; };
 		CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -362,6 +368,7 @@
 				CA0FF3F12C456B4700B3CE08 /* UserSex.swift */,
 				CAEB18E32C4D4971000FE4E5 /* UserData.swift */,
 				CAEB19142C4EE4C4000FE4E5 /* AlertContent.swift */,
+				CA5D810E2C5183C500486145 /* OptionDataName.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -511,6 +518,8 @@
 				CA5D80FF2C51784900486145 /* OptionsCoordinator.swift */,
 				CA5D81012C51785200486145 /* OptionsViewModel.swift */,
 				CA5D81032C51785A00486145 /* Options.storyboard */,
+				CA5D810A2C5181E300486145 /* OptionCell.swift */,
+				CA5D810B2C5181E300486145 /* OptionCell.xib */,
 			);
 			path = Options;
 			sourceTree = "<group>";
@@ -758,6 +767,7 @@
 				CA37E5822C40573D003ADAA8 /* TabBar.storyboard in Resources */,
 				CAA18F112C3C159C00F888CD /* Muscles.storyboard in Resources */,
 				CA465A812C47E26F003E7217 /* ForgotPassword.storyboard in Resources */,
+				CA5D810C2C5181E300486145 /* OptionCell.xib in Resources */,
 				CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */,
 				CA038BF62C4316300033CD30 /* Saira-Medium.ttf in Resources */,
 				CAA18EE52C39DF9400F888CD /* Splash.storyboard in Resources */,
@@ -940,10 +950,12 @@
 				CA0FF3F22C456B4700B3CE08 /* UserSex.swift in Sources */,
 				CA457E092C42BC220031FDFA /* LoginCoordinator.swift in Sources */,
 				CA37E56B2C3EF37F003ADAA8 /* SignupViewModel.swift in Sources */,
+				CA5D810F2C5183C500486145 /* OptionDataName.swift in Sources */,
 				CA002E2F2C36E81F0053284B /* CustomUIComponent.swift in Sources */,
 				CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */,
 				CA465A7B2C47E238003E7217 /* ForgotPasswordViewController.swift in Sources */,
 				CAEB19052C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */,
+				CA5D810D2C5181E300486145 /* OptionCell.swift in Sources */,
 				CA002E182C319C7A0053284B /* HomeViewModel.swift in Sources */,
 				CA002DD62C318B0F0053284B /* AppDelegate.swift in Sources */,
 				CA37E5702C3F25B4003ADAA8 /* RegistrationData.swift in Sources */,

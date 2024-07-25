@@ -6,10 +6,19 @@
 //
 
 class OptionsViewModel {
+    
+    let selectOptionText = "Select Option"
+    let cancelButtonText = "Cancel"
+    let selectButtonText = "Select"
+    
     private var coordinator: OptionsCoordinator?
     
     init(coordinator: OptionsCoordinator?) {
         self.coordinator = coordinator
+    }
+    
+    func navigateToProfile() {
+        coordinator?.navigateToProfile()
     }
     
 }

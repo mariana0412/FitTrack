@@ -130,7 +130,7 @@ main screen.</string>
     </scenes>
     <designables>
         <designable name="0Tq-76-vgk">
-            <size key="intrinsicContentSize" width="118.66666666666667" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
         </designable>
     </designables>
     <resources>
