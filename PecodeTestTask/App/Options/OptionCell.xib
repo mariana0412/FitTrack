@@ -19,18 +19,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLL-2T-rnl">
-                        <rect key="frame" x="54" y="0.0" width="266" height="20.333333333333332"/>
+                        <rect key="frame" x="54" y="0.0" width="266" height="44"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" name="PrimaryWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1UA-Bx-kYq" userLabel="Checkmark" customClass="CustomCheckmark" customModule="PecodeTestTask" customModuleProvider="target">
-                        <rect key="frame" x="20" y="4" width="16" height="16"/>
+                        <rect key="frame" x="20" y="14" width="16" height="16"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="16" id="9ED-OV-9ib"/>
                             <constraint firstAttribute="width" constant="16" id="Bob-ZG-afu"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="aae-n5-qxI"/>
                             <constraint firstAttribute="height" constant="16" id="f20-Sz-dzc"/>
                         </constraints>
                     </view>
@@ -39,11 +37,10 @@
                     <constraint firstAttribute="bottom" secondItem="DLL-2T-rnl" secondAttribute="bottom" id="5cJ-qy-G9l"/>
                     <constraint firstAttribute="trailing" secondItem="DLL-2T-rnl" secondAttribute="trailing" id="FDS-7N-i4a"/>
                     <constraint firstItem="DLL-2T-rnl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="N4h-fb-TwR"/>
-                    <constraint firstItem="1UA-Bx-kYq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="XV5-GD-mVP"/>
                     <constraint firstItem="DLL-2T-rnl" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Z4m-xe-D7v"/>
                     <constraint firstItem="DLL-2T-rnl" firstAttribute="leading" secondItem="1UA-Bx-kYq" secondAttribute="trailing" constant="18" id="bHN-Ct-9Rh"/>
+                    <constraint firstItem="1UA-Bx-kYq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="m18-5K-LWT"/>
                     <constraint firstItem="1UA-Bx-kYq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="npw-bd-Dyy"/>
-                    <constraint firstAttribute="bottom" secondItem="1UA-Bx-kYq" secondAttribute="bottom" constant="8" id="pSM-oV-nlS"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
