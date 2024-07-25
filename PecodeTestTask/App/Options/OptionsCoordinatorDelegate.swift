@@ -6,5 +6,5 @@
 //
 
 protocol OptionsCoordinatorDelegate: AnyObject {
-    func didSelectOptions(_ options: [OptionDataName])
+    func didSelectOptions(_ optionNames: [OptionDataName])
 }

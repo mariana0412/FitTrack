@@ -14,26 +14,27 @@ class OptionsViewModel {
     private var coordinator: OptionsCoordinator?
     
     let options = OptionDataName.allCases
-    private(set) var selectedOptions = [OptionDataName]()
+    var selectedOptionNames: [OptionDataName]
     
-    init(coordinator: OptionsCoordinator?) {
+    init(coordinator: OptionsCoordinator?, selectedOptionNames: [OptionDataName]) {
         self.coordinator = coordinator
+        self.selectedOptionNames = selectedOptionNames
     }
     
     func addOption(_ newOption: OptionDataName) {
-        if !selectedOptions.contains(newOption) {
-            selectedOptions.append(newOption)
+        if !selectedOptionNames.contains(newOption) {
+            selectedOptionNames.append(newOption)
         }
     }
     
     func removeOption(_ option: OptionDataName) {
-        if let index = selectedOptions.firstIndex(of: option) {
-            selectedOptions.remove(at: index)
+        if let index = selectedOptionNames.firstIndex(of: option) {
+            selectedOptionNames.remove(at: index)
         }
     }
     
     func isOptionSelected(_ option: OptionDataName) -> Bool {
-        return selectedOptions.contains(option)
+        return selectedOptionNames.contains(option)
     }
     
     func handleOptionSelection(for option: OptionDataName) {
@@ -45,7 +46,7 @@ class OptionsViewModel {
     }
     
     func navigateToProfile() {
-        coordinator?.navigateToProfile(with: selectedOptions)
+        coordinator?.navigateToProfile(with: selectedOptionNames)
     }
     
 }

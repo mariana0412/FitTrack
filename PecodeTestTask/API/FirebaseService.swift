@@ -109,7 +109,7 @@ class FirebaseService {
         userRef.getDocument { document, error in
             if let error = error {
                 completion(.failure(error))
-            } else if let document = document, 
+            } else if let document = document,
                         document.exists,
                         let data = document.data() {
                 let email = data["email"] as? String ?? ""
@@ -119,11 +119,27 @@ class FirebaseService {
                 let sex = UserSex(rawValue: sexString) ?? .unknown
                 let profileImage = data["profileImage"] as? Data
                 
+                let userOptions = (data["userOptions"] as? [[String: Any]])?.compactMap { optionDict -> OptionData? in
+                    guard let optionName = optionDict["optionName"] as? String,
+                          let isShown = optionDict["isShown"] as? Bool,
+                          let value = optionDict["value"] as? Double else {
+                        return nil
+                    }
+                    if let optionDataName = OptionDataName(rawValue: optionName) {
+                        return OptionData(optionName: optionDataName,
+                                          value: value, 
+                                          isShown: isShown)
+                    } else {
+                        return nil
+                    }
+                }
+                
                 let registrationData = UserData(email: email,
                                                 id: id,
                                                 userName: userName,
                                                 sex: sex,
-                                                profileImage: profileImage)
+                                                profileImage: profileImage,
+                                                selectedOptions: userOptions ?? [])
                 completion(.success(registrationData))
             } else {
                 completion(.unknown)

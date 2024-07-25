@@ -32,6 +32,7 @@ final class ProfileViewController: BaseViewController {
         setupUI()
         setupActions()
         setupImagePicker()
+        updateSelectedOptions()
         
         name.textField.delegate = self
     }
@@ -150,7 +151,7 @@ final class ProfileViewController: BaseViewController {
     }
     
     private func updateState() {
-        let hasSelectedOptions = viewModel?.selectedOptions.count ?? 0 > 0
+        let hasSelectedOptions = viewModel?.user?.selectedOptions.count ?? 0 > 0
         instruction.isHidden = hasSelectedOptions
         optionsContainer.isHidden = !hasSelectedOptions
         
@@ -162,11 +163,21 @@ final class ProfileViewController: BaseViewController {
     private func updateOptions() {
         optionsContainer.arrangedSubviews.forEach { $0.removeFromSuperview() }
         
-        viewModel?.selectedOptions.forEach { option in
+        viewModel?.user?.selectedOptions.forEach { option in
             let optionSwitch = OptionSwitch()
-            optionSwitch.configure(optionName: option.rawValue, metric: option.metricValue, isSwitchOn: true)
+            
+            var optionValueString = ""
+            if let optionValue = option.value {
+                optionValueString = String(optionValue)
+            }
+            
+            optionSwitch.configure(optionName: option.optionName.rawValue,
+                                   value: optionValueString,
+                                   metric: option.optionName.metricValue,
+                                   isSwitchOn: option.isShown ?? false)
             optionsContainer.addArrangedSubview(optionSwitch)
         }
     }
     
 }
+

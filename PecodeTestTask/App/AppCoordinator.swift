@@ -32,17 +32,6 @@ class AppCoordinator: Coordinator {
             OptionData(optionName: OptionDataName.neck, value: 10, isShown: true)
         ]
 
-        // Update user options in Firebase
-        FirebaseService.shared.updateUserOptions(userOptions) { response in
-            switch response {
-            case .success:
-                print("User options updated successfully")
-            case .failure(let error):
-                print("Failed to update user options: \(error.localizedDescription)")
-            case .unknown:
-                print("An unknown error occurred")
-            }
-        }
         // for testing purposes
 //        do {
 //            try Auth.auth().signOut()

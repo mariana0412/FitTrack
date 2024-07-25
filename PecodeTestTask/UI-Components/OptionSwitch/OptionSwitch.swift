@@ -33,8 +33,9 @@ class OptionSwitch: UIView {
         contentView.fixInView(self)
     }
     
-    func configure(optionName: String, metric: String, isSwitchOn: Bool) {
+    func configure(optionName: String, value: String?, metric: String, isSwitchOn: Bool) {
         option.labelText = optionName
+        option.textFieldText = value
         
         metricValue.text = metric
         metricValue.font = Fonts.helveticaNeueMedium18

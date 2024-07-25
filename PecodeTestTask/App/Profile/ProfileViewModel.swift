@@ -25,7 +25,7 @@ class ProfileViewModel {
     
     private(set) var user: UserData?
     private(set) var backgroundImageName = ""
-    var selectedOptions = [OptionDataName]()
+    var selectedOptionNames: [OptionDataName] = []
     
     init(coordinator: ProfileCoordinator, user: UserData) {
         self.coordinator = coordinator
@@ -73,6 +73,21 @@ class ProfileViewModel {
         coordinator?.navigateToHome()
     }
     
+    func filterAndUpdateOptions(with selectedOptionNames: [OptionDataName]) {
+        guard var currentOptions = user?.selectedOptions else { return }
+
+        currentOptions = currentOptions.filter { selectedOptionNames.contains($0.optionName) }
+
+        for optionName in selectedOptionNames {
+            if !currentOptions.contains(where: { $0.optionName == optionName }) {
+                let newOption = OptionData(optionName: optionName)
+                currentOptions.append(newOption)
+            }
+        }
+
+        user?.selectedOptions = currentOptions
+    }
+    
     func navigateToAlert(message: String) {
         let icon = UIImage(named: "customCircleCheckmarkSelected")
         let alertContent = AlertContent(alertType: .noButtons, message: message, icon: icon)
@@ -80,7 +95,8 @@ class ProfileViewModel {
     }
     
     func navigateToOptions() {
-        coordinator?.navigateToOptions()
+        let selectedOptionNames = user?.selectedOptions.map { $0.optionName } ?? []
+        coordinator?.navigateToOptions(selectedOptionNames: selectedOptionNames)
     }
     
 }

@@ -36,11 +36,7 @@
 		CA038C012C43F8E90033CD30 /* Saira-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA038BFF2C43F8E90033CD30 /* Saira-Light.ttf */; };
 		CA038C022C43F8E90033CD30 /* Saira-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA038BFF2C43F8E90033CD30 /* Saira-Light.ttf */; };
 		CA038C042C4427190033CD30 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA038C032C4427180033CD30 /* LoginData.swift */; };
-		CA038C052C4427190033CD30 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA038C032C4427180033CD30 /* LoginData.swift */; };
-		CA038C062C4427190033CD30 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA038C032C4427180033CD30 /* LoginData.swift */; };
 		CA0FF3F22C456B4700B3CE08 /* UserSex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0FF3F12C456B4700B3CE08 /* UserSex.swift */; };
-		CA0FF3F32C456B4700B3CE08 /* UserSex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0FF3F12C456B4700B3CE08 /* UserSex.swift */; };
-		CA0FF3F42C456B4700B3CE08 /* UserSex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0FF3F12C456B4700B3CE08 /* UserSex.swift */; };
 		CA1EE8402C375AFF00E58403 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */; };
 		CA33B9BE2C3C6457000BFA4C /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA33B9BD2C3C6457000BFA4C /* FirebaseService.swift */; };
 		CA37E5672C3EF36C003ADAA8 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37E5662C3EF36C003ADAA8 /* SignupViewController.swift */; };
@@ -373,12 +369,8 @@
 		CA002E062C3192850053284B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CAE8F1552C52F1DE00355755 /* User */,
 				CAE8F1502C52DC7600355755 /* Option */,
-				CA37E56F2C3F25B4003ADAA8 /* RegistrationData.swift */,
-				CA038C032C4427180033CD30 /* LoginData.swift */,
-				CA0FF3F12C456B4700B3CE08 /* UserSex.swift */,
-				CAEB18E32C4D4971000FE4E5 /* UserData.swift */,
-				CAEB19142C4EE4C4000FE4E5 /* AlertContent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -660,12 +652,24 @@
 			path = Option;
 			sourceTree = "<group>";
 		};
+		CAE8F1552C52F1DE00355755 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				CAEB18E32C4D4971000FE4E5 /* UserData.swift */,
+				CA0FF3F12C456B4700B3CE08 /* UserSex.swift */,
+				CA038C032C4427180033CD30 /* LoginData.swift */,
+				CA37E56F2C3F25B4003ADAA8 /* RegistrationData.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		CAEB19032C4ED6D1000FE4E5 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
 				CAEB19042C4ED6DF000FE4E5 /* AlertViewController.swift */,
 				CAEB19082C4ED6E7000FE4E5 /* AlertCoordinator.swift */,
 				CAEB190C2C4ED71A000FE4E5 /* AlertViewModel.swift */,
+				CAEB19142C4EE4C4000FE4E5 /* AlertContent.swift */,
 				CAEB19102C4ED721000FE4E5 /* Alert.storyboard */,
 			);
 			path = Alert;
@@ -1031,10 +1035,8 @@
 				CA37E5872C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
 				CAEB191E2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift in Sources */,
 				CAEB19062C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */,
-				CA0FF3F32C456B4700B3CE08 /* UserSex.swift in Sources */,
 				CAEB190E2C4ED71A000FE4E5 /* AlertViewModel.swift in Sources */,
 				CAEB191A2C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */,
-				CA038C052C4427190033CD30 /* LoginData.swift in Sources */,
 				CA37E57F2C405731003ADAA8 /* TabBarViewModel.swift in Sources */,
 				CAEB190A2C4ED6E7000FE4E5 /* AlertCoordinator.swift in Sources */,
 				CAEB19162C4EE4C4000FE4E5 /* AlertContent.swift in Sources */,
@@ -1048,7 +1050,6 @@
 			files = (
 				CAEB191F2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift in Sources */,
 				CA37E5802C405731003ADAA8 /* TabBarViewModel.swift in Sources */,
-				CA0FF3F42C456B4700B3CE08 /* UserSex.swift in Sources */,
 				CA37E5882C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
 				CAEB191B2C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */,
 				CAEB190F2C4ED71A000FE4E5 /* AlertViewModel.swift in Sources */,
@@ -1057,7 +1058,6 @@
 				CA002DF92C318B110053284B /* PecodeTestTaskUITestsLaunchTests.swift in Sources */,
 				CAEB19172C4EE4C4000FE4E5 /* AlertContent.swift in Sources */,
 				CAEB190B2C4ED6E7000FE4E5 /* AlertCoordinator.swift in Sources */,
-				CA038C062C4427190033CD30 /* LoginData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
