@@ -108,6 +108,7 @@
 		CAE8F1492C52B8C500355755 /* OptionSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE8F1482C52B8C500355755 /* OptionSwitch.xib */; };
 		CAE8F14B2C52B8E800355755 /* OptionSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F14A2C52B8E800355755 /* OptionSwitch.swift */; };
 		CAE8F14D2C52C25F00355755 /* OptionsCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F14C2C52C25F00355755 /* OptionsCoordinatorDelegate.swift */; };
+		CAE8F1542C52DC8E00355755 /* OptionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F1532C52DC8E00355755 /* OptionData.swift */; };
 		CAEB18E42C4D4971000FE4E5 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB18E32C4D4971000FE4E5 /* UserData.swift */; };
 		CAEB18E62C4D71F4000FE4E5 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB18E52C4D71F4000FE4E5 /* UIImageView+Extensions.swift */; };
 		CAEB18E82C4D7759000FE4E5 /* ProfileViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB18E72C4D7759000FE4E5 /* ProfileViewController+Extensions.swift */; };
@@ -253,6 +254,7 @@
 		CAE8F1482C52B8C500355755 /* OptionSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionSwitch.xib; sourceTree = "<group>"; };
 		CAE8F14A2C52B8E800355755 /* OptionSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSwitch.swift; sourceTree = "<group>"; };
 		CAE8F14C2C52C25F00355755 /* OptionsCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		CAE8F1532C52DC8E00355755 /* OptionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionData.swift; sourceTree = "<group>"; };
 		CAEB18E32C4D4971000FE4E5 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		CAEB18E52C4D71F4000FE4E5 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		CAEB18E72C4D7759000FE4E5 /* ProfileViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -371,12 +373,12 @@
 		CA002E062C3192850053284B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CAE8F1502C52DC7600355755 /* Option */,
 				CA37E56F2C3F25B4003ADAA8 /* RegistrationData.swift */,
 				CA038C032C4427180033CD30 /* LoginData.swift */,
 				CA0FF3F12C456B4700B3CE08 /* UserSex.swift */,
 				CAEB18E32C4D4971000FE4E5 /* UserData.swift */,
 				CAEB19142C4EE4C4000FE4E5 /* AlertContent.swift */,
-				CA5D810E2C5183C500486145 /* OptionDataName.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -647,6 +649,15 @@
 				CAE8F1482C52B8C500355755 /* OptionSwitch.xib */,
 			);
 			path = OptionSwitch;
+			sourceTree = "<group>";
+		};
+		CAE8F1502C52DC7600355755 /* Option */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D810E2C5183C500486145 /* OptionDataName.swift */,
+				CAE8F1532C52DC8E00355755 /* OptionData.swift */,
+			);
+			path = Option;
 			sourceTree = "<group>";
 		};
 		CAEB19032C4ED6D1000FE4E5 /* Alert */ = {
@@ -967,6 +978,7 @@
 				CA5D81092C5178AD00486145 /* PopupTransitioningPresentationController.swift in Sources */,
 				CA5D81022C51785200486145 /* OptionsViewModel.swift in Sources */,
 				CAA18F132C3C18F200F888CD /* TabBarCoordinator.swift in Sources */,
+				CAE8F1542C52DC8E00355755 /* OptionData.swift in Sources */,
 				CAEB18E82C4D7759000FE4E5 /* ProfileViewController+Extensions.swift in Sources */,
 				CAA18EE92C39DFF600F888CD /* SplashCoordinator.swift in Sources */,
 				CA4FEC662C4C59B400988C5B /* ProfileViewController.swift in Sources */,

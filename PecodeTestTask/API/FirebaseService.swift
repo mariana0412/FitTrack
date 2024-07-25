@@ -191,6 +191,32 @@ class FirebaseService {
             }
     }
     
+    func updateUserOptions(_ options: [OptionData], completion: @escaping (FirebaseResponse<Void>) -> Void) {
+            let database = Firestore.firestore()
+            guard let currentUserId = getCurrentUserId() else {
+                completion(.unknown)
+                return
+            }
+
+            let optionsData = options.map { option -> [String: Any] in
+                return [
+                    "optionName": option.optionName.rawValue,
+                    "value": option.value as Any,
+                    "isShown": option.isShown as Any
+                ]
+            }
+            
+            database.collection("users").document(currentUserId).updateData([
+                "userOptions": optionsData
+            ]) { error in
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    completion(.success(nil))
+                }
+            }
+        }
+    
     private func getCurrentUserId() -> String? {
         Auth.auth().currentUser?.uid
     }
