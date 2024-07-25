@@ -40,7 +40,7 @@ class OptionSwitch: UIView {
         metricValue.font = Fonts.helveticaNeueMedium18
         metricValue.textColor = .secondaryGray
         
-        optionSwitch.isOn = isSwitchOn
+        optionSwitch.setOn(isSwitchOn, animated: false)
     }
     
 }
