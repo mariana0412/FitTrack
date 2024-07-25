@@ -79,7 +79,6 @@ class ProfileViewModel {
     }
     
     func navigateToOptions() {
-        print("in viewModel")
         coordinator?.navigateToOptions()
     }
     

@@ -19,14 +19,17 @@ class OptionsCoordinator: Coordinator {
         let optionsViewController = OptionsViewController.instantiate()
         optionsViewController.viewModel = OptionsViewModel(coordinator: self)
         
-        optionsViewController.modalPresentationStyle = .custom
         optionsViewController.transitioningDelegate = popupTransitioningDelegate
+        optionsViewController.modalPresentationStyle = .custom
         
-        navigationController.pushViewController(optionsViewController, animated: false)
+        navigationController.present(optionsViewController, animated: true)
+        
     }
     
     func navigateToProfile() {
-        navigationController.popViewController(animated: false)
+        if let presentedViewController = navigationController.presentedViewController {
+            presentedViewController.dismiss(animated: true, completion: nil)
+        }
     }
     
 }

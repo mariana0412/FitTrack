@@ -59,8 +59,6 @@ final class OptionsViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
-        
         popupView.layer.borderWidth = Constants.Popup.popupViewBorderWidth
         popupView.layer.cornerRadius = Constants.Popup.popupViewCornerRadius
         popupView.layer.borderColor = Constants.Popup.popupViewBorderColor
