@@ -7,7 +7,14 @@
 
 import UIKit
 
-final class ProfileViewController: BaseViewController {
+final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
+    func optionSwitchDidChange(_ optionSwitch: OptionSwitch) {
+        saveButton?.isEnabled = true
+    }
+    
+    func optionValueDidChange(_ optionSwitch: OptionSwitch, newValue: String) {
+        saveButton?.isEnabled = true
+    }
     
     private enum Constants {
         enum Layout {
@@ -53,7 +60,6 @@ final class ProfileViewController: BaseViewController {
             saveButton = saveButtonCustomView
             configureSaveButtonInitialState()
         }
-
     }
     
     static func instantiate() -> ProfileViewController {
@@ -95,7 +101,6 @@ final class ProfileViewController: BaseViewController {
     private func setupActions() {
         addOptionsButton.addTarget(self, action: #selector(addOptionsButtonTapped), for: .touchUpInside)
                 
-        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(tapGesture)
     }
@@ -109,6 +114,8 @@ final class ProfileViewController: BaseViewController {
     }
     
     @objc private func saveButtonTapped() {
+        guard validateOptions() else { return }
+        
         let editedName = name.textFieldText ?? ""
         let selectedImage = imageWasChanged ? profileImage.image : nil
         
@@ -120,6 +127,31 @@ final class ProfileViewController: BaseViewController {
                 self?.delegate?.profileDidUpdate()
             }
         }
+    }
+    
+    private func validateOptions() -> Bool {
+        var updatedOptions: [OptionData] = []
+        var isValid = true
+
+        optionsContainer.arrangedSubviews.enumerated().forEach { index, view in
+            if let optionSwitch = view as? OptionSwitch,
+               let optionName = OptionDataName(rawValue: optionSwitch.optionName) {
+                let value = Double(optionSwitch.optionValue ?? "") ?? 0.0
+                let isShown = optionSwitch.optionSwitch.isOn
+                updatedOptions.append(OptionData(optionName: optionName, value: value, isShown: isShown))
+                
+                if viewModel?.validateOption(optionName: optionName, value: optionSwitch.optionValue) != true {
+                    optionSwitch.setErrorState()
+                    isValid = false
+                } else {
+                    optionSwitch.setNormalState()
+                }
+            }
+        }
+
+        viewModel?.user?.selectedOptions = updatedOptions
+        
+        return isValid
     }
     
     @objc private func addOptionsButtonTapped() {
@@ -175,9 +207,8 @@ final class ProfileViewController: BaseViewController {
                                    value: optionValueString,
                                    metric: option.optionName.metricValue,
                                    isSwitchOn: option.isShown ?? false)
+            optionSwitch.delegate = self
             optionsContainer.addArrangedSubview(optionSwitch)
         }
     }
-    
 }
-

@@ -26,7 +26,7 @@ final class CustomSwitch: UIControl {
         }
     }
     
-    private var isOn: Bool = false
+    var isOn: Bool = false
     private let thumbView = UIView()
     
     private let onColor = Constants.Colors.primaryYellow

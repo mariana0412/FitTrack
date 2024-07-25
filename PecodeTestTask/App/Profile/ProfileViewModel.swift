@@ -23,7 +23,7 @@ class ProfileViewModel {
     
     private var coordinator: ProfileCoordinator?
     
-    private(set) var user: UserData?
+    var user: UserData?
     private(set) var backgroundImageName = ""
     var selectedOptionNames: [OptionDataName] = []
     
@@ -67,6 +67,19 @@ class ProfileViewModel {
     
     private func nameIsChanged(newName: String, oldName: String) -> Bool {
         (newName != oldName) && (newName.isEmpty != true)
+    }
+    
+    func validateOption(optionName: OptionDataName, value: String?) -> Bool {
+        guard let value, let valueDouble = Double(value) else { return false }
+        
+        switch optionName {
+        case .height:
+            return valueDouble <= 300
+        case .weight:
+            return valueDouble <= 300
+        default:
+            return valueDouble <= 100
+        }
     }
     
     func navigateToHome() {
