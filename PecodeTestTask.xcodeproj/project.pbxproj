@@ -36,11 +36,7 @@
 		CA038C012C43F8E90033CD30 /* Saira-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA038BFF2C43F8E90033CD30 /* Saira-Light.ttf */; };
 		CA038C022C43F8E90033CD30 /* Saira-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA038BFF2C43F8E90033CD30 /* Saira-Light.ttf */; };
 		CA038C042C4427190033CD30 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA038C032C4427180033CD30 /* LoginData.swift */; };
-		CA038C052C4427190033CD30 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA038C032C4427180033CD30 /* LoginData.swift */; };
-		CA038C062C4427190033CD30 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA038C032C4427180033CD30 /* LoginData.swift */; };
 		CA0FF3F22C456B4700B3CE08 /* UserSex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0FF3F12C456B4700B3CE08 /* UserSex.swift */; };
-		CA0FF3F32C456B4700B3CE08 /* UserSex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0FF3F12C456B4700B3CE08 /* UserSex.swift */; };
-		CA0FF3F42C456B4700B3CE08 /* UserSex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0FF3F12C456B4700B3CE08 /* UserSex.swift */; };
 		CA1EE8402C375AFF00E58403 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */; };
 		CA33B9BE2C3C6457000BFA4C /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA33B9BD2C3C6457000BFA4C /* FirebaseService.swift */; };
 		CA37E5672C3EF36C003ADAA8 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37E5662C3EF36C003ADAA8 /* SignupViewController.swift */; };
@@ -69,6 +65,15 @@
 		CA4FEC682C4C59BC00988C5B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FEC672C4C59BC00988C5B /* ProfileViewModel.swift */; };
 		CA4FEC6A2C4C59C300988C5B /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FEC692C4C59C300988C5B /* ProfileCoordinator.swift */; };
 		CA4FEC6C2C4C59CB00988C5B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA4FEC6B2C4C59CB00988C5B /* Profile.storyboard */; };
+		CA5D80FE2C51784100486145 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D80FD2C51784100486145 /* OptionsViewController.swift */; };
+		CA5D81002C51784900486145 /* OptionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D80FF2C51784900486145 /* OptionsCoordinator.swift */; };
+		CA5D81022C51785200486145 /* OptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D81012C51785200486145 /* OptionsViewModel.swift */; };
+		CA5D81042C51785A00486145 /* Options.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA5D81032C51785A00486145 /* Options.storyboard */; };
+		CA5D81082C5178AD00486145 /* PopupTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D81062C5178AD00486145 /* PopupTransitioningDelegate.swift */; };
+		CA5D81092C5178AD00486145 /* PopupTransitioningPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D81072C5178AD00486145 /* PopupTransitioningPresentationController.swift */; };
+		CA5D810C2C5181E300486145 /* OptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5D810B2C5181E300486145 /* OptionCell.xib */; };
+		CA5D810D2C5181E300486145 /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D810A2C5181E300486145 /* OptionCell.swift */; };
+		CA5D810F2C5183C500486145 /* OptionDataName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D810E2C5183C500486145 /* OptionDataName.swift */; };
 		CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */; };
 		CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */; };
 		CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */; };
@@ -95,6 +100,11 @@
 		CAA18F1B2C3C554400F888CD /* GradientUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F1A2C3C554400F888CD /* GradientUtils.swift */; };
 		CAA18F1D2C3C56F700F888CD /* OverlayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F1C2C3C56F700F888CD /* OverlayUtils.swift */; };
 		CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */; };
+		CAE8F1462C52973A00355755 /* OptionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */; };
+		CAE8F1492C52B8C500355755 /* OptionSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE8F1482C52B8C500355755 /* OptionSwitch.xib */; };
+		CAE8F14B2C52B8E800355755 /* OptionSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F14A2C52B8E800355755 /* OptionSwitch.swift */; };
+		CAE8F14D2C52C25F00355755 /* OptionsCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F14C2C52C25F00355755 /* OptionsCoordinatorDelegate.swift */; };
+		CAE8F1542C52DC8E00355755 /* OptionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F1532C52DC8E00355755 /* OptionData.swift */; };
 		CAEB18E42C4D4971000FE4E5 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB18E32C4D4971000FE4E5 /* UserData.swift */; };
 		CAEB18E62C4D71F4000FE4E5 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB18E52C4D71F4000FE4E5 /* UIImageView+Extensions.swift */; };
 		CAEB18E82C4D7759000FE4E5 /* ProfileViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB18E72C4D7759000FE4E5 /* ProfileViewController+Extensions.swift */; };
@@ -201,6 +211,15 @@
 		CA4FEC672C4C59BC00988C5B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		CA4FEC692C4C59C300988C5B /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		CA4FEC6B2C4C59CB00988C5B /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		CA5D80FD2C51784100486145 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		CA5D80FF2C51784900486145 /* OptionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCoordinator.swift; sourceTree = "<group>"; };
+		CA5D81012C51785200486145 /* OptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewModel.swift; sourceTree = "<group>"; };
+		CA5D81032C51785A00486145 /* Options.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Options.storyboard; sourceTree = "<group>"; };
+		CA5D81062C5178AD00486145 /* PopupTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupTransitioningDelegate.swift; sourceTree = "<group>"; };
+		CA5D81072C5178AD00486145 /* PopupTransitioningPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupTransitioningPresentationController.swift; sourceTree = "<group>"; };
+		CA5D810A2C5181E300486145 /* OptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
+		CA5D810B2C5181E300486145 /* OptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionCell.xib; sourceTree = "<group>"; };
+		CA5D810E2C5183C500486145 /* OptionDataName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDataName.swift; sourceTree = "<group>"; };
 		CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextFieldView.xib; sourceTree = "<group>"; };
 		CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -227,6 +246,11 @@
 		CAA18F1A2C3C554400F888CD /* GradientUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientUtils.swift; sourceTree = "<group>"; };
 		CAA18F1C2C3C56F700F888CD /* OverlayUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayUtils.swift; sourceTree = "<group>"; };
 		CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCellDelegate.swift; sourceTree = "<group>"; };
+		CAE8F1482C52B8C500355755 /* OptionSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionSwitch.xib; sourceTree = "<group>"; };
+		CAE8F14A2C52B8E800355755 /* OptionSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSwitch.swift; sourceTree = "<group>"; };
+		CAE8F14C2C52C25F00355755 /* OptionsCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		CAE8F1532C52DC8E00355755 /* OptionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionData.swift; sourceTree = "<group>"; };
 		CAEB18E32C4D4971000FE4E5 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		CAEB18E52C4D71F4000FE4E5 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		CAEB18E72C4D7759000FE4E5 /* ProfileViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -345,11 +369,8 @@
 		CA002E062C3192850053284B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CA37E56F2C3F25B4003ADAA8 /* RegistrationData.swift */,
-				CA038C032C4427180033CD30 /* LoginData.swift */,
-				CA0FF3F12C456B4700B3CE08 /* UserSex.swift */,
-				CAEB18E32C4D4971000FE4E5 /* UserData.swift */,
-				CAEB19142C4EE4C4000FE4E5 /* AlertContent.swift */,
+				CAE8F1552C52F1DE00355755 /* User */,
+				CAE8F1502C52DC7600355755 /* Option */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -368,6 +389,7 @@
 		CA002E092C3192C60053284B /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CA5D80FC2C51783000486145 /* Options */,
 				CA4FEC642C4C593E00988C5B /* Profile */,
 				CA465A792C47D8C5003E7217 /* ForgotPassword */,
 				CA457E052C42BBEA0031FDFA /* Login */,
@@ -389,6 +411,7 @@
 		CA002E0A2C3192DE0053284B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				CA5D81052C51789700486145 /* PopupTransition */,
 				CAA18F162C3C3B6600F888CD /* TabBar */,
 				CA002E0D2C319BC10053284B /* BaseViewController.swift */,
 				CA002E112C319C110053284B /* Coordinator.swift */,
@@ -417,6 +440,7 @@
 		CA002E2D2C36E80E0053284B /* UI-Components */ = {
 			isa = PBXGroup;
 			children = (
+				CAE8F1472C52B89C00355755 /* OptionSwitch */,
 				CA002E2E2C36E81F0053284B /* CustomUIComponent.swift */,
 				CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */,
 				CA002E3A2C3701FE0053284B /* CustomButton.swift */,
@@ -488,6 +512,28 @@
 				CAEB191C2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		CA5D80FC2C51783000486145 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				CAE8F1442C52972900355755 /* OptionCell */,
+				CA5D80FD2C51784100486145 /* OptionsViewController.swift */,
+				CA5D80FF2C51784900486145 /* OptionsCoordinator.swift */,
+				CA5D81012C51785200486145 /* OptionsViewModel.swift */,
+				CA5D81032C51785A00486145 /* Options.storyboard */,
+				CAE8F14C2C52C25F00355755 /* OptionsCoordinatorDelegate.swift */,
+			);
+			path = Options;
+			sourceTree = "<group>";
+		};
+		CA5D81052C51789700486145 /* PopupTransition */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D81062C5178AD00486145 /* PopupTransitioningDelegate.swift */,
+				CA5D81072C5178AD00486145 /* PopupTransitioningPresentationController.swift */,
+			);
+			path = PopupTransition;
 			sourceTree = "<group>";
 		};
 		CAA18EE02C37F97900F888CD /* Extensions */ = {
@@ -578,12 +624,52 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		CAE8F1442C52972900355755 /* OptionCell */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D810A2C5181E300486145 /* OptionCell.swift */,
+				CA5D810B2C5181E300486145 /* OptionCell.xib */,
+				CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */,
+			);
+			path = OptionCell;
+			sourceTree = "<group>";
+		};
+		CAE8F1472C52B89C00355755 /* OptionSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				CAE8F14A2C52B8E800355755 /* OptionSwitch.swift */,
+				CAE8F1482C52B8C500355755 /* OptionSwitch.xib */,
+			);
+			path = OptionSwitch;
+			sourceTree = "<group>";
+		};
+		CAE8F1502C52DC7600355755 /* Option */ = {
+			isa = PBXGroup;
+			children = (
+				CA5D810E2C5183C500486145 /* OptionDataName.swift */,
+				CAE8F1532C52DC8E00355755 /* OptionData.swift */,
+			);
+			path = Option;
+			sourceTree = "<group>";
+		};
+		CAE8F1552C52F1DE00355755 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				CAEB18E32C4D4971000FE4E5 /* UserData.swift */,
+				CA0FF3F12C456B4700B3CE08 /* UserSex.swift */,
+				CA038C032C4427180033CD30 /* LoginData.swift */,
+				CA37E56F2C3F25B4003ADAA8 /* RegistrationData.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		CAEB19032C4ED6D1000FE4E5 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
 				CAEB19042C4ED6DF000FE4E5 /* AlertViewController.swift */,
 				CAEB19082C4ED6E7000FE4E5 /* AlertCoordinator.swift */,
 				CAEB190C2C4ED71A000FE4E5 /* AlertViewModel.swift */,
+				CAEB19142C4EE4C4000FE4E5 /* AlertContent.swift */,
 				CAEB19102C4ED721000FE4E5 /* Alert.storyboard */,
 			);
 			path = Alert;
@@ -709,10 +795,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA038C002C43F8E90033CD30 /* Saira-Light.ttf in Resources */,
+				CA5D81042C51785A00486145 /* Options.storyboard in Resources */,
 				CA002DDF2C318B110053284B /* Assets.xcassets in Resources */,
 				CA457E0D2C42BC360031FDFA /* Login.storyboard in Resources */,
 				CA002E242C319F560053284B /* .gitignore in Resources */,
 				CA002DE22C318B110053284B /* Base in Resources */,
+				CAE8F1492C52B8C500355755 /* OptionSwitch.xib in Resources */,
 				CAA18EEB2C3ADC2C00F888CD /* Saira-Regular.ttf in Resources */,
 				CA002E1A2C319C860053284B /* Home.storyboard in Resources */,
 				CA4FEC6C2C4C59CB00988C5B /* Profile.storyboard in Resources */,
@@ -723,6 +811,7 @@
 				CA37E5822C40573D003ADAA8 /* TabBar.storyboard in Resources */,
 				CAA18F112C3C159C00F888CD /* Muscles.storyboard in Resources */,
 				CA465A812C47E26F003E7217 /* ForgotPassword.storyboard in Resources */,
+				CA5D810C2C5181E300486145 /* OptionCell.xib in Resources */,
 				CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */,
 				CA038BF62C4316300033CD30 /* Saira-Medium.ttf in Resources */,
 				CAA18EE52C39DF9400F888CD /* Splash.storyboard in Resources */,
@@ -869,6 +958,9 @@
 				CA002E372C36F8D00053284B /* CustomRadiobutton.swift in Sources */,
 				CA002E352C36F8430053284B /* CustomToggleButton.swift in Sources */,
 				CAEB18FC2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift in Sources */,
+				CA5D81082C5178AD00486145 /* PopupTransitioningDelegate.swift in Sources */,
+				CAE8F14B2C52B8E800355755 /* OptionSwitch.swift in Sources */,
+				CAE8F1462C52973A00355755 /* OptionCellDelegate.swift in Sources */,
 				CA002E0E2C319BC10053284B /* BaseViewController.swift in Sources */,
 				CAEB19152C4EE4C4000FE4E5 /* AlertContent.swift in Sources */,
 				CA465A7F2C47E25A003E7217 /* ForgotPasswordViewModel.swift in Sources */,
@@ -887,7 +979,10 @@
 				CAA18F0D2C3C158700F888CD /* MusclesViewModel.swift in Sources */,
 				CA37E5862C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
 				CAEB19192C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */,
+				CA5D81092C5178AD00486145 /* PopupTransitioningPresentationController.swift in Sources */,
+				CA5D81022C51785200486145 /* OptionsViewModel.swift in Sources */,
 				CAA18F132C3C18F200F888CD /* TabBarCoordinator.swift in Sources */,
+				CAE8F1542C52DC8E00355755 /* OptionData.swift in Sources */,
 				CAEB18E82C4D7759000FE4E5 /* ProfileViewController+Extensions.swift in Sources */,
 				CAA18EE92C39DFF600F888CD /* SplashCoordinator.swift in Sources */,
 				CA4FEC662C4C59B400988C5B /* ProfileViewController.swift in Sources */,
@@ -895,19 +990,24 @@
 				CAA18F1D2C3C56F700F888CD /* OverlayUtils.swift in Sources */,
 				CAA18F0F2C3C159300F888CD /* MusclesCoordinator.swift in Sources */,
 				CAA18EFD2C3C133800F888CD /* ProgressCoordinator.swift in Sources */,
+				CA5D80FE2C51784100486145 /* OptionsViewController.swift in Sources */,
 				CAA18F052C3C148200F888CD /* CalculatorViewController.swift in Sources */,
 				CA002E3B2C3701FE0053284B /* CustomButton.swift in Sources */,
+				CA5D81002C51784900486145 /* OptionsCoordinator.swift in Sources */,
 				CA0FF3F22C456B4700B3CE08 /* UserSex.swift in Sources */,
 				CA457E092C42BC220031FDFA /* LoginCoordinator.swift in Sources */,
 				CA37E56B2C3EF37F003ADAA8 /* SignupViewModel.swift in Sources */,
+				CA5D810F2C5183C500486145 /* OptionDataName.swift in Sources */,
 				CA002E2F2C36E81F0053284B /* CustomUIComponent.swift in Sources */,
 				CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */,
 				CA465A7B2C47E238003E7217 /* ForgotPasswordViewController.swift in Sources */,
 				CAEB19052C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */,
+				CA5D810D2C5181E300486145 /* OptionCell.swift in Sources */,
 				CA002E182C319C7A0053284B /* HomeViewModel.swift in Sources */,
 				CA002DD62C318B0F0053284B /* AppDelegate.swift in Sources */,
 				CA37E5702C3F25B4003ADAA8 /* RegistrationData.swift in Sources */,
 				CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */,
+				CAE8F14D2C52C25F00355755 /* OptionsCoordinatorDelegate.swift in Sources */,
 				CA002E262C31A0830053284B /* AppCoordinator.swift in Sources */,
 				CA457E072C42BBF80031FDFA /* LoginViewController.swift in Sources */,
 				CAEB191D2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift in Sources */,
@@ -935,10 +1035,8 @@
 				CA37E5872C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
 				CAEB191E2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift in Sources */,
 				CAEB19062C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */,
-				CA0FF3F32C456B4700B3CE08 /* UserSex.swift in Sources */,
 				CAEB190E2C4ED71A000FE4E5 /* AlertViewModel.swift in Sources */,
 				CAEB191A2C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */,
-				CA038C052C4427190033CD30 /* LoginData.swift in Sources */,
 				CA37E57F2C405731003ADAA8 /* TabBarViewModel.swift in Sources */,
 				CAEB190A2C4ED6E7000FE4E5 /* AlertCoordinator.swift in Sources */,
 				CAEB19162C4EE4C4000FE4E5 /* AlertContent.swift in Sources */,
@@ -952,7 +1050,6 @@
 			files = (
 				CAEB191F2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift in Sources */,
 				CA37E5802C405731003ADAA8 /* TabBarViewModel.swift in Sources */,
-				CA0FF3F42C456B4700B3CE08 /* UserSex.swift in Sources */,
 				CA37E5882C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
 				CAEB191B2C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */,
 				CAEB190F2C4ED71A000FE4E5 /* AlertViewModel.swift in Sources */,
@@ -961,7 +1058,6 @@
 				CA002DF92C318B110053284B /* PecodeTestTaskUITestsLaunchTests.swift in Sources */,
 				CAEB19172C4EE4C4000FE4E5 /* AlertContent.swift in Sources */,
 				CAEB190B2C4ED6E7000FE4E5 /* AlertCoordinator.swift in Sources */,
-				CA038C062C4427190033CD30 /* LoginData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

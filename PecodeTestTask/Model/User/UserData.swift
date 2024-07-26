@@ -13,4 +13,5 @@ struct UserData {
     var userName: String
     let sex: UserSex
     var profileImage: Data? = nil
+    var selectedOptions: [OptionData]
 }

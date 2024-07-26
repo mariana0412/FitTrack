@@ -18,6 +18,7 @@ struct StoryboardConstants {
     static let forgotPassword = "ForgotPassword"
     static let profile = "Profile"
     static let alert = "Alert"
+    static let options = "Options"
 }
 
 struct ViewControllerIdentifiers {
@@ -31,6 +32,7 @@ struct ViewControllerIdentifiers {
     static let forgotPasswordViewController = "ForgotPasswordViewController"
     static let profileViewController = "ProfileViewController"
     static let alertViewController = "AlertViewController"
+    static let optionsViewController = "OptionsViewController"
 }
 
 struct Fonts {
@@ -42,5 +44,6 @@ struct Fonts {
     static let sairaMedium18 = UIFont(name: "Saira-Medium", size: 18)
     static let sairaLight16 = UIFont(name: "Saira-Light", size: 16)
     static let helveticaNeue18 = UIFont(name: "Helvetica Neue", size: 18)
+    static let helveticaNeueMedium18 = UIFont(name: "Helvetica Neue-Medium", size: 18)
     static let helveticaNeue16 = UIFont(name: "Helvetica Neue", size: 16)
 }

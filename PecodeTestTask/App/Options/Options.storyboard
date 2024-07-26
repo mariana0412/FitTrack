@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Options View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="OptionsViewController" id="Y6W-OH-hqX" customClass="OptionsViewController" customModule="PecodeTestTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ga6-8p-Sv9">
+                                <rect key="frame" x="32.666666666666657" y="98" width="328" height="656"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1s-Gc-BW9" userLabel="Select Option Label">
+                                        <rect key="frame" x="112" y="19" width="103.66666666666669" height="28"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBB-Se-XIl" userLabel="Buttons Stack View">
+                                        <rect key="frame" x="0.0" y="600" width="328" height="56"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQh-ya-fjx" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="164" height="56"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonStyle">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="Cancel"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rtn-ow-eYF" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
+                                                <rect key="frame" x="164" y="0.0" width="164" height="56"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonStyle">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="Select"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="4vn-B9-vXQ"/>
+                                        </constraints>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EsN-Sy-kCm">
+                                        <rect key="frame" x="20" y="67" width="288" height="522"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="288" id="IoU-hX-9gG"/>
+                                            <constraint firstAttribute="height" constant="522" id="lgS-rN-iJK"/>
+                                        </constraints>
+                                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <sections/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="IBB-Se-XIl" firstAttribute="leading" secondItem="Ga6-8p-Sv9" secondAttribute="leading" id="2Xs-8r-W2F"/>
+                                    <constraint firstItem="q1s-Gc-BW9" firstAttribute="centerX" secondItem="Ga6-8p-Sv9" secondAttribute="centerX" id="4DX-Ze-YhT"/>
+                                    <constraint firstAttribute="width" constant="328" id="J2Z-wC-mc2"/>
+                                    <constraint firstAttribute="bottom" secondItem="IBB-Se-XIl" secondAttribute="bottom" id="Mgw-N3-q9r"/>
+                                    <constraint firstItem="EsN-Sy-kCm" firstAttribute="centerY" secondItem="Ga6-8p-Sv9" secondAttribute="centerY" id="Si5-sN-477"/>
+                                    <constraint firstAttribute="height" constant="656" id="ZIa-1k-MOl"/>
+                                    <constraint firstItem="EsN-Sy-kCm" firstAttribute="centerX" secondItem="Ga6-8p-Sv9" secondAttribute="centerX" id="dVu-WG-wxn"/>
+                                    <constraint firstItem="IBB-Se-XIl" firstAttribute="top" secondItem="EsN-Sy-kCm" secondAttribute="bottom" id="ihQ-sO-a4n"/>
+                                    <constraint firstAttribute="trailing" secondItem="IBB-Se-XIl" secondAttribute="trailing" id="nDe-tT-Xk9"/>
+                                    <constraint firstItem="EsN-Sy-kCm" firstAttribute="top" secondItem="q1s-Gc-BW9" secondAttribute="bottom" constant="20" id="vXH-fD-f5A"/>
+                                    <constraint firstItem="q1s-Gc-BW9" firstAttribute="top" secondItem="Ga6-8p-Sv9" secondAttribute="top" constant="19" id="wYI-p4-Io7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ga6-8p-Sv9" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="3FK-1k-n1F"/>
+                            <constraint firstItem="Ga6-8p-Sv9" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="9Zn-Pq-tI1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addOptionsLabel" destination="q1s-Gc-BW9" id="pcv-pI-Rjp"/>
+                        <outlet property="cancelButton" destination="PQh-ya-fjx" id="lS4-xd-X5r"/>
+                        <outlet property="popupView" destination="Ga6-8p-Sv9" id="xNK-tR-OJ2"/>
+                        <outlet property="selectButton" destination="Rtn-ow-eYF" id="Jwu-vA-poJ"/>
+                        <outlet property="tableView" destination="EsN-Sy-kCm" id="bbh-AV-XOg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57" y="-34"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="PQh-ya-fjx">
+            <size key="intrinsicContentSize" width="76.666666666666671" height="34.333333333333336"/>
+        </designable>
+        <designable name="Rtn-ow-eYF">
+            <size key="intrinsicContentSize" width="72" height="34.333333333333336"/>
+        </designable>
+    </designables>
+</document>

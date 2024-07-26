@@ -35,4 +35,20 @@ class ProfileCoordinator: Coordinator {
         alertCoordinator.start()
     }
     
+    func navigateToOptions(selectedOptionNames: [OptionDataName]) {
+        let optionsCoordinator = OptionsCoordinator(navigationController: navigationController,
+                                                    selectedOptionNames: selectedOptionNames)
+        optionsCoordinator.delegate = self
+        optionsCoordinator.start()
+    }
+    
+}
+
+extension ProfileCoordinator: OptionsCoordinatorDelegate {
+    func didSelectOptions(_ optionNames: [OptionDataName]) {
+        if let profileViewController = navigationController.viewControllers.last as? ProfileViewController {
+            profileViewController.viewModel?.filterAndUpdateOptions(with: optionNames)
+            profileViewController.updateSelectedOptions()
+        }
+    }
 }

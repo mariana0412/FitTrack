@@ -26,6 +26,12 @@ class AppCoordinator: Coordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         
+        let userOptions: [OptionData] = [
+            OptionData(optionName: OptionDataName.height, value: 170, isShown: true),
+            OptionData(optionName: OptionDataName.weight, value: 50, isShown: true),
+            OptionData(optionName: OptionDataName.neck, value: 10, isShown: true)
+        ]
+
         // for testing purposes
 //        do {
 //            try Auth.auth().signOut()

@@ -109,7 +109,7 @@ class FirebaseService {
         userRef.getDocument { document, error in
             if let error = error {
                 completion(.failure(error))
-            } else if let document = document, 
+            } else if let document = document,
                         document.exists,
                         let data = document.data() {
                 let email = data["email"] as? String ?? ""
@@ -119,11 +119,27 @@ class FirebaseService {
                 let sex = UserSex(rawValue: sexString) ?? .unknown
                 let profileImage = data["profileImage"] as? Data
                 
+                let userOptions = (data["userOptions"] as? [[String: Any]])?.compactMap { optionDict -> OptionData? in
+                    guard let optionName = optionDict["optionName"] as? String,
+                          let isShown = optionDict["isShown"] as? Bool,
+                          let value = optionDict["value"] as? Double else {
+                        return nil
+                    }
+                    if let optionDataName = OptionDataName(rawValue: optionName) {
+                        return OptionData(optionName: optionDataName,
+                                          value: value, 
+                                          isShown: isShown)
+                    } else {
+                        return nil
+                    }
+                }
+                
                 let registrationData = UserData(email: email,
                                                 id: id,
                                                 userName: userName,
                                                 sex: sex,
-                                                profileImage: profileImage)
+                                                profileImage: profileImage,
+                                                selectedOptions: userOptions ?? [])
                 completion(.success(registrationData))
             } else {
                 completion(.unknown)
@@ -163,7 +179,7 @@ class FirebaseService {
         }
     }
     
-    func updateUserProfile(newName: String?, newImage: Data?, completion: @escaping (FirebaseResponse<Void>) -> Void) {
+    func updateUserProfile(newName: String?, newImage: Data?, newOptions: [OptionData]?, completion: @escaping (FirebaseResponse<UserData?>) -> Void) {
         let database = Firestore.firestore()
         guard let currentUserId = getCurrentUserId() else {
             completion(.unknown)
@@ -171,6 +187,7 @@ class FirebaseService {
         }
         
         var updateData: [String: Any] = [:]
+        
         if let newName {
             updateData["userName"] = newName
         }
@@ -178,7 +195,18 @@ class FirebaseService {
         if let newImage {
             updateData["profileImage"] = newImage
         }
-
+        
+        if let newOptions {
+            let optionsData = newOptions.map { option -> [String: Any] in
+                return [
+                    "optionName": option.optionName.rawValue,
+                    "value": option.value as Any,
+                    "isShown": option.isShown as Any
+                ]
+            }
+            updateData["userOptions"] = optionsData
+        }
+        
         database
             .collection("users")
             .document(currentUserId)
@@ -186,7 +214,9 @@ class FirebaseService {
                 if let error = error {
                     completion(.failure(error))
                 } else {
-                    completion(.success(nil))
+                    self.getUser { userResponse in
+                        completion(userResponse)
+                    }
                 }
             }
     }

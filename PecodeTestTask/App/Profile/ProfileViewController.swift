@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ProfileViewController: BaseViewController {
+final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
     
     private enum Constants {
         enum Layout {
@@ -18,6 +18,7 @@ final class ProfileViewController: BaseViewController {
     @IBOutlet private weak var profileImage: UIImageView!
     @IBOutlet private weak var name: CustomTextFieldView!
     @IBOutlet private weak var instruction: UILabel!
+    @IBOutlet weak var optionsContainer: UIStackView!
     @IBOutlet private weak var addOptionsButton: CustomButton!
     
     private var saveButton: UIButton?
@@ -31,6 +32,7 @@ final class ProfileViewController: BaseViewController {
         setupUI()
         setupActions()
         setupImagePicker()
+        updateSelectedOptions()
         
         name.textField.delegate = self
     }
@@ -51,7 +53,6 @@ final class ProfileViewController: BaseViewController {
             saveButton = saveButtonCustomView
             configureSaveButtonInitialState()
         }
-
     }
     
     static func instantiate() -> ProfileViewController {
@@ -91,6 +92,8 @@ final class ProfileViewController: BaseViewController {
     }
     
     private func setupActions() {
+        addOptionsButton.addTarget(self, action: #selector(addOptionsButtonTapped), for: .touchUpInside)
+                
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(tapGesture)
     }
@@ -104,6 +107,8 @@ final class ProfileViewController: BaseViewController {
     }
     
     @objc private func saveButtonTapped() {
+        guard validateOptions() else { return }
+        
         let editedName = name.textFieldText ?? ""
         let selectedImage = imageWasChanged ? profileImage.image : nil
         
@@ -117,6 +122,35 @@ final class ProfileViewController: BaseViewController {
         }
     }
     
+    private func validateOptions() -> Bool {
+        var updatedOptions: [OptionData] = []
+        var isValid = true
+
+        optionsContainer.arrangedSubviews.enumerated().forEach { index, view in
+            if let optionSwitch = view as? OptionSwitch,
+               let optionName = OptionDataName(rawValue: optionSwitch.optionName) {
+                let value = Double(optionSwitch.optionValue ?? "") ?? 0.0
+                let isShown = optionSwitch.optionSwitch.isOn
+                updatedOptions.append(OptionData(optionName: optionName, value: value, isShown: isShown))
+                
+                if viewModel?.validateOption(optionName: optionName, value: optionSwitch.optionValue) != true {
+                    optionSwitch.setErrorState()
+                    isValid = false
+                } else {
+                    optionSwitch.setNormalState()
+                }
+            }
+        }
+
+        viewModel?.selectedOptions = updatedOptions
+        
+        return isValid
+    }
+    
+    @objc private func addOptionsButtonTapped() {
+        viewModel?.navigateToOptions()
+    }
+
     private func setupImagePicker() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(profileImageTapped))
         profileImage.isUserInteractionEnabled = true
@@ -129,12 +163,63 @@ final class ProfileViewController: BaseViewController {
     
     func setSelectedImage(_ selectedImage: UIImage) {
         profileImage.setImageWithBorder(image: selectedImage)
-        saveButton?.isEnabled = true
+        enableSaveButton()
         imageWasChanged = true
     }
     
     func updateSaveButtonState(newName: String) {
-        saveButton?.isEnabled = viewModel?.nameIsChanged(newName: newName) == true
+        if viewModel?.selectedOptionsChanged() == false {
+            saveButton?.isEnabled = viewModel?.nameIsChanged(newName: newName) == true
+        }
     }
     
+    func updateSelectedOptions() {
+        updateState()
+    }
+    
+    private func updateState() {
+        let hasSelectedOptions = viewModel?.selectedOptions.count ?? 0 > 0
+        instruction.isHidden = hasSelectedOptions
+        optionsContainer.isHidden = !hasSelectedOptions
+        
+        if hasSelectedOptions {
+            updateOptions()
+        }
+        let optionsChanged = viewModel?.selectedOptionsChanged() ?? false
+        if optionsChanged {
+            enableSaveButton()
+        }
+    }
+    
+    private func updateOptions() {
+        optionsContainer.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        
+        viewModel?.selectedOptions.forEach { option in
+            let optionSwitch = OptionSwitch()
+            
+            var optionValueString = ""
+            if let optionValue = option.value {
+                optionValueString = String(optionValue)
+            }
+            
+            optionSwitch.configure(optionName: option.optionName.rawValue,
+                                   value: optionValueString,
+                                   metric: option.optionName.metricValue,
+                                   isSwitchOn: option.isShown ?? false)
+            optionSwitch.delegate = self
+            optionsContainer.addArrangedSubview(optionSwitch)
+        }
+    }
+    
+    func optionSwitchDidChange(_ optionSwitch: OptionSwitch) {
+        enableSaveButton()
+    }
+    
+    func optionValueDidChange(_ optionSwitch: OptionSwitch, newValue: String) {
+        enableSaveButton()
+    }
+    
+    private func enableSaveButton() {
+        saveButton?.isEnabled = true
+    }
 }
