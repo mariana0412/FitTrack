@@ -168,7 +168,9 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
     }
     
     func updateSaveButtonState(newName: String) {
-        saveButton?.isEnabled = viewModel?.nameIsChanged(newName: newName) == true
+        if viewModel?.selectedOptionsChanged() == false {
+            saveButton?.isEnabled = viewModel?.nameIsChanged(newName: newName) == true
+        }
     }
     
     func updateSelectedOptions() {
