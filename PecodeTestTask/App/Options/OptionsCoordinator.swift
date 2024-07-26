@@ -32,6 +32,10 @@ class OptionsCoordinator: Coordinator {
     
     func navigateToProfile(with options: [OptionDataName]) {
         delegate?.didSelectOptions(options)
+        navigateToProfile()
+    }
+    
+    func navigateToProfile() {
         navigationController.dismiss(animated: true)
     }
     

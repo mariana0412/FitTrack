@@ -179,7 +179,7 @@ class FirebaseService {
         }
     }
     
-    func updateUserProfile(newName: String?, newImage: Data?, completion: @escaping (FirebaseResponse<Void>) -> Void) {
+    func updateUserProfile(newName: String?, newImage: Data?, newOptions: [OptionData]?, completion: @escaping (FirebaseResponse<UserData?>) -> Void) {
         let database = Firestore.firestore()
         guard let currentUserId = getCurrentUserId() else {
             completion(.unknown)
@@ -187,6 +187,7 @@ class FirebaseService {
         }
         
         var updateData: [String: Any] = [:]
+        
         if let newName {
             updateData["userName"] = newName
         }
@@ -194,7 +195,18 @@ class FirebaseService {
         if let newImage {
             updateData["profileImage"] = newImage
         }
-
+        
+        if let newOptions {
+            let optionsData = newOptions.map { option -> [String: Any] in
+                return [
+                    "optionName": option.optionName.rawValue,
+                    "value": option.value as Any,
+                    "isShown": option.isShown as Any
+                ]
+            }
+            updateData["userOptions"] = optionsData
+        }
+        
         database
             .collection("users")
             .document(currentUserId)
@@ -202,36 +214,12 @@ class FirebaseService {
                 if let error = error {
                     completion(.failure(error))
                 } else {
-                    completion(.success(nil))
+                    self.getUser { userResponse in
+                        completion(userResponse)
+                    }
                 }
             }
     }
-    
-    func updateUserOptions(_ options: [OptionData], completion: @escaping (FirebaseResponse<Void>) -> Void) {
-            let database = Firestore.firestore()
-            guard let currentUserId = getCurrentUserId() else {
-                completion(.unknown)
-                return
-            }
-
-            let optionsData = options.map { option -> [String: Any] in
-                return [
-                    "optionName": option.optionName.rawValue,
-                    "value": option.value as Any,
-                    "isShown": option.isShown as Any
-                ]
-            }
-            
-            database.collection("users").document(currentUserId).updateData([
-                "userOptions": optionsData
-            ]) { error in
-                if let error = error {
-                    completion(.failure(error))
-                } else {
-                    completion(.success(nil))
-                }
-            }
-        }
     
     private func getCurrentUserId() -> String? {
         Auth.auth().currentUser?.uid

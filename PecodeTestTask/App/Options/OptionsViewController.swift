@@ -30,6 +30,8 @@ final class OptionsViewController: UIViewController {
     
     var viewModel: OptionsViewModel?
     
+    private var optionsChanged = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -86,6 +88,7 @@ final class OptionsViewController: UIViewController {
         guard let option = viewModel?.options[indexPath.row] else { return }
         
         viewModel?.handleOptionSelection(for: option)
+        optionsChanged = true
         
         tableView.reloadRows(at: [indexPath], with: .automatic)
     }
@@ -95,7 +98,11 @@ final class OptionsViewController: UIViewController {
     }
     
     @objc private func selectButtonTapped() {
-        viewModel?.navigateToProfile()
+        if optionsChanged {
+            viewModel?.navigateToProfileWithChanges()
+        } else {
+            viewModel?.navigateToProfile()
+        }
     }
     
 }

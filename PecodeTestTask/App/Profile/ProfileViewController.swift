@@ -8,13 +8,6 @@
 import UIKit
 
 final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
-    func optionSwitchDidChange(_ optionSwitch: OptionSwitch) {
-        saveButton?.isEnabled = true
-    }
-    
-    func optionValueDidChange(_ optionSwitch: OptionSwitch, newValue: String) {
-        saveButton?.isEnabled = true
-    }
     
     private enum Constants {
         enum Layout {
@@ -149,7 +142,7 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
             }
         }
 
-        viewModel?.user?.selectedOptions = updatedOptions
+        viewModel?.selectedOptions = updatedOptions
         
         return isValid
     }
@@ -170,7 +163,7 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
     
     func setSelectedImage(_ selectedImage: UIImage) {
         profileImage.setImageWithBorder(image: selectedImage)
-        saveButton?.isEnabled = true
+        enableSaveButton()
         imageWasChanged = true
     }
     
@@ -183,19 +176,23 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
     }
     
     private func updateState() {
-        let hasSelectedOptions = viewModel?.user?.selectedOptions.count ?? 0 > 0
+        let hasSelectedOptions = viewModel?.selectedOptions.count ?? 0 > 0
         instruction.isHidden = hasSelectedOptions
         optionsContainer.isHidden = !hasSelectedOptions
         
         if hasSelectedOptions {
             updateOptions()
         }
+        let optionsChanged = viewModel?.selectedOptionsChanged() ?? false
+        if optionsChanged {
+            enableSaveButton()
+        }
     }
     
     private func updateOptions() {
         optionsContainer.arrangedSubviews.forEach { $0.removeFromSuperview() }
         
-        viewModel?.user?.selectedOptions.forEach { option in
+        viewModel?.selectedOptions.forEach { option in
             let optionSwitch = OptionSwitch()
             
             var optionValueString = ""
@@ -210,5 +207,17 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
             optionSwitch.delegate = self
             optionsContainer.addArrangedSubview(optionSwitch)
         }
+    }
+    
+    func optionSwitchDidChange(_ optionSwitch: OptionSwitch) {
+        enableSaveButton()
+    }
+    
+    func optionValueDidChange(_ optionSwitch: OptionSwitch, newValue: String) {
+        enableSaveButton()
+    }
+    
+    private func enableSaveButton() {
+        saveButton?.isEnabled = true
     }
 }

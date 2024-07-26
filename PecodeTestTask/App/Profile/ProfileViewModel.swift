@@ -18,19 +18,26 @@ class ProfileViewModel {
             static let addOptionsButton = "Add Options"
             static let defaultImageName = "noImage"
         }
+        
+        enum Validation {
+            static let maxHeight: Double = 300
+            static let maxWeigh: Double = 300
+            static let maxValue: Double = 100
+        }
+        
         static let maxNumberOfBytesInData = 1048487
     }
     
     private var coordinator: ProfileCoordinator?
     
-    var user: UserData?
+    private(set) var user: UserData?
     private(set) var backgroundImageName = ""
-    var selectedOptionNames: [OptionDataName] = []
+    var selectedOptions: [OptionData] = []
     
     init(coordinator: ProfileCoordinator, user: UserData) {
         self.coordinator = coordinator
         self.user = user
-    
+        self.selectedOptions = user.selectedOptions
         self.backgroundImageName = (user.sex == .female) ? "backgroundImageGirl" : "backgroundImageMan"
     }
     
@@ -41,15 +48,18 @@ class ProfileViewModel {
         if let newImage {
             newImageData = newImage.compress(to: Constants.maxNumberOfBytesInData)
         }
+        
+        let newOptions = selectedOptionsChanged() ? selectedOptions : nil
 
         FirebaseService.shared.updateUserProfile(newName: newName, 
-                                                 newImage: newImageData) { [weak self] response in
+                                                 newImage: newImageData, newOptions: newOptions) { [weak self] response in
             switch response {
-            case .success:
+            case .success(let updatedUser):
                 self?.navigateToAlert(message: "Profile has been saved!")
                 completion(true)
-                self?.user?.userName = newName ?? ""
-                self?.user?.profileImage = newImageData
+                if let user = updatedUser {
+                    self?.user = user
+                }
             case .failure(let error):
                 self?.navigateToAlert(message: error.localizedDescription)
                 completion(false)
@@ -74,11 +84,11 @@ class ProfileViewModel {
         
         switch optionName {
         case .height:
-            return valueDouble <= 300
+            return valueDouble <= Constants.Validation.maxHeight
         case .weight:
-            return valueDouble <= 300
+            return valueDouble <= Constants.Validation.maxWeigh
         default:
-            return valueDouble <= 100
+            return valueDouble <= Constants.Validation.maxValue
         }
     }
     
@@ -87,18 +97,18 @@ class ProfileViewModel {
     }
     
     func filterAndUpdateOptions(with selectedOptionNames: [OptionDataName]) {
-        guard var currentOptions = user?.selectedOptions else { return }
-
-        currentOptions = currentOptions.filter { selectedOptionNames.contains($0.optionName) }
+        selectedOptions = selectedOptions.filter { selectedOptionNames.contains($0.optionName) }
 
         for optionName in selectedOptionNames {
-            if !currentOptions.contains(where: { $0.optionName == optionName }) {
+            if !selectedOptions.contains(where: { $0.optionName == optionName }) {
                 let newOption = OptionData(optionName: optionName)
-                currentOptions.append(newOption)
+                selectedOptions.append(newOption)
             }
         }
-
-        user?.selectedOptions = currentOptions
+    }
+    
+    func selectedOptionsChanged() -> Bool {
+        selectedOptions != user?.selectedOptions
     }
     
     func navigateToAlert(message: String) {
@@ -108,7 +118,7 @@ class ProfileViewModel {
     }
     
     func navigateToOptions() {
-        let selectedOptionNames = user?.selectedOptions.map { $0.optionName } ?? []
+        let selectedOptionNames = selectedOptions.map { $0.optionName }
         coordinator?.navigateToOptions(selectedOptionNames: selectedOptionNames)
     }
     
