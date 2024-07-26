@@ -21,8 +21,9 @@ class ProfileViewModel {
         
         enum Validation {
             static let maxHeight: Double = 300
-            static let maxWeigh: Double = 300
+            static let maxWeight: Double = 300
             static let maxValue: Double = 100
+            static let minValue: Double = 0
         }
         
         static let maxNumberOfBytesInData = 1048487
@@ -82,11 +83,15 @@ class ProfileViewModel {
     func validateOption(optionName: OptionDataName, value: String?) -> Bool {
         guard let value, let valueDouble = Double(value) else { return false }
         
+        if valueDouble <= Constants.Validation.minValue {
+            return false
+        }
+        
         switch optionName {
         case .height:
             return valueDouble <= Constants.Validation.maxHeight
         case .weight:
-            return valueDouble <= Constants.Validation.maxWeigh
+            return valueDouble <= Constants.Validation.maxWeight
         default:
             return valueDouble <= Constants.Validation.maxValue
         }
