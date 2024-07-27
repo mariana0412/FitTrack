@@ -153,7 +153,8 @@ class FirebaseService {
                 switch response {
                 case .success(let userData):
                     if let user = userData,
-                       let user {
+                       let user,
+                       user.sex != .unknown {
                         completion(.registeredWithSex(user.sex))
                     } else {
                         completion(.registeredWithoutSex)

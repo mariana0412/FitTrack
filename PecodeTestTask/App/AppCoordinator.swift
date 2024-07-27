@@ -9,8 +9,11 @@ import UIKit
 import FirebaseAuth
 
 class AppCoordinator: Coordinator {
-    private let window: UIWindow
+    
     var navigationController: UINavigationController
+    
+    private let window: UIWindow
+    
     private var signupCoordinator: SignupCoordinator?
     private var loginCoordinator: LoginCoordinator?
     private var tabBarCoordinator: TabBarCoordinator?
@@ -26,12 +29,6 @@ class AppCoordinator: Coordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         
-        let userOptions: [OptionData] = [
-            OptionData(optionName: OptionDataName.height, value: 170, isShown: true),
-            OptionData(optionName: OptionDataName.weight, value: 50, isShown: true),
-            OptionData(optionName: OptionDataName.neck, value: 10, isShown: true)
-        ]
-
         // for testing purposes
 //        do {
 //            try Auth.auth().signOut()
