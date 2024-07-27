@@ -27,6 +27,9 @@ class OptionCell: UITableViewCell {
     
     func configure(with option: OptionDataName, isSelected: Bool) {
         name.text = option.rawValue
+        name.font = Fonts.sairaRegular18
+        name.textColor = .primaryWhite
+        
         checkmark.setSelected(isSelected)
     }
     
