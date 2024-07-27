@@ -14,8 +14,6 @@ final class OptionsViewController: UIViewController {
             static let popupViewBorderWidth: CGFloat = 1.0
             static let popupViewCornerRadius: CGFloat = 8.0
             static let popupViewBorderColor = UIColor.primaryWhite.cgColor
-            static let popupViewHeightMultiplier: CGFloat = 0.8
-            static let popupViewWidthMultiplier: CGFloat = 0.9
         }
         
         enum TableView {
@@ -41,7 +39,6 @@ final class OptionsViewController: UIViewController {
         configureTableView()
         setupUI()
         setupActions()
-        adjustPopupViewSize()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,18 +103,6 @@ final class OptionsViewController: UIViewController {
         } else {
             viewModel?.navigateToProfile()
         }
-    }
-    
-    private func adjustPopupViewSize() {
-        let screenHeight = UIScreen.main.bounds.height
-        let popupHeight = screenHeight * Constants.Popup.popupViewHeightMultiplier
-        popupView.translatesAutoresizingMaskIntoConstraints = false
-        popupView.heightAnchor.constraint(equalToConstant: popupHeight).isActive = true
-        
-        let screenWidth = UIScreen.main.bounds.width
-        let popupWidth = screenWidth * Constants.Popup.popupViewWidthMultiplier
-        popupView.translatesAutoresizingMaskIntoConstraints = false
-        popupView.widthAnchor.constraint(equalToConstant: popupWidth).isActive = true
     }
     
 }
