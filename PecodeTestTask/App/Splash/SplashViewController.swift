@@ -10,11 +10,6 @@ import UIKit
 final class SplashViewController: BaseViewController {
     
     private enum Constants {
-        enum Layout {
-            static let chooseHeroLabelFontName = "Saira-Regular"
-            static let chooseHeroLabelFontSize: CGFloat = 16.0
-        }
-        
         enum Overlay {
             static let supermanImageOpacity: CGFloat = 0.3
             static let supergirlImageOpacity: CGFloat = 0.3
