@@ -91,12 +91,12 @@ final class HomeViewController: BaseViewController {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.user?.selectedOptions.count ?? 0
+        return viewModel?.optionsToShow.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OptionCollectionCell", for: indexPath) as? OptionCollectionCell,
-              let option = viewModel?.user?.selectedOptions[indexPath.item] else {
+              let option = viewModel?.optionsToShow[indexPath.item] else {
             return UICollectionViewCell()
         }
         cell.configure(with: option)
