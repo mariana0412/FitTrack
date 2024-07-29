@@ -118,29 +118,33 @@ class FirebaseService {
                 let sexString = data["sex"] as? String ?? ""
                 let sex = UserSex(rawValue: sexString) ?? .unknown
                 let profileImage = data["profileImage"] as? Data
-                
                 let userOptions = (data["userOptions"] as? [[String: Any]])?.compactMap { optionDict -> OptionData? in
                     guard let optionName = optionDict["optionName"] as? String,
-                          let isShown = optionDict["isShown"] as? Bool,
-                          let value = optionDict["value"] as? Double else {
+                          let valueArray = optionDict["valueArray"] as? [Double?],
+                          let changedValue = optionDict["changedValue"],
+                          let dateArray = optionDict["dateArray"] as? [Int],
+                          let isShown = optionDict["isShown"] as? Bool
+                    else {
                         return nil
                     }
                     if let optionDataName = OptionDataName(rawValue: optionName) {
                         return OptionData(optionName: optionDataName,
-                                          value: value, 
+                                          valueArray: valueArray,
+                                          changedValue: changedValue as? Double,
+                                          dateArray: dateArray,
                                           isShown: isShown)
                     } else {
                         return nil
                     }
                 }
                 
-                let registrationData = UserData(email: email,
-                                                id: id,
-                                                userName: userName,
-                                                sex: sex,
-                                                profileImage: profileImage,
-                                                selectedOptions: userOptions ?? [])
-                completion(.success(registrationData))
+                let user = UserData(email: email,
+                                    id: id,
+                                    userName: userName,
+                                    sex: sex,
+                                    profileImage: profileImage,
+                                    selectedOptions: userOptions ?? [])
+                completion(.success(user))
             } else {
                 completion(.unknown)
             }
@@ -201,7 +205,9 @@ class FirebaseService {
             let optionsData = newOptions.map { option -> [String: Any] in
                 return [
                     "optionName": option.optionName.rawValue,
-                    "value": option.value as Any,
+                    "valueArray": option.valueArray,
+                    "changedValue": option.changedValue as Any,
+                    "dateArray": option.dateArray,
                     "isShown": option.isShown as Any
                 ]
             }

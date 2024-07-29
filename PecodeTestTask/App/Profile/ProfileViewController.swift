@@ -88,7 +88,7 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
     private func configureSaveButtonInitialState() {
         saveButton?.setTitleColor(.secondaryGray, for: .disabled)
         saveButton?.setTitleColor(.primaryYellow, for: .normal)
-        saveButton?.isEnabled = false
+        disableSaveButton()
     }
     
     private func setupActions() {
@@ -107,44 +107,25 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
     }
     
     @objc private func saveButtonTapped() {
-        guard validateOptions() else { return }
+        guard let viewModel = viewModel else { return }
+        let optionSwitches = optionsContainer.arrangedSubviews.compactMap { $0 as? OptionSwitch }
+        
+        guard viewModel.validateOptions(from: optionSwitches) else { return }
+        viewModel.updateOptions(from: optionSwitches)
         
         let editedName = name.textFieldText ?? ""
         let selectedImage = imageWasChanged ? profileImage.image : nil
         
-        viewModel?.editProfile(newName: editedName, newImage: selectedImage) { [weak self] successful in
+        viewModel.editProfile(newName: editedName, newImage: selectedImage) { [weak self] successful in
             if successful {
                 self?.imageWasChanged = false
-                self?.saveButton?.isEnabled = false
+                self?.disableSaveButton()
                 self?.hideKeyboard()
                 self?.delegate?.profileDidUpdate()
+                self?.updateSelectedOptions()
+                self?.disableSaveButton()
             }
         }
-    }
-    
-    private func validateOptions() -> Bool {
-        var updatedOptions: [OptionData] = []
-        var isValid = true
-
-        optionsContainer.arrangedSubviews.enumerated().forEach { index, view in
-            if let optionSwitch = view as? OptionSwitch,
-               let optionName = OptionDataName(rawValue: optionSwitch.optionName) {
-                let value = Double(optionSwitch.optionValue ?? "") ?? 0.0
-                let isShown = optionSwitch.optionSwitch.isOn
-                updatedOptions.append(OptionData(optionName: optionName, value: value, isShown: isShown))
-                
-                if viewModel?.validateOption(optionName: optionName, value: optionSwitch.optionValue) != true {
-                    optionSwitch.setErrorState()
-                    isValid = false
-                } else {
-                    optionSwitch.setNormalState()
-                }
-            }
-        }
-
-        viewModel?.selectedOptions = updatedOptions
-        
-        return isValid
     }
     
     @objc private func addOptionsButtonTapped() {
@@ -180,6 +161,7 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
     private func updateState() {
         let hasSelectedOptions = viewModel?.selectedOptions.count ?? 0 > 0
         instruction.isHidden = hasSelectedOptions
+        optionsContainer.arrangedSubviews.forEach { $0.removeFromSuperview() }
         optionsContainer.isHidden = !hasSelectedOptions
         
         if hasSelectedOptions {
@@ -198,7 +180,8 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
             let optionSwitch = OptionSwitch()
             
             var optionValueString = ""
-            if let optionValue = option.value {
+            if let optionValue = option.valueArray.last, 
+                let optionValue {
                 optionValueString = String(optionValue)
             }
             
@@ -221,5 +204,9 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
     
     private func enableSaveButton() {
         saveButton?.isEnabled = true
+    }
+    
+    private func disableSaveButton() {
+        saveButton?.isEnabled = false
     }
 }
