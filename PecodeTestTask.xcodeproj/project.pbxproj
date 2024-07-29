@@ -71,6 +71,9 @@
 		CA56CBB32C58243A00AE6481 /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA56CBB22C58243A00AE6481 /* Gilroy-SemiBold.ttf */; };
 		CA56CBB42C58243A00AE6481 /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA56CBB22C58243A00AE6481 /* Gilroy-SemiBold.ttf */; };
 		CA56CBB52C58243B00AE6481 /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA56CBB22C58243A00AE6481 /* Gilroy-SemiBold.ttf */; };
+		CA56CBB72C583F8D00AE6481 /* OptionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA56CBB62C583F8D00AE6481 /* OptionCollectionCell.swift */; };
+		CA56CBB82C583F8D00AE6481 /* OptionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA56CBB62C583F8D00AE6481 /* OptionCollectionCell.swift */; };
+		CA56CBB92C583F8D00AE6481 /* OptionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA56CBB62C583F8D00AE6481 /* OptionCollectionCell.swift */; };
 		CA5D80FE2C51784100486145 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D80FD2C51784100486145 /* OptionsViewController.swift */; };
 		CA5D81002C51784900486145 /* OptionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D80FF2C51784900486145 /* OptionsCoordinator.swift */; };
 		CA5D81022C51785200486145 /* OptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D81012C51785200486145 /* OptionsViewModel.swift */; };
@@ -216,6 +219,7 @@
 		CA4FEC6B2C4C59CB00988C5B /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		CA56CB992C551D2400AE6481 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CA56CBB22C58243A00AE6481 /* Gilroy-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-SemiBold.ttf"; sourceTree = "<group>"; };
+		CA56CBB62C583F8D00AE6481 /* OptionCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCollectionCell.swift; sourceTree = "<group>"; };
 		CA5D80FD2C51784100486145 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		CA5D80FF2C51784900486145 /* OptionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCoordinator.swift; sourceTree = "<group>"; };
 		CA5D81012C51785200486145 /* OptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewModel.swift; sourceTree = "<group>"; };
@@ -383,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				CA002E152C319C6D0053284B /* HomeViewController.swift */,
+				CA56CBB62C583F8D00AE6481 /* OptionCollectionCell.swift */,
 				CA002E132C319C5C0053284B /* HomeCoordinator.swift */,
 				CA002E172C319C7A0053284B /* HomeViewModel.swift */,
 				CA002E192C319C860053284B /* Home.storyboard */,
@@ -1029,6 +1034,7 @@
 				CA002DD82C318B0F0053284B /* SceneDelegate.swift in Sources */,
 				CA002E162C319C6D0053284B /* HomeViewController.swift in Sources */,
 				CAA18F182C3C3B7500F888CD /* TabBarItem.swift in Sources */,
+				CA56CBB72C583F8D00AE6481 /* OptionCollectionCell.swift in Sources */,
 				CA465A7D2C47E248003E7217 /* ForgotPasswordCoordinator.swift in Sources */,
 				CAEB190D2C4ED71A000FE4E5 /* AlertViewModel.swift in Sources */,
 				CA002E142C319C5C0053284B /* HomeCoordinator.swift in Sources */,
@@ -1040,6 +1046,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA56CBB82C583F8D00AE6481 /* OptionCollectionCell.swift in Sources */,
 				CA37E5872C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
 				CAEB191E2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift in Sources */,
 				CAEB19062C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */,
@@ -1062,6 +1069,7 @@
 				CAEB191B2C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */,
 				CAEB190F2C4ED71A000FE4E5 /* AlertViewModel.swift in Sources */,
 				CAEB19072C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */,
+				CA56CBB92C583F8D00AE6481 /* OptionCollectionCell.swift in Sources */,
 				CA002DF72C318B110053284B /* PecodeTestTaskUITests.swift in Sources */,
 				CA002DF92C318B110053284B /* PecodeTestTaskUITestsLaunchTests.swift in Sources */,
 				CAEB19172C4EE4C4000FE4E5 /* AlertContent.swift in Sources */,

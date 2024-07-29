@@ -16,6 +16,10 @@ final class HomeViewController: BaseViewController {
             static let profileImageBorderColor: CGColor = UIColor.primaryYellow.cgColor
             static let defaultProfileImageName = "profileImage"
         }
+        enum CollectionView {
+            static let cellHeight: CGFloat = 104
+            static let minimumLineSpacing: CGFloat = 24
+        }
     }
     
     var viewModel: HomeViewModel?
@@ -50,7 +54,6 @@ final class HomeViewController: BaseViewController {
             self?.setupUI()
             self?.setProfileImage()
             self?.setupActions()
-            print("user: \(self?.viewModel?.user?.selectedOptions)")
             self?.optionsCollectionView.reloadData()
         }
     }
@@ -95,11 +98,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OptionCollectionCell", for: indexPath) as? OptionCollectionCell,
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OptionCollectionCell.identifier, for: indexPath) as? OptionCollectionCell,
               let option = viewModel?.optionsToShow[indexPath.item] else {
             return UICollectionViewCell()
         }
         cell.configure(with: option)
+        
         return cell
     }
 }
@@ -107,79 +111,19 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width
-        let height: CGFloat = 104
+        let height: CGFloat = Constants.CollectionView.cellHeight
+        
         return CGSize(width: width, height: height)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 24
+        Constants.CollectionView.minimumLineSpacing
     }
 
 }
 
 extension HomeViewController: ProfileViewControllerDelegate {
-    
     func profileDidUpdate() {
         loadUserData()
-    }
-}
-
-class OptionCollectionCell: UICollectionViewCell {
-    
-    enum Constants {
-        static let identifier = "OptionCollectionCell"
-    }
-
-    @IBOutlet weak var optionName: UILabel!
-    @IBOutlet weak var optionValue: UILabel!
-    @IBOutlet weak var optionMeasure: UILabel!
-    @IBOutlet weak var circleView: UIView!
-    @IBOutlet weak var changedValue: UILabel!
-    @IBOutlet weak var containerView: UIView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        containerView.layer.cornerRadius = 10
-        containerView.layer.borderWidth = 1
-        containerView.layer.borderColor = UIColor.white.cgColor
-        containerView.layer.masksToBounds = true
-        
-        optionName.font = UIFont(name: "HelveticaNeue", size: 20)
-        optionName.textColor = .primaryWhite
-        
-        optionValue.font = UIFont(name: "HelveticaNeue-Bold", size: 30)
-        optionValue.textColor = .primaryYellow
-        
-        optionMeasure.font = UIFont(name: "HelveticaNeue", size: 20)
-        optionMeasure.textColor = .primaryWhite
-
-        circleView.layer.cornerRadius = circleView.frame.size.width / 2
-        circleView.clipsToBounds = true
-        
-        changedValue.font = UIFont(name: "Gilroy-SemiBold", size: 19)
-        changedValue.textColor = .primaryWhite
-    }
-    
-    func configure(with option: OptionData) {
-        optionName.text = option.optionName.rawValue
-        if let value = option.valueArray.last, let value {
-            optionValue.text = "\(value)"
-        }
-        
-        optionMeasure.text = option.optionName.metricValue
-        
-        if let change = option.changedValue {
-            if change > 0 {
-                changedValue.text = "+\(change)"
-                circleView.backgroundColor = UIColor.lightRed
-            } else {
-                changedValue.text = "\(change)"
-                circleView.backgroundColor = UIColor.lightGreen
-            }
-        } else {
-            changedValue.text = ""
-            circleView.backgroundColor = UIColor.clear
-        }
     }
 }
