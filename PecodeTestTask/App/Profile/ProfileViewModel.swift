@@ -82,80 +82,24 @@ class ProfileViewModel {
         (newName != oldName) && (newName.isEmpty != true)
     }
     
-//    func validateOptions(from optionSwitches: [OptionSwitch]) -> Bool {
-//        var areValid = true
-//
-//        optionSwitches.forEach { optionSwitch in
-//            guard let optionName = OptionDataName(rawValue: optionSwitch.optionName) else { return }
-//            
-//            if validateOption(optionName: optionName, value: optionSwitch.optionValue) {
-//                optionSwitch.setNormalState()
-//            } else {
-//                optionSwitch.setErrorState()
-//                areValid = false
-//            }
-//        }
-//
-//        return areValid
-//    }
-//
-//    func updateOptions(from optionSwitches: [OptionSwitch]) {
-//        var newSelectedOptions = [OptionData]()
-//        let currentTimestamp = Int(Date().timeIntervalSince1970)
-//
-//        optionSwitches.forEach { optionSwitch in
-//            guard let optionName = OptionDataName(rawValue: optionSwitch.optionName) else { return }
-//            
-//            let value = Double(optionSwitch.optionValue ?? "") ?? 0.0
-//            let isShown = optionSwitch.optionSwitch.isOn
-//
-//            if var option = selectedOptions.first(where: { $0.optionName == optionName }) {
-//                handleExistingOption(&option, value: value, currentTimestamp: currentTimestamp, isShown: isShown)
-//                newSelectedOptions.append(option)
-//            } else {
-//                let newOption = OptionData(optionName: optionName,
-//                                           valueArray: [value],
-//                                           dateArray: [currentTimestamp],
-//                                           isShown: isShown)
-//                newSelectedOptions.append(newOption)
-//            }
-//        }
-//
-//        selectedOptions = newSelectedOptions
-//    }
-//
-//    func handleExistingOption(_ option: inout OptionData, value: Double, currentTimestamp: Int, isShown: Bool) {
-//        if let lastValue = option.valueArray.last, let lastValue, let lastTimestamp = option.dateArray.last {
-//            if lastValue != value {
-//                if currentTimestamp - lastTimestamp > Constants.minUpdateInterval {
-//                    option.valueArray.append(value)
-//                    option.dateArray.append(currentTimestamp)
-//                    option.changedValue = value - lastValue
-//                } else {
-//                    replaceLastValueAndTimestamp(&option, value: value, currentTimestamp: currentTimestamp)
-//                }
-//            }
-//            option.isShown = isShown
-//        } else if let wasShown = option.isShown, wasShown != isShown {
-//            option.isShown = isShown
-//        }
-//    }
-//
-//    private func replaceLastValueAndTimestamp(_ option: inout OptionData, value: Double, currentTimestamp: Int) {
-//        option.valueArray.removeLast()
-//        let newLastValue = option.valueArray.last
-//        
-//        option.valueArray.append(value)
-//        option.dateArray.removeLast()
-//        option.dateArray.append(currentTimestamp)
-//        
-//        if let newLastValue = newLastValue, let newLastValue {
-//            option.changedValue = value - newLastValue
-//        }
-//    }
+    func optionsAreValid(_ optionSwitches: [OptionSwitch]) -> Bool {
+        var areValid = true
 
+        optionSwitches.forEach { optionSwitch in
+            if let optionName = OptionDataName(rawValue: optionSwitch.optionName) {
+                if optionIsValid(optionName: optionName, value: optionSwitch.optionValue) == true {
+                    optionSwitch.setNormalState()
+                } else {
+                    optionSwitch.setErrorState()
+                    areValid = false
+                }
+            }
+        }
+
+        return areValid
+    }
     
-    func validateOption(optionName: OptionDataName, value: String?) -> Bool {
+    func optionIsValid(optionName: OptionDataName, value: String?) -> Bool {
         guard let value, let valueDouble = Double(value) else { return false }
         
         if valueDouble <= Constants.Validation.minValue {
@@ -171,14 +115,73 @@ class ProfileViewModel {
             return valueDouble <= Constants.Validation.maxValue
         }
     }
+
+    func prepareOptionsForEditing(_ optionSwitches: [OptionSwitch]) {
+        var newSelectedOptions = [OptionData]()
+        
+        optionSwitches.forEach { optionSwitch in
+            guard let optionName = OptionDataName(rawValue: optionSwitch.optionName) else { return }
+            
+            let value = Double(optionSwitch.optionValue ?? "") ?? 0.0
+            let isShown = optionSwitch.optionSwitch.isOn
+            let currentTimestamp = Int(Date().timeIntervalSince1970)
+            let existingOption = user?.selectedOptions.first { $0.optionName == optionName }
+            
+            if var option = existingOption {
+                handleExistingOption(&option,
+                                     value: value,
+                                     currentTimestamp: currentTimestamp,
+                                     isShown: isShown)
+                newSelectedOptions.append(option)
+            } else {
+                let newOption = OptionData(optionName: optionName,
+                                           valueArray: [value],
+                                           dateArray: [currentTimestamp],
+                                           isShown: isShown)
+                newSelectedOptions.append(newOption)
+            }
+        }
+        selectedOptions = newSelectedOptions
+    }
+    
+    func handleExistingOption(_ option: inout OptionData, value: Double, currentTimestamp: Int, isShown: Bool) {
+        if let lastValue = option.valueArray.last, let lastValue, let lastTimestamp = option.dateArray.last {
+            if lastValue != value {
+                if currentTimestamp - lastTimestamp > 10 {
+                    option.valueArray.append(value)
+                    option.dateArray.append(currentTimestamp)
+                    option.changedValue = value - lastValue
+                } else {
+                    updateLastValueAndTimestamp(&option, value: value, currentTimestamp: currentTimestamp)
+                }
+            }
+            option.isShown = isShown
+        } else if let wasShown = option.isShown, wasShown != isShown {
+            option.isShown = isShown
+        }
+    }
+
+    private func updateLastValueAndTimestamp(_ option: inout OptionData, value: Double, currentTimestamp: Int) {
+        option.valueArray.removeLast()
+        let newLastValue = option.valueArray.last
+        
+        option.valueArray.append(value)
+        option.dateArray.removeLast()
+        option.dateArray.append(currentTimestamp)
+        
+        if let newLastValue = newLastValue, let newLastValue {
+            let changedValue = value - newLastValue
+            if changedValue != 0 {
+                option.changedValue = changedValue
+            }
+        }
+    }
     
     func navigateToHome() {
         coordinator?.navigateToHome()
     }
     
     func filterAndUpdateOptions(with selectedOptionNames: [OptionDataName]) {
-        print("selectedOptionNames: \(selectedOptionNames)")
-        
         selectedOptions = selectedOptions.filter { selectedOptionNames.contains($0.optionName) }
 
         for optionName in selectedOptionNames {
@@ -187,9 +190,6 @@ class ProfileViewModel {
                 selectedOptions.append(newOption)
             }
         }
-        
-        print("selectedOptions in filterAndUpdateOptions: \(selectedOptions)")
-        
     }
     
     func selectedOptionsChanged() -> Bool {

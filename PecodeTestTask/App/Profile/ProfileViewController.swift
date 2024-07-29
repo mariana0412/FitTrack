@@ -106,24 +106,17 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
         viewModel?.navigateToHome()
     }
     
-//    @objc private func saveButtonTapped() {
-//        guard let viewModel = viewModel else { return }
-//        let optionSwitches = optionsContainer.arrangedSubviews.compactMap { $0 as? OptionSwitch }
-//        
-//        guard viewModel.validateOptions(from: optionSwitches) else { return }
-//        viewModel.updateOptions(from: optionSwitches)
-//        
     @objc private func saveButtonTapped() {
-        let optionSwitches = optionsContainer.arrangedSubviews.compactMap { $0 as? OptionSwitch }
-            
-        guard validateOptions(optionSwitches) else { return }
+        guard let viewModel else { return }
         
-        validateAndUpdateOptions()
+        let optionSwitches = optionsContainer.arrangedSubviews.compactMap { $0 as? OptionSwitch }
+        guard viewModel.optionsAreValid(optionSwitches) else { return }
+        viewModel.prepareOptionsForEditing(optionSwitches)
         
         let editedName = name.textFieldText ?? ""
         let selectedImage = imageWasChanged ? profileImage.image : nil
         
-        viewModel?.editProfile(newName: editedName, newImage: selectedImage) { [weak self] successful in
+        viewModel.editProfile(newName: editedName, newImage: selectedImage) { [weak self] successful in
             if successful {
                 self?.imageWasChanged = false
                 self?.disableSaveButton()
@@ -133,76 +126,6 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
                 self?.disableSaveButton()
             }
         }
-    }
-    
-    private func validateOptions(_ optionSwitches: [OptionSwitch]) -> Bool {
-        var isValid = true
-
-        optionSwitches.forEach { optionSwitch in
-            if let optionName = OptionDataName(rawValue: optionSwitch.optionName) {
-                if viewModel?.validateOption(optionName: optionName, value: optionSwitch.optionValue) == true {
-                    optionSwitch.setNormalState()
-                } else {
-                    optionSwitch.setErrorState()
-                    isValid = false
-                }
-            }
-        }
-
-        return isValid
-    }
-
-    private func validateAndUpdateOptions() {
-        var newSelectedOptions = [OptionData]()
-        
-        optionsContainer.arrangedSubviews.enumerated().forEach { index, view in
-            if let optionSwitch = view as? OptionSwitch,
-               let optionName = OptionDataName(rawValue: optionSwitch.optionName) {
-                
-                let value = Double(optionSwitch.optionValue ?? "") ?? 0.0
-                let isShown = optionSwitch.optionSwitch.isOn
-
-
-                let currentTimestamp = Int(Date().timeIntervalSince1970)
-                let existingOption = viewModel?.selectedOptions.first { $0.optionName == optionName }
-
-                if var option = existingOption, let lastValue = option.valueArray.last, let lastValue, lastValue != value {
-                    if let lastTimestamp = option.dateArray.last, currentTimestamp - lastTimestamp > 10 {
-                        option.valueArray.append(value)
-                        option.dateArray.append(currentTimestamp)
-                        option.changedValue = value - lastValue
-                    } else {
-                        option.valueArray.removeLast()
-                        let newLastValue = option.valueArray.last
-                        option.valueArray.append(value)
-                        
-                        option.dateArray.removeLast()
-                        option.dateArray.append(currentTimestamp)
-                        
-                        if let newLastValue, let newLastValue {
-                            option.changedValue = value - newLastValue
-                        }
-                    }
-                    
-                    option.isShown = isShown
-                    newSelectedOptions.append(option)
-                } else if var option = existingOption, let wasShown = option.isShown, wasShown != isShown {
-                    option.isShown = isShown
-                    newSelectedOptions.append(option)
-                } else if let option = existingOption, let lastValue = option.valueArray.last, let lastValue, lastValue == value {
-                    newSelectedOptions.append(option)
-                } else {
-                    let newOption = OptionData(optionName: optionName,
-                                               valueArray: [value],
-                                               dateArray: [currentTimestamp],
-                                               isShown: isShown)
-                    newSelectedOptions.append(newOption)
-                }
-        
-            }
-        }
-
-        viewModel?.selectedOptions = newSelectedOptions
     }
     
     @objc private func addOptionsButtonTapped() {
