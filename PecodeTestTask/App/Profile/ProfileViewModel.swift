@@ -82,79 +82,78 @@ class ProfileViewModel {
         (newName != oldName) && (newName.isEmpty != true)
     }
     
-    func validateOptions(from optionSwitches: [OptionSwitch]) -> Bool {
-        var areValid = true
+//    func validateOptions(from optionSwitches: [OptionSwitch]) -> Bool {
+//        var areValid = true
+//
+//        optionSwitches.forEach { optionSwitch in
+//            guard let optionName = OptionDataName(rawValue: optionSwitch.optionName) else { return }
+//            
+//            if validateOption(optionName: optionName, value: optionSwitch.optionValue) {
+//                optionSwitch.setNormalState()
+//            } else {
+//                optionSwitch.setErrorState()
+//                areValid = false
+//            }
+//        }
+//
+//        return areValid
+//    }
+//
+//    func updateOptions(from optionSwitches: [OptionSwitch]) {
+//        var newSelectedOptions = [OptionData]()
+//        let currentTimestamp = Int(Date().timeIntervalSince1970)
+//
+//        optionSwitches.forEach { optionSwitch in
+//            guard let optionName = OptionDataName(rawValue: optionSwitch.optionName) else { return }
+//            
+//            let value = Double(optionSwitch.optionValue ?? "") ?? 0.0
+//            let isShown = optionSwitch.optionSwitch.isOn
+//
+//            if var option = selectedOptions.first(where: { $0.optionName == optionName }) {
+//                handleExistingOption(&option, value: value, currentTimestamp: currentTimestamp, isShown: isShown)
+//                newSelectedOptions.append(option)
+//            } else {
+//                let newOption = OptionData(optionName: optionName,
+//                                           valueArray: [value],
+//                                           dateArray: [currentTimestamp],
+//                                           isShown: isShown)
+//                newSelectedOptions.append(newOption)
+//            }
+//        }
+//
+//        selectedOptions = newSelectedOptions
+//    }
+//
+//    func handleExistingOption(_ option: inout OptionData, value: Double, currentTimestamp: Int, isShown: Bool) {
+//        if let lastValue = option.valueArray.last, let lastValue, let lastTimestamp = option.dateArray.last {
+//            if lastValue != value {
+//                if currentTimestamp - lastTimestamp > Constants.minUpdateInterval {
+//                    option.valueArray.append(value)
+//                    option.dateArray.append(currentTimestamp)
+//                    option.changedValue = value - lastValue
+//                } else {
+//                    replaceLastValueAndTimestamp(&option, value: value, currentTimestamp: currentTimestamp)
+//                }
+//            }
+//            option.isShown = isShown
+//        } else if let wasShown = option.isShown, wasShown != isShown {
+//            option.isShown = isShown
+//        }
+//    }
+//
+//    private func replaceLastValueAndTimestamp(_ option: inout OptionData, value: Double, currentTimestamp: Int) {
+//        option.valueArray.removeLast()
+//        let newLastValue = option.valueArray.last
+//        
+//        option.valueArray.append(value)
+//        option.dateArray.removeLast()
+//        option.dateArray.append(currentTimestamp)
+//        
+//        if let newLastValue = newLastValue, let newLastValue {
+//            option.changedValue = value - newLastValue
+//        }
+//    }
 
-        optionSwitches.forEach { optionSwitch in
-            guard let optionName = OptionDataName(rawValue: optionSwitch.optionName) else { return }
-            
-            if validateOption(optionName: optionName, value: optionSwitch.optionValue) {
-                optionSwitch.setNormalState()
-            } else {
-                optionSwitch.setErrorState()
-                areValid = false
-            }
-        }
-
-        return areValid
-    }
-
-    func updateOptions(from optionSwitches: [OptionSwitch]) {
-        var newSelectedOptions = [OptionData]()
-        let currentTimestamp = Int(Date().timeIntervalSince1970)
-
-        optionSwitches.forEach { optionSwitch in
-            guard let optionName = OptionDataName(rawValue: optionSwitch.optionName) else { return }
-            
-            let value = Double(optionSwitch.optionValue ?? "") ?? 0.0
-            let isShown = optionSwitch.optionSwitch.isOn
-
-            if var option = selectedOptions.first(where: { $0.optionName == optionName }) {
-                handleExistingOption(&option, value: value, currentTimestamp: currentTimestamp, isShown: isShown)
-                newSelectedOptions.append(option)
-            } else {
-                let newOption = OptionData(optionName: optionName,
-                                           valueArray: [value],
-                                           dateArray: [currentTimestamp],
-                                           isShown: isShown)
-                newSelectedOptions.append(newOption)
-            }
-        }
-
-        selectedOptions = newSelectedOptions
-    }
-
-    private func handleExistingOption(_ option: inout OptionData, value: Double, currentTimestamp: Int, isShown: Bool) {
-        if let lastValue = option.valueArray.last, let lastValue, let lastTimestamp = option.dateArray.last {
-            if lastValue != value {
-                if currentTimestamp - lastTimestamp > Constants.minUpdateInterval {
-                    option.valueArray.append(value)
-                    option.dateArray.append(currentTimestamp)
-                    option.changedValue = value - lastValue
-                } else {
-                    replaceLastValueAndTimestamp(&option, 
-                                                 value: value,
-                                                 currentTimestamp: currentTimestamp)
-                }
-            }
-            option.isShown = isShown
-        } else if let wasShown = option.isShown, wasShown != isShown {
-            option.isShown = isShown
-        }
-    }
-
-    private func replaceLastValueAndTimestamp(_ option: inout OptionData, value: Double, currentTimestamp: Int) {
-        option.valueArray.removeLast()
-        let newLastValue = option.valueArray.last
-        
-        option.valueArray.append(value)
-        option.dateArray.removeLast()
-        option.dateArray.append(currentTimestamp)
-        
-        if let newLastValue = newLastValue, let newLastValue {
-            option.changedValue = value - newLastValue
-        }
-    }
     
     func validateOption(optionName: OptionDataName, value: String?) -> Bool {
         guard let value, let valueDouble = Double(value) else { return false }
