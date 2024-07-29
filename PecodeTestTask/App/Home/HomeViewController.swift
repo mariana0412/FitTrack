@@ -24,6 +24,7 @@ final class HomeViewController: BaseViewController {
     @IBOutlet private weak var superheroLabel: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var optionsCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,9 @@ final class HomeViewController: BaseViewController {
         setupUI()
         setupActions()
         loadUserData()
+        
+        optionsCollectionView.dataSource = self
+        optionsCollectionView.delegate = self
     }
     
     static func instantiate() -> HomeViewController {
@@ -46,6 +50,8 @@ final class HomeViewController: BaseViewController {
             self?.setupUI()
             self?.setProfileImage()
             self?.setupActions()
+            print("user: \(self?.viewModel?.user?.selectedOptions)")
+            self?.optionsCollectionView.reloadData()
         }
     }
     
@@ -80,7 +86,35 @@ final class HomeViewController: BaseViewController {
     @objc private func profileImageTapped() {
         viewModel?.navigateToProfile()
     }
+}
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel?.user?.selectedOptions.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OptionCollectionCell", for: indexPath) as? OptionCollectionCell,
+              let option = viewModel?.user?.selectedOptions[indexPath.item] else {
+            return UICollectionViewCell()
+        }
+        cell.configure(with: option)
+        return cell
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width
+        let height: CGFloat = 104
+        return CGSize(width: width, height: height)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 24
+    }
+
 }
 
 extension HomeViewController: ProfileViewControllerDelegate {
@@ -88,5 +122,52 @@ extension HomeViewController: ProfileViewControllerDelegate {
     func profileDidUpdate() {
         loadUserData()
     }
+}
 
+class OptionCollectionCell: UICollectionViewCell {
+    
+    enum Constants {
+        static let identifier = "OptionCollectionCell"
+    }
+
+    @IBOutlet weak var optionName: UILabel!
+    @IBOutlet weak var optionValue: UILabel!
+    @IBOutlet weak var optionMeasure: UILabel!
+    @IBOutlet weak var circleView: UIView!
+    @IBOutlet weak var changedValue: UILabel!
+    @IBOutlet weak var containerView: UIView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        containerView.layer.cornerRadius = 10
+        containerView.layer.borderWidth = 1
+        containerView.layer.borderColor = UIColor.white.cgColor
+        containerView.layer.masksToBounds = true
+
+        circleView.layer.cornerRadius = circleView.frame.size.width / 2
+        circleView.clipsToBounds = true
+    }
+    
+    func configure(with option: OptionData) {
+        optionName.text = option.optionName.rawValue
+        if let value = option.valueArray.last, let value {
+            optionValue.text = "\(value)"
+        }
+        
+        optionMeasure.text = option.optionName.metricValue
+        
+        if let change = option.changedValue {
+            if change > 0 {
+                changedValue.text = "+\(change)"
+                circleView.backgroundColor = UIColor.lightRed
+            } else {
+                changedValue.text = "-\(change)"
+                circleView.backgroundColor = UIColor.lightGreen
+            }
+        } else {
+            changedValue.text = ""
+            circleView.backgroundColor = UIColor.clear
+        }
+    }
 }
