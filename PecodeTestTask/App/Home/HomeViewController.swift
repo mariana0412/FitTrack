@@ -144,9 +144,21 @@ class OptionCollectionCell: UICollectionViewCell {
         containerView.layer.borderWidth = 1
         containerView.layer.borderColor = UIColor.white.cgColor
         containerView.layer.masksToBounds = true
+        
+        optionName.font = UIFont(name: "HelveticaNeue", size: 20)
+        optionName.textColor = .primaryWhite
+        
+        optionValue.font = UIFont(name: "HelveticaNeue-Bold", size: 30)
+        optionValue.textColor = .primaryYellow
+        
+        optionMeasure.font = UIFont(name: "HelveticaNeue", size: 20)
+        optionMeasure.textColor = .primaryWhite
 
         circleView.layer.cornerRadius = circleView.frame.size.width / 2
         circleView.clipsToBounds = true
+        
+        changedValue.font = UIFont(name: "Gilroy-SemiBold", size: 19)
+        changedValue.textColor = .primaryWhite
     }
     
     func configure(with option: OptionData) {
@@ -162,7 +174,7 @@ class OptionCollectionCell: UICollectionViewCell {
                 changedValue.text = "+\(change)"
                 circleView.backgroundColor = UIColor.lightRed
             } else {
-                changedValue.text = "-\(change)"
+                changedValue.text = "\(change)"
                 circleView.backgroundColor = UIColor.lightGreen
             }
         } else {

@@ -68,6 +68,9 @@
 		CA56CB9A2C551D2400AE6481 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA56CB992C551D2400AE6481 /* GoogleService-Info.plist */; };
 		CA56CB9B2C551D2400AE6481 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA56CB992C551D2400AE6481 /* GoogleService-Info.plist */; };
 		CA56CB9C2C551D2400AE6481 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA56CB992C551D2400AE6481 /* GoogleService-Info.plist */; };
+		CA56CBB32C58243A00AE6481 /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA56CBB22C58243A00AE6481 /* Gilroy-SemiBold.ttf */; };
+		CA56CBB42C58243A00AE6481 /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA56CBB22C58243A00AE6481 /* Gilroy-SemiBold.ttf */; };
+		CA56CBB52C58243B00AE6481 /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA56CBB22C58243A00AE6481 /* Gilroy-SemiBold.ttf */; };
 		CA5D80FE2C51784100486145 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D80FD2C51784100486145 /* OptionsViewController.swift */; };
 		CA5D81002C51784900486145 /* OptionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D80FF2C51784900486145 /* OptionsCoordinator.swift */; };
 		CA5D81022C51785200486145 /* OptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D81012C51785200486145 /* OptionsViewModel.swift */; };
@@ -212,6 +215,7 @@
 		CA4FEC692C4C59C300988C5B /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		CA4FEC6B2C4C59CB00988C5B /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		CA56CB992C551D2400AE6481 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CA56CBB22C58243A00AE6481 /* Gilroy-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-SemiBold.ttf"; sourceTree = "<group>"; };
 		CA5D80FD2C51784100486145 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		CA5D80FF2C51784900486145 /* OptionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCoordinator.swift; sourceTree = "<group>"; };
 		CA5D81012C51785200486145 /* OptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewModel.swift; sourceTree = "<group>"; };
@@ -565,6 +569,7 @@
 				CAA18EEA2C3ADC2C00F888CD /* Saira-Regular.ttf */,
 				CA038BF52C4316300033CD30 /* Saira-Medium.ttf */,
 				CA038BFF2C43F8E90033CD30 /* Saira-Light.ttf */,
+				CA56CBB22C58243A00AE6481 /* Gilroy-SemiBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -812,6 +817,7 @@
 				CA465A812C47E26F003E7217 /* ForgotPassword.storyboard in Resources */,
 				CA5D810C2C5181E300486145 /* OptionCell.xib in Resources */,
 				CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */,
+				CA56CBB32C58243A00AE6481 /* Gilroy-SemiBold.ttf in Resources */,
 				CA038BF62C4316300033CD30 /* Saira-Medium.ttf in Resources */,
 				CA56CB9A2C551D2400AE6481 /* GoogleService-Info.plist in Resources */,
 				CAA18EE52C39DF9400F888CD /* Splash.storyboard in Resources */,
@@ -826,6 +832,7 @@
 				CA37E5832C40573D003ADAA8 /* TabBar.storyboard in Resources */,
 				CA56CB9B2C551D2400AE6481 /* GoogleService-Info.plist in Resources */,
 				CA038C012C43F8E90033CD30 /* Saira-Light.ttf in Resources */,
+				CA56CBB42C58243A00AE6481 /* Gilroy-SemiBold.ttf in Resources */,
 				CAEB19122C4ED721000FE4E5 /* Alert.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -837,6 +844,7 @@
 				CA37E5842C40573D003ADAA8 /* TabBar.storyboard in Resources */,
 				CA56CB9C2C551D2400AE6481 /* GoogleService-Info.plist in Resources */,
 				CA038C022C43F8E90033CD30 /* Saira-Light.ttf in Resources */,
+				CA56CBB52C58243B00AE6481 /* Gilroy-SemiBold.ttf in Resources */,
 				CAEB19132C4ED721000FE4E5 /* Alert.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
