@@ -9,26 +9,24 @@ import UIKit
 
 class ProfileViewModel {
     
-    enum Constants {
-        enum Texts {
-            static let navigationItemTitle = "Profile"
-            static let name = "Name"
-            static let namePlaceholder = "Enter Your Name"
-            static let instruction = "Select an option to display on the main screen."
-            static let addOptionsButton = "Add Options"
-            static let defaultImageName = "noImage"
-        }
-        
+    private enum Constants {
+        static let maxNumberOfBytesInData = 1048487
+        static let minUpdateInterval = 3600
+    
         enum Validation {
             static let maxHeight: Double = 300
             static let maxWeight: Double = 300
             static let maxValue: Double = 100
             static let minValue: Double = 0
         }
-        
-        static let maxNumberOfBytesInData = 1048487
-        static let minUpdateInterval = 10
     }
+    
+    let navigationItemTitle = "Profile"
+    let name = "Name"
+    let namePlaceholder = "Enter Your Name"
+    let instruction = "Select an option to display on the main screen."
+    let addOptionsButton = "Add Options"
+    let defaultImageName = "noImage"
     
     private var coordinator: ProfileCoordinator?
     

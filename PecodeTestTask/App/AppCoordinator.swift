@@ -33,7 +33,7 @@ class AppCoordinator: Coordinator {
 //        do {
 //            try Auth.auth().signOut()
 //        } catch {}
-        
+//        
         checkCurrentUser()
     }
     

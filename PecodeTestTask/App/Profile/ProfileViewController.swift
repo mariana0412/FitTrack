@@ -44,7 +44,7 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
         
         let navigationButtons = NavigationBarConfigurator.configureNavigationBar(
             for: self,
-            title: ProfileViewModel.Constants.Texts.navigationItemTitle,
+            title: viewModel?.navigationItemTitle ?? "",
             backAction: #selector(backButtonTapped),
             saveAction: #selector(saveButtonTapped)
         )
@@ -68,20 +68,20 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
         if let profileImageData = viewModel.user?.profileImage {
             profileImage.setImageWithBorder(image: UIImage(data: profileImageData))
         } else {
-            profileImage.image = UIImage(named: ProfileViewModel.Constants.Texts.defaultImageName)
+            profileImage.image = UIImage(named: viewModel.defaultImageName)
         }
         
-        name.labelText = ProfileViewModel.Constants.Texts.name
+        name.labelText = viewModel.name
         name.labelFont = Fonts.helveticaNeue18
         name.textFieldText = viewModel.user?.userName
         name.textFieldFont = Fonts.helveticaNeue16
         
-        instruction.text = ProfileViewModel.Constants.Texts.instruction
+        instruction.text = viewModel.instruction
         instruction.numberOfLines = Constants.Layout.instructionNumberOfLines
         instruction.textColor = .secondaryGray
         instruction.font = Fonts.sairaLight16
         
-        addOptionsButton.titleLabel?.text = ProfileViewModel.Constants.Texts.addOptionsButton
+        addOptionsButton.titleLabel?.text = viewModel.addOptionsButton
         addOptionsButton.setupButtonFont(font: Fonts.sairaRegular16, color: .black)
     }
     
