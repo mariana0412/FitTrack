@@ -22,8 +22,8 @@ class NavigationBarConfigurator {
     
     static func configureNavigationBar(for viewController: UIViewController,
                                        title: String,
-                                       backAction: Selector,
-                                       saveAction: Selector) -> (backButton: UIBarButtonItem, saveButton: UIBarButtonItem) {
+                                       backAction: Selector? = nil,
+                                       saveAction: Selector? = nil) -> (backButton: UIBarButtonItem?, saveButton: UIBarButtonItem?) {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithTransparentBackground()
         
@@ -40,27 +40,33 @@ class NavigationBarConfigurator {
         titleLabel.textColor = .primaryWhite
         viewController.navigationItem.titleView = titleLabel
         
-        let backButton = UIButton(type: .system)
-        let chevronLeft = UIImage(systemName: Constants.Names.backArrowIcon)?
-            .withConfiguration(UIImage.SymbolConfiguration(pointSize: Constants.Layout.backArrowIconSize, weight: .medium))
-        let tintedChevronLeft = chevronLeft?.withTintColor(.primaryYellow, renderingMode: .alwaysOriginal)
-        backButton.setImage(tintedChevronLeft, for: .normal)
-        backButton.setTitle(Constants.Names.backButtonName, for: .normal)
-        backButton.titleLabel?.font = Fonts.sairaMedium18
-        backButton.setTitleColor(.primaryYellow, for: .normal)
-        backButton.addTarget(viewController, action: backAction, for: .touchUpInside)
-        let backBarButtonItem = UIBarButtonItem(customView: backButton)
-        viewController.navigationItem.leftBarButtonItem = backBarButtonItem
+        var backBarButtonItem: UIBarButtonItem?
+        if let backAction = backAction {
+            let backButton = UIButton(type: .system)
+            let chevronLeft = UIImage(systemName: Constants.Names.backArrowIcon)?
+                .withConfiguration(UIImage.SymbolConfiguration(pointSize: Constants.Layout.backArrowIconSize, weight: .medium))
+            let tintedChevronLeft = chevronLeft?.withTintColor(.primaryYellow, renderingMode: .alwaysOriginal)
+            backButton.setImage(tintedChevronLeft, for: .normal)
+            backButton.setTitle(Constants.Names.backButtonName, for: .normal)
+            backButton.titleLabel?.font = Fonts.sairaMedium18
+            backButton.setTitleColor(.primaryYellow, for: .normal)
+            backButton.addTarget(viewController, action: backAction, for: .touchUpInside)
+            backBarButtonItem = UIBarButtonItem(customView: backButton)
+            viewController.navigationItem.leftBarButtonItem = backBarButtonItem
+        }
         
-        let saveButton = UIButton(type: .custom)
-        saveButton.setTitle(Constants.Names.saveButtonName, for: .normal)
-        saveButton.titleLabel?.font = Fonts.sairaMedium18
-        saveButton.setTitleColor(.secondaryGray, for: .disabled)
-        saveButton.setTitleColor(.primaryYellow, for: .normal)
-        saveButton.isEnabled = false
-        saveButton.addTarget(viewController, action: saveAction, for: .touchUpInside)
-        let saveBarButtonItem = UIBarButtonItem(customView: saveButton)
-        viewController.navigationItem.rightBarButtonItem = saveBarButtonItem
+        var saveBarButtonItem: UIBarButtonItem?
+        if let saveAction = saveAction {
+            let saveButton = UIButton(type: .custom)
+            saveButton.setTitle(Constants.Names.saveButtonName, for: .normal)
+            saveButton.titleLabel?.font = Fonts.sairaMedium18
+            saveButton.setTitleColor(.secondaryGray, for: .disabled)
+            saveButton.setTitleColor(.primaryYellow, for: .normal)
+            saveButton.isEnabled = false
+            saveButton.addTarget(viewController, action: saveAction, for: .touchUpInside)
+            saveBarButtonItem = UIBarButtonItem(customView: saveButton)
+            viewController.navigationItem.rightBarButtonItem = saveBarButtonItem
+        }
         
         return (backBarButtonItem, saveBarButtonItem)
     }

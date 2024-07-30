@@ -7,9 +7,27 @@
 
 class ProgressViewModel {
     private var coordinator: ProgressCoordinator?
+    var options: [OptionData] = []
+    let navigationItemTitle = "Progress"
     
     init(coordinator: ProgressCoordinator?) {
         self.coordinator = coordinator
+    }
+    
+    func fetchUser(completion: @escaping (String?) -> Void) {
+        FirebaseService.shared.getUser { [weak self] response in
+            switch response {
+            case .success(let userData):
+                if let user = userData, let user {
+                    self?.options = user.selectedOptions
+                }
+                completion(nil)
+            case .failure(let error):
+                completion(error.localizedDescription)
+            case .unknown:
+                completion("Unknown error occurred while fetching user details")
+            }
+        }
     }
     
 }

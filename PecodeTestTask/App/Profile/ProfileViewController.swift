@@ -49,7 +49,7 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
             saveAction: #selector(saveButtonTapped)
         )
         
-        if let saveButtonCustomView = navigationButtons.saveButton.customView as? UIButton {
+        if let saveButtonCustomView = navigationButtons.saveButton?.customView as? UIButton {
             saveButton = saveButtonCustomView
             configureSaveButtonInitialState()
         }
