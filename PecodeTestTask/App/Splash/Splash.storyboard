@@ -29,9 +29,8 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIG-65-bZ0" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
-                                                <rect key="frame" x="124.66666666666669" y="191" width="144" height="44"/>
+                                                <rect key="frame" x="139" y="191" width="115" height="44"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="144" id="eUJ-Oq-9Rf"/>
                                                     <constraint firstAttribute="height" constant="44" id="lyU-K5-b6B"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
@@ -61,11 +60,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WpS-fa-Xti" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
-                                                <rect key="frame" x="124.66666666666669" y="191" width="144" height="44"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5v-5f-3U2" userLabel="Supergirl Button" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
+                                                <rect key="frame" x="139.66666666666666" y="191" width="113.66666666666666" height="44"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="44" id="ACz-j0-9Pz"/>
-                                                    <constraint firstAttribute="width" constant="144" id="QUG-ZQ-s3f"/>
+                                                    <constraint firstAttribute="height" constant="44" id="yJh-gd-ttZ"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -81,10 +79,10 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="FQJ-bt-fQn" secondAttribute="trailing" id="27N-6O-rsQ"/>
                                             <constraint firstItem="FQJ-bt-fQn" firstAttribute="leading" secondItem="w3j-qa-reh" secondAttribute="leading" id="Dyr-Kk-gmq"/>
+                                            <constraint firstItem="i5v-5f-3U2" firstAttribute="centerY" secondItem="w3j-qa-reh" secondAttribute="centerY" id="QyO-yT-O31"/>
                                             <constraint firstItem="FQJ-bt-fQn" firstAttribute="top" secondItem="w3j-qa-reh" secondAttribute="top" id="f7A-cW-pIm"/>
-                                            <constraint firstItem="WpS-fa-Xti" firstAttribute="centerY" secondItem="w3j-qa-reh" secondAttribute="centerY" id="hXF-uG-imO"/>
-                                            <constraint firstItem="WpS-fa-Xti" firstAttribute="centerX" secondItem="w3j-qa-reh" secondAttribute="centerX" id="mNE-s3-3IY"/>
                                             <constraint firstAttribute="bottom" secondItem="FQJ-bt-fQn" secondAttribute="bottom" id="wEa-lr-BPN"/>
+                                            <constraint firstItem="i5v-5f-3U2" firstAttribute="centerX" secondItem="w3j-qa-reh" secondAttribute="centerX" id="z75-OJ-aNS"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -134,7 +132,7 @@
                     </view>
                     <connections>
                         <outlet property="chooseHeroLabel" destination="kv9-rx-Bqe" id="iWU-fj-ekJ"/>
-                        <outlet property="supergirlButton" destination="WpS-fa-Xti" id="Y72-jY-X26"/>
+                        <outlet property="supergirlButton" destination="i5v-5f-3U2" id="Yup-m9-Q2H"/>
                         <outlet property="supergirlImage" destination="FQJ-bt-fQn" id="Hy8-wa-nZt"/>
                         <outlet property="superheroLabel" destination="Qo6-vl-y79" id="qam-sl-eRw"/>
                         <outlet property="supermanButton" destination="MIG-65-bZ0" id="bKs-oo-co8"/>
@@ -148,10 +146,10 @@
     </scenes>
     <designables>
         <designable name="MIG-65-bZ0">
-            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="115" height="34.333333333333336"/>
         </designable>
-        <designable name="WpS-fa-Xti">
-            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+        <designable name="i5v-5f-3U2">
+            <size key="intrinsicContentSize" width="113.66666666666667" height="34.333333333333336"/>
         </designable>
     </designables>
     <resources>

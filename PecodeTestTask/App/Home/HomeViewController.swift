@@ -16,6 +16,10 @@ final class HomeViewController: BaseViewController {
             static let profileImageBorderColor: CGColor = UIColor.primaryYellow.cgColor
             static let defaultProfileImageName = "profileImage"
         }
+        enum CollectionView {
+            static let cellHeight: CGFloat = 104
+            static let minimumLineSpacing: CGFloat = 24
+        }
     }
     
     var viewModel: HomeViewModel?
@@ -24,6 +28,7 @@ final class HomeViewController: BaseViewController {
     @IBOutlet private weak var superheroLabel: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var optionsCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +36,9 @@ final class HomeViewController: BaseViewController {
         setupUI()
         setupActions()
         loadUserData()
+        
+        optionsCollectionView.dataSource = self
+        optionsCollectionView.delegate = self
     }
     
     static func instantiate() -> HomeViewController {
@@ -46,6 +54,7 @@ final class HomeViewController: BaseViewController {
             self?.setupUI()
             self?.setProfileImage()
             self?.setupActions()
+            self?.optionsCollectionView.reloadData()
         }
     }
     
@@ -80,13 +89,41 @@ final class HomeViewController: BaseViewController {
     @objc private func profileImageTapped() {
         viewModel?.navigateToProfile()
     }
+}
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel?.optionsToShow.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OptionCollectionCell.identifier, for: indexPath) as? OptionCollectionCell,
+              let option = viewModel?.optionsToShow[indexPath.item] else {
+            return UICollectionViewCell()
+        }
+        cell.configure(with: option)
+        
+        return cell
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width
+        let height: CGFloat = Constants.CollectionView.cellHeight
+        
+        return CGSize(width: width, height: height)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        Constants.CollectionView.minimumLineSpacing
+    }
+
 }
 
 extension HomeViewController: ProfileViewControllerDelegate {
-    
     func profileDidUpdate() {
         loadUserData()
     }
-
 }

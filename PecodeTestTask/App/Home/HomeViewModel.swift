@@ -12,6 +12,7 @@ class HomeViewModel {
     private(set) var userName: String = ""
     private(set) var backgroundImageName = ""
     private(set) var user: UserData?
+    private(set) var optionsToShow: [OptionData] = []
     
     init(coordinator: HomeCoordinator, userSex: UserSex) {
         self.coordinator = coordinator
@@ -32,6 +33,7 @@ class HomeViewModel {
                 if let user = registrationData, let user = user {
                     self?.userName = user.userName
                     self?.user = user
+                    self?.optionsToShow = user.selectedOptions.filter { $0.isShown == true }
                 }
                 completion(nil)
             case .failure(let error):

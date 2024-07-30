@@ -7,12 +7,16 @@
 
 struct OptionData: Codable, Equatable {
     var optionName: OptionDataName
-    var value: Double?
+    var valueArray: [Double?]
+    var changedValue: Double?
+    var dateArray: [Int]
     var isShown: Bool? = false
     
     static func == (lhs: OptionData, rhs: OptionData) -> Bool {
-        return lhs.optionName == rhs.optionName &&
-               lhs.value == rhs.value &&
-               lhs.isShown == rhs.isShown
+        lhs.optionName == rhs.optionName &&
+        lhs.valueArray.elementsEqual(rhs.valueArray) { $0 == $1 } &&
+        lhs.changedValue == rhs.changedValue &&
+        lhs.dateArray.elementsEqual(rhs.dateArray) { $0 == $1 } &&
+        lhs.isShown == rhs.isShown
     }
 }

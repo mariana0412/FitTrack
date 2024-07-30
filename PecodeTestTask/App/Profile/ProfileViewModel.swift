@@ -9,25 +9,24 @@ import UIKit
 
 class ProfileViewModel {
     
-    enum Constants {
-        enum Texts {
-            static let navigationItemTitle = "Profile"
-            static let name = "Name"
-            static let namePlaceholder = "Enter Your Name"
-            static let instruction = "Select an option to display on the main screen."
-            static let addOptionsButton = "Add Options"
-            static let defaultImageName = "noImage"
-        }
-        
+    private enum Constants {
+        static let maxNumberOfBytesInData = 1048487
+        static let minUpdateInterval = 3600
+    
         enum Validation {
             static let maxHeight: Double = 300
             static let maxWeight: Double = 300
             static let maxValue: Double = 100
             static let minValue: Double = 0
         }
-        
-        static let maxNumberOfBytesInData = 1048487
     }
+    
+    let navigationItemTitle = "Profile"
+    let name = "Name"
+    let namePlaceholder = "Enter Your Name"
+    let instruction = "Select an option to display on the main screen."
+    let addOptionsButton = "Add Options"
+    let defaultImageName = "noImage"
     
     private var coordinator: ProfileCoordinator?
     
@@ -50,7 +49,7 @@ class ProfileViewModel {
             newImageData = newImage.compress(to: Constants.maxNumberOfBytesInData)
         }
         
-        let newOptions = selectedOptionsChanged() ? selectedOptions : nil
+        let newOptions = selectedOptions
 
         FirebaseService.shared.updateUserProfile(newName: newName, 
                                                  newImage: newImageData, newOptions: newOptions) { [weak self] response in
@@ -60,6 +59,7 @@ class ProfileViewModel {
                 completion(true)
                 if let user = updatedUser {
                     self?.user = user
+                    self?.selectedOptions = user?.selectedOptions ?? []
                 }
             case .failure(let error):
                 self?.navigateToAlert(message: error.localizedDescription)
@@ -80,7 +80,24 @@ class ProfileViewModel {
         (newName != oldName) && (newName.isEmpty != true)
     }
     
-    func validateOption(optionName: OptionDataName, value: String?) -> Bool {
+    func optionsAreValid(_ optionSwitches: [OptionSwitch]) -> Bool {
+        var areValid = true
+
+        optionSwitches.forEach { optionSwitch in
+            if let optionName = OptionDataName(rawValue: optionSwitch.optionName) {
+                if optionIsValid(optionName: optionName, value: optionSwitch.optionValue) == true {
+                    optionSwitch.setNormalState()
+                } else {
+                    optionSwitch.setErrorState()
+                    areValid = false
+                }
+            }
+        }
+
+        return areValid
+    }
+    
+    func optionIsValid(optionName: OptionDataName, value: String?) -> Bool {
         guard let value, let valueDouble = Double(value) else { return false }
         
         if valueDouble <= Constants.Validation.minValue {
@@ -96,6 +113,67 @@ class ProfileViewModel {
             return valueDouble <= Constants.Validation.maxValue
         }
     }
+
+    func prepareOptionsForEditing(_ optionSwitches: [OptionSwitch]) {
+        var newSelectedOptions = [OptionData]()
+        
+        optionSwitches.forEach { optionSwitch in
+            guard let optionName = OptionDataName(rawValue: optionSwitch.optionName) else { return }
+            
+            let value = Double(optionSwitch.optionValue ?? "") ?? 0.0
+            let isShown = optionSwitch.optionSwitch.isOn
+            let currentTimestamp = Int(Date().timeIntervalSince1970)
+            let existingOption = user?.selectedOptions.first { $0.optionName == optionName }
+            
+            if var option = existingOption {
+                handleExistingOption(&option,
+                                     value: value,
+                                     currentTimestamp: currentTimestamp,
+                                     isShown: isShown)
+                newSelectedOptions.append(option)
+            } else {
+                let newOption = OptionData(optionName: optionName,
+                                           valueArray: [value],
+                                           dateArray: [currentTimestamp],
+                                           isShown: isShown)
+                newSelectedOptions.append(newOption)
+            }
+        }
+        selectedOptions = newSelectedOptions
+    }
+    
+    func handleExistingOption(_ option: inout OptionData, value: Double, currentTimestamp: Int, isShown: Bool) {
+        if let lastValue = option.valueArray.last, let lastValue, let lastTimestamp = option.dateArray.last {
+            if lastValue != value {
+                if currentTimestamp - lastTimestamp > 10 {
+                    option.valueArray.append(value)
+                    option.dateArray.append(currentTimestamp)
+                    option.changedValue = value - lastValue
+                } else {
+                    updateLastValueAndTimestamp(&option, value: value, currentTimestamp: currentTimestamp)
+                }
+            }
+            option.isShown = isShown
+        } else if let wasShown = option.isShown, wasShown != isShown {
+            option.isShown = isShown
+        }
+    }
+
+    private func updateLastValueAndTimestamp(_ option: inout OptionData, value: Double, currentTimestamp: Int) {
+        option.valueArray.removeLast()
+        let newLastValue = option.valueArray.last
+        
+        option.valueArray.append(value)
+        option.dateArray.removeLast()
+        option.dateArray.append(currentTimestamp)
+        
+        if let newLastValue = newLastValue, let newLastValue {
+            let changedValue = value - newLastValue
+            if changedValue != 0 {
+                option.changedValue = changedValue
+            }
+        }
+    }
     
     func navigateToHome() {
         coordinator?.navigateToHome()
@@ -106,7 +184,7 @@ class ProfileViewModel {
 
         for optionName in selectedOptionNames {
             if !selectedOptions.contains(where: { $0.optionName == optionName }) {
-                let newOption = OptionData(optionName: optionName)
+                let newOption = OptionData(optionName: optionName, valueArray: [], dateArray: [])
                 selectedOptions.append(newOption)
             }
         }
