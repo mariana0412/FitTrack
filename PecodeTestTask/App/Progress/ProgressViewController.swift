@@ -11,7 +11,8 @@ final class ProgressViewController: BaseViewController {
     
     private enum Constants {
         enum TableView {
-            static let cellReuseIdentifier = "optionNameCell"
+            static let cellReuseIdentifier = "OptionNameViewCell"
+            static let rowHeight: CGFloat = 73
         }
         enum Layout {
             static let noOptionsViewBorderWidth: CGFloat = 1.0
@@ -99,7 +100,8 @@ final class ProgressViewController: BaseViewController {
     private func configureTableView() {
         optionsTableView.dataSource = self
         optionsTableView.delegate = self
-        optionsTableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.TableView.cellReuseIdentifier)
+        optionsTableView.register(OptionNameViewCell.self,
+                                  forCellReuseIdentifier: Constants.TableView.cellReuseIdentifier)
     }
     
 }
@@ -111,17 +113,10 @@ extension ProgressViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableView.cellReuseIdentifier,
-                                                 for: indexPath)
+                                                 for: indexPath) as! OptionNameViewCell
         if let option = viewModel?.options[indexPath.row] {
-            cell.textLabel?.text = option.optionName.rawValue
+            cell.configure(with: option.optionName.rawValue)
         }
-        cell.backgroundColor = .clear
-        cell.textLabel?.textColor = .primaryWhite
-        cell.textLabel?.font = Fonts.helveticaNeue16
-        
-        let selectedBackgroundView = UIView()
-        selectedBackgroundView.backgroundColor = UIColor.clear
-        cell.selectedBackgroundView = selectedBackgroundView
         
         return cell
     }
@@ -129,7 +124,7 @@ extension ProgressViewController: UITableViewDataSource {
 
 extension ProgressViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 73
+        Constants.TableView.rowHeight
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

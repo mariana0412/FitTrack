@@ -89,6 +89,7 @@
 		CA9018D02C5BC4DC0030FA26 /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9018CF2C5BC4DC0030FA26 /* Chart.storyboard */; };
 		CA9018D22C5BD0BC0030FA26 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9018D12C5BD0BC0030FA26 /* DateUtils.swift */; };
 		CA9018D42C5C2A140030FA26 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9018D32C5C2A140030FA26 /* Notification+Extensions.swift */; };
+		CA9018D62C5C4BE20030FA26 /* OptionNameViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9018D52C5C4BE20030FA26 /* OptionNameViewCell.swift */; };
 		CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */; };
 		CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */; };
 		CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */; };
@@ -238,6 +239,7 @@
 		CA9018CF2C5BC4DC0030FA26 /* Chart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chart.storyboard; sourceTree = "<group>"; };
 		CA9018D12C5BD0BC0030FA26 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		CA9018D32C5C2A140030FA26 /* Notification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
+		CA9018D52C5C4BE20030FA26 /* OptionNameViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionNameViewCell.swift; sourceTree = "<group>"; };
 		CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextFieldView.xib; sourceTree = "<group>"; };
 		CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -628,6 +630,7 @@
 				CAA18EFC2C3C133800F888CD /* ProgressCoordinator.swift */,
 				CAA18EFE2C3C134200F888CD /* ProgressViewModel.swift */,
 				CAA18F002C3C134B00F888CD /* Progress.storyboard */,
+				CA9018D52C5C4BE20030FA26 /* OptionNameViewCell.swift */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -1026,6 +1029,7 @@
 				CA4FEC662C4C59B400988C5B /* ProfileViewController.swift in Sources */,
 				CAA18F092C3C149C00F888CD /* CalculatorViewModel.swift in Sources */,
 				CAA18F1D2C3C56F700F888CD /* OverlayUtils.swift in Sources */,
+				CA9018D62C5C4BE20030FA26 /* OptionNameViewCell.swift in Sources */,
 				CA9018D22C5BD0BC0030FA26 /* DateUtils.swift in Sources */,
 				CAA18F0F2C3C159300F888CD /* MusclesCoordinator.swift in Sources */,
 				CAA18EFD2C3C133800F888CD /* ProgressCoordinator.swift in Sources */,

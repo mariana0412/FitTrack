@@ -12,8 +12,6 @@ class OptionCollectionCell: UICollectionViewCell {
     static let identifier = "OptionCollectionCell"
     
     private enum Constants {
-        static let identifier = "OptionCollectionCell"
-        
         enum Layout {
             static let containerCornerRadius: CGFloat = 10
             static let containerBorderWidth: CGFloat = 1
@@ -26,9 +24,14 @@ class OptionCollectionCell: UICollectionViewCell {
             static let optionMeasureFont = UIFont(name: "HelveticaNeue", size: 20)
             static let changedValueFont = UIFont(name: "Gilroy-SemiBold", size: 19)
         }
+        
         enum Color {
             static let increaseColor = UIColor.lightRed
             static let decreaseColor = UIColor.lightGreen
+        }
+        
+        enum Format {
+            static let valueFormat = "%.1f"
         }
     }
 
@@ -48,13 +51,13 @@ class OptionCollectionCell: UICollectionViewCell {
     func configure(with option: OptionData) {
         optionName.text = option.optionName.rawValue
         if let value = option.valueArray.last, let value {
-            optionValue.text = String(format: "%.1f", value)
+            optionValue.text = String(format: Constants.Format.valueFormat, value)
         }
         
         optionMeasure.text = option.optionName.metricValue
         
         if let change = option.changedValue {
-            changedValue.text = String(format: "%+.1f", change)
+            changedValue.text = String(format: Constants.Format.valueFormat, change)
             circleView.backgroundColor = change > 0 ? Constants.Color.increaseColor : Constants.Color.decreaseColor
         } else {
             changedValue.text = ""

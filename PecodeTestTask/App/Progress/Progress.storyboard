@@ -61,15 +61,31 @@ to your profile.</string>
                                 <color key="separatorColor" name="PrimaryWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="optionNameCell" id="hh8-u0-xyQ">
-                                        <rect key="frame" x="0.0" y="50" width="289" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OptionNameViewCell" id="hh8-u0-xyQ" customClass="OptionNameViewCell" customModule="PecodeTestTask" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="289" height="42.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hh8-u0-xyQ" id="Nia-yb-Qaa">
-                                            <rect key="frame" x="0.0" y="0.0" width="289" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="289" height="42.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWq-ao-66K">
+                                                    <rect key="frame" x="16.000000000000004" y="11.000000000000002" width="41.333333333333343" height="20.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="PrimaryWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="iWq-ao-66K" firstAttribute="leading" secondItem="Nia-yb-Qaa" secondAttribute="leadingMargin" id="A0F-58-aVK"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="iWq-ao-66K" secondAttribute="bottom" id="VVn-5Y-fA6"/>
+                                                <constraint firstItem="iWq-ao-66K" firstAttribute="top" secondItem="Nia-yb-Qaa" secondAttribute="topMargin" id="eG3-Z4-gY2"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="optionLabel" destination="iWq-ao-66K" id="ZzJ-B6-LH5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
