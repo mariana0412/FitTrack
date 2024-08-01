@@ -24,6 +24,12 @@ final class ChartViewController: BaseViewController {
             static let changeLabelSize = CGSize(width: 56, height: 25)
             static let changeLabelCornerRadius: CGFloat = 13.0
         }
+        
+        enum Animation {
+            static let duration = 1.0
+            static let valueAnimationDelay = 0.0
+            static let changedValueAnimationDelay = 1.0
+        }
     }
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -113,8 +119,6 @@ final class ChartViewController: BaseViewController {
         let baselineLayer = createBaseLine(width: chartWidth,
                                            yPosition: baseLineYPosition)
         chartView.layer.addSublayer(baselineLayer)
-        
-        var lastBarView: UIView?
 
         for (index, value) in data.valueArray.enumerated() {
             guard let value = value else { continue }
@@ -124,20 +128,13 @@ final class ChartViewController: BaseViewController {
             let yPosition = baseLineYPosition - barHeight
 
             let barView = UIView()
-            barView.translatesAutoresizingMaskIntoConstraints = false
             chartView.addSubview(barView)
+            addBarViewConstraints(barView: barView, xPosition: xPosition, barHeight: barHeight)
 
             let barLayer = createBarLayer(xPosition: 0,
                                           yPosition: 0,
                                           height: barHeight)
             barView.layer.addSublayer(barLayer)
-
-            NSLayoutConstraint.activate([
-                barView.leadingAnchor.constraint(equalTo: chartView.leadingAnchor, constant: xPosition),
-                barView.bottomAnchor.constraint(equalTo: chartView.bottomAnchor, constant: -Constants.Layout.baseLineYPositionOffset),
-                barView.widthAnchor.constraint(equalToConstant: Constants.Layout.barWidth),
-                barView.heightAnchor.constraint(equalToConstant: barHeight)
-            ])
 
             let valueLabel = createValueLabel(value: value,
                                               unit: data.optionName.metricValue,
@@ -154,10 +151,12 @@ final class ChartViewController: BaseViewController {
                 let dashedLineLayer = createDashedLine(width: chartWidth,
                                                        yPosition: yPosition)
                 chartView.layer.addSublayer(dashedLineLayer)
-
+                animateBarLayer(barLayer: barLayer, 
+                                barHeight: barHeight,
+                                valueLabel: valueLabel)
                 continue
-            } else if index == data.valueArray.count - 1 {
-                lastBarView = barView
+            } else if index == (data.valueArray.count - 1) {
+                setLastBarTrailingContraint(lastBarView: barView)
             }
 
             let previousValue = data.valueArray[index - 1] ?? 0
@@ -168,27 +167,55 @@ final class ChartViewController: BaseViewController {
                                                 yPosition: yPosition,
                                                 valueLabelMinY: valueLabel.frame.minY)
             chartView.addSubview(changedValueLabel)
-        }
-
-        if let lastBarView = lastBarView {
-            let trailingConstraint = NSLayoutConstraint(item: lastBarView,  attribute: .trailing, relatedBy: .equal, toItem: chartView, attribute: .trailing, multiplier: 1, constant: -Constants.Layout.spacing)
-            chartView.addConstraint(trailingConstraint)
+            
+            animateBarLayer(barLayer: barLayer, 
+                            barHeight: barHeight,
+                            valueLabel: valueLabel,
+                            changedValueLabel: changedValueLabel)
         }
     }
     
-    private func addBarViewConstraints(barView: UIView, xPosition: CGFloat, yPosition: CGFloat) {
-        NSLayoutConstraint.activate([
-            barView.leadingAnchor.constraint(equalTo: chartView.leadingAnchor, constant: xPosition),
-            barView.bottomAnchor.constraint(equalTo: chartView.bottomAnchor, constant: -Constants.Layout.baseLineYPositionOffset),
-            barView.widthAnchor.constraint(equalToConstant: Constants.Layout.barWidth),
-            barView.heightAnchor.constraint(equalToConstant: yPosition)
-        ])
+    private func animateBarLayer(barLayer: CALayer, barHeight: CGFloat, valueLabel: UILabel, changedValueLabel: UILabel? = nil) {
+        barLayer.anchorPoint = CGPoint(x: 0.5, y: 1.0)
+        barLayer.position.y += barHeight / 2
+        
+        valueLabel.alpha = 0
+        changedValueLabel?.alpha = 0
+
+        CATransaction.begin()
+        CATransaction.setCompletionBlock {
+            UIView.animate(withDuration: Constants.Animation.duration,
+                           delay: Constants.Animation.valueAnimationDelay,
+                           options: .curveEaseInOut,
+                           animations: {
+                                valueLabel.alpha = 1
+                            }, completion: nil)
+
+            UIView.animate(withDuration: Constants.Animation.duration,
+                           delay: Constants.Animation.changedValueAnimationDelay,
+                           options: .curveEaseInOut,
+                           animations: {
+                                changedValueLabel?.alpha = 1
+                            }, completion: nil)
+        }
+
+        let heightAnimation = CABasicAnimation(keyPath: "bounds.size.height")
+        heightAnimation.fromValue = 0
+        heightAnimation.toValue = barHeight
+        heightAnimation.duration = Constants.Animation.duration
+        heightAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        barLayer.add(heightAnimation, forKey: "height")
+
+        CATransaction.commit()
     }
     
     private func createBaseLine(width: CGFloat, yPosition: CGFloat) -> CALayer {
         let baseLineLayer = CALayer()
         
-        baseLineLayer.frame = CGRect(x: 0, y: yPosition, width: width, height: Constants.Layout.baseLineHeight)
+        baseLineLayer.frame = CGRect(x: 0, 
+                                     y: yPosition,
+                                     width: width,
+                                     height: Constants.Layout.baseLineHeight)
         baseLineLayer.backgroundColor = UIColor.primaryWhite.cgColor
         
         return baseLineLayer
@@ -197,7 +224,10 @@ final class ChartViewController: BaseViewController {
     private func createBarLayer(xPosition: CGFloat, yPosition: CGFloat, height: CGFloat) -> CALayer {
         let barLayer = CALayer()
         
-        barLayer.frame = CGRect(x: xPosition, y: yPosition, width: Constants.Layout.barWidth, height: height)
+        barLayer.frame = CGRect(x: xPosition, 
+                                y: yPosition,
+                                width: Constants.Layout.barWidth,
+                                height: height)
         barLayer.backgroundColor = UIColor.primaryYellow.cgColor
         barLayer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         barLayer.cornerRadius = Constants.Layout.barWidth / 4
@@ -242,8 +272,8 @@ final class ChartViewController: BaseViewController {
         changedValueLabel.textAlignment = .center
         changedValueLabel.sizeToFit()
         changedValueLabel.frame.size = Constants.Layout.changeLabelSize
-        changedValueLabel.center = CGPoint(x: xPosition + Constants.Layout.barWidth / 2, 
-                                     y: valueLabelMinY - changedValueLabel.bounds.height / 2 - Constants.Layout.changeLabelVerticalOffset)
+        changedValueLabel.center = CGPoint(x: xPosition + Constants.Layout.barWidth / 2,
+                                           y: valueLabelMinY - changedValueLabel.bounds.height / 2 - Constants.Layout.changeLabelVerticalOffset)
         changedValueLabel.layer.cornerRadius = Constants.Layout.changeLabelCornerRadius
         changedValueLabel.layer.masksToBounds = true
         
@@ -263,8 +293,30 @@ final class ChartViewController: BaseViewController {
         return shapeLayer
     }
     
-    private func addConstraintsToBarView() {
+    private func addBarViewConstraints(barView: UIView, xPosition: CGFloat, barHeight: CGFloat) {
+        barView.translatesAutoresizingMaskIntoConstraints = false
         
+        NSLayoutConstraint.activate([
+            barView.leadingAnchor.constraint(equalTo: chartView.leadingAnchor, 
+                                             constant: xPosition),
+            barView.bottomAnchor.constraint(equalTo: chartView.bottomAnchor, 
+                                            constant: -Constants.Layout.baseLineYPositionOffset),
+            barView.widthAnchor.constraint(equalToConstant: Constants.Layout.barWidth),
+            barView.heightAnchor.constraint(equalToConstant: barHeight)
+        ])
+    }
+    
+    private func setLastBarTrailingContraint(lastBarView: UIView?) {
+        if let lastBarView = lastBarView {
+            let trailingConstraint = NSLayoutConstraint(item: lastBarView,
+                                                        attribute: .trailing,
+                                                        relatedBy: .equal,
+                                                        toItem: chartView,
+                                                        attribute: .trailing,
+                                                        multiplier: 1,
+                                                        constant: -Constants.Layout.spacing)
+            chartView.addConstraint(trailingConstraint)
+        }
     }
 
 }
