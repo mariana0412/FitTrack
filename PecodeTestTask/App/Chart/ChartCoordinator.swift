@@ -18,7 +18,9 @@ class ChartCoordinator: Coordinator {
     
     func start() {
         let chartViewController = ChartViewController.instantiate()
-        chartViewController.viewModel = ChartViewModel(coordinator: self, optionData: optionData)
+        chartViewController.viewModel = ChartViewModel(coordinator: self, 
+                                                       optionData: optionData)
+        chartViewController.hidesBottomBarWhenPushed = true
         navigationController.pushViewController(chartViewController, animated: false)
     }
     

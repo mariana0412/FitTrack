@@ -40,6 +40,7 @@ final class ProgressViewController: BaseViewController {
     @objc private func handleProfileUpdate(_ notification: Notification) {
         if let userInfo = notification.userInfo, let updatedUser = userInfo["user"] as? UserData {
             viewModel?.updateOptions(with: updatedUser.selectedOptions)
+            optionsTableView.reloadData()
         }
     }
 
