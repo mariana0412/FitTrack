@@ -146,13 +146,13 @@ final class ChartViewController: BaseViewController {
             }
             
             let previousValue = data.valueArray[index - 1] ?? 0
-            let changeValue = value - previousValue
-            let changeLabel = createChangeLabel(changeValue: changeValue, 
+            let changedValue = value - previousValue
+            let changedValueLabel = createChangedValueLabel(changedValue: changedValue, 
                                                 unit: data.optionName.metricValue,
                                                 xPosition: xPosition,
                                                 yPosition: yPosition,
                                                 valueLabelMinY: valueLabel.frame.minY)
-            chartView.addSubview(changeLabel)
+            chartView.addSubview(changedValueLabel)
         }
     }
     
@@ -179,7 +179,7 @@ final class ChartViewController: BaseViewController {
     private func createValueLabel(value: Double, unit: String, xPosition: CGFloat, yPosition: CGFloat) -> UILabel {
         let valueLabel = UILabel()
         
-        valueLabel.text = String(format: "%.0f \(unit)", value)
+        valueLabel.text = String(format: "%.1f \(unit)", value)
         valueLabel.textColor = .primaryWhite
         valueLabel.font = Fonts.sairaRegular16
         valueLabel.sizeToFit()
@@ -202,23 +202,23 @@ final class ChartViewController: BaseViewController {
         return dateLabel
     }
     
-    private func createChangeLabel(changeValue: Double, unit: String, xPosition: CGFloat, yPosition: CGFloat, valueLabelMinY: CGFloat) -> UILabel {
-        let changeLabel = UILabel()
+    private func createChangedValueLabel(changedValue: Double, unit: String, xPosition: CGFloat, yPosition: CGFloat, valueLabelMinY: CGFloat) -> UILabel {
+        let changedValueLabel = UILabel()
         
-        changeLabel.text = String(format: "%+.0f \(unit)", changeValue)
-        changeLabel.textColor = changeValue > 0 ? .lightRed : .lightGreen
-        changeLabel.font = UIFont(name: "Gilroy-SemiBold", size: 14)
-        changeLabel.backgroundColor = changeLabel.textColor
-        changeLabel.textColor = .primaryWhite
-        changeLabel.textAlignment = .center
-        changeLabel.sizeToFit()
-        changeLabel.frame.size = Constants.Layout.changeLabelSize
-        changeLabel.center = CGPoint(x: xPosition + Constants.Layout.barWidth / 2, 
-                                     y: valueLabelMinY - changeLabel.bounds.height / 2 - Constants.Layout.changeLabelVerticalOffset)
-        changeLabel.layer.cornerRadius = Constants.Layout.changeLabelCornerRadius
-        changeLabel.layer.masksToBounds = true
+        changedValueLabel.text = String(format: "%+.1f \(unit)", changedValue)
+        changedValueLabel.textColor = changedValue > 0 ? .lightRed : .lightGreen
+        changedValueLabel.font = UIFont(name: "Gilroy-SemiBold", size: 14)
+        changedValueLabel.backgroundColor = changedValueLabel.textColor
+        changedValueLabel.textColor = .primaryWhite
+        changedValueLabel.textAlignment = .center
+        changedValueLabel.sizeToFit()
+        changedValueLabel.frame.size = Constants.Layout.changeLabelSize
+        changedValueLabel.center = CGPoint(x: xPosition + Constants.Layout.barWidth / 2, 
+                                     y: valueLabelMinY - changedValueLabel.bounds.height / 2 - Constants.Layout.changeLabelVerticalOffset)
+        changedValueLabel.layer.cornerRadius = Constants.Layout.changeLabelCornerRadius
+        changedValueLabel.layer.masksToBounds = true
         
-        return changeLabel
+        return changedValueLabel
     }
 
     private func createDashedLine(width: CGFloat, yPosition: CGFloat) -> CAShapeLayer {

@@ -48,19 +48,14 @@ class OptionCollectionCell: UICollectionViewCell {
     func configure(with option: OptionData) {
         optionName.text = option.optionName.rawValue
         if let value = option.valueArray.last, let value {
-            optionValue.text = "\(value)"
+            optionValue.text = String(format: "%.1f", value)
         }
         
         optionMeasure.text = option.optionName.metricValue
         
         if let change = option.changedValue {
-            if change > 0 {
-                changedValue.text = "+\(change)"
-                circleView.backgroundColor = Constants.Color.increaseColor
-            } else {
-                changedValue.text = "\(change)"
-                circleView.backgroundColor = Constants.Color.decreaseColor
-            }
+            changedValue.text = String(format: "%+.1f", change)
+            circleView.backgroundColor = change > 0 ? Constants.Color.increaseColor : Constants.Color.decreaseColor
         } else {
             changedValue.text = ""
             circleView.backgroundColor = UIColor.clear

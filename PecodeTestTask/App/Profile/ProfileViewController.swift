@@ -182,7 +182,7 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
             var optionValueString = ""
             if let optionValue = option.valueArray.last, 
                 let optionValue {
-                optionValueString = String(optionValue)
+                optionValueString = String(format: "%.1f", optionValue)
             }
             
             optionSwitch.configure(optionName: option.optionName.rawValue,
