@@ -110,13 +110,18 @@ extension ProgressViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableView.cellReuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableView.cellReuseIdentifier,
+                                                 for: indexPath)
         if let option = viewModel?.options[indexPath.row] {
             cell.textLabel?.text = option.optionName.rawValue
         }
         cell.backgroundColor = .clear
         cell.textLabel?.textColor = .primaryWhite
         cell.textLabel?.font = Fonts.helveticaNeue16
+        
+        let selectedBackgroundView = UIView()
+        selectedBackgroundView.backgroundColor = UIColor.clear
+        cell.selectedBackgroundView = selectedBackgroundView
         
         return cell
     }
