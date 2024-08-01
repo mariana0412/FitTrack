@@ -8,11 +8,30 @@
 import UIKit
 
 final class ProgressViewController: BaseViewController {
+    
+    private enum Constants {
+        enum TableView {
+            static let cellReuseIdentifier = "optionNameCell"
+        }
+        enum Layout {
+            static let noOptionsViewBorderWidth: CGFloat = 1.0
+            static let noOptionsViewCornerRadius: CGFloat = 8.0
+            static let noOptionsViewBorderColor = UIColor.primaryWhite.cgColor
+            static let icon = UIImage(systemName: "exclamationmark.circle")
+        }
+    }
+    
+    @IBOutlet weak var noOptionsView: UIView!
+    @IBOutlet weak var exclamationMarkIcon: UIImageView!
+    @IBOutlet weak var noOptionsLabel: UILabel!
+    @IBOutlet weak var optionsTableView: UITableView!
+    
     var viewModel: ProgressViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
+        configureTableView()
         loadOptions()
     }
     
@@ -29,7 +48,7 @@ final class ProgressViewController: BaseViewController {
     
     private func configureNavigationBar() {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        let navigationButtons = NavigationBarConfigurator.configureNavigationBar(
+        let _ = NavigationBarConfigurator.configureNavigationBar(
             for: self,
             title: viewModel?.navigationItemTitle ?? ""
         )
@@ -45,7 +64,54 @@ final class ProgressViewController: BaseViewController {
     }
     
     private func setupUI() {
+        noOptionsView.layer.borderWidth = Constants.Layout.noOptionsViewBorderWidth
+        noOptionsView.layer.cornerRadius = Constants.Layout.noOptionsViewCornerRadius
+        noOptionsView.layer.borderColor = Constants.Layout.noOptionsViewBorderColor
         
+        noOptionsLabel.text = viewModel?.noOptionsText
+        noOptionsLabel.font = Fonts.helveticaNeue16
+        noOptionsLabel.textColor = .primaryWhite
+        
+        exclamationMarkIcon.image = Constants.Layout.icon
+        exclamationMarkIcon.tintColor = .primaryYellow
+        
+        if viewModel?.options.isEmpty == true {
+            optionsTableView.isHidden = true
+        } else {
+            noOptionsView.isHidden = true
+            optionsTableView.reloadData()
+        }
     }
     
+    private func configureTableView() {
+        optionsTableView.dataSource = self
+        optionsTableView.delegate = self
+        optionsTableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.TableView.cellReuseIdentifier)
+    }
+    
+}
+
+extension ProgressViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.options.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableView.cellReuseIdentifier, for: indexPath)
+        if let option = viewModel?.options[indexPath.row] {
+            cell.textLabel?.text = option.optionName.rawValue
+        }
+        cell.backgroundColor = .clear
+        cell.textLabel?.textColor = .primaryWhite
+        cell.textLabel?.font = Fonts.helveticaNeue16
+        
+        return cell
+    }
+}
+
+extension ProgressViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        // navigate to separate screen
+    }
 }

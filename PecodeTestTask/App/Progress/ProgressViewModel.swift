@@ -6,6 +6,9 @@
 //
 
 class ProgressViewModel {
+    
+    let noOptionsText = "Options are not selected. To display them, add them to your profile."
+    
     private var coordinator: ProgressCoordinator?
     var options: [OptionData] = []
     let navigationItemTitle = "Progress"
