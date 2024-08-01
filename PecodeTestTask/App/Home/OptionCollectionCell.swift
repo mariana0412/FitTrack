@@ -32,6 +32,7 @@ class OptionCollectionCell: UICollectionViewCell {
         
         enum Format {
             static let valueFormat = "%.1f"
+            static let changedValueFormat = "%+.1f"
         }
     }
 
@@ -57,7 +58,7 @@ class OptionCollectionCell: UICollectionViewCell {
         optionMeasure.text = option.optionName.metricValue
         
         if let change = option.changedValue {
-            changedValue.text = String(format: Constants.Format.valueFormat, change)
+            changedValue.text = String(format: Constants.Format.changedValueFormat, change)
             circleView.backgroundColor = change > 0 ? Constants.Color.increaseColor : Constants.Color.decreaseColor
         } else {
             changedValue.text = ""

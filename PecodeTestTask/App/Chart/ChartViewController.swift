@@ -35,7 +35,8 @@ final class ChartViewController: BaseViewController {
         
         enum Format {
             static let dateFormat = "dd.MM"
-            static let valueFormat = "%+.1f"
+            static let valueFormat = "%.1f"
+            static let changedValueFormat = "%+.1f"
         }
     }
     
@@ -245,7 +246,7 @@ final class ChartViewController: BaseViewController {
     private func createValueLabel(value: Double, unit: String, xPosition: CGFloat, yPosition: CGFloat) -> UILabel {
         let valueLabel = UILabel()
         
-        valueLabel.text = String(format: "%.1f \(unit)", value)
+        valueLabel.text = String(format: "\(Constants.Format.valueFormat) \(unit)", value)
         valueLabel.textColor = .primaryWhite
         valueLabel.font = Fonts.sairaRegular16
         valueLabel.sizeToFit()
@@ -271,7 +272,7 @@ final class ChartViewController: BaseViewController {
     private func createChangedValueLabel(changedValue: Double, unit: String, xPosition: CGFloat, yPosition: CGFloat, valueLabelMinY: CGFloat) -> UILabel {
         let changedValueLabel = UILabel()
         
-        changedValueLabel.text = String(format: "\(Constants.Format.valueFormat) \(unit)", changedValue)
+        changedValueLabel.text = String(format: "\(Constants.Format.changedValueFormat) \(unit)", changedValue)
         changedValueLabel.textColor = changedValue > 0 ? .lightRed : .lightGreen
         changedValueLabel.font = Constants.Layout.changedValueLabelFont
         changedValueLabel.backgroundColor = changedValueLabel.textColor

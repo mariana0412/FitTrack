@@ -11,7 +11,7 @@ class ProfileViewModel {
     
     private enum Constants {
         static let maxNumberOfBytesInData = 1048487
-        static let minUpdateInterval = 10
+        static let minUpdateInterval = 1
         static let minError = 0.01
     
         enum Validation {
@@ -152,7 +152,7 @@ class ProfileViewModel {
                     option.valueArray.append(value)
                     option.dateArray.append(currentTimestamp)
                     let changedValue = value - lastValue
-                    if changedValue >= Constants.minError {
+                    if abs(changedValue) >= Constants.minError {
                         option.changedValue = changedValue
                     }
                 } else {
@@ -175,7 +175,7 @@ class ProfileViewModel {
         
         if let newLastValue = newLastValue, let newLastValue {
             let changedValue = value - newLastValue
-            if changedValue >= Constants.minError {
+            if abs(changedValue) >= Constants.minError {
                 option.changedValue = changedValue
             }
         }
