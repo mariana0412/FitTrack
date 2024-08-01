@@ -13,7 +13,7 @@ final class ChartViewController: BaseViewController {
         enum Layout {
             static let barWidth: CGFloat = 58.0
             static let spacing: CGFloat = 12.0
-            static let maxBarHeightRatio: CGFloat = 0.8
+            static let maxBarHeightRatio: CGFloat = 0.6
             static let baseLineHeight: CGFloat = 0.5
             static let dashedLineWidth: CGFloat = 0.5
             static let dashedLinePattern: [NSNumber] = [3, 3]
@@ -114,6 +114,8 @@ final class ChartViewController: BaseViewController {
                                            yPosition: baseLineYPosition)
         chartView.layer.addSublayer(baselineLayer)
         
+        var lastBarView: UIView?
+
         for (index, value) in data.valueArray.enumerated() {
             guard let value = value else { continue }
 
@@ -121,18 +123,29 @@ final class ChartViewController: BaseViewController {
             let xPosition = Constants.Layout.spacing + CGFloat(index) * (Constants.Layout.barWidth + Constants.Layout.spacing)
             let yPosition = baseLineYPosition - barHeight
 
-            let barLayer = createBarLayer(xPosition: xPosition, 
-                                          yPosition: yPosition,
+            let barView = UIView()
+            barView.translatesAutoresizingMaskIntoConstraints = false
+            chartView.addSubview(barView)
+
+            let barLayer = createBarLayer(xPosition: 0,
+                                          yPosition: 0,
                                           height: barHeight)
-            chartView.layer.addSublayer(barLayer)
-            
-            let valueLabel = createValueLabel(value: value, 
+            barView.layer.addSublayer(barLayer)
+
+            NSLayoutConstraint.activate([
+                barView.leadingAnchor.constraint(equalTo: chartView.leadingAnchor, constant: xPosition),
+                barView.bottomAnchor.constraint(equalTo: chartView.bottomAnchor, constant: -Constants.Layout.baseLineYPositionOffset),
+                barView.widthAnchor.constraint(equalToConstant: Constants.Layout.barWidth),
+                barView.heightAnchor.constraint(equalToConstant: barHeight)
+            ])
+
+            let valueLabel = createValueLabel(value: value,
                                               unit: data.optionName.metricValue,
                                               xPosition: xPosition,
                                               yPosition: yPosition)
             chartView.addSubview(valueLabel)
-            
-            let dateLabel = createDateLabel(date: data.dateArray[index], 
+
+            let dateLabel = createDateLabel(date: data.dateArray[index],
                                             xPosition: xPosition,
                                             yPosition: baseLineYPosition)
             chartView.addSubview(dateLabel)
@@ -141,19 +154,35 @@ final class ChartViewController: BaseViewController {
                 let dashedLineLayer = createDashedLine(width: chartWidth,
                                                        yPosition: yPosition)
                 chartView.layer.addSublayer(dashedLineLayer)
-                
+
                 continue
+            } else if index == data.valueArray.count - 1 {
+                lastBarView = barView
             }
-            
+
             let previousValue = data.valueArray[index - 1] ?? 0
             let changedValue = value - previousValue
-            let changedValueLabel = createChangedValueLabel(changedValue: changedValue, 
+            let changedValueLabel = createChangedValueLabel(changedValue: changedValue,
                                                 unit: data.optionName.metricValue,
                                                 xPosition: xPosition,
                                                 yPosition: yPosition,
                                                 valueLabelMinY: valueLabel.frame.minY)
             chartView.addSubview(changedValueLabel)
         }
+
+        if let lastBarView = lastBarView {
+            let trailingConstraint = NSLayoutConstraint(item: lastBarView,  attribute: .trailing, relatedBy: .equal, toItem: chartView, attribute: .trailing, multiplier: 1, constant: -Constants.Layout.spacing)
+            chartView.addConstraint(trailingConstraint)
+        }
+    }
+    
+    private func addBarViewConstraints(barView: UIView, xPosition: CGFloat, yPosition: CGFloat) {
+        NSLayoutConstraint.activate([
+            barView.leadingAnchor.constraint(equalTo: chartView.leadingAnchor, constant: xPosition),
+            barView.bottomAnchor.constraint(equalTo: chartView.bottomAnchor, constant: -Constants.Layout.baseLineYPositionOffset),
+            barView.widthAnchor.constraint(equalToConstant: Constants.Layout.barWidth),
+            barView.heightAnchor.constraint(equalToConstant: yPosition)
+        ])
     }
     
     private func createBaseLine(width: CGFloat, yPosition: CGFloat) -> CALayer {
@@ -232,6 +261,10 @@ final class ChartViewController: BaseViewController {
         shapeLayer.path = path
         
         return shapeLayer
+    }
+    
+    private func addConstraintsToBarView() {
+        
     }
 
 }
