@@ -128,6 +128,10 @@ extension ProgressViewController: UITableViewDataSource {
 }
 
 extension ProgressViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 73
+    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let optionData = viewModel?.options[indexPath.row] {
