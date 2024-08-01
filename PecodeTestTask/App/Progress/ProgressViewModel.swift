@@ -8,10 +8,10 @@
 class ProgressViewModel {
     
     let noOptionsText = "Options are not selected. To display them, add them to your profile."
+    let navigationItemTitle = "Progress"
     
     private var coordinator: ProgressCoordinator?
     var options: [OptionData] = []
-    let navigationItemTitle = "Progress"
     
     init(coordinator: ProgressCoordinator?) {
         self.coordinator = coordinator
@@ -31,6 +31,10 @@ class ProgressViewModel {
                 completion("Unknown error occurred while fetching user details")
             }
         }
+    }
+    
+    func navigateToChart(optionData: OptionData) {
+        coordinator?.navigateToChart(optionData: optionData)
     }
     
 }

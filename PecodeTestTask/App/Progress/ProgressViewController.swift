@@ -112,6 +112,8 @@ extension ProgressViewController: UITableViewDataSource {
 extension ProgressViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        // navigate to separate screen
+        if let optionData = viewModel?.options[indexPath.row] {
+            viewModel?.navigateToChart(optionData: optionData)
+        }
     }
 }

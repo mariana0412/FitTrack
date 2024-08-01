@@ -83,6 +83,10 @@
 		CA5D810C2C5181E300486145 /* OptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5D810B2C5181E300486145 /* OptionCell.xib */; };
 		CA5D810D2C5181E300486145 /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D810A2C5181E300486145 /* OptionCell.swift */; };
 		CA5D810F2C5183C500486145 /* OptionDataName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D810E2C5183C500486145 /* OptionDataName.swift */; };
+		CA9018CA2C5BC4B20030FA26 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9018C92C5BC4B20030FA26 /* ChartViewController.swift */; };
+		CA9018CC2C5BC4CD0030FA26 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9018CB2C5BC4CD0030FA26 /* ChartViewModel.swift */; };
+		CA9018CE2C5BC4D60030FA26 /* ChartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9018CD2C5BC4D60030FA26 /* ChartCoordinator.swift */; };
+		CA9018D02C5BC4DC0030FA26 /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9018CF2C5BC4DC0030FA26 /* Chart.storyboard */; };
 		CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */; };
 		CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */; };
 		CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */; };
@@ -229,6 +233,10 @@
 		CA5D810A2C5181E300486145 /* OptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
 		CA5D810B2C5181E300486145 /* OptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionCell.xib; sourceTree = "<group>"; };
 		CA5D810E2C5183C500486145 /* OptionDataName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDataName.swift; sourceTree = "<group>"; };
+		CA9018C92C5BC4B20030FA26 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		CA9018CB2C5BC4CD0030FA26 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		CA9018CD2C5BC4D60030FA26 /* ChartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCoordinator.swift; sourceTree = "<group>"; };
+		CA9018CF2C5BC4DC0030FA26 /* Chart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chart.storyboard; sourceTree = "<group>"; };
 		CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextFieldView.xib; sourceTree = "<group>"; };
 		CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -398,6 +406,7 @@
 		CA002E092C3192C60053284B /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CA9018C82C5BC49F0030FA26 /* Chart */,
 				CA5D80FC2C51783000486145 /* Options */,
 				CA4FEC642C4C593E00988C5B /* Profile */,
 				CA465A792C47D8C5003E7217 /* ForgotPassword */,
@@ -543,6 +552,17 @@
 				CA5D81072C5178AD00486145 /* PopupTransitioningPresentationController.swift */,
 			);
 			path = PopupTransition;
+			sourceTree = "<group>";
+		};
+		CA9018C82C5BC49F0030FA26 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				CA9018C92C5BC4B20030FA26 /* ChartViewController.swift */,
+				CA9018CD2C5BC4D60030FA26 /* ChartCoordinator.swift */,
+				CA9018CB2C5BC4CD0030FA26 /* ChartViewModel.swift */,
+				CA9018CF2C5BC4DC0030FA26 /* Chart.storyboard */,
+			);
+			path = Chart;
 			sourceTree = "<group>";
 		};
 		CAA18EE02C37F97900F888CD /* Extensions */ = {
@@ -821,6 +841,7 @@
 				CAA18F112C3C159C00F888CD /* Muscles.storyboard in Resources */,
 				CA465A812C47E26F003E7217 /* ForgotPassword.storyboard in Resources */,
 				CA5D810C2C5181E300486145 /* OptionCell.xib in Resources */,
+				CA9018D02C5BC4DC0030FA26 /* Chart.storyboard in Resources */,
 				CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */,
 				CA56CBB32C58243A00AE6481 /* Gilroy-SemiBold.ttf in Resources */,
 				CA038BF62C4316300033CD30 /* Saira-Medium.ttf in Resources */,
@@ -969,6 +990,7 @@
 				CAEB18E62C4D71F4000FE4E5 /* UIImageView+Extensions.swift in Sources */,
 				CAA18F152C3C3B5200F888CD /* TabBarController.swift in Sources */,
 				CA002E372C36F8D00053284B /* CustomRadiobutton.swift in Sources */,
+				CA9018CA2C5BC4B20030FA26 /* ChartViewController.swift in Sources */,
 				CA002E352C36F8430053284B /* CustomToggleButton.swift in Sources */,
 				CAEB18FC2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift in Sources */,
 				CA5D81082C5178AD00486145 /* PopupTransitioningDelegate.swift in Sources */,
@@ -976,6 +998,7 @@
 				CAE8F1462C52973A00355755 /* OptionCellDelegate.swift in Sources */,
 				CA002E0E2C319BC10053284B /* BaseViewController.swift in Sources */,
 				CAEB19152C4EE4C4000FE4E5 /* AlertContent.swift in Sources */,
+				CA9018CC2C5BC4CD0030FA26 /* ChartViewModel.swift in Sources */,
 				CA465A7F2C47E25A003E7217 /* ForgotPasswordViewModel.swift in Sources */,
 				CA37E5672C3EF36C003ADAA8 /* SignupViewController.swift in Sources */,
 				CAA18EFF2C3C134200F888CD /* ProgressViewModel.swift in Sources */,
@@ -1017,6 +1040,7 @@
 				CAEB19052C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */,
 				CA5D810D2C5181E300486145 /* OptionCell.swift in Sources */,
 				CA002E182C319C7A0053284B /* HomeViewModel.swift in Sources */,
+				CA9018CE2C5BC4D60030FA26 /* ChartCoordinator.swift in Sources */,
 				CA002DD62C318B0F0053284B /* AppDelegate.swift in Sources */,
 				CA37E5702C3F25B4003ADAA8 /* RegistrationData.swift in Sources */,
 				CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */,
