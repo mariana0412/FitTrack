@@ -32,6 +32,7 @@ final class ProgressViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        setupUI()
         configureTableView()
         loadOptions()
         
@@ -41,7 +42,7 @@ final class ProgressViewController: BaseViewController {
     @objc private func handleProfileUpdate(_ notification: Notification) {
         if let userInfo = notification.userInfo, let updatedUser = userInfo["user"] as? UserData {
             viewModel?.updateOptions(with: updatedUser.selectedOptions)
-            optionsTableView.reloadData()
+            determineState()
         }
     }
 
@@ -73,7 +74,7 @@ final class ProgressViewController: BaseViewController {
             if let errorMessage = errorMessage {
                 print("Error: \(errorMessage)")
             }
-            self?.setupUI()
+            self?.determineState()
         }
     }
     
@@ -88,11 +89,15 @@ final class ProgressViewController: BaseViewController {
         
         exclamationMarkIcon.image = Constants.Layout.icon
         exclamationMarkIcon.tintColor = .primaryYellow
-        
+    }
+    
+    private func determineState() {
         if viewModel?.options.isEmpty == true {
             optionsTableView.isHidden = true
+            noOptionsView.isHidden = false
         } else {
             noOptionsView.isHidden = true
+            optionsTableView.isHidden = false
             optionsTableView.reloadData()
         }
     }
