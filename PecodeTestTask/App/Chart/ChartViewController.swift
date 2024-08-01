@@ -14,21 +14,28 @@ final class ChartViewController: BaseViewController {
             static let barWidth: CGFloat = 58.0
             static let spacing: CGFloat = 12.0
             static let maxBarHeightRatio: CGFloat = 0.6
+            static let barCornerRadius: CGFloat = Constants.Layout.barWidth / 4
             static let baseLineHeight: CGFloat = 0.5
             static let dashedLineWidth: CGFloat = 0.5
             static let dashedLinePattern: [NSNumber] = [3, 3]
             static let baseLineYPositionOffset: CGFloat = 40.0
             static let valueLabelVerticalOffset: CGFloat = 4.0
             static let dateLabelVerticalOffset: CGFloat = 4.0
-            static let changeLabelVerticalOffset: CGFloat = 6.0
-            static let changeLabelSize = CGSize(width: 56, height: 25)
-            static let changeLabelCornerRadius: CGFloat = 13.0
+            static let changedValueVerticalOffset: CGFloat = 6.0
+            static let changedValueSize = CGSize(width: 56, height: 25)
+            static let changeValueCornerRadius: CGFloat = 13.0
+            static let changedValueLabelFont = UIFont(name: "Gilroy-SemiBold", size: 14)
         }
         
         enum Animation {
             static let duration = 1.0
             static let valueAnimationDelay = 0.0
             static let changedValueAnimationDelay = 1.0
+        }
+        
+        enum Format {
+            static let dateFormat = "dd.MM"
+            static let valueFormat = "%+.1f"
         }
     }
     
@@ -230,7 +237,7 @@ final class ChartViewController: BaseViewController {
                                 height: height)
         barLayer.backgroundColor = UIColor.primaryYellow.cgColor
         barLayer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        barLayer.cornerRadius = Constants.Layout.barWidth / 4
+        barLayer.cornerRadius = Constants.Layout.barCornerRadius
         
         return barLayer
     }
@@ -251,7 +258,7 @@ final class ChartViewController: BaseViewController {
     private func createDateLabel(date: Int, xPosition: CGFloat, yPosition: CGFloat) -> UILabel{
         let dateLabel = UILabel()
         
-        dateLabel.text = DateUtils.formatDate(from: date, format: "dd.MM")
+        dateLabel.text = DateUtils.formatDate(from: date, format: Constants.Format.dateFormat)
         dateLabel.textColor = .primaryWhite
         dateLabel.font = Fonts.sairaRegular16
         dateLabel.sizeToFit()
@@ -264,17 +271,17 @@ final class ChartViewController: BaseViewController {
     private func createChangedValueLabel(changedValue: Double, unit: String, xPosition: CGFloat, yPosition: CGFloat, valueLabelMinY: CGFloat) -> UILabel {
         let changedValueLabel = UILabel()
         
-        changedValueLabel.text = String(format: "%+.1f \(unit)", changedValue)
+        changedValueLabel.text = String(format: "\(Constants.Format.valueFormat) \(unit)", changedValue)
         changedValueLabel.textColor = changedValue > 0 ? .lightRed : .lightGreen
-        changedValueLabel.font = UIFont(name: "Gilroy-SemiBold", size: 14)
+        changedValueLabel.font = Constants.Layout.changedValueLabelFont
         changedValueLabel.backgroundColor = changedValueLabel.textColor
         changedValueLabel.textColor = .primaryWhite
         changedValueLabel.textAlignment = .center
         changedValueLabel.sizeToFit()
-        changedValueLabel.frame.size = Constants.Layout.changeLabelSize
+        changedValueLabel.frame.size = Constants.Layout.changedValueSize
         changedValueLabel.center = CGPoint(x: xPosition + Constants.Layout.barWidth / 2,
-                                           y: valueLabelMinY - changedValueLabel.bounds.height / 2 - Constants.Layout.changeLabelVerticalOffset)
-        changedValueLabel.layer.cornerRadius = Constants.Layout.changeLabelCornerRadius
+                                           y: valueLabelMinY - changedValueLabel.bounds.height / 2 - Constants.Layout.changedValueVerticalOffset)
+        changedValueLabel.layer.cornerRadius = Constants.Layout.changeValueCornerRadius
         changedValueLabel.layer.masksToBounds = true
         
         return changedValueLabel
