@@ -8,12 +8,12 @@
 import Foundation
 
 class DateUtils {
-    static func convertTimestampToString(_ timestamp: Int?) -> String {
+    static func formatDate(from timestamp: Int?, format: String) -> String {
         guard let timestamp = timestamp else { return "" }
         
         let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
+        dateFormatter.dateFormat = format
         
         return dateFormatter.string(from: date)
     }

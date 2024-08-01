@@ -11,7 +11,7 @@ class ProfileViewModel {
     
     private enum Constants {
         static let maxNumberOfBytesInData = 1048487
-        static let minUpdateInterval = 3600
+        static let minUpdateInterval = 10
     
         enum Validation {
             static let maxHeight: Double = 300

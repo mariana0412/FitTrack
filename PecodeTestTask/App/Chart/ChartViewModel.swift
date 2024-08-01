@@ -21,7 +21,7 @@ class ChartViewModel {
     }
     
     var initialDate: String {
-        DateUtils.convertTimestampToString(optionData.dateArray.first)
+        DateUtils.formatDate(from: optionData.dateArray.first, format: "dd.MM.yyyy")
     }
     
     init(coordinator: ChartCoordinator?, optionData: OptionData) {
