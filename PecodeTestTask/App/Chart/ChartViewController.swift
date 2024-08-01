@@ -15,6 +15,8 @@ final class ChartViewController: BaseViewController {
             static let spacing: CGFloat = 12.0
             static let maxBarHeightRatio: CGFloat = 0.8
             static let baseLineHeight: CGFloat = 0.5
+            static let dashedLineWidth: CGFloat = 0.5
+            static let dashedLinePattern: [NSNumber] = [3, 3]
             static let baseLineYPositionOffset: CGFloat = 40.0
             static let valueLabelVerticalOffset: CGFloat = 4.0
             static let dateLabelVerticalOffset: CGFloat = 4.0
@@ -105,11 +107,11 @@ final class ChartViewController: BaseViewController {
         let chartHeight = chartView.bounds.height
         let maxBarHeight = chartHeight * Constants.Layout.maxBarHeightRatio
         let baseLineYPosition = chartHeight - Constants.Layout.baseLineYPositionOffset
-
-        let baselineLayer = createBaseLine(width: chartWidth, 
+        
+        let baselineLayer = createBaseLine(width: chartWidth,
                                            yPosition: baseLineYPosition)
         chartView.layer.addSublayer(baselineLayer)
-
+        
         for (index, value) in data.valueArray.enumerated() {
             guard let value = value else { continue }
 
@@ -133,7 +135,14 @@ final class ChartViewController: BaseViewController {
                                             yPosition: baseLineYPosition)
             chartView.addSubview(dateLabel)
 
-            if index == 0 { continue }
+            if index == 0 {
+                let dashedLineLayer = createDashedLine(width: chartWidth,
+                                                       yPosition: yPosition)
+                chartView.layer.addSublayer(dashedLineLayer)
+                
+                continue
+            }
+            
             let previousValue = data.valueArray[index - 1] ?? 0
             let changeValue = value - previousValue
             let changeLabel = createChangeLabel(changeValue: changeValue, 
@@ -208,6 +217,19 @@ final class ChartViewController: BaseViewController {
         changeLabel.layer.masksToBounds = true
         
         return changeLabel
+    }
+
+    private func createDashedLine(width: CGFloat, yPosition: CGFloat) -> CAShapeLayer {
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.strokeColor = UIColor.primaryWhite.cgColor
+        shapeLayer.lineWidth = Constants.Layout.dashedLineWidth
+        shapeLayer.lineDashPattern = Constants.Layout.dashedLinePattern
+        
+        let path = CGMutablePath()
+        path.addLines(between: [CGPoint(x: 0, y: yPosition), CGPoint(x: width, y: yPosition)])
+        shapeLayer.path = path
+        
+        return shapeLayer
     }
 
 }
