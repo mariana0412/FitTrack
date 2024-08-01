@@ -7,15 +7,26 @@
 
 class ChartViewModel {
     
-    let navigationItemTitle: String
+    let subtitleText = "Displaying dynamics relative to data from"
     
-    private var coordinator: ChartCoordinator?
     let optionData: OptionData
+    private var coordinator: ChartCoordinator?
+    
+    var titleText: String {
+        "\(optionData.optionName.rawValue), \(optionData.optionName.metricValue)"
+    }
+    
+    var navigationItemTitle: String {
+        "\(optionData.optionName.rawValue) Chart"
+    }
+    
+    var initialDate: String {
+        DateUtils.convertTimestampToString(optionData.dateArray.first)
+    }
     
     init(coordinator: ChartCoordinator?, optionData: OptionData) {
         self.coordinator = coordinator
         self.optionData = optionData
-        self.navigationItemTitle = "\(optionData.optionName.rawValue) Chart"
     }
     
     func navigateToProgress() {

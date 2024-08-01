@@ -87,6 +87,7 @@
 		CA9018CC2C5BC4CD0030FA26 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9018CB2C5BC4CD0030FA26 /* ChartViewModel.swift */; };
 		CA9018CE2C5BC4D60030FA26 /* ChartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9018CD2C5BC4D60030FA26 /* ChartCoordinator.swift */; };
 		CA9018D02C5BC4DC0030FA26 /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9018CF2C5BC4DC0030FA26 /* Chart.storyboard */; };
+		CA9018D22C5BD0BC0030FA26 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9018D12C5BD0BC0030FA26 /* DateUtils.swift */; };
 		CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */; };
 		CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */; };
 		CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */; };
@@ -237,6 +238,7 @@
 		CA9018CB2C5BC4CD0030FA26 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		CA9018CD2C5BC4D60030FA26 /* ChartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCoordinator.swift; sourceTree = "<group>"; };
 		CA9018CF2C5BC4DC0030FA26 /* Chart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chart.storyboard; sourceTree = "<group>"; };
+		CA9018D12C5BD0BC0030FA26 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextFieldView.xib; sourceTree = "<group>"; };
 		CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -650,6 +652,7 @@
 			children = (
 				CAA18F1A2C3C554400F888CD /* GradientUtils.swift */,
 				CAA18F1C2C3C56F700F888CD /* OverlayUtils.swift */,
+				CA9018D12C5BD0BC0030FA26 /* DateUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1024,6 +1027,7 @@
 				CA4FEC662C4C59B400988C5B /* ProfileViewController.swift in Sources */,
 				CAA18F092C3C149C00F888CD /* CalculatorViewModel.swift in Sources */,
 				CAA18F1D2C3C56F700F888CD /* OverlayUtils.swift in Sources */,
+				CA9018D22C5BD0BC0030FA26 /* DateUtils.swift in Sources */,
 				CAA18F0F2C3C159300F888CD /* MusclesCoordinator.swift in Sources */,
 				CAA18EFD2C3C133800F888CD /* ProgressCoordinator.swift in Sources */,
 				CA5D80FE2C51784100486145 /* OptionsViewController.swift in Sources */,
