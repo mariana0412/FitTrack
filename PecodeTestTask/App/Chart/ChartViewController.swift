@@ -48,6 +48,8 @@ final class ChartViewController: BaseViewController {
         configureNavigationBar()
     }
     
+    override func setBackgroundImage(named imageName: String) {}
+    
     static func instantiate() -> ChartViewController {
         let storyboard = UIStoryboard(name: StoryboardConstants.chart, bundle: .main)
         return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.chartViewController) as! ChartViewController
