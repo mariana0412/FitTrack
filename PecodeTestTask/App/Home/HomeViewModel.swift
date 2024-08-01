@@ -9,7 +9,6 @@ class HomeViewModel {
     private var coordinator: HomeCoordinator?
     private(set) var userSex: UserSex
     private(set) var heroName: String = ""
-    private(set) var userName: String = ""
     private(set) var backgroundImageName = ""
     private(set) var user: UserData?
     private(set) var optionsToShow: [OptionData] = []
@@ -31,9 +30,7 @@ class HomeViewModel {
             switch response {
             case .success(let registrationData):
                 if let user = registrationData, let user = user {
-                    self?.userName = user.userName
-                    self?.user = user
-                    self?.optionsToShow = user.selectedOptions.filter { $0.isShown == true }
+                    self?.updateUserData(user: user)
                 }
                 completion(nil)
             case .failure(let error):
@@ -42,6 +39,15 @@ class HomeViewModel {
                 completion("Unknown error occurred while fetching user details")
             }
         }
+    }
+    
+    func updateUser(with user: UserData) {
+        updateUserData(user: user)
+    }
+    
+    private func updateUserData(user: UserData) {
+        self.user = user
+        self.optionsToShow = user.selectedOptions.filter { $0.isShown == true }
     }
     
     func navigateToProfile() {

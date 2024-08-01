@@ -24,7 +24,6 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
     private var saveButton: UIButton?
     private(set) var imageWasChanged: Bool = false
     var viewModel: ProfileViewModel?
-    weak var delegate: ProfileViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,7 +120,6 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
                 self?.imageWasChanged = false
                 self?.disableSaveButton()
                 self?.hideKeyboard()
-                self?.delegate?.profileDidUpdate()
                 self?.updateSelectedOptions()
                 self?.disableSaveButton()
             }

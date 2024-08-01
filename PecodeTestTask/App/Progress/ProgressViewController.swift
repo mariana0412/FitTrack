@@ -33,6 +33,18 @@ final class ProgressViewController: BaseViewController {
     
         configureTableView()
         loadOptions()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleProfileUpdate(_:)), name: .profileDidUpdate, object: nil)
+    }
+
+    @objc private func handleProfileUpdate(_ notification: Notification) {
+        if let userInfo = notification.userInfo, let updatedUser = userInfo["user"] as? UserData {
+            viewModel?.updateOptions(with: updatedUser.selectedOptions)
+        }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .profileDidUpdate, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {

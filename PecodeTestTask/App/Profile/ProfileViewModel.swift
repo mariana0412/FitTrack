@@ -61,6 +61,8 @@ class ProfileViewModel {
                 if let user = updatedUser {
                     self?.user = user
                     self?.selectedOptions = user?.selectedOptions ?? []
+                    
+                    NotificationCenter.default.post(name: .profileDidUpdate, object: nil, userInfo: ["user": user as Any])
                 }
             case .failure(let error):
                 self?.navigateToAlert(message: error.localizedDescription)

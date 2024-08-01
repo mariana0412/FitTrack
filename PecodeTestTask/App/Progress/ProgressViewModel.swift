@@ -11,7 +11,7 @@ class ProgressViewModel {
     let navigationItemTitle = "Progress"
     
     private var coordinator: ProgressCoordinator?
-    var options: [OptionData] = []
+    private(set) var options: [OptionData] = []
     
     init(coordinator: ProgressCoordinator?) {
         self.coordinator = coordinator
@@ -31,6 +31,10 @@ class ProgressViewModel {
                 completion("Unknown error occurred while fetching user details")
             }
         }
+    }
+    
+    func updateOptions(with options: [OptionData]) {
+        self.options = options
     }
     
     func navigateToChart(optionData: OptionData) {

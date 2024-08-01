@@ -88,6 +88,7 @@
 		CA9018CE2C5BC4D60030FA26 /* ChartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9018CD2C5BC4D60030FA26 /* ChartCoordinator.swift */; };
 		CA9018D02C5BC4DC0030FA26 /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9018CF2C5BC4DC0030FA26 /* Chart.storyboard */; };
 		CA9018D22C5BD0BC0030FA26 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9018D12C5BD0BC0030FA26 /* DateUtils.swift */; };
+		CA9018D42C5C2A140030FA26 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9018D32C5C2A140030FA26 /* Notification+Extensions.swift */; };
 		CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */; };
 		CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */; };
 		CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */; };
@@ -141,9 +142,6 @@
 		CAEB19192C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB19182C4EF2B4000FE4E5 /* UIImage+Extensions.swift */; };
 		CAEB191A2C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB19182C4EF2B4000FE4E5 /* UIImage+Extensions.swift */; };
 		CAEB191B2C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB19182C4EF2B4000FE4E5 /* UIImage+Extensions.swift */; };
-		CAEB191D2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB191C2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift */; };
-		CAEB191E2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB191C2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift */; };
-		CAEB191F2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB191C2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,6 +237,7 @@
 		CA9018CD2C5BC4D60030FA26 /* ChartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCoordinator.swift; sourceTree = "<group>"; };
 		CA9018CF2C5BC4DC0030FA26 /* Chart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chart.storyboard; sourceTree = "<group>"; };
 		CA9018D12C5BD0BC0030FA26 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		CA9018D32C5C2A140030FA26 /* Notification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
 		CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextFieldView.xib; sourceTree = "<group>"; };
 		CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -280,7 +279,6 @@
 		CAEB19102C4ED721000FE4E5 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		CAEB19142C4EE4C4000FE4E5 /* AlertContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContent.swift; sourceTree = "<group>"; };
 		CAEB19182C4EF2B4000FE4E5 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
-		CAEB191C2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerDelegate.swift; sourceTree = "<group>"; };
 		D1810F872ACEC9C10D861E31 /* Pods-PecodeTestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTask.release.xcconfig"; path = "Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask.release.xcconfig"; sourceTree = "<group>"; };
 		FE1100F283D53D0189BF8AB0 /* Pods-PecodeTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PecodeTestTask.debug.xcconfig"; path = "Target Support Files/Pods-PecodeTestTask/Pods-PecodeTestTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -529,7 +527,6 @@
 				CA4FEC692C4C59C300988C5B /* ProfileCoordinator.swift */,
 				CA4FEC672C4C59BC00988C5B /* ProfileViewModel.swift */,
 				CA4FEC6B2C4C59CB00988C5B /* Profile.storyboard */,
-				CAEB191C2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -575,6 +572,7 @@
 				CAEB18E52C4D71F4000FE4E5 /* UIImageView+Extensions.swift */,
 				CAEB18E72C4D7759000FE4E5 /* ProfileViewController+Extensions.swift */,
 				CAEB19182C4EF2B4000FE4E5 /* UIImage+Extensions.swift */,
+				CA9018D32C5C2A140030FA26 /* Notification+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1014,6 +1012,7 @@
 				CA4FEC6A2C4C59C300988C5B /* ProfileCoordinator.swift in Sources */,
 				CA002E122C319C110053284B /* Coordinator.swift in Sources */,
 				CA33B9BE2C3C6457000BFA4C /* FirebaseService.swift in Sources */,
+				CA9018D42C5C2A140030FA26 /* Notification+Extensions.swift in Sources */,
 				CAA18F0B2C3C157C00F888CD /* MusclesViewController.swift in Sources */,
 				CAA18F0D2C3C158700F888CD /* MusclesViewModel.swift in Sources */,
 				CA37E5862C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
@@ -1051,7 +1050,6 @@
 				CAE8F14D2C52C25F00355755 /* OptionsCoordinatorDelegate.swift in Sources */,
 				CA002E262C31A0830053284B /* AppCoordinator.swift in Sources */,
 				CA457E072C42BBF80031FDFA /* LoginViewController.swift in Sources */,
-				CAEB191D2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift in Sources */,
 				CA4FEC682C4C59BC00988C5B /* ProfileViewModel.swift in Sources */,
 				CAEB18E42C4D4971000FE4E5 /* UserData.swift in Sources */,
 				CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */,
@@ -1076,7 +1074,6 @@
 			files = (
 				CA56CBB82C583F8D00AE6481 /* OptionCollectionCell.swift in Sources */,
 				CA37E5872C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
-				CAEB191E2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift in Sources */,
 				CAEB19062C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */,
 				CAEB190E2C4ED71A000FE4E5 /* AlertViewModel.swift in Sources */,
 				CAEB191A2C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */,
@@ -1091,7 +1088,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAEB191F2C4EF5AE000FE4E5 /* ProfileViewControllerDelegate.swift in Sources */,
 				CA37E5802C405731003ADAA8 /* TabBarViewModel.swift in Sources */,
 				CA37E5882C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
 				CAEB191B2C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */,

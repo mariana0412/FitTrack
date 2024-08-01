@@ -34,11 +34,18 @@ final class HomeViewController: BaseViewController {
         super.viewDidLoad()
         
         setupUI()
+        bindViewModel()
         setupActions()
         loadUserData()
         
         optionsCollectionView.dataSource = self
         optionsCollectionView.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleProfileUpdate(_:)), name: .profileDidUpdate, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .profileDidUpdate, object: nil)
     }
     
     static func instantiate() -> HomeViewController {
@@ -53,7 +60,6 @@ final class HomeViewController: BaseViewController {
             }
             self?.setupUI()
             self?.setProfileImage()
-            self?.setupActions()
             self?.optionsCollectionView.reloadData()
         }
     }
@@ -61,15 +67,18 @@ final class HomeViewController: BaseViewController {
     private func setupUI() {
         self.navigationItem.hidesBackButton = true
         
-        guard let viewModel = viewModel else { return }
+        if let viewModel = viewModel {
+            updateBackgroundImage(named: viewModel.backgroundImageName)
+        }
         
-        updateBackgroundImage(named: viewModel.backgroundImageName)
-        
-        superheroLabel.text = viewModel.heroName
         superheroLabel.font = Fonts.sairaRegular24
         
-        nameLabel.text = viewModel.userName
         nameLabel.font = Fonts.sairaRegular16
+    }
+    
+    private func bindViewModel() {
+        superheroLabel.text = viewModel?.heroName
+        nameLabel.text = viewModel?.user?.userName
     }
     
     private func setProfileImage() {
@@ -88,6 +97,15 @@ final class HomeViewController: BaseViewController {
     
     @objc private func profileImageTapped() {
         viewModel?.navigateToProfile()
+    }
+    
+    @objc private func handleProfileUpdate(_ notification: Notification) {
+        if let userInfo = notification.userInfo, let updatedUser = userInfo["user"] as? UserData {
+            viewModel?.updateUser(with: updatedUser)
+            bindViewModel()
+            setProfileImage()
+            optionsCollectionView.reloadData()
+        }
     }
 }
 
@@ -120,10 +138,4 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         Constants.CollectionView.minimumLineSpacing
     }
 
-}
-
-extension HomeViewController: ProfileViewControllerDelegate {
-    func profileDidUpdate() {
-        loadUserData()
-    }
 }
