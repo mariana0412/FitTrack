@@ -11,7 +11,8 @@ class ProfileViewModel {
     
     private enum Constants {
         static let maxNumberOfBytesInData = 1048487
-        static let minUpdateInterval = 3600
+        static let minUpdateInterval = 1
+        static let minError = 0.01
     
         enum Validation {
             static let maxHeight: Double = 300
@@ -60,6 +61,8 @@ class ProfileViewModel {
                 if let user = updatedUser {
                     self?.user = user
                     self?.selectedOptions = user?.selectedOptions ?? []
+                    
+                    NotificationCenter.default.post(name: .profileDidUpdate, object: nil, userInfo: ["user": user as Any])
                 }
             case .failure(let error):
                 self?.navigateToAlert(message: error.localizedDescription)
@@ -145,10 +148,13 @@ class ProfileViewModel {
     func handleExistingOption(_ option: inout OptionData, value: Double, currentTimestamp: Int, isShown: Bool) {
         if let lastValue = option.valueArray.last, let lastValue, let lastTimestamp = option.dateArray.last {
             if lastValue != value {
-                if currentTimestamp - lastTimestamp > 10 {
+                if currentTimestamp - lastTimestamp > Constants.minUpdateInterval {
                     option.valueArray.append(value)
                     option.dateArray.append(currentTimestamp)
-                    option.changedValue = value - lastValue
+                    let changedValue = value - lastValue
+                    if abs(changedValue) >= Constants.minError {
+                        option.changedValue = changedValue
+                    }
                 } else {
                     updateLastValueAndTimestamp(&option, value: value, currentTimestamp: currentTimestamp)
                 }
@@ -169,7 +175,7 @@ class ProfileViewModel {
         
         if let newLastValue = newLastValue, let newLastValue {
             let changedValue = value - newLastValue
-            if changedValue != 0 {
+            if abs(changedValue) >= Constants.minError {
                 option.changedValue = changedValue
             }
         }

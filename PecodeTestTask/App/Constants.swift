@@ -19,6 +19,7 @@ struct StoryboardConstants {
     static let profile = "Profile"
     static let alert = "Alert"
     static let options = "Options"
+    static let chart = "Chart"
 }
 
 struct ViewControllerIdentifiers {
@@ -33,6 +34,7 @@ struct ViewControllerIdentifiers {
     static let profileViewController = "ProfileViewController"
     static let alertViewController = "AlertViewController"
     static let optionsViewController = "OptionsViewController"
+    static let chartViewController = "ChartViewController"
 }
 
 struct Fonts {

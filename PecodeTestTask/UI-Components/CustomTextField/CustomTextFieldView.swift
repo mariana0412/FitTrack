@@ -68,6 +68,8 @@ final class CustomTextFieldView: UIView {
         }
     }
     
+    var isSecure: Bool?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -116,6 +118,9 @@ extension CustomTextFieldView: UITextFieldDelegate {
         if isPlaceholderVisible {
             textField.text = ""
             isPlaceholderVisible = false
+        }
+        if isSecure == true {
+            textField.isSecureTextEntry = true
         }
         currentState = .active
     }

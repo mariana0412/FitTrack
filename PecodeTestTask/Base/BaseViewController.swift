@@ -48,7 +48,7 @@ class BaseViewController: UIViewController {
         backgroundImageView.image = backgroundImage
     }
     
-    private func setBackgroundImage(named imageName: String) {
+    func setBackgroundImage(named imageName: String) {
         guard let backgroundImage = UIImage(named: imageName) else {
             print("Error: Image \(imageName) not found.")
             return

@@ -58,11 +58,13 @@ final class SignupViewController: BaseViewController {
         password.labelFont = Fonts.helveticaNeue18
         password.textFieldText = viewModel?.passwordPlaceholderText
         password.textFieldFont = Fonts.helveticaNeue16
+        password.isSecure = true
         
         confirmPassword.labelText = viewModel?.confirmPasswordText
         confirmPassword.labelFont = Fonts.helveticaNeue18
         confirmPassword.textFieldText = viewModel?.confirmPasswordPlaceholderText
         confirmPassword.textFieldFont = Fonts.helveticaNeue16
+        confirmPassword.isSecure = true
         
         signupButton.titleLabel?.text = viewModel?.signButtonText
         signupButton.setupButtonFont(font: Fonts.sairaRegular16, color: .black)

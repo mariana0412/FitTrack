@@ -24,7 +24,6 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
     private var saveButton: UIButton?
     private(set) var imageWasChanged: Bool = false
     var viewModel: ProfileViewModel?
-    weak var delegate: ProfileViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +48,7 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
             saveAction: #selector(saveButtonTapped)
         )
         
-        if let saveButtonCustomView = navigationButtons.saveButton.customView as? UIButton {
+        if let saveButtonCustomView = navigationButtons.saveButton?.customView as? UIButton {
             saveButton = saveButtonCustomView
             configureSaveButtonInitialState()
         }
@@ -121,7 +120,6 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
                 self?.imageWasChanged = false
                 self?.disableSaveButton()
                 self?.hideKeyboard()
-                self?.delegate?.profileDidUpdate()
                 self?.updateSelectedOptions()
                 self?.disableSaveButton()
             }
@@ -182,7 +180,7 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
             var optionValueString = ""
             if let optionValue = option.valueArray.last, 
                 let optionValue {
-                optionValueString = String(optionValue)
+                optionValueString = String(format: "%.1f", optionValue)
             }
             
             optionSwitch.configure(optionName: option.optionName.rawValue,

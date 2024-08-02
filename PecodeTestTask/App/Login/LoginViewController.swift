@@ -50,6 +50,7 @@ final class LoginViewController: BaseViewController {
         password.labelFont = Fonts.helveticaNeue18
         password.textFieldText = viewModel?.passwordPlaceholderText
         password.textFieldFont = Fonts.helveticaNeue16
+        password.isSecure = true
         
         forgotPasswordButton.titleLabel?.text = viewModel?.forgotPasswordText
         forgotPasswordButton.setupButtonFont(font: Fonts.sairaMedium16, color: .primaryYellow)
