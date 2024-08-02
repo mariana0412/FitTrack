@@ -9,14 +9,17 @@ import UIKit
 
 class ProgressCoordinator: Coordinator {
     var navigationController: UINavigationController
+    private let userSex: UserSex
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, userSex: UserSex) {
         self.navigationController = navigationController
+        self.userSex = userSex
     }
     
     func start() {
         let progressViewController = ProgressViewController.instantiate()
-        progressViewController.viewModel = ProgressViewModel(coordinator: self)
+        progressViewController.viewModel = ProgressViewModel(coordinator: self,
+                                                             userSex: userSex)
         navigationController.pushViewController(progressViewController, animated: false)
     }
     

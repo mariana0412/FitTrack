@@ -79,6 +79,10 @@ final class ProgressViewController: BaseViewController {
     }
     
     private func setupUI() {
+        if let viewModel = viewModel {
+            updateBackgroundImage(named: viewModel.backgroundImageName)
+        }
+        
         noOptionsView.layer.borderWidth = Constants.Layout.noOptionsViewBorderWidth
         noOptionsView.layer.cornerRadius = Constants.Layout.noOptionsViewCornerRadius
         noOptionsView.layer.borderColor = Constants.Layout.noOptionsViewBorderColor

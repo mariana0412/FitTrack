@@ -12,9 +12,17 @@ class ProgressViewModel {
     
     private var coordinator: ProgressCoordinator?
     private(set) var options: [OptionData] = []
+    private(set) var userSex: UserSex
+    private(set) var backgroundImageName = ""
     
-    init(coordinator: ProgressCoordinator?) {
+    init(coordinator: ProgressCoordinator?, userSex: UserSex) {
         self.coordinator = coordinator
+        self.userSex = userSex
+        if self.userSex.rawValue == "male" {
+            self.backgroundImageName = "backgroundImageMan"
+        } else {
+            self.backgroundImageName = "backgroundImageGirl"
+        }
     }
     
     func fetchUser(completion: @escaping (String?) -> Void) {

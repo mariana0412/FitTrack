@@ -43,7 +43,8 @@ class TabBarCoordinator: Coordinator {
             homeCoordinator.start()
 
         case .progress:
-            let progressCoordinator = ProgressCoordinator(navigationController: navigationController)
+            let progressCoordinator = ProgressCoordinator(navigationController: navigationController,
+                                                          userSex: userSex)
             
             progressCoordinator.start()
 
