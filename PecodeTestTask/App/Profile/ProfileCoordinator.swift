@@ -40,6 +40,10 @@ class ProfileCoordinator: Coordinator {
         optionsCoordinator.start()
     }
     
+    func navigateToDeleteAccount() {
+        
+    }
+    
 }
 
 extension ProfileCoordinator: OptionsCoordinatorDelegate {

@@ -27,6 +27,7 @@ class ProfileViewModel {
     let namePlaceholder = "Enter Your Name"
     let instruction = "Select an option to display on the main screen."
     let addOptionsButton = "Add Options"
+    let deleteAccountButton = "Delete account"
     let defaultImageName = "noImage"
     
     private var coordinator: ProfileCoordinator?
@@ -209,6 +210,10 @@ class ProfileViewModel {
     func navigateToOptions() {
         let selectedOptionNames = selectedOptions.map { $0.optionName }
         coordinator?.navigateToOptions(selectedOptionNames: selectedOptionNames)
+    }
+    
+    func navigateToDeleteAccount() {
+        coordinator?.navigateToDeleteAccount()
     }
     
 }
