@@ -8,6 +8,10 @@
 class DeleteAccountViewModel {
     
     let navigationItemTitle = "Delete account"
+    let emailTextFieldLabel = "Email"
+    let emailTextFieldPlaceholderText = "Enter email"
+    let instructionText = "To delete your account, confirm your email."
+    let deleteButtonText = "Delete"
     
     private var coordinator: DeleteAccountCoordinator?
     
