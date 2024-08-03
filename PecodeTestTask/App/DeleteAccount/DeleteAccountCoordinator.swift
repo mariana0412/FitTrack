@@ -20,4 +20,8 @@ class DeleteAccountCoordinator: Coordinator {
         navigationController.pushViewController(deleteAccountViewController, animated: false)
     }
     
+    func navigateToProfile() {
+        navigationController.popViewController(animated: false)
+    }
+    
 }

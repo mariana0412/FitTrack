@@ -6,10 +6,17 @@
 //
 
 class DeleteAccountViewModel {
+    
+    let navigationItemTitle = "Delete account"
+    
     private var coordinator: DeleteAccountCoordinator?
     
     init(coordinator: DeleteAccountCoordinator?) {
         self.coordinator = coordinator
+    }
+    
+    func navigateToProfile() {
+        coordinator?.navigateToProfile()
     }
     
 }
