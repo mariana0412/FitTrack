@@ -18,25 +18,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8Z-Jq-Ew5">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="59" width="375" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVg-Vb-LRE">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="718"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="718"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUPERHERO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPZ-oT-Cop">
-                                                <rect key="frame" x="93.333333333333329" y="44" width="206.33333333333337" height="41.666666666666657"/>
+                                                <rect key="frame" x="84.333333333333329" y="44" width="206.33333333333337" height="41.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="32"/>
                                                 <color key="textColor" name="PrimaryYellow"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create your account " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oii-Gp-TpG">
-                                                <rect key="frame" x="84" y="97.666666666666657" width="225" height="28"/>
+                                                <rect key="frame" x="75" y="97.666666666666657" width="225" height="28"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                                 <color key="textColor" name="PrimaryWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="INJ-so-EUA">
-                                                <rect key="frame" x="52" y="169.66666666666663" width="289" height="332"/>
+                                                <rect key="frame" x="43" y="169.66666666666663" width="289" height="332"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxz-Ul-Vmi" userLabel="Name CustomTextField" customClass="CustomTextFieldView" customModule="PecodeTestTask" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="289" height="71"/>
@@ -98,10 +98,9 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdO-Qt-h9d" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
-                                                <rect key="frame" x="52" y="541.66666666666663" width="289" height="49"/>
+                                                <rect key="frame" x="43" y="541.66666666666663" width="289" height="49"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="OQ9-GQ-pk4"/>
-                                                    <constraint firstAttribute="width" constant="289" id="XhT-Xi-Qfw"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -113,7 +112,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mop-Hy-GoK">
-                                                <rect key="frame" x="64.666666666666686" y="683.66666666666663" width="264.00000000000006" height="34.333333333333371"/>
+                                                <rect key="frame" x="53.333333333333343" y="683.66666666666663" width="268.66666666666663" height="34.333333333333371"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDd-9q-Y4h">
                                                         <rect key="frame" x="0.0" y="0.0" width="185.66666666666666" height="34.333333333333336"/>
@@ -122,7 +121,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Q4-CT-T3R" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
-                                                        <rect key="frame" x="193.66666666666663" y="0.0" width="70.333333333333314" height="34.333333333333336"/>
+                                                        <rect key="frame" x="193.66666666666666" y="0.0" width="74.999999999999972" height="34.333333333333336"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                         <userDefinedRuntimeAttributes>
@@ -141,12 +140,14 @@
                                             <constraint firstItem="vPZ-oT-Cop" firstAttribute="top" secondItem="lVg-Vb-LRE" secondAttribute="top" constant="44" id="78Y-tz-pfo"/>
                                             <constraint firstAttribute="bottom" secondItem="mop-Hy-GoK" secondAttribute="bottom" id="7VL-xm-DJc"/>
                                             <constraint firstItem="vPZ-oT-Cop" firstAttribute="centerX" secondItem="lVg-Vb-LRE" secondAttribute="centerX" id="Cly-ca-Mfh"/>
-                                            <constraint firstItem="INJ-so-EUA" firstAttribute="centerX" secondItem="lVg-Vb-LRE" secondAttribute="centerX" id="KL5-Zh-Z1K"/>
                                             <constraint firstItem="oii-Gp-TpG" firstAttribute="centerX" secondItem="lVg-Vb-LRE" secondAttribute="centerX" id="M8C-v2-ita"/>
+                                            <constraint firstAttribute="trailing" secondItem="gdO-Qt-h9d" secondAttribute="trailing" constant="43" id="Nad-Jg-wqU"/>
+                                            <constraint firstItem="gdO-Qt-h9d" firstAttribute="leading" secondItem="lVg-Vb-LRE" secondAttribute="leading" constant="43" id="Rzz-w3-krO"/>
                                             <constraint firstItem="oii-Gp-TpG" firstAttribute="top" secondItem="vPZ-oT-Cop" secondAttribute="bottom" constant="12" id="aAB-BG-Xfu"/>
                                             <constraint firstItem="gdO-Qt-h9d" firstAttribute="top" secondItem="INJ-so-EUA" secondAttribute="bottom" constant="40" id="bWf-5D-iny"/>
                                             <constraint firstItem="INJ-so-EUA" firstAttribute="top" secondItem="oii-Gp-TpG" secondAttribute="bottom" constant="44" id="ca3-gq-wvL"/>
-                                            <constraint firstItem="gdO-Qt-h9d" firstAttribute="centerX" secondItem="lVg-Vb-LRE" secondAttribute="centerX" id="eVj-gj-G5w"/>
+                                            <constraint firstItem="INJ-so-EUA" firstAttribute="leading" secondItem="lVg-Vb-LRE" secondAttribute="leading" constant="43" id="eLp-ns-OID"/>
+                                            <constraint firstAttribute="trailing" secondItem="INJ-so-EUA" secondAttribute="trailing" constant="43" id="h8g-8W-gV2"/>
                                             <constraint firstItem="mop-Hy-GoK" firstAttribute="top" secondItem="gdO-Qt-h9d" secondAttribute="bottom" constant="93" id="reH-zA-pny"/>
                                         </constraints>
                                     </view>
@@ -191,10 +192,10 @@
     </scenes>
     <designables>
         <designable name="8Q4-CT-T3R">
-            <size key="intrinsicContentSize" width="70.333333333333329" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
         </designable>
         <designable name="gdO-Qt-h9d">
-            <size key="intrinsicContentSize" width="84" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
         </designable>
     </designables>
     <resources>

@@ -52,9 +52,8 @@
                                 <rect key="frame" x="0.0" y="734" width="399" height="118"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9J-AC-8En" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
-                                        <rect key="frame" x="55" y="21" width="289" height="49"/>
+                                        <rect key="frame" x="43" y="21" width="313" height="49"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="289" id="KQu-Dn-Mbj"/>
                                             <constraint firstAttribute="height" constant="49" id="QGj-E0-2qI"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
@@ -70,7 +69,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="O9J-AC-8En" firstAttribute="top" secondItem="gUG-5W-88Z" secondAttribute="top" constant="21" id="1AY-TD-xoV"/>
-                                    <constraint firstItem="O9J-AC-8En" firstAttribute="centerX" secondItem="gUG-5W-88Z" secondAttribute="centerX" id="28U-PZ-Ht2"/>
+                                    <constraint firstItem="O9J-AC-8En" firstAttribute="leading" secondItem="gUG-5W-88Z" secondAttribute="leading" constant="43" id="4FQ-kC-xeG"/>
+                                    <constraint firstAttribute="trailing" secondItem="O9J-AC-8En" secondAttribute="trailing" constant="43" id="Mc8-45-mhL"/>
                                     <constraint firstAttribute="height" constant="118" id="in7-hQ-QW0"/>
                                 </constraints>
                             </view>
