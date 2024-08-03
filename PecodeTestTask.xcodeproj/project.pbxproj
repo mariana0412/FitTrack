@@ -115,6 +115,10 @@
 		CAA18F182C3C3B7500F888CD /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F172C3C3B7500F888CD /* TabBarItem.swift */; };
 		CAA18F1B2C3C554400F888CD /* GradientUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F1A2C3C554400F888CD /* GradientUtils.swift */; };
 		CAA18F1D2C3C56F700F888CD /* OverlayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F1C2C3C56F700F888CD /* OverlayUtils.swift */; };
+		CABE57842C5EB38E00E3AFC2 /* DeleteAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57832C5EB38E00E3AFC2 /* DeleteAccountViewController.swift */; };
+		CABE57862C5EB3B600E3AFC2 /* DeleteAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57852C5EB3B600E3AFC2 /* DeleteAccountViewModel.swift */; };
+		CABE57882C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57872C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift */; };
+		CABE578A2C5EB3CB00E3AFC2 /* DeleteAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABE57892C5EB3CB00E3AFC2 /* DeleteAccount.storyboard */; };
 		CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */; };
 		CAE8F1462C52973A00355755 /* OptionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */; };
 		CAE8F1492C52B8C500355755 /* OptionSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE8F1482C52B8C500355755 /* OptionSwitch.xib */; };
@@ -265,6 +269,10 @@
 		CAA18F172C3C3B7500F888CD /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		CAA18F1A2C3C554400F888CD /* GradientUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientUtils.swift; sourceTree = "<group>"; };
 		CAA18F1C2C3C56F700F888CD /* OverlayUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayUtils.swift; sourceTree = "<group>"; };
+		CABE57832C5EB38E00E3AFC2 /* DeleteAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewController.swift; sourceTree = "<group>"; };
+		CABE57852C5EB3B600E3AFC2 /* DeleteAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewModel.swift; sourceTree = "<group>"; };
+		CABE57872C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountCoordinator.swift; sourceTree = "<group>"; };
+		CABE57892C5EB3CB00E3AFC2 /* DeleteAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteAccount.storyboard; sourceTree = "<group>"; };
 		CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCellDelegate.swift; sourceTree = "<group>"; };
 		CAE8F1482C52B8C500355755 /* OptionSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionSwitch.xib; sourceTree = "<group>"; };
@@ -408,6 +416,7 @@
 		CA002E092C3192C60053284B /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CABE57822C5EB37E00E3AFC2 /* DeleteAccount */,
 				CA9018C82C5BC49F0030FA26 /* Chart */,
 				CA5D80FC2C51783000486145 /* Options */,
 				CA4FEC642C4C593E00988C5B /* Profile */,
@@ -658,6 +667,17 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		CABE57822C5EB37E00E3AFC2 /* DeleteAccount */ = {
+			isa = PBXGroup;
+			children = (
+				CABE57832C5EB38E00E3AFC2 /* DeleteAccountViewController.swift */,
+				CABE57852C5EB3B600E3AFC2 /* DeleteAccountViewModel.swift */,
+				CABE57872C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift */,
+				CABE57892C5EB3CB00E3AFC2 /* DeleteAccount.storyboard */,
+			);
+			path = DeleteAccount;
+			sourceTree = "<group>";
+		};
 		CAE8F1442C52972900355755 /* OptionCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -833,6 +853,7 @@
 				CA002DDF2C318B110053284B /* Assets.xcassets in Resources */,
 				CA457E0D2C42BC360031FDFA /* Login.storyboard in Resources */,
 				CA002E242C319F560053284B /* .gitignore in Resources */,
+				CABE578A2C5EB3CB00E3AFC2 /* DeleteAccount.storyboard in Resources */,
 				CA002DE22C318B110053284B /* Base in Resources */,
 				CAE8F1492C52B8C500355755 /* OptionSwitch.xib in Resources */,
 				CAA18EEB2C3ADC2C00F888CD /* Saira-Regular.ttf in Resources */,
@@ -997,6 +1018,7 @@
 				CA9018CA2C5BC4B20030FA26 /* ChartViewController.swift in Sources */,
 				CA002E352C36F8430053284B /* CustomToggleButton.swift in Sources */,
 				CAEB18FC2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift in Sources */,
+				CABE57882C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift in Sources */,
 				CA5D81082C5178AD00486145 /* PopupTransitioningDelegate.swift in Sources */,
 				CAE8F14B2C52B8E800355755 /* OptionSwitch.swift in Sources */,
 				CAE8F1462C52973A00355755 /* OptionCellDelegate.swift in Sources */,
@@ -1024,6 +1046,7 @@
 				CA5D81022C51785200486145 /* OptionsViewModel.swift in Sources */,
 				CAA18F132C3C18F200F888CD /* TabBarCoordinator.swift in Sources */,
 				CAE8F1542C52DC8E00355755 /* OptionData.swift in Sources */,
+				CABE57862C5EB3B600E3AFC2 /* DeleteAccountViewModel.swift in Sources */,
 				CAEB18E82C4D7759000FE4E5 /* ProfileViewController+Extensions.swift in Sources */,
 				CAA18EE92C39DFF600F888CD /* SplashCoordinator.swift in Sources */,
 				CA4FEC662C4C59B400988C5B /* ProfileViewController.swift in Sources */,
@@ -1033,6 +1056,7 @@
 				CA9018D22C5BD0BC0030FA26 /* DateUtils.swift in Sources */,
 				CAA18F0F2C3C159300F888CD /* MusclesCoordinator.swift in Sources */,
 				CAA18EFD2C3C133800F888CD /* ProgressCoordinator.swift in Sources */,
+				CABE57842C5EB38E00E3AFC2 /* DeleteAccountViewController.swift in Sources */,
 				CA5D80FE2C51784100486145 /* OptionsViewController.swift in Sources */,
 				CAA18F052C3C148200F888CD /* CalculatorViewController.swift in Sources */,
 				CA002E3B2C3701FE0053284B /* CustomButton.swift in Sources */,
