@@ -65,9 +65,6 @@
 		CA4FEC682C4C59BC00988C5B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FEC672C4C59BC00988C5B /* ProfileViewModel.swift */; };
 		CA4FEC6A2C4C59C300988C5B /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FEC692C4C59C300988C5B /* ProfileCoordinator.swift */; };
 		CA4FEC6C2C4C59CB00988C5B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA4FEC6B2C4C59CB00988C5B /* Profile.storyboard */; };
-		CA56CB9A2C551D2400AE6481 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA56CB992C551D2400AE6481 /* GoogleService-Info.plist */; };
-		CA56CB9B2C551D2400AE6481 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA56CB992C551D2400AE6481 /* GoogleService-Info.plist */; };
-		CA56CB9C2C551D2400AE6481 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA56CB992C551D2400AE6481 /* GoogleService-Info.plist */; };
 		CA56CBB32C58243A00AE6481 /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA56CBB22C58243A00AE6481 /* Gilroy-SemiBold.ttf */; };
 		CA56CBB42C58243A00AE6481 /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA56CBB22C58243A00AE6481 /* Gilroy-SemiBold.ttf */; };
 		CA56CBB52C58243B00AE6481 /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA56CBB22C58243A00AE6481 /* Gilroy-SemiBold.ttf */; };
@@ -119,6 +116,9 @@
 		CABE57862C5EB3B600E3AFC2 /* DeleteAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57852C5EB3B600E3AFC2 /* DeleteAccountViewModel.swift */; };
 		CABE57882C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57872C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift */; };
 		CABE578A2C5EB3CB00E3AFC2 /* DeleteAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABE57892C5EB3CB00E3AFC2 /* DeleteAccount.storyboard */; };
+		CABE57902C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */; };
+		CABE57912C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */; };
+		CABE57922C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */; };
 		CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */; };
 		CAE8F1462C52973A00355755 /* OptionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */; };
 		CAE8F1492C52B8C500355755 /* OptionSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE8F1482C52B8C500355755 /* OptionSwitch.xib */; };
@@ -225,7 +225,6 @@
 		CA4FEC672C4C59BC00988C5B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		CA4FEC692C4C59C300988C5B /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		CA4FEC6B2C4C59CB00988C5B /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		CA56CB992C551D2400AE6481 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CA56CBB22C58243A00AE6481 /* Gilroy-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-SemiBold.ttf"; sourceTree = "<group>"; };
 		CA56CBB62C583F8D00AE6481 /* OptionCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCollectionCell.swift; sourceTree = "<group>"; };
 		CA5D80FD2C51784100486145 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +272,7 @@
 		CABE57852C5EB3B600E3AFC2 /* DeleteAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewModel.swift; sourceTree = "<group>"; };
 		CABE57872C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountCoordinator.swift; sourceTree = "<group>"; };
 		CABE57892C5EB3CB00E3AFC2 /* DeleteAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteAccount.storyboard; sourceTree = "<group>"; };
+		CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCellDelegate.swift; sourceTree = "<group>"; };
 		CAE8F1482C52B8C500355755 /* OptionSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionSwitch.xib; sourceTree = "<group>"; };
@@ -369,7 +369,7 @@
 				CA002E2A2C36D4810053284B /* Resources */,
 				CA002DE02C318B110053284B /* LaunchScreen.storyboard */,
 				CA002DE32C318B110053284B /* Info.plist */,
-				CA56CB992C551D2400AE6481 /* GoogleService-Info.plist */,
+				CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */,
 			);
 			path = PecodeTestTask;
 			sourceTree = "<group>";
@@ -861,6 +861,7 @@
 				CA4FEC6C2C4C59CB00988C5B /* Profile.storyboard in Resources */,
 				CAA18F032C3C147400F888CD /* Calculator.storyboard in Resources */,
 				CAA18F012C3C134B00F888CD /* Progress.storyboard in Resources */,
+				CABE57902C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */,
 				CAEB19112C4ED721000FE4E5 /* Alert.storyboard in Resources */,
 				CA37E5822C40573D003ADAA8 /* TabBar.storyboard in Resources */,
 				CAA18F112C3C159C00F888CD /* Muscles.storyboard in Resources */,
@@ -870,7 +871,6 @@
 				CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */,
 				CA56CBB32C58243A00AE6481 /* Gilroy-SemiBold.ttf in Resources */,
 				CA038BF62C4316300033CD30 /* Saira-Medium.ttf in Resources */,
-				CA56CB9A2C551D2400AE6481 /* GoogleService-Info.plist in Resources */,
 				CAA18EE52C39DF9400F888CD /* Splash.storyboard in Resources */,
 				CA37E56E2C3EF3D1003ADAA8 /* Signup.storyboard in Resources */,
 			);
@@ -881,10 +881,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA37E5832C40573D003ADAA8 /* TabBar.storyboard in Resources */,
-				CA56CB9B2C551D2400AE6481 /* GoogleService-Info.plist in Resources */,
 				CA038C012C43F8E90033CD30 /* Saira-Light.ttf in Resources */,
 				CA56CBB42C58243A00AE6481 /* Gilroy-SemiBold.ttf in Resources */,
 				CAEB19122C4ED721000FE4E5 /* Alert.storyboard in Resources */,
+				CABE57912C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -893,10 +893,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA37E5842C40573D003ADAA8 /* TabBar.storyboard in Resources */,
-				CA56CB9C2C551D2400AE6481 /* GoogleService-Info.plist in Resources */,
 				CA038C022C43F8E90033CD30 /* Saira-Light.ttf in Resources */,
 				CA56CBB52C58243B00AE6481 /* Gilroy-SemiBold.ttf in Resources */,
 				CAEB19132C4ED721000FE4E5 /* Alert.storyboard in Resources */,
+				CABE57922C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

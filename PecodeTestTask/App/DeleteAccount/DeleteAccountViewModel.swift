@@ -32,16 +32,32 @@ class DeleteAccountViewModel {
         completion(enteredEmail == currentUserEmail)
     }
     
-    func navigateToAlert(disableAction: @escaping () -> Void) {
+    func navigateToAlert(disableDeleteButton: @escaping () -> Void) {
         let alertContent = AlertContent(alertType: .twoButtons,
                                         message: alertErrorMessage,
                                         okButtonTitle: alertOkButtonText,
                                         cancelButtonTitle: alertCancelButtonText,
                                         okClickedAction: { [weak self] in
-                                            disableAction()
+                                            disableDeleteButton()
+                                            self?.deleteUser()
                                         })
         coordinator?.navigateToAlert(alertContent: alertContent)
     }
+    
+    private func deleteUser() {
+        FirebaseService.shared.deleteUser { [weak self] response in
+            switch response {
+            case .success:
+                self?.navigateToSignup()
+            case .failure(let error):
+                print("Error deleting user: \(error.localizedDescription)")
+            case .unknown:
+                print("Unknown error occurred while deleting user.")
+            }
+        }
+    }
+    
+    private func navigateToSignup() {}
     
     func navigateToProfile() {
         coordinator?.navigateToProfile()
