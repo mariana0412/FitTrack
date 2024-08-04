@@ -26,6 +26,7 @@ final class DeleteAccountViewController: BaseViewController {
         
         setupUI()
         bindViewModel()
+        setupActions()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +58,23 @@ final class DeleteAccountViewController: BaseViewController {
         instructionLabel.text = viewModel?.instructionText
         
         deleteButton.buttonTitle = viewModel?.deleteButtonText
+    }
+    
+    private func setupActions() {
+        deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func deleteButtonTapped() {
+        guard let enteredEmail = emailTextField.textFieldText else { return }
+        
+        viewModel?.emailIsValid(enteredEmail: enteredEmail) { [weak self] isValid in
+            if isValid {
+                self?.emailTextField.currentState = .normal
+                // TODO: show alert
+            } else {
+                self?.emailTextField.currentState = .error
+            }
+        }
     }
     
     private func configureNavigationBar() {

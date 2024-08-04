@@ -21,6 +21,14 @@ class DeleteAccountViewModel {
         self.backgroundImageName = (userSex == .female) ? "backgroundImageGirl" : "backgroundImageMan"
     }
     
+    func emailIsValid(enteredEmail: String, completion: @escaping (Bool) -> Void) {
+        guard let currentUserEmail = FirebaseService.shared.getCurrentUserEmail() else {
+            completion(false)
+            return
+        }
+        completion(enteredEmail == currentUserEmail)
+    }
+    
     func navigateToProfile() {
         coordinator?.navigateToProfile()
     }

@@ -228,6 +228,10 @@ class FirebaseService {
             }
     }
     
+    func getCurrentUserEmail() -> String? {
+        Auth.auth().currentUser?.email
+    }
+    
     private func getCurrentUserId() -> String? {
         Auth.auth().currentUser?.uid
     }
