@@ -41,7 +41,8 @@ class ProfileCoordinator: Coordinator {
     }
     
     func navigateToDeleteAccount() {
-        let deleteAccountCoordinator = DeleteAccountCoordinator(navigationController: navigationController)
+        let deleteAccountCoordinator = DeleteAccountCoordinator(navigationController: navigationController,
+                                                                userSex: user.sex)
         deleteAccountCoordinator.start()
     }
     

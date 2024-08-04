@@ -49,6 +49,8 @@ final class DeleteAccountViewController: BaseViewController {
     }
     
     private func bindViewModel() {
+        updateBackgroundImage(named: viewModel?.backgroundImageName ?? "")
+        
         emailTextField.labelText = viewModel?.emailTextFieldLabel
         emailTextField.textFieldText = viewModel?.emailTextFieldPlaceholderText
         

@@ -9,14 +9,17 @@ import UIKit
 
 class DeleteAccountCoordinator: Coordinator {
     var navigationController: UINavigationController
+    let userSex: UserSex
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, userSex: UserSex) {
         self.navigationController = navigationController
+        self.userSex = userSex
     }
     
     func start() {
         let deleteAccountViewController = DeleteAccountViewController.instantiate()
-        deleteAccountViewController.viewModel = DeleteAccountViewModel(coordinator: self)
+        deleteAccountViewController.viewModel = DeleteAccountViewModel(coordinator: self,
+                                                                       userSex: userSex)
         navigationController.pushViewController(deleteAccountViewController, animated: false)
     }
     
