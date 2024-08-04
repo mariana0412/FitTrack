@@ -29,21 +29,16 @@ class DeleteAccountViewModel {
             completion(false)
             return
         }
-        if enteredEmail == currentUserEmail {
-            completion(true)
-            navigateToAlert()
-        } else {
-            completion(false)
-        }
+        completion(enteredEmail == currentUserEmail)
     }
     
-    private func navigateToAlert() {
+    func navigateToAlert(disableAction: @escaping () -> Void) {
         let alertContent = AlertContent(alertType: .twoButtons,
                                         message: alertErrorMessage,
                                         okButtonTitle: alertOkButtonText,
                                         cancelButtonTitle: alertCancelButtonText,
                                         okClickedAction: { [weak self] in
-                                            // TODO: delete account
+                                            disableAction()
                                         })
         coordinator?.navigateToAlert(alertContent: alertContent)
     }

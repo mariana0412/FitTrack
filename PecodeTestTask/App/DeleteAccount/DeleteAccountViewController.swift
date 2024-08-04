@@ -70,11 +70,18 @@ final class DeleteAccountViewController: BaseViewController {
         viewModel?.emailIsValid(enteredEmail: enteredEmail) { [weak self] isValid in
             if isValid {
                 self?.emailTextField.currentState = .normal
-                // TODO: show alert
+                self?.viewModel?.navigateToAlert(disableAction: { [weak self] in
+                    self?.disableDeleteButton()
+                })
             } else {
                 self?.emailTextField.currentState = .error
             }
         }
+    }
+    
+    private func disableDeleteButton() {
+        deleteButton.isEnabled = false
+        deleteButton.backgroundColor = .primaryWhite
     }
     
     private func configureNavigationBar() {
