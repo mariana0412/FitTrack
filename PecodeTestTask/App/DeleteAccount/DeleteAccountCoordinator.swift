@@ -27,4 +27,9 @@ class DeleteAccountCoordinator: Coordinator {
         navigationController.popViewController(animated: false)
     }
     
+    func navigateToAlert(alertContent: AlertContent) {
+        let alertCoordinator = AlertCoordinator(navigationController: navigationController, alertContent: alertContent)
+        alertCoordinator.start()
+    }
+    
 }

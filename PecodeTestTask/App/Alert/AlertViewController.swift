@@ -85,17 +85,18 @@ final class AlertViewController: UIViewController {
     
     private func bindViewModel() {
         guard let viewModel = viewModel else { return }
-        
         switch viewModel.alertContent.alertType {
         case .twoButtons:
             messageLabel.text = viewModel.alertContent.message
             
             if let okButtonTitle = viewModel.alertContent.okButtonTitle {
-                okButton.setTitle(okButtonTitle, for: .normal)
+                okButton.buttonTitle = okButtonTitle
+                okButton.setupButtonFont(font: Fonts.sairaRegular16, color: .black)
                 okButton.addTarget(self, action: #selector(okButtonTapped), for: .touchUpInside)
             }
             if let cancelButtonTitle = viewModel.alertContent.cancelButtonTitle {
-                cancelButton.setTitle(cancelButtonTitle, for: .normal)
+                cancelButton.buttonTitle = cancelButtonTitle
+                cancelButton.setupButtonFont(font: Fonts.sairaMedium16, color: .primaryYellow)
                 cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
             }
             
@@ -108,7 +109,8 @@ final class AlertViewController: UIViewController {
                                          distribution: .fillProportionally)
             
             if let okButtonTitle = viewModel.alertContent.okButtonTitle {
-                okButton.setTitle(okButtonTitle, for: .normal)
+                okButton.buttonTitle = okButtonTitle
+                okButton.setupButtonFont(font: Fonts.sairaRegular16, color: .black)
                 okButton.addTarget(self, action: #selector(okButtonTapped), for: .touchUpInside)
             }
             

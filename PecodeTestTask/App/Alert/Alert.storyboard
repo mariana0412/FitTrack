@@ -36,7 +36,6 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="buttonStyle">
                                                         <integer key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="Cancel"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLi-NV-XZd" userLabel="OK Button" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
@@ -47,7 +46,6 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="buttonStyle">
                                                         <integer key="value" value="0"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="Ok"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
@@ -92,10 +90,10 @@
     </scenes>
     <designables>
         <designable name="KQI-pU-FaR">
-            <size key="intrinsicContentSize" width="76.666666666666671" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
         </designable>
         <designable name="dLi-NV-XZd">
-            <size key="intrinsicContentSize" width="45.666666666666664" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
         </designable>
     </designables>
     <resources>

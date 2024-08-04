@@ -13,6 +13,9 @@ class DeleteAccountViewModel {
     let instructionText = "To delete your account, confirm your email."
     let deleteButtonText = "Delete"
     private(set) var backgroundImageName = ""
+    let alertErrorMessage = "Are you sure you want to delete your account?"
+    let alertOkButtonText = "Delete"
+    let alertCancelButtonText = "Cancel"
     
     private var coordinator: DeleteAccountCoordinator?
     
@@ -26,7 +29,23 @@ class DeleteAccountViewModel {
             completion(false)
             return
         }
-        completion(enteredEmail == currentUserEmail)
+        if enteredEmail == currentUserEmail {
+            completion(true)
+            navigateToAlert()
+        } else {
+            completion(false)
+        }
+    }
+    
+    private func navigateToAlert() {
+        let alertContent = AlertContent(alertType: .twoButtons,
+                                        message: alertErrorMessage,
+                                        okButtonTitle: alertOkButtonText,
+                                        cancelButtonTitle: alertCancelButtonText,
+                                        okClickedAction: { [weak self] in
+                                            // TODO: delete account
+                                        })
+        coordinator?.navigateToAlert(alertContent: alertContent)
     }
     
     func navigateToProfile() {
