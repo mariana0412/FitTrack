@@ -57,10 +57,12 @@ class DeleteAccountViewModel {
         }
     }
     
-    private func navigateToSignup() {}
-    
     func navigateToProfile() {
         coordinator?.navigateToProfile()
+    }
+    
+    private func navigateToSignup() {
+        coordinator?.navigateToSignup()
     }
     
 }

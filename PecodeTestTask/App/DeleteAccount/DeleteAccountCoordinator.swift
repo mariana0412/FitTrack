@@ -32,4 +32,17 @@ class DeleteAccountCoordinator: Coordinator {
         alertCoordinator.start()
     }
     
+    func navigateToSignup() {
+        DispatchQueue.main.async {
+            guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
+            
+            let newNavigationController = UINavigationController()
+            let signupCoordinator = SignupCoordinator(navigationController: newNavigationController)
+            signupCoordinator.start()
+            
+            sceneDelegate.window?.rootViewController = newNavigationController
+            sceneDelegate.window?.makeKeyAndVisible()
+        }
+    }
+    
 }
