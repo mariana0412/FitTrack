@@ -35,27 +35,37 @@ class DeleteAccountCoordinator: Coordinator {
     
     func navigateToSignup() {
         DispatchQueue.main.async {
-            guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
             
+            let newWindow = UIWindow(windowScene: windowScene)
             let newNavigationController = UINavigationController()
             let signupCoordinator = SignupCoordinator(navigationController: newNavigationController)
             signupCoordinator.start()
             
-            sceneDelegate.window?.rootViewController = newNavigationController
-            sceneDelegate.window?.makeKeyAndVisible()
+            newWindow.rootViewController = newNavigationController
+            newWindow.makeKeyAndVisible()
+            
+            if let sceneDelegate = windowScene.delegate as? SceneDelegate {
+                sceneDelegate.window = newWindow
+            }
         }
     }
     
     func navigateToLogin() {
         DispatchQueue.main.async {
-            guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
             
+            let newWindow = UIWindow(windowScene: windowScene)
             let newNavigationController = UINavigationController()
             let loginCoordinator = LoginCoordinator(navigationController: newNavigationController)
             loginCoordinator.start()
             
-            sceneDelegate.window?.rootViewController = newNavigationController
-            sceneDelegate.window?.makeKeyAndVisible()
+            newWindow.rootViewController = newNavigationController
+            newWindow.makeKeyAndVisible()
+            
+            if let sceneDelegate = windowScene.delegate as? SceneDelegate {
+                sceneDelegate.window = newWindow
+            }
         }
     }
 }
