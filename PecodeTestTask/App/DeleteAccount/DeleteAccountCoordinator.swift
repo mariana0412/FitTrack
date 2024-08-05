@@ -28,7 +28,8 @@ class DeleteAccountCoordinator: Coordinator {
     }
     
     func navigateToAlert(alertContent: AlertContent) {
-        let alertCoordinator = AlertCoordinator(navigationController: navigationController, alertContent: alertContent)
+        let alertCoordinator = AlertCoordinator(navigationController: navigationController, 
+                                                alertContent: alertContent)
         alertCoordinator.start()
     }
     
@@ -45,4 +46,8 @@ class DeleteAccountCoordinator: Coordinator {
         }
     }
     
+    func navigateToLogin() {
+        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
+        loginCoordinator.start()
+    }
 }

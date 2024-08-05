@@ -259,6 +259,15 @@ class FirebaseService {
         }
     }
     
+    func signOut(completion: @escaping (FirebaseResponse<Void>) -> Void) {
+        do {
+            try Auth.auth().signOut()
+            completion(.success(nil))
+        } catch let error {
+            completion(.failure(error))
+        }
+    }
+    
     private func getCurrentUserId() -> String? {
         Auth.auth().currentUser?.uid
     }

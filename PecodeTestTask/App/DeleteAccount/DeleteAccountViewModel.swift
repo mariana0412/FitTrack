@@ -5,6 +5,9 @@
 //  Created by Mariana Piz on 03.08.2024.
 //
 
+import Foundation
+import FirebaseAuth
+
 class DeleteAccountViewModel {
     
     let navigationItemTitle = "Delete account"
@@ -50,9 +53,44 @@ class DeleteAccountViewModel {
             case .success:
                 self?.navigateToSignup()
             case .failure(let error):
-                print("Error deleting user: \(error.localizedDescription)")
+                self?.handleFailure(error: error)
+                print(error.localizedDescription)
             case .unknown:
-                print("Unknown error occurred while deleting user.")
+                print("Unknown error occurred while deleting account.")
+            }
+        }
+    }
+    
+    private func handleFailure(error: Error) {
+        let nsError = error as NSError
+        let errorMessage = "Error deleting account: \(error.localizedDescription)"
+        
+        switch nsError.code {
+        case AuthErrorCode.requiresRecentLogin.rawValue:
+            let alertContent = AlertContent(alertType: .twoButtons,
+                                            message: errorMessage,
+                                            okButtonTitle: "Log out",
+                                            cancelButtonTitle: "Cancel",
+                                            okClickedAction: {
+                                                self.signOut()
+                                            })
+            self.navigateToAlert(alertContent: alertContent)
+        default:
+            let alertContent = AlertContent(alertType: .noButtons,
+                                            message: errorMessage)
+            self.navigateToAlert(alertContent: alertContent)
+        }
+    }
+    
+    private func signOut() {
+        FirebaseService.shared.signOut { [weak self] response in
+            switch response {
+            case .success:
+                self?.navigateToLogin()
+            case .failure(let signOutError):
+                print("Error signing out: \(signOutError.localizedDescription)")
+            case .unknown:
+                print("Unknown error occurred while signing out.")
             }
         }
     }
@@ -63,6 +101,14 @@ class DeleteAccountViewModel {
     
     private func navigateToSignup() {
         coordinator?.navigateToSignup()
+    }
+    
+    private func navigateToLogin() {
+        coordinator?.navigateToLogin()
+    }
+    
+    private func navigateToAlert(alertContent: AlertContent) {
+        coordinator?.navigateToAlert(alertContent: alertContent)
     }
     
 }
