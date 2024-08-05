@@ -18,7 +18,7 @@ final class CustomTextFieldView: UIView {
     @IBOutlet private weak var textFieldView: UIView!
     @IBOutlet weak var textField: UITextField!
     
-    private var isPlaceholderVisible: Bool = true
+    var isPlaceholderVisible: Bool = true
     
     enum TextFieldState {
         case normal

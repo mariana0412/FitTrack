@@ -37,6 +37,7 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
         name.textField.delegate = self
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -75,6 +76,8 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
         name.labelFont = Fonts.helveticaNeue18
         name.textFieldText = viewModel.user?.userName
         name.textFieldFont = Fonts.helveticaNeue16
+        name.isPlaceholderVisible = false
+        name.currentState = .active
         
         instruction.text = viewModel.instruction
         instruction.numberOfLines = Constants.Layout.instructionNumberOfLines
@@ -115,6 +118,8 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
     }
     
     @objc private func saveButtonTapped() {
+        view.endEditing(true)
+        
         guard let viewModel else { return }
         
         let optionSwitches = optionsContainer.arrangedSubviews.compactMap { $0 as? OptionSwitch }

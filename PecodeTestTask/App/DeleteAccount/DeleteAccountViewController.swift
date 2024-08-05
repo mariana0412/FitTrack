@@ -62,9 +62,14 @@ final class DeleteAccountViewController: BaseViewController {
     
     private func setupActions() {
         deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
     }
     
     @objc private func deleteButtonTapped() {
+        view.endEditing(true)
+        
         guard let enteredEmail = emailTextField.textFieldText else { return }
         
         viewModel?.emailIsValid(enteredEmail: enteredEmail) { [weak self] isValid in
@@ -95,6 +100,10 @@ final class DeleteAccountViewController: BaseViewController {
     
     @objc private func backButtonTapped() {
         viewModel?.navigateToProfile()
+    }
+    
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
     }
     
 }
