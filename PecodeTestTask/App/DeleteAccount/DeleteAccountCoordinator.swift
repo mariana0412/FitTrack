@@ -47,7 +47,15 @@ class DeleteAccountCoordinator: Coordinator {
     }
     
     func navigateToLogin() {
-        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
-        loginCoordinator.start()
+        DispatchQueue.main.async {
+            guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
+            
+            let newNavigationController = UINavigationController()
+            let loginCoordinator = LoginCoordinator(navigationController: newNavigationController)
+            loginCoordinator.start()
+            
+            sceneDelegate.window?.rootViewController = newNavigationController
+            sceneDelegate.window?.makeKeyAndVisible()
+        }
     }
 }
