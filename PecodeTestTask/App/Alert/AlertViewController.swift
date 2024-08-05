@@ -21,8 +21,6 @@ final class AlertViewController: UIViewController {
             static let messageNumberOfLines = 0
             
             static let buttonWidth: CGFloat = 129
-            
-            static let noButtonsAlertHeight: CGFloat = 75
         }
         
         enum Animation {
@@ -119,7 +117,6 @@ final class AlertViewController: UIViewController {
             messageLabel.attributedText = createAttributedString(with: message, icon: viewModel.alertContent.icon ?? UIImage())
             
             buttonsContainer.isHidden = true
-            alertView.heightAnchor.constraint(equalToConstant: Constants.Layout.noButtonsAlertHeight).isActive = true
             messageLabel.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 messageLabel.centerYAnchor.constraint(equalTo: alertView.centerYAnchor),

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYq-49-HTm" userLabel="Alert View">
-                                <rect key="frame" x="55" y="349.66666666666669" width="283" height="153"/>
+                                <rect key="frame" x="55" y="354.33333333333331" width="283" height="143.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The form has been sent to your e-mail" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAp-jp-zoi" userLabel="Alert Label">
                                         <rect key="frame" x="16" y="16.000000000000004" width="251" height="38.333333333333343"/>
@@ -26,7 +26,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="4jP-ti-Rpf">
-                                        <rect key="frame" x="16" y="88" width="251" height="49"/>
+                                        <rect key="frame" x="16" y="78.333333333333371" width="251" height="49"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQI-pU-FaR" userLabel="Cancel Button" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="125.66666666666667" height="49"/>
@@ -57,10 +57,11 @@
                                 <viewLayoutGuide key="safeArea" id="jpw-Cl-e5P"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="4jP-ti-Rpf" firstAttribute="top" secondItem="TAp-jp-zoi" secondAttribute="bottom" constant="24" id="6Kk-5I-MH1"/>
                                     <constraint firstItem="TAp-jp-zoi" firstAttribute="leading" secondItem="bYq-49-HTm" secondAttribute="leading" constant="16" id="8p9-J8-fy6"/>
                                     <constraint firstAttribute="trailing" secondItem="4jP-ti-Rpf" secondAttribute="trailing" constant="16" id="UeJ-gC-6Qv"/>
-                                    <constraint firstAttribute="width" constant="283" id="ZG7-8l-goE"/>
-                                    <constraint firstAttribute="height" constant="153" id="amE-20-fDM"/>
+                                    <constraint firstAttribute="width" constant="283" id="X3R-Om-TYR"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="fEG-ox-bpO"/>
                                     <constraint firstItem="4jP-ti-Rpf" firstAttribute="leading" secondItem="bYq-49-HTm" secondAttribute="leading" constant="16" id="kAl-4c-yYg"/>
                                     <constraint firstAttribute="trailing" secondItem="TAp-jp-zoi" secondAttribute="trailing" constant="16" id="lcx-in-0UZ"/>
                                     <constraint firstItem="TAp-jp-zoi" firstAttribute="top" secondItem="bYq-49-HTm" secondAttribute="top" constant="16" id="oQx-lo-fbc"/>
@@ -71,8 +72,8 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bYq-49-HTm" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="0SO-hf-yt1"/>
-                            <constraint firstItem="bYq-49-HTm" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="hwU-2h-o8d"/>
+                            <constraint firstItem="bYq-49-HTm" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Jb4-UH-1ds"/>
+                            <constraint firstItem="bYq-49-HTm" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="hkU-3R-kdf"/>
                         </constraints>
                     </view>
                     <connections>
