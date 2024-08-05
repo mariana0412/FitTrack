@@ -73,7 +73,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEf-rV-NL5" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
-                                                        <rect key="frame" x="141" y="162.00000000000003" width="160" height="24"/>
+                                                        <rect key="frame" x="226" y="162.00000000000003" width="75" height="24"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                         <userDefinedRuntimeAttributes>
@@ -96,9 +96,8 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rg1-5O-K2U" userLabel="Login button" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
-                                                <rect key="frame" x="52" y="416.66666666666669" width="289" height="49"/>
+                                                <rect key="frame" x="43" y="416.66666666666669" width="307" height="49"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="289" id="md0-CX-n3x"/>
                                                     <constraint firstAttribute="height" constant="49" id="o9y-dy-zh2"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
@@ -115,12 +114,14 @@
                                         <constraints>
                                             <constraint firstItem="h2d-ZH-wyo" firstAttribute="top" secondItem="hI8-Tk-jez" secondAttribute="top" constant="44" id="4a3-ax-t0J"/>
                                             <constraint firstItem="vgn-8b-dkQ" firstAttribute="centerX" secondItem="hI8-Tk-jez" secondAttribute="centerX" id="5Id-qK-to5"/>
-                                            <constraint firstItem="gsP-70-8aD" firstAttribute="centerX" secondItem="hI8-Tk-jez" secondAttribute="centerX" id="7V1-ZU-CIo"/>
-                                            <constraint firstItem="rg1-5O-K2U" firstAttribute="centerX" secondItem="hI8-Tk-jez" secondAttribute="centerX" id="EzE-uP-VAG"/>
                                             <constraint firstItem="h2d-ZH-wyo" firstAttribute="centerX" secondItem="hI8-Tk-jez" secondAttribute="centerX" id="IQf-FW-5ze"/>
+                                            <constraint firstAttribute="trailing" secondItem="rg1-5O-K2U" secondAttribute="trailing" constant="43" id="JL6-2d-6id"/>
                                             <constraint firstItem="vgn-8b-dkQ" firstAttribute="top" secondItem="h2d-ZH-wyo" secondAttribute="bottom" constant="12" id="POe-WK-kmJ"/>
+                                            <constraint firstItem="rg1-5O-K2U" firstAttribute="leading" secondItem="hI8-Tk-jez" secondAttribute="leading" constant="43" id="U2b-zn-xZe"/>
                                             <constraint firstAttribute="bottom" secondItem="rg1-5O-K2U" secondAttribute="bottom" id="WYl-As-kxq"/>
                                             <constraint firstItem="rg1-5O-K2U" firstAttribute="top" secondItem="gsP-70-8aD" secondAttribute="bottom" constant="61" id="XaA-wp-nLZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="gsP-70-8aD" secondAttribute="trailing" constant="43" id="i5J-7X-aQE"/>
+                                            <constraint firstItem="gsP-70-8aD" firstAttribute="leading" secondItem="hI8-Tk-jez" secondAttribute="leading" constant="43" id="xg0-ed-Q3r"/>
                                             <constraint firstItem="gsP-70-8aD" firstAttribute="top" secondItem="vgn-8b-dkQ" secondAttribute="bottom" constant="44" id="z5B-tn-Faf"/>
                                         </constraints>
                                     </view>
@@ -188,11 +189,14 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="fku-4u-MbW">
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+        </designable>
         <designable name="kEf-rV-NL5">
-            <size key="intrinsicContentSize" width="160" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
         </designable>
         <designable name="rg1-5O-K2U">
-            <size key="intrinsicContentSize" width="65.666666666666671" height="34.333333333333336"/>
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
         </designable>
     </designables>
     <resources>

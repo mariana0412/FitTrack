@@ -11,7 +11,7 @@ final class ForgotPasswordViewController: BaseViewController {
     
     private enum Constants {
         enum Layout {
-            static let explanationNumberOfLines: Int = 3
+            static let explanationNumberOfLines: Int = 0
             static let minExplanationFontSize: CGFloat = 15.8
         }
     }

@@ -40,6 +40,12 @@ class ProfileCoordinator: Coordinator {
         optionsCoordinator.start()
     }
     
+    func navigateToDeleteAccount() {
+        let deleteAccountCoordinator = DeleteAccountCoordinator(navigationController: navigationController,
+                                                                userSex: user.sex)
+        deleteAccountCoordinator.start()
+    }
+    
 }
 
 extension ProfileCoordinator: OptionsCoordinatorDelegate {

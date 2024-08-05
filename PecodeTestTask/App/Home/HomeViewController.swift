@@ -59,6 +59,7 @@ final class HomeViewController: BaseViewController {
                 print("Error: \(errorMessage)")
             }
             self?.setupUI()
+            self?.bindViewModel()
             self?.setProfileImage()
             self?.optionsCollectionView.reloadData()
         }
@@ -72,7 +73,6 @@ final class HomeViewController: BaseViewController {
         }
         
         superheroLabel.font = Fonts.sairaRegular24
-        
         nameLabel.font = Fonts.sairaRegular16
     }
     

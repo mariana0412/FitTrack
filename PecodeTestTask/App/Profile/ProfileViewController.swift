@@ -20,6 +20,7 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
     @IBOutlet private weak var instruction: UILabel!
     @IBOutlet weak var optionsContainer: UIStackView!
     @IBOutlet private weak var addOptionsButton: CustomButton!
+    @IBOutlet weak var deleteAccountButton: CustomButton!
     
     private var saveButton: UIButton?
     private(set) var imageWasChanged: Bool = false
@@ -35,6 +36,7 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
         
         name.textField.delegate = self
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -74,6 +76,8 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
         name.labelFont = Fonts.helveticaNeue18
         name.textFieldText = viewModel.user?.userName
         name.textFieldFont = Fonts.helveticaNeue16
+        name.isPlaceholderVisible = false
+        name.currentState = .active
         
         instruction.text = viewModel.instruction
         instruction.numberOfLines = Constants.Layout.instructionNumberOfLines
@@ -82,6 +86,9 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
         
         addOptionsButton.titleLabel?.text = viewModel.addOptionsButton
         addOptionsButton.setupButtonFont(font: Fonts.sairaRegular16, color: .black)
+        
+        deleteAccountButton.titleLabel?.text = viewModel.deleteAccountButton
+        deleteAccountButton.setupButtonFont(font: Fonts.sairaMedium16, color: .primaryPink)
     }
     
     private func configureSaveButtonInitialState() {
@@ -92,6 +99,7 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
     
     private func setupActions() {
         addOptionsButton.addTarget(self, action: #selector(addOptionsButtonTapped), for: .touchUpInside)
+        deleteAccountButton.addTarget(self, action: #selector(deleteAccountButtonTapped), for: .touchUpInside)
                 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(tapGesture)
@@ -105,7 +113,13 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
         viewModel?.navigateToHome()
     }
     
+    @objc private func deleteAccountButtonTapped() {
+        viewModel?.navigateToDeleteAccount()
+    }
+    
     @objc private func saveButtonTapped() {
+        view.endEditing(true)
+        
         guard let viewModel else { return }
         
         let optionSwitches = optionsContainer.arrangedSubviews.compactMap { $0 as? OptionSwitch }

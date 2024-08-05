@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Delete Account View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="DeleteAccountViewController" id="Y6W-OH-hqX" customClass="DeleteAccountViewController" customModule="PecodeTestTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QN4-X3-3zx" userLabel="Email Container">
+                                <rect key="frame" x="43" y="254" width="307" height="145"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zM-lx-c1H" customClass="CustomTextFieldView" customModule="PecodeTestTask" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="307" height="82.666666666666671"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="Email"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="textFieldText" value="Enter email"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To delete your account, confirm your email." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiR-kV-xny">
+                                        <rect key="frame" x="0.0" y="106.66666666666669" width="307" height="38.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" name="SecondaryGray"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="289" id="8zX-rN-S0F"/>
+                                    <constraint firstItem="xiR-kV-xny" firstAttribute="top" secondItem="8zM-lx-c1H" secondAttribute="bottom" constant="24" id="BNf-os-mGZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="xiR-kV-xny" secondAttribute="trailing" id="GfY-oB-3Vn"/>
+                                    <constraint firstAttribute="trailing" secondItem="8zM-lx-c1H" secondAttribute="trailing" id="W3g-cI-NM5"/>
+                                    <constraint firstItem="xiR-kV-xny" firstAttribute="leading" secondItem="QN4-X3-3zx" secondAttribute="leading" id="YPn-Px-bAi"/>
+                                    <constraint firstItem="8zM-lx-c1H" firstAttribute="top" secondItem="QN4-X3-3zx" secondAttribute="top" id="beM-IT-faI"/>
+                                    <constraint firstItem="8zM-lx-c1H" firstAttribute="leading" secondItem="QN4-X3-3zx" secondAttribute="leading" id="bsa-0u-Suq"/>
+                                    <constraint firstAttribute="bottom" secondItem="xiR-kV-xny" secondAttribute="bottom" id="dPz-dL-Z6X"/>
+                                    <constraint firstAttribute="height" constant="145" id="nhl-gH-FaW"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUG-5W-88Z" userLabel="Button Container">
+                                <rect key="frame" x="0.0" y="734" width="393" height="118"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9J-AC-8En" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
+                                        <rect key="frame" x="43" y="21" width="307" height="49"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="QGj-E0-2qI"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="buttonStyle">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="Delete"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="O9J-AC-8En" firstAttribute="top" secondItem="gUG-5W-88Z" secondAttribute="top" constant="21" id="1AY-TD-xoV"/>
+                                    <constraint firstItem="O9J-AC-8En" firstAttribute="leading" secondItem="gUG-5W-88Z" secondAttribute="leading" constant="43" id="4FQ-kC-xeG"/>
+                                    <constraint firstAttribute="trailing" secondItem="O9J-AC-8En" secondAttribute="trailing" constant="43" id="Mc8-45-mhL"/>
+                                    <constraint firstAttribute="height" constant="118" id="in7-hQ-QW0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="gUG-5W-88Z" secondAttribute="bottom" id="3Cw-G0-S0r"/>
+                            <constraint firstItem="QN4-X3-3zx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="43" id="5OO-MI-dKg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="QN4-X3-3zx" secondAttribute="trailing" constant="43" id="6xB-GO-tHk"/>
+                            <constraint firstItem="gUG-5W-88Z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ZFr-gX-aqX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gUG-5W-88Z" secondAttribute="trailing" id="nJs-7W-8dI"/>
+                            <constraint firstItem="QN4-X3-3zx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="195" id="tOb-QA-5eR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="deleteButton" destination="O9J-AC-8En" id="WOF-5Y-is9"/>
+                        <outlet property="emailTextField" destination="8zM-lx-c1H" id="tGX-sB-mGR"/>
+                        <outlet property="instructionLabel" destination="xiR-kV-xny" id="9xw-cr-fE9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119.84732824427481" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="O9J-AC-8En">
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="SecondaryGray">
+            <color red="0.74900001287460327" green="0.74900001287460327" blue="0.74900001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -228,6 +228,46 @@ class FirebaseService {
             }
     }
     
+    func getCurrentUserEmail() -> String? {
+        Auth.auth().currentUser?.email
+    }
+    
+    func deleteUser(completion: @escaping (FirebaseResponse<Void>) -> Void) {
+        guard let user = Auth.auth().currentUser else {
+            completion(
+                .failure(
+                    NSError(
+                        domain: "Firebase",
+                        code: -1,
+                        userInfo: [NSLocalizedDescriptionKey: "No current user"])))
+            return
+        }
+
+        user.delete { error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                let db = Firestore.firestore()
+                db.collection("users").document(user.uid).delete { error in
+                    if let error = error {
+                        completion(.failure(error))
+                    } else {
+                        completion(.success(nil))
+                    }
+                }
+            }
+        }
+    }
+    
+    func signOut(completion: @escaping (FirebaseResponse<Void>) -> Void) {
+        do {
+            try Auth.auth().signOut()
+            completion(.success(nil))
+        } catch let error {
+            completion(.failure(error))
+        }
+    }
+    
     private func getCurrentUserId() -> String? {
         Auth.auth().currentUser?.uid
     }

@@ -52,6 +52,9 @@ class OptionSwitch: UIView {
     func configure(optionName: String, value: String?, metric: String, isSwitchOn: Bool) {
         option.labelText = optionName
         option.textFieldText = value
+        option.isPlaceholderVisible = false
+        option.currentState = .active
+        
         self.optionName = optionName
         
         metricValue.text = metric
@@ -85,5 +88,10 @@ extension OptionSwitch: UITextFieldDelegate {
         if let newValue = textField.text {
             delegate?.optionValueDidChange(self, newValue: newValue)
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
