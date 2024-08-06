@@ -12,6 +12,8 @@ final class MusclesViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel?.loadExercises {}
     }
     
     static func instantiate() -> MusclesViewController {

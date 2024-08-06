@@ -99,7 +99,7 @@
                 "exerciseImage": "6.2",
                 "descriptions" : "The exercise requires a series of preliminary conditions. The seat height should be adjusted so that the cable remains parallel to the floor during the rowing motion. Your feet should have support to prevent the body from sliding forward. As for the handles, they can be either fixed on a common base or separate from each other. In any case, your palms during the rowing should face each other. \n\nGrab the handles and pull them towards you, keeping your arms straight. Your back should be in a vertical position, maintaining a natural arch in the area of the shoulder blades. Now inhale and hold your breath, simultaneously starting the pull. The first intermediate phase of the movement ends when your elbows are vertical and in line with your torso. Then pull the handles slightly closer to your waist, allowing the elbows to move behind the torso. From this position (start of the second phase), retract your shoulders as far back as possible and shift the elbows as far back as possible, achieving a strong contraction of the latissimus dorsi. Then exhale and return the handles to the starting position, keeping your back straight. Performing the exercise with significant weight requires wrist straps.",
                 "exerciseType" : "Bodybuilding",
-                "equipment" : "Cable Machine",
+                "equipment" : "Machine",
                 "level" : "Intermediate"
             },
             {
@@ -177,7 +177,7 @@
                 "exerciseImage": "5.4",
                 "descriptions": "Take a comfortable position on the leg press machine. Place your feet at the top of the platform shoulder-width apart or slightly wider. Toes are slightly turned outward. \n\nRemove the safety locks and on a deep inhale, bending your knees, lower the platform to a position where your knees are bent to a 90° angle. \n\nOn a powerful exhale, return to the starting position. \n\nThe most common injury when performing leg presses is stretching and tearing of the hamstring muscles and tendons. Therefore, in the starting position of the leg press, you should not keep your legs overly straight. For the same reason, it is necessary to combine leg training with stretching exercises and self-massage. \n\nDuring the movement at the bottom of the amplitude, do not allow the lower back to detach from the cushion. If this happens, it means you are lowering the weight too low, which is not beneficial for the spine and knee joints. \n\nBy changing the width of placing the feet on the platform from narrow to wide, you redistribute the load on the quadriceps from their front surface to the inner. \n\nTips on proper exercise technique: \n\nBefore using the machine, receive proper instruction and ask for a demonstration of exercise technique. \n\nMaster the correct technique of movements before increasing the weight load. \n\nDo not use inertia force; apply slow controlled movement. \n\nDuring the exercise, the lower back should be pressed against the seat. It may be necessary to adjust the angle of the seat back. \n\nIf it is impossible to maintain the desired position of the lower back, lower the platform to the position of the knees at 90°. \n\nMaintain a balanced posture and neutral spine position. \n\nChest is lifted, do not round the shoulders. \n\nDo not allow the knees to go beyond the toes line. \n\nShift the weight of the body onto the heels and middle parts of the feet. \n\nDo not lift the heels off the surface of the platform. Perform the press with the heels. \n\nInhale on the downward movement; exhale on the upward movement.",
                 "exerciseType": "Bodybuilding",
-                "equipment": "Leg Press Machine",
+                "equipment": "Machine",
                 "level": "Experienced"
             }
         ]
@@ -191,7 +191,7 @@
                 "exerciseImage": "8.1",
                 "descriptions": "Starting position for leg raises from the supine position. The body is supported by palms and toes. Arms and legs are fully extended at the elbows and knees. Palms are positioned directly under the shoulders, fingers pointing forward. The body is fully extended and when viewed from the side, it forms a straight line from ankles to ears (this position is called the supine position). \n\nInhale. Lift one leg. \n\nExhale. Lower the leg to the starting position. \n\nInhale. Lift the other leg. \n\nExhale. Lower the leg to the starting position. Repeat leg raises from the supine position 10 times (5 times each leg).",
                 "exerciseType": "Bodybuilding",
-                "equipment": "Own Body Weight",
+                "equipment": "Body Weight",
                 "level": "Beginner"
             },
             {
@@ -200,7 +200,7 @@
                 "exerciseImage": "8.2",
                 "descriptions": "START: Attach a soft handle to the cable machine at the end of the cable. Insert one foot into the handle. Squat down and assume a position with hands straight, facing the machine. \n\nEXECUTION: Slowly extend the knee of the working leg and kick the foot back and up as far as possible. Slowly and under control return to the starting position.",
                 "exerciseType": "Bodybuilding",
-                "equipment": "Own Body Weight",
+                "equipment": "Body Weight",
                 "level": "Beginner"
             }
         ]
@@ -223,7 +223,7 @@
                 "exerciseImage": "4.2",
                 "descriptions": "The classic donkey calf raise was performed as follows: the person doing the exercise would bend at the waist, stand on the edge of a small platform, and hold onto something for stability. Then, a partner would sit on their back, providing the weight. However, this method of performing the exercise can now be rarely seen, as a special machine for donkey calf raises has long been invented. Here, you won't be able to assist yourself with your shoulders, but you will be able to bend your knees. So again, I urge you to watch your knees.",
                 "exerciseType": "Bodybuilding",
-                "equipment": "Bodyweight",
+                "equipment": "Body Weight",
                 "level": "Beginner"
             }
         ]
@@ -347,7 +347,7 @@
                 "exerciseImage": "11.1",
                 "descriptions": "Lie on your back, knees bent at a 90-degree angle, hands behind your head, elbows spread out to the sides. Using the abdominal muscles, begin to lift (not jerk) the shoulder girdle from the floor towards the pelvis. Slowly return to the starting position from the top.",
                 "exerciseType": "Bodybuilding",
-                "equipment": "Bodyweight",
+                "equipment": "Body Weight",
                 "level": "Beginner"
             },
             {
@@ -356,7 +356,7 @@
                 "exerciseImage": "11.2",
                 "descriptions": "Step 1. Lie on your side, legs slightly bent and pressed against the floor. One arm is extended forward and rests on the floor, the other is behind the head.\n\nStep 2. Slowly crunch the upper part of the torso. Hold at the top.\n\nStep 3. Slowly return to the starting position.",
                 "exerciseType": "Bodybuilding",
-                "equipment": "Bodyweight",
+                "equipment": "Body Weight",
                 "level": "Beginner"
             },
             {
@@ -365,7 +365,7 @@
                 "exerciseImage": "11.3",
                 "descriptions": "The bar can be used both for training the abs and the back, as well as for relieving post-workout tension.\n\nStep 1. Grab the bar with your palms and hang from it.\n\nStep 2. Inhale and pull your knees towards your chest, exhaling.\n\nStep 3. Return to the starting position. Do not swing during the movement.",
                 "exerciseType": "Bodybuilding",
-                "equipment": "Bodyweight",
+                "equipment": "Body Weight",
                 "level": "Beginner"
             },
             {
@@ -374,7 +374,7 @@
                 "exerciseImage": "11.4",
                 "descriptions": "Starting position: Plank position lying with support on straight arms and toes of extended legs (distance between lower limbs at hip width).\n\nHands are placed at the level of the upper chest, slightly wider than shoulder width.\n\nMaintain a neutral spine position, engage the 'abdominal stabilization' by pulling in the abdomen.\n\nThe chest is expanded. Lower the shoulder blades, activating the anterior serratus muscles and lower parts of the trapezius. \n\nTips for proper exercise technique: Do not round or arch the back. Keep the pelvis in a neutral position, and the spine straight. \n\nDo not hunch or hump. Keep the chest expanded and the shoulder blades drawn together. \n\nDo not hold your breath. Breathe freely and naturally.",
                 "exerciseType": "Bodybuilding",
-                "equipment": "Bodyweight",
+                "equipment": "Body Weight",
                 "level": "Intermediate"
             }
         ]

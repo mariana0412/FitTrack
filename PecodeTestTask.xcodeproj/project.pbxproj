@@ -119,10 +119,13 @@
 		CABE57902C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */; };
 		CABE57912C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */; };
 		CABE57922C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */; };
-		CABE57942C624A0300E3AFC2 /* Exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = CABE57932C624A0300E3AFC2 /* Exercises.json */; };
 		CABE57962C624A2A00E3AFC2 /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57952C624A2A00E3AFC2 /* ExerciseType.swift */; };
 		CABE57992C624A4600E3AFC2 /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57982C624A4600E3AFC2 /* Equipment.swift */; };
 		CABE579B2C624A5700E3AFC2 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE579A2C624A5700E3AFC2 /* Level.swift */; };
+		CABE579D2C624D3C00E3AFC2 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE579C2C624D3C00E3AFC2 /* Exercise.swift */; };
+		CABE57A12C624F1C00E3AFC2 /* MuscleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57A02C624F1C00E3AFC2 /* MuscleGroup.swift */; };
+		CABE57A32C62507900E3AFC2 /* JsonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57A22C62507900E3AFC2 /* JsonUtils.swift */; };
+		CABE57A52C62599000E3AFC2 /* Exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = CABE57A42C62599000E3AFC2 /* Exercises.json */; };
 		CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */; };
 		CAE8F1462C52973A00355755 /* OptionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */; };
 		CAE8F1492C52B8C500355755 /* OptionSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE8F1482C52B8C500355755 /* OptionSwitch.xib */; };
@@ -277,10 +280,13 @@
 		CABE57872C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountCoordinator.swift; sourceTree = "<group>"; };
 		CABE57892C5EB3CB00E3AFC2 /* DeleteAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteAccount.storyboard; sourceTree = "<group>"; };
 		CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CABE57932C624A0300E3AFC2 /* Exercises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Exercises.json; sourceTree = "<group>"; };
 		CABE57952C624A2A00E3AFC2 /* ExerciseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseType.swift; sourceTree = "<group>"; };
 		CABE57982C624A4600E3AFC2 /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
 		CABE579A2C624A5700E3AFC2 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		CABE579C2C624D3C00E3AFC2 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		CABE57A02C624F1C00E3AFC2 /* MuscleGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroup.swift; sourceTree = "<group>"; };
+		CABE57A22C62507900E3AFC2 /* JsonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonUtils.swift; sourceTree = "<group>"; };
+		CABE57A42C62599000E3AFC2 /* Exercises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Exercises.json; sourceTree = "<group>"; };
 		CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCellDelegate.swift; sourceTree = "<group>"; };
 		CAE8F1482C52B8C500355755 /* OptionSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionSwitch.xib; sourceTree = "<group>"; };
@@ -378,7 +384,7 @@
 				CA002DE02C318B110053284B /* LaunchScreen.storyboard */,
 				CA002DE32C318B110053284B /* Info.plist */,
 				CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */,
-				CABE57932C624A0300E3AFC2 /* Exercises.json */,
+				CABE57A42C62599000E3AFC2 /* Exercises.json */,
 			);
 			path = PecodeTestTask;
 			sourceTree = "<group>";
@@ -673,6 +679,7 @@
 				CAA18F1A2C3C554400F888CD /* GradientUtils.swift */,
 				CAA18F1C2C3C56F700F888CD /* OverlayUtils.swift */,
 				CA9018D12C5BD0BC0030FA26 /* DateUtils.swift */,
+				CABE57A22C62507900E3AFC2 /* JsonUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -691,9 +698,11 @@
 		CABE57972C624A3600E3AFC2 /* Exercise */ = {
 			isa = PBXGroup;
 			children = (
+				CABE579C2C624D3C00E3AFC2 /* Exercise.swift */,
 				CABE57952C624A2A00E3AFC2 /* ExerciseType.swift */,
 				CABE57982C624A4600E3AFC2 /* Equipment.swift */,
 				CABE579A2C624A5700E3AFC2 /* Level.swift */,
+				CABE57A02C624F1C00E3AFC2 /* MuscleGroup.swift */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -883,7 +892,7 @@
 				CAA18F012C3C134B00F888CD /* Progress.storyboard in Resources */,
 				CABE57902C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */,
 				CAEB19112C4ED721000FE4E5 /* Alert.storyboard in Resources */,
-				CABE57942C624A0300E3AFC2 /* Exercises.json in Resources */,
+				CABE57A52C62599000E3AFC2 /* Exercises.json in Resources */,
 				CA37E5822C40573D003ADAA8 /* TabBar.storyboard in Resources */,
 				CAA18F112C3C159C00F888CD /* Muscles.storyboard in Resources */,
 				CA465A812C47E26F003E7217 /* ForgotPassword.storyboard in Resources */,
@@ -1049,6 +1058,7 @@
 				CA465A7F2C47E25A003E7217 /* ForgotPasswordViewModel.swift in Sources */,
 				CA37E5672C3EF36C003ADAA8 /* SignupViewController.swift in Sources */,
 				CAA18EFF2C3C134200F888CD /* ProgressViewModel.swift in Sources */,
+				CABE57A12C624F1C00E3AFC2 /* MuscleGroup.swift in Sources */,
 				CA457E0B2C42BC2B0031FDFA /* LoginViewModel.swift in Sources */,
 				CA37E5692C3EF376003ADAA8 /* SignupCoordinator.swift in Sources */,
 				CAEB19092C4ED6E7000FE4E5 /* AlertCoordinator.swift in Sources */,
@@ -1076,6 +1086,7 @@
 				CA9018D62C5C4BE20030FA26 /* OptionNameViewCell.swift in Sources */,
 				CA9018D22C5BD0BC0030FA26 /* DateUtils.swift in Sources */,
 				CAA18F0F2C3C159300F888CD /* MusclesCoordinator.swift in Sources */,
+				CABE57A32C62507900E3AFC2 /* JsonUtils.swift in Sources */,
 				CAA18EFD2C3C133800F888CD /* ProgressCoordinator.swift in Sources */,
 				CABE57842C5EB38E00E3AFC2 /* DeleteAccountViewController.swift in Sources */,
 				CA5D80FE2C51784100486145 /* OptionsViewController.swift in Sources */,
@@ -1102,6 +1113,7 @@
 				CA457E072C42BBF80031FDFA /* LoginViewController.swift in Sources */,
 				CA4FEC682C4C59BC00988C5B /* ProfileViewModel.swift in Sources */,
 				CAEB18E42C4D4971000FE4E5 /* UserData.swift in Sources */,
+				CABE579D2C624D3C00E3AFC2 /* Exercise.swift in Sources */,
 				CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */,
 				CABE57962C624A2A00E3AFC2 /* ExerciseType.swift in Sources */,
 				CA038C042C4427190033CD30 /* LoginData.swift in Sources */,
