@@ -1,0 +1,384 @@
+[
+    {
+        "muscleName": "Chest",
+        "exercisesList": [
+            {
+                "name" : "Barbell Bench Press",
+                "imageIcon" : "dumbbell",
+                "exerciseImage": "2.1",
+                "descriptions" : "Starting position: lying on a bench. Grab the barbell with a wide grip from above (palms facing away from you), with the distance between your hands wider than shoulder-width. \n\nLift the barbell off the rack. \n\nTake a deep breath, lower the barbell towards the middle of your chest. Hold your breath and press the barbell upwards with fully extended arms, exhaling forcefully. \n\nTry to lower the weight smoothly and lift it in a faster manner. Note that the grip width should be such that your forearms are perpendicular to the ground at the bottom position. \n\nNever bounce the bar off your chest!",
+                "exerciseType" : "Powerlifting",
+                "equipment" : "Barbell",
+                "level" : "Intermediate"
+            },
+            {
+                "name" : "Incline Barbell Bench Press",
+                "imageIcon" : "dumbbell",
+                "exerciseImage": "2.2",
+                "descriptions" : "Raise the bench back to a 35-40° angle from the horizontal line. Position yourself on the bench, place your feet wider than shoulder-width apart, and firmly plant them on the ground. Thighs, shoulders, and head should be firmly pressed against the bench. \n\nGrab the barbell with your hands positioned above the bar. The distance between your hands should be slightly wider than shoulder-width (same grip width as with flat bench press). \n\nInhale and hold your breath, slowly lower the barbell towards the upper part of your chest. Touch it to your chest. \n\nExhale as you press the barbell upwards. \n\nTips for proper technique: \n\nMaster the correct technique before increasing the weight. \n\nAvoid using inertia; apply slow, controlled movement. \n\nKeep your chest upright and your shoulder blades down. \n\nExhale as you lift the barbell. \n\nKeep your feet wide apart on the floor for greater stability.",
+                "exerciseType" : "Powerlifting",
+                "equipment" : "Barbell",
+                "level" : "Intermediate"
+            },
+            {
+                "name" : "Parallel Bar Dips",
+                "imageIcon" : "stopwatch",
+                "exerciseImage": "2.3",
+                "descriptions" : "Assume a parallel bar dip position with straight arms. Starting this exercise from the bottom position is risky. Starting from the top allows the muscles to contract and prepare for work. \n\nLean your torso forward, then slowly lower yourself between the bars, bending your arms at the elbows. It's important to resist gravity on the way down; otherwise, you may injure the chest muscle where it attaches to the shoulder blade or elbow joint. The upper part of the chest muscles should only slightly rise above the bars. This full stretch allows you to extend your shoulder sections far back, thereby fully activating the major chest muscles. \n\nAfter a two-second pause in the stretched position, you're ready to rise up. Your elbows should point sideways if you're targeting the chest muscles. Your palms will be turned inward, and the chest muscles will try to stabilize and pull the shoulder sections towards the centerline of the body (adduction of arms). Thus, you'll activate the middle and lower sections of the chest muscles more than if the elbows were pointing backward. Additionally, you should maintain a forward torso lean (chin to chest) to increase the load on the lower chest regions. \n\nOnce you've reached the stretched position at the bottom, you can rise fairly quickly. However, if you're not very flexible and haven't achieved this stretch before, don't do it! Rise slowly and steadily, straightening your elbows. Make sure your elbows don't come close to your ribs during the ascent.",
+                "exerciseType" : "Bodybuilding",
+                "equipment" : "Bodyweight",
+                "level" : "Beginner"
+            },
+            {
+                "name" : "Dumbbell Flyes",
+                "imageIcon" : "dumbbell",
+                "exerciseImage": "2.4",
+                "descriptions" : "Lie on a flat bench, feet shoulder-width apart, pressing against the floor. \n\nGrab dumbbells in both hands and lift them above your chest, more precisely, above your shoulders. Arms are slightly bent at the elbows. The angle at the elbow joint is fixed and remains unchanged throughout the set. \n\nSpread your arms to the sides. Dumbbells move in a vertical plane. \n\nAs soon as the dumbbells descend to shoulder level or slightly below, contract the chest muscles as much as possible, change the direction of movement, and bring the dumbbells together over the chest (along the same trajectory as when you spread them). \n\nCreate maximum effort at the end of the movement.",
+                "exerciseType" : "Bodybuilding",
+                "equipment" : "Dumbbells",
+                "level" : "Beginner"
+            }
+        ]
+    },
+    {
+        "muscleName": "Biceps",
+        "exercisesList": [
+            {
+                "name" : "Barbell Bicep Curl",
+                "imageIcon" : "dumbbell",
+                "exerciseImage": "1.1",
+                "descriptions" : "Stand straight with your feet shoulder-width apart. Your feet are almost parallel, toes slightly turned out. Grab the barbell with an underhand grip (palms facing up) at shoulder-width apart. \n\nKeep your back straight, do not hunch. Look straight ahead. \n\nTake a deep breath, hold your breath, and, bending your arms at the elbows, lift the barbell to chest level. \n\nDuring the barbell lift, do not move your elbows, keep them close to the sides of your body, and do not bend your wrists. \n\nOnce your wrists are at chest level, pause, exhale, and contract your biceps even more. \n\nLower the barbell smoothly, but do not fully straighten your arms (do not lock your elbows). \n\nThroughout the movement, do not lean your torso forward or backward. Maintain proper posture.",
+                "exerciseType" : "Bodybuilding",
+                "equipment" : "Barbell",
+                "level" : "Beginner"
+            },
+            {
+                "name" : "Dumbbell Bicep Curl",
+                "imageIcon" : "dumbbell",
+                "exerciseImage": "1.2",
+                "descriptions" : "Sit upright (can also be done standing), feet shoulder-width apart. Dumbbells in lowered hands. Palms facing inward (see photo, position A). \n\nInhale and hold your breath. Start lifting the dumbbells simultaneously. \n\nWhen your forearms are parallel to the floor, start turning your wrists outward. While continuing the exercise, try to lift the dumbbells as high as possible. \n\nLower the dumbbells, repeat the wrist rotation in reverse order. \n\nWhen your elbows are bent at a right angle, return the dumbbells to the starting position and lower them down.",
+                "exerciseType" : "Bodybuilding",
+                "equipment" : "Dumbbells",
+                "level" : "Beginner"
+            },
+            {
+                "name" : "Hammer Curls with Dumbbells",
+                "imageIcon" : "fitness",
+                "exerciseImage": "1.3",
+                "descriptions" : "Standing or sitting. Hold dumbbells in both lowered hands, palms facing towards the body. \n\nInhale and bend your arms alternately or simultaneously, lifting the dumbbells to your shoulders. \n\nExhale at the end of the movement.",
+                "exerciseType" : "Bodybuilding",
+                "equipment" : "Dumbbells",
+                "level" : "Intermediate"
+            },
+            {
+                "name" : "Scott Bench Bicep Curls",
+                "imageIcon" : "fitness",
+                "exerciseImage": "1.4",
+                "descriptions" : "Position yourself on the Scott bench and place your arms (triceps) on the surface of this bench. Elbows are approximately shoulder-width apart. Hold either a barbell or a pair of dumbbells in your hands. \n\nBend your arms, slowly lifting the weight towards your chin. Do not 'bounce' the weight when your arms are fully extended. Lift the weight and repeat. \n\nThis exercise is often performed with dumbbells to increase mental concentration. The same effect is achieved by using instead of the barbell a lower block with a straight handle at the end, simulating a barbell. When performing the exercise, experiment with the width of the grip. Make sure there is no pain in the elbows. \n\nThe angle of the bench creates significant tension on the arm tendons when fully extended. To avoid tendon injury, remember to warm up the muscles by using medium-weight beforehand.",
+                "exerciseType" : "Bodybuilding",
+                "equipment" : "Barbell",
+                "level" : "Advanced"
+            }
+        ]
+    },
+    {
+        "muscleName": "Latissimus Dorsi",
+        "exercisesList": [
+            {
+                "name" : "Pull-ups",
+                "imageIcon" : "dumbbell",
+                "exerciseImage": "6.1",
+                "descriptions" : "Assume a hanging position on the pull-up bar. \n\nFocus mentally on your elbows. Lower them down as far as possible, pushing yourself towards the bar. Return to the starting position in a controlled manner. To master the correct technique of pull-ups targeting back muscle definition, initially perform them on a weighted machine. Once you learn to pull yourself up by isolating the lowering of your elbows, try repeating the exercise on the pull-up bar with the help of a partner.",
+                "exerciseType" : "Powerlifting",
+                "equipment" : "Body Weight",
+                "level" : "Experienced"
+            },
+            {
+                "name" : "Seated Cable Rows",
+                "imageIcon" : "fitness",
+                "exerciseImage": "6.2",
+                "descriptions" : "The exercise requires a series of preliminary conditions. The seat height should be adjusted so that the cable remains parallel to the floor during the rowing motion. Your feet should have support to prevent the body from sliding forward. As for the handles, they can be either fixed on a common base or separate from each other. In any case, your palms during the rowing should face each other. \n\nGrab the handles and pull them towards you, keeping your arms straight. Your back should be in a vertical position, maintaining a natural arch in the area of the shoulder blades. Now inhale and hold your breath, simultaneously starting the pull. The first intermediate phase of the movement ends when your elbows are vertical and in line with your torso. Then pull the handles slightly closer to your waist, allowing the elbows to move behind the torso. From this position (start of the second phase), retract your shoulders as far back as possible and shift the elbows as far back as possible, achieving a strong contraction of the latissimus dorsi. Then exhale and return the handles to the starting position, keeping your back straight. Performing the exercise with significant weight requires wrist straps.",
+                "exerciseType" : "Bodybuilding",
+                "equipment" : "Cable Machine",
+                "level" : "Intermediate"
+            },
+            {
+                "name" : "Bent-Over Barbell Rows",
+                "imageIcon" : "dumbbell",
+                "exerciseImage": "6.3",
+                "descriptions" : "Stand in front of the barbell. Place your feet shoulder-width apart and slightly bend your knees. Lean forward and grab the barbell with an overhand grip. The distance between your hands is slightly wider than shoulder-width. Without bending your arms at the elbows, straighten up and lift the barbell. \n\nStarting position: slightly arch your lower back, bend your torso forward - slightly above parallel with the horizontal surface but less than 30 degrees. Your knees are slightly bent, head facing forward. Engage your lower back muscles and maintain this position until the end of the set. The barbell is in front of your shins. \n\nTake a shallow breath, hold your breath, and pull the barbell towards your abdomen. The elbows move strictly backward and upward and do not flare out to the sides. Aim to lift the elbows as high as possible. \n\nPull the barbell solely through the effort of the back and shoulder muscles. \n\nDo not relax your lower back muscles until the end of the set. \n\nAfter pulling the barbell to your abdomen, exhale and smoothly lower it to the floor. Perform each subsequent repetition in the same manner.",
+                "exerciseType" : "Powerlifting",
+                "equipment" : "Barbell",
+                "level" : "Experienced"
+            },
+            {
+                "name" : "Dumbbell Pullovers",
+                "imageIcon" : "stopwatch",
+                "exerciseImage": "6.4",
+                "descriptions" : "Lie on your back on a bench so that your head extends beyond its edge. Take a dumbbell with both hands in a neutral grip (thumbs facing the floor) or a straight grip (thumbs touching each other), bend your arms at a 90-degree angle, and bring them behind your head. \n\nLower the bent arms as low as possible, then raise them. Do not raise them to the starting position, only until you feel tension. If the tension disappears, you have straightened your arms too much. Maintain constant muscle tension.",
+                "exerciseType" : "Bodybuilding",
+                "equipment" : "Dumbbells",
+                "level" : "Experienced"
+            }
+        ]
+    },
+    {
+        "muscleName": "Trapezius",
+        "exercisesList": [
+            {
+                "name": "Shrugs",
+                "imageIcon": "fitness",
+                "exerciseImage": "7.1",
+                "descriptions": "Stand straight, place your feet shoulder-width apart, as when working with a barbell. Take dumbbells, palms facing your body, and hold them in your lowered hands. Keep your back straight, shoulders back, knees slightly bent, and chin up. This is the starting position. \n\nBegin to raise your shoulders, trying to lift them as high as possible. During the lift, you can slightly tuck in your chin, which will intensify the contraction of the trapezius muscles. At the top of the movement, pause briefly, and then smoothly lower your arms with the dumbbells to the starting position. \n\nComplete the designated number of repetitions.",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Dumbbells",
+                "level": "Intermediate"
+            }
+        ]
+    },
+    {
+        "muscleName": "Quadriceps",
+        "exercisesList": [
+            {
+                "name": "Barbell Squats",
+                "imageIcon": "dumbbell",
+                "exerciseImage": "5.1",
+                "descriptions": "Squatting, whether full or partial, is a very technical exercise where safety and effectiveness are ensured primarily by flawless technique. Neglecting the precision of technical execution means exposing the trainee to the risk of injury and lack of progress, which almost always leads to the failure of all or part of the training program. \n\nGrip width on the bar: hands, positioned slightly wider than shoulders, hold the bar as if throttling a motorcycle. Thumbs lock the bar; palms, wrists, and forearms are aligned in a straight line. Elbows slightly behind and pointing downward. \n\nBar position on the back: the bar rests on the rear part of the trapezius muscles, shoulder blades are brought together, forming an ideal 'stand' in the rear part of the deltoid muscle. \n\nFoot position: may vary but is always identical on both sides. It is recommended to assume a comfortable and symmetrical position. \n\nUnracking the bar: before unracking, the bar is positioned slightly below the shoulder line when the athlete stands beside it. \n\nUnracking: done by lifting from a seated position under the bar while maintaining a plank position. Once the bar is unracked, step back, remaining close to the rack. \n\nHead position: the head continues the spinal line; the athlete fixes the gaze direction straight ahead. \n\nLeg bending: simultaneously tense the knees and thighs to slightly lower the center of gravity. Keep the abdomen flat, avoiding excessive arching of the lower back. Lower the hip joint to a certain level, depending on the chosen type of squat - full or partial. Knees are in line with thighs and feet. Heels press into the floor. \n\nLeg straightening: knee, thigh, and torso extension should occur synchronously, avoiding knee valgus. The ascent should be symmetrical and without pauses. \n\nCritical moment: when the thigh and shin bone form a right angle, muscle tension reaches its maximum. At this moment, the movement line should be ideal. \n\nExecution speed: there are many techniques. Generally, descent should be controlled, and the search for execution speed mostly happens during ascent. \n\nBreathing: inhale at the beginning of descent, then sharply exhale at the end of ascent. Throughout the exercise, the coach will pay doubled attention to the position of the back and control the pelvic tilt forward, which guarantees the preservation of natural curves (rounding of the back is unacceptable and should lead to changes in the 'cleanliness of execution').",
+                "exerciseType": "Powerlifting",
+                "equipment": "Barbell",
+                "level": "Experienced"
+            },
+            {
+                "name": "Deadlift",
+                "imageIcon": "dumbbell",
+                "exerciseImage": "5.2",
+                "descriptions": "Standing, feet shoulder-width apart, toes under the barbell. \n\nSquat down and grab the bar with a mixed grip (one hand overhand, the other underhand). \n\nGrip the barbell at shoulder width or slightly wider. \n\nKeep the back straight, maintaining a stable and balanced posture. \n\nTips on proper exercise technique: \n\nReceive proper instruction and ask for a demonstration of exercise technique. \n\nMaster the correct technique of movements before increasing the weight load. \n\nBegin the barbell lift by lifting the head and shoulders; the hips remain in the starting position. \nAs the barbell is lifted slightly above knee level, forcefully extend the legs. \n\nKeep the barbell close to the body throughout the exercise. \n\nTry to keep the chest and shoulders upright. \n\nMaintain a stable position from start to finish of the lift. \n\nInhale during the upward phase of the movement to increase intra-abdominal pressure, keep the shoulders upright, and avoid rounding the back. \n\nExhale during the downward phase of the movement.",
+                "exerciseType": "Powerlifting",
+                "equipment": "Barbell",
+                "level": "Experienced"
+            }
+        ]
+    },
+    {
+        "muscleName": "Quadriceps",
+        "exercisesList": [
+            {
+                "name": "Lunges",
+                "imageIcon": "stopwatch",
+                "exerciseImage": "5.3",
+                "descriptions": "The exercise can be performed with a barbell (placed on the shoulders behind the head) or with dumbbells (arms with dumbbells lowered down). \n\nPlace your feet parallel to each other slightly wider than your hips and fully straighten up. \n\nThe torso position is vertical in all points. Look forward, chest 'wheel,' abdomen tightened, back slightly curved in the lumbar region, knees slightly bent. Forward torso lean is not critical, but it shifts the load from the glutes to the quadriceps and adds stress to the lower back muscles. \n\nTake a wide step forward and, keeping the torso straight, shift the center of gravity to the forward leg and squat on it. \n\nAt the bottom point of the exercise, the front leg is bent at the knee at a right angle (hamstring and glute muscles are stretched like strings), the knee of the back leg 'hangs' a few centimeters above the floor (but does not touch it!). \n\nHold your breath and, leaning on the forward foot, rise from the squat and step back with the front leg to the starting position (legs together hip-width apart). \n\nThe next repetition is performed with the opposite leg. \nStep technique. One leg steps forward, first leaning on the heel, and then on the entire foot. The forward leg at the bottom point of the exercise should be bent at the knee joint at a 90-degree angle, and the knee should be directly above the toes (no further, as a shorter step puts additional stress on the knee). The movement continues until the knee of the back leg is about a centimeter from the floor.",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Dumbbells",
+                "level": "Intermediate"
+            },
+            {
+                "name": "Leg Press Machine",
+                "imageIcon": "fitness",
+                "exerciseImage": "5.4",
+                "descriptions": "Take a comfortable position on the leg press machine. Place your feet at the top of the platform shoulder-width apart or slightly wider. Toes are slightly turned outward. \n\nRemove the safety locks and on a deep inhale, bending your knees, lower the platform to a position where your knees are bent to a 90° angle. \n\nOn a powerful exhale, return to the starting position. \n\nThe most common injury when performing leg presses is stretching and tearing of the hamstring muscles and tendons. Therefore, in the starting position of the leg press, you should not keep your legs overly straight. For the same reason, it is necessary to combine leg training with stretching exercises and self-massage. \n\nDuring the movement at the bottom of the amplitude, do not allow the lower back to detach from the cushion. If this happens, it means you are lowering the weight too low, which is not beneficial for the spine and knee joints. \n\nBy changing the width of placing the feet on the platform from narrow to wide, you redistribute the load on the quadriceps from their front surface to the inner. \n\nTips on proper exercise technique: \n\nBefore using the machine, receive proper instruction and ask for a demonstration of exercise technique. \n\nMaster the correct technique of movements before increasing the weight load. \n\nDo not use inertia force; apply slow controlled movement. \n\nDuring the exercise, the lower back should be pressed against the seat. It may be necessary to adjust the angle of the seat back. \n\nIf it is impossible to maintain the desired position of the lower back, lower the platform to the position of the knees at 90°. \n\nMaintain a balanced posture and neutral spine position. \n\nChest is lifted, do not round the shoulders. \n\nDo not allow the knees to go beyond the toes line. \n\nShift the weight of the body onto the heels and middle parts of the feet. \n\nDo not lift the heels off the surface of the platform. Perform the press with the heels. \n\nInhale on the downward movement; exhale on the upward movement.",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Leg Press Machine",
+                "level": "Experienced"
+            }
+        ]
+    },
+    {
+        "muscleName": "Glutes",
+        "exercisesList": [
+            {
+                "name": "Leg Raises from Supine Position",
+                "imageIcon": "fitness",
+                "exerciseImage": "8.1",
+                "descriptions": "Starting position for leg raises from the supine position. The body is supported by palms and toes. Arms and legs are fully extended at the elbows and knees. Palms are positioned directly under the shoulders, fingers pointing forward. The body is fully extended and when viewed from the side, it forms a straight line from ankles to ears (this position is called the supine position). \n\nInhale. Lift one leg. \n\nExhale. Lower the leg to the starting position. \n\nInhale. Lift the other leg. \n\nExhale. Lower the leg to the starting position. Repeat leg raises from the supine position 10 times (5 times each leg).",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Own Body Weight",
+                "level": "Beginner"
+            },
+            {
+                "name": "Leg Kickbacks",
+                "imageIcon": "fitness",
+                "exerciseImage": "8.2",
+                "descriptions": "START: Attach a soft handle to the cable machine at the end of the cable. Insert one foot into the handle. Squat down and assume a position with hands straight, facing the machine. \n\nEXECUTION: Slowly extend the knee of the working leg and kick the foot back and up as far as possible. Slowly and under control return to the starting position.",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Own Body Weight",
+                "level": "Beginner"
+            }
+        ]
+    },
+    {
+        "muscleName": "Calf",
+        "exercisesList": [
+            {
+                "name": "Standing Calf Raises",
+                "imageIcon": "fitness",
+                "exerciseImage": "4.1",
+                "descriptions": "This exercise can be performed either on a special machine or, for example, on a Smith machine, with a barbell on the shoulders, standing on the edge of a small platform. You can do single-leg calf raises without additional weight or holding a dumbbell in your hand. In any case, the weight should be such that you perform the exercise only with the help of the calf muscles, without involving other leg muscles (this is when the legs bend at the knee joint at the bottom and straighten at the top - this can be seen quite often) and trapezius. That is, it's not worth chasing heavy weights, but it's worth making sure that the knees don't bend and the shoulders remain immobile.",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Machine",
+                "level": "Beginner"
+            },
+            {
+                "name": "Donkey Calf Raises",
+                "imageIcon": "stopwatch",
+                "exerciseImage": "4.2",
+                "descriptions": "The classic donkey calf raise was performed as follows: the person doing the exercise would bend at the waist, stand on the edge of a small platform, and hold onto something for stability. Then, a partner would sit on their back, providing the weight. However, this method of performing the exercise can now be rarely seen, as a special machine for donkey calf raises has long been invented. Here, you won't be able to assist yourself with your shoulders, but you will be able to bend your knees. So again, I urge you to watch your knees.",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Bodyweight",
+                "level": "Beginner"
+            }
+        ]
+    },
+    {
+        "muscleName": "Triceps",
+        "exercisesList": [
+            {
+                "name": "Close-Grip Bench Press",
+                "imageIcon": "dumbbell",
+                "exerciseImage": "9.1",
+                "descriptions": "The close-grip bench press emphasizes the load on the middle part of the chest muscles and triceps. If you feel discomfort in your wrists, try a wider grip (2-3 cm wider) or don't bring the barbell all the way down to your chest (leave it 5-8 cm above). \n\nStep 1. Lie on the bench and grip the barbell. The distance between your hands should be about 30 cm. \n\nStep 2. Lift the barbell off the rack and slowly lower it to your chest. \n\nStep 3. Press the barbell upwards.",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Barbell",
+                "level": "Intermediate"
+            },
+            {
+                "name": "French Press",
+                "imageIcon": "dumbbell",
+                "exerciseImage": "9.2",
+                "descriptions": "Lie on a flat bench with a barbell. It's better to use a barbell with an EZ-bar, but if unavailable, a regular barbell can be used. Grip the bar from the top and lift it up. \n\nStarting position: fully extend your arms at the elbows and tilt them back behind your head at a 45° angle from the vertical line. \n\nWhile keeping your shoulders stationary, smoothly bend your arms at the elbows and lower the barbell towards your temples. At the bottom, the angle in the elbow joint should be 90°. \n\nOnce at the bottom, return the barbell to the starting position. Don't bring the elbows forward, they should be fixed, and the shoulders shouldn't move, only the elbows.",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Barbell",
+                "level": "Advanced"
+            },
+            {
+                "name": "Overhead Dumbbell Triceps Extension",
+                "imageIcon": "fitness",
+                "exerciseImage": "9.3",
+                "descriptions": "The main condition for proper overhead dumbbell triceps extension is to keep the elbows stationary. The main load goes to the triceps. \n\nStep 1. Lean on the bench with one hand and knee. The other hand with the dumbbell is bent at the elbow. The shoulder is parallel to the ground. Keep your back straight. \n\nStep 2. While keeping the elbow stationary, slowly straighten the arm with the dumbbell. \n\nStep 3. Slowly return the arm with the dumbbell to the starting position.",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Dumbbells",
+                "level": "Intermediate"
+            },
+            {
+                "name": "Single-Arm Dumbbell Overhead Triceps Extension",
+                "imageIcon": "fitness",
+                "exerciseImage": "9.4",
+                "descriptions": "Stand or sit. Hold a dumbbell in one hand, raised vertically upwards: inhale and bend the arm at the elbow, lowering the dumbbell behind the neck; upon completion of the movement, returning to the starting position, exhale. \n\nDuring the movement, pay special attention to the contraction of the long head of the triceps, which contracts, tensing in the extended vertical position of the arm. \n\nNote: it's important to keep the abdominal muscles tense to avoid excessive arching of the lower back, or preferably use a bench with a short backrest for support if possible.",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Dumbbells",
+                "level": "Intermediate"
+            }
+        ]
+    },
+    {
+        "muscleName": "Deltoids",
+        "exercisesList": [
+            {
+                "name": "Barbell Standing Press",
+                "imageIcon": "dumbbell",
+                "exerciseImage": "3.1",
+                "descriptions": "At the end of the barbell lift onto the chest, the barbell rests on the clavicles. The chest is open, elbows are pushed forward high. The head is lifted, gaze fixed slightly above the horizon. Feet return to the starting position, approximately hip-width apart. A controlled quarter squat provides the necessary effort to initiate the movement. Feet are firmly pressed to the ground, emphasis on the base of the foot. Throughout the movement, the plank of the shoulder girdle and torso should be impeccable, while the glutes play a major role in braking during descent and stabilizing the pelvis.\n\nThe pushing phase allows slipping under the barbell through a lunge. Pushing the barbell during the 'explosion,' the athlete essentially throws their body down so that they end up in a lunge position with arms stretched upward. Then comes a new position of full plank to balance the barbell and body, combining concentric triceps and deltoid muscle resistance with isometric locking. The barbell is fixed slightly behind the head. The front leg is pressed into the floor to stabilize the position, while the angles formed by the front and back thighs are more than 90°. Avoid turning the heel of the trailing leg outward, which leads to opening the arch of the foot. It's important to keep the pelvis in a forward tilt.\n\nReturning to the standing position before lowering the barbell to the ground occurs first by pulling back the front leg, and then by advancing the back leg.",
+                "exerciseType": "Powerlifting",
+                "equipment": "Barbell",
+                "level": "Experienced"
+            },
+            {
+                "name": "Arnold Press",
+                "imageIcon": "dumbbell",
+                "exerciseImage": "3.2",
+                "descriptions": "Sit on a bench with a vertical backrest and press your back tightly against it. Legs are bent at the knees at a right angle.\n\nStarting position: take dumbbells and lift them to the level of the shoulders. Align the elbows so that they are in the same plane as the torso or slightly forward. Rotate the wrists so that the palms face the torso.\n\nTake a deep breath and, holding your breath, press the dumbbells vertically upward. Do not lower or raise your head. The chin should be parallel to the floor, and the gaze directed straight ahead.\nOnce the dumbbells pass the level of the crown, begin to rotate the dumbbells (palms) outward. At the top, the arms should be fully extended but not locked at the elbows, shoulders raised, and palms facing forward.\n\nAfter pressing the dumbbells, exhale, pause, and further tense the deltoids.\n\nInhale and smoothly lower the dumbbells to the starting position, rotating them inward so that when they reach shoulder level, the palms are facing the torso again.",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Dumbbells",
+                "level": "Experienced"
+            },
+            {
+                "name": "Barbell Upright Row",
+                "imageIcon": "dumbbell",
+                "exerciseImage": "3.3",
+                "descriptions": "Take the barbell with a grip slightly wider than shoulder width and stand up straight, with a slight arch in the lower back, chest 'wheel', shoulders straightened, arms straightened at the elbows, the barbell rests on the hips.\n\nTake a breath and, holding your breath, tense the trapezius and deltoids. Spread your elbows, pulling them vertically upward.\n\nThe movement is led by the elbows, not the shoulders or forearms.\n\nAs you pull your elbows up, the barbell should slide in a vertical plane along the body from the hips to the chin. Do not lean over the barbell, arching your back. Keep the torso and neck straight, and the chin horizontal.\n\nAt the top, the elbows are raised as high as possible (definitely above the shoulders), and the upper part of the arms is 30° above horizontal.\n\nOnce you reach the top, exhale, pause, and further tense the trapezius and deltoids.\n\nLower the barbell smoothly to the starting position.",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Barbell",
+                "level": "Intermediate"
+            }
+        ]
+    },
+    {
+        "muscleName": "Abdominals",
+        "exercisesList": [
+            {
+                "name": "Side Lateral Raises",
+                "imageIcon": "fitness",
+                "exerciseImage": "3.4",
+                "descriptions": "Stand with your feet shoulder-width apart and straighten your back. Arms are slightly bent and fixed at the elbows throughout the exercise, dumbbells almost touch the legs (palms facing the hips).\n\nTake a breath and, holding your breath, raise your arms to the sides (strictly in the plane of the torso) above the head.\n\nAs the dumbbells pass shoulder level, the arms slightly rotate outward at the shoulder joint and at the top, they are turned upward with the pinkies.\n\nDo not relax the lower back and maintain a straight torso position until the end of the set.\n\nLower the arms down smoothly, exhaling, controlling the dumbbells at each point of the movement. Do not bend your arms at the elbows!",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Dumbbells",
+                "level": "Intermediate"
+            }
+        ]
+    },
+    {
+        "muscleName": "Forearms",
+        "exercisesList": [
+            {
+                "name": "Wrist Curls on Bench (Underhand Grip)",
+                "imageIcon": "fitness",
+                "exerciseImage": "10.1",
+                "descriptions": "Step 1. Place your hands on the bench, lowering your wrists down. Take the barbell with an underhand grip.\n\nStep 2. Lift the barbell upwards only with your wrists towards yourself.\n\nStep 3. Return to the starting position.\n\nDo not lift the barbell too high. Maintain a comfortable wrist angle. At the end of the movement, you can release the weight onto an almost straightened wrist, holding it on the last phalanx. This will engage the finger flexors and increase the range of motion.",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Barbell",
+                "level": "Intermediate"
+            },
+            {
+                "name": "Zottman Curls",
+                "imageIcon": "stopwatch",
+                "exerciseImage": "10.2",
+                "descriptions": "This exercise engages the same muscles as the previous one, but is performed with dumbbells. At the bottom, the dumbbells are held like in 'hammer curls,' and as they move upward, the wrists rotate palms downwards (pronation). Then the dumbbells are lowered down, repeating the entire movement in reverse order.",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Dumbbells",
+                "level": "Intermediate"
+            }
+        ]
+    },
+    {
+        "muscleName": "Abs",
+        "exercisesList": [
+            {
+                "name": "Crunches",
+                "imageIcon": "dumbbell",
+                "exerciseImage": "11.1",
+                "descriptions": "Lie on your back, knees bent at a 90-degree angle, hands behind your head, elbows spread out to the sides. Using the abdominal muscles, begin to lift (not jerk) the shoulder girdle from the floor towards the pelvis. Slowly return to the starting position from the top.",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Bodyweight",
+                "level": "Beginner"
+            },
+            {
+                "name": "Side Crunches",
+                "imageIcon": "dumbbell",
+                "exerciseImage": "11.2",
+                "descriptions": "Step 1. Lie on your side, legs slightly bent and pressed against the floor. One arm is extended forward and rests on the floor, the other is behind the head.\n\nStep 2. Slowly crunch the upper part of the torso. Hold at the top.\n\nStep 3. Slowly return to the starting position.",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Bodyweight",
+                "level": "Beginner"
+            },
+            {
+                "name": "Hanging Leg Raises",
+                "imageIcon": "fitness",
+                "exerciseImage": "11.3",
+                "descriptions": "The bar can be used both for training the abs and the back, as well as for relieving post-workout tension.\n\nStep 1. Grab the bar with your palms and hang from it.\n\nStep 2. Inhale and pull your knees towards your chest, exhaling.\n\nStep 3. Return to the starting position. Do not swing during the movement.",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Bodyweight",
+                "level": "Beginner"
+            },
+            {
+                "name": "Plank",
+                "imageIcon": "dumbbell",
+                "exerciseImage": "11.4",
+                "descriptions": "Starting position: Plank position lying with support on straight arms and toes of extended legs (distance between lower limbs at hip width).\n\nHands are placed at the level of the upper chest, slightly wider than shoulder width.\n\nMaintain a neutral spine position, engage the 'abdominal stabilization' by pulling in the abdomen.\n\nThe chest is expanded. Lower the shoulder blades, activating the anterior serratus muscles and lower parts of the trapezius. \n\nTips for proper exercise technique: Do not round or arch the back. Keep the pelvis in a neutral position, and the spine straight. \n\nDo not hunch or hump. Keep the chest expanded and the shoulder blades drawn together. \n\nDo not hold your breath. Breathe freely and naturally.",
+                "exerciseType": "Bodybuilding",
+                "equipment": "Bodyweight",
+                "level": "Intermediate"
+            }
+        ]
+    }
+]
+ 
+ 

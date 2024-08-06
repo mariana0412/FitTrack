@@ -119,6 +119,10 @@
 		CABE57902C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */; };
 		CABE57912C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */; };
 		CABE57922C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */; };
+		CABE57942C624A0300E3AFC2 /* Exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = CABE57932C624A0300E3AFC2 /* Exercises.json */; };
+		CABE57962C624A2A00E3AFC2 /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57952C624A2A00E3AFC2 /* ExerciseType.swift */; };
+		CABE57992C624A4600E3AFC2 /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57982C624A4600E3AFC2 /* Equipment.swift */; };
+		CABE579B2C624A5700E3AFC2 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE579A2C624A5700E3AFC2 /* Level.swift */; };
 		CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */; };
 		CAE8F1462C52973A00355755 /* OptionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */; };
 		CAE8F1492C52B8C500355755 /* OptionSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE8F1482C52B8C500355755 /* OptionSwitch.xib */; };
@@ -273,6 +277,10 @@
 		CABE57872C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountCoordinator.swift; sourceTree = "<group>"; };
 		CABE57892C5EB3CB00E3AFC2 /* DeleteAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteAccount.storyboard; sourceTree = "<group>"; };
 		CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CABE57932C624A0300E3AFC2 /* Exercises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Exercises.json; sourceTree = "<group>"; };
+		CABE57952C624A2A00E3AFC2 /* ExerciseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseType.swift; sourceTree = "<group>"; };
+		CABE57982C624A4600E3AFC2 /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
+		CABE579A2C624A5700E3AFC2 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCellDelegate.swift; sourceTree = "<group>"; };
 		CAE8F1482C52B8C500355755 /* OptionSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionSwitch.xib; sourceTree = "<group>"; };
@@ -370,6 +378,7 @@
 				CA002DE02C318B110053284B /* LaunchScreen.storyboard */,
 				CA002DE32C318B110053284B /* Info.plist */,
 				CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */,
+				CABE57932C624A0300E3AFC2 /* Exercises.json */,
 			);
 			path = PecodeTestTask;
 			sourceTree = "<group>";
@@ -397,6 +406,7 @@
 			children = (
 				CAE8F1552C52F1DE00355755 /* User */,
 				CAE8F1502C52DC7600355755 /* Option */,
+				CABE57972C624A3600E3AFC2 /* Exercise */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -678,6 +688,16 @@
 			path = DeleteAccount;
 			sourceTree = "<group>";
 		};
+		CABE57972C624A3600E3AFC2 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				CABE57952C624A2A00E3AFC2 /* ExerciseType.swift */,
+				CABE57982C624A4600E3AFC2 /* Equipment.swift */,
+				CABE579A2C624A5700E3AFC2 /* Level.swift */,
+			);
+			path = Exercise;
+			sourceTree = "<group>";
+		};
 		CAE8F1442C52972900355755 /* OptionCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -863,6 +883,7 @@
 				CAA18F012C3C134B00F888CD /* Progress.storyboard in Resources */,
 				CABE57902C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */,
 				CAEB19112C4ED721000FE4E5 /* Alert.storyboard in Resources */,
+				CABE57942C624A0300E3AFC2 /* Exercises.json in Resources */,
 				CA37E5822C40573D003ADAA8 /* TabBar.storyboard in Resources */,
 				CAA18F112C3C159C00F888CD /* Muscles.storyboard in Resources */,
 				CA465A812C47E26F003E7217 /* ForgotPassword.storyboard in Resources */,
@@ -1072,6 +1093,7 @@
 				CA5D810D2C5181E300486145 /* OptionCell.swift in Sources */,
 				CA002E182C319C7A0053284B /* HomeViewModel.swift in Sources */,
 				CA9018CE2C5BC4D60030FA26 /* ChartCoordinator.swift in Sources */,
+				CABE579B2C624A5700E3AFC2 /* Level.swift in Sources */,
 				CA002DD62C318B0F0053284B /* AppDelegate.swift in Sources */,
 				CA37E5702C3F25B4003ADAA8 /* RegistrationData.swift in Sources */,
 				CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */,
@@ -1081,6 +1103,7 @@
 				CA4FEC682C4C59BC00988C5B /* ProfileViewModel.swift in Sources */,
 				CAEB18E42C4D4971000FE4E5 /* UserData.swift in Sources */,
 				CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */,
+				CABE57962C624A2A00E3AFC2 /* ExerciseType.swift in Sources */,
 				CA038C042C4427190033CD30 /* LoginData.swift in Sources */,
 				CA1EE8402C375AFF00E58403 /* CustomSwitch.swift in Sources */,
 				CA37E57E2C405731003ADAA8 /* TabBarViewModel.swift in Sources */,
@@ -1093,6 +1116,7 @@
 				CAEB190D2C4ED71A000FE4E5 /* AlertViewModel.swift in Sources */,
 				CA002E142C319C5C0053284B /* HomeCoordinator.swift in Sources */,
 				CA002E292C32C1C50053284B /* Constants.swift in Sources */,
+				CABE57992C624A4600E3AFC2 /* Equipment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
