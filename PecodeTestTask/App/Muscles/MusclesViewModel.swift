@@ -7,6 +7,9 @@
 
 class MusclesViewModel {
     
+    let navigationBarTitle = "Muscles"
+    let navigationBarRightButtonTitle = "Reset"
+    
     var muscleGroups: [MuscleGroup] = []
     
     private var coordinator: MusclesCoordinator?

@@ -45,12 +45,13 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
         
         let navigationButtons = NavigationBarConfigurator.configureNavigationBar(
             for: self,
-            title: viewModel?.navigationItemTitle ?? "",
+            title: viewModel?.navigationBarTitle ?? "", 
+            rightButtonName: viewModel?.navigationBarRightButtonTitle,
             backAction: #selector(backButtonTapped),
-            saveAction: #selector(saveButtonTapped)
+            rightButtonAction: #selector(saveButtonTapped)
         )
         
-        if let saveButtonCustomView = navigationButtons.saveButton?.customView as? UIButton {
+        if let saveButtonCustomView = navigationButtons.rightButton?.customView as? UIButton {
             saveButton = saveButtonCustomView
             configureSaveButtonInitialState()
         }
