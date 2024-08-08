@@ -12,6 +12,10 @@ final class MusclesViewController: BaseViewController {
     private enum Constants {
         enum TableView {
             static let cellReuseIdentifier = "ExerciseViewCell"
+            static let cellHeight: CGFloat = 171
+            static let underlineHeight: CGFloat = 1
+            static let underlineTop: CGFloat = 12
+            static let headerViewBottom: CGFloat = 16
         }
     }
     
@@ -89,7 +93,7 @@ extension MusclesViewController: UITableViewDataSource {
 extension MusclesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 171
+        return Constants.TableView.cellHeight
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -103,29 +107,25 @@ extension MusclesViewController: UITableViewDelegate {
         label.translatesAutoresizingMaskIntoConstraints = false
 
         let underlineView = UIView()
-        underlineView.backgroundColor = .white
+        underlineView.backgroundColor = .primaryWhite
         underlineView.translatesAutoresizingMaskIntoConstraints = false
 
         headerView.addSubview(label)
         headerView.addSubview(underlineView)
         
         NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
-            label.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
+            label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
+            label.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
             label.topAnchor.constraint(equalTo: headerView.topAnchor),
             
             underlineView.leadingAnchor.constraint(equalTo: label.leadingAnchor),
             underlineView.trailingAnchor.constraint(equalTo: label.trailingAnchor),
-            underlineView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 12),
-            underlineView.heightAnchor.constraint(equalToConstant: 1),
-            underlineView.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 0)
+            underlineView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: Constants.TableView.underlineTop),
+            underlineView.heightAnchor.constraint(equalToConstant: Constants.TableView.underlineHeight),
+            headerView.bottomAnchor.constraint(equalTo: underlineView.bottomAnchor, constant: Constants.TableView.headerViewBottom)
         ])
         
         return headerView
-    }
-
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 33
     }
     
 }

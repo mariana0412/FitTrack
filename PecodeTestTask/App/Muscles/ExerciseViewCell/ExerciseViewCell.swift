@@ -20,6 +20,7 @@ class ExerciseViewCell: UITableViewCell {
             static let buttonFont = UIFont(name: "Nunito-Light", size: 16)
             static let nameNumberOfLines = 2
             static let attributesNumberOfLines = 0
+            static let spacing: CGFloat = 12
         }
     }
     
@@ -40,6 +41,12 @@ class ExerciseViewCell: UITableViewCell {
         
         setCheckmark(isSelected: selected)
         setBorderStyle(isSelected: selected)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: Constants.Layout.spacing, right: 0))
     }
     
     func configure(with exercise: Exercise, buttonText: String) {

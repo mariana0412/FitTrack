@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Hvb-Av-5fy">
-                                <rect key="frame" x="37.666666666666657" y="102" width="318" height="716"/>
+                                <rect key="frame" x="37.666666666666657" y="77" width="318" height="741"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="318" id="1Br-Qt-b43"/>
@@ -32,7 +32,7 @@
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Hvb-Av-5fy" secondAttribute="bottom" id="Bdb-CP-TUg"/>
                             <constraint firstItem="Hvb-Av-5fy" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="YfM-nr-8o0"/>
-                            <constraint firstItem="Hvb-Av-5fy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="43" id="jbN-gf-Oxy"/>
+                            <constraint firstItem="Hvb-Av-5fy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="18" id="jbN-gf-Oxy"/>
                         </constraints>
                     </view>
                     <connections>
