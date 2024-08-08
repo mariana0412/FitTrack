@@ -23,6 +23,7 @@ final class MusclesViewController: BaseViewController {
     
     var viewModel: MusclesViewModel?
     var selectedCells: Set<IndexPath> = []
+    private var selectedCellsNumbers: [Int: UILabel] = [:]
     private var resetButton: UIBarButtonItem?
     private let refreshControl = UIRefreshControl()
     
@@ -89,6 +90,17 @@ final class MusclesViewController: BaseViewController {
         refreshControl.endRefreshing()
     }
     
+    private func numberOfSelectedCells(in section: Int) -> Int {
+        selectedCells.filter { $0.section == section }.count
+    }
+    
+    private func updateHeaderCount(for section: Int) {
+        let selectedCount = numberOfSelectedCells(in: section)
+        if let countLabel = selectedCellsNumbers[section] {
+            countLabel.text = selectedCount > 0 ? "\(selectedCount)" : nil
+        }
+    }
+    
 }
 
 extension MusclesViewController: UITableViewDataSource {
@@ -109,7 +121,9 @@ extension MusclesViewController: UITableViewDataSource {
         
         if let exercise = viewModel?.muscleGroups[indexPath.section].exercisesList[indexPath.row] {
             let moreAboutButtonTitle = viewModel?.moreAboutButtonTitle ?? ""
-            cell.configure(with: exercise, buttonText: moreAboutButtonTitle, isSelected: selectedCells.contains(indexPath))
+            cell.configure(with: exercise, 
+                           buttonText: moreAboutButtonTitle,
+                           isSelected: selectedCells.contains(indexPath))
         }
         
         cell.delegate = self
@@ -134,20 +148,32 @@ extension MusclesViewController: UITableViewDelegate {
         label.font = Fonts.helveticaNeue18
         label.translatesAutoresizingMaskIntoConstraints = false
 
+        let countLabel = UILabel()
+        let selectedCount = numberOfSelectedCells(in: section)
+        countLabel.text = selectedCount > 0 ? "\(selectedCount)" : nil
+        countLabel.textColor = .primaryWhite
+        countLabel.font = Fonts.helveticaNeue18
+        countLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        selectedCellsNumbers[section] = countLabel
+
         let underlineView = UIView()
         underlineView.backgroundColor = .primaryWhite
         underlineView.translatesAutoresizingMaskIntoConstraints = false
 
         headerView.addSubview(label)
+        headerView.addSubview(countLabel)
         headerView.addSubview(underlineView)
         
         NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
-            label.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
-            label.topAnchor.constraint(equalTo: headerView.topAnchor),
+            label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
+            label.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 24),
+            
+            countLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
+            countLabel.centerYAnchor.constraint(equalTo: label.centerYAnchor),
             
             underlineView.leadingAnchor.constraint(equalTo: label.leadingAnchor),
-            underlineView.trailingAnchor.constraint(equalTo: label.trailingAnchor),
+            underlineView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
             underlineView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: Constants.TableView.underlineTop),
             underlineView.heightAnchor.constraint(equalToConstant: Constants.TableView.underlineHeight),
             headerView.bottomAnchor.constraint(equalTo: underlineView.bottomAnchor, constant: Constants.TableView.headerViewBottom)
@@ -170,5 +196,6 @@ extension MusclesViewController: ExerciseViewCellDelegate {
         
         exercisesTableView.reloadRows(at: [indexPath], with: .automatic)
         updateResetButtonVisibility()
+        updateHeaderCount(for: indexPath.section)
     }
 }
