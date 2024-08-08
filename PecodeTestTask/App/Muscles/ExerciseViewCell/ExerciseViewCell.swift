@@ -43,7 +43,7 @@ class ExerciseViewCell: UITableViewCell {
         super.awakeFromNib()
         
         setupUI()
-        setupGesture()
+        setupGestures()
     }
     
     override func layoutSubviews() {
@@ -89,9 +89,13 @@ class ExerciseViewCell: UITableViewCell {
         checkmark.setSelected(isSelected)
     }
     
-    private func setupGesture() {
+    private func setupGestures() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         contentView.addGestureRecognizer(tapGesture)
+        
+        checkmark.didToggleSelection = { [weak self] in
+            self?.handleTap()
+        }
     }
     
     @objc private func handleTap() {
