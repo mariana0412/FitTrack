@@ -9,6 +9,7 @@ class MusclesViewModel {
     
     let navigationBarTitle = "Muscles"
     let navigationBarRightButtonTitle = "Reset"
+    let moreAboutButtonTitle = "More about"
     
     var muscleGroups: [MuscleGroup] = []
     

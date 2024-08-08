@@ -13,7 +13,7 @@ class ExerciseViewCell: UITableViewCell {
         enum Layout {
             static let contentViewCornerRadius: CGFloat = 8
             static let contentViewBorderWidth: CGFloat = 1
-            static let contentViewBorderColor = UIColor.primaryWhite.cgColor
+            static let contentViewBorderColor = UIColor.primaryWhite.withAlphaComponent(0.4).cgColor
             static let contentViewBorderWidthSelected: CGFloat = 2
             static let contentViewBorderColorSelected = UIColor.primaryYellow.cgColor
             static let attributesFont = UIFont(name: "Nunito-Light", size: 14)
