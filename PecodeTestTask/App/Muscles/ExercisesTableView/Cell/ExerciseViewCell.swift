@@ -9,6 +9,8 @@ import UIKit
 
 class ExerciseViewCell: UITableViewCell {
     
+    static let reuseIdentifier = String(describing: ExerciseViewCell.self)
+    
     private enum Constants {
         enum Layout {
             static let contentViewCornerRadius: CGFloat = 8

@@ -11,7 +11,6 @@ final class MusclesViewController: BaseViewController {
     
     private enum Constants {
         enum TableView {
-            static let cellReuseIdentifier = "ExerciseViewCell"
             static let cellHeight: CGFloat = 171
         }
     }
@@ -19,10 +18,11 @@ final class MusclesViewController: BaseViewController {
     @IBOutlet weak var exercisesTableView: UITableView!
     
     var viewModel: MusclesViewModel?
-    var selectedCells: Set<IndexPath> = []
+    private var selectedCells: Set<IndexPath> = []
     private var selectedCellsNumbers: [Int: UILabel] = [:]
     private var resetButton: UIBarButtonItem?
     private let refreshControl = UIRefreshControl()
+    private var expandedSections: Set<Int> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,7 @@ final class MusclesViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         configureNavigationBar()
+        closeAllSections()
     }
     
     static func instantiate() -> MusclesViewController {
@@ -47,9 +48,9 @@ final class MusclesViewController: BaseViewController {
         exercisesTableView.delegate = self
         exercisesTableView.dataSource = self
         
-        let nib = UINib(nibName: Constants.TableView.cellReuseIdentifier, bundle: nil)
-        exercisesTableView.register(nib, forCellReuseIdentifier: Constants.TableView.cellReuseIdentifier)
-        exercisesTableView.register(ExercisesTableHeaderView.self, forHeaderFooterViewReuseIdentifier: ExercisesTableHeaderView.Constants.reuseIdentifier)
+        let nib = UINib(nibName: ExerciseViewCell.reuseIdentifier, bundle: nil)
+        exercisesTableView.register(nib, forCellReuseIdentifier: ExerciseViewCell.reuseIdentifier)
+        exercisesTableView.register(ExercisesTableHeaderView.self, forHeaderFooterViewReuseIdentifier: ExercisesTableHeaderView.reuseIdentifier)
         
         exercisesTableView.refreshControl = refreshControl
     }
@@ -85,11 +86,17 @@ final class MusclesViewController: BaseViewController {
         selectedCells.removeAll()
         exercisesTableView.reloadData()
         updateResetButtonVisibility()
+        closeAllSections() 
         refreshControl.endRefreshing()
     }
     
     private func numberOfSelectedCells(in section: Int) -> Int {
         selectedCells.filter { $0.section == section }.count
+    }
+    
+    private func closeAllSections() {
+        expandedSections.removeAll()
+        exercisesTableView.reloadData()
     }
     
 }
@@ -101,11 +108,14 @@ extension MusclesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.muscleGroups[section].exercisesList.count ?? 0
+        if expandedSections.contains(section) {
+            return viewModel?.muscleGroups[section].exercisesList.count ?? 0
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableView.cellReuseIdentifier, 
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ExerciseViewCell.reuseIdentifier,
                                                        for: indexPath) as? ExerciseViewCell else {
             return UITableViewCell()
         }
@@ -131,13 +141,17 @@ extension MusclesViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ExercisesTableHeaderView.Constants.reuseIdentifier) as? ExercisesTableHeaderView else {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ExercisesTableHeaderView.reuseIdentifier) as? ExercisesTableHeaderView else {
             return nil
         }
         
         let title = viewModel?.muscleGroups[section].muscleName ?? ""
         let count = numberOfSelectedCells(in: section)
-        headerView.configure(with: title, count: count)
+        headerView.configure(with: title,
+                             count: count,
+                             isExpanded: expandedSections.contains(section))
+        headerView.section = section
+        headerView.delegate = self
         
         return headerView
     }
@@ -146,7 +160,9 @@ extension MusclesViewController: UITableViewDelegate {
         if let headerView = exercisesTableView.headerView(forSection: section) as? ExercisesTableHeaderView {
             let selectedCount = numberOfSelectedCells(in: section)
             let sectionTitle = viewModel?.muscleGroups[section].muscleName ?? ""
-            headerView.configure(with: sectionTitle, count: selectedCount)
+            headerView.configure(with: sectionTitle,
+                                 count: selectedCount,
+                                 isExpanded: expandedSections.contains(section))
         }
     }
     
@@ -165,5 +181,16 @@ extension MusclesViewController: ExerciseViewCellDelegate {
         exercisesTableView.reloadRows(at: [indexPath], with: .automatic)
         updateResetButtonVisibility()
         updateHeaderCount(for: indexPath.section)
+    }
+}
+
+extension MusclesViewController: ExercisesTableHeaderViewDelegate {
+    func toggleSection(_ section: Int) {
+        if expandedSections.contains(section) {
+            expandedSections.remove(section)
+        } else {
+            expandedSections.insert(section)
+        }
+        exercisesTableView.reloadSections(IndexSet(integer: section), with: .automatic)
     }
 }

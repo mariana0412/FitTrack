@@ -133,6 +133,7 @@
 		CABE57AE2C6267B000E3AFC2 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CABE57AB2C6267B000E3AFC2 /* Nunito-Light.ttf */; };
 		CABE57D32C65207F00E3AFC2 /* ExerciseViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57D22C65207F00E3AFC2 /* ExerciseViewCellDelegate.swift */; };
 		CABE57D52C65497100E3AFC2 /* ExercisesTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57D42C65497100E3AFC2 /* ExercisesTableHeaderView.swift */; };
+		CABE57D72C65519000E3AFC2 /* ExercisesTableHeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57D62C65519000E3AFC2 /* ExercisesTableHeaderViewDelegate.swift */; };
 		CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */; };
 		CAE8F1462C52973A00355755 /* OptionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */; };
 		CAE8F1492C52B8C500355755 /* OptionSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE8F1482C52B8C500355755 /* OptionSwitch.xib */; };
@@ -299,6 +300,7 @@
 		CABE57AB2C6267B000E3AFC2 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
 		CABE57D22C65207F00E3AFC2 /* ExerciseViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewCellDelegate.swift; sourceTree = "<group>"; };
 		CABE57D42C65497100E3AFC2 /* ExercisesTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableHeaderView.swift; sourceTree = "<group>"; };
+		CABE57D62C65519000E3AFC2 /* ExercisesTableHeaderViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableHeaderViewDelegate.swift; sourceTree = "<group>"; };
 		CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCellDelegate.swift; sourceTree = "<group>"; };
 		CAE8F1482C52B8C500355755 /* OptionSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionSwitch.xib; sourceTree = "<group>"; };
@@ -724,12 +726,29 @@
 		CABE57A62C625BF800E3AFC2 /* ExercisesTableView */ = {
 			isa = PBXGroup;
 			children = (
-				CABE57D42C65497100E3AFC2 /* ExercisesTableHeaderView.swift */,
+				CABE57D92C6551A100E3AFC2 /* Header */,
+				CABE57D82C65519700E3AFC2 /* Cell */,
+			);
+			path = ExercisesTableView;
+			sourceTree = "<group>";
+		};
+		CABE57D82C65519700E3AFC2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
 				CABE57A72C625C2100E3AFC2 /* ExerciseViewCell.swift */,
 				CABE57A82C625C2100E3AFC2 /* ExerciseViewCell.xib */,
 				CABE57D22C65207F00E3AFC2 /* ExerciseViewCellDelegate.swift */,
 			);
-			path = ExercisesTableView;
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CABE57D92C6551A100E3AFC2 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				CABE57D42C65497100E3AFC2 /* ExercisesTableHeaderView.swift */,
+				CABE57D62C65519000E3AFC2 /* ExercisesTableHeaderViewDelegate.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		CAE8F1442C52972900355755 /* OptionCell */ = {
@@ -1096,6 +1115,7 @@
 				CAA18EFB2C3C132200F888CD /* ProgressViewController.swift in Sources */,
 				CAA18EF22C3B182800F888CD /* SplashViewModel.swift in Sources */,
 				CAA18EE72C39DFC300F888CD /* SplashViewController.swift in Sources */,
+				CABE57D72C65519000E3AFC2 /* ExercisesTableHeaderViewDelegate.swift in Sources */,
 				CA4FEC6A2C4C59C300988C5B /* ProfileCoordinator.swift in Sources */,
 				CA002E122C319C110053284B /* Coordinator.swift in Sources */,
 				CA33B9BE2C3C6457000BFA4C /* FirebaseService.swift in Sources */,
