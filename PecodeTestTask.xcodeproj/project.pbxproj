@@ -653,12 +653,11 @@
 		CAA18EF82C3C12DD00F888CD /* Muscles */ = {
 			isa = PBXGroup;
 			children = (
-				CABE57A62C625BF800E3AFC2 /* ExerciseViewCell */,
+				CABE57A62C625BF800E3AFC2 /* ExercisesTableView */,
 				CAA18F0A2C3C157C00F888CD /* MusclesViewController.swift */,
 				CAA18F0E2C3C159300F888CD /* MusclesCoordinator.swift */,
 				CAA18F0C2C3C158700F888CD /* MusclesViewModel.swift */,
 				CAA18F102C3C159C00F888CD /* Muscles.storyboard */,
-				CABE57D42C65497100E3AFC2 /* ExercisesTableHeaderView.swift */,
 			);
 			path = Muscles;
 			sourceTree = "<group>";
@@ -722,14 +721,15 @@
 			path = Exercise;
 			sourceTree = "<group>";
 		};
-		CABE57A62C625BF800E3AFC2 /* ExerciseViewCell */ = {
+		CABE57A62C625BF800E3AFC2 /* ExercisesTableView */ = {
 			isa = PBXGroup;
 			children = (
+				CABE57D42C65497100E3AFC2 /* ExercisesTableHeaderView.swift */,
 				CABE57A72C625C2100E3AFC2 /* ExerciseViewCell.swift */,
 				CABE57A82C625C2100E3AFC2 /* ExerciseViewCell.xib */,
 				CABE57D22C65207F00E3AFC2 /* ExerciseViewCellDelegate.swift */,
 			);
-			path = ExerciseViewCell;
+			path = ExercisesTableView;
 			sourceTree = "<group>";
 		};
 		CAE8F1442C52972900355755 /* OptionCell */ = {
