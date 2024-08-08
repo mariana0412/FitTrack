@@ -23,6 +23,7 @@ final class MusclesViewController: BaseViewController {
     
     var viewModel: MusclesViewModel?
     var selectedCells: Set<IndexPath> = []
+    private var resetButton: UIBarButtonItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,16 +53,24 @@ final class MusclesViewController: BaseViewController {
     
     private func configureNavigationBar() {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        let _ = NavigationBarConfigurator.configureNavigationBar(
+        let (_, rightButton) = NavigationBarConfigurator.configureNavigationBar(
             for: self,
             title: viewModel?.navigationBarTitle ?? "",
             rightButtonName: viewModel?.navigationBarRightButtonTitle,
             rightButtonAction: #selector(resetButtonTapped)
         )
+        self.resetButton = rightButton
+        updateResetButtonVisibility()
     }
     
     @objc private func resetButtonTapped() {
-        
+        selectedCells.removeAll()
+        exercisesTableView.reloadData()
+        updateResetButtonVisibility()
+    }
+    
+    private func updateResetButtonVisibility() {
+        resetButton?.customView?.isHidden = selectedCells.isEmpty
     }
     
 }
@@ -144,5 +153,6 @@ extension MusclesViewController: ExerciseViewCellDelegate {
         }
         
         exercisesTableView.reloadRows(at: [indexPath], with: .automatic)
+        updateResetButtonVisibility()
     }
 }
