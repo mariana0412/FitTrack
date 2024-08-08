@@ -37,7 +37,7 @@ class ExerciseViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        checkmark.setSelected(selected)
+        setCheckmark(isSelected: selected)
         setBorderStyle(isSelected: selected)
     }
     
@@ -49,6 +49,8 @@ class ExerciseViewCell: UITableViewCell {
     }
     
     private func setupUI() {
+        self.selectionStyle = .none
+        
         contentView.layer.cornerRadius = Constants.Layout.contentViewCornerRadius
         setBorderStyle(isSelected: false)
         
@@ -60,11 +62,18 @@ class ExerciseViewCell: UITableViewCell {
         attributesLabel.numberOfLines = Constants.Layout.attributesNumberOfLines
         
         moreAboutButton.setupButtonFont(font: Constants.Layout.buttonFont, color: .primaryYellow)
+        
+        setCheckmark(isSelected: false)
     }
     
     private func setBorderStyle(isSelected: Bool) {
         contentView.layer.borderWidth = isSelected ? Constants.Layout.contentViewBorderWidthSelected : Constants.Layout.contentViewBorderWidth
         contentView.layer.borderColor = isSelected ? Constants.Layout.contentViewBorderColorSelected : Constants.Layout.contentViewBorderColor
+    }
+    
+    private func setCheckmark(isSelected: Bool) {
+        checkmark.isHidden = !isSelected
+        checkmark.setSelected(isSelected)
     }
     
 }
