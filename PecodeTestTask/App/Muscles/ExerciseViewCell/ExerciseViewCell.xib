@@ -29,19 +29,19 @@
                         <rect key="frame" x="93" y="24" width="211" height="131"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barbell Bench Press" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryg-Ys-eOl">
-                                <rect key="frame" x="0.0" y="0.0" width="160.33333333333334" height="21"/>
+                                <rect key="frame" x="0.0" y="0.0" width="211" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" name="PrimaryWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barbell, Intermediate, Powerlifting" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUt-wS-VDl">
-                                <rect key="frame" x="0.0" y="59" width="211" height="33.666666666666657"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Barbell, Intermediate, Powerlifting" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUt-wS-VDl">
+                                <rect key="frame" x="0.0" y="29" width="211" height="33.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" name="PrimaryYellow"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqH-1Y-mUM" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="104.66666666666666" width="112" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqH-1Y-mUM" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="80.666666666666686" width="112" height="34.333333333333329"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="More about"/>
                                 <userDefinedRuntimeAttributes>
@@ -54,11 +54,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ryg-Ys-eOl" firstAttribute="leading" secondItem="bPK-bU-cJV" secondAttribute="leading" id="0UY-b9-7px"/>
-                            <constraint firstItem="BUt-wS-VDl" firstAttribute="top" secondItem="ryg-Ys-eOl" secondAttribute="bottom" constant="38" id="5aG-sd-47a"/>
+                            <constraint firstItem="BUt-wS-VDl" firstAttribute="top" relation="lessThanOrEqual" secondItem="ryg-Ys-eOl" secondAttribute="bottom" constant="38" id="5aG-sd-47a"/>
                             <constraint firstItem="BUt-wS-VDl" firstAttribute="leading" secondItem="bPK-bU-cJV" secondAttribute="leading" id="6Nv-q3-4BS"/>
                             <constraint firstItem="aqH-1Y-mUM" firstAttribute="leading" secondItem="bPK-bU-cJV" secondAttribute="leading" id="6jb-YQ-Caq"/>
                             <constraint firstAttribute="trailing" secondItem="BUt-wS-VDl" secondAttribute="trailing" id="Eq8-J1-DWw"/>
-                            <constraint firstItem="aqH-1Y-mUM" firstAttribute="top" secondItem="BUt-wS-VDl" secondAttribute="bottom" constant="12" id="Wv2-Yz-D70"/>
+                            <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="aqH-1Y-mUM" secondAttribute="bottom" constant="16" id="L5y-v5-BGa"/>
+                            <constraint firstItem="BUt-wS-VDl" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ryg-Ys-eOl" secondAttribute="bottom" constant="11" id="Vtf-7W-TwR"/>
+                            <constraint firstItem="aqH-1Y-mUM" firstAttribute="top" relation="lessThanOrEqual" secondItem="BUt-wS-VDl" secondAttribute="bottom" constant="12" id="Wv2-Yz-D70"/>
+                            <constraint firstAttribute="trailing" secondItem="ryg-Ys-eOl" secondAttribute="trailing" id="iiL-v4-bRt"/>
                             <constraint firstItem="ryg-Ys-eOl" firstAttribute="top" secondItem="bPK-bU-cJV" secondAttribute="top" id="lQI-3B-5Uc"/>
                         </constraints>
                     </view>

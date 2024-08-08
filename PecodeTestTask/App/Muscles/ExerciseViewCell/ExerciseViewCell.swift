@@ -18,6 +18,7 @@ class ExerciseViewCell: UITableViewCell {
             static let contentViewBorderColorSelected = UIColor.primaryYellow.cgColor
             static let attributesFont = UIFont(name: "Nunito-Light", size: 14)
             static let buttonFont = UIFont(name: "Nunito-Light", size: 16)
+            static let nameNumberOfLines = 2
             static let attributesNumberOfLines = 0
         }
     }
@@ -56,6 +57,7 @@ class ExerciseViewCell: UITableViewCell {
         
         nameLabel.font = Fonts.sairaRegular18
         nameLabel.textColor = .primaryWhite
+        nameLabel.numberOfLines = Constants.Layout.nameNumberOfLines
         
         attributesLabel.font = Constants.Layout.attributesFont
         attributesLabel.textColor = .primaryYellow
