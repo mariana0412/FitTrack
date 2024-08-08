@@ -132,6 +132,7 @@
 		CABE57AD2C6267B000E3AFC2 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CABE57AB2C6267B000E3AFC2 /* Nunito-Light.ttf */; };
 		CABE57AE2C6267B000E3AFC2 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CABE57AB2C6267B000E3AFC2 /* Nunito-Light.ttf */; };
 		CABE57D32C65207F00E3AFC2 /* ExerciseViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57D22C65207F00E3AFC2 /* ExerciseViewCellDelegate.swift */; };
+		CABE57D52C65497100E3AFC2 /* ExercisesTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57D42C65497100E3AFC2 /* ExercisesTableHeaderView.swift */; };
 		CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */; };
 		CAE8F1462C52973A00355755 /* OptionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */; };
 		CAE8F1492C52B8C500355755 /* OptionSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE8F1482C52B8C500355755 /* OptionSwitch.xib */; };
@@ -297,6 +298,7 @@
 		CABE57A82C625C2100E3AFC2 /* ExerciseViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseViewCell.xib; sourceTree = "<group>"; };
 		CABE57AB2C6267B000E3AFC2 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
 		CABE57D22C65207F00E3AFC2 /* ExerciseViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewCellDelegate.swift; sourceTree = "<group>"; };
+		CABE57D42C65497100E3AFC2 /* ExercisesTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableHeaderView.swift; sourceTree = "<group>"; };
 		CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCellDelegate.swift; sourceTree = "<group>"; };
 		CAE8F1482C52B8C500355755 /* OptionSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionSwitch.xib; sourceTree = "<group>"; };
@@ -656,6 +658,7 @@
 				CAA18F0E2C3C159300F888CD /* MusclesCoordinator.swift */,
 				CAA18F0C2C3C158700F888CD /* MusclesViewModel.swift */,
 				CAA18F102C3C159C00F888CD /* Muscles.storyboard */,
+				CABE57D42C65497100E3AFC2 /* ExercisesTableHeaderView.swift */,
 			);
 			path = Muscles;
 			sourceTree = "<group>";
@@ -1082,6 +1085,7 @@
 				CA002E0E2C319BC10053284B /* BaseViewController.swift in Sources */,
 				CAEB19152C4EE4C4000FE4E5 /* AlertContent.swift in Sources */,
 				CA9018CC2C5BC4CD0030FA26 /* ChartViewModel.swift in Sources */,
+				CABE57D52C65497100E3AFC2 /* ExercisesTableHeaderView.swift in Sources */,
 				CA465A7F2C47E25A003E7217 /* ForgotPasswordViewModel.swift in Sources */,
 				CA37E5672C3EF36C003ADAA8 /* SignupViewController.swift in Sources */,
 				CAA18EFF2C3C134200F888CD /* ProgressViewModel.swift in Sources */,

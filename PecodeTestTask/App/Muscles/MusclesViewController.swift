@@ -13,9 +13,6 @@ final class MusclesViewController: BaseViewController {
         enum TableView {
             static let cellReuseIdentifier = "ExerciseViewCell"
             static let cellHeight: CGFloat = 171
-            static let underlineHeight: CGFloat = 1
-            static let underlineTop: CGFloat = 12
-            static let headerViewBottom: CGFloat = 16
         }
     }
     
@@ -52,6 +49,7 @@ final class MusclesViewController: BaseViewController {
         
         let nib = UINib(nibName: Constants.TableView.cellReuseIdentifier, bundle: nil)
         exercisesTableView.register(nib, forCellReuseIdentifier: Constants.TableView.cellReuseIdentifier)
+        exercisesTableView.register(ExercisesTableHeaderView.self, forHeaderFooterViewReuseIdentifier: ExercisesTableHeaderView.Constants.reuseIdentifier)
         
         exercisesTableView.refreshControl = refreshControl
     }
@@ -94,13 +92,6 @@ final class MusclesViewController: BaseViewController {
         selectedCells.filter { $0.section == section }.count
     }
     
-    private func updateHeaderCount(for section: Int) {
-        let selectedCount = numberOfSelectedCells(in: section)
-        if let countLabel = selectedCellsNumbers[section] {
-            countLabel.text = selectedCount > 0 ? "\(selectedCount)" : nil
-        }
-    }
-    
 }
 
 extension MusclesViewController: UITableViewDataSource {
@@ -130,6 +121,7 @@ extension MusclesViewController: UITableViewDataSource {
         
         return cell
     }
+    
 }
 
 extension MusclesViewController: UITableViewDelegate {
@@ -137,49 +129,25 @@ extension MusclesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.TableView.cellHeight
     }
-
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = .clear
-
-        let label = UILabel()
-        label.text = viewModel?.muscleGroups[section].muscleName
-        label.textColor = .primaryWhite
-        label.font = Fonts.helveticaNeue18
-        label.translatesAutoresizingMaskIntoConstraints = false
-
-        let countLabel = UILabel()
-        let selectedCount = numberOfSelectedCells(in: section)
-        countLabel.text = selectedCount > 0 ? "\(selectedCount)" : nil
-        countLabel.textColor = .primaryWhite
-        countLabel.font = Fonts.helveticaNeue18
-        countLabel.translatesAutoresizingMaskIntoConstraints = false
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ExercisesTableHeaderView.Constants.reuseIdentifier) as? ExercisesTableHeaderView else {
+            return nil
+        }
         
-        selectedCellsNumbers[section] = countLabel
-
-        let underlineView = UIView()
-        underlineView.backgroundColor = .primaryWhite
-        underlineView.translatesAutoresizingMaskIntoConstraints = false
-
-        headerView.addSubview(label)
-        headerView.addSubview(countLabel)
-        headerView.addSubview(underlineView)
-        
-        NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
-            label.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 24),
-            
-            countLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
-            countLabel.centerYAnchor.constraint(equalTo: label.centerYAnchor),
-            
-            underlineView.leadingAnchor.constraint(equalTo: label.leadingAnchor),
-            underlineView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
-            underlineView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: Constants.TableView.underlineTop),
-            underlineView.heightAnchor.constraint(equalToConstant: Constants.TableView.underlineHeight),
-            headerView.bottomAnchor.constraint(equalTo: underlineView.bottomAnchor, constant: Constants.TableView.headerViewBottom)
-        ])
+        let title = viewModel?.muscleGroups[section].muscleName ?? ""
+        let count = numberOfSelectedCells(in: section)
+        headerView.configure(with: title, count: count)
         
         return headerView
+    }
+    
+    private func updateHeaderCount(for section: Int) {
+        if let headerView = exercisesTableView.headerView(forSection: section) as? ExercisesTableHeaderView {
+            let selectedCount = numberOfSelectedCells(in: section)
+            let sectionTitle = viewModel?.muscleGroups[section].muscleName ?? ""
+            headerView.configure(with: sectionTitle, count: selectedCount)
+        }
     }
     
 }
