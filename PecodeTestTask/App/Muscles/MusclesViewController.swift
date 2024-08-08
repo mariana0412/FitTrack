@@ -24,12 +24,14 @@ final class MusclesViewController: BaseViewController {
     var viewModel: MusclesViewModel?
     var selectedCells: Set<IndexPath> = []
     private var resetButton: UIBarButtonItem?
+    private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewModel?.loadExercises {}
         setupTableView()
+        setupRefreshControl()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,6 +51,8 @@ final class MusclesViewController: BaseViewController {
         
         let nib = UINib(nibName: Constants.TableView.cellReuseIdentifier, bundle: nil)
         exercisesTableView.register(nib, forCellReuseIdentifier: Constants.TableView.cellReuseIdentifier)
+        
+        exercisesTableView.refreshControl = refreshControl
     }
     
     private func configureNavigationBar() {
@@ -71,6 +75,18 @@ final class MusclesViewController: BaseViewController {
     
     private func updateResetButtonVisibility() {
         resetButton?.customView?.isHidden = selectedCells.isEmpty
+    }
+    
+    private func setupRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(handlePullToRefresh), for: .valueChanged)
+        refreshControl.tintColor = .primaryYellow
+    }
+    
+    @objc private func handlePullToRefresh() {
+        selectedCells.removeAll()
+        exercisesTableView.reloadData()
+        updateResetButtonVisibility()
+        refreshControl.endRefreshing()
     }
     
 }
