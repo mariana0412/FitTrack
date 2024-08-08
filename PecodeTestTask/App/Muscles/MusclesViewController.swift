@@ -19,7 +19,6 @@ final class MusclesViewController: BaseViewController {
     
     var viewModel: MusclesViewModel?
     private var selectedCells: Set<IndexPath> = []
-    private var selectedCellsNumbers: [Int: UILabel] = [:]
     private var resetButton: UIBarButtonItem?
     private let refreshControl = UIRefreshControl()
     private var expandedSections: Set<Int> = []
