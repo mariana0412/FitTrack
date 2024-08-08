@@ -131,6 +131,7 @@
 		CABE57AC2C6267B000E3AFC2 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CABE57AB2C6267B000E3AFC2 /* Nunito-Light.ttf */; };
 		CABE57AD2C6267B000E3AFC2 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CABE57AB2C6267B000E3AFC2 /* Nunito-Light.ttf */; };
 		CABE57AE2C6267B000E3AFC2 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CABE57AB2C6267B000E3AFC2 /* Nunito-Light.ttf */; };
+		CABE57D32C65207F00E3AFC2 /* ExerciseViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57D22C65207F00E3AFC2 /* ExerciseViewCellDelegate.swift */; };
 		CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */; };
 		CAE8F1462C52973A00355755 /* OptionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */; };
 		CAE8F1492C52B8C500355755 /* OptionSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE8F1482C52B8C500355755 /* OptionSwitch.xib */; };
@@ -295,6 +296,7 @@
 		CABE57A72C625C2100E3AFC2 /* ExerciseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewCell.swift; sourceTree = "<group>"; };
 		CABE57A82C625C2100E3AFC2 /* ExerciseViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseViewCell.xib; sourceTree = "<group>"; };
 		CABE57AB2C6267B000E3AFC2 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
+		CABE57D22C65207F00E3AFC2 /* ExerciseViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewCellDelegate.swift; sourceTree = "<group>"; };
 		CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCellDelegate.swift; sourceTree = "<group>"; };
 		CAE8F1482C52B8C500355755 /* OptionSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionSwitch.xib; sourceTree = "<group>"; };
@@ -722,6 +724,7 @@
 			children = (
 				CABE57A72C625C2100E3AFC2 /* ExerciseViewCell.swift */,
 				CABE57A82C625C2100E3AFC2 /* ExerciseViewCell.xib */,
+				CABE57D22C65207F00E3AFC2 /* ExerciseViewCellDelegate.swift */,
 			);
 			path = ExerciseViewCell;
 			sourceTree = "<group>";
@@ -1096,6 +1099,7 @@
 				CAA18F0B2C3C157C00F888CD /* MusclesViewController.swift in Sources */,
 				CAA18F0D2C3C158700F888CD /* MusclesViewModel.swift in Sources */,
 				CA37E5862C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
+				CABE57D32C65207F00E3AFC2 /* ExerciseViewCellDelegate.swift in Sources */,
 				CAEB19192C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */,
 				CA5D81092C5178AD00486145 /* PopupTransitioningPresentationController.swift in Sources */,
 				CA5D81022C51785200486145 /* OptionsViewModel.swift in Sources */,

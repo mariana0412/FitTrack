@@ -30,17 +30,20 @@ class ExerciseViewCell: UITableViewCell {
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var checkmark: CustomCheckmark!
     
+    weak var delegate: ExerciseViewCellDelegate?
+    
+    var cellIsSelected: Bool = false {
+        didSet {
+            setBorderStyle(isSelected: cellIsSelected)
+            setCheckmark(isSelected: cellIsSelected)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         setupUI()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        setCheckmark(isSelected: selected)
-        setBorderStyle(isSelected: selected)
+        setupGesture()
     }
     
     override func layoutSubviews() {
@@ -49,11 +52,12 @@ class ExerciseViewCell: UITableViewCell {
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: Constants.Layout.spacing, right: 0))
     }
     
-    func configure(with exercise: Exercise, buttonText: String) {
+    func configure(with exercise: Exercise, buttonText: String, isSelected: Bool) {
         nameLabel.text = exercise.name
         attributesLabel.text = exercise.attributes
         icon.image = UIImage(named: exercise.imageIcon)
         moreAboutButton.buttonTitle = buttonText
+        cellIsSelected = isSelected
     }
     
     private func setupUI() {
@@ -83,6 +87,15 @@ class ExerciseViewCell: UITableViewCell {
     private func setCheckmark(isSelected: Bool) {
         checkmark.isHidden = !isSelected
         checkmark.setSelected(isSelected)
+    }
+    
+    private func setupGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        contentView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func handleTap() {
+        delegate?.didTapCell(self)
     }
     
 }

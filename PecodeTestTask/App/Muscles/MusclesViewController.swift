@@ -22,6 +22,7 @@ final class MusclesViewController: BaseViewController {
     @IBOutlet weak var exercisesTableView: UITableView!
     
     var viewModel: MusclesViewModel?
+    var selectedCells: Set<IndexPath> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,8 +84,10 @@ extension MusclesViewController: UITableViewDataSource {
         
         if let exercise = viewModel?.muscleGroups[indexPath.section].exercisesList[indexPath.row] {
             let moreAboutButtonTitle = viewModel?.moreAboutButtonTitle ?? ""
-            cell.configure(with: exercise, buttonText: moreAboutButtonTitle)
+            cell.configure(with: exercise, buttonText: moreAboutButtonTitle, isSelected: selectedCells.contains(indexPath))
         }
+        
+        cell.delegate = self
         
         return cell
     }
@@ -128,4 +131,18 @@ extension MusclesViewController: UITableViewDelegate {
         return headerView
     }
     
+}
+
+extension MusclesViewController: ExerciseViewCellDelegate {
+    func didTapCell(_ cell: ExerciseViewCell) {
+        guard let indexPath = exercisesTableView.indexPath(for: cell) else { return }
+        
+        if selectedCells.contains(indexPath) {
+            selectedCells.remove(indexPath)
+        } else {
+            selectedCells.insert(indexPath)
+        }
+        
+        exercisesTableView.reloadRows(at: [indexPath], with: .automatic)
+    }
 }
