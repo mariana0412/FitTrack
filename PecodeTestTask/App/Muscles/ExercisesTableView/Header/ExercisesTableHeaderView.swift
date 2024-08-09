@@ -20,6 +20,7 @@ class ExercisesTableHeaderView: UITableViewHeaderFooterView {
             static let arrowToLabelSpacing: CGFloat = 16
             static let chevronUpImage = UIImage(systemName: "chevron.up")
             static let chevronDownImage = UIImage(systemName: "chevron.down")
+            static let scrollBackgroundColor = UIColor.black
         }
     }
     
@@ -46,8 +47,6 @@ class ExercisesTableHeaderView: UITableViewHeaderFooterView {
     }
     
     private func setupUI() {
-        contentView.backgroundColor = .clear
-        
         setupArrowImageView()
         
         let font = Fonts.helveticaNeue18 ?? UIFont.systemFont(ofSize: 18, weight: .regular)
@@ -60,11 +59,22 @@ class ExercisesTableHeaderView: UITableViewHeaderFooterView {
         
         setConstraints()
     }
-    
+
     func configure(with title: String, count: Int, isExpanded: Bool) {
         label.text = title
         countLabel.text = count > 0 ? "\(count)" : nil
         arrowImageView.image = isExpanded ? Constants.Layout.chevronUpImage : Constants.Layout.chevronDownImage
+    }
+    
+    @available(iOS 14.0, *)
+    override func updateConfiguration(using state: UIViewConfigurationState) {
+        var backgroundConfiguration = UIBackgroundConfiguration.listPlainHeaderFooter()
+
+        backgroundConfiguration.backgroundColorTransformer = UIConfigurationColorTransformer { _ in
+            return Constants.Layout.scrollBackgroundColor
+        }
+
+        self.backgroundConfiguration = backgroundConfiguration
     }
     
     private func setupArrowImageView() {
