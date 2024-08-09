@@ -116,9 +116,24 @@
 		CABE57862C5EB3B600E3AFC2 /* DeleteAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57852C5EB3B600E3AFC2 /* DeleteAccountViewModel.swift */; };
 		CABE57882C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57872C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift */; };
 		CABE578A2C5EB3CB00E3AFC2 /* DeleteAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABE57892C5EB3CB00E3AFC2 /* DeleteAccount.storyboard */; };
-		CABE57902C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */; };
-		CABE57912C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */; };
-		CABE57922C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */; };
+		CABE57962C624A2A00E3AFC2 /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57952C624A2A00E3AFC2 /* ExerciseType.swift */; };
+		CABE57992C624A4600E3AFC2 /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57982C624A4600E3AFC2 /* Equipment.swift */; };
+		CABE579B2C624A5700E3AFC2 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE579A2C624A5700E3AFC2 /* Level.swift */; };
+		CABE579D2C624D3C00E3AFC2 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE579C2C624D3C00E3AFC2 /* Exercise.swift */; };
+		CABE57A12C624F1C00E3AFC2 /* MuscleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57A02C624F1C00E3AFC2 /* MuscleGroup.swift */; };
+		CABE57A32C62507900E3AFC2 /* JsonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57A22C62507900E3AFC2 /* JsonUtils.swift */; };
+		CABE57A52C62599000E3AFC2 /* Exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = CABE57A42C62599000E3AFC2 /* Exercises.json */; };
+		CABE57A92C625C2100E3AFC2 /* ExerciseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57A72C625C2100E3AFC2 /* ExerciseViewCell.swift */; };
+		CABE57AA2C625C2100E3AFC2 /* ExerciseViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABE57A82C625C2100E3AFC2 /* ExerciseViewCell.xib */; };
+		CABE57AC2C6267B000E3AFC2 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CABE57AB2C6267B000E3AFC2 /* Nunito-Light.ttf */; };
+		CABE57AD2C6267B000E3AFC2 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CABE57AB2C6267B000E3AFC2 /* Nunito-Light.ttf */; };
+		CABE57AE2C6267B000E3AFC2 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CABE57AB2C6267B000E3AFC2 /* Nunito-Light.ttf */; };
+		CABE57D32C65207F00E3AFC2 /* ExerciseViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57D22C65207F00E3AFC2 /* ExerciseViewCellDelegate.swift */; };
+		CABE57D52C65497100E3AFC2 /* ExercisesTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57D42C65497100E3AFC2 /* ExercisesTableHeaderView.swift */; };
+		CABE57D72C65519000E3AFC2 /* ExercisesTableHeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57D62C65519000E3AFC2 /* ExercisesTableHeaderViewDelegate.swift */; };
+		CABE57DD2C65F7D600E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE57DC2C65F7D500E3AFC2 /* GoogleService-Info.plist */; };
+		CABE57DE2C65F7D600E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE57DC2C65F7D500E3AFC2 /* GoogleService-Info.plist */; };
+		CABE57DF2C65F7D600E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE57DC2C65F7D500E3AFC2 /* GoogleService-Info.plist */; };
 		CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */; };
 		CAE8F1462C52973A00355755 /* OptionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */; };
 		CAE8F1492C52B8C500355755 /* OptionSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE8F1482C52B8C500355755 /* OptionSwitch.xib */; };
@@ -272,7 +287,20 @@
 		CABE57852C5EB3B600E3AFC2 /* DeleteAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewModel.swift; sourceTree = "<group>"; };
 		CABE57872C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountCoordinator.swift; sourceTree = "<group>"; };
 		CABE57892C5EB3CB00E3AFC2 /* DeleteAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteAccount.storyboard; sourceTree = "<group>"; };
-		CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CABE57952C624A2A00E3AFC2 /* ExerciseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseType.swift; sourceTree = "<group>"; };
+		CABE57982C624A4600E3AFC2 /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
+		CABE579A2C624A5700E3AFC2 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		CABE579C2C624D3C00E3AFC2 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		CABE57A02C624F1C00E3AFC2 /* MuscleGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroup.swift; sourceTree = "<group>"; };
+		CABE57A22C62507900E3AFC2 /* JsonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonUtils.swift; sourceTree = "<group>"; };
+		CABE57A42C62599000E3AFC2 /* Exercises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Exercises.json; sourceTree = "<group>"; };
+		CABE57A72C625C2100E3AFC2 /* ExerciseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewCell.swift; sourceTree = "<group>"; };
+		CABE57A82C625C2100E3AFC2 /* ExerciseViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseViewCell.xib; sourceTree = "<group>"; };
+		CABE57AB2C6267B000E3AFC2 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
+		CABE57D22C65207F00E3AFC2 /* ExerciseViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewCellDelegate.swift; sourceTree = "<group>"; };
+		CABE57D42C65497100E3AFC2 /* ExercisesTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableHeaderView.swift; sourceTree = "<group>"; };
+		CABE57D62C65519000E3AFC2 /* ExercisesTableHeaderViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableHeaderViewDelegate.swift; sourceTree = "<group>"; };
+		CABE57DC2C65F7D500E3AFC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCellDelegate.swift; sourceTree = "<group>"; };
 		CAE8F1482C52B8C500355755 /* OptionSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionSwitch.xib; sourceTree = "<group>"; };
@@ -369,7 +397,8 @@
 				CA002E2A2C36D4810053284B /* Resources */,
 				CA002DE02C318B110053284B /* LaunchScreen.storyboard */,
 				CA002DE32C318B110053284B /* Info.plist */,
-				CABE578F2C5FB6E700E3AFC2 /* GoogleService-Info.plist */,
+				CABE57DC2C65F7D500E3AFC2 /* GoogleService-Info.plist */,
+				CABE57A42C62599000E3AFC2 /* Exercises.json */,
 			);
 			path = PecodeTestTask;
 			sourceTree = "<group>";
@@ -397,6 +426,7 @@
 			children = (
 				CAE8F1552C52F1DE00355755 /* User */,
 				CAE8F1502C52DC7600355755 /* Option */,
+				CABE57972C624A3600E3AFC2 /* Exercise */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -606,6 +636,7 @@
 				CA038BF52C4316300033CD30 /* Saira-Medium.ttf */,
 				CA038BFF2C43F8E90033CD30 /* Saira-Light.ttf */,
 				CA56CBB22C58243A00AE6481 /* Gilroy-SemiBold.ttf */,
+				CABE57AB2C6267B000E3AFC2 /* Nunito-Light.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -624,6 +655,7 @@
 		CAA18EF82C3C12DD00F888CD /* Muscles */ = {
 			isa = PBXGroup;
 			children = (
+				CABE57A62C625BF800E3AFC2 /* ExercisesTableView */,
 				CAA18F0A2C3C157C00F888CD /* MusclesViewController.swift */,
 				CAA18F0E2C3C159300F888CD /* MusclesCoordinator.swift */,
 				CAA18F0C2C3C158700F888CD /* MusclesViewModel.swift */,
@@ -663,6 +695,7 @@
 				CAA18F1A2C3C554400F888CD /* GradientUtils.swift */,
 				CAA18F1C2C3C56F700F888CD /* OverlayUtils.swift */,
 				CA9018D12C5BD0BC0030FA26 /* DateUtils.swift */,
+				CABE57A22C62507900E3AFC2 /* JsonUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -676,6 +709,46 @@
 				CABE57892C5EB3CB00E3AFC2 /* DeleteAccount.storyboard */,
 			);
 			path = DeleteAccount;
+			sourceTree = "<group>";
+		};
+		CABE57972C624A3600E3AFC2 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				CABE579C2C624D3C00E3AFC2 /* Exercise.swift */,
+				CABE57952C624A2A00E3AFC2 /* ExerciseType.swift */,
+				CABE57982C624A4600E3AFC2 /* Equipment.swift */,
+				CABE579A2C624A5700E3AFC2 /* Level.swift */,
+				CABE57A02C624F1C00E3AFC2 /* MuscleGroup.swift */,
+			);
+			path = Exercise;
+			sourceTree = "<group>";
+		};
+		CABE57A62C625BF800E3AFC2 /* ExercisesTableView */ = {
+			isa = PBXGroup;
+			children = (
+				CABE57D92C6551A100E3AFC2 /* Header */,
+				CABE57D82C65519700E3AFC2 /* Cell */,
+			);
+			path = ExercisesTableView;
+			sourceTree = "<group>";
+		};
+		CABE57D82C65519700E3AFC2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CABE57A72C625C2100E3AFC2 /* ExerciseViewCell.swift */,
+				CABE57A82C625C2100E3AFC2 /* ExerciseViewCell.xib */,
+				CABE57D22C65207F00E3AFC2 /* ExerciseViewCellDelegate.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CABE57D92C6551A100E3AFC2 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				CABE57D42C65497100E3AFC2 /* ExercisesTableHeaderView.swift */,
+				CABE57D62C65519000E3AFC2 /* ExercisesTableHeaderViewDelegate.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		CAE8F1442C52972900355755 /* OptionCell */ = {
@@ -861,18 +934,21 @@
 				CA4FEC6C2C4C59CB00988C5B /* Profile.storyboard in Resources */,
 				CAA18F032C3C147400F888CD /* Calculator.storyboard in Resources */,
 				CAA18F012C3C134B00F888CD /* Progress.storyboard in Resources */,
-				CABE57902C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */,
+				CABE57DD2C65F7D600E3AFC2 /* GoogleService-Info.plist in Resources */,
 				CAEB19112C4ED721000FE4E5 /* Alert.storyboard in Resources */,
+				CABE57A52C62599000E3AFC2 /* Exercises.json in Resources */,
 				CA37E5822C40573D003ADAA8 /* TabBar.storyboard in Resources */,
 				CAA18F112C3C159C00F888CD /* Muscles.storyboard in Resources */,
 				CA465A812C47E26F003E7217 /* ForgotPassword.storyboard in Resources */,
 				CA5D810C2C5181E300486145 /* OptionCell.xib in Resources */,
 				CA9018D02C5BC4DC0030FA26 /* Chart.storyboard in Resources */,
 				CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */,
+				CABE57AC2C6267B000E3AFC2 /* Nunito-Light.ttf in Resources */,
 				CA56CBB32C58243A00AE6481 /* Gilroy-SemiBold.ttf in Resources */,
 				CA038BF62C4316300033CD30 /* Saira-Medium.ttf in Resources */,
 				CAA18EE52C39DF9400F888CD /* Splash.storyboard in Resources */,
 				CA37E56E2C3EF3D1003ADAA8 /* Signup.storyboard in Resources */,
+				CABE57AA2C625C2100E3AFC2 /* ExerciseViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -882,9 +958,10 @@
 			files = (
 				CA37E5832C40573D003ADAA8 /* TabBar.storyboard in Resources */,
 				CA038C012C43F8E90033CD30 /* Saira-Light.ttf in Resources */,
+				CABE57AD2C6267B000E3AFC2 /* Nunito-Light.ttf in Resources */,
 				CA56CBB42C58243A00AE6481 /* Gilroy-SemiBold.ttf in Resources */,
 				CAEB19122C4ED721000FE4E5 /* Alert.storyboard in Resources */,
-				CABE57912C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */,
+				CABE57DE2C65F7D600E3AFC2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,9 +971,10 @@
 			files = (
 				CA37E5842C40573D003ADAA8 /* TabBar.storyboard in Resources */,
 				CA038C022C43F8E90033CD30 /* Saira-Light.ttf in Resources */,
+				CABE57AE2C6267B000E3AFC2 /* Nunito-Light.ttf in Resources */,
 				CA56CBB52C58243B00AE6481 /* Gilroy-SemiBold.ttf in Resources */,
 				CAEB19132C4ED721000FE4E5 /* Alert.storyboard in Resources */,
-				CABE57922C5FB6E800E3AFC2 /* GoogleService-Info.plist in Resources */,
+				CABE57DF2C65F7D600E3AFC2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1018,6 +1096,7 @@
 				CA9018CA2C5BC4B20030FA26 /* ChartViewController.swift in Sources */,
 				CA002E352C36F8430053284B /* CustomToggleButton.swift in Sources */,
 				CAEB18FC2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift in Sources */,
+				CABE57A92C625C2100E3AFC2 /* ExerciseViewCell.swift in Sources */,
 				CABE57882C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift in Sources */,
 				CA5D81082C5178AD00486145 /* PopupTransitioningDelegate.swift in Sources */,
 				CAE8F14B2C52B8E800355755 /* OptionSwitch.swift in Sources */,
@@ -1025,15 +1104,18 @@
 				CA002E0E2C319BC10053284B /* BaseViewController.swift in Sources */,
 				CAEB19152C4EE4C4000FE4E5 /* AlertContent.swift in Sources */,
 				CA9018CC2C5BC4CD0030FA26 /* ChartViewModel.swift in Sources */,
+				CABE57D52C65497100E3AFC2 /* ExercisesTableHeaderView.swift in Sources */,
 				CA465A7F2C47E25A003E7217 /* ForgotPasswordViewModel.swift in Sources */,
 				CA37E5672C3EF36C003ADAA8 /* SignupViewController.swift in Sources */,
 				CAA18EFF2C3C134200F888CD /* ProgressViewModel.swift in Sources */,
+				CABE57A12C624F1C00E3AFC2 /* MuscleGroup.swift in Sources */,
 				CA457E0B2C42BC2B0031FDFA /* LoginViewModel.swift in Sources */,
 				CA37E5692C3EF376003ADAA8 /* SignupCoordinator.swift in Sources */,
 				CAEB19092C4ED6E7000FE4E5 /* AlertCoordinator.swift in Sources */,
 				CAA18EFB2C3C132200F888CD /* ProgressViewController.swift in Sources */,
 				CAA18EF22C3B182800F888CD /* SplashViewModel.swift in Sources */,
 				CAA18EE72C39DFC300F888CD /* SplashViewController.swift in Sources */,
+				CABE57D72C65519000E3AFC2 /* ExercisesTableHeaderViewDelegate.swift in Sources */,
 				CA4FEC6A2C4C59C300988C5B /* ProfileCoordinator.swift in Sources */,
 				CA002E122C319C110053284B /* Coordinator.swift in Sources */,
 				CA33B9BE2C3C6457000BFA4C /* FirebaseService.swift in Sources */,
@@ -1041,6 +1123,7 @@
 				CAA18F0B2C3C157C00F888CD /* MusclesViewController.swift in Sources */,
 				CAA18F0D2C3C158700F888CD /* MusclesViewModel.swift in Sources */,
 				CA37E5862C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
+				CABE57D32C65207F00E3AFC2 /* ExerciseViewCellDelegate.swift in Sources */,
 				CAEB19192C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */,
 				CA5D81092C5178AD00486145 /* PopupTransitioningPresentationController.swift in Sources */,
 				CA5D81022C51785200486145 /* OptionsViewModel.swift in Sources */,
@@ -1055,6 +1138,7 @@
 				CA9018D62C5C4BE20030FA26 /* OptionNameViewCell.swift in Sources */,
 				CA9018D22C5BD0BC0030FA26 /* DateUtils.swift in Sources */,
 				CAA18F0F2C3C159300F888CD /* MusclesCoordinator.swift in Sources */,
+				CABE57A32C62507900E3AFC2 /* JsonUtils.swift in Sources */,
 				CAA18EFD2C3C133800F888CD /* ProgressCoordinator.swift in Sources */,
 				CABE57842C5EB38E00E3AFC2 /* DeleteAccountViewController.swift in Sources */,
 				CA5D80FE2C51784100486145 /* OptionsViewController.swift in Sources */,
@@ -1072,6 +1156,7 @@
 				CA5D810D2C5181E300486145 /* OptionCell.swift in Sources */,
 				CA002E182C319C7A0053284B /* HomeViewModel.swift in Sources */,
 				CA9018CE2C5BC4D60030FA26 /* ChartCoordinator.swift in Sources */,
+				CABE579B2C624A5700E3AFC2 /* Level.swift in Sources */,
 				CA002DD62C318B0F0053284B /* AppDelegate.swift in Sources */,
 				CA37E5702C3F25B4003ADAA8 /* RegistrationData.swift in Sources */,
 				CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */,
@@ -1080,7 +1165,9 @@
 				CA457E072C42BBF80031FDFA /* LoginViewController.swift in Sources */,
 				CA4FEC682C4C59BC00988C5B /* ProfileViewModel.swift in Sources */,
 				CAEB18E42C4D4971000FE4E5 /* UserData.swift in Sources */,
+				CABE579D2C624D3C00E3AFC2 /* Exercise.swift in Sources */,
 				CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */,
+				CABE57962C624A2A00E3AFC2 /* ExerciseType.swift in Sources */,
 				CA038C042C4427190033CD30 /* LoginData.swift in Sources */,
 				CA1EE8402C375AFF00E58403 /* CustomSwitch.swift in Sources */,
 				CA37E57E2C405731003ADAA8 /* TabBarViewModel.swift in Sources */,
@@ -1093,6 +1180,7 @@
 				CAEB190D2C4ED71A000FE4E5 /* AlertViewModel.swift in Sources */,
 				CA002E142C319C5C0053284B /* HomeCoordinator.swift in Sources */,
 				CA002E292C32C1C50053284B /* Constants.swift in Sources */,
+				CABE57992C624A4600E3AFC2 /* Equipment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

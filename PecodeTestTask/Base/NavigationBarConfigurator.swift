@@ -12,7 +12,6 @@ class NavigationBarConfigurator {
         enum Names {
             static let backArrowIcon = "chevron.left"
             static let backButtonName = "  Back"
-            static let saveButtonName = "Save"
         }
         enum Layout {
             static let backArrowIconSize: CGFloat = 13
@@ -22,8 +21,9 @@ class NavigationBarConfigurator {
     
     static func configureNavigationBar(for viewController: UIViewController,
                                        title: String,
+                                       rightButtonName: String? = nil,
                                        backAction: Selector? = nil,
-                                       saveAction: Selector? = nil) -> (backButton: UIBarButtonItem?, saveButton: UIBarButtonItem?) {
+                                       rightButtonAction: Selector? = nil) -> (backButton: UIBarButtonItem?, rightButton: UIBarButtonItem?) {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithTransparentBackground()
         
@@ -55,19 +55,20 @@ class NavigationBarConfigurator {
             viewController.navigationItem.leftBarButtonItem = backBarButtonItem
         }
         
-        var saveBarButtonItem: UIBarButtonItem?
-        if let saveAction = saveAction {
-            let saveButton = UIButton(type: .custom)
-            saveButton.setTitle(Constants.Names.saveButtonName, for: .normal)
-            saveButton.titleLabel?.font = Fonts.sairaMedium18
-            saveButton.setTitleColor(.secondaryGray, for: .disabled)
-            saveButton.setTitleColor(.primaryYellow, for: .normal)
-            saveButton.isEnabled = false
-            saveButton.addTarget(viewController, action: saveAction, for: .touchUpInside)
-            saveBarButtonItem = UIBarButtonItem(customView: saveButton)
-            viewController.navigationItem.rightBarButtonItem = saveBarButtonItem
+        var rightBarButtonItem: UIBarButtonItem?
+        if let rightButtonName = rightButtonName,
+           let rightAction = rightButtonAction {
+            let rightButton = UIButton(type: .custom)
+            rightButton.setTitle(rightButtonName, for: .normal)
+            rightButton.titleLabel?.font = Fonts.sairaMedium18
+            rightButton.setTitleColor(.secondaryGray, for: .disabled)
+            rightButton.setTitleColor(.primaryYellow, for: .normal)
+            rightButton.isEnabled = false
+            rightButton.addTarget(viewController, action: rightAction, for: .touchUpInside)
+            rightBarButtonItem = UIBarButtonItem(customView: rightButton)
+            viewController.navigationItem.rightBarButtonItem = rightBarButtonItem
         }
         
-        return (backBarButtonItem, saveBarButtonItem)
+        return (backBarButtonItem, rightBarButtonItem)
     }
 }

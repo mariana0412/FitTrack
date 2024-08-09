@@ -22,7 +22,8 @@ class ProfileViewModel {
         }
     }
     
-    let navigationItemTitle = "Profile"
+    let navigationBarTitle = "Profile"
+    let navigationBarRightButtonTitle = "Save"
     let name = "Name"
     let namePlaceholder = "Enter Your Name"
     let instruction = "Select an option to display on the main screen."
