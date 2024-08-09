@@ -16,6 +16,8 @@ class ExercisesTableHeaderView: UITableViewHeaderFooterView {
             static let underlineHeight: CGFloat = 1
             static let underlineTop: CGFloat = 12
             static let headerViewBottom: CGFloat = 16
+            static let arrowLeading: CGFloat = 1
+            static let arrowToLabelSpacing: CGFloat = 16
             static let chevronUpImage = UIImage(systemName: "chevron.up")
             static let chevronDownImage = UIImage(systemName: "chevron.down")
         }
@@ -87,10 +89,10 @@ class ExercisesTableHeaderView: UITableViewHeaderFooterView {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            arrowImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 1),
+            arrowImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.Layout.arrowLeading),
             arrowImageView.centerYAnchor.constraint(equalTo: label.centerYAnchor),
             
-            label.leadingAnchor.constraint(equalTo: arrowImageView.trailingAnchor, constant: 16),
+            label.leadingAnchor.constraint(equalTo: arrowImageView.trailingAnchor, constant: Constants.Layout.arrowToLabelSpacing),
             label.topAnchor.constraint(equalTo: contentView.topAnchor),
             
             countLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
