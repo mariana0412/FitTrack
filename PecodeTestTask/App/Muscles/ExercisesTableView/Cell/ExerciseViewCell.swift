@@ -26,11 +26,11 @@ class ExerciseViewCell: UITableViewCell {
         }
     }
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var attributesLabel: UILabel!
-    @IBOutlet weak var moreAboutButton: CustomButton!
-    @IBOutlet weak var icon: UIImageView!
-    @IBOutlet weak var checkmark: CustomCheckmark!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var attributesLabel: UILabel!
+    @IBOutlet private weak var moreAboutButton: CustomButton!
+    @IBOutlet private weak var icon: UIImageView!
+    @IBOutlet private weak var checkmark: CustomCheckmark!
     
     weak var delegate: ExerciseViewCellDelegate?
     

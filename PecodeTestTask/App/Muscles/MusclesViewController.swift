@@ -15,7 +15,7 @@ final class MusclesViewController: BaseViewController {
         }
     }
     
-    @IBOutlet weak var exercisesTableView: UITableView!
+    @IBOutlet private weak var exercisesTableView: UITableView!
     
     var viewModel: MusclesViewModel?
     private var selectedCells: Set<IndexPath> = []
