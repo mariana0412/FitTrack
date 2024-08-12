@@ -18,55 +18,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xn5-kJ-Cxa">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="59" width="827" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDw-0E-ZPw" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="827" height="386"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e2Q-Jv-DKk">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="570.66666666666663"/>
-                                            </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ux-Gf-4fg">
-                                                <rect key="frame" x="37" y="594.66666666666663" width="312" height="84"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rWJ-Px-Hb6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="48" id="HzD-BU-j9n"/>
-                                                            <constraint firstAttribute="height" constant="48" id="t09-6w-imM"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incline Barbell Bench Press" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqw-Nc-UA9">
-                                                        <rect key="frame" x="72" y="0.0" width="240" height="21.666666666666668"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barbell, Intermediate, Powerlifting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANd-ZQ-2mk">
-                                                        <rect key="frame" x="72" y="67" width="240" height="17"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <color key="textColor" name="PrimaryYellow"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="277"/>
                                                 <constraints>
-                                                    <constraint firstItem="ANd-ZQ-2mk" firstAttribute="leading" secondItem="rWJ-Px-Hb6" secondAttribute="trailing" constant="24" id="1bn-TA-ab6"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ANd-ZQ-2mk" secondAttribute="trailing" id="EhL-Hj-Bl7"/>
-                                                    <constraint firstItem="rWJ-Px-Hb6" firstAttribute="top" secondItem="4ux-Gf-4fg" secondAttribute="top" id="KGA-kh-7zX"/>
-                                                    <constraint firstAttribute="trailing" secondItem="fqw-Nc-UA9" secondAttribute="trailing" id="cqE-M8-PhM"/>
-                                                    <constraint firstItem="rWJ-Px-Hb6" firstAttribute="leading" secondItem="4ux-Gf-4fg" secondAttribute="leading" id="joM-Ax-Yc5"/>
-                                                    <constraint firstAttribute="bottom" secondItem="ANd-ZQ-2mk" secondAttribute="bottom" id="keM-vZ-Ry0"/>
-                                                    <constraint firstItem="fqw-Nc-UA9" firstAttribute="top" secondItem="4ux-Gf-4fg" secondAttribute="top" id="nUn-WO-R1L"/>
-                                                    <constraint firstAttribute="height" constant="84" id="x1j-Wx-nYo"/>
-                                                    <constraint firstItem="fqw-Nc-UA9" firstAttribute="leading" secondItem="rWJ-Px-Hb6" secondAttribute="trailing" constant="24" id="ybX-n0-NtJ"/>
+                                                    <constraint firstAttribute="height" constant="277" id="cxd-rr-hIe"/>
+                                                    <constraint firstAttribute="width" constant="375" id="dJ6-8e-3jE"/>
                                                 </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0M-Q4-Elf">
-                                                <rect key="frame" x="37" y="701.66666666666663" width="322" height="57.333333333333371"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rWJ-Px-Hb6">
+                                                <rect key="frame" x="37" y="301" width="48" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="48" id="HzD-BU-j9n"/>
+                                                    <constraint firstAttribute="height" constant="48" id="t09-6w-imM"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incline Barbell Bench Press" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqw-Nc-UA9">
+                                                <rect key="frame" x="109" y="301" width="674" height="21.666666666666686"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barbell, Intermediate, Powerlifting" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANd-ZQ-2mk">
+                                                <rect key="frame" x="109" y="325.66666666666669" width="674" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" name="PrimaryYellow"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0M-Q4-Elf" userLabel="Exercise Description View">
+                                                <rect key="frame" x="37" y="366.66666666666669" width="756" height="19.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting position: Lying on a bench. Grasp the barbell with a wide grip from above (palms away from you)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nO4-e6-QOL">
-                                                        <rect key="frame" x="0.0" y="0.0" width="322" height="57.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="756" height="19.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" name="SecondaryGray"/>
                                                         <nil key="highlightedColor"/>
@@ -83,15 +70,20 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ANd-ZQ-2mk" secondAttribute="trailing" constant="44" id="1Qm-za-yFB"/>
                                             <constraint firstItem="p0M-Q4-Elf" firstAttribute="leading" secondItem="BDw-0E-ZPw" secondAttribute="leading" constant="37" id="28f-4F-5Bl"/>
                                             <constraint firstItem="e2Q-Jv-DKk" firstAttribute="leading" secondItem="BDw-0E-ZPw" secondAttribute="leading" id="4hV-kb-afv"/>
-                                            <constraint firstItem="p0M-Q4-Elf" firstAttribute="top" secondItem="4ux-Gf-4fg" secondAttribute="bottom" constant="23" id="5Eu-6W-39b"/>
                                             <constraint firstAttribute="trailing" secondItem="p0M-Q4-Elf" secondAttribute="trailing" constant="34" id="Cu0-tN-4io"/>
-                                            <constraint firstItem="4ux-Gf-4fg" firstAttribute="leading" secondItem="BDw-0E-ZPw" secondAttribute="leading" constant="37" id="F1p-JS-k5X"/>
-                                            <constraint firstItem="4ux-Gf-4fg" firstAttribute="top" secondItem="e2Q-Jv-DKk" secondAttribute="bottom" constant="24" id="Hnv-tl-puu"/>
-                                            <constraint firstAttribute="trailing" secondItem="4ux-Gf-4fg" secondAttribute="trailing" constant="44" id="Phu-Rz-50S"/>
+                                            <constraint firstItem="ANd-ZQ-2mk" firstAttribute="leading" secondItem="rWJ-Px-Hb6" secondAttribute="trailing" constant="24" id="Fax-C2-ON1"/>
+                                            <constraint firstItem="fqw-Nc-UA9" firstAttribute="top" secondItem="e2Q-Jv-DKk" secondAttribute="bottom" constant="24" id="MbP-LM-dtG"/>
+                                            <constraint firstItem="rWJ-Px-Hb6" firstAttribute="leading" secondItem="BDw-0E-ZPw" secondAttribute="leading" constant="37" id="PDV-U6-ZrR"/>
                                             <constraint firstItem="e2Q-Jv-DKk" firstAttribute="top" secondItem="BDw-0E-ZPw" secondAttribute="top" id="SSO-ef-4bh"/>
+                                            <constraint firstItem="p0M-Q4-Elf" firstAttribute="top" secondItem="ANd-ZQ-2mk" secondAttribute="bottom" constant="24" id="TWY-sR-0gu"/>
+                                            <constraint firstItem="fqw-Nc-UA9" firstAttribute="leading" secondItem="rWJ-Px-Hb6" secondAttribute="trailing" constant="24" id="aHm-Rb-l27"/>
+                                            <constraint firstItem="ANd-ZQ-2mk" firstAttribute="top" secondItem="fqw-Nc-UA9" secondAttribute="bottom" constant="3" id="fo6-xI-L4x"/>
+                                            <constraint firstAttribute="trailing" secondItem="fqw-Nc-UA9" secondAttribute="trailing" constant="44" id="miN-fQ-0hF"/>
                                             <constraint firstAttribute="bottom" secondItem="p0M-Q4-Elf" secondAttribute="bottom" id="u4Z-Vr-EEG"/>
+                                            <constraint firstItem="rWJ-Px-Hb6" firstAttribute="top" secondItem="e2Q-Jv-DKk" secondAttribute="bottom" constant="24" id="uPk-CN-R3H"/>
                                             <constraint firstAttribute="trailing" secondItem="e2Q-Jv-DKk" secondAttribute="trailing" id="uYo-Mv-ajy"/>
                                         </constraints>
                                     </view>

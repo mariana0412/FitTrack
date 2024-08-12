@@ -58,12 +58,15 @@ final class ExerciseViewController: BaseViewController {
         
         exerciseName.textColor = .primaryWhite
         exerciseName.font = Fonts.sairaRegular18
+        exerciseName.numberOfLines = 0
         
         exerciseAttributes.textColor = .primaryYellow
         exerciseAttributes.font = Constants.Layout.attributesFont
+        exerciseAttributes.numberOfLines = 0
         
         exerciseDescription.textColor = .secondaryGray
         exerciseDescription.font = Fonts.sairaLight16
+        exerciseDescription.numberOfLines = 0
     }
     
     private func bindViewModel() {
