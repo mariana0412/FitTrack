@@ -13,6 +13,12 @@ final class ExerciseViewController: BaseViewController {
         enum Layout {
             static let attributesFont = UIFont(name: "Nunito-Light", size: 14)
         }
+        enum RadialGradient {
+            static let colors: [CGColor] = [UIColor.clear.cgColor, UIColor.black.withAlphaComponent(0.52).cgColor]
+            static let locations: [NSNumber] = [0, 1]
+            static let startPoint: CGPoint = CGPoint(x: 0.5, y: 0.5)
+            static let endPoint: CGPoint = CGPoint(x: 1, y: 1)
+        }
     }
     
     @IBOutlet private weak var exerciseImageView: UIImageView!
@@ -67,6 +73,12 @@ final class ExerciseViewController: BaseViewController {
         exerciseDescription.textColor = .secondaryGray
         exerciseDescription.font = Fonts.sairaLight16
         exerciseDescription.numberOfLines = 0
+        
+        GradientUtils.addRadialGradientLayer(to: exerciseImageView,
+                                             colors: Constants.RadialGradient.colors,
+                                             locations: Constants.RadialGradient.locations,
+                                             startPoint: Constants.RadialGradient.startPoint,
+                                             endPoint: Constants.RadialGradient.endPoint)
     }
     
     private func bindViewModel() {
