@@ -10,7 +10,7 @@ class ExerciseViewModel {
     let navigationItemTitle = "Exercise"
     
     private var coordinator: ExerciseCoordinator?
-    private let exercise: Exercise
+    let exercise: Exercise
     
     init(coordinator: ExerciseCoordinator?, exercise: Exercise) {
         self.coordinator = coordinator

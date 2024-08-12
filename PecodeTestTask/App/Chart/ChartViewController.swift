@@ -40,9 +40,9 @@ final class ChartViewController: BaseViewController {
         }
     }
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var chartView: UIView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var subtitleLabel: UILabel!
+    @IBOutlet private weak var chartView: UIView!
     
     var viewModel: ChartViewModel?
     
