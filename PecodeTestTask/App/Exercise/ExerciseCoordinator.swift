@@ -9,14 +9,17 @@ import UIKit
 
 class ExerciseCoordinator: Coordinator {
     var navigationController: UINavigationController
+    private let exercise: Exercise
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, exercise: Exercise) {
         self.navigationController = navigationController
+        self.exercise = exercise
     }
     
     func start() {
         let exerciseViewController = ExerciseViewController.instantiate()
-        exerciseViewController.viewModel = ExerciseViewModel(coordinator: self)
+        exerciseViewController.viewModel = ExerciseViewModel(coordinator: self, 
+                                                             exercise: exercise)
         navigationController.pushViewController(exerciseViewController, animated: false)
     }
     

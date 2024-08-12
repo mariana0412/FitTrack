@@ -25,4 +25,9 @@ class MusclesViewModel {
             completion()
         }
     }
+    
+    func navigateToExercise(_ exercise: Exercise) {
+        coordinator?.navigateToExercise(exercise)
+    }
+    
 }

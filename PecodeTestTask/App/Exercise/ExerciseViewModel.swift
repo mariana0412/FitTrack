@@ -7,9 +7,11 @@
 
 class ExerciseViewModel {
     private var coordinator: ExerciseCoordinator?
+    private let exercise: Exercise
     
-    init(coordinator: ExerciseCoordinator?) {
+    init(coordinator: ExerciseCoordinator?, exercise: Exercise) {
         self.coordinator = coordinator
+        self.exercise = exercise
     }
     
 }

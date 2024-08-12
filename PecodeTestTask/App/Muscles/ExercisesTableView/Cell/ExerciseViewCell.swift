@@ -45,6 +45,7 @@ class ExerciseViewCell: UITableViewCell {
         super.awakeFromNib()
         
         setupUI()
+        setupActions()
         setupGestures()
     }
     
@@ -91,17 +92,25 @@ class ExerciseViewCell: UITableViewCell {
         checkmark.setSelected(isSelected)
     }
     
-    private func setupGestures() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        contentView.addGestureRecognizer(tapGesture)
-        
+    private func setupActions() {
         checkmark.didToggleSelection = { [weak self] in
             self?.handleTap()
         }
+        
+        moreAboutButton.addTarget(self, action: #selector(handleMoreAboutButtonTap), for: .touchUpInside)
+    }
+    
+    private func setupGestures() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        contentView.addGestureRecognizer(tapGesture)
     }
     
     @objc private func handleTap() {
         delegate?.didTapCell(self)
+    }
+    
+    @objc private func handleMoreAboutButtonTap() {
+        delegate?.didTapMoreAbout(self)
     }
     
 }

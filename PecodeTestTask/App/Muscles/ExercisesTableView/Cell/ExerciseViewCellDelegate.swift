@@ -7,4 +7,5 @@
 
 protocol ExerciseViewCellDelegate: AnyObject {
     func didTapCell(_ cell: ExerciseViewCell)
+    func didTapMoreAbout(_ cell: ExerciseViewCell)
 }
