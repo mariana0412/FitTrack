@@ -8,6 +8,7 @@
 class ExerciseViewModel {
     
     let navigationItemTitle = "Exercise"
+    let readMoreButtonTitle = "...Read more"
     
     private var coordinator: ExerciseCoordinator?
     let exercise: Exercise
