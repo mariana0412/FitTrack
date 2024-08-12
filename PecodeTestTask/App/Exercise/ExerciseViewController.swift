@@ -16,7 +16,7 @@ final class ExerciseViewController: BaseViewController {
             static let attributesLinesNumber = 0
             static let descriptionMaxNumberOfLines = 4
             static let descriptionLinesNumber = 0
-            static let readMoreButtonStyle = 1
+            static let showMoreButtonStyle = 1
         }
         enum RadialGradient {
             static let colors: [CGColor] = [UIColor.clear.cgColor, UIColor.black.withAlphaComponent(0.52).cgColor]
@@ -31,7 +31,7 @@ final class ExerciseViewController: BaseViewController {
     @IBOutlet private weak var exerciseName: UILabel!
     @IBOutlet private weak var exerciseAttributes: UILabel!
     @IBOutlet private weak var exerciseDescription: UILabel!
-    private var readMoreButton = CustomButton()
+    private var showMoreButton = CustomButton()
     
     var viewModel: ExerciseViewModel?
     
@@ -80,10 +80,10 @@ final class ExerciseViewController: BaseViewController {
         exerciseDescription.textColor = .secondaryGray
         exerciseDescription.font = Fonts.sairaLight16
         
-        readMoreButton.buttonStyle = Constants.Layout.readMoreButtonStyle
-        readMoreButton.buttonTitle = viewModel?.readMoreButtonTitle
-        readMoreButton.setupButtonFont(font: Fonts.sairaLight16, color: .primaryYellow)
-        readMoreButton.sizeToFit()
+        showMoreButton.buttonStyle = Constants.Layout.showMoreButtonStyle
+        showMoreButton.buttonTitle = viewModel?.showMoreButtonTitle
+        showMoreButton.setupButtonFont(font: Fonts.sairaLight16, color: .primaryYellow)
+        showMoreButton.sizeToFit()
         
         GradientUtils.addRadialGradientLayer(to: exerciseImageView,
                                              colors: Constants.RadialGradient.colors,
@@ -94,7 +94,7 @@ final class ExerciseViewController: BaseViewController {
     
     private func setupActions() {
         exerciseDescription.isUserInteractionEnabled = true
-        readMoreButton.addTarget(target, action: #selector(showMoreTapped), for: .touchUpInside)
+        showMoreButton.addTarget(target, action: #selector(showMoreTapped), for: .touchUpInside)
     }
     
     private func bindViewModel() {
@@ -116,13 +116,13 @@ final class ExerciseViewController: BaseViewController {
 
         if let text = viewModel?.exercise.descriptions {
             exerciseDescription.text = text
-            exerciseDescription.addReadMoreText(maxLinesNumber: Constants.Layout.descriptionMaxNumberOfLines,
-                                                button: readMoreButton)
+            exerciseDescription.addShowMoreText(maxLinesNumber: Constants.Layout.descriptionMaxNumberOfLines,
+                                                button: showMoreButton)
         }
     }
 
     @objc private func showMoreTapped() {
-        readMoreButton.isHidden = true
+        showMoreButton.isHidden = true
         exerciseDescription.numberOfLines = Constants.Layout.descriptionLinesNumber
         exerciseDescription.text = viewModel?.exercise.descriptions
         exerciseDescription.sizeToFit()

@@ -16,8 +16,8 @@ extension UILabel {
         }
     }
     
-    func addReadMoreText(maxLinesNumber: Int, trailingText: String = " ", moreText: String = "Read more", button: UIButton) {
-        let readMoreText = trailingText + moreText
+    func addShowMoreText(maxLinesNumber: Int, trailingText: String = " ", moreText: String = "Show more", button: UIButton) {
+        let showMoreText = trailingText + moreText
         
         let labelWidth = self.frame.size.width
         let sizeConstraint = CGSize(width: labelWidth, 
@@ -39,11 +39,11 @@ extension UILabel {
         let trimmedText = mutableText.replacingCharacters(in: NSRange(location: visibleTextLength, 
                                                                       length: text.count - visibleTextLength), with: "")
 
-        if trimmedText.count <= readMoreText.count { return }
+        if trimmedText.count <= showMoreText.count { return }
 
-        let trimmedForReadMore = (trimmedText as NSString).replacingCharacters(in: NSRange(location: trimmedText.count - readMoreText.count, length: readMoreText.count), with: "") + trailingText
+        let trimmedForShowMore = (trimmedText as NSString).replacingCharacters(in: NSRange(location: trimmedText.count - showMoreText.count, length: showMoreText.count), with: "") + trailingText
 
-        let finalText = NSMutableAttributedString(string: trimmedForReadMore, 
+        let finalText = NSMutableAttributedString(string: trimmedForShowMore, 
                                                   attributes: [NSAttributedString.Key.font: self.font as Any])
         self.attributedText = finalText
 
