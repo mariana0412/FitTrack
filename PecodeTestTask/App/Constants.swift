@@ -21,6 +21,7 @@ struct StoryboardConstants {
     static let options = "Options"
     static let chart = "Chart"
     static let deleteAccount = "DeleteAccount"
+    static let exercise = "Exercise"
 }
 
 struct ViewControllerIdentifiers {
@@ -37,6 +38,7 @@ struct ViewControllerIdentifiers {
     static let optionsViewController = "OptionsViewController"
     static let chartViewController = "ChartViewController"
     static let deleteAccountViewController = "DeleteAccountViewController"
+    static let exerciseViewController = "ExerciseViewController"
 }
 
 struct Fonts {
