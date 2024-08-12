@@ -23,4 +23,8 @@ class ExerciseCoordinator: Coordinator {
         navigationController.pushViewController(exerciseViewController, animated: false)
     }
     
+    func navigateToMuscles() {
+        navigationController.popViewController(animated: false)
+    }
+    
 }

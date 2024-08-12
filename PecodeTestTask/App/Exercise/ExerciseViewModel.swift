@@ -6,12 +6,19 @@
 //
 
 class ExerciseViewModel {
+    
+    let navigationItemTitle = "Exercise"
+    
     private var coordinator: ExerciseCoordinator?
     private let exercise: Exercise
     
     init(coordinator: ExerciseCoordinator?, exercise: Exercise) {
         self.coordinator = coordinator
         self.exercise = exercise
+    }
+    
+    func navigateToMuscles() {
+        coordinator?.navigateToMuscles()
     }
     
 }
