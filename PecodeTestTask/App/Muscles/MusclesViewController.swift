@@ -168,6 +168,7 @@ extension MusclesViewController: UITableViewDelegate {
 }
 
 extension MusclesViewController: ExerciseViewCellDelegate {
+    
     func didTapCell(_ cell: ExerciseViewCell) {
         guard let indexPath = exercisesTableView.indexPath(for: cell) else { return }
         
@@ -181,6 +182,14 @@ extension MusclesViewController: ExerciseViewCellDelegate {
         updateResetButtonVisibility()
         updateHeaderCount(for: indexPath.section)
     }
+    
+    func didTapMoreAbout(_ cell: ExerciseViewCell) {
+        guard let indexPath = exercisesTableView.indexPath(for: cell),
+              let exercise = viewModel?.muscleGroups[indexPath.section].exercisesList[indexPath.row] else { return }
+                
+        viewModel?.navigateToExercise(exercise)
+    }
+    
 }
 
 extension MusclesViewController: ExercisesTableHeaderViewDelegate {

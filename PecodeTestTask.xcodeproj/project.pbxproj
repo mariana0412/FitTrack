@@ -112,6 +112,11 @@
 		CAA18F182C3C3B7500F888CD /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F172C3C3B7500F888CD /* TabBarItem.swift */; };
 		CAA18F1B2C3C554400F888CD /* GradientUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F1A2C3C554400F888CD /* GradientUtils.swift */; };
 		CAA18F1D2C3C56F700F888CD /* OverlayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F1C2C3C56F700F888CD /* OverlayUtils.swift */; };
+		CAB607622C6A385E000A3D78 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB607612C6A385E000A3D78 /* ExerciseViewController.swift */; };
+		CAB607642C6A3874000A3D78 /* ExerciseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB607632C6A3874000A3D78 /* ExerciseCoordinator.swift */; };
+		CAB607662C6A387F000A3D78 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB607652C6A387F000A3D78 /* ExerciseViewModel.swift */; };
+		CAB607682C6A3886000A3D78 /* Exercise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB607672C6A3886000A3D78 /* Exercise.storyboard */; };
+		CAB6076A2C6AABB2000A3D78 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB607692C6AABB2000A3D78 /* UILabel+Extensions.swift */; };
 		CABE57842C5EB38E00E3AFC2 /* DeleteAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57832C5EB38E00E3AFC2 /* DeleteAccountViewController.swift */; };
 		CABE57862C5EB3B600E3AFC2 /* DeleteAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57852C5EB3B600E3AFC2 /* DeleteAccountViewModel.swift */; };
 		CABE57882C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABE57872C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift */; };
@@ -283,6 +288,11 @@
 		CAA18F172C3C3B7500F888CD /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		CAA18F1A2C3C554400F888CD /* GradientUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientUtils.swift; sourceTree = "<group>"; };
 		CAA18F1C2C3C56F700F888CD /* OverlayUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayUtils.swift; sourceTree = "<group>"; };
+		CAB607612C6A385E000A3D78 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		CAB607632C6A3874000A3D78 /* ExerciseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCoordinator.swift; sourceTree = "<group>"; };
+		CAB607652C6A387F000A3D78 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
+		CAB607672C6A3886000A3D78 /* Exercise.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exercise.storyboard; sourceTree = "<group>"; };
+		CAB607692C6AABB2000A3D78 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		CABE57832C5EB38E00E3AFC2 /* DeleteAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewController.swift; sourceTree = "<group>"; };
 		CABE57852C5EB3B600E3AFC2 /* DeleteAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewModel.swift; sourceTree = "<group>"; };
 		CABE57872C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountCoordinator.swift; sourceTree = "<group>"; };
@@ -446,6 +456,7 @@
 		CA002E092C3192C60053284B /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CAB607602C6A3823000A3D78 /* Exercise */,
 				CABE57822C5EB37E00E3AFC2 /* DeleteAccount */,
 				CA9018C82C5BC49F0030FA26 /* Chart */,
 				CA5D80FC2C51783000486145 /* Options */,
@@ -614,6 +625,7 @@
 				CAEB18E72C4D7759000FE4E5 /* ProfileViewController+Extensions.swift */,
 				CAEB19182C4EF2B4000FE4E5 /* UIImage+Extensions.swift */,
 				CA9018D32C5C2A140030FA26 /* Notification+Extensions.swift */,
+				CAB607692C6AABB2000A3D78 /* UILabel+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -698,6 +710,17 @@
 				CABE57A22C62507900E3AFC2 /* JsonUtils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		CAB607602C6A3823000A3D78 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				CAB607612C6A385E000A3D78 /* ExerciseViewController.swift */,
+				CAB607632C6A3874000A3D78 /* ExerciseCoordinator.swift */,
+				CAB607652C6A387F000A3D78 /* ExerciseViewModel.swift */,
+				CAB607672C6A3886000A3D78 /* Exercise.storyboard */,
+			);
+			path = Exercise;
 			sourceTree = "<group>";
 		};
 		CABE57822C5EB37E00E3AFC2 /* DeleteAccount */ = {
@@ -938,6 +961,7 @@
 				CAEB19112C4ED721000FE4E5 /* Alert.storyboard in Resources */,
 				CABE57A52C62599000E3AFC2 /* Exercises.json in Resources */,
 				CA37E5822C40573D003ADAA8 /* TabBar.storyboard in Resources */,
+				CAB607682C6A3886000A3D78 /* Exercise.storyboard in Resources */,
 				CAA18F112C3C159C00F888CD /* Muscles.storyboard in Resources */,
 				CA465A812C47E26F003E7217 /* ForgotPassword.storyboard in Resources */,
 				CA5D810C2C5181E300486145 /* OptionCell.xib in Resources */,
@@ -1107,7 +1131,9 @@
 				CABE57D52C65497100E3AFC2 /* ExercisesTableHeaderView.swift in Sources */,
 				CA465A7F2C47E25A003E7217 /* ForgotPasswordViewModel.swift in Sources */,
 				CA37E5672C3EF36C003ADAA8 /* SignupViewController.swift in Sources */,
+				CAB607642C6A3874000A3D78 /* ExerciseCoordinator.swift in Sources */,
 				CAA18EFF2C3C134200F888CD /* ProgressViewModel.swift in Sources */,
+				CAB6076A2C6AABB2000A3D78 /* UILabel+Extensions.swift in Sources */,
 				CABE57A12C624F1C00E3AFC2 /* MuscleGroup.swift in Sources */,
 				CA457E0B2C42BC2B0031FDFA /* LoginViewModel.swift in Sources */,
 				CA37E5692C3EF376003ADAA8 /* SignupCoordinator.swift in Sources */,
@@ -1141,6 +1167,7 @@
 				CABE57A32C62507900E3AFC2 /* JsonUtils.swift in Sources */,
 				CAA18EFD2C3C133800F888CD /* ProgressCoordinator.swift in Sources */,
 				CABE57842C5EB38E00E3AFC2 /* DeleteAccountViewController.swift in Sources */,
+				CAB607662C6A387F000A3D78 /* ExerciseViewModel.swift in Sources */,
 				CA5D80FE2C51784100486145 /* OptionsViewController.swift in Sources */,
 				CAA18F052C3C148200F888CD /* CalculatorViewController.swift in Sources */,
 				CA002E3B2C3701FE0053284B /* CustomButton.swift in Sources */,
@@ -1158,6 +1185,7 @@
 				CA9018CE2C5BC4D60030FA26 /* ChartCoordinator.swift in Sources */,
 				CABE579B2C624A5700E3AFC2 /* Level.swift in Sources */,
 				CA002DD62C318B0F0053284B /* AppDelegate.swift in Sources */,
+				CAB607622C6A385E000A3D78 /* ExerciseViewController.swift in Sources */,
 				CA37E5702C3F25B4003ADAA8 /* RegistrationData.swift in Sources */,
 				CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */,
 				CAE8F14D2C52C25F00355755 /* OptionsCoordinatorDelegate.swift in Sources */,

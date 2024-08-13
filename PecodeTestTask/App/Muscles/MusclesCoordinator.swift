@@ -20,4 +20,10 @@ class MusclesCoordinator: Coordinator {
         navigationController.pushViewController(musclesViewController, animated: false)
     }
     
+    func navigateToExercise(_ exercise: Exercise) {
+        let exerciseCoordinator = ExerciseCoordinator(navigationController: navigationController,
+                                                      exercise: exercise)
+        exerciseCoordinator.start()
+    }
+    
 }
