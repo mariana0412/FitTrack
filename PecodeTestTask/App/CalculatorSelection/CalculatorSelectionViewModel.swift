@@ -8,12 +8,16 @@
 class CalculatorSelectionViewModel {
     
     let navigationItemTitle = "Calculator"
-    let calculatorTypesNames = ["Body Mass Index", "Fat Percentage", "Daily Calorie Requirement"]
+    let calculatorTypes: [CalculatorType] = CalculatorType.allCases
     
     private var coordinator: CalculatorSelectionCoordinator?
     
     init(coordinator: CalculatorSelectionCoordinator?) {
         self.coordinator = coordinator
+    }
+    
+    func navigateToCalculator(type: CalculatorType) {
+        coordinator?.navigateToCalculator(type: type)
     }
     
 }

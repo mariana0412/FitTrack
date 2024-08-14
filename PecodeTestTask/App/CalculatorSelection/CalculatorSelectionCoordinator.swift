@@ -20,4 +20,10 @@ class CalculatorSelectionCoordinator: Coordinator {
         navigationController.pushViewController(calculatorSelectionViewController, animated: false)
     }
     
+    func navigateToCalculator(type: CalculatorType) {
+        let calculatorCoordinator = CalculatorCoordinator(navigationController: navigationController,
+                                                          type: type)
+        calculatorCoordinator.start()
+    }
+    
 }

@@ -56,14 +56,14 @@ final class CalculatorSelectionViewController: BaseViewController {
 
 extension CalculatorSelectionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.calculatorTypesNames.count ?? 0
+        return viewModel?.calculatorTypes.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableView.cellReuseIdentifier,
                                                  for: indexPath) as! ListItemViewCell
-        if let calculatorTypeName = viewModel?.calculatorTypesNames[indexPath.row] {
-            cell.configure(with: calculatorTypeName)
+        if let calculatorTypeName = viewModel?.calculatorTypes[indexPath.row] {
+            cell.configure(with: calculatorTypeName.rawValue)
         }
         
         return cell
@@ -76,6 +76,8 @@ extension CalculatorSelectionViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        if let selectedCalculatorType = viewModel?.calculatorTypes[indexPath.row] {
+            viewModel?.navigateToCalculator(type: selectedCalculatorType)
+        }
     }
 }

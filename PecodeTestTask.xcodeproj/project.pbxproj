@@ -140,6 +140,11 @@
 		CABE57DE2C65F7D600E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE57DC2C65F7D500E3AFC2 /* GoogleService-Info.plist */; };
 		CABE57DF2C65F7D600E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE57DC2C65F7D500E3AFC2 /* GoogleService-Info.plist */; };
 		CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */; };
+		CAD7CC262C6D1DE900DD5DE2 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC252C6D1DE900DD5DE2 /* CalculatorViewController.swift */; };
+		CAD7CC282C6D1DF500DD5DE2 /* CalculatorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC272C6D1DF500DD5DE2 /* CalculatorCoordinator.swift */; };
+		CAD7CC2A2C6D1DFE00DD5DE2 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC292C6D1DFE00DD5DE2 /* CalculatorViewModel.swift */; };
+		CAD7CC2C2C6D1E0600DD5DE2 /* Calculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD7CC2B2C6D1E0600DD5DE2 /* Calculator.storyboard */; };
+		CAD7CC2E2C6D267700DD5DE2 /* CalculatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC2D2C6D267700DD5DE2 /* CalculatorType.swift */; };
 		CAE8F1462C52973A00355755 /* OptionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */; };
 		CAE8F1492C52B8C500355755 /* OptionSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE8F1482C52B8C500355755 /* OptionSwitch.xib */; };
 		CAE8F14B2C52B8E800355755 /* OptionSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F14A2C52B8E800355755 /* OptionSwitch.swift */; };
@@ -312,6 +317,11 @@
 		CABE57D62C65519000E3AFC2 /* ExercisesTableHeaderViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableHeaderViewDelegate.swift; sourceTree = "<group>"; };
 		CABE57DC2C65F7D500E3AFC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		CAD7CC252C6D1DE900DD5DE2 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		CAD7CC272C6D1DF500DD5DE2 /* CalculatorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCoordinator.swift; sourceTree = "<group>"; };
+		CAD7CC292C6D1DFE00DD5DE2 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		CAD7CC2B2C6D1E0600DD5DE2 /* Calculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calculator.storyboard; sourceTree = "<group>"; };
+		CAD7CC2D2C6D267700DD5DE2 /* CalculatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorType.swift; sourceTree = "<group>"; };
 		CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCellDelegate.swift; sourceTree = "<group>"; };
 		CAE8F1482C52B8C500355755 /* OptionSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionSwitch.xib; sourceTree = "<group>"; };
 		CAE8F14A2C52B8E800355755 /* OptionSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSwitch.swift; sourceTree = "<group>"; };
@@ -437,6 +447,7 @@
 				CAE8F1552C52F1DE00355755 /* User */,
 				CAE8F1502C52DC7600355755 /* Option */,
 				CABE57972C624A3600E3AFC2 /* Exercise */,
+				CAD7CC2D2C6D267700DD5DE2 /* CalculatorType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -456,20 +467,21 @@
 		CA002E092C3192C60053284B /* App */ = {
 			isa = PBXGroup;
 			children = (
-				CAB607602C6A3823000A3D78 /* Exercise */,
-				CABE57822C5EB37E00E3AFC2 /* DeleteAccount */,
-				CA9018C82C5BC49F0030FA26 /* Chart */,
-				CA5D80FC2C51783000486145 /* Options */,
-				CA4FEC642C4C593E00988C5B /* Profile */,
-				CA465A792C47D8C5003E7217 /* ForgotPassword */,
-				CA457E052C42BBEA0031FDFA /* Login */,
 				CA37E5652C3EF35F003ADAA8 /* Signup */,
 				CAA18EE32C39DF7D00F888CD /* Splash */,
+				CA457E052C42BBEA0031FDFA /* Login */,
+				CA465A792C47D8C5003E7217 /* ForgotPassword */,
 				CA002E082C3192940053284B /* Home */,
-				CAEB19032C4ED6D1000FE4E5 /* Alert */,
+				CA4FEC642C4C593E00988C5B /* Profile */,
+				CA5D80FC2C51783000486145 /* Options */,
+				CABE57822C5EB37E00E3AFC2 /* DeleteAccount */,
 				CAA18EF92C3C12E200F888CD /* Progress */,
+				CA9018C82C5BC49F0030FA26 /* Chart */,
 				CAA18EF62C3C12D000F888CD /* CalculatorSelection */,
+				CAD7CC242C6D1C3A00DD5DE2 /* Calculator */,
 				CAA18EF82C3C12DD00F888CD /* Muscles */,
+				CAB607602C6A3823000A3D78 /* Exercise */,
+				CAEB19032C4ED6D1000FE4E5 /* Alert */,
 				CA002DD52C318B0F0053284B /* AppDelegate.swift */,
 				CA002DD72C318B0F0053284B /* SceneDelegate.swift */,
 				CA002E252C31A0830053284B /* AppCoordinator.swift */,
@@ -774,6 +786,17 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		CAD7CC242C6D1C3A00DD5DE2 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				CAD7CC252C6D1DE900DD5DE2 /* CalculatorViewController.swift */,
+				CAD7CC272C6D1DF500DD5DE2 /* CalculatorCoordinator.swift */,
+				CAD7CC292C6D1DFE00DD5DE2 /* CalculatorViewModel.swift */,
+				CAD7CC2B2C6D1E0600DD5DE2 /* Calculator.storyboard */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
 		CAE8F1442C52972900355755 /* OptionCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -960,6 +983,7 @@
 				CABE57DD2C65F7D600E3AFC2 /* GoogleService-Info.plist in Resources */,
 				CAEB19112C4ED721000FE4E5 /* Alert.storyboard in Resources */,
 				CABE57A52C62599000E3AFC2 /* Exercises.json in Resources */,
+				CAD7CC2C2C6D1E0600DD5DE2 /* Calculator.storyboard in Resources */,
 				CA37E5822C40573D003ADAA8 /* TabBar.storyboard in Resources */,
 				CAB607682C6A3886000A3D78 /* Exercise.storyboard in Resources */,
 				CAA18F112C3C159C00F888CD /* Muscles.storyboard in Resources */,
@@ -1115,6 +1139,7 @@
 				CAA18F072C3C148C00F888CD /* CalculatorSelectionCoordinator.swift in Sources */,
 				CAA18F1B2C3C554400F888CD /* GradientUtils.swift in Sources */,
 				CAEB18E62C4D71F4000FE4E5 /* UIImageView+Extensions.swift in Sources */,
+				CAD7CC282C6D1DF500DD5DE2 /* CalculatorCoordinator.swift in Sources */,
 				CAA18F152C3C3B5200F888CD /* TabBarController.swift in Sources */,
 				CA002E372C36F8D00053284B /* CustomRadiobutton.swift in Sources */,
 				CA9018CA2C5BC4B20030FA26 /* ChartViewController.swift in Sources */,
@@ -1138,6 +1163,7 @@
 				CA457E0B2C42BC2B0031FDFA /* LoginViewModel.swift in Sources */,
 				CA37E5692C3EF376003ADAA8 /* SignupCoordinator.swift in Sources */,
 				CAEB19092C4ED6E7000FE4E5 /* AlertCoordinator.swift in Sources */,
+				CAD7CC262C6D1DE900DD5DE2 /* CalculatorViewController.swift in Sources */,
 				CAA18EFB2C3C132200F888CD /* ProgressViewController.swift in Sources */,
 				CAA18EF22C3B182800F888CD /* SplashViewModel.swift in Sources */,
 				CAA18EE72C39DFC300F888CD /* SplashViewController.swift in Sources */,
@@ -1164,6 +1190,7 @@
 				CA9018D62C5C4BE20030FA26 /* ListItemViewCell.swift in Sources */,
 				CA9018D22C5BD0BC0030FA26 /* DateUtils.swift in Sources */,
 				CAA18F0F2C3C159300F888CD /* MusclesCoordinator.swift in Sources */,
+				CAD7CC2A2C6D1DFE00DD5DE2 /* CalculatorViewModel.swift in Sources */,
 				CABE57A32C62507900E3AFC2 /* JsonUtils.swift in Sources */,
 				CAA18EFD2C3C133800F888CD /* ProgressCoordinator.swift in Sources */,
 				CABE57842C5EB38E00E3AFC2 /* DeleteAccountViewController.swift in Sources */,
@@ -1195,6 +1222,7 @@
 				CAEB18E42C4D4971000FE4E5 /* UserData.swift in Sources */,
 				CABE579D2C624D3C00E3AFC2 /* Exercise.swift in Sources */,
 				CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */,
+				CAD7CC2E2C6D267700DD5DE2 /* CalculatorType.swift in Sources */,
 				CABE57962C624A2A00E3AFC2 /* ExerciseType.swift in Sources */,
 				CA038C042C4427190033CD30 /* LoginData.swift in Sources */,
 				CA1EE8402C375AFF00E58403 /* CustomSwitch.swift in Sources */,
