@@ -5,14 +5,14 @@
 //  Created by Mariana Piz on 08.07.2024.
 //
 
-class CalculatorViewModel {
+class CalculatorSelectionViewModel {
     
     let navigationItemTitle = "Calculator"
     let calculatorTypesNames = ["Body Mass Index", "Fat Percentage", "Daily Calorie Requirement"]
     
-    private var coordinator: CalculatorCoordinator?
+    private var coordinator: CalculatorSelectionCoordinator?
     
-    init(coordinator: CalculatorCoordinator?) {
+    init(coordinator: CalculatorSelectionCoordinator?) {
         self.coordinator = coordinator
     }
     

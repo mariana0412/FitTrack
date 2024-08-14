@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CalculatorViewController: BaseViewController {
+final class CalculatorSelectionViewController: BaseViewController {
     
     private enum Constants {
         enum TableView {
@@ -18,7 +18,7 @@ final class CalculatorViewController: BaseViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
-    var viewModel: CalculatorViewModel?
+    var viewModel: CalculatorSelectionViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +32,9 @@ final class CalculatorViewController: BaseViewController {
         configureNavigationBar()
     }
     
-    static func instantiate() -> CalculatorViewController {
-        let storyboard = UIStoryboard(name: StoryboardConstants.calculator, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.calculatorViewController) as! CalculatorViewController
+    static func instantiate() -> CalculatorSelectionViewController {
+        let storyboard = UIStoryboard(name: StoryboardConstants.calculatorSelection, bundle: .main)
+        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.calculatorSelectionViewController) as! CalculatorSelectionViewController
     }
     
     private func configureTableView() {
@@ -54,7 +54,7 @@ final class CalculatorViewController: BaseViewController {
     
 }
 
-extension CalculatorViewController: UITableViewDataSource {
+extension CalculatorSelectionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.calculatorTypesNames.count ?? 0
     }
@@ -70,7 +70,7 @@ extension CalculatorViewController: UITableViewDataSource {
     }
 }
 
-extension CalculatorViewController: UITableViewDelegate {
+extension CalculatorSelectionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         Constants.TableView.rowHeight
     }

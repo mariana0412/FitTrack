@@ -99,10 +99,10 @@
 		CAA18EFD2C3C133800F888CD /* ProgressCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EFC2C3C133800F888CD /* ProgressCoordinator.swift */; };
 		CAA18EFF2C3C134200F888CD /* ProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EFE2C3C134200F888CD /* ProgressViewModel.swift */; };
 		CAA18F012C3C134B00F888CD /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA18F002C3C134B00F888CD /* Progress.storyboard */; };
-		CAA18F032C3C147400F888CD /* Calculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA18F022C3C147400F888CD /* Calculator.storyboard */; };
-		CAA18F052C3C148200F888CD /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F042C3C148200F888CD /* CalculatorViewController.swift */; };
-		CAA18F072C3C148C00F888CD /* CalculatorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F062C3C148C00F888CD /* CalculatorCoordinator.swift */; };
-		CAA18F092C3C149C00F888CD /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F082C3C149C00F888CD /* CalculatorViewModel.swift */; };
+		CAA18F032C3C147400F888CD /* CalculatorSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA18F022C3C147400F888CD /* CalculatorSelection.storyboard */; };
+		CAA18F052C3C148200F888CD /* CalculatorSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F042C3C148200F888CD /* CalculatorSelectionViewController.swift */; };
+		CAA18F072C3C148C00F888CD /* CalculatorSelectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F062C3C148C00F888CD /* CalculatorSelectionCoordinator.swift */; };
+		CAA18F092C3C149C00F888CD /* CalculatorSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F082C3C149C00F888CD /* CalculatorSelectionViewModel.swift */; };
 		CAA18F0B2C3C157C00F888CD /* MusclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F0A2C3C157C00F888CD /* MusclesViewController.swift */; };
 		CAA18F0D2C3C158700F888CD /* MusclesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F0C2C3C158700F888CD /* MusclesViewModel.swift */; };
 		CAA18F0F2C3C159300F888CD /* MusclesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F0E2C3C159300F888CD /* MusclesCoordinator.swift */; };
@@ -275,10 +275,10 @@
 		CAA18EFC2C3C133800F888CD /* ProgressCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCoordinator.swift; sourceTree = "<group>"; };
 		CAA18EFE2C3C134200F888CD /* ProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewModel.swift; sourceTree = "<group>"; };
 		CAA18F002C3C134B00F888CD /* Progress.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
-		CAA18F022C3C147400F888CD /* Calculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calculator.storyboard; sourceTree = "<group>"; };
-		CAA18F042C3C148200F888CD /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
-		CAA18F062C3C148C00F888CD /* CalculatorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCoordinator.swift; sourceTree = "<group>"; };
-		CAA18F082C3C149C00F888CD /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		CAA18F022C3C147400F888CD /* CalculatorSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalculatorSelection.storyboard; sourceTree = "<group>"; };
+		CAA18F042C3C148200F888CD /* CalculatorSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorSelectionViewController.swift; sourceTree = "<group>"; };
+		CAA18F062C3C148C00F888CD /* CalculatorSelectionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorSelectionCoordinator.swift; sourceTree = "<group>"; };
+		CAA18F082C3C149C00F888CD /* CalculatorSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorSelectionViewModel.swift; sourceTree = "<group>"; };
 		CAA18F0A2C3C157C00F888CD /* MusclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesViewController.swift; sourceTree = "<group>"; };
 		CAA18F0C2C3C158700F888CD /* MusclesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesViewModel.swift; sourceTree = "<group>"; };
 		CAA18F0E2C3C159300F888CD /* MusclesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesCoordinator.swift; sourceTree = "<group>"; };
@@ -468,7 +468,7 @@
 				CA002E082C3192940053284B /* Home */,
 				CAEB19032C4ED6D1000FE4E5 /* Alert */,
 				CAA18EF92C3C12E200F888CD /* Progress */,
-				CAA18EF62C3C12D000F888CD /* Calculator */,
+				CAA18EF62C3C12D000F888CD /* CalculatorSelection */,
 				CAA18EF82C3C12DD00F888CD /* Muscles */,
 				CA002DD52C318B0F0053284B /* AppDelegate.swift */,
 				CA002DD72C318B0F0053284B /* SceneDelegate.swift */,
@@ -654,15 +654,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		CAA18EF62C3C12D000F888CD /* Calculator */ = {
+		CAA18EF62C3C12D000F888CD /* CalculatorSelection */ = {
 			isa = PBXGroup;
 			children = (
-				CAA18F042C3C148200F888CD /* CalculatorViewController.swift */,
-				CAA18F062C3C148C00F888CD /* CalculatorCoordinator.swift */,
-				CAA18F082C3C149C00F888CD /* CalculatorViewModel.swift */,
-				CAA18F022C3C147400F888CD /* Calculator.storyboard */,
+				CAA18F042C3C148200F888CD /* CalculatorSelectionViewController.swift */,
+				CAA18F062C3C148C00F888CD /* CalculatorSelectionCoordinator.swift */,
+				CAA18F082C3C149C00F888CD /* CalculatorSelectionViewModel.swift */,
+				CAA18F022C3C147400F888CD /* CalculatorSelection.storyboard */,
 			);
-			path = Calculator;
+			path = CalculatorSelection;
 			sourceTree = "<group>";
 		};
 		CAA18EF82C3C12DD00F888CD /* Muscles */ = {
@@ -955,7 +955,7 @@
 				CAA18EEB2C3ADC2C00F888CD /* Saira-Regular.ttf in Resources */,
 				CA002E1A2C319C860053284B /* Home.storyboard in Resources */,
 				CA4FEC6C2C4C59CB00988C5B /* Profile.storyboard in Resources */,
-				CAA18F032C3C147400F888CD /* Calculator.storyboard in Resources */,
+				CAA18F032C3C147400F888CD /* CalculatorSelection.storyboard in Resources */,
 				CAA18F012C3C134B00F888CD /* Progress.storyboard in Resources */,
 				CABE57DD2C65F7D600E3AFC2 /* GoogleService-Info.plist in Resources */,
 				CAEB19112C4ED721000FE4E5 /* Alert.storyboard in Resources */,
@@ -1112,7 +1112,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAA18F072C3C148C00F888CD /* CalculatorCoordinator.swift in Sources */,
+				CAA18F072C3C148C00F888CD /* CalculatorSelectionCoordinator.swift in Sources */,
 				CAA18F1B2C3C554400F888CD /* GradientUtils.swift in Sources */,
 				CAEB18E62C4D71F4000FE4E5 /* UIImageView+Extensions.swift in Sources */,
 				CAA18F152C3C3B5200F888CD /* TabBarController.swift in Sources */,
@@ -1159,7 +1159,7 @@
 				CAEB18E82C4D7759000FE4E5 /* ProfileViewController+Extensions.swift in Sources */,
 				CAA18EE92C39DFF600F888CD /* SplashCoordinator.swift in Sources */,
 				CA4FEC662C4C59B400988C5B /* ProfileViewController.swift in Sources */,
-				CAA18F092C3C149C00F888CD /* CalculatorViewModel.swift in Sources */,
+				CAA18F092C3C149C00F888CD /* CalculatorSelectionViewModel.swift in Sources */,
 				CAA18F1D2C3C56F700F888CD /* OverlayUtils.swift in Sources */,
 				CA9018D62C5C4BE20030FA26 /* ListItemViewCell.swift in Sources */,
 				CA9018D22C5BD0BC0030FA26 /* DateUtils.swift in Sources */,
@@ -1169,7 +1169,7 @@
 				CABE57842C5EB38E00E3AFC2 /* DeleteAccountViewController.swift in Sources */,
 				CAB607662C6A387F000A3D78 /* ExerciseViewModel.swift in Sources */,
 				CA5D80FE2C51784100486145 /* OptionsViewController.swift in Sources */,
-				CAA18F052C3C148200F888CD /* CalculatorViewController.swift in Sources */,
+				CAA18F052C3C148200F888CD /* CalculatorSelectionViewController.swift in Sources */,
 				CA002E3B2C3701FE0053284B /* CustomButton.swift in Sources */,
 				CA5D81002C51784900486145 /* OptionsCoordinator.swift in Sources */,
 				CA0FF3F22C456B4700B3CE08 /* UserSex.swift in Sources */,
