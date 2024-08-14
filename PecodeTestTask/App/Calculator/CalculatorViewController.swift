@@ -26,6 +26,12 @@ final class CalculatorViewController: BaseViewController {
         configureTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureNavigationBar()
+    }
+    
     static func instantiate() -> CalculatorViewController {
         let storyboard = UIStoryboard(name: StoryboardConstants.calculator, bundle: .main)
         return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.calculatorViewController) as! CalculatorViewController
@@ -36,6 +42,14 @@ final class CalculatorViewController: BaseViewController {
         tableView.delegate = self
         tableView.register(ListItemViewCell.self,
                                   forCellReuseIdentifier: Constants.TableView.cellReuseIdentifier)
+    }
+    
+    private func configureNavigationBar() {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        let _ = NavigationBarConfigurator.configureNavigationBar(
+            for: self,
+            title: viewModel?.navigationItemTitle ?? ""
+        )
     }
     
 }
@@ -62,6 +76,6 @@ extension CalculatorViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
     }
 }

@@ -7,6 +7,7 @@
 
 class CalculatorViewModel {
     
+    let navigationItemTitle = "Calculator"
     let calculatorTypesNames = ["Body Mass Index", "Fat Percentage", "Daily Calorie Requirement"]
     
     private var coordinator: CalculatorCoordinator?
