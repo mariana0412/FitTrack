@@ -109,7 +109,7 @@ final class ProgressViewController: BaseViewController {
     private func configureTableView() {
         optionsTableView.dataSource = self
         optionsTableView.delegate = self
-        optionsTableView.register(OptionNameViewCell.self,
+        optionsTableView.register(ListItemViewCell.self,
                                   forCellReuseIdentifier: Constants.TableView.cellReuseIdentifier)
     }
     
@@ -122,7 +122,7 @@ extension ProgressViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableView.cellReuseIdentifier,
-                                                 for: indexPath) as! OptionNameViewCell
+                                                 for: indexPath) as! ListItemViewCell
         if let option = viewModel?.options[indexPath.row] {
             cell.configure(with: option.optionName.rawValue)
         }

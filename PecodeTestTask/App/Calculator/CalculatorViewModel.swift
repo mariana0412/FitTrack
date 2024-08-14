@@ -6,6 +6,9 @@
 //
 
 class CalculatorViewModel {
+    
+    let calculatorTypesNames = ["Body Mass Index", "Fat Percentage", "Daily Calorie Requirement"]
+    
     private var coordinator: CalculatorCoordinator?
     
     init(coordinator: CalculatorCoordinator?) {
