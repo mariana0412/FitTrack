@@ -19,6 +19,7 @@ class CalculatorCoordinator: Coordinator {
     func start() {
         let calculatorViewController = CalculatorViewController.instantiate()
         calculatorViewController.viewModel = CalculatorViewModel(coordinator: self, type: type)
+        calculatorViewController.hidesBottomBarWhenPushed = true
         navigationController.pushViewController(calculatorViewController, animated: false)
     }
     

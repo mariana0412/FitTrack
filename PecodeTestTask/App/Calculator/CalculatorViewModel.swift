@@ -5,10 +5,10 @@
 //  Created by Mariana Piz on 14.08.2024.
 //
 
-
 class CalculatorViewModel {
     
     let navigationBarTitle = "Calculator"
+    let calculateButtonTitle = "Calculate"
 
     private var coordinator: CalculatorCoordinator?
     let type: CalculatorType

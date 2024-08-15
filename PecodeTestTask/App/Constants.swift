@@ -51,7 +51,7 @@ struct Fonts {
     static let sairaMedium16 = UIFont(name: "Saira-Medium", size: 16)
     static let sairaMedium18 = UIFont(name: "Saira-Medium", size: 18)
     static let sairaLight16 = UIFont(name: "Saira-Light", size: 16)
-    static let helveticaNeue18 = UIFont(name: "Helvetica Neue", size: 18)
-    static let helveticaNeueMedium18 = UIFont(name: "Helvetica Neue-Medium", size: 18)
+    static let helveticaNeue18 = UIFont(name: "HelveticaNeue", size: 18)
+    static let helveticaNeueMedium18 = UIFont(name: "HelveticaNeue-Medium", size: 18)
     static let helveticaNeue16 = UIFont(name: "Helvetica Neue", size: 16)
 }

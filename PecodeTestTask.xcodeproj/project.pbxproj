@@ -145,6 +145,11 @@
 		CAD7CC2A2C6D1DFE00DD5DE2 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC292C6D1DFE00DD5DE2 /* CalculatorViewModel.swift */; };
 		CAD7CC2C2C6D1E0600DD5DE2 /* Calculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD7CC2B2C6D1E0600DD5DE2 /* Calculator.storyboard */; };
 		CAD7CC2E2C6D267700DD5DE2 /* CalculatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC2D2C6D267700DD5DE2 /* CalculatorType.swift */; };
+		CAD7CC312C6E466A00DD5DE2 /* MeasurementInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD7CC302C6E466A00DD5DE2 /* MeasurementInputView.xib */; };
+		CAD7CC332C6E468000DD5DE2 /* MeasurementInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC322C6E468000DD5DE2 /* MeasurementInputView.swift */; };
+		CAD7CC352C6E52F200DD5DE2 /* Saira-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD7CC342C6E52F200DD5DE2 /* Saira-SemiBold.ttf */; };
+		CAD7CC362C6E52F200DD5DE2 /* Saira-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD7CC342C6E52F200DD5DE2 /* Saira-SemiBold.ttf */; };
+		CAD7CC372C6E52F200DD5DE2 /* Saira-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD7CC342C6E52F200DD5DE2 /* Saira-SemiBold.ttf */; };
 		CAE8F1462C52973A00355755 /* OptionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */; };
 		CAE8F1492C52B8C500355755 /* OptionSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE8F1482C52B8C500355755 /* OptionSwitch.xib */; };
 		CAE8F14B2C52B8E800355755 /* OptionSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F14A2C52B8E800355755 /* OptionSwitch.swift */; };
@@ -322,6 +327,9 @@
 		CAD7CC292C6D1DFE00DD5DE2 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 		CAD7CC2B2C6D1E0600DD5DE2 /* Calculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calculator.storyboard; sourceTree = "<group>"; };
 		CAD7CC2D2C6D267700DD5DE2 /* CalculatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorType.swift; sourceTree = "<group>"; };
+		CAD7CC302C6E466A00DD5DE2 /* MeasurementInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeasurementInputView.xib; sourceTree = "<group>"; };
+		CAD7CC322C6E468000DD5DE2 /* MeasurementInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementInputView.swift; sourceTree = "<group>"; };
+		CAD7CC342C6E52F200DD5DE2 /* Saira-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-SemiBold.ttf"; sourceTree = "<group>"; };
 		CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCellDelegate.swift; sourceTree = "<group>"; };
 		CAE8F1482C52B8C500355755 /* OptionSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionSwitch.xib; sourceTree = "<group>"; };
 		CAE8F14A2C52B8E800355755 /* OptionSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSwitch.swift; sourceTree = "<group>"; };
@@ -526,6 +534,7 @@
 				CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */,
 				CA002E3A2C3701FE0053284B /* CustomButton.swift */,
 				CA9018D52C5C4BE20030FA26 /* ListItemViewCell.swift */,
+				CAD7CC2F2C6E465500DD5DE2 /* MeasurementInputView */,
 				CA1EE8452C376FCD00E58403 /* CustomToggleButton */,
 				CA1EE8442C376FBF00E58403 /* CustomTextField */,
 				CAE8F1472C52B89C00355755 /* OptionSwitch */,
@@ -658,8 +667,9 @@
 			isa = PBXGroup;
 			children = (
 				CAA18EEA2C3ADC2C00F888CD /* Saira-Regular.ttf */,
-				CA038BF52C4316300033CD30 /* Saira-Medium.ttf */,
 				CA038BFF2C43F8E90033CD30 /* Saira-Light.ttf */,
+				CA038BF52C4316300033CD30 /* Saira-Medium.ttf */,
+				CAD7CC342C6E52F200DD5DE2 /* Saira-SemiBold.ttf */,
 				CA56CBB22C58243A00AE6481 /* Gilroy-SemiBold.ttf */,
 				CABE57AB2C6267B000E3AFC2 /* Nunito-Light.ttf */,
 			);
@@ -795,6 +805,15 @@
 				CAD7CC2B2C6D1E0600DD5DE2 /* Calculator.storyboard */,
 			);
 			path = Calculator;
+			sourceTree = "<group>";
+		};
+		CAD7CC2F2C6E465500DD5DE2 /* MeasurementInputView */ = {
+			isa = PBXGroup;
+			children = (
+				CAD7CC322C6E468000DD5DE2 /* MeasurementInputView.swift */,
+				CAD7CC302C6E466A00DD5DE2 /* MeasurementInputView.xib */,
+			);
+			path = MeasurementInputView;
 			sourceTree = "<group>";
 		};
 		CAE8F1442C52972900355755 /* OptionCell */ = {
@@ -975,6 +994,7 @@
 				CABE578A2C5EB3CB00E3AFC2 /* DeleteAccount.storyboard in Resources */,
 				CA002DE22C318B110053284B /* Base in Resources */,
 				CAE8F1492C52B8C500355755 /* OptionSwitch.xib in Resources */,
+				CAD7CC312C6E466A00DD5DE2 /* MeasurementInputView.xib in Resources */,
 				CAA18EEB2C3ADC2C00F888CD /* Saira-Regular.ttf in Resources */,
 				CA002E1A2C319C860053284B /* Home.storyboard in Resources */,
 				CA4FEC6C2C4C59CB00988C5B /* Profile.storyboard in Resources */,
@@ -992,6 +1012,7 @@
 				CA9018D02C5BC4DC0030FA26 /* Chart.storyboard in Resources */,
 				CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */,
 				CABE57AC2C6267B000E3AFC2 /* Nunito-Light.ttf in Resources */,
+				CAD7CC352C6E52F200DD5DE2 /* Saira-SemiBold.ttf in Resources */,
 				CA56CBB32C58243A00AE6481 /* Gilroy-SemiBold.ttf in Resources */,
 				CA038BF62C4316300033CD30 /* Saira-Medium.ttf in Resources */,
 				CAA18EE52C39DF9400F888CD /* Splash.storyboard in Resources */,
@@ -1010,6 +1031,7 @@
 				CA56CBB42C58243A00AE6481 /* Gilroy-SemiBold.ttf in Resources */,
 				CAEB19122C4ED721000FE4E5 /* Alert.storyboard in Resources */,
 				CABE57DE2C65F7D600E3AFC2 /* GoogleService-Info.plist in Resources */,
+				CAD7CC362C6E52F200DD5DE2 /* Saira-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1023,6 +1045,7 @@
 				CA56CBB52C58243B00AE6481 /* Gilroy-SemiBold.ttf in Resources */,
 				CAEB19132C4ED721000FE4E5 /* Alert.storyboard in Resources */,
 				CABE57DF2C65F7D600E3AFC2 /* GoogleService-Info.plist in Resources */,
+				CAD7CC372C6E52F200DD5DE2 /* Saira-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1146,6 +1169,7 @@
 				CA002E352C36F8430053284B /* CustomToggleButton.swift in Sources */,
 				CAEB18FC2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift in Sources */,
 				CABE57A92C625C2100E3AFC2 /* ExerciseViewCell.swift in Sources */,
+				CAD7CC332C6E468000DD5DE2 /* MeasurementInputView.swift in Sources */,
 				CABE57882C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift in Sources */,
 				CA5D81082C5178AD00486145 /* PopupTransitioningDelegate.swift in Sources */,
 				CAE8F14B2C52B8E800355755 /* OptionSwitch.swift in Sources */,
