@@ -9,6 +9,7 @@ class CalculatorViewModel {
     
     let navigationBarTitle = "Calculator"
     let calculateButtonTitle = "Calculate"
+    let segmentedControlTitles = "Superman,Superwoman"
 
     private var coordinator: CalculatorCoordinator?
     let type: CalculatorType

@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="641"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xIa-MA-cd5">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="572.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="630.66666666666663"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body Mass Index" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvi-nq-Ubx">
                                                 <rect key="frame" x="108.66666666666667" y="32" width="175.66666666666663" height="28.666666666666671"/>
@@ -29,8 +29,15 @@
                                                 <color key="textColor" name="PrimaryWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZfV-qu-ezg" customClass="CustomSegmentedControl" customModule="PecodeTestTask" customModuleProvider="target">
+                                                <rect key="frame" x="43" y="76.666666666666657" width="307" height="35"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="beX-7A-JyF"/>
+                                                </constraints>
+                                            </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="VmI-Io-fdY">
-                                                <rect key="frame" x="43" y="85.666666666666657" width="193" height="306"/>
+                                                <rect key="frame" x="43" y="143.66666666666663" width="193" height="306"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7U2-Am-Nw3" userLabel="Height Input View" customClass="MeasurementInputView" customModule="PecodeTestTask" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="193" height="42"/>
@@ -40,7 +47,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5of-nu-xl8" userLabel="Weight Input View" customClass="MeasurementInputView" customModule="PecodeTestTask" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="66" width="193" height="42"/>
+                                                        <rect key="frame" x="0.0" y="66.000000000000028" width="193" height="42"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="42" id="uWP-Ja-ym6"/>
@@ -73,13 +80,13 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jw7-hb-Xl9" userLabel="Result View">
-                                                <rect key="frame" x="43" y="436.66666666666669" width="307" height="136.00000000000006"/>
+                                                <rect key="frame" x="43" y="494.66666666666663" width="307" height="136"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLd-0b-N7F" userLabel="Value View">
                                                         <rect key="frame" x="0.0" y="0.0" width="307" height="93"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28.41" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwB-rP-FW4">
-                                                                <rect key="frame" x="117" y="29.666666666666682" width="73.333333333333314" height="33.666666666666657"/>
+                                                                <rect key="frame" x="117" y="29.666666666666739" width="73.333333333333314" height="33.666666666666657"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                                                 <color key="textColor" name="PrimaryYellow"/>
                                                                 <nil key="highlightedColor"/>
@@ -92,7 +99,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overweight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkf-SG-yAf">
-                                                        <rect key="frame" x="107.33333333333334" y="108.99999999999994" width="92.333333333333343" height="21.666666666666657"/>
+                                                        <rect key="frame" x="107.33333333333334" y="109" width="92.333333333333343" height="21.666666666666657"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <color key="textColor" name="PrimaryWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -112,11 +119,15 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="VmI-Io-fdY" firstAttribute="top" secondItem="Gvi-nq-Ubx" secondAttribute="bottom" constant="83" id="6I8-ca-YRT"/>
+                                            <constraint firstItem="VmI-Io-fdY" firstAttribute="top" secondItem="ZfV-qu-ezg" secondAttribute="bottom" constant="32" id="IWJ-Tj-3p2"/>
                                             <constraint firstItem="Jw7-hb-Xl9" firstAttribute="top" secondItem="VmI-Io-fdY" secondAttribute="bottom" constant="45" id="JKf-gv-Pkx"/>
                                             <constraint firstAttribute="trailing" secondItem="Jw7-hb-Xl9" secondAttribute="trailing" constant="43" id="Kmi-qb-XzG"/>
+                                            <constraint firstItem="ZfV-qu-ezg" firstAttribute="top" secondItem="Gvi-nq-Ubx" secondAttribute="bottom" constant="16" id="Pv8-vP-sym"/>
                                             <constraint firstAttribute="bottom" secondItem="Jw7-hb-Xl9" secondAttribute="bottom" id="Xm6-p8-feq"/>
-                                            <constraint firstItem="VmI-Io-fdY" firstAttribute="top" secondItem="Gvi-nq-Ubx" secondAttribute="bottom" constant="25" id="ZmM-ph-JD7"/>
                                             <constraint firstItem="Gvi-nq-Ubx" firstAttribute="centerX" secondItem="xIa-MA-cd5" secondAttribute="centerX" id="dTa-iF-oRy"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZfV-qu-ezg" secondAttribute="trailing" constant="43" id="dZz-RT-dtX"/>
+                                            <constraint firstItem="ZfV-qu-ezg" firstAttribute="leading" secondItem="xIa-MA-cd5" secondAttribute="leading" constant="43" id="m3J-vS-YCM"/>
                                             <constraint firstItem="Gvi-nq-Ubx" firstAttribute="top" secondItem="xIa-MA-cd5" secondAttribute="top" constant="32" id="vi3-no-0oS"/>
                                             <constraint firstItem="VmI-Io-fdY" firstAttribute="leading" secondItem="xIa-MA-cd5" secondAttribute="leading" constant="43" id="ygC-e5-ezl"/>
                                             <constraint firstItem="Jw7-hb-Xl9" firstAttribute="leading" secondItem="xIa-MA-cd5" secondAttribute="leading" constant="43" id="zZb-Vk-yZt"/>
@@ -178,6 +189,9 @@
                         <outlet property="resultValue" destination="lwB-rP-FW4" id="IIB-jM-Pri"/>
                         <outlet property="resultValueDescription" destination="xkf-SG-yAf" id="A5s-9h-3eh"/>
                         <outlet property="resultValueView" destination="WLd-0b-N7F" id="2vl-dy-m3f"/>
+                        <outlet property="segmentedControl" destination="ZfV-qu-ezg" id="nES-ai-rDq"/>
+                        <outlet property="stackView" destination="VmI-Io-fdY" id="ygA-7h-J9H"/>
+                        <outlet property="titleLabelToStackViewConstraint" destination="6I8-ca-YRT" id="k5e-gr-7s8"/>
                         <outlet property="waistInputView" destination="WhR-sr-sbQ" id="R6p-iX-nTL"/>
                         <outlet property="weightInputView" destination="5of-nu-xl8" id="CEQ-r4-FSa"/>
                     </connections>

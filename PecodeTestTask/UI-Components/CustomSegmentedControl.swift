@@ -260,9 +260,12 @@ class CustomSegmentedControl: UIView {
     }
     
     @objc func segmentTapped(_ sender: UIButton) {
-        didTapSegment?(sender.tag)
+        let prevIndex = currentIndex
         currentIndex = sender.tag
-        switchCurrentIndexViewMaskedCorners()
+        if prevIndex != currentIndex {
+            didTapSegment?(sender.tag)
+            switchCurrentIndexViewMaskedCorners()
+        }
     }
     
 }

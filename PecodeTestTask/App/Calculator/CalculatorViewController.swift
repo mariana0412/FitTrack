@@ -15,7 +15,10 @@ final class CalculatorViewController: BaseViewController {
             static let resultValueFont = UIFont(name: "Saira-SemiBold", size: 28)
             static let resultValueDescriptionFont = UIFont(name: "Saira-Light", size: 18)
         }
+        
         enum Layout {
+            static let titleLabelToStackViewConstraint: CGFloat = 25
+            
             enum ResultValueView {
                 static let cornerRadius: CGFloat = 8
                 static let borderWidth: CGFloat = 1
@@ -26,6 +29,9 @@ final class CalculatorViewController: BaseViewController {
     
     @IBOutlet private weak var calculatorTitleLabel: UILabel!
     
+    @IBOutlet private weak var segmentedControl: CustomSegmentedControl!
+    
+    @IBOutlet private weak var stackView: UIStackView!
     @IBOutlet private weak var heightInputView: MeasurementInputView!
     @IBOutlet private weak var weightInputView: MeasurementInputView!
     @IBOutlet private weak var neckInputView: MeasurementInputView!
@@ -38,7 +44,10 @@ final class CalculatorViewController: BaseViewController {
     
     @IBOutlet private weak var calculateButton: CustomButton!
     
+    @IBOutlet private weak var titleLabelToStackViewConstraint: NSLayoutConstraint!
+    
     var viewModel: CalculatorViewModel?
+    var sex: UserSex = .male
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +90,17 @@ final class CalculatorViewController: BaseViewController {
         guard let viewModel else { return }
         
         calculatorTitleLabel.text = viewModel.type.rawValue
+        
+        if viewModel.type == .bodyMassIndex {
+            segmentedControl.removeFromSuperview()
+            titleLabelToStackViewConstraint.constant = Constants.Layout.titleLabelToStackViewConstraint
+        } else {
+            segmentedControl.segmentsTitle = viewModel.segmentedControlTitles
+            segmentedControl.didTapSegment = { [weak self] index in
+                self?.switchSex()
+            }
+        }
+        
         calculateButton.buttonTitle = viewModel.calculateButtonTitle
         
         let inputViews: [CalculatorType.InputField: MeasurementInputView] = [
@@ -100,6 +120,10 @@ final class CalculatorViewController: BaseViewController {
                 }
             }
         }
+    }
+    
+    private func switchSex() {
+        sex = (sex == .male) ? .female : .male
     }
     
     private func configureNavigationBar() {
