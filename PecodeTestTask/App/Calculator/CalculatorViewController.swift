@@ -10,6 +10,8 @@ import UIKit
 final class CalculatorViewController: BaseViewController {
     
     private enum Constants {
+        static let allowedCharacters = "0123456789."
+        
         enum Fonts {
             static let calculatorTitleLabelFont = UIFont(name: "Saira-Medium", size: 24)
             static let resultValueFont = UIFont(name: "Saira-SemiBold", size: 28)
@@ -76,10 +78,15 @@ final class CalculatorViewController: BaseViewController {
         ageInputView
     ]
     
+    private var visibleInputViews: [MeasurementInputView] {
+        return inputViews.filter { !$0.isHidden }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
+        setupTextFieldDelegates()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -284,8 +291,55 @@ final class CalculatorViewController: BaseViewController {
         ]
     }
     
+    private func setupTextFieldDelegates() {
+        for inputView in visibleInputViews {
+            inputView.textField.delegate = self
+        }
+        
+        for (index, inputView) in visibleInputViews.enumerated() {
+            inputView.textField.returnKeyType = (index == visibleInputViews.count - 1) ? .done : .next
+        }
+    }
+    
     @IBAction private func chooseActivityLevelButtonClicked(_ sender: Any) {
         viewModel?.navigateToActivityLevel(selectedActivityLevel: selectedActivityLevel)
+    }
+    
+}
+
+extension CalculatorViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard var index = indexOfInputView(containing: textField) else { return false }
+        
+        index += 1
+        if index < visibleInputViews.count {
+            visibleInputViews[index].textField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        guard let inputViewIndex = indexOfInputView(containing: textField) else { return }
+        visibleInputViews[inputViewIndex].currentState = .active
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string.isEmpty {
+            return true
+        }
+
+        let allowedCharacters = CharacterSet(charactersIn: Constants.allowedCharacters)
+        let characterSet = CharacterSet(charactersIn: string)
+        
+        return allowedCharacters.isSuperset(of: characterSet)
+    }
+    
+    private func indexOfInputView(containing textField: UITextField) -> Int? {
+        visibleInputViews.firstIndex(where: { $0.textField == textField })
     }
     
 }

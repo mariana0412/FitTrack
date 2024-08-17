@@ -17,7 +17,6 @@ final class MeasurementInputView: UIView {
         
     private enum Constants {
         static let identifier = "MeasurementInputView"
-        static let allowedCharacters = "0123456789."
         
         enum Layout {
             enum TextFieldView {
@@ -29,7 +28,7 @@ final class MeasurementInputView: UIView {
     
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var textFieldView: UIView!
-    @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private(set) weak var textField: UITextField!
     @IBOutlet private weak var unitLabel: UILabel!
     
     var currentState: TextFieldState = .normal {
@@ -71,10 +70,7 @@ final class MeasurementInputView: UIView {
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(view)
         
-        textField.delegate = self
         currentState = .normal
-        
-        setupDoneButtonForTextField()
     }
     
     func configure(title: String, unit: String){
@@ -105,31 +101,5 @@ final class MeasurementInputView: UIView {
         }
     }
     
-    private func setupDoneButtonForTextField() {
-        textField.returnKeyType = .done
-    }
-    
 }
 
-extension MeasurementInputView: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        currentState = .active
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if string.isEmpty {
-            return true
-        }
-
-        let allowedCharacters = CharacterSet(charactersIn: Constants.allowedCharacters)
-        let characterSet = CharacterSet(charactersIn: string)
-        
-        return allowedCharacters.isSuperset(of: characterSet)
-    }
-    
-}
