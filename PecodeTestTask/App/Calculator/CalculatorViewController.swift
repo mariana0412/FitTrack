@@ -295,6 +295,7 @@ final class CalculatorViewController: BaseViewController {
     private func setupTextFieldDelegates() {
         for inputView in visibleInputViews {
             inputView.textField.delegate = self
+            inputView.textField.keyboardType = .numbersAndPunctuation
         }
         
         for (index, inputView) in visibleInputViews.enumerated() {
