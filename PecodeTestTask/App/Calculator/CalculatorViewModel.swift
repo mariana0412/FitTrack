@@ -8,6 +8,7 @@
 class CalculatorViewModel {
     
     let navigationBarTitle = "Calculator"
+    let chooseActivityLevelButtonTitle = "Choose Activity Level"
     let calculateButtonTitle = "Calculate"
     let segmentedControlTitles = "Superman,Superwoman"
     let resultErrorMessage = "Enter the correct values"

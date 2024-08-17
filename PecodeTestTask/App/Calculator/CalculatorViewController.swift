@@ -34,13 +34,14 @@ final class CalculatorViewController: BaseViewController {
     
     @IBOutlet private weak var segmentedControl: CustomSegmentedControl!
     
-    @IBOutlet private weak var stackView: UIStackView!
     @IBOutlet private weak var heightInputView: MeasurementInputView!
     @IBOutlet private weak var weightInputView: MeasurementInputView!
     @IBOutlet private weak var neckInputView: MeasurementInputView!
     @IBOutlet private weak var waistInputView: MeasurementInputView!
     @IBOutlet private weak var hipsInputView: MeasurementInputView!
     @IBOutlet private weak var ageInputView: MeasurementInputView!
+    
+    @IBOutlet private weak var chooseActivityLevelButton: UIButton!
     
     @IBOutlet private weak var resultValueView: UIView!
     @IBOutlet private weak var resultValue: UILabel!
@@ -49,6 +50,7 @@ final class CalculatorViewController: BaseViewController {
     @IBOutlet private weak var calculateButton: CustomButton!
     
     @IBOutlet private weak var titleLabelToStackViewConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var resultViewToStackViewConstraint: NSLayoutConstraint!
     
     var viewModel: CalculatorViewModel?
     var sex: UserSex = .male
@@ -84,6 +86,13 @@ final class CalculatorViewController: BaseViewController {
         calculatorTitleLabel.font = Constants.Fonts.calculatorTitleLabelFont
         calculatorTitleLabel.textColor = .primaryWhite
         
+        chooseActivityLevelButton.tintColor = UIColor.primaryWhite
+        chooseActivityLevelButton.layer.borderColor = UIColor.primaryWhite.cgColor
+        
+        chooseActivityLevelButton.layer.borderWidth = 1
+        chooseActivityLevelButton.layer.cornerRadius = chooseActivityLevelButton.frame.height / 2
+        chooseActivityLevelButton.backgroundColor = .clear
+        
         resultValueView.layer.cornerRadius = Constants.Layout.ResultValueView.cornerRadius
         resultValueView.layer.borderWidth = Constants.Layout.ResultValueView.borderWidth
         
@@ -109,6 +118,13 @@ final class CalculatorViewController: BaseViewController {
                 self?.switchSex()
                 self?.hideResult()
             }
+        }
+        
+        if viewModel.type == .dailyCalorieRequirement {
+            chooseActivityLevelButton.setTitle(viewModel.chooseActivityLevelButtonTitle, for: .normal)
+        } else {
+            chooseActivityLevelButton.removeFromSuperview()
+            resultViewToStackViewConstraint.constant = 45
         }
         
         calculateButton.buttonTitle = viewModel.calculateButtonTitle

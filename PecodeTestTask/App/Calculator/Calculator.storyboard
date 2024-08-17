@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="641"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xIa-MA-cd5">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="696.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="761.66666666666663"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body Mass Index" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvi-nq-Ubx">
                                                 <rect key="frame" x="108.66666666666667" y="32" width="175.66666666666663" height="28.666666666666671"/>
@@ -86,8 +86,13 @@
                                                     <constraint firstAttribute="width" constant="193" id="bqP-bI-Wgs"/>
                                                 </constraints>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgz-0K-CmS">
+                                                <rect key="frame" x="43" y="531.66666666666663" width="307" height="49"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Choose Activity Level"/>
+                                            </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jw7-hb-Xl9" userLabel="Result View">
-                                                <rect key="frame" x="43" y="560.66666666666663" width="307" height="136"/>
+                                                <rect key="frame" x="43" y="625.66666666666663" width="307" height="136"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLd-0b-N7F" userLabel="Value View">
                                                         <rect key="frame" x="0.0" y="0.0" width="307" height="93"/>
@@ -126,15 +131,19 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="Jw7-hb-Xl9" firstAttribute="top" secondItem="sgz-0K-CmS" secondAttribute="bottom" constant="45" id="3EZ-JT-dz5"/>
+                                            <constraint firstItem="sgz-0K-CmS" firstAttribute="leading" secondItem="xIa-MA-cd5" secondAttribute="leading" constant="43" id="64g-Jm-6Wz"/>
                                             <constraint firstItem="VmI-Io-fdY" firstAttribute="top" secondItem="Gvi-nq-Ubx" secondAttribute="bottom" constant="83" id="6I8-ca-YRT"/>
                                             <constraint firstItem="VmI-Io-fdY" firstAttribute="top" secondItem="ZfV-qu-ezg" secondAttribute="bottom" constant="32" id="IWJ-Tj-3p2"/>
-                                            <constraint firstItem="Jw7-hb-Xl9" firstAttribute="top" secondItem="VmI-Io-fdY" secondAttribute="bottom" constant="45" id="JKf-gv-Pkx"/>
                                             <constraint firstAttribute="trailing" secondItem="Jw7-hb-Xl9" secondAttribute="trailing" constant="43" id="Kmi-qb-XzG"/>
                                             <constraint firstItem="ZfV-qu-ezg" firstAttribute="top" secondItem="Gvi-nq-Ubx" secondAttribute="bottom" constant="16" id="Pv8-vP-sym"/>
+                                            <constraint firstItem="sgz-0K-CmS" firstAttribute="top" secondItem="VmI-Io-fdY" secondAttribute="bottom" constant="16" id="Sf5-t1-y9i"/>
                                             <constraint firstAttribute="bottom" secondItem="Jw7-hb-Xl9" secondAttribute="bottom" id="Xm6-p8-feq"/>
                                             <constraint firstItem="Gvi-nq-Ubx" firstAttribute="centerX" secondItem="xIa-MA-cd5" secondAttribute="centerX" id="dTa-iF-oRy"/>
                                             <constraint firstAttribute="trailing" secondItem="ZfV-qu-ezg" secondAttribute="trailing" constant="43" id="dZz-RT-dtX"/>
+                                            <constraint firstAttribute="trailing" secondItem="sgz-0K-CmS" secondAttribute="trailing" constant="43" id="duh-2Y-C52"/>
                                             <constraint firstItem="ZfV-qu-ezg" firstAttribute="leading" secondItem="xIa-MA-cd5" secondAttribute="leading" constant="43" id="m3J-vS-YCM"/>
+                                            <constraint firstItem="Jw7-hb-Xl9" firstAttribute="top" secondItem="VmI-Io-fdY" secondAttribute="bottom" constant="110" id="vfW-Bu-dt5"/>
                                             <constraint firstItem="Gvi-nq-Ubx" firstAttribute="top" secondItem="xIa-MA-cd5" secondAttribute="top" constant="32" id="vi3-no-0oS"/>
                                             <constraint firstItem="VmI-Io-fdY" firstAttribute="leading" secondItem="xIa-MA-cd5" secondAttribute="leading" constant="43" id="ygC-e5-ezl"/>
                                             <constraint firstItem="Jw7-hb-Xl9" firstAttribute="leading" secondItem="xIa-MA-cd5" secondAttribute="leading" constant="43" id="zZb-Vk-yZt"/>
@@ -194,14 +203,15 @@
                         <outlet property="ageInputView" destination="k7D-6K-l1K" id="nFn-WF-XU8"/>
                         <outlet property="calculateButton" destination="84X-5j-7nB" id="hBQ-fE-EYF"/>
                         <outlet property="calculatorTitleLabel" destination="Gvi-nq-Ubx" id="wRy-5s-Kgj"/>
+                        <outlet property="chooseActivityLevelButton" destination="sgz-0K-CmS" id="CxV-wj-PMY"/>
                         <outlet property="heightInputView" destination="7U2-Am-Nw3" id="Unv-Jl-LVf"/>
                         <outlet property="hipsInputView" destination="u8T-dP-cmq" id="wdA-XX-5Rt"/>
                         <outlet property="neckInputView" destination="9hr-5p-C0Z" id="onE-3g-4AK"/>
                         <outlet property="resultValue" destination="lwB-rP-FW4" id="IIB-jM-Pri"/>
                         <outlet property="resultValueDescription" destination="xkf-SG-yAf" id="A5s-9h-3eh"/>
                         <outlet property="resultValueView" destination="WLd-0b-N7F" id="2vl-dy-m3f"/>
+                        <outlet property="resultViewToStackViewConstraint" destination="vfW-Bu-dt5" id="VJM-4p-rHD"/>
                         <outlet property="segmentedControl" destination="ZfV-qu-ezg" id="nES-ai-rDq"/>
-                        <outlet property="stackView" destination="VmI-Io-fdY" id="ygA-7h-J9H"/>
                         <outlet property="titleLabelToStackViewConstraint" destination="6I8-ca-YRT" id="k5e-gr-7s8"/>
                         <outlet property="waistInputView" destination="WhR-sr-sbQ" id="R6p-iX-nTL"/>
                         <outlet property="weightInputView" destination="5of-nu-xl8" id="CEQ-r4-FSa"/>
