@@ -28,6 +28,8 @@ final class ActivityLevelViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var confirmButton: CustomButton!
     
+    private let overlayView = UIView()
+    
     var viewModel: ActivityLevelViewModel?
     
     override func viewDidLoad() {
@@ -36,6 +38,7 @@ final class ActivityLevelViewController: UIViewController {
         bindViewModel()
         configureTableView()
         setupUI()
+        setupGestures()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +61,10 @@ final class ActivityLevelViewController: UIViewController {
     }
     
     private func setupUI() {
+        overlayView.backgroundColor = .clear
+        overlayView.frame = view.bounds
+        view.insertSubview(overlayView, belowSubview: popupView)
+        
         popupView.layer.borderWidth = Constants.Layout.popupViewBorderWidth
         popupView.layer.cornerRadius = Constants.Layout.popupViewCornerRadius
         popupView.layer.borderColor = Constants.Layout.popupViewBorderColor
@@ -67,6 +74,15 @@ final class ActivityLevelViewController: UIViewController {
         
         confirmButton.buttonStyle = Constants.Layout.confirmButtonStyle
         confirmButton.setupButtonFont(font: Fonts.sairaRegular16, color: .black)
+    }
+    
+    private func setupGestures() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundTapped))
+        overlayView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func backgroundTapped() {
+        viewModel?.dismiss()
     }
     
     private func bindViewModel() {

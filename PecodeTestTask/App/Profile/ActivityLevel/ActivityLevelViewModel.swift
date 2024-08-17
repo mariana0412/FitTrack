@@ -32,4 +32,8 @@ class ActivityLevelViewModel {
         coordinator?.navigateToCalculator(with: selectedActivityLevel)
     }
     
+    func dismiss() {
+        coordinator?.navigateToCalculator()
+    }
+    
 }
