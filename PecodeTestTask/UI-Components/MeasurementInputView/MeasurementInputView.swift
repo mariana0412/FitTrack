@@ -17,6 +17,7 @@ final class MeasurementInputView: UIView {
         
     private enum Constants {
         static let identifier = "MeasurementInputView"
+        static let allowedCharacters = "0123456789."
         
         enum Layout {
             enum TextFieldView {
@@ -118,6 +119,17 @@ extension MeasurementInputView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string.isEmpty {
+            return true
+        }
+
+        let allowedCharacters = CharacterSet(charactersIn: Constants.allowedCharacters)
+        let characterSet = CharacterSet(charactersIn: string)
+        
+        return allowedCharacters.isSuperset(of: characterSet)
     }
     
 }

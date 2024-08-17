@@ -13,6 +13,7 @@ final class CalculatorViewController: BaseViewController {
         enum Fonts {
             static let calculatorTitleLabelFont = UIFont(name: "Saira-Medium", size: 24)
             static let resultValueFont = UIFont(name: "Saira-SemiBold", size: 28)
+            static let resultValueFontError = UIFont(name: "Saira-Light", size: 18)
             static let resultValueDescriptionFont = UIFont(name: "Saira-Light", size: 18)
         }
         
@@ -23,6 +24,8 @@ final class CalculatorViewController: BaseViewController {
                 static let cornerRadius: CGFloat = 8
                 static let borderWidth: CGFloat = 1
                 static let borderColor: CGColor = UIColor.primaryWhite.withAlphaComponent(0.4).cgColor
+                
+                static let borderColorError: CGColor = UIColor.primaryRed.withAlphaComponent(0.4).cgColor
             }
         }
     }
@@ -36,6 +39,7 @@ final class CalculatorViewController: BaseViewController {
     @IBOutlet private weak var weightInputView: MeasurementInputView!
     @IBOutlet private weak var neckInputView: MeasurementInputView!
     @IBOutlet private weak var waistInputView: MeasurementInputView!
+    @IBOutlet private weak var hipsInputView: MeasurementInputView!
     @IBOutlet private weak var ageInputView: MeasurementInputView!
     
     @IBOutlet private weak var resultValueView: UIView!
@@ -48,6 +52,15 @@ final class CalculatorViewController: BaseViewController {
     
     var viewModel: CalculatorViewModel?
     var sex: UserSex = .male
+    
+    private lazy var inputViews: [MeasurementInputView] = [
+        heightInputView,
+        weightInputView,
+        neckInputView,
+        waistInputView,
+        hipsInputView,
+        ageInputView
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,15 +86,11 @@ final class CalculatorViewController: BaseViewController {
         
         resultValueView.layer.cornerRadius = Constants.Layout.ResultValueView.cornerRadius
         resultValueView.layer.borderWidth = Constants.Layout.ResultValueView.borderWidth
-        resultValueView.layer.borderColor = Constants.Layout.ResultValueView.borderColor
-        resultValueView.isHidden = true
-        
-        resultValue.font = Constants.Fonts.resultValueFont
-        resultValue.textColor = .primaryYellow
         
         resultValueDescription.font = Constants.Fonts.resultValueDescriptionFont
         resultValueDescription.textColor = .primaryWhite
-        resultValueDescription.isHidden = true
+        
+        hideResult()
         
         calculateButton.setupButtonFont(font: Fonts.sairaRegular16, color: .black)
     }
@@ -98,32 +107,36 @@ final class CalculatorViewController: BaseViewController {
             segmentedControl.segmentsTitle = viewModel.segmentedControlTitles
             segmentedControl.didTapSegment = { [weak self] index in
                 self?.switchSex()
+                self?.hideResult()
             }
         }
         
         calculateButton.buttonTitle = viewModel.calculateButtonTitle
         
-        let inputViews: [CalculatorType.InputField: MeasurementInputView] = [
-            .height: heightInputView,
-            .weight: weightInputView,
-            .neck: neckInputView,
-            .waist: waistInputView,
-            .age: ageInputView
-        ]
+        updateInputViews()
+    }
+    
+    private func updateInputViews() {
+        guard let viewModel = viewModel else { return }
 
-        for (field, config) in viewModel.type.сonfigurations {
-            if let inputView = inputViews[field] {
-                inputView.isHidden = config.isHidden
-                if let title = config.title,
-                   let unit = config.unit {
-                    inputView.configure(title: title, unit: unit)
-                }
+        let inputFieldMapping = createInputFieldMapping()
+        
+        for (field, config) in viewModel.configurations(sex: sex) {
+            guard let inputView = inputFieldMapping[field] else { continue }
+            
+            inputView.isHidden = config.isHidden
+            
+            if let title = config.title, let unit = config.unit {
+                inputView.configure(title: title, unit: unit)
             }
         }
     }
-    
+
     private func switchSex() {
         sex = (sex == .male) ? .female : .male
+        if viewModel?.type == .fatPercentage {
+            updateInputViews()
+        }
     }
     
     private func configureNavigationBar() {
@@ -139,4 +152,85 @@ final class CalculatorViewController: BaseViewController {
         viewModel?.navigateToCalculatorSelection()
     }
     
+    @IBAction func calculateButtonTapped(_ sender: Any) {
+        guard let viewModel else { return }
+        
+        let inputFieldMapping = createInputFieldMapping()
+
+        let values = gatherInputValues(inputFieldMapping: inputFieldMapping)
+        let invalidFields = viewModel.validateInputs(values: values)
+        
+        resetInputFieldStates()
+        highlightInvalidFields(invalidFields, inputFieldMapping: inputFieldMapping)
+        
+        let validationIsSuccessful = invalidFields.isEmpty
+        if validationIsSuccessful {
+            let (result, description) = viewModel.calculate(values: values, sex: sex)
+            setNormalStateForResult(result: result, description: description)
+        }
+    }
+    
+    private func gatherInputValues(inputFieldMapping: [CalculatorViewModel.InputField: MeasurementInputView]) -> [CalculatorViewModel.InputField: String?] {
+        var values: [CalculatorViewModel.InputField: String?] = [:]
+        
+        for (field, inputView) in inputFieldMapping {
+            if !inputView.isHidden {
+                values[field] = inputView.textFieldText
+            }
+        }
+        
+        return values
+    }
+    
+    private func resetInputFieldStates() {
+        for inputView in inputViews {
+            inputView.currentState = .normal
+        }
+    }
+    
+    private func highlightInvalidFields(_ fields: [CalculatorViewModel.InputField],
+                                        inputFieldMapping: [CalculatorViewModel.InputField: MeasurementInputView]) {
+        for field in fields {
+            inputFieldMapping[field]?.currentState = .error
+        }
+        
+        setErrorStateForResult()
+    }
+    
+    private func setErrorStateForResult() {
+        resultValueView.layer.borderColor = Constants.Layout.ResultValueView.borderColorError
+        resultValue.font = Constants.Fonts.resultValueFontError
+        resultValue.textColor = .primaryRed
+        resultValue.text = viewModel?.resultErrorMessage
+        resultValueView.isHidden = false
+        resultValueDescription.isHidden = true
+    }
+    
+    private func setNormalStateForResult(result: String, description: String) {
+        resultValue.font = Constants.Fonts.resultValueFont
+        resultValue.textColor = .primaryYellow
+        resultValue.text = result
+        
+        resultValueView.layer.borderColor = Constants.Layout.ResultValueView.borderColor
+        resultValueView.isHidden = false
+        
+        resultValueDescription.text = description
+        resultValueDescription.isHidden = false
+    }
+    
+    private func hideResult() {
+        resultValueView.isHidden = true
+        resultValueDescription.isHidden = true
+    }
+    
+    private func createInputFieldMapping() -> [CalculatorViewModel.InputField: MeasurementInputView] {
+        [
+            .height: heightInputView,
+            .weight: weightInputView,
+            .neck: neckInputView,
+            .waist: waistInputView,
+            .hips: hipsInputView,
+            .age: ageInputView
+        ]
+    }
 }
