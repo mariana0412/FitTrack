@@ -95,54 +95,89 @@ class CalculatorViewModel {
         return config
     }
     
-    func validateInputs(values: [InputField: String?]) -> [InputField] {
+    func validateInputs(values: [InputField: String?]) -> (invalidFields: [InputField], 
+                                                           validatedValues: [InputField: Double]) {
         var invalidFields: [InputField] = []
+        var validatedValues: [InputField: Double] = [:]
         
         for (field, value) in values {
-            if !valueIsValid(value) {
+            let validation = valueIsValid(value)
+            if validation.isValid, let doubleValue = validation.value {
+                validatedValues[field] = doubleValue
+            } else {
                 invalidFields.append(field)
             }
         }
         
-        return invalidFields
+        return (invalidFields, validatedValues)
     }
     
-    func calculate(values: [InputField: String?], sex: UserSex) -> (result: String, description: String) {
-        let validatedValues = values.compactMapValues { value -> Double? in
-            guard let value = value, !value.isEmpty, let doubleValue = Double(value), doubleValue > 0 else {
-                return nil
-            }
-            return doubleValue
-        }
+    func calculate(values: [InputField: Double],
+                   sex: UserSex,
+                   activityLevel: DailyCaloriesRateActivity?
+    ) -> (result: String, description: String) {
         
-        guard let calculator = createCalculator(for: type) else {
-            return ("", "")
-        }
+        guard let calculator = createCalculator(for: type,
+                                                inputs: values,
+                                                sex: sex,
+                                                activity: activityLevel) else { return ("", "") }
         
-        let (result, description) = calculator.calculate(inputs: validatedValues, sex: sex)
+        let (result, description) = calculator.calculate()
         
         return (String(format: "%.2f", result), description)
     }
 
-    private func createCalculator(for type: CalculatorType) -> Calculator? {
+    private func createCalculator(for type: CalculatorType, 
+                                  inputs: [InputField: Double],
+                                  sex: UserSex,
+                                  activity: DailyCaloriesRateActivity?) -> Calculator? {
         switch type {
         case .bodyMassIndex:
-            return BMICalculator()
+            if let height = inputs[.height],
+               let weight = inputs[.weight] {
+                return BMICalculator(height: height,
+                                     weight: weight)
+            }
         case .fatPercentage:
-            return FatPercentageCalculator()
+            if let height = inputs[.height],
+               let neck = inputs[.neck],
+               let waist = inputs[.waist] {
+                
+                let hips = sex == .female ? inputs[.hips] : nil
+                    
+                if sex == .female && hips == nil {
+                    return nil
+                }
+                return FatPercentageCalculator(height: height,
+                                               neck: neck,
+                                               waist: waist,
+                                               hips: hips,
+                                               sex: sex)
+            }
         case .dailyCalorieRequirement:
-            return BMICalculator()
+            if let height = inputs[.height],
+               let weight = inputs[.weight],
+               let age = inputs[.age],
+               let activity
+            {
+                return DailyCalorieRequirementCalculator(height: height,
+                                                         weight: weight,
+                                                         age: age,
+                                                         sex: sex, 
+                                                         activity: activity)
+            }
         }
+        return nil
     }
     
-    private func valueIsValid(_ value: String?) -> Bool {
+    private func valueIsValid(_ value: String?) -> (isValid: Bool, value: Double?) {
         guard let value = value,
               !value.isEmpty,
               let doubleValue = Double(value),
               doubleValue > 0 else {
-            return false
+            return (false, nil)
         }
-        return true
+        return (true, doubleValue)
     }
 
     func navigateToCalculatorSelection() {

@@ -60,6 +60,7 @@ final class CalculatorViewController: BaseViewController {
         didSet {
             if let newTitle = selectedActivityLevel?.rawValue {
                 chooseActivityLevelButton.setTitle(newTitle, for: .normal)
+                setNormalStateForActivityButton()
             }
         }
     }
@@ -97,12 +98,11 @@ final class CalculatorViewController: BaseViewController {
         calculatorTitleLabel.font = Constants.Fonts.calculatorTitleLabelFont
         calculatorTitleLabel.textColor = .primaryWhite
         
-        chooseActivityLevelButton.tintColor = UIColor.primaryWhite
-        chooseActivityLevelButton.layer.borderColor = UIColor.primaryWhite.cgColor
         chooseActivityLevelButton.layer.borderWidth = Constants.Layout.chooseActivityLevelButtonBorderWidth
         chooseActivityLevelButton.layer.cornerRadius = chooseActivityLevelButton.frame.height / 2
         chooseActivityLevelButton.backgroundColor = .clear
         chooseActivityLevelButton.titleLabel?.lineBreakMode = .byTruncatingTail
+        setNormalStateForActivityButton()
         
         resultValueView.layer.cornerRadius = Constants.Layout.ResultValueView.cornerRadius
         resultValueView.layer.borderWidth = Constants.Layout.ResultValueView.borderWidth
@@ -180,19 +180,31 @@ final class CalculatorViewController: BaseViewController {
     }
     
     @IBAction private func calculateButtonTapped(_ sender: Any) {
+        resetInputFieldStates()
+        
         guard let viewModel else { return }
         
         let inputFieldMapping = createInputFieldMapping()
 
         let values = gatherInputValues(inputFieldMapping: inputFieldMapping)
-        let invalidFields = viewModel.validateInputs(values: values)
-        
-        resetInputFieldStates()
-        highlightInvalidFields(invalidFields, inputFieldMapping: inputFieldMapping)
+        let (invalidFields, validatedValues) = viewModel.validateInputs(values: values)
         
         let validationIsSuccessful = invalidFields.isEmpty
-        if validationIsSuccessful {
-            let (result, description) = viewModel.calculate(values: values, sex: sex)
+        if !validationIsSuccessful {
+            setErrorStateForResult()
+            setErrorStateForInvalidFields(invalidFields, inputFieldMapping: inputFieldMapping)
+        }
+        
+        let activityLevelIsInvalid = viewModel.type == .dailyCalorieRequirement && selectedActivityLevel == nil
+        if activityLevelIsInvalid {
+            setErrorStateForActivityButton()
+            setErrorStateForResult()
+        }
+        
+        if validationIsSuccessful && !activityLevelIsInvalid {
+            let (result, description) = viewModel.calculate(values: validatedValues,
+                                                            sex: sex, 
+                                                            activityLevel: selectedActivityLevel)
             setNormalStateForResult(result: result, description: description)
         }
     }
@@ -215,13 +227,21 @@ final class CalculatorViewController: BaseViewController {
         }
     }
     
-    private func highlightInvalidFields(_ fields: [CalculatorViewModel.InputField],
+    private func setErrorStateForInvalidFields(_ fields: [CalculatorViewModel.InputField],
                                         inputFieldMapping: [CalculatorViewModel.InputField: MeasurementInputView]) {
         for field in fields {
             inputFieldMapping[field]?.currentState = .error
         }
-        
-        setErrorStateForResult()
+    }
+    
+    private func setNormalStateForActivityButton() {
+        chooseActivityLevelButton.setTitleColor(.primaryWhite, for: .normal)
+        chooseActivityLevelButton.layer.borderColor = UIColor.primaryWhite.cgColor
+    }
+    
+    private func setErrorStateForActivityButton() {
+        chooseActivityLevelButton.layer.borderColor = UIColor.primaryRed.cgColor
+        chooseActivityLevelButton.setTitleColor(.primaryRed, for: .normal)
     }
     
     private func setErrorStateForResult() {
@@ -231,6 +251,9 @@ final class CalculatorViewController: BaseViewController {
         resultValue.text = viewModel?.resultErrorMessage
         resultValueView.isHidden = false
         resultValueDescription.isHidden = true
+        resultValueView.setNeedsLayout()
+        resultValueView.layoutIfNeeded()
+
     }
     
     private func setNormalStateForResult(result: String, description: String) {

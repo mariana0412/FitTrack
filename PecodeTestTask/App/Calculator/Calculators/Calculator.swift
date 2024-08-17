@@ -6,5 +6,5 @@
 //
 
 protocol Calculator {
-    func calculate(inputs: [CalculatorViewModel.InputField: Double], sex: UserSex?) -> (result: Double, description: String)
+    func calculate() -> (result: Double, description: String)
 }

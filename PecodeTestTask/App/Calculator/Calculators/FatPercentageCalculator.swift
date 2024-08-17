@@ -7,19 +7,36 @@
 
 import Foundation
 
+enum FatPercentLevel: String {
+    case tooLow = "Severe underweight"
+    case low = "Severely underweight"
+    case notEnough = "Underweight"
+    case normal = "Normal"
+    case high = "Overweight"
+    case tooHigh = "Obesity"
+    case empty = "Enter the correct values"
+}
+
 class FatPercentageCalculator: Calculator {
     
-    func calculate(inputs: [CalculatorViewModel.InputField: Double], sex: UserSex?) -> (result: Double, description: String) {
-        guard let height = inputs[.height],
-              let neck = inputs[.neck],
-              let waist = inputs[.waist],
-              let sex = sex else {
-            return (0, FatPercentLevel.empty.rawValue)
-        }
-        
+    let height: Double
+    let neck: Double
+    let waist: Double
+    let hips: Double?
+    let sex: UserSex
+    
+    init(height: Double, neck: Double, waist: Double, hips: Double? = nil, sex: UserSex) {
+        self.height = height
+        self.neck = neck
+        self.waist = waist
+        self.hips = hips
+        self.sex = sex
+    }
+    
+    func calculate() -> (result: Double, description: String) {
         var fatPercentage: Double = 0
         if sex == .female {
-            guard let hips = inputs[.hips] else {
+            guard let hips else {
                 return (0, FatPercentLevel.empty.rawValue)
             }
             fatPercentage = (495 / (1.2958 - 0.35 * log10(waist + hips - neck) + 0.221 * log10(height))) - 450
@@ -50,14 +67,4 @@ class FatPercentageCalculator: Calculator {
             return .tooHigh
         }
     }
-}
-
-enum FatPercentLevel: String {
-    case tooLow = "Severe underweight"
-    case low = "Severely underweight"
-    case notEnough = "Underweight"
-    case normal = "Normal"
-    case high = "Overweight"
-    case tooHigh = "Obesity"
-    case empty = "Enter the correct values"
 }
