@@ -50,8 +50,8 @@ final class ExerciseViewController: BaseViewController {
     }
     
     static func instantiate() -> ExerciseViewController {
-        let storyboard = UIStoryboard(name: StoryboardConstants.exercise, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.exerciseViewController) as! ExerciseViewController
+        return instantiate(fromStoryboard: StoryboardConstants.exercise,
+                           viewControllerIdentifier: ViewControllerIdentifiers.exerciseViewController)
     }
     
     override func setBackgroundImage(named imageName: String) {}

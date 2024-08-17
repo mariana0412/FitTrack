@@ -97,8 +97,8 @@ final class CalculatorViewController: BaseViewController {
     }
     
     static func instantiate() -> CalculatorViewController {
-        let storyboard = UIStoryboard(name: StoryboardConstants.calculator, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.calculatorViewController) as! CalculatorViewController
+        return instantiate(fromStoryboard: StoryboardConstants.calculator,
+                           viewControllerIdentifier: ViewControllerIdentifiers.calculatorViewController)
     }
    
     private func setupUI() {

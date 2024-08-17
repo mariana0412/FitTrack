@@ -56,8 +56,8 @@ final class AlertViewController: UIViewController {
     }
     
     static func instantiate() -> AlertViewController {
-        let storyboard = UIStoryboard(name: StoryboardConstants.alert, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.alertViewController) as! AlertViewController
+        return instantiate(fromStoryboard: StoryboardConstants.alert,
+                           viewControllerIdentifier: ViewControllerIdentifiers.alertViewController)
     }
     
     private func setupUI() {

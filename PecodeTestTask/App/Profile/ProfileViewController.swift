@@ -58,8 +58,8 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
     }
     
     static func instantiate() -> ProfileViewController {
-        let storyboard = UIStoryboard(name: StoryboardConstants.profile, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.profileViewController) as! ProfileViewController
+        return instantiate(fromStoryboard: StoryboardConstants.profile,
+                           viewControllerIdentifier: ViewControllerIdentifiers.profileViewController)
     }
     
     private func setupUI() {

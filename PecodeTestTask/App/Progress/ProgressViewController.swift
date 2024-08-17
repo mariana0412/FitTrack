@@ -57,8 +57,8 @@ final class ProgressViewController: BaseViewController {
     }
     
     static func instantiate() -> ProgressViewController {
-        let storyboard = UIStoryboard(name: StoryboardConstants.progress, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.progressViewController) as! ProgressViewController
+        return instantiate(fromStoryboard: StoryboardConstants.progress,
+                           viewControllerIdentifier: ViewControllerIdentifiers.progressViewController)
     }
     
     private func configureNavigationBar() {

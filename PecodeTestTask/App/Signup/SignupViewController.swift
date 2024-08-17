@@ -31,8 +31,8 @@ final class SignupViewController: BaseViewController {
     }
     
     static func instantiate() -> SignupViewController {
-        let storyboard = UIStoryboard(name: StoryboardConstants.signup, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.signupViewController) as! SignupViewController
+        return instantiate(fromStoryboard: StoryboardConstants.signup,
+                           viewControllerIdentifier: ViewControllerIdentifiers.signupViewController)
     }
     
     private func setupUI() {

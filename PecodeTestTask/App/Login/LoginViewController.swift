@@ -29,8 +29,8 @@ final class LoginViewController: BaseViewController {
     }
     
     static func instantiate() -> LoginViewController {
-        let storyboard = UIStoryboard(name: StoryboardConstants.login, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.loginViewController) as! LoginViewController
+        return instantiate(fromStoryboard: StoryboardConstants.login,
+                           viewControllerIdentifier: ViewControllerIdentifiers.loginViewController)
     }
     
     private func setupUI() {

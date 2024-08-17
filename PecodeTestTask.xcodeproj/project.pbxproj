@@ -175,6 +175,9 @@
 		CAD7CC632C71102F00DD5DE2 /* DailyCalorieRequirementCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC602C71102F00DD5DE2 /* DailyCalorieRequirementCalculator.swift */; };
 		CAD7CC642C71133000DD5DE2 /* CalculatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC2D2C6D267700DD5DE2 /* CalculatorType.swift */; };
 		CAD7CC652C71133000DD5DE2 /* CalculatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC2D2C6D267700DD5DE2 /* CalculatorType.swift */; };
+		CAD7CC672C712F8B00DD5DE2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC662C712F8B00DD5DE2 /* UIViewController+Extensions.swift */; };
+		CAD7CC682C712F8B00DD5DE2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC662C712F8B00DD5DE2 /* UIViewController+Extensions.swift */; };
+		CAD7CC692C712F8B00DD5DE2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC662C712F8B00DD5DE2 /* UIViewController+Extensions.swift */; };
 		CAE8F1462C52973A00355755 /* OptionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */; };
 		CAE8F1492C52B8C500355755 /* OptionSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE8F1482C52B8C500355755 /* OptionSwitch.xib */; };
 		CAE8F14B2C52B8E800355755 /* OptionSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F14A2C52B8E800355755 /* OptionSwitch.swift */; };
@@ -368,6 +371,7 @@
 		CAD7CC512C70DF9700DD5DE2 /* ActivityLevelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityLevelCell.xib; sourceTree = "<group>"; };
 		CAD7CC522C70DF9800DD5DE2 /* ActivityLevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLevelCell.swift; sourceTree = "<group>"; };
 		CAD7CC602C71102F00DD5DE2 /* DailyCalorieRequirementCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCalorieRequirementCalculator.swift; sourceTree = "<group>"; };
+		CAD7CC662C712F8B00DD5DE2 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCellDelegate.swift; sourceTree = "<group>"; };
 		CAE8F1482C52B8C500355755 /* OptionSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionSwitch.xib; sourceTree = "<group>"; };
 		CAE8F14A2C52B8E800355755 /* OptionSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSwitch.swift; sourceTree = "<group>"; };
@@ -687,6 +691,7 @@
 				CAEB19182C4EF2B4000FE4E5 /* UIImage+Extensions.swift */,
 				CA9018D32C5C2A140030FA26 /* Notification+Extensions.swift */,
 				CAB607692C6AABB2000A3D78 /* UILabel+Extensions.swift */,
+				CAD7CC662C712F8B00DD5DE2 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1319,6 +1324,7 @@
 				CAEB19052C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */,
 				CA5D810D2C5181E300486145 /* OptionCell.swift in Sources */,
 				CA002E182C319C7A0053284B /* HomeViewModel.swift in Sources */,
+				CAD7CC672C712F8B00DD5DE2 /* UIViewController+Extensions.swift in Sources */,
 				CA9018CE2C5BC4D60030FA26 /* ChartCoordinator.swift in Sources */,
 				CABE579B2C624A5700E3AFC2 /* Level.swift in Sources */,
 				CA002DD62C318B0F0053284B /* AppDelegate.swift in Sources */,
@@ -1369,6 +1375,7 @@
 				CAD7CC472C70AFB800DD5DE2 /* FatPercentageCalculator.swift in Sources */,
 				CAD7CC652C71133000DD5DE2 /* CalculatorType.swift in Sources */,
 				CAEB190A2C4ED6E7000FE4E5 /* AlertCoordinator.swift in Sources */,
+				CAD7CC682C712F8B00DD5DE2 /* UIViewController+Extensions.swift in Sources */,
 				CAEB19162C4EE4C4000FE4E5 /* AlertContent.swift in Sources */,
 				CA002DED2C318B110053284B /* PecodeTestTaskTests.swift in Sources */,
 				CAD7CC622C71102F00DD5DE2 /* DailyCalorieRequirementCalculator.swift in Sources */,
@@ -1384,6 +1391,7 @@
 				CAEB191B2C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */,
 				CAEB190F2C4ED71A000FE4E5 /* AlertViewModel.swift in Sources */,
 				CAD7CC3F2C70A44B00DD5DE2 /* BMICalculator.swift in Sources */,
+				CAD7CC692C712F8B00DD5DE2 /* UIViewController+Extensions.swift in Sources */,
 				CAD7CC442C70ABE800DD5DE2 /* Calculator.swift in Sources */,
 				CAEB19072C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */,
 				CA56CBB92C583F8D00AE6481 /* OptionCollectionCell.swift in Sources */,

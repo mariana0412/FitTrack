@@ -48,8 +48,8 @@ final class OptionsViewController: UIViewController {
     }
     
     static func instantiate() -> OptionsViewController {
-        let storyboard = UIStoryboard(name: StoryboardConstants.options, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.optionsViewController) as! OptionsViewController
+        return instantiate(fromStoryboard: StoryboardConstants.options,
+                           viewControllerIdentifier: ViewControllerIdentifiers.optionsViewController)
     }
     
     private func configureTableView() {

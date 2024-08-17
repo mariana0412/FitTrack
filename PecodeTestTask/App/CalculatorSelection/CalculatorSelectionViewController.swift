@@ -33,8 +33,8 @@ final class CalculatorSelectionViewController: BaseViewController {
     }
     
     static func instantiate() -> CalculatorSelectionViewController {
-        let storyboard = UIStoryboard(name: StoryboardConstants.calculatorSelection, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.calculatorSelectionViewController) as! CalculatorSelectionViewController
+        return instantiate(fromStoryboard: StoryboardConstants.calculatorSelection,
+                           viewControllerIdentifier: ViewControllerIdentifiers.calculatorSelectionViewController)
     }
     
     private func configureTableView() {

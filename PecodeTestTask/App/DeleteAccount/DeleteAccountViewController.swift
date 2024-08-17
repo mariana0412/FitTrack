@@ -36,8 +36,8 @@ final class DeleteAccountViewController: BaseViewController {
     }
     
     static func instantiate() -> DeleteAccountViewController {
-        let storyboard = UIStoryboard(name: StoryboardConstants.deleteAccount, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.deleteAccountViewController) as! DeleteAccountViewController
+        return instantiate(fromStoryboard: StoryboardConstants.deleteAccount,
+                           viewControllerIdentifier: ViewControllerIdentifiers.deleteAccountViewController)
     }
     
     private func setupUI() {

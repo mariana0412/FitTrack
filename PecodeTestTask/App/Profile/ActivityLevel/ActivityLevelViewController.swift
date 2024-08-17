@@ -45,8 +45,8 @@ final class ActivityLevelViewController: UIViewController {
     }
     
     static func instantiate() -> ActivityLevelViewController {
-        let storyboard = UIStoryboard(name: StoryboardConstants.activityLevel, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.activityLevelViewController) as! ActivityLevelViewController
+        return instantiate(fromStoryboard: StoryboardConstants.activityLevel,
+                           viewControllerIdentifier: ViewControllerIdentifiers.activityLevelViewController)
     }
     
     private func configureTableView() {

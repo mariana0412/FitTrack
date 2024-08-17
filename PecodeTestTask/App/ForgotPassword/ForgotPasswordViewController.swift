@@ -33,8 +33,8 @@ final class ForgotPasswordViewController: BaseViewController {
     }
     
     static func instantiate() -> ForgotPasswordViewController {
-        let storyboard = UIStoryboard(name: StoryboardConstants.forgotPassword, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.forgotPasswordViewController) as! ForgotPasswordViewController
+        return instantiate(fromStoryboard: StoryboardConstants.forgotPassword,
+                           viewControllerIdentifier: ViewControllerIdentifiers.forgotPasswordViewController)
     }
     
     private func setupUI() {
