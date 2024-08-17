@@ -26,6 +26,7 @@ final class LoginViewController: BaseViewController {
         
         setupUI()
         setupActions()
+        setupDismissKeyboardOnTap()
     }
     
     static func instantiate() -> LoginViewController {
@@ -63,20 +64,13 @@ final class LoginViewController: BaseViewController {
     }
     
     private func setupActions() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        view.addGestureRecognizer(tapGesture)
-        
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
         backToSignupButton.addTarget(self, action: #selector(backToSignupButtonTapped), for: .touchUpInside)
     }
     
-    @objc private func hideKeyboard() {
-        view.endEditing(true)
-    }
-    
     @objc private func loginButtonTapped() {
-        view.endEditing(true)
+        dismissKeyboard()
         
         guard let emailText = email.textFieldText,
               let passwordText = password.textFieldText else {

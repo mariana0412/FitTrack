@@ -28,6 +28,7 @@ final class SignupViewController: BaseViewController {
         
         setupUI()
         setupActions()
+        setupDismissKeyboardOnTap()
     }
     
     static func instantiate() -> SignupViewController {
@@ -77,19 +78,12 @@ final class SignupViewController: BaseViewController {
     }
     
     private func setupActions() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        view.addGestureRecognizer(tapGesture)
-        
         signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
-    @objc private func hideKeyboard() {
-        view.endEditing(true)
-    }
-    
     @objc private func signupButtonTapped() {
-        view.endEditing(true)
+        dismissKeyboard()
         
         guard let nameText = name.textFieldText,
               let emailText = email.textFieldText,

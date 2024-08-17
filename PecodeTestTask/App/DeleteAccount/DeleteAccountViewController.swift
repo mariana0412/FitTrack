@@ -27,6 +27,7 @@ final class DeleteAccountViewController: BaseViewController {
         setupUI()
         bindViewModel()
         setupActions()
+        setupDismissKeyboardOnTap()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,12 +64,10 @@ final class DeleteAccountViewController: BaseViewController {
     private func setupActions() {
         deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        view.addGestureRecognizer(tapGesture)
     }
     
     @objc private func deleteButtonTapped() {
-        view.endEditing(true)
+        dismissKeyboard()
         
         guard let enteredEmail = emailTextField.textFieldText else { return }
         
@@ -100,10 +99,6 @@ final class DeleteAccountViewController: BaseViewController {
     
     @objc private func backButtonTapped() {
         viewModel?.navigateToProfile()
-    }
-    
-    @objc private func hideKeyboard() {
-        view.endEditing(true)
     }
     
 }

@@ -86,6 +86,7 @@ final class CalculatorViewController: BaseViewController {
         super.viewDidLoad()
         
         setupUI()
+        setupDismissKeyboardOnTap()
         setupTextFieldDelegates()
     }
     

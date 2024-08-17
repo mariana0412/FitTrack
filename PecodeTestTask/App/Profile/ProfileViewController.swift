@@ -33,6 +33,7 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
         setupActions()
         setupImagePicker()
         updateSelectedOptions()
+        setupDismissKeyboardOnTap()
         
         name.textField.delegate = self
     }
@@ -101,13 +102,6 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
     private func setupActions() {
         addOptionsButton.addTarget(self, action: #selector(addOptionsButtonTapped), for: .touchUpInside)
         deleteAccountButton.addTarget(self, action: #selector(deleteAccountButtonTapped), for: .touchUpInside)
-                
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        view.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc private func hideKeyboard() {
-        view.endEditing(true)
     }
     
     @objc private func backButtonTapped() {
@@ -119,7 +113,7 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
     }
     
     @objc private func saveButtonTapped() {
-        view.endEditing(true)
+        dismissKeyboard()
         
         guard let viewModel else { return }
         
@@ -134,7 +128,6 @@ final class ProfileViewController: BaseViewController, OptionSwitchDelegate {
             if successful {
                 self?.imageWasChanged = false
                 self?.disableSaveButton()
-                self?.hideKeyboard()
                 self?.updateSelectedOptions()
                 self?.disableSaveButton()
             }
