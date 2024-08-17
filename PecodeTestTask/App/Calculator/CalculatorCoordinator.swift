@@ -27,4 +27,19 @@ class CalculatorCoordinator: Coordinator {
         navigationController.popViewController(animated: false)
     }
     
+    func navigateToActivityLevel(selectedActivityLevel: DailyCaloriesRateActivity?) {
+        let activityLevelCoordinator = ActivityLevelCoordinator(navigationController: navigationController,
+                                                                selectedActivityLevel: selectedActivityLevel)
+        activityLevelCoordinator.delegate = self
+        activityLevelCoordinator.start()
+    }
+    
+}
+
+extension CalculatorCoordinator: ActivityLevelCoordinatorDelegate {
+    func didSelectActivityLevel(_ activityLevel: DailyCaloriesRateActivity?) {
+        if let calculatorVC = navigationController.topViewController as? CalculatorViewController {
+            calculatorVC.selectedActivityLevel = activityLevel
+        }
+    }
 }

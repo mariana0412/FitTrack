@@ -19,6 +19,8 @@ final class CalculatorViewController: BaseViewController {
         
         enum Layout {
             static let titleLabelToStackViewConstraint: CGFloat = 25
+            static let resultViewToStackViewConstraint: CGFloat = 45
+            static let chooseActivityLevelButtonBorderWidth: CGFloat = 1
             
             enum ResultValueView {
                 static let cornerRadius: CGFloat = 8
@@ -53,7 +55,16 @@ final class CalculatorViewController: BaseViewController {
     @IBOutlet private weak var resultViewToStackViewConstraint: NSLayoutConstraint!
     
     var viewModel: CalculatorViewModel?
-    var sex: UserSex = .male
+    
+    var selectedActivityLevel: DailyCaloriesRateActivity? {
+        didSet {
+            if let newTitle = selectedActivityLevel?.rawValue {
+                chooseActivityLevelButton.setTitle(newTitle, for: .normal)
+            }
+        }
+    }
+    
+    private var sex: UserSex = .male
     
     private lazy var inputViews: [MeasurementInputView] = [
         heightInputView,
@@ -88,10 +99,10 @@ final class CalculatorViewController: BaseViewController {
         
         chooseActivityLevelButton.tintColor = UIColor.primaryWhite
         chooseActivityLevelButton.layer.borderColor = UIColor.primaryWhite.cgColor
-        
-        chooseActivityLevelButton.layer.borderWidth = 1
+        chooseActivityLevelButton.layer.borderWidth = Constants.Layout.chooseActivityLevelButtonBorderWidth
         chooseActivityLevelButton.layer.cornerRadius = chooseActivityLevelButton.frame.height / 2
         chooseActivityLevelButton.backgroundColor = .clear
+        chooseActivityLevelButton.titleLabel?.lineBreakMode = .byTruncatingTail
         
         resultValueView.layer.cornerRadius = Constants.Layout.ResultValueView.cornerRadius
         resultValueView.layer.borderWidth = Constants.Layout.ResultValueView.borderWidth
@@ -124,7 +135,7 @@ final class CalculatorViewController: BaseViewController {
             chooseActivityLevelButton.setTitle(viewModel.chooseActivityLevelButtonTitle, for: .normal)
         } else {
             chooseActivityLevelButton.removeFromSuperview()
-            resultViewToStackViewConstraint.constant = 45
+            resultViewToStackViewConstraint.constant = Constants.Layout.resultViewToStackViewConstraint
         }
         
         calculateButton.buttonTitle = viewModel.calculateButtonTitle
@@ -168,7 +179,7 @@ final class CalculatorViewController: BaseViewController {
         viewModel?.navigateToCalculatorSelection()
     }
     
-    @IBAction func calculateButtonTapped(_ sender: Any) {
+    @IBAction private func calculateButtonTapped(_ sender: Any) {
         guard let viewModel else { return }
         
         let inputFieldMapping = createInputFieldMapping()
@@ -249,4 +260,9 @@ final class CalculatorViewController: BaseViewController {
             .age: ageInputView
         ]
     }
+    
+    @IBAction private func chooseActivityLevelButtonClicked(_ sender: Any) {
+        viewModel?.navigateToActivityLevel(selectedActivityLevel: selectedActivityLevel)
+    }
+    
 }

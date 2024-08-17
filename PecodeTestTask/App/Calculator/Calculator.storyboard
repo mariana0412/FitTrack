@@ -88,8 +88,11 @@
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgz-0K-CmS">
                                                 <rect key="frame" x="43" y="531.66666666666663" width="307" height="49"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Choose Activity Level"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Choose Activity Level"/>
+                                                <connections>
+                                                    <action selector="chooseActivityLevelButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="DN7-Ie-fs7"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jw7-hb-Xl9" userLabel="Result View">
                                                 <rect key="frame" x="43" y="625.66666666666663" width="307" height="136"/>

@@ -149,4 +149,8 @@ class CalculatorViewModel {
         coordinator?.navigateToCalculatorSelection()
     }
     
+    func navigateToActivityLevel(selectedActivityLevel: DailyCaloriesRateActivity?) {
+        coordinator?.navigateToActivityLevel(selectedActivityLevel: selectedActivityLevel)
+    }
+    
 }
