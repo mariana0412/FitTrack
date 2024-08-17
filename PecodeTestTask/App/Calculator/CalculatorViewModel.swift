@@ -7,6 +7,8 @@
 
 class CalculatorViewModel {
     
+    // MARK: - Properties
+    
     let navigationBarTitle = "Calculator"
     let chooseActivityLevelButtonTitle = "Choose Activity Level"
     let calculateButtonTitle = "Calculate"
@@ -16,10 +18,14 @@ class CalculatorViewModel {
     private var coordinator: CalculatorCoordinator?
     let type: CalculatorType
     
+    // MARK: - Initialization
+    
     init(coordinator: CalculatorCoordinator?, type: CalculatorType) {
         self.coordinator = coordinator
         self.type = type
     }
+    
+    // MARK: - Input
     
     enum InputField {
         case height
@@ -44,6 +50,8 @@ class CalculatorViewModel {
         .hips: (title: "Hips", unit: "cm"),
         .age: (title: "Age", unit: "years")
     ]
+    
+    // MARK: - Configuration Methods
     
     func configurations(sex: UserSex) -> [InputField: InputConfiguration] {
         switch type {
@@ -95,7 +103,9 @@ class CalculatorViewModel {
         return config
     }
     
-    func validateInputs(values: [InputField: String?]) -> (invalidFields: [InputField], 
+    // MARK: - Validation
+    
+    func validateInputs(values: [InputField: String?]) -> (invalidFields: [InputField],
                                                            validatedValues: [InputField: Double]) {
         var invalidFields: [InputField] = []
         var validatedValues: [InputField: Double] = [:]
@@ -111,6 +121,8 @@ class CalculatorViewModel {
         
         return (invalidFields, validatedValues)
     }
+    
+    // MARK: - Calculation
     
     func calculate(values: [InputField: Double],
                    sex: UserSex,
@@ -133,43 +145,52 @@ class CalculatorViewModel {
                                   activity: DailyCaloriesRateActivity?) -> Calculator? {
         switch type {
         case .bodyMassIndex:
-            if let height = inputs[.height],
-               let weight = inputs[.weight] {
-                return BMICalculator(height: height,
-                                     weight: weight)
-            }
+            return createBMICalculator(from: inputs)
         case .fatPercentage:
-            if let height = inputs[.height],
-               let neck = inputs[.neck],
-               let waist = inputs[.waist] {
-                
-                let hips = sex == .female ? inputs[.hips] : nil
-                    
-                if sex == .female && hips == nil {
-                    return nil
-                }
-                return FatPercentageCalculator(height: height,
-                                               neck: neck,
-                                               waist: waist,
-                                               hips: hips,
-                                               sex: sex)
-            }
+            return createFatPercentageCalculator(from: inputs, sex: sex)
         case .dailyCalorieRequirement:
-            if let height = inputs[.height],
-               let weight = inputs[.weight],
-               let age = inputs[.age],
-               let activity
-            {
-                return DailyCalorieRequirementCalculator(height: height,
-                                                         weight: weight,
-                                                         age: age,
-                                                         sex: sex, 
-                                                         activity: activity)
-            }
+            return createDailyCalorieCalculator(from: inputs, sex: sex, activity: activity)
         }
-        return nil
     }
     
+    private func createBMICalculator(from inputs: [InputField: Double]) -> Calculator? {
+        guard let height = inputs[.height],
+              let weight = inputs[.weight] else { return nil }
+        
+        return BMICalculator(height: height, weight: weight)
+    }
+    
+    private func createFatPercentageCalculator(from inputs: [InputField: Double], 
+                                               sex: UserSex) -> Calculator? {
+        guard let height = inputs[.height],
+              let neck = inputs[.neck],
+              let waist = inputs[.waist] else { return nil }
+        
+        let hips = sex == .female ? inputs[.hips] : nil
+        if sex == .female && hips == nil { return nil }
+        
+        return FatPercentageCalculator(height: height,
+                                       neck: neck,
+                                       waist: waist,
+                                       hips: hips,
+                                       sex: sex)
+    }
+    
+    private func createDailyCalorieCalculator(from inputs: [InputField: Double],
+                                              sex: UserSex,
+                                              activity: DailyCaloriesRateActivity?) -> Calculator? {
+        guard let height = inputs[.height],
+              let weight = inputs[.weight],
+              let age = inputs[.age],
+              let activity else { return nil }
+        
+        return DailyCalorieRequirementCalculator(height: height,
+                                                 weight: weight,
+                                                 age: age,
+                                                 sex: sex,
+                                                 activity: activity)
+    }
+
     private func valueIsValid(_ value: String?) -> (isValid: Bool, value: Double?) {
         guard let value = value,
               !value.isEmpty,
@@ -179,6 +200,8 @@ class CalculatorViewModel {
         }
         return (true, doubleValue)
     }
+    
+    // MARK: - Navigation
 
     func navigateToCalculatorSelection() {
         coordinator?.navigateToCalculatorSelection()

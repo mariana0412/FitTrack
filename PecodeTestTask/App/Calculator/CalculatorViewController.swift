@@ -9,6 +9,8 @@ import UIKit
 
 final class CalculatorViewController: BaseViewController {
     
+    // MARK: - Constants
+    
     private enum Constants {
         static let allowedCharacters = "0123456789."
         
@@ -34,6 +36,8 @@ final class CalculatorViewController: BaseViewController {
         }
     }
     
+    // MARK: - Outlets
+    
     @IBOutlet private weak var calculatorTitleLabel: UILabel!
     
     @IBOutlet private weak var segmentedControl: CustomSegmentedControl!
@@ -55,6 +59,8 @@ final class CalculatorViewController: BaseViewController {
     
     @IBOutlet private weak var titleLabelToStackViewConstraint: NSLayoutConstraint!
     @IBOutlet private weak var resultViewToStackViewConstraint: NSLayoutConstraint!
+    
+    // MARK: - Properties
     
     var viewModel: CalculatorViewModel?
     
@@ -82,6 +88,15 @@ final class CalculatorViewController: BaseViewController {
         return inputViews.filter { !$0.isHidden }
     }
     
+    // MARK: - Initialization
+    
+    static func instantiate() -> CalculatorViewController {
+        return instantiate(fromStoryboard: StoryboardConstants.calculator,
+                           viewControllerIdentifier: ViewControllerIdentifiers.calculatorViewController)
+    }
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -97,11 +112,44 @@ final class CalculatorViewController: BaseViewController {
         bindViewModel()
     }
     
-    static func instantiate() -> CalculatorViewController {
-        return instantiate(fromStoryboard: StoryboardConstants.calculator,
-                           viewControllerIdentifier: ViewControllerIdentifiers.calculatorViewController)
+    // MARK: - Actions
+    
+    @IBAction private func calculateButtonTapped(_ sender: Any) {
+        resetInputFieldStates()
+        
+        guard let viewModel else { return }
+        
+        let inputFieldMapping = createInputFieldMapping()
+
+        let values = gatherInputValues(inputFieldMapping: inputFieldMapping)
+        let (invalidFields, validatedValues) = viewModel.validateInputs(values: values)
+        
+        let validationIsSuccessful = invalidFields.isEmpty
+        if !validationIsSuccessful {
+            setErrorStateForResult()
+            setErrorStateForInvalidFields(invalidFields, inputFieldMapping: inputFieldMapping)
+        }
+        
+        let activityLevelIsInvalid = viewModel.type == .dailyCalorieRequirement && selectedActivityLevel == nil
+        if activityLevelIsInvalid {
+            setErrorStateForActivityButton()
+            setErrorStateForResult()
+        }
+        
+        if validationIsSuccessful && !activityLevelIsInvalid {
+            let (result, description) = viewModel.calculate(values: validatedValues,
+                                                            sex: sex,
+                                                            activityLevel: selectedActivityLevel)
+            setNormalStateForResult(result: result, description: description)
+        }
+    }
+    
+    @IBAction private func chooseActivityLevelButtonClicked(_ sender: Any) {
+        viewModel?.navigateToActivityLevel(selectedActivityLevel: selectedActivityLevel)
     }
    
+    // MARK:  - Setup
+    
     private func setupUI() {
         calculatorTitleLabel.font = Constants.Fonts.calculatorTitleLabelFont
         calculatorTitleLabel.textColor = .primaryWhite
@@ -174,6 +222,8 @@ final class CalculatorViewController: BaseViewController {
         }
     }
     
+    // MARK: - Navigation
+    
     private func configureNavigationBar() {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         let _ = NavigationBarConfigurator.configureNavigationBar(
@@ -187,35 +237,7 @@ final class CalculatorViewController: BaseViewController {
         viewModel?.navigateToCalculatorSelection()
     }
     
-    @IBAction private func calculateButtonTapped(_ sender: Any) {
-        resetInputFieldStates()
-        
-        guard let viewModel else { return }
-        
-        let inputFieldMapping = createInputFieldMapping()
-
-        let values = gatherInputValues(inputFieldMapping: inputFieldMapping)
-        let (invalidFields, validatedValues) = viewModel.validateInputs(values: values)
-        
-        let validationIsSuccessful = invalidFields.isEmpty
-        if !validationIsSuccessful {
-            setErrorStateForResult()
-            setErrorStateForInvalidFields(invalidFields, inputFieldMapping: inputFieldMapping)
-        }
-        
-        let activityLevelIsInvalid = viewModel.type == .dailyCalorieRequirement && selectedActivityLevel == nil
-        if activityLevelIsInvalid {
-            setErrorStateForActivityButton()
-            setErrorStateForResult()
-        }
-        
-        if validationIsSuccessful && !activityLevelIsInvalid {
-            let (result, description) = viewModel.calculate(values: validatedValues,
-                                                            sex: sex, 
-                                                            activityLevel: selectedActivityLevel)
-            setNormalStateForResult(result: result, description: description)
-        }
-    }
+    // MARK: - Helpers
     
     private func gatherInputValues(inputFieldMapping: [CalculatorViewModel.InputField: MeasurementInputView]) -> [CalculatorViewModel.InputField: String?] {
         var values: [CalculatorViewModel.InputField: String?] = [:]
@@ -236,7 +258,7 @@ final class CalculatorViewController: BaseViewController {
     }
     
     private func setErrorStateForInvalidFields(_ fields: [CalculatorViewModel.InputField],
-                                        inputFieldMapping: [CalculatorViewModel.InputField: MeasurementInputView]) {
+                                               inputFieldMapping: [CalculatorViewModel.InputField: MeasurementInputView]) {
         for field in fields {
             inputFieldMapping[field]?.currentState = .error
         }
@@ -259,9 +281,6 @@ final class CalculatorViewController: BaseViewController {
         resultValue.text = viewModel?.resultErrorMessage
         resultValueView.isHidden = false
         resultValueDescription.isHidden = true
-        resultValueView.setNeedsLayout()
-        resultValueView.layoutIfNeeded()
-
     }
     
     private func setNormalStateForResult(result: String, description: String) {
@@ -303,11 +322,9 @@ final class CalculatorViewController: BaseViewController {
         }
     }
     
-    @IBAction private func chooseActivityLevelButtonClicked(_ sender: Any) {
-        viewModel?.navigateToActivityLevel(selectedActivityLevel: selectedActivityLevel)
-    }
-    
 }
+
+// MARK: - UITextFieldDelegate
 
 extension CalculatorViewController: UITextFieldDelegate {
     
