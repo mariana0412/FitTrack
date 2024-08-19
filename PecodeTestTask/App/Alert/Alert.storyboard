@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Alert View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AlertViewController" id="Y6W-OH-hqX" customClass="AlertViewController" customModule="PecodeTestTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYq-49-HTm" userLabel="Alert View">
+                                <rect key="frame" x="55" y="354.33333333333331" width="283" height="143.33333333333331"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The form has been sent to your e-mail" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAp-jp-zoi" userLabel="Alert Label">
+                                        <rect key="frame" x="16" y="16.000000000000004" width="251" height="38.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" name="PrimaryWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="4jP-ti-Rpf">
+                                        <rect key="frame" x="16" y="78.333333333333371" width="251" height="49"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQI-pU-FaR" userLabel="Cancel Button" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="125.66666666666667" height="49"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonStyle">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLi-NV-XZd" userLabel="OK Button" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
+                                                <rect key="frame" x="125.66666666666666" y="0.0" width="125.33333333333334" height="49"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonStyle">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="bvJ-BB-e5T"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="jpw-Cl-e5P"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="4jP-ti-Rpf" firstAttribute="top" secondItem="TAp-jp-zoi" secondAttribute="bottom" constant="24" id="6Kk-5I-MH1"/>
+                                    <constraint firstItem="TAp-jp-zoi" firstAttribute="leading" secondItem="bYq-49-HTm" secondAttribute="leading" constant="16" id="8p9-J8-fy6"/>
+                                    <constraint firstAttribute="trailing" secondItem="4jP-ti-Rpf" secondAttribute="trailing" constant="16" id="UeJ-gC-6Qv"/>
+                                    <constraint firstAttribute="width" constant="283" id="X3R-Om-TYR"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="fEG-ox-bpO"/>
+                                    <constraint firstItem="4jP-ti-Rpf" firstAttribute="leading" secondItem="bYq-49-HTm" secondAttribute="leading" constant="16" id="kAl-4c-yYg"/>
+                                    <constraint firstAttribute="trailing" secondItem="TAp-jp-zoi" secondAttribute="trailing" constant="16" id="lcx-in-0UZ"/>
+                                    <constraint firstItem="TAp-jp-zoi" firstAttribute="top" secondItem="bYq-49-HTm" secondAttribute="top" constant="16" id="oQx-lo-fbc"/>
+                                    <constraint firstAttribute="bottom" secondItem="4jP-ti-Rpf" secondAttribute="bottom" constant="16" id="rp1-pi-E1i"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bYq-49-HTm" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Jb4-UH-1ds"/>
+                            <constraint firstItem="bYq-49-HTm" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="hkU-3R-kdf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertView" destination="bYq-49-HTm" id="UG4-WD-99Q"/>
+                        <outlet property="buttonsContainer" destination="4jP-ti-Rpf" id="41t-ZW-BB6"/>
+                        <outlet property="cancelButton" destination="KQI-pU-FaR" id="C3E-ml-yzG"/>
+                        <outlet property="messageLabel" destination="TAp-jp-zoi" id="7Sa-5O-3NC"/>
+                        <outlet property="okButton" destination="dLi-NV-XZd" id="jOP-nf-hva"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="68" y="-34"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="KQI-pU-FaR">
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+        </designable>
+        <designable name="dLi-NV-XZd">
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="PrimaryWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

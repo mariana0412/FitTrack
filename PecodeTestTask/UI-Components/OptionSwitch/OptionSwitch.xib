@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OptionSwitch" customModule="PecodeTestTask" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="tFx-lh-hGV" id="Ajp-zI-MwF"/>
+                <outlet property="metricValue" destination="GPm-lC-Jcj" id="XbU-Eh-grA"/>
+                <outlet property="option" destination="0r7-UO-RrB" id="fLu-uz-AFa"/>
+                <outlet property="optionSwitch" destination="9me-s9-S9m" id="QF2-F9-wth"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFx-lh-hGV" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="59" width="393" height="70"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0r7-UO-RrB" customClass="CustomTextFieldView" customModule="PecodeTestTask" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="114" height="70"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="114" id="W2U-OU-yTx"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPm-lC-Jcj">
+                            <rect key="frame" x="124" y="38" width="42" height="22"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9me-s9-S9m" customClass="CustomSwitch" customModule="PecodeTestTask" customModuleProvider="target">
+                            <rect key="frame" x="319" y="37" width="74" height="33"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="74" id="KHK-7J-FJA"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="width">
+                                    <real key="value" value="74"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="0r7-UO-RrB" firstAttribute="top" secondItem="tFx-lh-hGV" secondAttribute="top" id="01o-8C-hTO"/>
+                        <constraint firstAttribute="bottom" secondItem="GPm-lC-Jcj" secondAttribute="bottom" constant="10" id="1IM-OZ-ue6"/>
+                        <constraint firstItem="GPm-lC-Jcj" firstAttribute="leading" secondItem="0r7-UO-RrB" secondAttribute="trailing" constant="10" id="CI6-JN-v9k"/>
+                        <constraint firstItem="9me-s9-S9m" firstAttribute="top" secondItem="tFx-lh-hGV" secondAttribute="top" constant="37" id="Zr7-Ez-Gc1"/>
+                        <constraint firstItem="GPm-lC-Jcj" firstAttribute="top" secondItem="tFx-lh-hGV" secondAttribute="top" constant="38" id="cyu-8S-aHZ"/>
+                        <constraint firstAttribute="height" constant="70" id="emj-lq-4VL"/>
+                        <constraint firstAttribute="bottom" secondItem="0r7-UO-RrB" secondAttribute="bottom" id="esd-0f-CDj"/>
+                        <constraint firstItem="0r7-UO-RrB" firstAttribute="leading" secondItem="tFx-lh-hGV" secondAttribute="leading" id="gtf-di-U6o"/>
+                        <constraint firstAttribute="bottom" secondItem="9me-s9-S9m" secondAttribute="bottom" id="pQP-3D-KLV"/>
+                        <constraint firstAttribute="trailing" secondItem="9me-s9-S9m" secondAttribute="trailing" id="sCd-d7-T3g"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="tFx-lh-hGV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="45a-dl-kge"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tFx-lh-hGV" secondAttribute="trailing" id="SYl-tz-HEf"/>
+                <constraint firstItem="tFx-lh-hGV" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="yqN-RP-9Vc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-153.43511450381678" y="-12.67605633802817"/>
+        </view>
+    </objects>
+</document>

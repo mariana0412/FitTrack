@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Progress View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ProgressViewController" id="Y6W-OH-hqX" customClass="ProgressViewController" customModule="PecodeTestTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1x0-qz-dpg">
+                                <rect key="frame" x="52.666666666666657" y="371" width="288" height="110"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="dvs-tX-2so">
+                                        <rect key="frame" x="21" y="19" width="247" height="72"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gID-pj-cl4">
+                                                <rect key="frame" x="0.0" y="1" width="21" height="70.666666666666671"/>
+                                                <color key="tintColor" name="PrimaryYellow"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSD-3w-QMH">
+                                                <rect key="frame" x="35" y="0.0" width="212" height="72"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="212" id="vsS-2G-4nb"/>
+                                                </constraints>
+                                                <string key="text">Options are not selected. 
+To display them, add them 
+to your profile.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="dvs-tX-2so" firstAttribute="leading" secondItem="1x0-qz-dpg" secondAttribute="leading" constant="21" id="BkY-01-nh4"/>
+                                    <constraint firstAttribute="trailing" secondItem="dvs-tX-2so" secondAttribute="trailing" constant="20" id="Df4-bZ-SQY"/>
+                                    <constraint firstAttribute="width" constant="288" id="VUQ-zm-i7R"/>
+                                    <constraint firstAttribute="bottom" secondItem="dvs-tX-2so" secondAttribute="bottom" constant="19" id="aMG-B9-Rg7"/>
+                                    <constraint firstItem="dvs-tX-2so" firstAttribute="top" secondItem="1x0-qz-dpg" secondAttribute="top" constant="19" id="h3Y-hE-wia"/>
+                                    <constraint firstAttribute="height" constant="110" id="ypf-SH-jAf"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Y9e-rE-s5W">
+                                <rect key="frame" x="52" y="154" width="289" height="664"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="289" id="Dhy-dp-DoP"/>
+                                </constraints>
+                                <color key="separatorColor" name="PrimaryWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1x0-qz-dpg" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="BWZ-et-sfp"/>
+                            <constraint firstItem="Y9e-rE-s5W" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="95" id="MnS-9A-t5P"/>
+                            <constraint firstItem="1x0-qz-dpg" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="V9K-NA-MV2"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Y9e-rE-s5W" secondAttribute="bottom" id="VjU-dc-JoB"/>
+                            <constraint firstItem="Y9e-rE-s5W" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="aM8-pQ-I1Y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="exclamationMarkIcon" destination="gID-pj-cl4" id="ns0-L3-CgP"/>
+                        <outlet property="noOptionsLabel" destination="NSD-3w-QMH" id="Z68-px-9d7"/>
+                        <outlet property="noOptionsView" destination="1x0-qz-dpg" id="6qe-bC-2In"/>
+                        <outlet property="optionsTableView" destination="Y9e-rE-s5W" id="oPJ-7I-FLi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54" y="-34"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="exclamationmark.circle" catalog="system" width="128" height="123"/>
+        <namedColor name="PrimaryWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryYellow">
+            <color red="1" green="0.85900002717971802" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

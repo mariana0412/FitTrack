@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Activity Level View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ActivityLevelViewController" id="Y6W-OH-hqX" customClass="ActivityLevelViewController" customModule="PecodeTestTask" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ga6-8p-Sv9">
+                                <rect key="frame" x="43" y="262" width="165" height="352"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your Activity Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1s-Gc-BW9" userLabel="ChooseActivity Label">
+                                        <rect key="frame" x="-18.333333333333329" y="12.999999999999998" width="202" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EsN-Sy-kCm">
+                                        <rect key="frame" x="11" y="72.3333333333333" width="288" height="194.66666666666663"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="288" id="IoU-hX-9gG"/>
+                                        </constraints>
+                                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <sections/>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNz-Sx-LGC" customClass="CustomButton" customModule="PecodeTestTask" customModuleProvider="target">
+                                        <rect key="frame" x="49" y="297" width="75" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="confirmButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dkV-eb-0mE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="q1s-Gc-BW9" firstAttribute="centerX" secondItem="Ga6-8p-Sv9" secondAttribute="centerX" id="4DX-Ze-YhT"/>
+                                    <constraint firstItem="KNz-Sx-LGC" firstAttribute="leading" secondItem="Ga6-8p-Sv9" secondAttribute="leading" constant="49" id="8bG-1K-feX"/>
+                                    <constraint firstAttribute="trailing" secondItem="KNz-Sx-LGC" secondAttribute="trailing" constant="41" id="AM2-gl-3Ro"/>
+                                    <constraint firstItem="KNz-Sx-LGC" firstAttribute="top" secondItem="EsN-Sy-kCm" secondAttribute="bottom" constant="30" id="BUN-RJ-TzO"/>
+                                    <constraint firstAttribute="trailing" secondItem="EsN-Sy-kCm" secondAttribute="trailing" constant="19" id="CxS-A1-iLW"/>
+                                    <constraint firstItem="EsN-Sy-kCm" firstAttribute="leading" secondItem="Ga6-8p-Sv9" secondAttribute="leading" constant="11" id="PVg-aC-YFd"/>
+                                    <constraint firstAttribute="bottom" secondItem="KNz-Sx-LGC" secondAttribute="bottom" constant="20" id="byF-De-Cbm"/>
+                                    <constraint firstItem="EsN-Sy-kCm" firstAttribute="top" secondItem="q1s-Gc-BW9" secondAttribute="bottom" constant="39" id="vXH-fD-f5A"/>
+                                    <constraint firstItem="q1s-Gc-BW9" firstAttribute="top" secondItem="Ga6-8p-Sv9" secondAttribute="top" constant="13" id="wYI-p4-Io7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ga6-8p-Sv9" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="203" id="Zey-Q8-JsK"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Ga6-8p-Sv9" secondAttribute="bottom" constant="204" id="u3k-Ac-YmS"/>
+                            <constraint firstItem="Ga6-8p-Sv9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="43" id="whr-3e-6OH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ga6-8p-Sv9" secondAttribute="trailing" constant="43" id="woF-U0-dKS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chooseYourActivityLevelLabel" destination="q1s-Gc-BW9" id="TUi-ug-L62"/>
+                        <outlet property="confirmButton" destination="KNz-Sx-LGC" id="dkU-up-B2n"/>
+                        <outlet property="popupView" destination="Ga6-8p-Sv9" id="xNK-tR-OJ2"/>
+                        <outlet property="tableView" destination="EsN-Sy-kCm" id="bbh-AV-XOg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57" y="-34"/>
+        </scene>
+    </scenes>
+</document>
