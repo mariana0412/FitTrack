@@ -30,11 +30,12 @@ final class ForgotPasswordViewController: BaseViewController {
         
         setupUI()
         setupActions()
+        setupDismissKeyboardOnTap()
     }
     
     static func instantiate() -> ForgotPasswordViewController {
-        let storyboard = UIStoryboard(name: StoryboardConstants.forgotPassword, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.forgotPasswordViewController) as! ForgotPasswordViewController
+        return instantiate(fromStoryboard: StoryboardConstants.forgotPassword,
+                           viewControllerIdentifier: ViewControllerIdentifiers.forgotPasswordViewController)
     }
     
     private func setupUI() {
@@ -65,23 +66,14 @@ final class ForgotPasswordViewController: BaseViewController {
     }
     
     private func setupActions() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        view.addGestureRecognizer(tapGesture)
-        
         continueButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
         backToLoginButton.addTarget(self, action: #selector(backToLoginButtonTapped), for: .touchUpInside)
     }
     
-    @objc private func hideKeyboard() {
-        view.endEditing(true)
-    }
-    
     @objc private func continueButtonTapped() {
-        view.endEditing(true)
+        dismissKeyboard()
         
-        guard let emailText = email.textFieldText else {
-            return
-        }
+        guard let emailText = email.textFieldText else { return }
 
         updateContinueButton()
 

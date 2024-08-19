@@ -39,8 +39,8 @@ final class MusclesViewController: BaseViewController {
     }
     
     static func instantiate() -> MusclesViewController {
-        let storyboard = UIStoryboard(name: StoryboardConstants.muscles, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.musclesViewController) as! MusclesViewController
+        return instantiate(fromStoryboard: StoryboardConstants.muscles,
+                           viewControllerIdentifier: ViewControllerIdentifiers.musclesViewController)
     }
    
     private func setupTableView() {

@@ -1,5 +1,5 @@
 //
-//  OptionNameViewCell.swift
+//  ListItemViewCell.swift
 //  PecodeTestTask
 //
 //  Created by Mariana Piz on 02.08.2024.
@@ -7,9 +7,17 @@
 
 import UIKit
 
-class OptionNameViewCell: UITableViewCell {
+class ListItemViewCell: UITableViewCell {
+    
+    private enum Constants {
+        enum Layout {
+            static let labelBottomInset: CGFloat = 12
+            static let underlineHeight: CGFloat = 1
+        }
+        static let separatorInset = UIEdgeInsets.zero
+    }
 
-    let optionLabel: UILabel = {
+    let label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .primaryWhite
@@ -39,11 +47,12 @@ class OptionNameViewCell: UITableViewCell {
     
     func setupUI() {
         backgroundColor = .clear
-        contentView.addSubview(optionLabel)
+        
+        contentView.addSubview(label)
         
         NSLayoutConstraint.activate([
-            optionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
-            contentView.bottomAnchor.constraint(equalTo: optionLabel.bottomAnchor, constant: 12)
+            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: Constants.Layout.labelBottomInset)
         ])
         
         let underlineView = UIView()
@@ -55,12 +64,12 @@ class OptionNameViewCell: UITableViewCell {
             underlineView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             underlineView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             underlineView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
-            underlineView.heightAnchor.constraint(equalToConstant: 1)
+            underlineView.heightAnchor.constraint(equalToConstant: Constants.Layout.underlineHeight)
         ])
     }
     
     func configure(with text: String) {
-        optionLabel.text = text
+        label.text = text
     }
 }
 

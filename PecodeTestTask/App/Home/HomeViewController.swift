@@ -49,8 +49,8 @@ final class HomeViewController: BaseViewController {
     }
     
     static func instantiate() -> HomeViewController {
-        let storyboard = UIStoryboard(name: StoryboardConstants.home, bundle: .main)
-        return storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.homeViewController) as! HomeViewController
+        return instantiate(fromStoryboard: StoryboardConstants.home,
+                           viewControllerIdentifier: ViewControllerIdentifiers.homeViewController)
     }
     
     private func loadUserData() {

@@ -86,7 +86,7 @@
 		CA9018D02C5BC4DC0030FA26 /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9018CF2C5BC4DC0030FA26 /* Chart.storyboard */; };
 		CA9018D22C5BD0BC0030FA26 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9018D12C5BD0BC0030FA26 /* DateUtils.swift */; };
 		CA9018D42C5C2A140030FA26 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9018D32C5C2A140030FA26 /* Notification+Extensions.swift */; };
-		CA9018D62C5C4BE20030FA26 /* OptionNameViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9018D52C5C4BE20030FA26 /* OptionNameViewCell.swift */; };
+		CA9018D62C5C4BE20030FA26 /* ListItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9018D52C5C4BE20030FA26 /* ListItemViewCell.swift */; };
 		CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */; };
 		CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */; };
 		CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */; };
@@ -99,10 +99,10 @@
 		CAA18EFD2C3C133800F888CD /* ProgressCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EFC2C3C133800F888CD /* ProgressCoordinator.swift */; };
 		CAA18EFF2C3C134200F888CD /* ProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18EFE2C3C134200F888CD /* ProgressViewModel.swift */; };
 		CAA18F012C3C134B00F888CD /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA18F002C3C134B00F888CD /* Progress.storyboard */; };
-		CAA18F032C3C147400F888CD /* Calculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA18F022C3C147400F888CD /* Calculator.storyboard */; };
-		CAA18F052C3C148200F888CD /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F042C3C148200F888CD /* CalculatorViewController.swift */; };
-		CAA18F072C3C148C00F888CD /* CalculatorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F062C3C148C00F888CD /* CalculatorCoordinator.swift */; };
-		CAA18F092C3C149C00F888CD /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F082C3C149C00F888CD /* CalculatorViewModel.swift */; };
+		CAA18F032C3C147400F888CD /* CalculatorSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA18F022C3C147400F888CD /* CalculatorSelection.storyboard */; };
+		CAA18F052C3C148200F888CD /* CalculatorSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F042C3C148200F888CD /* CalculatorSelectionViewController.swift */; };
+		CAA18F072C3C148C00F888CD /* CalculatorSelectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F062C3C148C00F888CD /* CalculatorSelectionCoordinator.swift */; };
+		CAA18F092C3C149C00F888CD /* CalculatorSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F082C3C149C00F888CD /* CalculatorSelectionViewModel.swift */; };
 		CAA18F0B2C3C157C00F888CD /* MusclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F0A2C3C157C00F888CD /* MusclesViewController.swift */; };
 		CAA18F0D2C3C158700F888CD /* MusclesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F0C2C3C158700F888CD /* MusclesViewModel.swift */; };
 		CAA18F0F2C3C159300F888CD /* MusclesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA18F0E2C3C159300F888CD /* MusclesCoordinator.swift */; };
@@ -140,6 +140,44 @@
 		CABE57DE2C65F7D600E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE57DC2C65F7D500E3AFC2 /* GoogleService-Info.plist */; };
 		CABE57DF2C65F7D600E3AFC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CABE57DC2C65F7D500E3AFC2 /* GoogleService-Info.plist */; };
 		CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */; };
+		CAD7CC262C6D1DE900DD5DE2 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC252C6D1DE900DD5DE2 /* CalculatorViewController.swift */; };
+		CAD7CC282C6D1DF500DD5DE2 /* CalculatorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC272C6D1DF500DD5DE2 /* CalculatorCoordinator.swift */; };
+		CAD7CC2A2C6D1DFE00DD5DE2 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC292C6D1DFE00DD5DE2 /* CalculatorViewModel.swift */; };
+		CAD7CC2C2C6D1E0600DD5DE2 /* Calculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD7CC2B2C6D1E0600DD5DE2 /* Calculator.storyboard */; };
+		CAD7CC2E2C6D267700DD5DE2 /* CalculatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC2D2C6D267700DD5DE2 /* CalculatorType.swift */; };
+		CAD7CC312C6E466A00DD5DE2 /* MeasurementInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD7CC302C6E466A00DD5DE2 /* MeasurementInputView.xib */; };
+		CAD7CC332C6E468000DD5DE2 /* MeasurementInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC322C6E468000DD5DE2 /* MeasurementInputView.swift */; };
+		CAD7CC352C6E52F200DD5DE2 /* Saira-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD7CC342C6E52F200DD5DE2 /* Saira-SemiBold.ttf */; };
+		CAD7CC362C6E52F200DD5DE2 /* Saira-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD7CC342C6E52F200DD5DE2 /* Saira-SemiBold.ttf */; };
+		CAD7CC372C6E52F200DD5DE2 /* Saira-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD7CC342C6E52F200DD5DE2 /* Saira-SemiBold.ttf */; };
+		CAD7CC392C6E702E00DD5DE2 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC382C6E702E00DD5DE2 /* CustomSegmentedControl.swift */; };
+		CAD7CC3A2C6E702E00DD5DE2 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC382C6E702E00DD5DE2 /* CustomSegmentedControl.swift */; };
+		CAD7CC3B2C6E702E00DD5DE2 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC382C6E702E00DD5DE2 /* CustomSegmentedControl.swift */; };
+		CAD7CC3D2C70A44B00DD5DE2 /* BMICalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC3C2C70A44B00DD5DE2 /* BMICalculator.swift */; };
+		CAD7CC3E2C70A44B00DD5DE2 /* BMICalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC3C2C70A44B00DD5DE2 /* BMICalculator.swift */; };
+		CAD7CC3F2C70A44B00DD5DE2 /* BMICalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC3C2C70A44B00DD5DE2 /* BMICalculator.swift */; };
+		CAD7CC422C70ABE800DD5DE2 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC412C70ABE800DD5DE2 /* Calculator.swift */; };
+		CAD7CC432C70ABE800DD5DE2 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC412C70ABE800DD5DE2 /* Calculator.swift */; };
+		CAD7CC442C70ABE800DD5DE2 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC412C70ABE800DD5DE2 /* Calculator.swift */; };
+		CAD7CC462C70AFB800DD5DE2 /* FatPercentageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC452C70AFB800DD5DE2 /* FatPercentageCalculator.swift */; };
+		CAD7CC472C70AFB800DD5DE2 /* FatPercentageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC452C70AFB800DD5DE2 /* FatPercentageCalculator.swift */; };
+		CAD7CC482C70AFB800DD5DE2 /* FatPercentageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC452C70AFB800DD5DE2 /* FatPercentageCalculator.swift */; };
+		CAD7CC532C70DF9800DD5DE2 /* ActivityLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC4A2C70DF9700DD5DE2 /* ActivityLevelViewController.swift */; };
+		CAD7CC542C70DF9800DD5DE2 /* ActivityLevelCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC4D2C70DF9700DD5DE2 /* ActivityLevelCoordinator.swift */; };
+		CAD7CC552C70DF9800DD5DE2 /* ActivityLevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC522C70DF9800DD5DE2 /* ActivityLevelCell.swift */; };
+		CAD7CC562C70DF9800DD5DE2 /* ActivityLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC4E2C70DF9700DD5DE2 /* ActivityLevelViewModel.swift */; };
+		CAD7CC572C70DF9800DD5DE2 /* ActivityLevelCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC4C2C70DF9700DD5DE2 /* ActivityLevelCoordinatorDelegate.swift */; };
+		CAD7CC582C70DF9800DD5DE2 /* ActivityLevelCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC502C70DF9700DD5DE2 /* ActivityLevelCellDelegate.swift */; };
+		CAD7CC592C70E7E900DD5DE2 /* ActivityLevel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD7CC4B2C70DF9700DD5DE2 /* ActivityLevel.storyboard */; };
+		CAD7CC5A2C70E7F200DD5DE2 /* ActivityLevelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD7CC512C70DF9700DD5DE2 /* ActivityLevelCell.xib */; };
+		CAD7CC612C71102F00DD5DE2 /* DailyCalorieRequirementCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC602C71102F00DD5DE2 /* DailyCalorieRequirementCalculator.swift */; };
+		CAD7CC622C71102F00DD5DE2 /* DailyCalorieRequirementCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC602C71102F00DD5DE2 /* DailyCalorieRequirementCalculator.swift */; };
+		CAD7CC632C71102F00DD5DE2 /* DailyCalorieRequirementCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC602C71102F00DD5DE2 /* DailyCalorieRequirementCalculator.swift */; };
+		CAD7CC642C71133000DD5DE2 /* CalculatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC2D2C6D267700DD5DE2 /* CalculatorType.swift */; };
+		CAD7CC652C71133000DD5DE2 /* CalculatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC2D2C6D267700DD5DE2 /* CalculatorType.swift */; };
+		CAD7CC672C712F8B00DD5DE2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC662C712F8B00DD5DE2 /* UIViewController+Extensions.swift */; };
+		CAD7CC682C712F8B00DD5DE2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC662C712F8B00DD5DE2 /* UIViewController+Extensions.swift */; };
+		CAD7CC692C712F8B00DD5DE2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7CC662C712F8B00DD5DE2 /* UIViewController+Extensions.swift */; };
 		CAE8F1462C52973A00355755 /* OptionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */; };
 		CAE8F1492C52B8C500355755 /* OptionSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE8F1482C52B8C500355755 /* OptionSwitch.xib */; };
 		CAE8F14B2C52B8E800355755 /* OptionSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE8F14A2C52B8E800355755 /* OptionSwitch.swift */; };
@@ -262,7 +300,7 @@
 		CA9018CF2C5BC4DC0030FA26 /* Chart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chart.storyboard; sourceTree = "<group>"; };
 		CA9018D12C5BD0BC0030FA26 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		CA9018D32C5C2A140030FA26 /* Notification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
-		CA9018D52C5C4BE20030FA26 /* OptionNameViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionNameViewCell.swift; sourceTree = "<group>"; };
+		CA9018D52C5C4BE20030FA26 /* ListItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemViewCell.swift; sourceTree = "<group>"; };
 		CA9CD9762C37214A005FFEFC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		CA9CD97A2C372262005FFEFC /* CustomTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextFieldView.xib; sourceTree = "<group>"; };
 		CAA18EE12C37F98500F888CD /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -275,10 +313,10 @@
 		CAA18EFC2C3C133800F888CD /* ProgressCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCoordinator.swift; sourceTree = "<group>"; };
 		CAA18EFE2C3C134200F888CD /* ProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewModel.swift; sourceTree = "<group>"; };
 		CAA18F002C3C134B00F888CD /* Progress.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
-		CAA18F022C3C147400F888CD /* Calculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calculator.storyboard; sourceTree = "<group>"; };
-		CAA18F042C3C148200F888CD /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
-		CAA18F062C3C148C00F888CD /* CalculatorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCoordinator.swift; sourceTree = "<group>"; };
-		CAA18F082C3C149C00F888CD /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		CAA18F022C3C147400F888CD /* CalculatorSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalculatorSelection.storyboard; sourceTree = "<group>"; };
+		CAA18F042C3C148200F888CD /* CalculatorSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorSelectionViewController.swift; sourceTree = "<group>"; };
+		CAA18F062C3C148C00F888CD /* CalculatorSelectionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorSelectionCoordinator.swift; sourceTree = "<group>"; };
+		CAA18F082C3C149C00F888CD /* CalculatorSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorSelectionViewModel.swift; sourceTree = "<group>"; };
 		CAA18F0A2C3C157C00F888CD /* MusclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesViewController.swift; sourceTree = "<group>"; };
 		CAA18F0C2C3C158700F888CD /* MusclesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesViewModel.swift; sourceTree = "<group>"; };
 		CAA18F0E2C3C159300F888CD /* MusclesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesCoordinator.swift; sourceTree = "<group>"; };
@@ -312,6 +350,28 @@
 		CABE57D62C65519000E3AFC2 /* ExercisesTableHeaderViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableHeaderViewDelegate.swift; sourceTree = "<group>"; };
 		CABE57DC2C65F7D500E3AFC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CAC78E3F2C494B8400E48049 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		CAD7CC252C6D1DE900DD5DE2 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		CAD7CC272C6D1DF500DD5DE2 /* CalculatorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCoordinator.swift; sourceTree = "<group>"; };
+		CAD7CC292C6D1DFE00DD5DE2 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		CAD7CC2B2C6D1E0600DD5DE2 /* Calculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calculator.storyboard; sourceTree = "<group>"; };
+		CAD7CC2D2C6D267700DD5DE2 /* CalculatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorType.swift; sourceTree = "<group>"; };
+		CAD7CC302C6E466A00DD5DE2 /* MeasurementInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeasurementInputView.xib; sourceTree = "<group>"; };
+		CAD7CC322C6E468000DD5DE2 /* MeasurementInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementInputView.swift; sourceTree = "<group>"; };
+		CAD7CC342C6E52F200DD5DE2 /* Saira-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-SemiBold.ttf"; sourceTree = "<group>"; };
+		CAD7CC382C6E702E00DD5DE2 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+		CAD7CC3C2C70A44B00DD5DE2 /* BMICalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalculator.swift; sourceTree = "<group>"; };
+		CAD7CC412C70ABE800DD5DE2 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		CAD7CC452C70AFB800DD5DE2 /* FatPercentageCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FatPercentageCalculator.swift; sourceTree = "<group>"; };
+		CAD7CC4A2C70DF9700DD5DE2 /* ActivityLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLevelViewController.swift; sourceTree = "<group>"; };
+		CAD7CC4B2C70DF9700DD5DE2 /* ActivityLevel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityLevel.storyboard; sourceTree = "<group>"; };
+		CAD7CC4C2C70DF9700DD5DE2 /* ActivityLevelCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLevelCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		CAD7CC4D2C70DF9700DD5DE2 /* ActivityLevelCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLevelCoordinator.swift; sourceTree = "<group>"; };
+		CAD7CC4E2C70DF9700DD5DE2 /* ActivityLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLevelViewModel.swift; sourceTree = "<group>"; };
+		CAD7CC502C70DF9700DD5DE2 /* ActivityLevelCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLevelCellDelegate.swift; sourceTree = "<group>"; };
+		CAD7CC512C70DF9700DD5DE2 /* ActivityLevelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityLevelCell.xib; sourceTree = "<group>"; };
+		CAD7CC522C70DF9800DD5DE2 /* ActivityLevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLevelCell.swift; sourceTree = "<group>"; };
+		CAD7CC602C71102F00DD5DE2 /* DailyCalorieRequirementCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCalorieRequirementCalculator.swift; sourceTree = "<group>"; };
+		CAD7CC662C712F8B00DD5DE2 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		CAE8F1452C52973A00355755 /* OptionCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCellDelegate.swift; sourceTree = "<group>"; };
 		CAE8F1482C52B8C500355755 /* OptionSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionSwitch.xib; sourceTree = "<group>"; };
 		CAE8F14A2C52B8E800355755 /* OptionSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSwitch.swift; sourceTree = "<group>"; };
@@ -456,20 +516,22 @@
 		CA002E092C3192C60053284B /* App */ = {
 			isa = PBXGroup;
 			children = (
-				CAB607602C6A3823000A3D78 /* Exercise */,
-				CABE57822C5EB37E00E3AFC2 /* DeleteAccount */,
-				CA9018C82C5BC49F0030FA26 /* Chart */,
-				CA5D80FC2C51783000486145 /* Options */,
-				CA4FEC642C4C593E00988C5B /* Profile */,
-				CA465A792C47D8C5003E7217 /* ForgotPassword */,
-				CA457E052C42BBEA0031FDFA /* Login */,
 				CA37E5652C3EF35F003ADAA8 /* Signup */,
 				CAA18EE32C39DF7D00F888CD /* Splash */,
+				CA457E052C42BBEA0031FDFA /* Login */,
+				CA465A792C47D8C5003E7217 /* ForgotPassword */,
 				CA002E082C3192940053284B /* Home */,
-				CAEB19032C4ED6D1000FE4E5 /* Alert */,
+				CA4FEC642C4C593E00988C5B /* Profile */,
+				CA5D80FC2C51783000486145 /* Options */,
+				CABE57822C5EB37E00E3AFC2 /* DeleteAccount */,
 				CAA18EF92C3C12E200F888CD /* Progress */,
-				CAA18EF62C3C12D000F888CD /* Calculator */,
+				CA9018C82C5BC49F0030FA26 /* Chart */,
+				CAA18EF62C3C12D000F888CD /* CalculatorSelection */,
+				CAD7CC242C6D1C3A00DD5DE2 /* Calculator */,
+				CAD7CC492C70DF9700DD5DE2 /* ActivityLevel */,
 				CAA18EF82C3C12DD00F888CD /* Muscles */,
+				CAB607602C6A3823000A3D78 /* Exercise */,
+				CAEB19032C4ED6D1000FE4E5 /* Alert */,
 				CA002DD52C318B0F0053284B /* AppDelegate.swift */,
 				CA002DD72C318B0F0053284B /* SceneDelegate.swift */,
 				CA002E252C31A0830053284B /* AppCoordinator.swift */,
@@ -510,12 +572,15 @@
 		CA002E2D2C36E80E0053284B /* UI-Components */ = {
 			isa = PBXGroup;
 			children = (
-				CAE8F1472C52B89C00355755 /* OptionSwitch */,
 				CA002E2E2C36E81F0053284B /* CustomUIComponent.swift */,
-				CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */,
 				CA002E3A2C3701FE0053284B /* CustomButton.swift */,
+				CA1EE83F2C375AFF00E58403 /* CustomSwitch.swift */,
+				CAD7CC382C6E702E00DD5DE2 /* CustomSegmentedControl.swift */,
+				CA9018D52C5C4BE20030FA26 /* ListItemViewCell.swift */,
+				CAD7CC2F2C6E465500DD5DE2 /* MeasurementInputView */,
 				CA1EE8452C376FCD00E58403 /* CustomToggleButton */,
 				CA1EE8442C376FBF00E58403 /* CustomTextField */,
+				CAE8F1472C52B89C00355755 /* OptionSwitch */,
 			);
 			path = "UI-Components";
 			sourceTree = "<group>";
@@ -626,6 +691,7 @@
 				CAEB19182C4EF2B4000FE4E5 /* UIImage+Extensions.swift */,
 				CA9018D32C5C2A140030FA26 /* Notification+Extensions.swift */,
 				CAB607692C6AABB2000A3D78 /* UILabel+Extensions.swift */,
+				CAD7CC662C712F8B00DD5DE2 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -645,23 +711,24 @@
 			isa = PBXGroup;
 			children = (
 				CAA18EEA2C3ADC2C00F888CD /* Saira-Regular.ttf */,
-				CA038BF52C4316300033CD30 /* Saira-Medium.ttf */,
 				CA038BFF2C43F8E90033CD30 /* Saira-Light.ttf */,
+				CA038BF52C4316300033CD30 /* Saira-Medium.ttf */,
+				CAD7CC342C6E52F200DD5DE2 /* Saira-SemiBold.ttf */,
 				CA56CBB22C58243A00AE6481 /* Gilroy-SemiBold.ttf */,
 				CABE57AB2C6267B000E3AFC2 /* Nunito-Light.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		CAA18EF62C3C12D000F888CD /* Calculator */ = {
+		CAA18EF62C3C12D000F888CD /* CalculatorSelection */ = {
 			isa = PBXGroup;
 			children = (
-				CAA18F042C3C148200F888CD /* CalculatorViewController.swift */,
-				CAA18F062C3C148C00F888CD /* CalculatorCoordinator.swift */,
-				CAA18F082C3C149C00F888CD /* CalculatorViewModel.swift */,
-				CAA18F022C3C147400F888CD /* Calculator.storyboard */,
+				CAA18F042C3C148200F888CD /* CalculatorSelectionViewController.swift */,
+				CAA18F062C3C148C00F888CD /* CalculatorSelectionCoordinator.swift */,
+				CAA18F082C3C149C00F888CD /* CalculatorSelectionViewModel.swift */,
+				CAA18F022C3C147400F888CD /* CalculatorSelection.storyboard */,
 			);
-			path = Calculator;
+			path = CalculatorSelection;
 			sourceTree = "<group>";
 		};
 		CAA18EF82C3C12DD00F888CD /* Muscles */ = {
@@ -683,7 +750,6 @@
 				CAA18EFC2C3C133800F888CD /* ProgressCoordinator.swift */,
 				CAA18EFE2C3C134200F888CD /* ProgressViewModel.swift */,
 				CAA18F002C3C134B00F888CD /* Progress.storyboard */,
-				CA9018D52C5C4BE20030FA26 /* OptionNameViewCell.swift */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -772,6 +838,63 @@
 				CABE57D62C65519000E3AFC2 /* ExercisesTableHeaderViewDelegate.swift */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		CAD7CC242C6D1C3A00DD5DE2 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				CAD7CC402C70ABDD00DD5DE2 /* Calculators */,
+				CAD7CC252C6D1DE900DD5DE2 /* CalculatorViewController.swift */,
+				CAD7CC272C6D1DF500DD5DE2 /* CalculatorCoordinator.swift */,
+				CAD7CC292C6D1DFE00DD5DE2 /* CalculatorViewModel.swift */,
+				CAD7CC2B2C6D1E0600DD5DE2 /* Calculator.storyboard */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		CAD7CC2F2C6E465500DD5DE2 /* MeasurementInputView */ = {
+			isa = PBXGroup;
+			children = (
+				CAD7CC322C6E468000DD5DE2 /* MeasurementInputView.swift */,
+				CAD7CC302C6E466A00DD5DE2 /* MeasurementInputView.xib */,
+			);
+			path = MeasurementInputView;
+			sourceTree = "<group>";
+		};
+		CAD7CC402C70ABDD00DD5DE2 /* Calculators */ = {
+			isa = PBXGroup;
+			children = (
+				CAD7CC2D2C6D267700DD5DE2 /* CalculatorType.swift */,
+				CAD7CC412C70ABE800DD5DE2 /* Calculator.swift */,
+				CAD7CC3C2C70A44B00DD5DE2 /* BMICalculator.swift */,
+				CAD7CC452C70AFB800DD5DE2 /* FatPercentageCalculator.swift */,
+				CAD7CC602C71102F00DD5DE2 /* DailyCalorieRequirementCalculator.swift */,
+			);
+			path = Calculators;
+			sourceTree = "<group>";
+		};
+		CAD7CC492C70DF9700DD5DE2 /* ActivityLevel */ = {
+			isa = PBXGroup;
+			children = (
+				CAD7CC4F2C70DF9700DD5DE2 /* ActivityLevelCell */,
+				CAD7CC4A2C70DF9700DD5DE2 /* ActivityLevelViewController.swift */,
+				CAD7CC4D2C70DF9700DD5DE2 /* ActivityLevelCoordinator.swift */,
+				CAD7CC4E2C70DF9700DD5DE2 /* ActivityLevelViewModel.swift */,
+				CAD7CC4B2C70DF9700DD5DE2 /* ActivityLevel.storyboard */,
+				CAD7CC4C2C70DF9700DD5DE2 /* ActivityLevelCoordinatorDelegate.swift */,
+			);
+			name = ActivityLevel;
+			path = Profile/ActivityLevel;
+			sourceTree = "<group>";
+		};
+		CAD7CC4F2C70DF9700DD5DE2 /* ActivityLevelCell */ = {
+			isa = PBXGroup;
+			children = (
+				CAD7CC522C70DF9800DD5DE2 /* ActivityLevelCell.swift */,
+				CAD7CC512C70DF9700DD5DE2 /* ActivityLevelCell.xib */,
+				CAD7CC502C70DF9700DD5DE2 /* ActivityLevelCellDelegate.swift */,
+			);
+			path = ActivityLevelCell;
 			sourceTree = "<group>";
 		};
 		CAE8F1442C52972900355755 /* OptionCell */ = {
@@ -947,19 +1070,23 @@
 				CA038C002C43F8E90033CD30 /* Saira-Light.ttf in Resources */,
 				CA5D81042C51785A00486145 /* Options.storyboard in Resources */,
 				CA002DDF2C318B110053284B /* Assets.xcassets in Resources */,
+				CAD7CC5A2C70E7F200DD5DE2 /* ActivityLevelCell.xib in Resources */,
 				CA457E0D2C42BC360031FDFA /* Login.storyboard in Resources */,
 				CA002E242C319F560053284B /* .gitignore in Resources */,
 				CABE578A2C5EB3CB00E3AFC2 /* DeleteAccount.storyboard in Resources */,
 				CA002DE22C318B110053284B /* Base in Resources */,
 				CAE8F1492C52B8C500355755 /* OptionSwitch.xib in Resources */,
+				CAD7CC312C6E466A00DD5DE2 /* MeasurementInputView.xib in Resources */,
 				CAA18EEB2C3ADC2C00F888CD /* Saira-Regular.ttf in Resources */,
 				CA002E1A2C319C860053284B /* Home.storyboard in Resources */,
 				CA4FEC6C2C4C59CB00988C5B /* Profile.storyboard in Resources */,
-				CAA18F032C3C147400F888CD /* Calculator.storyboard in Resources */,
+				CAA18F032C3C147400F888CD /* CalculatorSelection.storyboard in Resources */,
 				CAA18F012C3C134B00F888CD /* Progress.storyboard in Resources */,
 				CABE57DD2C65F7D600E3AFC2 /* GoogleService-Info.plist in Resources */,
+				CAD7CC592C70E7E900DD5DE2 /* ActivityLevel.storyboard in Resources */,
 				CAEB19112C4ED721000FE4E5 /* Alert.storyboard in Resources */,
 				CABE57A52C62599000E3AFC2 /* Exercises.json in Resources */,
+				CAD7CC2C2C6D1E0600DD5DE2 /* Calculator.storyboard in Resources */,
 				CA37E5822C40573D003ADAA8 /* TabBar.storyboard in Resources */,
 				CAB607682C6A3886000A3D78 /* Exercise.storyboard in Resources */,
 				CAA18F112C3C159C00F888CD /* Muscles.storyboard in Resources */,
@@ -968,6 +1095,7 @@
 				CA9018D02C5BC4DC0030FA26 /* Chart.storyboard in Resources */,
 				CA9CD97B2C372262005FFEFC /* CustomTextFieldView.xib in Resources */,
 				CABE57AC2C6267B000E3AFC2 /* Nunito-Light.ttf in Resources */,
+				CAD7CC352C6E52F200DD5DE2 /* Saira-SemiBold.ttf in Resources */,
 				CA56CBB32C58243A00AE6481 /* Gilroy-SemiBold.ttf in Resources */,
 				CA038BF62C4316300033CD30 /* Saira-Medium.ttf in Resources */,
 				CAA18EE52C39DF9400F888CD /* Splash.storyboard in Resources */,
@@ -986,6 +1114,7 @@
 				CA56CBB42C58243A00AE6481 /* Gilroy-SemiBold.ttf in Resources */,
 				CAEB19122C4ED721000FE4E5 /* Alert.storyboard in Resources */,
 				CABE57DE2C65F7D600E3AFC2 /* GoogleService-Info.plist in Resources */,
+				CAD7CC362C6E52F200DD5DE2 /* Saira-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -999,6 +1128,7 @@
 				CA56CBB52C58243B00AE6481 /* Gilroy-SemiBold.ttf in Resources */,
 				CAEB19132C4ED721000FE4E5 /* Alert.storyboard in Resources */,
 				CABE57DF2C65F7D600E3AFC2 /* GoogleService-Info.plist in Resources */,
+				CAD7CC372C6E52F200DD5DE2 /* Saira-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1112,15 +1242,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAA18F072C3C148C00F888CD /* CalculatorCoordinator.swift in Sources */,
+				CAA18F072C3C148C00F888CD /* CalculatorSelectionCoordinator.swift in Sources */,
 				CAA18F1B2C3C554400F888CD /* GradientUtils.swift in Sources */,
 				CAEB18E62C4D71F4000FE4E5 /* UIImageView+Extensions.swift in Sources */,
+				CAD7CC282C6D1DF500DD5DE2 /* CalculatorCoordinator.swift in Sources */,
 				CAA18F152C3C3B5200F888CD /* TabBarController.swift in Sources */,
 				CA002E372C36F8D00053284B /* CustomRadiobutton.swift in Sources */,
 				CA9018CA2C5BC4B20030FA26 /* ChartViewController.swift in Sources */,
 				CA002E352C36F8430053284B /* CustomToggleButton.swift in Sources */,
 				CAEB18FC2C4EAE4C000FE4E5 /* NavigationBarConfigurator.swift in Sources */,
 				CABE57A92C625C2100E3AFC2 /* ExerciseViewCell.swift in Sources */,
+				CAD7CC332C6E468000DD5DE2 /* MeasurementInputView.swift in Sources */,
 				CABE57882C5EB3BF00E3AFC2 /* DeleteAccountCoordinator.swift in Sources */,
 				CA5D81082C5178AD00486145 /* PopupTransitioningDelegate.swift in Sources */,
 				CAE8F14B2C52B8E800355755 /* OptionSwitch.swift in Sources */,
@@ -1132,12 +1264,16 @@
 				CA465A7F2C47E25A003E7217 /* ForgotPasswordViewModel.swift in Sources */,
 				CA37E5672C3EF36C003ADAA8 /* SignupViewController.swift in Sources */,
 				CAB607642C6A3874000A3D78 /* ExerciseCoordinator.swift in Sources */,
+				CAD7CC532C70DF9800DD5DE2 /* ActivityLevelViewController.swift in Sources */,
 				CAA18EFF2C3C134200F888CD /* ProgressViewModel.swift in Sources */,
+				CAD7CC462C70AFB800DD5DE2 /* FatPercentageCalculator.swift in Sources */,
+				CAD7CC422C70ABE800DD5DE2 /* Calculator.swift in Sources */,
 				CAB6076A2C6AABB2000A3D78 /* UILabel+Extensions.swift in Sources */,
 				CABE57A12C624F1C00E3AFC2 /* MuscleGroup.swift in Sources */,
 				CA457E0B2C42BC2B0031FDFA /* LoginViewModel.swift in Sources */,
 				CA37E5692C3EF376003ADAA8 /* SignupCoordinator.swift in Sources */,
 				CAEB19092C4ED6E7000FE4E5 /* AlertCoordinator.swift in Sources */,
+				CAD7CC262C6D1DE900DD5DE2 /* CalculatorViewController.swift in Sources */,
 				CAA18EFB2C3C132200F888CD /* ProgressViewController.swift in Sources */,
 				CAA18EF22C3B182800F888CD /* SplashViewModel.swift in Sources */,
 				CAA18EE72C39DFC300F888CD /* SplashViewController.swift in Sources */,
@@ -1153,40 +1289,48 @@
 				CAEB19192C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */,
 				CA5D81092C5178AD00486145 /* PopupTransitioningPresentationController.swift in Sources */,
 				CA5D81022C51785200486145 /* OptionsViewModel.swift in Sources */,
+				CAD7CC562C70DF9800DD5DE2 /* ActivityLevelViewModel.swift in Sources */,
 				CAA18F132C3C18F200F888CD /* TabBarCoordinator.swift in Sources */,
 				CAE8F1542C52DC8E00355755 /* OptionData.swift in Sources */,
 				CABE57862C5EB3B600E3AFC2 /* DeleteAccountViewModel.swift in Sources */,
 				CAEB18E82C4D7759000FE4E5 /* ProfileViewController+Extensions.swift in Sources */,
 				CAA18EE92C39DFF600F888CD /* SplashCoordinator.swift in Sources */,
 				CA4FEC662C4C59B400988C5B /* ProfileViewController.swift in Sources */,
-				CAA18F092C3C149C00F888CD /* CalculatorViewModel.swift in Sources */,
+				CAA18F092C3C149C00F888CD /* CalculatorSelectionViewModel.swift in Sources */,
 				CAA18F1D2C3C56F700F888CD /* OverlayUtils.swift in Sources */,
-				CA9018D62C5C4BE20030FA26 /* OptionNameViewCell.swift in Sources */,
+				CAD7CC542C70DF9800DD5DE2 /* ActivityLevelCoordinator.swift in Sources */,
+				CA9018D62C5C4BE20030FA26 /* ListItemViewCell.swift in Sources */,
 				CA9018D22C5BD0BC0030FA26 /* DateUtils.swift in Sources */,
 				CAA18F0F2C3C159300F888CD /* MusclesCoordinator.swift in Sources */,
+				CAD7CC392C6E702E00DD5DE2 /* CustomSegmentedControl.swift in Sources */,
+				CAD7CC2A2C6D1DFE00DD5DE2 /* CalculatorViewModel.swift in Sources */,
 				CABE57A32C62507900E3AFC2 /* JsonUtils.swift in Sources */,
 				CAA18EFD2C3C133800F888CD /* ProgressCoordinator.swift in Sources */,
 				CABE57842C5EB38E00E3AFC2 /* DeleteAccountViewController.swift in Sources */,
 				CAB607662C6A387F000A3D78 /* ExerciseViewModel.swift in Sources */,
 				CA5D80FE2C51784100486145 /* OptionsViewController.swift in Sources */,
-				CAA18F052C3C148200F888CD /* CalculatorViewController.swift in Sources */,
+				CAA18F052C3C148200F888CD /* CalculatorSelectionViewController.swift in Sources */,
 				CA002E3B2C3701FE0053284B /* CustomButton.swift in Sources */,
 				CA5D81002C51784900486145 /* OptionsCoordinator.swift in Sources */,
 				CA0FF3F22C456B4700B3CE08 /* UserSex.swift in Sources */,
 				CA457E092C42BC220031FDFA /* LoginCoordinator.swift in Sources */,
 				CA37E56B2C3EF37F003ADAA8 /* SignupViewModel.swift in Sources */,
+				CAD7CC572C70DF9800DD5DE2 /* ActivityLevelCoordinatorDelegate.swift in Sources */,
 				CA5D810F2C5183C500486145 /* OptionDataName.swift in Sources */,
 				CA002E2F2C36E81F0053284B /* CustomUIComponent.swift in Sources */,
 				CAA18EE22C37F98500F888CD /* UIView+Extensions.swift in Sources */,
 				CA465A7B2C47E238003E7217 /* ForgotPasswordViewController.swift in Sources */,
+				CAD7CC552C70DF9800DD5DE2 /* ActivityLevelCell.swift in Sources */,
 				CAEB19052C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */,
 				CA5D810D2C5181E300486145 /* OptionCell.swift in Sources */,
 				CA002E182C319C7A0053284B /* HomeViewModel.swift in Sources */,
+				CAD7CC672C712F8B00DD5DE2 /* UIViewController+Extensions.swift in Sources */,
 				CA9018CE2C5BC4D60030FA26 /* ChartCoordinator.swift in Sources */,
 				CABE579B2C624A5700E3AFC2 /* Level.swift in Sources */,
 				CA002DD62C318B0F0053284B /* AppDelegate.swift in Sources */,
 				CAB607622C6A385E000A3D78 /* ExerciseViewController.swift in Sources */,
 				CA37E5702C3F25B4003ADAA8 /* RegistrationData.swift in Sources */,
+				CAD7CC582C70DF9800DD5DE2 /* ActivityLevelCellDelegate.swift in Sources */,
 				CA9CD9772C37214B005FFEFC /* CustomTextFieldView.swift in Sources */,
 				CAE8F14D2C52C25F00355755 /* OptionsCoordinatorDelegate.swift in Sources */,
 				CA002E262C31A0830053284B /* AppCoordinator.swift in Sources */,
@@ -1195,6 +1339,7 @@
 				CAEB18E42C4D4971000FE4E5 /* UserData.swift in Sources */,
 				CABE579D2C624D3C00E3AFC2 /* Exercise.swift in Sources */,
 				CAC78E402C494B8400E48049 /* UIStackView+Extensions.swift in Sources */,
+				CAD7CC2E2C6D267700DD5DE2 /* CalculatorType.swift in Sources */,
 				CABE57962C624A2A00E3AFC2 /* ExerciseType.swift in Sources */,
 				CA038C042C4427190033CD30 /* LoginData.swift in Sources */,
 				CA1EE8402C375AFF00E58403 /* CustomSwitch.swift in Sources */,
@@ -1202,6 +1347,7 @@
 				CA002E392C36F8FA0053284B /* CustomCheckmark.swift in Sources */,
 				CA002DD82C318B0F0053284B /* SceneDelegate.swift in Sources */,
 				CA002E162C319C6D0053284B /* HomeViewController.swift in Sources */,
+				CAD7CC3D2C70A44B00DD5DE2 /* BMICalculator.swift in Sources */,
 				CAA18F182C3C3B7500F888CD /* TabBarItem.swift in Sources */,
 				CA56CBB72C583F8D00AE6481 /* OptionCollectionCell.swift in Sources */,
 				CA465A7D2C47E248003E7217 /* ForgotPasswordCoordinator.swift in Sources */,
@@ -1209,6 +1355,7 @@
 				CA002E142C319C5C0053284B /* HomeCoordinator.swift in Sources */,
 				CA002E292C32C1C50053284B /* Constants.swift in Sources */,
 				CABE57992C624A4600E3AFC2 /* Equipment.swift in Sources */,
+				CAD7CC612C71102F00DD5DE2 /* DailyCalorieRequirementCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1219,12 +1366,19 @@
 				CA56CBB82C583F8D00AE6481 /* OptionCollectionCell.swift in Sources */,
 				CA37E5872C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
 				CAEB19062C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */,
+				CAD7CC3A2C6E702E00DD5DE2 /* CustomSegmentedControl.swift in Sources */,
+				CAD7CC3E2C70A44B00DD5DE2 /* BMICalculator.swift in Sources */,
+				CAD7CC432C70ABE800DD5DE2 /* Calculator.swift in Sources */,
 				CAEB190E2C4ED71A000FE4E5 /* AlertViewModel.swift in Sources */,
 				CAEB191A2C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */,
 				CA37E57F2C405731003ADAA8 /* TabBarViewModel.swift in Sources */,
+				CAD7CC472C70AFB800DD5DE2 /* FatPercentageCalculator.swift in Sources */,
+				CAD7CC652C71133000DD5DE2 /* CalculatorType.swift in Sources */,
 				CAEB190A2C4ED6E7000FE4E5 /* AlertCoordinator.swift in Sources */,
+				CAD7CC682C712F8B00DD5DE2 /* UIViewController+Extensions.swift in Sources */,
 				CAEB19162C4EE4C4000FE4E5 /* AlertContent.swift in Sources */,
 				CA002DED2C318B110053284B /* PecodeTestTaskTests.swift in Sources */,
+				CAD7CC622C71102F00DD5DE2 /* DailyCalorieRequirementCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1236,12 +1390,19 @@
 				CA37E5882C4058C4003ADAA8 /* CustomTabBar.swift in Sources */,
 				CAEB191B2C4EF2B4000FE4E5 /* UIImage+Extensions.swift in Sources */,
 				CAEB190F2C4ED71A000FE4E5 /* AlertViewModel.swift in Sources */,
+				CAD7CC3F2C70A44B00DD5DE2 /* BMICalculator.swift in Sources */,
+				CAD7CC692C712F8B00DD5DE2 /* UIViewController+Extensions.swift in Sources */,
+				CAD7CC442C70ABE800DD5DE2 /* Calculator.swift in Sources */,
 				CAEB19072C4ED6DF000FE4E5 /* AlertViewController.swift in Sources */,
 				CA56CBB92C583F8D00AE6481 /* OptionCollectionCell.swift in Sources */,
 				CA002DF72C318B110053284B /* PecodeTestTaskUITests.swift in Sources */,
+				CAD7CC3B2C6E702E00DD5DE2 /* CustomSegmentedControl.swift in Sources */,
 				CA002DF92C318B110053284B /* PecodeTestTaskUITestsLaunchTests.swift in Sources */,
+				CAD7CC482C70AFB800DD5DE2 /* FatPercentageCalculator.swift in Sources */,
 				CAEB19172C4EE4C4000FE4E5 /* AlertContent.swift in Sources */,
+				CAD7CC642C71133000DD5DE2 /* CalculatorType.swift in Sources */,
 				CAEB190B2C4ED6E7000FE4E5 /* AlertCoordinator.swift in Sources */,
+				CAD7CC632C71102F00DD5DE2 /* DailyCalorieRequirementCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
