@@ -29,11 +29,6 @@ class AppCoordinator: Coordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         
-        // for testing purposes
-//        do {
-//            try Auth.auth().signOut()
-//        } catch {}
-//        
         checkCurrentUser()
     }
     
