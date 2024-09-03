@@ -1,21 +1,21 @@
 platform :ios, '15.0'
 
-target 'PecodeTestTask' do
+target 'FitTrack' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for PecodeTestTask
+  # Pods for FitTrack
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
   pod 'Firebase/Analytics'
 
-  target 'PecodeTestTaskTests' do
+  target 'FitTrackTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'PecodeTestTaskUITests' do
+  target 'FitTrackUITests' do
     # Pods for testing
   end
 
